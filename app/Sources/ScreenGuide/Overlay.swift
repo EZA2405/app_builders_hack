@@ -399,6 +399,13 @@ final class OverlayController {
         cardWindow.setFrame(NSRect(x: origin.x, y: nsY, width: size.width, height: size.height), display: true)
     }
 
+    /// The card's rect in AX coordinates (clicks on its buttons aren't clicks "somewhere else").
+    var cardFrame: CGRect {
+        guard cardWindow.isVisible else { return .null }
+        let f = cardWindow.frame, h = primary.frame.height
+        return CGRect(x: f.minX, y: h - f.maxY, width: f.width, height: f.height)
+    }
+
     func update() {
         if model.mode == .hidden { hide(); return }
         show()

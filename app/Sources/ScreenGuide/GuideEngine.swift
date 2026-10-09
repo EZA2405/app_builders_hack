@@ -22,6 +22,8 @@ final class GuideEngine {
     var settingsPane: String?
     /// Apple model's route for this goal (on-screen names, in order); nil = not planned yet.
     var waypoints: [String]?
+    private var movedOn = false
+    private var lastState: ScreenState?
     /// Apple's on-device model's one-line plan for this task, shown on the first card.
     var planLine: String?
     /// Set when Gabay points at a Dock icon: the app we expect the person to open next.
@@ -108,6 +110,7 @@ final class GuideEngine {
             }
             show(.thinking, label: "Got it", text: "Looking…", hint: "", target: nil)
             let state = await read(app)
+            lastState = state
             let pick: Planner.Pick?
             do {
                 pick = try await decide(state, app: app)
@@ -272,6 +275,22 @@ final class GuideEngine {
             }
         }
 
+        // A list of app switches (Camera, Microphone…) and the request names none of them: only the person knows
+        // which app they call with. Say so, and any switch in that list counts.
+        let siblings = lastState?.candidates.filter { $0.role == "switch" && $0.context == c.context } ?? []
+        if c.role == "switch", siblings.count >= 3, !siblings.contains(where: { goal.lowercased().contains($0.label.lowercased()) }) {
+            show(.guiding, label: "Step \(stepNo)", text: "Turn on the switch next to the app you use for the call.",
+                 hint: "For example Zoom, FaceTime or Google Chrome.", target: nil)
+            let frames = siblings.compactMap { $0.frame.map(rect) }
+            _ = ClickWatcher.shared.drain()
+            while !Task.isCancelled {
+                try? await Task.sleep(nanoseconds: 150_000_000)
+                if notThis { return false }
+                for e in ClickWatcher.shared.drain() { if case .click(let p) = e, frames.contains(where: { $0.hit(p) }) {
+                    try? await Task.sleep(nanoseconds: 400_000_000); await confirm(keepRing: false); return true } }
+            }
+            return false
+        }
         if pick.confidence < 0.3, !pick.runnersUp.isEmpty {
             overlay.model.candidates = ([c] + pick.runnersUp.prefix(1)).compactMap { $0.frame.map(rect) }
             show(.notSure, label: "Step \(stepNo)", text: "It's one of these. Pick either one.", hint: "", target: nil)
@@ -281,12 +300,35 @@ final class GuideEngine {
         }
         doneTyping = false
         _ = ClickWatcher.shared.drain()
-        let ring = c.frame.map(rect)
+        var ring = c.frame.map(rect)
         let typing = ["text field", "text area", "search field", "combo box"].contains(c.role)
         var clickedIn = false
+        let key = Planner.key(c)
+        let startSig = c.source == "window" ? await signature(app) : ""
+        var tick = 0, offscreen = false
         waiting: while !Task.isCancelled {
             try? await Task.sleep(nanoseconds: 120_000_000)
             if notThis { return false }
+            tick += 1
+            // Follow the target while the person scrolls; if it leaves the window, ask them to bring it back.
+            if c.source == "window", tick % 4 == 0, [.guiding, .detour].contains(overlay.model.mode) || offscreen {
+                let s = await read(app)
+                if let n = s.candidates.first(where: { Planner.key($0) == key }), let nf = n.frame.map(rect),
+                   let w = MenuProbe.frontWindowFrame(app) {
+                    let i = nf.intersection(w.insetBy(dx: 0, dy: 8))
+                    let visible = !i.isNull && i.height >= nf.height * 0.6
+                    if visible, offscreen || ring != nf {
+                        ring = nf; offscreen = false
+                        let (t, h) = phrase(c)
+                        show(.guiding, label: "Step \(stepNo)", text: t, hint: h, target: nf)
+                    } else if !visible, !offscreen {
+                        offscreen = true; ring = nil
+                        let down = nf.midY > w.midY
+                        show(.guiding, label: "Step \(stepNo)", text: "Scroll \(down ? "down" : "back up") to **\(c.label)**.",
+                             hint: "Use two fingers on the trackpad, or the mouse wheel.", target: nil)
+                    }
+                }
+            }
             if doneTyping { break }
             if c.source == "dock", Self.frontRegularApp()?.localizedName == c.label { break }
             // The person went to another app: the ring would float over it. Wait quietly until they're back.
@@ -307,7 +349,13 @@ final class GuideEngine {
                         try? await Task.sleep(nanoseconds: 350_000_000)
                         break waiting
                     }
-                    if overlay.model.mode == .guiding, let r = ring, !overlay.model.spotlight {
+                    // They clicked something else and the screen moved on (often the right thing, just outside the ring):
+                    // carry on from the new screen instead of insisting.
+                    if c.source == "window", !startSig.isEmpty, !overlay.cardFrame.contains(p) {
+                        try? await Task.sleep(nanoseconds: 700_000_000)
+                        if await signature(app) != startSig { log("MOVED ON after click outside ring"); movedOn = true; break waiting }
+                    }
+                    if overlay.model.mode == .guiding, let r = ring, !overlay.model.spotlight, !overlay.cardFrame.contains(p) {
                         let (text, _) = phrase(c)
                         show(.detour, label: "Small detour", text: "That's okay. " + text, hint: "Nothing has changed.", target: r)
                         Task { @MainActor in
@@ -321,17 +369,20 @@ final class GuideEngine {
             }
         }
         if Task.isCancelled { return false }
+        if movedOn { movedOn = false; return true }
         await confirm(keepRing: !isFinal(c) && c.role != "list choice")   // a chosen list item vanishes with its list
         return true
     }
 
-    private func guideMenu(_ c: Candidate, app: NSRunningApplication) async -> Bool {
+    private func guideMenu(_ c: Candidate, app home: NSRunningApplication) async -> Bool {
         let parts = c.path.components(separatedBy: " > ")
         var level = 0
         var target: CGRect?
         _ = ClickWatcher.shared.drain()
         while !Task.isCancelled {
             if notThis { return false }
+            // The Apple menu is the same in every app: follow whichever app is in front for it.
+            let app = parts[0] == "Apple" ? (Self.frontRegularApp() ?? home) : home
             let openMenu = MenuProbe.openMenuTitle(app)
             let clicks = ClickWatcher.shared.drain().compactMap { e -> CGPoint? in if case .click(let p) = e { return p }; return nil }
             if level == 0 {
