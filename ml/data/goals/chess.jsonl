@@ -1,0 +1,28 @@
+{"goal": "i moved the wrong piece, let me do it over", "answer": "Moves > Take Back Move", "alts": ["Edit > Undo"]}
+{"goal": "oops wrong square, undo please", "answer": "Moves > Take Back Move", "alts": ["Edit > Undo"]}
+{"goal": "put back the move i just took back", "answer": "Edit > Redo", "alts": [], "trap": "Edit > Undo"}
+{"goal": "i give up this game", "answer": "Moves > Resign", "alts": [], "trap": "Moves > Offer Draw"}
+{"goal": "suko na ako, talo na", "answer": "Moves > Resign", "alts": []}
+{"goal": "can we just call it a tie", "answer": "Moves > Offer Draw", "alts": [], "trap": "Moves > Resign"}
+{"goal": "nobody is going to win, ask the computer to end it even", "answer": "Moves > Offer Draw", "alts": []}
+{"goal": "what should i move next, i'm stuck", "answer": "Moves > Show Hint", "alts": [], "trap": "Moves > Show Last Move"}
+{"goal": "help me pick a good move", "answer": "Moves > Show Hint", "alts": []}
+{"goal": "i didnt see what the computer just did", "answer": "Moves > Show Last Move", "alts": [], "trap": "Moves > Show Hint"}
+{"goal": "which piece did my opponent move", "answer": "Moves > Show Last Move", "alts": []}
+{"goal": "show me the list of every move so far", "answer": "Moves > Game Log", "alts": [], "trap": "Moves > Show Last Move"}
+{"goal": "lagay mo yung letters at numbers sa gilid ng board", "answer": "View > Edge Notation", "alts": []}
+{"goal": "show the a b c and 1 2 3 around the board edges", "answer": "View > Edge Notation", "alts": []}
+{"goal": "make the computer easier to beat", "answer": "Chess > Settings…", "alts": []}
+{"goal": "change the look of the board and pieces", "answer": "Chess > Settings…", "alts": []}
+{"goal": "copy the game so i can send it to my friend", "answer": "Edit > Copy", "alts": []}
+{"goal": "the board is too small, make the window larger", "answer": "Window > Zoom", "alts": []}
+{"goal": "make the board take the whole screen with nothing else showing", "answer": "Window > Enter Full Screen", "alts": [], "trap": "Window > Fill"}
+{"goal": "put the game in the dock for later", "answer": "Window > Minimize", "alts": []}
+{"goal": "move the board to the middle of my screen", "answer": "Window > Center", "alts": []}
+{"goal": "put the chess window on the right side", "answer": "Window > Move & Resize > Right", "alts": []}
+{"goal": "close this game window", "answer": "Window > Close", "alts": []}
+{"goal": "im done playing, close the whole chess program", "answer": "Chess > Quit Chess", "alts": [], "trap": "Window > Close"}
+{"goal": "hide the game quick", "answer": "Chess > Hide Chess", "alts": []}
+{"goal": "i want to talk instead of typing", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "how do the pieces move, where are the instructions", "answer": "Help > Chess Help", "alts": []}
+{"goal": "which version of chess is this", "answer": "Chess > About Chess", "alts": []}

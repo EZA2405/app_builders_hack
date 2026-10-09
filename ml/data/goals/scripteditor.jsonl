@@ -1,0 +1,35 @@
+{"goal": "start a fresh empty script", "answer": "File > New", "alts": []}
+{"goal": "open the script I was working on yesterday", "answer": "File > Open…", "alts": []}
+{"goal": "i-save mo na to baka mawala", "answer": "File > Save", "alts": []}
+{"goal": "keep this one but also make another copy of it", "answer": "File > Duplicate", "alts": []}
+{"goal": "change the name of this script", "answer": "File > Rename…", "alts": [], "trap": "File > Save As…"}
+{"goal": "save it again under a different name so I keep the old one", "answer": "File > Save As…", "alts": ["File > Duplicate"]}
+{"goal": "turn this into a little app I can double click", "answer": "File > Export…", "alts": []}
+{"goal": "pa-print naman ng script na to", "answer": "File > Print…", "alts": []}
+{"goal": "close this window im done with it", "answer": "File > Close", "alts": []}
+{"goal": "I deleted a line by mistake, bring it back", "answer": "Edit > Undo", "alts": []}
+{"goal": "wait I did want that change, put it back again", "answer": "Edit > Redo", "alts": []}
+{"goal": "take this part out so I can put it somewhere else", "answer": "Edit > Cut", "alts": []}
+{"goal": "put the thing I copied here", "answer": "Edit > Paste", "alts": []}
+{"goal": "highlight the whole script", "answer": "Edit > Select All", "alts": []}
+{"goal": "where in here did I write the word folder", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "change every 'hello' in the script to 'goodbye'", "answer": "Edit > Find > Find and Replace…", "alts": []}
+{"goal": "make the script go", "answer": "Script > Run", "alts": []}
+{"goal": "paano i-run yung script", "answer": "Script > Run", "alts": []}
+{"goal": "stop it, it's still going and won't finish", "answer": "Script > Stop", "alts": [], "trap": "Edit > Speech > Stop Speaking"}
+{"goal": "check if I wrote the script right without actually running it", "answer": "Script > Compile", "alts": [], "trap": "Edit > Spelling and Grammar > Check Document Now"}
+{"goal": "watch what I do on the computer and write the steps down as a script", "answer": "Script > Record", "alts": []}
+{"goal": "i want to talk and have it type what I say", "answer": "Edit > Start Dictation…", "alts": [], "trap": "Script > Record"}
+{"goal": "the letters are too tiny, I can't read them", "answer": "Font > Bigger", "alts": []}
+{"goal": "make the window bigger", "answer": "Window > Zoom", "alts": [], "trap": "Font > Bigger"}
+{"goal": "make this word thick and dark", "answer": "Font > Bold", "alts": []}
+{"goal": "make the letters lean to the side", "answer": "Font > Italic", "alts": []}
+{"goal": "pick a different kind of lettering", "answer": "Font > Show Fonts", "alts": []}
+{"goal": "put this text in the middle of the line", "answer": "Format > Center", "alts": [], "trap": "Window > Center"}
+{"goal": "show me what came back after it ran", "answer": "View > Show Result", "alts": []}
+{"goal": "i want to see the list of everything that happend when it ran", "answer": "View > Show Log", "alts": []}
+{"goal": "find out what commands the Mail app understands", "answer": "File > Open Dictionary…", "alts": []}
+{"goal": "open some sample scripts I can learn from", "answer": "Help > Open Example Scripts Folder", "alts": [], "trap": "File > Open…"}
+{"goal": "put this away in the dock for now", "answer": "Window > Minimize", "alts": [], "trap": "Script Editor > Hide Script Editor"}
+{"goal": "read my script out loud to me", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "make all of it capital letters", "answer": "Edit > Transformations > Make Upper Case", "alts": []}

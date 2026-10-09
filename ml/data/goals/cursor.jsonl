@@ -1,0 +1,32 @@
+{"goal": "start a fresh chat with the AI helper", "answer": "File > New Agent", "alts": []}
+{"goal": "open my project folder", "answer": "File > Open Folder", "alts": []}
+{"goal": "I need a new place to type commands", "answer": "File > New Terminal", "alts": []}
+{"goal": "show the list of my files", "answer": "View > Files", "alts": []}
+{"goal": "what did I change so far", "answer": "View > Changes", "alts": []}
+{"goal": "open a web page inside this app", "answer": "File > New Browser", "alts": ["View > Browser"]}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "wait put it back, I didn't mean to take that back", "answer": "Edit > Redo", "alts": [], "trap": "Edit > Undo"}
+{"goal": "copy this text", "answer": "Edit > Copy", "alts": []}
+{"goal": "take this text out so I can put it somewhere else", "answer": "Edit > Cut", "alts": [], "trap": "Edit > Copy"}
+{"goal": "put it here", "answer": "Edit > Paste", "alts": []}
+{"goal": "highlight everything on the page", "answer": "Edit > Select All", "alts": []}
+{"goal": "check my writing for spelling mistakes", "answer": "Edit > Writing Tools > Proofread", "alts": [], "trap": "Edit > Writing Tools > Rewrite"}
+{"goal": "this is too wordy, cut it down", "answer": "Edit > Writing Tools > Make Concise", "alts": [], "trap": "Edit > Cut"}
+{"goal": "give me the short version of all this", "answer": "Edit > Writing Tools > Summarize", "alts": []}
+{"goal": "I want to talk instead of type", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "put a smiley face in", "answer": "Edit > Emoji & Symbols", "alts": []}
+{"goal": "the letters are too small to read", "answer": "View > Zoom In", "alts": [], "trap": "Window > Zoom"}
+{"goal": "pa-zoom out naman, ang laki", "answer": "View > Zoom Out", "alts": []}
+{"goal": "put the size back to normal", "answer": "View > Reset Zoom", "alts": [], "trap": "Window > Move & Resize > Return to Previous Size"}
+{"goal": "hide this window down in the dock", "answer": "Window > Minimize", "alts": []}
+{"goal": "make the window take up the whole screen", "answer": "Window > Fill", "alts": []}
+{"goal": "put this window on the left half of the screen", "answer": "Window > Move & Resize > Left", "alts": []}
+{"goal": "where can I see a list of all the things it can do", "answer": "Help > Command Palette", "alts": []}
+{"goal": "show me the keyboard shortcuts", "answer": "Help > Keyboard Shortcuts", "alts": []}
+{"goal": "close the whole program, im done", "answer": "Cursor > Quit Cursor", "alts": ["File > Exit"], "trap": "Cursor > Hide Cursor"}
+{"goal": "is there a newer version", "answer": "Cursor > Check for Updates…", "alts": []}
+{"goal": "paano ipakita yung terminal sa baba", "answer": "View > Terminal", "alts": []}
+{"goal": "gawin mong mas friendly yung tono ng sulat ko", "answer": "Edit > Writing Tools > Make Friendly", "alts": []}
+{"goal": "make this sound more proper for my boss", "answer": "Edit > Writing Tools > Make Professional", "alts": [], "trap": "Edit > Writing Tools > Make Friendly"}
+{"goal": "turn these lines into bullet points", "answer": "Edit > Writing Tools > Make List", "alts": []}
+{"goal": "show the little bar along the bottom", "answer": "View > Status Bar", "alts": []}

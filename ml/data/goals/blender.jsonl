@@ -1,0 +1,15 @@
+{"goal": "im done, close blender completely", "answer": "Blender > Quit Blender", "alts": [], "trap": "Window > Close"}
+{"goal": "exit this 3d program", "answer": "Blender > Quit Blender", "alts": []}
+{"goal": "hide blender for a moment without closing it", "answer": "Blender > Hide Blender", "alts": [], "trap": "Blender > Hide Others"}
+{"goal": "make all my other programs go away so i only see this one", "answer": "Blender > Hide Others", "alts": [], "trap": "Blender > Hide Blender"}
+{"goal": "bring back the other apps i hid", "answer": "Blender > Show All", "alts": []}
+{"goal": "what version of blender do i have", "answer": "Blender > About Blender", "alts": []}
+{"goal": "tuck this window down into the dock", "answer": "Window > Minimize", "alts": []}
+{"goal": "make the window take up the whole screen with no dock or menu bar", "answer": "Window > Enter Full Screen", "alts": [], "trap": "Window > Fill"}
+{"goal": "palakihin yung window para sakto sa screen pero hindi full screen", "answer": "Window > Fill", "alts": [], "trap": "Window > Enter Full Screen"}
+{"goal": "put the window in the middle", "answer": "Window > Center", "alts": []}
+{"goal": "move blender to the left half so i can watch a tutorial on the right", "answer": "Window > Move & Resize > Left", "alts": []}
+{"goal": "put this window on the right side", "answer": "Window > Move & Resize > Right", "alts": []}
+{"goal": "make the window go back to the size it was", "answer": "Window > Move & Resize > Return to Previous Size", "alts": []}
+{"goal": "close this one window only", "answer": "Window > Close", "alts": [], "trap": "Blender > Quit Blender"}
+{"goal": "make the window a little bigger", "answer": "Window > Zoom", "alts": []}

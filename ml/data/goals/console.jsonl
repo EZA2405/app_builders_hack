@@ -1,0 +1,35 @@
+{"goal": "open a log file someone sent me", "answer": "File > Open…", "alts": []}
+{"goal": "show me where this file is on my computer", "answer": "File > Reveal in Finder", "alts": []}
+{"goal": "throw this log file away", "answer": "File > Move to Trash", "alts": [], "trap": "Edit > Delete"}
+{"goal": "close this window", "answer": "File > Close", "alts": []}
+{"goal": "copy this message so I can send it to the help desk", "answer": "Edit > Copy", "alts": []}
+{"goal": "select every message in the list", "answer": "Edit > Select All", "alts": []}
+{"goal": "look through the messages for anything about wifi", "answer": "Action > Search", "alts": ["Edit > Find > Find…"]}
+{"goal": "pa-search nga ng battery dito", "answer": "Action > Search", "alts": ["Edit > Find > Find…"]}
+{"goal": "find the word error in this text", "answer": "Edit > Find > Find…", "alts": ["Action > Search"], "trap": "Action > Errors and Faults"}
+{"goal": "where's the next one with that word", "answer": "Edit > Find > Find Next", "alts": []}
+{"goal": "wipe the screen clean, there are too many messages", "answer": "Action > Clear", "alts": [], "trap": "Edit > Delete"}
+{"goal": "refresh this list", "answer": "Action > Reload", "alts": []}
+{"goal": "i-reload mo nga yung logs", "answer": "Action > Reload", "alts": []}
+{"goal": "jump to what's happening right now", "answer": "Action > Now", "alts": []}
+{"goal": "start showing new messages as they come in", "answer": "Action > Stream", "alts": []}
+{"goal": "only show me the problems", "answer": "Action > Errors and Faults", "alts": []}
+{"goal": "show every message again not just the bad ones", "answer": "Action > All Messages", "alts": [], "trap": "View > Show All Tabs"}
+{"goal": "the box with the details at the bottom is gone, show it", "answer": "View > Show Details", "alts": [], "trap": "View > Expand Selected Rows"}
+{"goal": "show the list of my devices on the left", "answer": "View > Show Sources", "alts": []}
+{"goal": "open up this row so I can read the whole message", "answer": "View > Expand Selected Rows", "alts": []}
+{"goal": "fold these rows back up", "answer": "View > Collapse Selected Rows", "alts": []}
+{"goal": "the buttons at the top disappeared, bring them back", "answer": "View > Show Toolbar", "alts": []}
+{"goal": "show the tabs along the top", "answer": "View > Show Tab Bar", "alts": [], "trap": "View > Show All Tabs"}
+{"goal": "make it fill the whole screen", "answer": "View > Enter Full Screen", "alts": ["Window > Fill"]}
+{"goal": "make the window bigger", "answer": "Window > Zoom", "alts": []}
+{"goal": "put this away in the dock for now", "answer": "Window > Minimize", "alts": [], "trap": "Console > Hide Console"}
+{"goal": "go to the next tab", "answer": "Window > Show Next Tab", "alts": []}
+{"goal": "put all these windows together into one with tabs", "answer": "Window > Merge All Windows", "alts": []}
+{"goal": "pull this tab out into its own window", "answer": "Window > Move Tab to New Window", "alts": []}
+{"goal": "read this message out loud for me", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "erase the list of files I opened lately", "answer": "File > Open Recent > Clear Menu", "alts": [], "trap": "Action > Clear"}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "how do i use this app", "answer": "Help > Console Help", "alts": []}
+{"goal": "I'm done, close the whole program", "answer": "Console > Quit Console", "alts": [], "trap": "File > Close"}
+{"goal": "move the window to the left half of my screen", "answer": "Window > Move & Resize > Left", "alts": []}

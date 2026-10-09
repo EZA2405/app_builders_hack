@@ -1,0 +1,35 @@
+{"goal": "start a brand new one", "answer": "File > New", "alts": []}
+{"goal": "open one I made before", "answer": "File > Open…", "alts": []}
+{"goal": "keep my work so I don't lose it", "answer": "File > Save", "alts": []}
+{"goal": "make a copy of this with a different name", "answer": "File > Duplicate", "alts": ["File > Save As…"]}
+{"goal": "change the name of this file", "answer": "File > Rename…", "alts": [], "trap": "Action > Rename"}
+{"goal": "put this file in a different folder", "answer": "File > Move To…", "alts": []}
+{"goal": "pa-print nito", "answer": "File > Print…", "alts": []}
+{"goal": "close this window", "answer": "File > Close", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "I took it back by mistake, put it back", "answer": "Edit > Redo", "alts": []}
+{"goal": "copy this", "answer": "Edit > Copy", "alts": []}
+{"goal": "put what I copied here", "answer": "Edit > Paste", "alts": []}
+{"goal": "get rid of this step for good", "answer": "Edit > Delete", "alts": [], "trap": "Action > Disable"}
+{"goal": "highlight everything", "answer": "Edit > Select All", "alts": []}
+{"goal": "look for a step I can add", "answer": "Edit > Find > Find in Library", "alts": [], "trap": "Edit > Find > Find…"}
+{"goal": "pa-run naman nito", "answer": "Workflow > Run", "alts": []}
+{"goal": "make it quit what it's doing right now", "answer": "Workflow > Stop", "alts": [], "trap": "Workflow > Step"}
+{"goal": "watch what I do with the mouse and copy it", "answer": "Workflow > Record", "alts": []}
+{"goal": "go through it slowly one part at a time", "answer": "Workflow > Step", "alts": []}
+{"goal": "turn this step off for now but keep it there", "answer": "Action > Disable", "alts": [], "trap": "Edit > Delete"}
+{"goal": "move this step higher up", "answer": "Action > Move Up", "alts": []}
+{"goal": "move this step further down", "answer": "Action > Move Down", "alts": []}
+{"goal": "what did this one step give back", "answer": "Action > Show Results", "alts": [], "trap": "View > Log"}
+{"goal": "show the list of things I can add on the left", "answer": "View > Show Library", "alts": []}
+{"goal": "what happened when it ran last time", "answer": "View > Log", "alts": []}
+{"goal": "make the words thicker", "answer": "Format > Style > Bold", "alts": []}
+{"goal": "the writing is too small", "answer": "Format > Style > Bigger", "alts": []}
+{"goal": "check my spelling", "answer": "Edit > Spelling > Check Spelling", "alts": ["Edit > Spelling > Show Spelling and Grammar"]}
+{"goal": "fill up the whole screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "isara na yung automator", "answer": "Automator > Quit Automator", "alts": []}
+{"goal": "tuck this window down into the dock", "answer": "Window > Minimize", "alts": []}
+{"goal": "how does this work, show me the instructions", "answer": "Help > Automator Help", "alts": []}
+{"goal": "show me some ready made samples", "answer": "Help > Open Examples Folder", "alts": []}
+{"goal": "turn this into an app I can double click", "answer": "File > Convert To…", "alts": [], "trap": "File > Export…"}
+{"goal": "i-center yung text", "answer": "Format > Alignment > Center", "alts": [], "trap": "Window > Center"}

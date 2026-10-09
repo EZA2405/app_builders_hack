@@ -1,0 +1,35 @@
+{"goal": "I want to start making a brand new app from scratch", "answer": "File > New > Project…", "alts": []}
+{"goal": "give me a blank file to type in", "answer": "File > New > Empty File", "alts": []}
+{"goal": "open something I was working on last week", "answer": "File > Open…", "alts": []}
+{"goal": "keep my work so I don't lose it", "answer": "File > Save", "alts": []}
+{"goal": "I have lots of files open, keep all of them safe at once", "answer": "File > Save All", "alts": []}
+{"goal": "throw away what I did and go back to how the file was when I last kept it", "answer": "File > Revert to Saved…", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "oops bring back the thing I just took back", "answer": "Edit > Redo", "alts": []}
+{"goal": "where is this file sitting on my computer", "answer": "File > Show in Finder", "alts": [], "trap": "Navigate > Reveal in Project Navigator"}
+{"goal": "pa-print naman nito", "answer": "File > Print…", "alts": []}
+{"goal": "look for one word in just this page", "answer": "Find > Find…", "alts": [], "trap": "Find > Find in Workspace…"}
+{"goal": "search the whole project for a word", "answer": "Find > Find in Workspace…", "alts": []}
+{"goal": "change every 'colour' on this page to 'color'", "answer": "Find > Find and Replace…", "alts": []}
+{"goal": "start the app and see if it works", "answer": "Product > Run", "alts": []}
+{"goal": "ayaw tumigil, pa-stop nga ng app", "answer": "Product > Stop", "alts": [], "trap": "Debug > Pause / Continue"}
+{"goal": "just put it together without opening it", "answer": "Product > Build", "alts": []}
+{"goal": "its acting weird, wipe the old built stuff and start fresh", "answer": "Product > Clean Build Folder…", "alts": []}
+{"goal": "check that all my tests still pass", "answer": "Product > Test", "alts": []}
+{"goal": "make xcode take up the entire screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "show me the list of all my files on the left", "answer": "View > Navigators > Project", "alts": []}
+{"goal": "show the details panel on the right side", "answer": "View > Inspectors > Show Inspector", "alts": [], "trap": "View > Navigators > Show Navigator"}
+{"goal": "open the bottom area where the messages print out", "answer": "View > Debug Area > Show Debug Area", "alts": ["View > Debug Area > Activate Console"]}
+{"goal": "show me all the errors and warnings in one list", "answer": "View > Navigators > Issues", "alts": []}
+{"goal": "take me to the next red error", "answer": "Navigate > Jump to Next Issue", "alts": [], "trap": "Find > Find Next"}
+{"goal": "save a snapshot of my changes into git with a note", "answer": "Integrate > Commit…", "alts": [], "trap": "File > Save"}
+{"goal": "send my changes up to github", "answer": "Integrate > Push…", "alts": []}
+{"goal": "get the newest version my teammate uploaded and mix it in", "answer": "Integrate > Pull…", "alts": []}
+{"goal": "download a project from github onto my mac", "answer": "Integrate > Clone…", "alts": []}
+{"goal": "i-paste mo dito yung kinopya ko", "answer": "Edit > Paste > Paste", "alts": []}
+{"goal": "where does this thing come from, take me to where it's made", "answer": "Navigate > Jump to Definition", "alts": []}
+{"goal": "open the pretend iphone on my screen", "answer": "Xcode > Open Developer Tool > Simulator", "alts": []}
+{"goal": "paano baguhin yung preferences ng xcode", "answer": "Xcode > Settings…", "alts": []}
+{"goal": "put a picture from my desktop into the project", "answer": "File > Add Files…", "alts": [], "trap": "File > Open…"}
+{"goal": "split the screen so I can see two files side by side", "answer": "File > New > Editor Pane On Right", "alts": []}
+{"goal": "make a copy of this whole file", "answer": "File > Duplicate…", "alts": [], "trap": "Edit > Duplicate"}

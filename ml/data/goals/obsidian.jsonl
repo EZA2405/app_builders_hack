@@ -1,0 +1,35 @@
+{"goal": "start a fresh page to write on", "answer": "File > New Note", "alts": []}
+{"goal": "open my other notebook", "answer": "File > Open Vault…", "alts": []}
+{"goal": "send this to my daughter by email", "answer": "File > Share > Mail", "alts": []}
+{"goal": "text this note to my friend", "answer": "File > Share > Messages", "alts": []}
+{"goal": "make this into a pdf I can attach", "answer": "File > Export To PDF…", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "look for a word in this note", "answer": "Edit > Find", "alts": []}
+{"goal": "change every 'teh' to 'the'", "answer": "Edit > Replace", "alts": [], "trap": "Edit > Find"}
+{"goal": "basahin mo nang malakas", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "add a link to a website", "answer": "Insert > Link", "alts": ["Insert > Markdown Link"]}
+{"goal": "how do I make a list with dots", "answer": "Insert > Bullet List", "alts": [], "trap": "Insert > Numbered List"}
+{"goal": "make a list that goes 1 2 3", "answer": "Insert > Numbered List", "alts": []}
+{"goal": "a checklist I can tick off when I'm done", "answer": "Insert > Task List", "alts": [], "trap": "Insert > Bullet List"}
+{"goal": "put a grid with rows and columns in", "answer": "Insert > Table", "alts": []}
+{"goal": "put a picture in my note", "answer": "Insert > Insert Attachment…", "alts": []}
+{"goal": "make this line a big title", "answer": "Format > Heading 1", "alts": []}
+{"goal": "a smaller title under the main one", "answer": "Format > Heading 2", "alts": []}
+{"goal": "paano gawing bold yung text", "answer": "Format > Bold", "alts": []}
+{"goal": "make the words slanted", "answer": "Format > Italics", "alts": []}
+{"goal": "color it yellow like a highlighter pen", "answer": "Format > Highlight", "alts": []}
+{"goal": "cross out this line but keep it there", "answer": "Format > Strikethrough", "alts": [], "trap": "Edit > Delete"}
+{"goal": "turn the title back into normal writing", "answer": "Format > Body", "alts": []}
+{"goal": "just let me read it, I don't want to see the funny symbols", "answer": "View > Reading View", "alts": [], "trap": "View > Source Mode"}
+{"goal": "hide the panel on the left", "answer": "View > Left Sidebar", "alts": []}
+{"goal": "the letters are too small", "answer": "View > Zoom In", "alts": [], "trap": "Window > Zoom"}
+{"goal": "put the size back to normal", "answer": "View > Actual Size", "alts": []}
+{"goal": "go back to the note I was just on", "answer": "View > Navigate Back", "alts": [], "trap": "Edit > Undo"}
+{"goal": "fill up my whole screen", "answer": "View > Toggle Full Screen", "alts": []}
+{"goal": "where do I change the preferences", "answer": "Obsidian > Settings…", "alts": []}
+{"goal": "close the app all the way", "answer": "Obsidian > Quit Obsidian", "alts": [], "trap": "Obsidian > Hide Obsidian"}
+{"goal": "how do I use this thing, show me the instructions", "answer": "Help > Open Help", "alts": []}
+{"goal": "pa-share sa airdrop yung note", "answer": "File > Share > AirDrop", "alts": []}
+{"goal": "add a little numbered note at the bottom of the page", "answer": "Insert > Footnote", "alts": []}
+{"goal": "close this tab", "answer": "File > Close Tab", "alts": []}
+{"goal": "bukas ng bagong tab", "answer": "File > New Tab", "alts": []}

@@ -1,0 +1,32 @@
+{"goal": "open a blank new tab", "answer": "File > New Tab", "alts": []}
+{"goal": "create something new like a collection", "answer": "File > New…", "alts": []}
+{"goal": "bring in the file someone sent me", "answer": "File > Import…", "alts": []}
+{"goal": "close just this one tab", "answer": "File > Close Tab", "alts": [], "trap": "File > Close Window"}
+{"goal": "open a second postman window", "answer": "File > New Postman Window", "alts": []}
+{"goal": "undo what I just typed", "answer": "Edit > Undo", "alts": []}
+{"goal": "bring back what I just took back", "answer": "Edit > Redo", "alts": []}
+{"goal": "copy this", "answer": "Edit > Copy", "alts": []}
+{"goal": "i-paste dito yung kinopya ko", "answer": "Edit > Paste", "alts": []}
+{"goal": "paste it in plain, without the fancy look", "answer": "Edit > Paste and Match Style", "alts": [], "trap": "Edit > Paste"}
+{"goal": "get rid of this text, I don't need it", "answer": "Edit > Delete", "alts": [], "trap": "Edit > Cut"}
+{"goal": "highlight everything", "answer": "Edit > Select All", "alts": []}
+{"goal": "too small to read", "answer": "View > Zoom In", "alts": [], "trap": "Window > Zoom"}
+{"goal": "everything got too big, shrink it", "answer": "View > Zoom Out", "alts": []}
+{"goal": "put the size back to normal", "answer": "View > Reset Zoom", "alts": [], "trap": "Window > Move & Resize > Return to Previous Size"}
+{"goal": "fill my whole screen with it", "answer": "View > Toggle Full Screen", "alts": []}
+{"goal": "hide the list on the side", "answer": "View > Toggle Sidebar", "alts": [], "trap": "Postman > Hide Postman"}
+{"goal": "show me the log of what got sent out", "answer": "View > Show Postman Console", "alts": []}
+{"goal": "saan yung settings dito", "answer": "Postman > Settings…", "alts": []}
+{"goal": "is there a newer version", "answer": "Postman > Check for Updates…", "alts": []}
+{"goal": "close postman completely", "answer": "Postman > Quit Postman", "alts": [], "trap": "Postman > Hide Postman"}
+{"goal": "put this window away in the dock", "answer": "Window > Minimize", "alts": []}
+{"goal": "close every window", "answer": "Window > Close All", "alts": []}
+{"goal": "where's the how-to guide for this app", "answer": "Help > Documentation", "alts": [], "trap": "Help > Support"}
+{"goal": "I need to contact someone for help", "answer": "Help > Support", "alts": []}
+{"goal": "nag-hang siya, pa-refresh nga", "answer": "Help > Clear Cache and Reload", "alts": []}
+{"goal": "check my spelling", "answer": "Edit > Writing Tools > Proofread", "alts": []}
+{"goal": "I want to talk instead of typing", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "magdagdag ng emoji", "answer": "Edit > Emoji & Symbols", "alts": []}
+{"goal": "show two panels next to each other", "answer": "View > Toggle Two-Pane View", "alts": []}
+{"goal": "move this window to the right half of the screen", "answer": "Window > Move & Resize > Right", "alts": []}
+{"goal": "give me the short version of this text", "answer": "Edit > Writing Tools > Summarize", "alts": []}

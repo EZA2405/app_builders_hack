@@ -1,0 +1,35 @@
+{"goal": "i need to look at a color profile file from my computer", "answer": "File > Open…", "alts": []}
+{"goal": "bring up one of my files in here", "answer": "File > Open…", "alts": []}
+{"goal": "give me another empty window to work in", "answer": "File > New Window", "alts": []}
+{"goal": "done with this one, shut just this window", "answer": "File > Close", "alts": [], "trap": "ColorSync Utility > Quit ColorSync Utility"}
+{"goal": "shut every window this program has open but keep it running", "answer": "File > Close All", "alts": []}
+{"goal": "keep the changes i made", "answer": "File > Save", "alts": []}
+{"goal": "keep a second copy with a new name so i dont lose the original", "answer": "File > Save As…", "alts": [], "trap": "File > Save"}
+{"goal": "store the colour settings as a profile i can use later", "answer": "File > Save ColorSync Profile…", "alts": []}
+{"goal": "I messed it all up, put the file back how it was the last time I saved", "answer": "File > Revert", "alts": [], "trap": "Edit > Undo"}
+{"goal": "turn this picture into a jpeg to send to my son", "answer": "File > Export...", "alts": [], "trap": "File > Print…"}
+{"goal": "paano i-print ito sa papel", "answer": "File > Print…", "alts": []}
+{"goal": "put this on paper", "answer": "File > Print…", "alts": []}
+{"goal": "erase the list of files i opened lately", "answer": "File > Open Recent > Clear Menu", "alts": [], "trap": "Edit > Clear"}
+{"goal": "oops take that back", "answer": "Edit > Undo", "alts": []}
+{"goal": "i undid something by mistake and want it back again", "answer": "Edit > Redo", "alts": [], "trap": "Edit > Undo"}
+{"goal": "take this out and keep it so i can put it somewhere else", "answer": "Edit > Cut", "alts": []}
+{"goal": "duplicate this text so i can stick it in an email", "answer": "Edit > Copy", "alts": []}
+{"goal": "put the thing i copied here", "answer": "Edit > Paste", "alts": []}
+{"goal": "just erase what i highlighted, i dont need it anywhere", "answer": "Edit > Clear", "alts": [], "trap": "Edit > Cut"}
+{"goal": "highlight everything at once", "answer": "Edit > Select All", "alts": []}
+{"goal": "how do i look for a word in here", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "go to the next match", "answer": "Edit > Find > Find Next", "alts": [], "trap": "Edit > Find > Find Previous"}
+{"goal": "make sure i didnt mispell anything", "answer": "Edit > Spelling > Check Spelling", "alts": ["Edit > Spelling > Show Spelling and Grammar"]}
+{"goal": "i'd rather say it out loud than type it", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "gusto ko maglagay ng smiley face", "answer": "Edit > Emoji & Symbols", "alts": []}
+{"goal": "send this window down to the dock for now", "answer": "Window > Minimize", "alts": []}
+{"goal": "make this window bigger", "answer": "Window > Zoom", "alts": []}
+{"goal": "use the whole screen and hide the menu bar and dock", "answer": "Window > Enter Full Screen", "alts": [], "trap": "Window > Fill"}
+{"goal": "put the window in the middle of the screen", "answer": "Window > Center", "alts": []}
+{"goal": "push this window to the left half so i can see something else next to it", "answer": "Window > Move & Resize > Left", "alts": []}
+{"goal": "put the window back to the size it was before", "answer": "Window > Move & Resize > Return to Previous Size", "alts": []}
+{"goal": "i cant find my other windows, bring them all up front", "answer": "Window > Bring All to Front", "alts": []}
+{"goal": "hide this program for a bit without closing it", "answer": "ColorSync Utility > Hide ColorSync Utility", "alts": [], "trap": "Window > Minimize"}
+{"goal": "i'm finished with this whole app", "answer": "ColorSync Utility > Quit ColorSync Utility", "alts": []}
+{"goal": "where can i read instructions for this thing", "answer": "Help > ColorSync Utility Help", "alts": []}

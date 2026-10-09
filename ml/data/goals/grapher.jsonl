@@ -1,0 +1,35 @@
+{"goal": "start a new graph", "answer": "File > New…", "alts": []}
+{"goal": "paano gumawa ng bagong graph", "answer": "File > New…", "alts": []}
+{"goal": "open the graph I made last week", "answer": "File > Open…", "alts": []}
+{"goal": "keep my work so I dont lose it", "answer": "File > Save", "alts": []}
+{"goal": "keep this but under a different name", "answer": "File > Save As…", "alts": []}
+{"goal": "save every graph I have open", "answer": "File > Save All", "alts": [], "trap": "File > Save"}
+{"goal": "turn my graph into a picture I can put in my report", "answer": "File > Export…", "alts": [], "trap": "File > Save As…"}
+{"goal": "i-export ko as image yung graph", "answer": "File > Export…", "alts": []}
+{"goal": "print this graph for my class", "answer": "File > Print…", "alts": []}
+{"goal": "forget all my changes and go back to what I saved", "answer": "File > Revert to Saved", "alts": [], "trap": "Edit > Undo"}
+{"goal": "oops, I messed up the equation, take it back", "answer": "Edit > Undo", "alts": []}
+{"goal": "put back the thing I just undid", "answer": "Edit > Redo", "alts": []}
+{"goal": "copy the graph so I can put it in my document", "answer": "Edit > Copy", "alts": []}
+{"goal": "copy it as a pdf to paste somewhere else", "answer": "Edit > Copy As > PDF", "alts": [], "trap": "File > Export…"}
+{"goal": "make another one of this same line", "answer": "Edit > Duplicate", "alts": [], "trap": "Edit > Copy"}
+{"goal": "put in the equation I copied", "answer": "Edit > Paste", "alts": []}
+{"goal": "select everything on the graph", "answer": "Edit > Select All", "alts": []}
+{"goal": "show me some flat example graphs to play with", "answer": "Examples > 2D Examples", "alts": []}
+{"goal": "I want to see a 3d example", "answer": "Examples > 3D Examples", "alts": []}
+{"goal": "show me an example of a wave like a sine graph", "answer": "Examples > Periodic Functions", "alts": []}
+{"goal": "where are the math symbols like pi and square root", "answer": "Window > Show Equation Palette", "alts": []}
+{"goal": "list of math functions it already knows", "answer": "Help > Show Built-In Definitions", "alts": [], "trap": "Window > Show Equation Palette"}
+{"goal": "make the line dashed or thicker", "answer": "Window > Show Line Styles", "alts": []}
+{"goal": "open the panel with all the settings for this graph", "answer": "Window > Show Inspector", "alts": []}
+{"goal": "put arrows on the end of the line", "answer": "Window > Show Arrows", "alts": []}
+{"goal": "show numbers with 2 decimals on the axis", "answer": "Window > Show Number Formats", "alts": []}
+{"goal": "turn the 3d graph to look at it from another side", "answer": "Window > Show View Angles", "alts": []}
+{"goal": "hide all those side panels", "answer": "Window > Hide Inspectors", "alts": [], "trap": "Grapher > Hide Others"}
+{"goal": "make it fill the whole screen", "answer": "Window > Enter Full Screen", "alts": ["Window > Fill"]}
+{"goal": "put this down in the dock for now", "answer": "Window > Minimize", "alts": [], "trap": "Grapher > Hide Grapher"}
+{"goal": "close this graph window", "answer": "File > Close", "alts": []}
+{"goal": "how does this graph program work", "answer": "Help > Grapher Help", "alts": []}
+{"goal": "tapos na ko, isara mo na yung grapher", "answer": "Grapher > Quit Grapher", "alts": []}
+{"goal": "change how the program works in general", "answer": "Grapher > Settings…", "alts": []}
+{"goal": "make the window bigger", "answer": "Window > Zoom", "alts": []}

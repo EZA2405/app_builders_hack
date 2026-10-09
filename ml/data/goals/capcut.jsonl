@@ -1,0 +1,20 @@
+{"goal": "start making a brand new video", "answer": "File > New Project", "alts": []}
+{"goal": "bring in the videos from my phone that i saved on the computer", "answer": "File > Import", "alts": [], "trap": "File > Export"}
+{"goal": "add my pictures into this video", "answer": "File > Import", "alts": []}
+{"goal": "save the finished video so i can post it on facebook", "answer": "File > Export", "alts": [], "trap": "File > Import"}
+{"goal": "paano i-save yung video para ma-send ko", "answer": "File > Export", "alts": []}
+{"goal": "cut the clip in two right here", "answer": "Edit > Split", "alts": [], "trap": "Edit > Cut"}
+{"goal": "chop this video into two pieces at this spot", "answer": "Edit > Split", "alts": []}
+{"goal": "oops, take that back", "answer": "Edit > Undo", "alts": []}
+{"goal": "throw away this clip, i dont want it", "answer": "Edit > Delete", "alts": [], "trap": "Edit > Cut"}
+{"goal": "make a copy of this clip", "answer": "Edit > Copy", "alts": []}
+{"goal": "put the clip i copied here", "answer": "Edit > Paste", "alts": []}
+{"goal": "move this clip somewhere else in the video", "answer": "Edit > Cut", "alts": []}
+{"goal": "go back to the start screen with all my projects", "answer": "CapCut > Back to home page", "alts": [], "trap": "File > New Project"}
+{"goal": "the panels got all moved around, put them back to normal", "answer": "CapCut > Layout > Reset current layout", "alts": [], "trap": "Edit > Reset"}
+{"goal": "what keys can i press to do things faster", "answer": "Help > Shortcut", "alts": [], "trap": "Help > Walkthrough"}
+{"goal": "show me a tour of how to use this app", "answer": "Help > Walkthrough", "alts": []}
+{"goal": "change the app settings like where videos get saved", "answer": "CapCut > Settings", "alts": []}
+{"goal": "tell them something isn't working", "answer": "Help > Feedback", "alts": []}
+{"goal": "add a heart emoji to my text", "answer": "Edit > Emoji & Symbols", "alts": []}
+{"goal": "close capcut im done editing", "answer": "CapCut > Quit", "alts": []}

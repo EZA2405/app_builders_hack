@@ -1,0 +1,35 @@
+{"goal": "open another window", "answer": "Shell > New Window", "alts": ["Shell > New Window with Current Profile"]}
+{"goal": "pa-open ng bagong tab", "answer": "Shell > New Tab", "alts": ["Shell > New Tab with Current Profile"]}
+{"goal": "split the screen in half so there's a left and a right side", "answer": "Shell > Split Vertically with Current Profile", "alts": ["Shell > Split Vertically…"]}
+{"goal": "I want one box on top and one box on the bottom", "answer": "Shell > Split Horizontally with Current Profile", "alts": ["Shell > Split Horizontally…"], "trap": "Shell > Split Vertically with Current Profile"}
+{"goal": "close this one", "answer": "Shell > Close", "alts": []}
+{"goal": "oh no I closed the tab by accident, bring it back", "answer": "Shell > Undo Close", "alts": ["Edit > Undo Close Session"]}
+{"goal": "keep all this text in a file so I can look at it later", "answer": "Shell > Save Contents…", "alts": []}
+{"goal": "pa-print nung nasa screen", "answer": "Shell > Print > Screen", "alts": []}
+{"goal": "copy this", "answer": "Edit > Copy", "alts": []}
+{"goal": "put the thing I copied here", "answer": "Edit > Paste", "alts": []}
+{"goal": "look for a word in all this text", "answer": "Edit > Find > Find…", "alts": [], "trap": "Edit > Find > Find Globally..."}
+{"goal": "highlight everything", "answer": "Edit > Select All", "alts": []}
+{"goal": "wipe the screen clean, there's way too much text", "answer": "Edit > Clear Buffer", "alts": [], "trap": "Edit > Find > Clear Find"}
+{"goal": "the letters are too small i cant read them", "answer": "View > Make Text Bigger", "alts": [], "trap": "View > Zoom In on Selection"}
+{"goal": "the words are huge now, shrink them", "answer": "View > Make Text Smaller", "alts": []}
+{"goal": "put the letter size back to how it was", "answer": "View > Make Text Normal Size", "alts": []}
+{"goal": "make this fill my whole screen", "answer": "View > Toggle Full Screen", "alts": []}
+{"goal": "where did the blinking line go, I lost it", "answer": "View > Find Cursor", "alts": []}
+{"goal": "show me what time each line showed up", "answer": "View > Show Timestamps", "alts": []}
+{"goal": "what were the commands I typed before", "answer": "Session > Open Command History…", "alts": ["View > Toolbelt > Command History"]}
+{"goal": "it's frozen, start this one over from the beginning", "answer": "Session > Restart Session", "alts": []}
+{"goal": "change the colors and preferences", "answer": "iTerm2 > Settings…", "alts": []}
+{"goal": "make the window see-through so I can see behind it", "answer": "View > Use Transparency", "alts": []}
+{"goal": "go to the next tab over", "answer": "Window > Tab > Select Tab > Select Next Tab", "alts": [], "trap": "Shell > New Tab"}
+{"goal": "give this tab a name so I know what it is", "answer": "Window > Tab > Edit Tab Title", "alts": []}
+{"goal": "pull this tab out into its own window", "answer": "Window > Tab > Move Tab > Move Tab to New Window", "alts": []}
+{"goal": "paint this tab a different color", "answer": "View > Current Tab Color", "alts": []}
+{"goal": "remember how my windows are laid out for next time", "answer": "Window > Arrangements > Save Window Arrangement", "alts": []}
+{"goal": "tuck this window down into the dock", "answer": "Window > Minimize", "alts": [], "trap": "iTerm2 > Hide iTerm2"}
+{"goal": "paano isara yung buong iterm", "answer": "iTerm2 > Quit iTerm2", "alts": []}
+{"goal": "jump over to the box on the right", "answer": "Window > Split Pane > Select Split Pane > Select Pane Right", "alts": []}
+{"goal": "make all the split boxes the same size", "answer": "Window > Arrange Windows > Arrange Split Panes Evenly", "alts": []}
+{"goal": "make just this one box big for a while", "answer": "View > Maximize Active Pane", "alts": [], "trap": "View > Toggle Full Screen"}
+{"goal": "grab only what came out from the last thing I ran", "answer": "Edit > Select Output of Last Command", "alts": [], "trap": "Edit > Select All"}
+{"goal": "what does this error mean, explain it to me", "answer": "Edit > Explain Output with AI", "alts": []}

@@ -1,0 +1,35 @@
+{"goal": "i want to look up what a different word means", "answer": "Edit > Find > Search For a New Word…", "alts": [], "trap": "Edit > Find > Find…"}
+{"goal": "what does this word mean, let me type it", "answer": "Edit > Find > Search For a New Word…", "alts": []}
+{"goal": "look for a word somewhere inside this long explanation", "answer": "Edit > Find > Find…", "alts": [], "trap": "Edit > Find > Search For a New Word…"}
+{"goal": "next spot where that word shows up", "answer": "Edit > Find > Find Next", "alts": []}
+{"goal": "go back to the word i looked up before this", "answer": "Go > Back", "alts": [], "trap": "Window > Show Previous Tab"}
+{"goal": "balik sa previous na word", "answer": "Go > Back", "alts": []}
+{"goal": "i went back too far, go forward again", "answer": "Go > Forward", "alts": []}
+{"goal": "search all the dictionaries at the same time, not just one", "answer": "Search > All Dictionaries", "alts": [], "trap": "Search > Select Next Dictionary"}
+{"goal": "switch over to the thesaurus or whatever book comes next", "answer": "Search > Select Next Dictionary", "alts": []}
+{"goal": "go back to the dictionary i was using before", "answer": "Search > Select Previous Dictionary", "alts": []}
+{"goal": "pick which dictionaries show up, like adding spanish", "answer": "Dictionary > Settings…", "alts": []}
+{"goal": "open another window so i can look up two words", "answer": "File > New Window", "alts": []}
+{"goal": "i want a second tab like in my web browser", "answer": "File > New Tab", "alts": []}
+{"goal": "just close this one, not all of them", "answer": "File > Close", "alts": [], "trap": "File > Close All"}
+{"goal": "close every dictionary window", "answer": "File > Close All", "alts": []}
+{"goal": "print out this meaning so i can keep it", "answer": "File > Print…", "alts": []}
+{"goal": "pa-print naman nitong definition", "answer": "File > Print…", "alts": []}
+{"goal": "copy the meaning so i can put it in my email", "answer": "Edit > Copy", "alts": [], "trap": "Edit > Paste"}
+{"goal": "put in the word i copied from somewhere else", "answer": "Edit > Paste", "alts": []}
+{"goal": "highlight the whole definition", "answer": "Edit > Select All", "alts": []}
+{"goal": "erase what i typed in the box", "answer": "Edit > Delete", "alts": []}
+{"goal": "undo what i just did", "answer": "Edit > Undo", "alts": []}
+{"goal": "i'd like to say the word out loud instead of spelling it", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "type a letter with an accent mark", "answer": "Edit > Emoji & Symbols", "alts": []}
+{"goal": "go to the tab on the right", "answer": "Window > Show Next Tab", "alts": []}
+{"goal": "switch to the tab i had open before this one", "answer": "Window > Show Previous Tab", "alts": [], "trap": "Go > Back"}
+{"goal": "show me all my tabs as little pictures", "answer": "Window > Show All Tabs", "alts": []}
+{"goal": "pull this tab out into a separate window", "answer": "Window > Move Tab to New Window", "alts": [], "trap": "File > New Window"}
+{"goal": "too many windows, put them all together into one", "answer": "Window > Merge All Windows", "alts": [], "trap": "Window > Bring All to Front"}
+{"goal": "the letters are tiny, make the whole thing take up my screen", "answer": "Window > Enter Full Screen", "alts": []}
+{"goal": "tuck the window away in the dock", "answer": "Window > Minimize", "alts": []}
+{"goal": "make the window a bit bigger", "answer": "Window > Zoom", "alts": []}
+{"goal": "stop the dictionary, im done", "answer": "Dictionary > Quit Dictionary", "alts": []}
+{"goal": "hide dictionary for now pero wag i-close", "answer": "Dictionary > Hide Dictionary", "alts": []}
+{"goal": "how does this dictionary thing work", "answer": "Help > Dictionary Help", "alts": []}

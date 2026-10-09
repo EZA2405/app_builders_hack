@@ -1,0 +1,20 @@
+{"goal": "the picture is sideways, turn it", "answer": "Edit > Rotate Left", "alts": []}
+{"goal": "paano i-ikot yung picture, nakatagilid", "answer": "Edit > Rotate Left", "alts": []}
+{"goal": "delete this photo from my phone", "answer": "Edit > Delete", "alts": [], "trap": "Edit > Cut"}
+{"goal": "pa-delete nga ng blurry na picture na to", "answer": "Edit > Delete", "alts": []}
+{"goal": "pick all the pictures at once", "answer": "Edit > Select All", "alts": []}
+{"goal": "copy this picture", "answer": "Edit > Copy", "alts": []}
+{"goal": "put the picture I copied here", "answer": "Edit > Paste", "alts": []}
+{"goal": "the list of my phone and scanner on the left is gone", "answer": "View > Show Sidebar", "alts": [], "trap": "View > Show Toolbar"}
+{"goal": "the buttons at the top disappeared", "answer": "View > Show Toolbar", "alts": [], "trap": "View > Show Sidebar"}
+{"goal": "make it fill the whole screen", "answer": "View > Enter Full Screen", "alts": ["Window > Fill"]}
+{"goal": "make the window a bit bigger", "answer": "Window > Zoom", "alts": []}
+{"goal": "put this in the dock for now", "answer": "Window > Minimize", "alts": [], "trap": "Image Capture > Hide Image Capture"}
+{"goal": "hide the other programs so I only see this one", "answer": "Image Capture > Hide Others", "alts": [], "trap": "Image Capture > Hide Image Capture"}
+{"goal": "move the window to the right half of the screen", "answer": "Window > Move & Resize > Right", "alts": []}
+{"goal": "put the window back to the size it was", "answer": "Window > Move & Resize > Return to Previous Size", "alts": [], "trap": "Window > Zoom"}
+{"goal": "show the tabs at the top", "answer": "View > Show Tab Bar", "alts": []}
+{"goal": "go to the next tab", "answer": "Window > Show Next Tab", "alts": []}
+{"goal": "pull this tab out into its own window", "answer": "Window > Move Tab to New Window", "alts": []}
+{"goal": "I'm done importing, close the program", "answer": "Image Capture > Quit Image Capture", "alts": []}
+{"goal": "how do I scan a document with this", "answer": "Help > Image Capture Help", "alts": []}

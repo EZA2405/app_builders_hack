@@ -1,0 +1,25 @@
+{"goal": "show me everything about my computer", "answer": "File > Show System Report", "alts": []}
+{"goal": "save these details to a file for the repair shop", "answer": "File > Save…", "alts": []}
+{"goal": "keep a copy of this report on my computer", "answer": "File > Save…", "alts": [], "trap": "Edit > Copy"}
+{"goal": "print out the details of my mac", "answer": "File > Print…", "alts": []}
+{"goal": "pa-print nga nito para sa technician", "answer": "File > Print…", "alts": []}
+{"goal": "update the info, I just plugged something in", "answer": "File > Refresh Information", "alts": []}
+{"goal": "i-refresh mo nga, di pa lumalabas yung printer ko", "answer": "File > Refresh Information", "alts": []}
+{"goal": "too much stuff on here, show me less", "answer": "File > Show Less Information", "alts": []}
+{"goal": "I can't read the serial number, have the computer say it", "answer": "File > Speak Serial Number", "alts": [], "trap": "Edit > Start Dictation…"}
+{"goal": "send this report over to Apple support", "answer": "File > Send to Apple…", "alts": []}
+{"goal": "copy this so I can paste it in a message to my son", "answer": "Edit > Copy", "alts": [], "trap": "File > Send to Apple…"}
+{"goal": "highlight all the text", "answer": "Edit > Select All", "alts": []}
+{"goal": "look for the word memory in here", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "go to the next place it says that", "answer": "Edit > Find > Find Next", "alts": []}
+{"goal": "open a report I saved before", "answer": "File > Open…", "alts": []}
+{"goal": "close this window", "answer": "File > Close", "alts": []}
+{"goal": "I'm finished, close the whole program", "answer": "System Information > Quit System Information", "alts": [], "trap": "File > Close"}
+{"goal": "erase the list of reports I opened lately", "answer": "File > Open Recent > Clear Menu", "alts": [], "trap": "Edit > Delete"}
+{"goal": "put this in the dock for now", "answer": "Window > Minimize", "alts": [], "trap": "System Information > Hide System Information"}
+{"goal": "make it fill my whole screen", "answer": "Window > Enter Full Screen", "alts": ["Window > Fill"]}
+{"goal": "make the window bigger", "answer": "Window > Zoom", "alts": []}
+{"goal": "move the window to the left half of the screen", "answer": "Window > Move & Resize > Left", "alts": []}
+{"goal": "put the window back how big it was", "answer": "Window > Move & Resize > Return to Previous Size", "alts": []}
+{"goal": "how do i use this", "answer": "Help > System Information Help", "alts": []}
+{"goal": "what is this app, what version", "answer": "System Information > About System Information", "alts": []}

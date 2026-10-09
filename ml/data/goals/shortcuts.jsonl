@@ -1,0 +1,35 @@
+{"goal": "close this window", "answer": "File > Close", "alts": []}
+{"goal": "shut all of these windows at once", "answer": "File > Close All", "alts": []}
+{"goal": "oops, take that back", "answer": "Edit > Undo", "alts": []}
+{"goal": "bring back what I just undid", "answer": "Edit > Redo", "alts": []}
+{"goal": "copy this text", "answer": "Edit > Copy", "alts": []}
+{"goal": "put what I copied right here", "answer": "Edit > Paste", "alts": []}
+{"goal": "move these words to another spot, take them out first", "answer": "Edit > Cut", "alts": []}
+{"goal": "get rid of this word", "answer": "Edit > Delete", "alts": [], "trap": "Edit > Cut"}
+{"goal": "highlight everything in here", "answer": "Edit > Select All", "alts": []}
+{"goal": "where did I type the word email", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "swap one word for another everywhere it shows up", "answer": "Edit > Find > Find and Replace…", "alts": []}
+{"goal": "check my spelling please", "answer": "Edit > Spelling and Grammar > Check Document Now", "alts": []}
+{"goal": "fix the mistakes in what I wrote for me", "answer": "Edit > Writing Tools > Proofread", "alts": [], "trap": "Edit > Spelling and Grammar > Check Grammar With Spelling"}
+{"goal": "say this in a nicer, warmer way", "answer": "Edit > Writing Tools > Make Friendly", "alts": []}
+{"goal": "this is too long, make it shorter", "answer": "Edit > Writing Tools > Make Concise", "alts": [], "trap": "Format > Font > Smaller"}
+{"goal": "give me the gist of this in a few lines", "answer": "Edit > Writing Tools > Summarize", "alts": []}
+{"goal": "basahin mo nga ng malakas to", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "ok stop reading it out loud", "answer": "Edit > Speech > Stop Speaking", "alts": []}
+{"goal": "I want to talk instead of type", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "add a smiley face", "answer": "Edit > Emoji & Symbols", "alts": []}
+{"goal": "make the letters bigger i cant see", "answer": "Format > Font > Bigger", "alts": [], "trap": "Window > Zoom"}
+{"goal": "pa-bold naman nitong word", "answer": "Format > Font > Bold", "alts": []}
+{"goal": "make the writing slanted", "answer": "Format > Font > Italic", "alts": []}
+{"goal": "draw a line under these words", "answer": "Format > Font > Underline", "alts": []}
+{"goal": "change the color of the text to red", "answer": "Format > Font > Show Colors", "alts": []}
+{"goal": "pick a different style of lettering", "answer": "Format > Font > Show Fonts", "alts": []}
+{"goal": "copy how this text looks so the other text looks the same", "answer": "Format > Font > Copy Style", "alts": [], "trap": "Edit > Copy"}
+{"goal": "put the words in the middle", "answer": "Format > Text > Center", "alts": [], "trap": "Window > Center"}
+{"goal": "line the text up on the right side", "answer": "Format > Text > Align Right", "alts": []}
+{"goal": "send this window down to the dock", "answer": "Window > Minimize", "alts": [], "trap": "ShortcutsViewService > Hide ShortcutsViewService"}
+{"goal": "make the window take up my whole screen", "answer": "Window > Enter Full Screen", "alts": ["Window > Fill"]}
+{"goal": "make it all CAPITAL letters", "answer": "Edit > Transformations > Make Upper Case", "alts": []}
+{"goal": "it looks like shouting, make it small letters", "answer": "Edit > Transformations > Make Lower Case", "alts": []}
+{"goal": "stop it from changing my words on its own", "answer": "Edit > Spelling and Grammar > Correct Spelling Automatically", "alts": [], "trap": "Edit > Spelling and Grammar > Check Document Now"}
+{"goal": "saan ba yung help dito", "answer": "Help > Shortcuts Help", "alts": []}
