@@ -55,6 +55,8 @@
       .map((id) => root.getElementById?.(id)?.textContent || "").join(" ").trim();
     return compact(labelled || el.getAttribute("aria-label") ||
       Array.from(el.labels || []).map((label) => label.textContent).join(" ") ||
+      // Visible words beat a tooltip, as in the browser's own accessible name; fields never use their text.
+      (el.matches("input,textarea,select") || sensitive(el) ? "" : el.innerText.trim()) ||
       el.getAttribute("alt") || el.title || el.getAttribute("placeholder") ||
       (sensitive(el) ? "" : el.innerText), 80);
   }

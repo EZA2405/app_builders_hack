@@ -81,6 +81,7 @@ Every message has `type`, and requests have `id` (string) echoed in the response
 | `user_action` | `kind` (`"click"` \| `"input"` \| `"change"` \| `"submit"` \| `"keydown_escape"`), `ref?` (if the target is a known element), `on_target` (bool: was it the highlighted element?) | The user did something |
 | `page_changed` | `url`, `title`, `reason` (`"navigation"` \| `"spa_route"` \| `"dom_mutation"`) | Debounced 300ms; the app will re-snapshot |
 | `card_button` | `button` (`"again"` \| `"stuck"` \| `"stop"` \| `"read_aloud"`) | User pressed a button on the instruction card |
+| `goal` | `text` (max 300 chars) | User typed a goal in the toolbar popup. The app plans and sends `highlight`s; apps without goal support can ignore it. Popup **Stop** sends `card_button` `stop`. |
 
 ### Element shape (in `snapshot.elements[]`)
 

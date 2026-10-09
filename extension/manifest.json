@@ -16,6 +16,10 @@
   "background": {
     "service_worker": "src/service_worker.js"
   },
+  "action": {
+    "default_title": "ScreenGuide",
+    "default_popup": "src/popup.html"
+  },
   "content_scripts": [
     {
       "matches": [

@@ -110,6 +110,16 @@ function connect() {
 }
 
 chrome.runtime.onMessage.addListener((message, sender, respond) => {
+  // Only our own toolbar popup may start or stop a goal; content scripts report a web page URL here.
+  if (sender.id === chrome.runtime.id && sender.url === chrome.runtime.getURL("src/popup.html")) {
+    if (message?.type === "sg_status") respond({ connected: socket?.readyState === WebSocket.OPEN });
+    if (message?.type === "sg_goal" && typeof message.text === "string") send({ type: "goal", text: message.text.slice(0, 300) });
+    if (message?.type === "sg_stop") {
+      send({ type: "card_button", button: "stop" });
+      void activeTab().then((tab) => tab?.id && chrome.tabs.sendMessage(tab.id, { type: "clear", id: "popup" })).catch(() => {});
+    }
+    return;
+  }
   if (sender.tab && sender.frameId === 0 && message?.type === "sg_frame_snapshots") {
     void frameSnapshots(sender.tab.id, message).then(respond).catch(() => respond([]));
     return true;

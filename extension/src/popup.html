@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>ScreenGuide</title>
+<style>
+  :root { --accent: #F08A24; --ink: #1C1C1E; --soft: #48484D; --field: rgba(0, 0, 0, .06); --bg: #FAFAFC; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #F5F5F7; --soft: #D1D1D6; --field: rgba(255, 255, 255, .12); --bg: #242428; } }
+  body { width: 340px; margin: 0; padding: 22px; background: var(--bg); color: var(--ink); font: 16px/1.35 -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+  h1 { margin: 0 0 14px; font-size: 24px; }
+  textarea { box-sizing: border-box; width: 100%; min-height: 72px; padding: 12px 14px; border: 0; border-radius: 16px; background: var(--field); color: inherit; font-family: inherit; font-size: 18px; line-height: 1.3; resize: none; }
+  textarea:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .buttons { display: flex; gap: 8px; margin-top: 12px; }
+  button { min-height: 44px; padding: 8px 18px; border: 0; border-radius: 999px; background: var(--field); color: inherit; font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer; }
+  button[type=submit] { background: var(--ink); color: var(--bg); }
+  button:disabled { opacity: .35; cursor: default; }
+  #status { margin: 14px 0 0; font-size: 14px; color: var(--soft); }
+  #status::before { content: "●"; margin-right: 6px; color: var(--dot, #8E8E93); }
+  code { font-size: 12px; user-select: all; }
+</style>
+<form id="ask">
+  <h1>What would you like to do?</h1>
+  <textarea id="goal" placeholder="For example: turn on subtitles" maxlength="300" autofocus></textarea>
+  <div class="buttons">
+    <button type="submit" id="go">Guide me</button>
+    <button type="button" id="stop">Stop</button>
+  </div>
+</form>
+<p id="status">Checking…</p>
+<script src="popup.js"></script>

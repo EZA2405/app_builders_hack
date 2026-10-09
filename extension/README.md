@@ -18,6 +18,18 @@ The guide points; you click. Plain JavaScript, Manifest V3, no build step. Chrom
 
 Stable extension ID: `iokhdpnepbjnngdafdfafcjlpdbnolio`. The Mac app should allow the WebSocket origin `chrome-extension://iokhdpnepbjnngdafdfafcjlpdbnolio`.
 
+## Try it as a standalone guide (dev orderer)
+
+While the Mac app is unfinished, a hosted model can stand in for the local one and pick each step:
+
+```sh
+extension/.venv/bin/python extension/mock/mock_app.py --orderer claude   # Claude Haiku via Claude Code; or claude:sonnet, or codex
+```
+
+Click the ScreenGuide toolbar button (pin it from the puzzle-piece menu), type a goal such as "turn on subtitles", and press **Guide me**. The page shows a ring and a card after a few seconds (about 6–8s per step with Haiku, ~10s with Codex). Click the highlighted control yourself; the next step follows. **I'm stuck** asks again with a spotlight, the speaker button reads the step aloud with macOS `say`, and **Stop** ends the goal. You can also type `goal <text>` in the terminal.
+
+**This sends data off the Mac**, so it is for testing only and never the product path: element role, name and heading context plus the page title and host/path go to Anthropic or OpenAI after `ml/make_fixtures.py` sanitizing (`is_personal`, `redact_names`) plus email and long-number redaction. Field values, positions and URL query strings are never sent. It needs a logged-in `claude` or `codex` CLI. Advancing waits for a click on the target, so steps that only need typing move on when the user clicks the next control or submits.
+
 ## Demo: YouTube captions
 
 Open a video with captions available, such as [3Blue1Brown’s neural network introduction](https://www.youtube.com/watch?v=aircAruvnKk). Start playback, leave captions off, and move your mouse over the video if player controls have faded out.

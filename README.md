@@ -62,6 +62,7 @@ laya-train --data data/train.jsonl --eval data/val.jsonl --base convaiinnovation
 | Speech input (planned) | Local | On-device speech recognition |
 | Model download | Internet, once | Hugging Face |
 | Hosted Jev | Internet | **Benchmark comparison only**, not used by the product |
+| Extension dev orderer (Claude Code / Codex CLI) | Internet | **Extension testing only** while the Mac app is unfinished; sanitized element names only. Not the product path. |
 
 ## Models, tools and disclosures
 - **Local models:**
@@ -69,6 +70,7 @@ laya-train --data data/train.jsonl --eval data/val.jsonl --base convaiinnovation
   - Qwen3.5-4B via [local-jev](https://github.com/amithgc/local-jev) (MIT)
   - Apple Foundation Models (on-device, tested and rejected, see RESULTS)
 - **Cloud, comparison only:** TypeSafe Jev API.
+- **Cloud, extension testing only:** Claude Haiku via Claude Code CLI, or OpenAI Codex CLI, as a stand-in step picker (`extension/mock/orderer.py`).
 - **Training data:** goals written by Claude Opus (Anthropic) subagents from real app menus; labels verified programmatically.
-- **AI development tools:** Claude Code.
+- **AI development tools:** Claude Code, OpenAI Codex.
 - **Existing code:** none. Everything here was written during the hackathon (Oct 9–10, 2026).

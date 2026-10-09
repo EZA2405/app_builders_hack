@@ -21,10 +21,20 @@ def extension_id():
 
 
 class MockApp:
-    def __init__(self):
+    def __init__(self, orderer=None):
         self.socket = None
         self.elements = []
         self.serial = 0
+        # Guided mode (--orderer): goal, steps done, current target, pending re-decision.
+        self.orderer = orderer
+        self.goal = None
+        self.done = []
+        self.current = None
+        self.note = ""
+        self.want_decision = False
+        self.empty_retries = 0
+        self.timer = None
+        self.turn = 0
 
     async def send(self, kind, **fields):
         if self.socket is None:
@@ -38,7 +48,9 @@ class MockApp:
         parts = line.split()
         if not parts:
             return
-        if parts[0] == "snap":
+        if parts[0] == "goal" and len(parts) > 1:
+            await self.start(line[5:].strip())
+        elif parts[0] == "snap":
             await self.send("snapshot_request")
         elif parts[0] == "clear":
             await self.send("clear")
@@ -56,6 +68,95 @@ class MockApp:
                 fields["candidates"] = refs
             await self.send("highlight", **fields)
 
+    async def start(self, goal):
+        if not self.orderer:
+            print("Start with --orderer claude (or codex) to guide a goal.", flush=True)
+            return
+        self.goal, self.done, self.current, self.note = goal, [], None, ""
+        print(f"Goal: {goal}", flush=True)
+        self.schedule(0)
+
+    def schedule(self, delay, note=""):
+        """Re-snapshot after the page settles, then ask the orderer; a newer request replaces an older one."""
+        if self.timer:
+            self.timer.cancel()
+        self.note = note or self.note
+        self.turn += 1  # Any decision still in flight is now stale.
+
+        async def later():
+            await asyncio.sleep(delay)
+            self.want_decision = True
+            await self.send("snapshot_request")
+        self.timer = asyncio.create_task(later())
+
+    async def decide(self, snapshot):
+        import orderer
+        turn = self.turn
+        if not snapshot["elements"] and self.empty_retries < 5:
+            # Mid-navigation the new page's content script may not be ready yet.
+            self.empty_retries += 1
+            self.schedule(1)
+            return
+        self.empty_retries = 0
+        page = orderer.sanitize(snapshot)
+        note, self.note = self.note, ""
+        decision, seconds = await orderer.ask(self.orderer, orderer.prompt(self.goal, self.done, page, note))
+        if not self.goal or turn != self.turn:
+            return
+        print(f"Orderer ({seconds:.1f}s): {json.dumps(decision, ensure_ascii=False)}", flush=True)
+        known = {e["ref"]: e for e in page["elements"]}
+        if not decision:
+            print("Orderer gave no usable answer; type goal again or press I'm stuck.", flush=True)
+            return
+        if decision.get("done"):
+            print(f"Done: {decision.get('message', '')}", flush=True)
+            self.goal = None
+            await self.send("clear")
+            return
+        refs = [r for r in decision.get("candidates") or [decision.get("ref")] if r in known]
+        if not refs:
+            print("Orderer picked a ref that isn't on the page; asking again.", flush=True)
+            self.schedule(0, "Your last answer used a ref that is not in the list.")
+            return
+        self.current = {"refs": refs, "instruction": str(decision.get("instruction") or f"Click **{known[refs[0]]['name']}**.")}
+        fields = {"ref": refs[0], "instruction": self.current["instruction"], "step": len(self.done) + 1}
+        if decision.get("hint"):
+            fields["hint"] = str(decision["hint"])
+        if len(refs) > 1:
+            fields["candidates"] = refs
+        if note.startswith("The user is stuck"):
+            fields["style"] = "spotlight"
+        await self.send("highlight", **fields)
+
+    async def guide(self, message):
+        """Advance the goal from extension events. Returns without effect when no goal is active."""
+        kind = message["type"]
+        if kind == "goal" and isinstance(message.get("text"), str) and message["text"].strip():
+            await self.start(message["text"].strip()[:300])
+        elif not self.goal:
+            return
+        elif kind == "snapshot" and self.want_decision:
+            self.want_decision = False
+            asyncio.create_task(self.decide(message))
+        elif kind == "user_action" and message.get("kind") == "click" and message.get("on_target") and self.current:
+            self.done.append(self.current["instruction"].replace("**", ""))
+            self.current = None
+            self.schedule(1.5)
+        elif kind == "page_changed" and message.get("reason") in ("navigation", "spa_route"):
+            self.schedule(1.5)
+        elif kind == "highlight_error":
+            self.schedule(0.5, f"Your last choice could not be shown ({message.get('reason')}); pick another.")
+        elif kind == "card_button":
+            button = message.get("button")
+            if button == "stop":
+                self.goal = None
+                print("Stopped.", flush=True)
+            elif button == "stuck":
+                self.schedule(0, "The user is stuck on the last step. Pick again; the hint should say exactly where it is on screen.")
+            elif button == "read_aloud" and self.current:
+                # Local macOS speech; nothing leaves the Mac.
+                await asyncio.create_subprocess_exec("say", self.current["instruction"].replace("**", ""))
+
     async def handler(self, socket, path):
         self.socket = socket
         self.elements = []
@@ -67,15 +168,21 @@ class MockApp:
                     kind = message["type"]
                     if kind == "hello":
                         await self.send("snapshot_request")
+                        if self.orderer:
+                            print("Type a goal in the ScreenGuide toolbar button, or here: goal <what to do>", flush=True)
                     elif kind == "snapshot":
                         self.elements = message["elements"]
-                        print(f"\n{message['title']} ({message['ms']:.1f}ms)", flush=True)
-                        print("ref | role | name | context | in_viewport", flush=True)
-                        for element in self.elements:
-                            print(" | ".join(str(element.get(key, "")) for key in
-                                             ("ref", "role", "name", "context", "in_viewport")), flush=True)
+                        if self.goal and self.want_decision:
+                            print(f"Snapshot: {message['title']} ({len(self.elements)} elements, {message['ms']:.1f}ms)", flush=True)
+                        else:
+                            print(f"\n{message['title']} ({message['ms']:.1f}ms)", flush=True)
+                            print("ref | role | name | context | in_viewport", flush=True)
+                            for element in self.elements:
+                                print(" | ".join(str(element.get(key, "")) for key in
+                                                 ("ref", "role", "name", "context", "in_viewport")), flush=True)
                     elif kind != "ping":
                         print(json.dumps(message, ensure_ascii=False), flush=True)
+                    await self.guide(message)
                 except (ValueError, KeyError, TypeError):
                     print("Ignored malformed message.", flush=True)
         except ConnectionClosed:
@@ -86,8 +193,8 @@ class MockApp:
             print("Extension disconnected.", flush=True)
 
 
-async def main(origin):
-    app = MockApp()
+async def main(origin, orderer):
+    app = MockApp(orderer)
     commands = asyncio.Queue()
     loop = asyncio.get_running_loop()
 
@@ -112,7 +219,9 @@ async def main(origin):
 
     async with serve(app.handler, "127.0.0.1", 47823, origins=[origin], process_request=check_path):
         print(f"Listening on ws://127.0.0.1:47823/ext for {origin}", flush=True)
-        print("Commands: snap, hl <ref>, clear, notsure <ref> <ref> <ref>, or a keyword", flush=True)
+        print("Commands: snap, hl <ref>, clear, notsure <ref> <ref> <ref>, goal <text>, or a keyword", flush=True)
+        if orderer:
+            print(f"Orderer: {orderer}. Sanitized element names go to a hosted model (dev testing only).", flush=True)
         while True:
             try:
                 await app.command(await commands.get())
@@ -123,8 +232,10 @@ async def main(origin):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--extension-id", help="Override the ID derived from manifest.json")
+    parser.add_argument("--orderer", help="Dev only: let a hosted model pick each step. claude (Haiku), claude:sonnet, or codex. "
+                        "Sends a sanitized element list off this Mac.")
     args = parser.parse_args()
     try:
-        asyncio.run(main(f"chrome-extension://{args.extension_id or extension_id()}"))
+        asyncio.run(main(f"chrome-extension://{args.extension_id or extension_id()}", args.orderer))
     except KeyboardInterrupt:
         pass
