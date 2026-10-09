@@ -59,21 +59,21 @@ def answer(res):
     ans = res.get("answers", res).get("next_command", res) if isinstance(res, dict) else res
     return ans if isinstance(ans, dict) else {}
 
-def choose(url, model, app, commands, goal, key, limit=200, keep=3):
+def choose(url, model, app, commands, goal, key, limit=200, keep=3, done=None):
     """Pick one command. Lists over the API's 255-choice cap run as a tournament:
     chunks of `limit`, keep the top `keep` per chunk by probability, then a final round."""
     if len(commands) <= limit:
-        res, dt = ask(url, model, app, commands, goal, key)
+        res, dt = ask(url, model, app, commands, goal, key, done)
         a = answer(res)
         return a.get("choice"), a.get("confidence"), dt, res
     finalists, total = [], 0.0
     for i in range(0, len(commands), limit):
-        res, dt = ask(url, model, app, commands[i:i + limit], goal, key)
+        res, dt = ask(url, model, app, commands[i:i + limit], goal, key, done)
         total += dt
         probs = answer(res).get("probabilities") or {}
         finalists += sorted(probs, key=probs.get, reverse=True)[:keep]
     # Recurse until the finalists fit in one call (small groups, e.g. Laya's 16, need several rounds).
-    choice, conf, dt, res = choose(url, model, app, finalists, goal, key, limit, keep)
+    choice, conf, dt, res = choose(url, model, app, finalists, goal, key, limit, keep, done)
     return choice, conf, total + dt, res
 
 def main():
@@ -86,10 +86,15 @@ def main():
     load_dotenv()
     fx = json.load(open(a.fixture))
     hits, times = 0, []
-    goals = {g: set(ok) for g, ok in fx["goals"].items()} if "goals" in fx else GOALS
-    for goal, ok in goals.items():
-        key = os.environ.get("TYPESAFE_API_KEY") or os.environ.get("JEV_API_KEY") or os.environ.get("LOCAL_JEV_API_KEY")
-        choice, conf, dt, res = choose(a.url, a.model, fx["app"], fx["commands"], goal, key, limit=a.group)
+    key = os.environ.get("TYPESAFE_API_KEY") or os.environ.get("JEV_API_KEY") or os.environ.get("LOCAL_JEV_API_KEY")
+    if "steps" in fx:   # multi-step journeys: each step has its own page, candidates and steps-done
+        cases = [(s["goal"], set(s["ok"]), s["app"], s["commands"], s.get("done")) for s in fx["steps"]]
+    else:
+        goals = {g: set(ok) for g, ok in fx["goals"].items()} if "goals" in fx else GOALS
+        cases = [(g, ok, fx["app"], fx["commands"], None) for g, ok in goals.items()]
+    goals = cases
+    for goal, ok, app, commands, done in cases:
+        choice, conf, dt, res = choose(a.url, a.model, app, commands, goal, key, limit=a.group, done=done)
         good = choice in ok
         hits += good
         times.append(dt)

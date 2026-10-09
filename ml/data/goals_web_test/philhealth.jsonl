@@ -1,0 +1,15 @@
+{"goal": "I want to check my PhilHealth contributions", "page": "test_philhealth", "done": [], "answer": "link \"PhilHealth Member Portal\"", "alts": []}
+{"goal": "Find a hospital near me that accepts PhilHealth", "page": "test_philhealth", "done": [], "answer": "link \"Find a PhilHealth Accredited Health Facility near you!\"", "alts": []}
+{"goal": "Saan ko pwedeng tawagan ang PhilHealth?", "page": "test_philhealth", "done": [], "answer": "link \"Click to Call or Chat\" · header", "alts": ["link \"Contact Us\""]}
+{"goal": "Search the site for the maternity benefit", "page": "test_philhealth", "done": [], "answer": "searchbox \"Search PhilHealth pages\" · search", "alts": []}
+{"goal": "Where is the nearest PhilHealth office?", "page": "test_philhealth", "done": [], "answer": "link \"Directory\"", "alts": ["link \"Contact Us\""]}
+{"goal": "Read the latest news from PhilHealth", "page": "test_philhealth", "done": [], "answer": "link \"News\"", "alts": []}
+{"goal": "How much will PhilHealth pay for my operation?", "page": "test_philhealth", "done": [], "answer": "link \"All Case Rates Search\"", "alts": []}
+{"goal": "Log in to see my PhilHealth contributions", "page": "test_philhealth__5", "done": ["clicked link \"Online Services\""], "answer": "link \"Register/Login\"", "alts": []}
+{"goal": "Look up how much PhilHealth covers for an illness", "page": "test_philhealth__5", "done": ["clicked link \"Online Services\""], "answer": "link \"Begin Search\"", "alts": []}
+{"goal": "I am a senior citizen, what PhilHealth coverage do I get?", "page": "test_philhealth__3", "done": ["clicked link \"Members\""], "answer": "link \"Senior Citizens\"", "alts": []}
+{"goal": "OFW ang anak ko, paano siya magbabayad ng PhilHealth?", "page": "test_philhealth__3", "done": ["clicked link \"Members\""], "answer": "link \"Overseas Filipino Workers\"", "alts": []}
+{"goal": "What does PhilHealth cover if I am confined in the hospital?", "page": "test_philhealth__2", "done": ["clicked link \"Benefits\""], "answer": "link \"Inpatient Benefit Packages\"", "alts": []}
+{"goal": "What help can I get from PhilHealth for cancer treatment?", "page": "test_philhealth__2", "done": ["clicked link \"Benefits\""], "answer": "link \"Z Benefits Packages for Catastrophic Illnesses\"", "alts": []}
+{"goal": "Saan ko ma-download yung PhilHealth member registration form?", "page": "test_philhealth__6", "done": ["clicked link \"Downloads\""], "answer": "button \"Forms\" · main: For Expanded ZMORPH for Lower Limb Orthosis", "alts": []}
+{"goal": "I have a small business, how do I register as an employer?", "page": "test_philhealth__4", "done": ["clicked link \"Partners\""], "answer": "link \"Open Employers\" · main: Healthcare Providers", "alts": []}

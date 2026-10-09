@@ -1,0 +1,582 @@
+{
+ "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+ "title": "Me at the zoo - YouTube",
+ "elements": [
+  {
+   "ref": "e1",
+   "role": "link",
+   "name": "YouTube Home",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e2",
+   "role": "button",
+   "name": "Search",
+   "context": "search",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e3",
+   "role": "button",
+   "name": "Search with your voice",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e4",
+   "role": "link",
+   "name": "Sign in",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e5",
+   "role": "button",
+   "name": "Guide",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e6",
+   "role": "combobox",
+   "name": "Search",
+   "context": "form",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e7",
+   "role": "button",
+   "name": "Settings",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e8",
+   "role": "link",
+   "name": "Nakakatakot Magbantay Ng Tindahan | Narinig Mo Ba? (Full Game) 21 minutes",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e9",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e10",
+   "role": "link",
+   "name": "Survive 30 Days Chained To Your Ex, Win $250,000 37 minutes",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e11",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e12",
+   "role": "link",
+   "name": "🔴 Live – 24 Hour Video Game Music Radio 🎮 – GameGrooves 💿 – NO AI 🚫",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e13",
+   "role": "button",
+   "name": "Play",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e14",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e15",
+   "role": "link",
+   "name": "The Diary of a Wimpy Kid Theory (Alex Bale) 26 minutes",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e16",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e17",
+   "role": "link",
+   "name": "Top 50 OLDEST People in World History — #1 Is Unbelievable 5 minutes, 29 seconds",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e18",
+   "role": "button",
+   "name": "",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e19",
+   "role": "slider",
+   "name": "Seek slider",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e20",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e21",
+   "role": "button",
+   "name": "Play (k)",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e22",
+   "role": "button",
+   "name": "Mute (m)",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e23",
+   "role": "button",
+   "name": "0 Minutes 0 Seconds of 0 Minutes 19 Seconds",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e24",
+   "role": "button",
+   "name": "Intro",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e25",
+   "role": "button",
+   "name": "Autoplay is on",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e26",
+   "role": "button",
+   "name": "Subtitles/closed captions unavailable",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e27",
+   "role": "button",
+   "name": "Settings",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e28",
+   "role": "button",
+   "name": "Theater mode (t)",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e29",
+   "role": "button",
+   "name": "Full screen (f)",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e30",
+   "role": "link",
+   "name": "The Evolution of Meme Songs (1580 - 2026) 13 minutes, 42 seconds",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e31",
+   "role": "link",
+   "name": "jawed",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e32",
+   "role": "link",
+   "name": "jawed",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e33",
+   "role": "button",
+   "name": "Subscribe to jawed.",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e34",
+   "role": "button",
+   "name": "like this video along with 20,028,533 other people",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e35",
+   "role": "button",
+   "name": "Dislike this video",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e36",
+   "role": "button",
+   "name": "Share",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e37",
+   "role": "button",
+   "name": "Download",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e38",
+   "role": "button",
+   "name": "Save to playlist",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e39",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e40",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e41",
+   "role": "link",
+   "name": "SAN DIEGO ZOO",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e42",
+   "role": "link",
+   "name": "Sneaking into Epstein's Temple 33 minutes",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e43",
+   "role": "link",
+   "name": "YouTube Channel Link: Microplastics are accumulating in human brains at an alarm",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e44",
+   "role": "button",
+   "name": "...more",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e45",
+   "role": "button",
+   "name": "Skip navigation",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e46",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e47",
+   "role": "link",
+   "name": "PINK SCREEN 1 HOUR 1 hour, 1 minute",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e48",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e49",
+   "role": "link",
+   "name": "Minecraft Footage Smuggled Out Of North Korea 39 minutes",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e50",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e51",
+   "role": "link",
+   "name": "When you audition without giving a f**k 19 minutes",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e52",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e53",
+   "role": "link",
+   "name": "Try Not To Die Laughing💀 14 minutes, 20 seconds",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e54",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e55",
+   "role": "link",
+   "name": "Pink Aura TV Screensaver | Soft Pink Aesthetic Background | 2 Hours 2 hours",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e56",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e57",
+   "role": "link",
+   "name": "try not to laugh challenge 8 minutes, 4 seconds",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e58",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e59",
+   "role": "link",
+   "name": "I Survived India's Brutal 4 Day Sleeper Train 19 minutes",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e60",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e61",
+   "role": "link",
+   "name": "Pink Waves 🌸 | 2 Hour Animated Background | Soft Pink Gradient 2 hours",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e62",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e63",
+   "role": "link",
+   "name": "The Cat in the Hat in Your House in 360/VR 1 minute, 23 seconds",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e64",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e65",
+   "role": "link",
+   "name": "1 Hour of Soft Blue White Screen in 4K! 1 hour",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e66",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e67",
+   "role": "link",
+   "name": "I Survived 50 Hours With Africa’s Warrior Tribe 26 minutes",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e68",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e69",
+   "role": "link",
+   "name": "Unano vs Unano 7 minutes, 34 seconds",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e70",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e71",
+   "role": "link",
+   "name": "When Celebrities Don’t Get Recognized by Fans! 16 minutes",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e72",
+   "role": "button",
+   "name": "More actions",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  }
+ ]
+}

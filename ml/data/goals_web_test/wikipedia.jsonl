@@ -1,0 +1,10 @@
+{"goal": "I want to read about Jose Rizal", "page": "test_wikipedia", "done": [], "answer": "searchbox \"Search Wikipedia\" · form", "alts": []}
+{"goal": "Log in to my Wikipedia account", "page": "test_wikipedia", "done": [], "answer": "link \"You're encouraged to log in; however, it's not mandatory. [ctrl-option-o]\" · Personal tools", "alts": []}
+{"goal": "How do I make a new Wikipedia account?", "page": "test_wikipedia", "done": [], "answer": "link \"You are encouraged to create an account and log in; however, it is not mandatory\" · Personal tools", "alts": []}
+{"goal": "Show me the part about the history of the Philippines", "page": "test_wikipedia", "done": [], "answer": "link \"History\" · Contents", "alts": ["link \"History of the Philippines\" · main: Philippines"]}
+{"goal": "Gusto kong basahin yung tungkol sa ekonomiya ng Pilipinas", "page": "test_wikipedia", "done": [], "answer": "link \"Economy\" · Contents", "alts": ["link \"Economy of the Philippines\" · main: Philippines"]}
+{"goal": "Jump to the section about Filipino culture", "page": "test_wikipedia", "done": [], "answer": "link \"Culture\" · Contents", "alts": ["link \"Culture of the Philippines\" · main: Philippines"]}
+{"goal": "Play the national anthem so I can listen to it", "page": "test_wikipedia", "done": [], "answer": "button \"Play audio\" · main: Philippines", "alts": []}
+{"goal": "I want to read about the typhoons that hit our country", "page": "test_wikipedia", "done": [], "answer": "link \"Typhoons in the Philippines\" · main: Philippines", "alts": []}
+{"goal": "Read more about Manila, the capital", "page": "test_wikipedia", "done": [], "answer": "link \"Manila\" · main: Philippines", "alts": ["link \"Capital of the Philippines\" · main: Philippines"]}
+{"goal": "Pakialis yung announcement sa taas tungkol sa monuments", "page": "test_wikipedia", "done": [], "answer": "button \"Hide\"", "alts": []}

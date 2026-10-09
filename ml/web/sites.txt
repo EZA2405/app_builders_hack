@@ -15,7 +15,7 @@ reddit https://www.reddit.com/
 outlook https://outlook.live.com/owa/
 zoom_join https://zoom.us/join
 bir https://www.bir.gov.ph/
-philhealth https://www.philhealth.gov.ph/
+test_philhealth https://www.philhealth.gov.ph/
 pagibig https://www.pagibigfund.gov.ph/
 passport https://www.passport.gov.ph/
 lto https://lto.gov.ph/

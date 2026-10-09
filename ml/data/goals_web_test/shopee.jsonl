@@ -1,0 +1,10 @@
+{"goal": "I want to look for a rice cooker", "page": "test_shopee", "done": [], "answer": "combobox \"Sign up and get 100% off on your first order\" · search", "alts": []}
+{"goal": "Paano ko makikita yung mga nilagay ko sa cart?", "page": "test_shopee", "done": [], "answer": "link \"Shopping Cart Please log in to view cart / add items to cart\" · header", "alts": []}
+{"goal": "Log in to my Shopee account", "page": "test_shopee", "done": [], "answer": "link \"Login\" · nav", "alts": []}
+{"goal": "I don't have an account yet, I want to make one", "page": "test_shopee", "done": [], "answer": "link \"Sign Up\" · nav", "alts": []}
+{"goal": "Change the language of the website", "page": "test_shopee", "done": [], "answer": "button \"English\" · nav", "alts": []}
+{"goal": "I need to talk to customer service about my order", "page": "test_shopee", "done": [], "answer": "link \"Help\" · nav", "alts": []}
+{"goal": "Where can I find free shipping vouchers?", "page": "test_shopee", "done": [], "answer": "link \"Free Shipping & Vouchers\"", "alts": []}
+{"goal": "I want to buy groceries like rice and canned goods", "page": "test_shopee", "done": [], "answer": "link \"Shopee Supermarket\"", "alts": ["link \"GROCERIES\" · footer: Buy and Sell Online on Shopee Philippines"]}
+{"goal": "May sale ba ngayon? Gusto ko makita yung mga mura", "page": "test_shopee", "done": [], "answer": "link \"Flash Deals\"", "alts": []}
+{"goal": "How do I return an item and get my money back?", "page": "test_shopee", "done": [], "answer": "link \"Help\" · nav", "alts": ["link \"return or refund\" · footer: Buy and Sell Online on Shopee Philippines"]}

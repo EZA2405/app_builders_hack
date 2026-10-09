@@ -1,0 +1,154 @@
+{
+ "url": "https://www.philhealth.gov.ph/partners/",
+ "title": "Corporate Partners | PhilHealth",
+ "elements": [
+  {
+   "ref": "e1",
+   "role": "link",
+   "name": "Click to Call or Chat",
+   "context": "header",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e2",
+   "role": "searchbox",
+   "name": "Search PhilHealth pages",
+   "context": "search",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e3",
+   "role": "button",
+   "name": "Search",
+   "context": "search",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e4",
+   "role": "link",
+   "name": "PhilHealth Logo",
+   "context": "header",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e5",
+   "role": "link",
+   "name": "About Us",
+   "context": "nav",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e6",
+   "role": "link",
+   "name": "Benefits",
+   "context": "nav",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e7",
+   "role": "link",
+   "name": "Members",
+   "context": "nav",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e8",
+   "role": "link",
+   "name": "Partners",
+   "context": "nav",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e9",
+   "role": "link",
+   "name": "Online Services",
+   "context": "nav",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e10",
+   "role": "link",
+   "name": "Downloads",
+   "context": "nav",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e11",
+   "role": "link",
+   "name": "Transparency",
+   "context": "nav",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e12",
+   "role": "link",
+   "name": "Open Healthcare Providers",
+   "context": "main: Healthcare Providers",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e13",
+   "role": "link",
+   "name": "Open Employers",
+   "context": "main: Healthcare Providers",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e14",
+   "role": "link",
+   "name": "Open Service Providers",
+   "context": "main: Healthcare Providers",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e15",
+   "role": "link",
+   "name": "Open Collecting Partners",
+   "context": "main: Healthcare Providers",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e16",
+   "role": "link",
+   "name": "Contact Us",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e17",
+   "role": "link",
+   "name": "Disclaimer",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e18",
+   "role": "link",
+   "name": "Privacy Notice",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  }
+ ],
+ "arrived_by": {
+  "from": "philhealth",
+  "clicked": "Partners"
+ }
+}

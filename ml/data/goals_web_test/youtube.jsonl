@@ -1,0 +1,10 @@
+{"goal": "The video is not moving, how do I start playing it?", "page": "test_youtube", "done": [], "answer": "button \"Play (k)\"", "alts": []}
+{"goal": "Make the video fill my whole screen", "page": "test_youtube", "done": [], "answer": "button \"Full screen (f)\"", "alts": []}
+{"goal": "Pakilakihin naman yung video, ang liit kasi", "page": "test_youtube", "done": [], "answer": "button \"Full screen (f)\"", "alts": ["button \"Theater mode (t)\""]}
+{"goal": "Turn off the sound of the video", "page": "test_youtube", "done": [], "answer": "button \"Mute (m)\"", "alts": []}
+{"goal": "I want to turn on the subtitles so I can read what they say", "page": "test_youtube", "done": [], "answer": "button \"Subtitles/closed captions unavailable\"", "alts": []}
+{"goal": "I want to look for videos on how to cook adobo", "page": "test_youtube", "done": [], "answer": "combobox \"Search\" · form", "alts": []}
+{"goal": "Sign in to my YouTube account", "page": "test_youtube", "done": [], "answer": "link \"Sign in\"", "alts": []}
+{"goal": "Balik tayo sa main page ng YouTube", "page": "test_youtube", "done": [], "answer": "link \"YouTube Home\"", "alts": []}
+{"goal": "Send this video to my grandson", "page": "test_youtube", "done": [], "answer": "button \"Share\"", "alts": []}
+{"goal": "Follow this channel so I see their new videos", "page": "test_youtube", "done": [], "answer": "button \"Subscribe to jawed.\"", "alts": []}

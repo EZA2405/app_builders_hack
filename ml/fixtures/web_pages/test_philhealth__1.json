@@ -1,0 +1,434 @@
+{
+ "url": "https://www.philhealth.gov.ph/about_us/",
+ "title": "About Us | PhilHealth",
+ "elements": [
+  {
+   "ref": "e1",
+   "role": "link",
+   "name": "home",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e2",
+   "role": "link",
+   "name": "contact us",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e3",
+   "role": "link",
+   "name": "disclaimer",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e4",
+   "role": "link",
+   "name": "privacy notice",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e5",
+   "role": "link",
+   "name": "About Us",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e6",
+   "role": "link",
+   "name": "Members",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e7",
+   "role": "link",
+   "name": "Partners",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e8",
+   "role": "link",
+   "name": "Online Services",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e9",
+   "role": "link",
+   "name": "Downloads",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e10",
+   "role": "link",
+   "name": "Transparency",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e11",
+   "role": "link",
+   "name": "actioncenter@philhealth.gov.ph",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e12",
+   "role": "link",
+   "name": "PhilHealthofficial",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e13",
+   "role": "link",
+   "name": "teamphilhealth",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e14",
+   "role": "link",
+   "name": "PhilHealth STUDIES",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e15",
+   "role": "link",
+   "name": "PhilHealth Strategic Plan for 2021-2023",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e16",
+   "role": "link",
+   "name": "History",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e17",
+   "role": "link",
+   "name": "Annual Reports",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e18",
+   "role": "link",
+   "name": "Agency's Mandate And Functions",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e19",
+   "role": "link",
+   "name": "Strategic Planning",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e20",
+   "role": "link",
+   "name": "Vision, Mission, Core Values",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e21",
+   "role": "link",
+   "name": "Board Of Directors",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e22",
+   "role": "link",
+   "name": "Philippine National Formulary (PNF) Essential Medicines List (EML) (As Of Novemb",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e23",
+   "role": "link",
+   "name": "Executive Officers",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e24",
+   "role": "link",
+   "name": "Organizational Structure",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e25",
+   "role": "link",
+   "name": "Visual Brand Identity Elements",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e26",
+   "role": "link",
+   "name": "HTA Forum (2006)",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e27",
+   "role": "link",
+   "name": "ISO Certification",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e28",
+   "role": "link",
+   "name": "National TB Control Program Manual",
+   "context": "",
+   "in_viewport": true,
+   "enabled": true
+  },
+  {
+   "ref": "e29",
+   "role": "link",
+   "name": "Annual Report 2025",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e30",
+   "role": "link",
+   "name": "Comprehensive And Unified Policy For TB Control",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e31",
+   "role": "link",
+   "name": "Archives",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e32",
+   "role": "link",
+   "name": "Policy Recommendations On Leptospirosis",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e33",
+   "role": "link",
+   "name": "Stats and Charts",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e34",
+   "role": "link",
+   "name": "International Social Security Association",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e35",
+   "role": "link",
+   "name": "ASEAN Social Security Association",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e36",
+   "role": "link",
+   "name": "Philippine Diagnosis-Related Groups Implementation Manual",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e37",
+   "role": "link",
+   "name": "Annex A: Related PhilHealth Circulars And Policies",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e38",
+   "role": "link",
+   "name": "Annex B: MDC Grouping Algorithms",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e39",
+   "role": "link",
+   "name": "R.A. 7875 And IRR",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e40",
+   "role": "link",
+   "name": "Annex C Directory: Clinical Code Appendices For DRG Grouping (Excel)",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e41",
+   "role": "link",
+   "name": "R.A. 9241 And IRR",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e42",
+   "role": "link",
+   "name": "2026",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e43",
+   "role": "link",
+   "name": "Archives",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e44",
+   "role": "link",
+   "name": "R.A. 10606",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e45",
+   "role": "link",
+   "name": "Revised IRR Of The National Health Insurance Act Of 2013 (R.A. 7875 As Amended B",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e46",
+   "role": "link",
+   "name": "PhilHealth Corporate Data Dictionary",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e47",
+   "role": "link",
+   "name": "R.A. 11223 (Universal Health Care Act)",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e48",
+   "role": "link",
+   "name": "Annual Procurement Plan",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e49",
+   "role": "link",
+   "name": "UHC-IRR",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e50",
+   "role": "link",
+   "name": "Privacy Notices",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e51",
+   "role": "link",
+   "name": "IRR Of R.A. 11228",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e52",
+   "role": "link",
+   "name": "PhilHealth Rules On Administrative Cases (PROAC) Involving Health Care Providers",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  },
+  {
+   "ref": "e53",
+   "role": "link",
+   "name": "The 2026 Omnibus Implementing Rules And Regulations Of R.A. No. 7875, As Amended",
+   "context": "",
+   "in_viewport": false,
+   "enabled": true
+  }
+ ],
+ "arrived_by": {
+  "from": "philhealth",
+  "clicked": "About Us"
+ }
+}
