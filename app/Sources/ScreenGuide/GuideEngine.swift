@@ -38,10 +38,17 @@ final class GuideEngine {
             return
         }
         app.activate()
-        if BrowserGuide.browsers.contains(app.bundleIdentifier ?? ""), Bridge.shared.connected {
-            task = Task { await self.runWeb() }
-        } else {
-            task = Task { await self.run() }
+        let web = BrowserGuide.browsers.contains(app.bundleIdentifier ?? "") && Bridge.shared.connected
+        task = Task {
+            // The local model also checks the goal (catches rewordings the keyword rules miss).
+            let p = await self.planner.risky(goal: goal)
+            self.log("RISK p=\(String(format: "%.2f", p))")
+            if p >= 0.6 {
+                self.show(.detour, label: "Wait", text: "Wait. Real banks, government offices and support teams never need to see your screen, control your computer, or get your codes.",
+                          hint: "If someone asked you to do this, stop and call your family first.", target: nil)
+                return
+            }
+            if web { await self.runWeb() } else { await self.run() }
         }
     }
 

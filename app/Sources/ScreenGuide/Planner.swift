@@ -69,6 +69,23 @@ struct Planner {
         return (r.choice == here ? current : r.choice, r.confidence)
     }
 
+    /// Local yes/no: is someone getting this person to share their screen, install a remote-control app,
+    /// or give away a code? (Same question as ml/scam_eval.py; returns the "yes" probability.)
+    func risky(goal: String) async -> Double {
+        let body: [String: Any] = ["model": model, "state": "A person asks for help on their Mac: \"\(goal)\"",
+                                   "questions": ["risky": ["type": "noul", "instructions":
+                                       "Is someone getting this person to share their screen, install a remote-control app, or give away a code, password or PIN?"]]]
+        var req = URLRequest(url: url)
+        req.httpMethod = "POST"
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.httpBody = try? JSONSerialization.data(withJSONObject: body)
+        req.timeoutInterval = 10
+        guard let (data, _) = try? await URLSession.shared.data(for: req),
+              let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { return 0 }
+        let a = ((json["answers"] as? [String: Any]) ?? json)["risky"] as? [String: Any] ?? [:]
+        return (a["noul"] as? Double) ?? (a["probability"] as? Double) ?? 0
+    }
+
     private func ask(state: String, instructions: String, options: [String]) async throws
         -> (choice: String, confidence: Double, probs: [String: Double]) {
         var crit: [String: String] = [:]
