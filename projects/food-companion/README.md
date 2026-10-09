@@ -29,7 +29,7 @@ The basic text API recovered fixture text but sometimes split prices from their 
 
 ## Physical-phone decision gate
 
-Demo device: iPhone 15 Pro Max; exact iOS version and signing are still unverified. Before deciding Vision is sufficient:
+Demo device: iPhone 15 Pro Max running iOS 27.0. Signing, installation, launch, and all five synthetic tests passed on the phone. The [real-photo check](DEVICE_TESTING.md) exposed omissions and incorrect price associations; Vision is not yet sufficient for arbitrary menus. Airplane Mode remains unverified. Before deciding an engine is sufficient:
 
 1. Photograph five real menus: clear single column, multiple columns, low light, mixed English/Filipino names, and decorative fonts.
 2. Make the photos available locally, enable airplane mode, and import each into the app.
