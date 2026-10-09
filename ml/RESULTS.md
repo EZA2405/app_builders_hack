@@ -95,6 +95,13 @@ Apple's Foundation Model (on-device) restated each of the 127 validation goals a
 
 The rewrites hurt: the picker was trained on raw phrasings, and some rewrites change the intent. **Not used for picking.** Apple's model is used only to word the plan and hints for the step Laya already chose.
 
+## Experiment: Apple on-device model judges Laya's top 3 (rejected), 2026-10-10
+Laya v4e5's final-round top 3 for the 127 validation goals contain the right command **111/127** times (top-1: **102/127**). Apple's Foundation Model was shown the request plus those 3 commands and asked to pick one (37 s total, 124/127 answered):
+- always use the judge: **102/127** (it fixed 6 and broke 6)
+- use the judge only when Laya's top probability is < 0.9, 0.7 or 0.5: 103/127; < 0.3: 102/127
+
+Net gain is within noise, so it's **not used**. Reproduce: `python3 experiments/val_top3.py` (needs laya-serve with `guide-v4e5`), then `swiftc -O experiments/judge_top3.swift -o judge && ./judge /tmp/sg/val_top3.json out.json`.
+
 ## "Wait, check first" risk check (yes/no)
 Question: "Is someone getting this person to share their screen, install a remote-control app, or give away a code, password or PIN?" The test set is 30 goals in `ml/scam_eval.py` (14 risky, 16 look-alike normal), written before any run.
 
