@@ -97,8 +97,8 @@ async function waitFor(check, timeout = 10000) {
           target: { l: target.left, t: target.top, r: target.right, b: target.bottom },
           ring: { l: parseFloat(ring.style.left), t: parseFloat(ring.style.top) } };
       }, selector);
-      assert(Math.abs(geometry.ring.l - geometry.target.l + 6) < 1);
-      assert(Math.abs(geometry.ring.t - geometry.target.t + 6) < 1);
+      assert(Math.abs(geometry.ring.l - geometry.target.l + 4) < 1);
+      assert(Math.abs(geometry.ring.t - geometry.target.t + 4) < 1);
       const c = geometry.card, t = geometry.target;
       assert(c.r <= t.l || c.l >= t.r || c.b <= t.t || c.t >= t.b, 'Card covers target');
     }

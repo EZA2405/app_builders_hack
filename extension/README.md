@@ -79,4 +79,4 @@ Measured in headless Chromium on Oct 9, 2026: the live YouTube captions highligh
 
 The browser extension reads the page's interactive elements and draws highlights locally. It contains no AI and sends data only to the ScreenGuide app on the same Mac (127.0.0.1). Field values from password and payment fields are never read.
 
-AI development tool: OpenAI Codex. Runtime dependency: none. Mock dependency: Python `websockets`. Browser-test dependency: Playwright. The WebSocket message names and fields match [SPEC.md](SPEC.md).
+AI development tools: OpenAI Codex, Claude Code. Overlay styling follows direction A ("Liquid Glass") of the Beside design handoff in `design/handoff/`, made with Claude Design. Runtime dependency: none. Mock dependency: Python `websockets`. Browser-test dependency: Playwright. The WebSocket message names and fields match [SPEC.md](SPEC.md).

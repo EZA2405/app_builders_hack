@@ -350,7 +350,7 @@
     }
     rings = targets.map((el, index) => {
       const node = document.createElement("div");
-      node.className = "ring";
+      node.className = message.candidates?.length ? "ring candidate" : "ring";
       node.setAttribute("aria-hidden", "true");
       if (message.candidates?.length) {
         const badge = document.createElement("span");
