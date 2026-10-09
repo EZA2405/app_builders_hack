@@ -17,7 +17,8 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
 <plist version="1.0">
 <dict>
   <key>CFBundleIdentifier</key><string>dev.alexi.screenguide</string>
-  <key>CFBundleName</key><string>ScreenGuide</string>
+  <key>CFBundleName</key><string>Gabay</string>
+  <key>CFBundleDisplayName</key><string>Gabay</string>
   <key>CFBundleExecutable</key><string>ScreenGuide</string>
   <key>CFBundlePackageType</key><string>APPL</string>
   <key>CFBundleShortVersionString</key><string>0.1</string>

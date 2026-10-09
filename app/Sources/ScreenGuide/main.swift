@@ -63,23 +63,52 @@ if let i = args.firstIndex(of: "--press"), args.count > i + 3 {
     exit(ok ? 0 : 4)
 }
 
-// Default: minimal menu bar app so macOS lists us under Accessibility.
+// Default: Gabay, the menu bar guide.
+@MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
     var item: NSStatusItem!
+    let engine = GuideEngine()
+    var ask: AskPanel!
+    /// The app the user was in before opening Gabay: that's the one we guide.
+    var lastApp: NSRunningApplication?
+
     func applicationDidFinishLaunching(_ n: Notification) {
+        _ = axTrusted(prompt: true)
+        lastApp = NSWorkspace.shared.frontmostApplication
+        NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didActivateApplicationNotification,
+                                                          object: nil, queue: .main) { [weak self] note in
+            guard let a = note.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication,
+                  a.bundleIdentifier != Bundle.main.bundleIdentifier else { return }
+            MainActor.assumeIsolated { self?.lastApp = a }
+        }
+        ask = AskPanel { [weak self] goal in self?.begin(goal) }
+
         item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        item.button?.image = NSImage(systemSymbolName: "hand.point.up.left", accessibilityDescription: "Screen Guide")
-        let menu = NSMenu()
-        let status = NSMenuItem(title: axTrusted(prompt: true) ? "Accessibility: on" : "Accessibility: needs permission", action: nil, keyEquivalent: "")
-        menu.addItem(status)
-        menu.addItem(.separator())
-        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-        item.menu = menu
+        item.button?.image = NSImage(systemSymbolName: "circle.circle", accessibilityDescription: "Gabay")
+        item.button?.target = self
+        item.button?.action = #selector(toggleAsk)
+
+        // DEV: ScreenGuide.app --guide <AppName> "<goal>" starts a session directly.
+        if let i = args.firstIndex(of: "--guide"), args.count > i + 2, let target = runningApp(args[i + 1]) {
+            engine.start(goal: args[i + 2], app: target)
+        }
+    }
+
+    @objc func toggleAsk() {
+        if ask.isVisible { ask.orderOut(nil) } else { ask.present() }
+    }
+
+    func begin(_ goal: String) {
+        ask.orderOut(nil)
+        guard let target = lastApp else { return }
+        engine.start(goal: goal, app: target)
     }
 }
 
-let app = NSApplication.shared
-let delegate = AppDelegate()
-app.delegate = delegate
-app.setActivationPolicy(.accessory)
-app.run()
+MainActor.assumeIsolated {
+    let app = NSApplication.shared
+    let delegate = AppDelegate()
+    app.delegate = delegate
+    app.setActivationPolicy(.accessory)
+    withExtendedLifetime(delegate) { app.run() }
+}
