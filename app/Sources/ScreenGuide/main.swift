@@ -120,7 +120,20 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         // DEV: --preview ask|guide|notsure|wait|done|thinking renders one UI state with a fake target (design QA).
         if let i = args.firstIndex(of: "--preview"), args.count > i + 1 { preview(args[i + 1]) }
-        else if !axTrusted(prompt: false) || args.contains("--welcome") { showWelcome() }
+        else if !args.contains("--plan"), !axTrusted(prompt: false) || args.contains("--welcome") { showWelcome() }
+
+        // DEV: --plan <AppName> goals.json out.json — first-step decisions only (no overlay, no clicks), then quit.
+        if let i = args.firstIndex(of: "--plan"), args.count > i + 3, let target = runningApp(args[i + 1]),
+           let data = FileManager.default.contents(atPath: args[i + 2]),
+           let goals = try? JSONDecoder().decode([String].self, from: data) {
+            let out = args[i + 3]
+            Task { @MainActor in
+                let r = await self.engine.planBatch(app: target, goals: goals)
+                writeJSON(r, to: out)
+                NSApp.terminate(nil)
+            }
+            return
+        }
 
         // DEV: ScreenGuide.app --guide <AppName> "<goal>" starts a session directly.
         if let i = args.firstIndex(of: "--guide"), args.count > i + 2, let target = runningApp(args[i + 1]) {

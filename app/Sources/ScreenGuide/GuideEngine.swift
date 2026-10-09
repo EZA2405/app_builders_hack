@@ -18,6 +18,8 @@ final class GuideEngine {
     private var doneTyping = false
     /// "Not this one": guesses the person rejected this task; the model never offers them again.
     var rejected = Set<String>()
+    /// Apple model's verdict for this goal: nil = not asked yet, "" = not a settings job, else the pane.
+    var settingsPane: String?
     /// Apple's on-device model's one-line plan for this task, shown on the first card.
     var planLine: String?
     /// Set when Gabay points at a Dock icon: the app we expect the person to open next.
@@ -35,7 +37,7 @@ final class GuideEngine {
 
     func start(goal: String, app: NSRunningApplication) {
         stop()
-        self.goal = goal; self.app = app; done = []; stepNo = 0; rejected = []; notThis = false; planLine = nil
+        self.goal = goal; self.app = app; done = []; stepNo = 0; rejected = []; notThis = false; planLine = nil; settingsPane = nil
         log("START goal=\(goal) app=\(app.localizedName ?? "?")")
         if let w = ScamGuard.check(goal: goal) {
             log("SCAM GUARD goal")
@@ -106,18 +108,7 @@ final class GuideEngine {
             let state = await read(app)
             let pick: Planner.Pick?
             do {
-                // Stay first: the app in front is usually where the person wants help ("this photo").
-                let here = try await planner.choose(app: state.frontApp, goal: goal, done: done, candidates: focus(state))
-                let g = goal.lowercased()
-                let mentionsThis = ["this ", "ito", "ito ", "yung "].contains { g.contains($0) }
-                let namesOther = Self.namedApp(in: g, state: state, current: app.localizedName ?? "")
-                if done.isEmpty, !mentionsThis, namesOther || (here?.confidence ?? 0) < 0.35,
-                   let route = try await routeToApp(state, current: app.localizedName ?? state.frontApp),
-                   namesOther || route.confidence >= 0.6 {
-                    pick = route
-                } else {
-                    pick = here
-                }
+                pick = try await decide(state, app: app)
             } catch {
                 log("PLANNER ERROR \(error)")
                 show(.done, label: "Something went wrong", text: "I can't think right now.", hint: "Make sure Gabay's helper is running, then try again.", target: nil)
@@ -162,6 +153,60 @@ final class GuideEngine {
             if isFinal(pick.candidate) { finish(); return }
         }
         if !Task.isCancelled { finish() }
+    }
+
+    /// One decision on the current screen: stay in this app, or (first step only) send the person to another.
+    func decide(_ state: ScreenState, app: NSRunningApplication) async throws -> Planner.Pick? {
+        let g = goal.lowercased()
+        let mentionsThis = ["this ", "ito", "ito ", "yung "].contains { g.contains($0) }
+        let current = app.localizedName ?? state.frontApp
+        // Settings jobs (camera for a video call, Wi-Fi, text size…) go to System Settings, then its pane.
+        // "yung" is just "the" in Taglish; only "this"/"ito" pins the request to the app in front.
+        let words = Set(g.components(separatedBy: CharacterSet.alphanumerics.inverted))
+        let pinned = words.contains("this") || words.contains("ito")
+        if done.isEmpty, settingsPane == nil, !pinned || current == "System Settings" {
+            settingsPane = await SettingsRoute.pane(for: goal) ?? ""
+            log("SETTINGS pane=\(settingsPane ?? "")")
+        }
+        if let pane = settingsPane, !pane.isEmpty {
+            if current != "System Settings",
+               let icon = state.candidates.first(where: { $0.source == "dock" && $0.label == "System Settings" }) {
+                expectedApp = "System Settings"
+                return Planner.Pick(candidate: icon, confidence: 0.9, runnersUp: [])
+            }
+            if current == "System Settings", !done.contains(where: { $0.contains(pane) }),
+               let row = state.candidates.first(where: { $0.source == "window" && $0.role == "row" && $0.label == pane }) {
+                return Planner.Pick(candidate: row, confidence: 0.9, runnersUp: [])
+            }
+        }
+        // Stay first: the app in front is usually where the person wants help ("this photo").
+        let here = try await planner.choose(app: state.frontApp, goal: goal, done: done, candidates: focus(state))
+        let namesOther = Self.namedApp(in: g, state: state, current: app.localizedName ?? "")
+        if done.isEmpty, !mentionsThis, namesOther || (here?.confidence ?? 0) < 0.35,
+           let route = try await routeToApp(state, current: app.localizedName ?? state.frontApp),
+           namesOther || route.confidence >= 0.6 {
+            return route
+        }
+        return here
+    }
+
+    /// DEV: first-step decisions for many goals on one screen, no overlay and no clicks (real-use-case tests).
+    func planBatch(app: NSRunningApplication, goals: [String]) async -> [[String: String]] {
+        let state = await read(app)
+        var out: [[String: String]] = []
+        for g in goals {
+            goal = g; done = []; rejected = []; settingsPane = nil
+            let risk = await planner.risky(goal: g)
+            let pick = try? await decide(state, app: app)
+            let route = try? await routeToApp(state, current: app.localizedName ?? state.frontApp)
+            let apple = state.candidates.contains { $0.path.hasPrefix("Apple >") }
+            out.append(["goal": g, "pick": pick.map { Planner.key($0.candidate) } ?? "-",
+                        "conf": pick.map { String(format: "%.2f", $0.confidence) } ?? "0",
+                        "risk": String(format: "%.2f", risk), "scamRule": ScamGuard.check(goal: g) == nil ? "" : "warn",
+                        "route": route.map { "\($0.candidate.label) \(String(format: "%.2f", $0.confidence))" } ?? "-",
+                        "appleMenu": apple ? "yes" : "no"])
+        }
+        return out
     }
 
     func finish() {
@@ -297,7 +342,7 @@ final class GuideEngine {
     /// If the goal belongs to another app in the Dock, point at that Dock icon first.
     private func routeToApp(_ s: ScreenState, current: String) async throws -> Planner.Pick? {
         var dock: [String: Candidate] = [:]
-        for c in s.candidates where c.source == "dock" && !c.label.contains(" — ") && !["Trash", "Apps"].contains(c.label) {
+        for c in s.candidates where c.source == "dock" && !c.label.contains(" — ") && !c.label.contains(" - ") && !["Trash", "Apps"].contains(c.label) {
             if dock[c.label] == nil { dock[c.label] = c }
         }
         let names = s.candidates.filter { dock[$0.label]?.id == $0.id }.map(\.label)   // Dock order

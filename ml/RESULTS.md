@@ -112,6 +112,28 @@ Per app, v6en:
 
 Logs: `train-v6en.log` and `results-v6en.txt` on the `gabay-models` Modal volume. Reproduce: `modal run ml/modal_train.py --version v6en --data data/v6/train.jsonl --epochs 5 --head 320` (add `--base multilingual` for v6ml).
 
+## Real use cases, first step on this Mac (dev set, 2026-10-10)
+**What it is:** 41 requests taken from `docs/research/USER_TASKS.md` (`ml/usecases/scenarios.py`), with acceptable answers written before any run. It runs Gabay's real decision path (`--plan`: read the screen, stay or route, pick) on the live apps.
+- **Not a benchmark.** The settings routing below was developed while looking at these results.
+- Some requests are in Finder and System Settings, which are held-out apps, but these are new requests, not the test set.
+
+| Start | Before | After |
+|---|---|---|
+| Finder (system tasks should go to System Settings) | 1/14 | **12/14** |
+| System Settings (right sidebar pane) | 8/12 | **12/12** |
+| Risk check (4 scams, 3 look-alikes) | 7/7 | 7/7 |
+
+- **Before:** the picker matched look-alike words in the app in front ("update my computer" → Finder `Go > Computer` at 0.88). App routing only ran when that pick was below 0.35.
+- **After:** Apple's on-device model reads only the request text (no screen data) and answers two things: is this a System Settings job, and which pane.
+  - Settings jobs go to System Settings in the Dock, then to the pane's sidebar row. Laya picks everything else, including the steps inside the pane.
+  - Decoding is greedy: two runs gave identical routes.
+- **Separate check, 27 requests (12 settings, 15 not):**
+  - The fine-tuned Laya, asked a yes/no "settings?" question, caught 5/12 settings requests with 1/15 false alarms (threshold 0.5). Base Laya caught 2/12.
+  - Apple's model caught 12/12, with 2/15 false alarms ("make this word bold", "play my music").
+- Mail wasn't scored: an account password dialog was open, so every pick (correctly) stayed in that dialog.
+
+Reproduce: `open -W -n app/build/ScreenGuide.app --args --plan Finder goals.json out.json` (one file per start app, goals from `scenarios.py`).
+
 ## Experiment: Apple on-device model rewrites the goal first (rejected)
 Apple's Foundation Model (on-device) restated each of the 127 validation goals as a plain action, at about 0.7 s per goal; it produced 122 rewrites. Scored with Laya v4e5 on the Mac:
 - raw goal **102/127**
