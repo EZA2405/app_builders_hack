@@ -42,6 +42,13 @@ final class GuideEngine {
 
     private func run() async {
         guard let app else { return }
+        // Without Accessibility the screen reads as empty and the loop would find nothing, silently.
+        guard AXIsProcessTrusted() else {
+            log("NO ACCESSIBILITY")
+            show(.done, label: "One more thing", text: "Gabay needs permission to see your screen.",
+                 hint: "Open System Settings › Privacy & Security › Accessibility and turn on Gabay. Then ask again.", target: nil)
+            return
+        }
         while !Task.isCancelled, stepNo < 8 {
             show(.thinking, label: "Got it", text: "Working out the next step…", hint: "Nothing on your screen leaves this Mac.", target: nil)
             let state = await read(app)
@@ -53,7 +60,12 @@ final class GuideEngine {
                 show(.done, label: "Something went wrong", text: "I can't think right now.", hint: "Make sure Gabay's helper is running, then try again.", target: nil)
                 return
             }
-            guard let pick else { return }
+            guard let pick else {
+                log("NO CANDIDATES app=\(app.localizedName ?? "?")")
+                show(.done, label: "Hmm", text: "I couldn't find anything to click in \(app.localizedName ?? "this app").",
+                     hint: "Open the app you want help with, click on its window, then ask again.", target: nil)
+                return
+            }
             log("STEP \(stepNo + 1) pick=\(Planner.key(pick.candidate)) conf=\(String(format: "%.2f", pick.confidence))")
             stepNo += 1
             let ok = await guide(pick)

@@ -78,8 +78,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         lastApp = NSWorkspace.shared.frontmostApplication
         NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didActivateApplicationNotification,
                                                           object: nil, queue: .main) { [weak self] note in
+            // Only apps with windows and a Dock icon; system pop-ups (e.g. the Accessibility prompt) aren't goals.
             guard let a = note.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication,
-                  a.bundleIdentifier != Bundle.main.bundleIdentifier else { return }
+                  a.bundleIdentifier != Bundle.main.bundleIdentifier, a.activationPolicy == .regular else { return }
             MainActor.assumeIsolated { self?.lastApp = a }
         }
         ask = AskPanel { [weak self] goal in self?.begin(goal) }
