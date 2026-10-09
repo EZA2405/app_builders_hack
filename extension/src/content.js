@@ -96,8 +96,164 @@
     return { type: "snapshot", id: message.id, url: location.href, title: document.title, elements: elements.slice(0, max), ms: performance.now() - start };
   }
 
+  let overlay;
+  let card;
+  let ring;
+  let target;
+  let highlightedRef;
+  let animation;
+  let generation = 0;
+
+  function emit(message) {
+    void chrome.runtime.sendMessage(message).catch(() => {});
+  }
+
+  function clear() {
+    generation++;
+    cancelAnimationFrame(animation);
+    overlay?.remove();
+    overlay = card = ring = target = highlightedRef = null;
+  }
+
+  function pageChanged(reason) {
+    emit({ type: "page_changed", url: location.href, title: document.title, reason });
+  }
+
+  function placeCard(rect) {
+    const tokens = getComputedStyle(overlay);
+    const gap = parseFloat(tokens.getPropertyValue("--sg-card-gap"));
+    const edge = parseFloat(tokens.getPropertyValue("--sg-edge-gap"));
+    const width = Math.min(parseFloat(tokens.getPropertyValue("--sg-card-width")), innerWidth - edge * 2);
+    card.style.width = `${width}px`;
+    card.style.maxHeight = `${innerHeight - edge * 2}px`;
+    const height = card.offsetHeight;
+    const clamp = (value, max) => Math.max(edge, Math.min(value, max));
+    const x = clamp(rect.left, innerWidth - width - edge);
+    const y = clamp(rect.top, innerHeight - height - edge);
+    const choices = [
+      { x, y: rect.bottom + gap, w: width, h: innerHeight - rect.bottom - gap - edge },
+      { x, y: rect.top - gap - height, w: width, h: rect.top - gap - edge },
+      { x: rect.right + gap, y, w: innerWidth - rect.right - gap - edge, h: innerHeight - edge * 2 },
+      { x: rect.left - gap - width, y, w: rect.left - gap - edge, h: innerHeight - edge * 2 },
+    ];
+    let choice = choices.find((c) => c.w >= width && c.h >= height);
+    if (!choice) {
+      // shortcut: oversized targets may leave only a scrollable card; use a separate panel if needed.
+      choice = choices.filter((c) => c.w > 32 && c.h > 32).sort((a, b) => Math.min(width, b.w) * Math.min(height, b.h) - Math.min(width, a.w) * Math.min(height, a.h))[0];
+    }
+    if (!choice) { card.hidden = true; return; }
+    card.hidden = false;
+    const w = Math.min(width, choice.w);
+    const h = Math.min(height, choice.h);
+    card.style.width = `${w}px`;
+    card.style.maxHeight = `${h}px`;
+    if (choice === choices[1]) choice.y = rect.top - gap - h;
+    if (choice === choices[3]) choice.x = rect.left - gap - w;
+    card.style.left = `${clamp(choice.x, innerWidth - w - edge)}px`;
+    card.style.top = `${clamp(choice.y, innerHeight - h - edge)}px`;
+  }
+
+  function track() {
+    if (!target?.isConnected || !overlay?.isConnected) {
+      clear();
+      pageChanged("dom_mutation");
+      return;
+    }
+    if (!visible(target)) {
+      ring.hidden = card.hidden = true;
+    } else {
+      ring.hidden = card.hidden = false;
+      const rect = target.getBoundingClientRect();
+      const pad = parseFloat(getComputedStyle(overlay).getPropertyValue("--sg-ring-padding"));
+      Object.assign(ring.style, { left: `${rect.left - pad}px`, top: `${rect.top - pad}px`, width: `${rect.width + pad * 2}px`, height: `${rect.height + pad * 2}px` });
+      placeCard(rect);
+    }
+    animation = requestAnimationFrame(track);
+  }
+
+  function instructionText(node, text) {
+    for (const part of text.split(/(\*\*[^*]+\*\*)/g)) {
+      const span = document.createElement(part.startsWith("**") && part.endsWith("**") ? "strong" : "span");
+      span.textContent = span.tagName === "STRONG" ? part.slice(2, -2) : part;
+      node.append(span);
+    }
+  }
+
+  async function highlight(message) {
+    clear();
+    const token = generation;
+    const el = refs.get(message.ref);
+    if (!el?.isConnected) return { type: "highlight_error", id: message.id, reason: "ref_not_found" };
+    if (!visible(el)) return { type: "highlight_error", id: message.id, reason: "not_visible" };
+    if (!inViewport(el.getBoundingClientRect())) {
+      el.scrollIntoView({ block: "center", behavior: "smooth" });
+      await new Promise((resolve) => setTimeout(resolve, 400));
+    }
+    if (token !== generation) return { type: "highlight_error", id: message.id, reason: "ref_not_found" };
+    if (!el.isConnected || !visible(el)) return { type: "highlight_error", id: message.id, reason: "not_visible" };
+    target = el;
+    highlightedRef = message.ref;
+    overlay = document.createElement("sg-overlay");
+    for (const [property, value] of Object.entries({ all: "initial", position: "fixed", inset: "0", "z-index": "2147483647", "pointer-events": "none" })) overlay.style.setProperty(property, value, "important");
+    const shadow = overlay.attachShadow({ mode: "open" });
+    const css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = chrome.runtime.getURL("src/overlay.css");
+    const loaded = new Promise((resolve) => { css.onload = css.onerror = resolve; });
+    shadow.append(css);
+    ring = document.createElement("div");
+    ring.className = "ring";
+    ring.setAttribute("aria-hidden", "true");
+    card = document.createElement("section");
+    card.className = "card";
+    card.setAttribute("role", "region");
+    card.setAttribute("aria-label", "ScreenGuide instruction");
+    card.setAttribute("aria-live", "polite");
+    if (message.step != null) {
+      const step = document.createElement("div");
+      step.className = "step";
+      step.textContent = `Step ${message.step}`;
+      card.append(step);
+    }
+    const instruction = document.createElement("p");
+    instructionText(instruction, sensitive(el) ? "Type your password yourself — I'll look away" : message.instruction);
+    card.append(instruction);
+    if (typeof message.hint === "string") {
+      const hint = document.createElement("p");
+      hint.className = "hint";
+      hint.textContent = message.hint;
+      card.append(hint);
+    }
+    const buttons = document.createElement("div");
+    buttons.className = "buttons";
+    for (const [action, label] of [["again", "Show me again"], ["stuck", "I'm stuck"], ["stop", "Stop"], ["read_aloud", "🔊"]]) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = label;
+      if (action === "read_aloud") button.setAttribute("aria-label", "Read aloud");
+      button.addEventListener("click", () => {
+        emit({ type: "card_button", button: action });
+        if (action === "again") el.scrollIntoView({ block: "center", behavior: "smooth" });
+        if (action === "stop") clear();
+      });
+      buttons.append(button);
+    }
+    card.append(buttons);
+    shadow.append(ring, card);
+    document.documentElement.append(overlay);
+    await loaded;
+    if (token !== generation) return { type: "highlight_error", id: message.id, reason: "ref_not_found" };
+    track();
+    return { type: "highlight_ok", id: message.id };
+  }
+
   chrome.runtime.onMessage.addListener((message, sender, respond) => {
     if (sender.id !== chrome.runtime.id) return;
     if (message.type === "snapshot_request") respond(snapshot(message));
+    if (message.type === "clear") clear();
+    if (message.type === "highlight") {
+      void highlight(message).then(respond).catch(() => respond({ type: "highlight_error", id: message.id, reason: "not_visible" }));
+      return true;
+    }
   });
 })();

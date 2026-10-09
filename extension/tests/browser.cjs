@@ -63,6 +63,52 @@ async function waitFor(check, timeout = 10000) {
     mock.stdin.write('snap\n');
     await waitFor(() => output.slice(mark).includes('Subtitles/closed captions'));
     console.log('PASS fixture snapshot, stable refs, cap, sensitive values, mock routing');
+    const captions = snapshot.elements.find((el) => /Subtitles/.test(el.name));
+    mark = output.length;
+    mock.stdin.write(`hl ${captions.ref}\n`);
+    await waitFor(() => output.slice(mark).includes('highlight_ok'));
+    await page.waitForSelector('sg-overlay');
+    async function checkPlacement(selector) {
+      const geometry = await page.evaluate((selector) => {
+        const root = document.querySelector('sg-overlay').shadowRoot;
+        const card = root.querySelector('.card').getBoundingClientRect();
+        const ring = root.querySelector('.ring');
+        const target = document.querySelector(selector).getBoundingClientRect();
+        return { card: { l: card.left, t: card.top, r: card.right, b: card.bottom },
+          target: { l: target.left, t: target.top, r: target.right, b: target.bottom },
+          ring: { l: parseFloat(ring.style.left), t: parseFloat(ring.style.top) } };
+      }, selector);
+      assert(Math.abs(geometry.ring.l - geometry.target.l + 6) < 1);
+      assert(Math.abs(geometry.ring.t - geometry.target.t + 6) < 1);
+      const c = geometry.card, t = geometry.target;
+      assert(c.r <= t.l || c.l >= t.r || c.b <= t.t || c.t >= t.b, 'Card covers target');
+    }
+    await checkPlacement('#captions');
+    let result = await request({ type: 'highlight', id: 'safe-text', ref: captions.ref,
+      instruction: 'Click **captions** <img src=x onerror=alert(1)>', step: 2 });
+    assert.equal(result.type, 'highlight_ok');
+    assert.equal(await page.locator('sg-overlay img').count(), 0);
+    assert.equal(await page.locator('sg-overlay strong').textContent(), 'captions');
+    const far = snapshot.elements.find((el) => el.name === 'Far below the fold');
+    result = await request({ type: 'highlight', id: 'far', ref: far.ref, instruction: 'Click below' });
+    assert.equal(result.type, 'highlight_ok');
+    await page.waitForTimeout(500);
+    assert(await page.evaluate(() => scrollY > 1000));
+    await checkPlacement('#far');
+    await page.evaluate(() => scrollBy(0, -120));
+    await page.waitForTimeout(100);
+    await checkPlacement('#far');
+    await page.setViewportSize({ width: 480, height: 640 });
+    await page.waitForTimeout(100);
+    await checkPlacement('#far');
+    await page.setViewportSize({ width: 1280, height: 720 });
+    const password = snapshot.elements.find((el) => el.type === 'password');
+    await request({ type: 'highlight', id: 'password', ref: password.ref, instruction: 'Enter password' });
+    assert((await page.locator('sg-overlay .card').textContent()).includes("I'll look away"));
+    result = await request({ type: 'highlight', id: 'missing', ref: 'missing', instruction: 'Click' });
+    assert.equal(result.reason, 'ref_not_found');
+    console.log('PASS mock highlight, safe bold text, card geometry, long-page scroll/resize tracking, password instruction');
+
 
     if (process.argv.includes('--live')) {
       for (const [url, match] of [
@@ -79,6 +125,15 @@ async function waitFor(check, timeout = 10000) {
         mark = output.length;
         mock.stdin.write('snap\n');
         await waitFor(() => output.slice(mark).includes('ref | role | name'));
+        if (url.includes('/watch')) {
+          const captions = snapshot.elements.find((el) => /subtitles|captions/i.test(el.name));
+          mark = output.length;
+          mock.stdin.write(`hl ${captions.ref}\n`);
+          await waitFor(() => output.slice(mark).includes('highlight_ok'));
+          const selector = `[data-sg-ref="${captions.ref}"]`;
+          await checkPlacement(selector);
+          console.log('PASS live YouTube captions highlight through mock, ring and card placement');
+        }
         console.log(`PASS ${url}: ${snapshot.elements.length} elements, ${snapshot.ms.toFixed(1)}ms, mock table printed`);
       }
     }

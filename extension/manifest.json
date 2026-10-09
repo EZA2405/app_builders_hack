@@ -31,5 +31,15 @@
   ],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'none'; connect-src ws://127.0.0.1:47823"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/overlay.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
 }
