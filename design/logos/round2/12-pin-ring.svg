@@ -1,0 +1,7 @@
+<!-- Map pin made from the ring: "go here", for screens instead of streets. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <rect width="256" height="256" rx="56" fill="#F4F4F8"/>
+  <path d="M128 216 C128 216 66 150 66 106 A62 62 0 0 1 190 106 C190 150 128 216 128 216 Z" fill="#F08A24"/>
+  <circle cx="128" cy="106" r="30" fill="#F4F4F8"/>
+  <path d="M120 92 L120 126 L129 118 L135 132 L142 129 L136 115 L148 115 Z" fill="#1C1C1E"/>
+</svg>

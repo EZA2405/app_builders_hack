@@ -1,0 +1,8 @@
+<!-- Two figures, one leaning in to help: family-style help, from a tool. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <rect width="256" height="256" rx="56" fill="#F08A24"/>
+  <circle cx="98" cy="96" r="24" fill="#FFFFFF"/>
+  <path d="M60 200 C60 150 76 132 98 132 C120 132 136 150 136 200 Z" fill="#FFFFFF"/>
+  <circle cx="168" cy="82" r="20" fill="#0B0B14"/>
+  <path d="M138 200 C134 150 146 112 170 112 C192 112 202 140 200 200 Z" fill="#0B0B14"/>
+</svg>

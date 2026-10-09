@@ -1,0 +1,8 @@
+<!-- Parol (Filipino star lantern): a guiding light, with the ring at its heart. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <rect width="256" height="256" rx="56" fill="#171724"/>
+  <path d="M128 34 L150 98 L218 100 L164 140 L184 206 L128 166 L72 206 L92 140 L38 100 L106 98 Z" fill="none" stroke="#F08A24" stroke-width="10" stroke-linejoin="round"/>
+  <circle cx="128" cy="124" r="26" fill="none" stroke="#F4F4F8" stroke-width="10"/>
+  <circle cx="128" cy="124" r="7" fill="#F4F4F8"/>
+  <path d="M110 214 L110 232 M128 210 L128 236 M146 214 L146 232" stroke="#F08A24" stroke-width="6" stroke-linecap="round"/>
+</svg>

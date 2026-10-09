@@ -1,0 +1,10 @@
+<!-- Lighthouse: a steady light that shows the way but doesn't steer the boat. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <rect width="256" height="256" rx="56" fill="#171724"/>
+  <path d="M104 96 L196 62 L196 130 Z" fill="#F08A24" fill-opacity=".35"/>
+  <path d="M84 214 L94 104 H118 L128 214 Z" fill="#F4F4F8"/>
+  <rect x="88" y="84" width="36" height="22" rx="6" fill="#F08A24"/>
+  <path d="M82 84 L106 62 L130 84 Z" fill="#F4F4F8"/>
+  <rect x="88" y="150" width="34" height="10" fill="#F08A24"/>
+  <circle cx="196" cy="96" r="18" fill="none" stroke="#F08A24" stroke-width="8"/>
+</svg>

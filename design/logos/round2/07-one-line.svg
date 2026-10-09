@@ -1,0 +1,7 @@
+<!-- One unbroken stroke: starts as a small dot, curves across, and closes into the ring. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <rect width="256" height="256" rx="56" fill="#F4F4F8"/>
+  <circle cx="58" cy="194" r="13" fill="#F08A24"/>
+  <path d="M58 194 C70 150 100 136 124 134 C138 133 146 128 151 122" fill="none" stroke="#F08A24" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="176" cy="96" r="36" fill="none" stroke="#F08A24" stroke-width="12"/>
+</svg>
