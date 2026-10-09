@@ -1,0 +1,13 @@
+{"type": "file_vs_view", "goal": "save this appointment as a file to send to my son", "answer": "File > Export > Export Event…", "decoys": ["View > Zoom Out", "Edit > Copy"]}
+{"type": "view_vs_file", "goal": "I want to see the whole day without scrolling", "answer": "View > Zoom Out", "decoys": ["File > Export > Export Event…", "View > By Day"]}
+{"type": "lookalike", "goal": "add my doctor's appointment on friday", "answer": "File > New Event or Reminder", "decoys": ["File > New Calendar", "Edit > Edit Event"]}
+{"type": "lookalike", "goal": "ilagay sa calendar yung check-up ko", "answer": "File > New Event or Reminder", "decoys": ["File > New Calendar", "Edit > Edit Event"]}
+{"type": "lookalike", "goal": "let my family see my calendar", "answer": "Edit > Share Calendar…", "decoys": ["File > New Family Calendar…", "View > Show Calendar List"]}
+{"type": "lookalike", "goal": "get the newest events, the calendar looks old", "answer": "View > Refresh Calendars", "decoys": ["Edit > Edit Event", "File > New Calendar"]}
+{"type": "lookalike", "goal": "put the philippine holidays in my calendar", "answer": "File > New Holiday Calendar…", "decoys": ["View > Show All-Day Events", "File > New Event or Reminder"]}
+{"type": "lookalike", "goal": "bring me back to today", "answer": "View > Go to Today", "decoys": ["View > Previous", "View > By Day"]}
+{"type": "lookalike", "goal": "jump to my birthday in march", "answer": "View > Go to Date…", "decoys": ["View > By Month", "View > Next"]}
+{"type": "lookalike", "goal": "change the time of this meeting", "answer": "Edit > Edit Event", "decoys": ["View > Show Travel Time", "File > New Event or Reminder"]}
+{"type": "file_vs_view", "goal": "save all my calendars to a file before I change computers", "answer": "File > Export > Calendar Archive…", "decoys": ["View > Zoom Out", "File > Print…"]}
+{"type": "view_vs_file", "goal": "the hours look squeezed, make them taller on the screen", "answer": "View > Zoom In", "decoys": ["File > Export > Export Event…", "View > By Week"]}
+{"type": "lookalike", "goal": "ipakita sa pamilya ko ang calendar ko", "answer": "Edit > Share Calendar…", "decoys": ["File > New Family Calendar…", "View > Show Calendar List"]}

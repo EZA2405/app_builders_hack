@@ -1,0 +1,2 @@
+{"type": "lookalike", "goal": "check if there's a newer iterm", "answer": "iTerm2 > Check for Updates…", "decoys": ["iTerm2 > Show Tip of the Day", "iTerm2 > Install Shell Integration"]}
+{"type": "file_vs_view", "goal": "save everything in this window to a file for the tech guy", "answer": "Shell > Save Contents…", "decoys": ["View > Zoom Out", "Edit > Copy"]}

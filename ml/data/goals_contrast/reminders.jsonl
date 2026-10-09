@@ -1,0 +1,12 @@
+{"type": "lookalike", "goal": "make a list for my groceries", "answer": "File > New List", "decoys": ["View > as List", "File > Create Smart List"]}
+{"type": "lookalike", "goal": "gumawa ng bagong listahan para sa pamimili", "answer": "File > New List", "decoys": ["View > as List", "File > Create Smart List"]}
+{"type": "lookalike", "goal": "move this to tomorrow instead", "answer": "Edit > Mark Due Date As > Tomorrow", "decoys": ["File > New Reminder", "View > Go To > Scheduled"]}
+{"type": "lookalike", "goal": "show the things I already finished", "answer": "View > Show Completed", "decoys": ["Edit > Mark as Completed", "View > Go To > All"]}
+{"type": "lookalike", "goal": "I did this one, tick it off", "answer": "Edit > Mark as Completed", "decoys": ["View > Show Completed", "View > Go To > Completed"]}
+{"type": "lookalike", "goal": "show only what I have to do today", "answer": "View > Show Smart List > Today", "decoys": ["Edit > Mark Due Date As > Today", "File > New Reminder"]}
+{"type": "lookalike", "goal": "share my shopping list with my husband", "answer": "File > Share List", "decoys": ["File > New List", "File > Manage Shared List"]}
+{"type": "lookalike", "goal": "i-share ang listahan sa asawa ko", "answer": "File > Share List", "decoys": ["File > New List", "File > Manage Shared List"]}
+{"type": "lookalike", "goal": "make this one stand out as very important", "answer": "Edit > Priority > High", "decoys": ["File > Pin List", "View > Show Smart List > Flagged"]}
+{"type": "lookalike", "goal": "remind me to take my medicine", "answer": "File > New Reminder", "decoys": ["Edit > Mark Due Date As > Today", "File > New List"]}
+{"type": "lookalike", "goal": "ipakita yung mga natapos ko na", "answer": "View > Show Completed", "decoys": ["Edit > Mark as Completed", "View > Go To > All"]}
+{"type": "lookalike", "goal": "bukas ko na lang gagawin ito", "answer": "Edit > Mark Due Date As > Tomorrow", "decoys": ["File > New Reminder", "View > Go To > Scheduled"]}

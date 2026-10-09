@@ -1,0 +1,35 @@
+{"type": "file_vs_view", "goal": "make this video small enough to send", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "Window > Zoom", "View > Actual Size"]}
+{"type": "file_vs_view", "goal": "the video file is too big to email, make it lighter", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "Window > Zoom"]}
+{"type": "file_vs_view", "goal": "my email says the video is too large to attach", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "View > Zoom to Fit"]}
+{"type": "file_vs_view", "goal": "shrink this clip so it uploads faster", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "Window > Zoom"]}
+{"type": "file_vs_view", "goal": "make a smaller copy of this video for messenger", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "File > Duplicate"]}
+{"type": "file_vs_view", "goal": "the video takes up too much space, save it smaller", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "View > Zoom to Fit"]}
+{"type": "file_vs_view", "goal": "paliitin ang video para ma-send sa viber", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "Window > Zoom"]}
+{"type": "file_vs_view", "goal": "hindi ma-send yung video kasi masyadong malaki", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "View > Actual Size"]}
+{"type": "file_vs_view", "goal": "save a sharp HD copy of this video for the TV", "answer": "File > Export As > 1080p…", "decoys": ["View > Zoom In", "View > Enter Full Screen"]}
+{"type": "file_vs_view", "goal": "send only the sound of this video to my friend", "answer": "File > Export As > Audio Only…", "decoys": ["View > Show Audio Track", "Edit > Remove Video"]}
+{"type": "view_vs_file", "goal": "the video is too big for my screen, I can't see all of it", "answer": "View > Zoom to Fit", "decoys": ["File > Export As > 480p…"]}
+{"type": "view_vs_file", "goal": "make the video look smaller in the window, not the file", "answer": "View > Zoom Out", "decoys": ["File > Export As > 480p…", "File > Export As > 720p…"]}
+{"type": "view_vs_file", "goal": "the video looks tiny in the window, make it bigger to watch", "answer": "View > Zoom In", "decoys": ["File > Export As > 4K…", "File > Export As > 1080p…"]}
+{"type": "view_vs_file", "goal": "show the video at its normal size on the screen", "answer": "View > Actual Size", "decoys": ["File > Export As > 1080p…", "File > Export As > 720p…"]}
+{"type": "view_vs_file", "goal": "liitan mo lang yung video sa screen, hindi yung file", "answer": "View > Zoom Out", "decoys": ["File > Export As > 480p…"]}
+{"type": "view_vs_file", "goal": "the edges of the video are cut off, fit it in the window", "answer": "View > Zoom to Fit", "decoys": ["File > Export As > 720p…", "Edit > Trim…"]}
+{"type": "lookalike", "goal": "take out the sound from this video", "answer": "Edit > Remove Audio", "decoys": ["File > Export As > Audio Only…", "View > Show Audio Track"]}
+{"type": "lookalike", "goal": "record what is on my screen to show my grandson", "answer": "File > New Screen Recording", "decoys": ["File > New Movie Recording", "View > Enter Full Screen"]}
+{"type": "lookalike", "goal": "make a video of myself with the camera", "answer": "File > New Movie Recording", "decoys": ["File > New Screen Recording", "File > Open File…"]}
+{"type": "lookalike", "goal": "keep this video in front of my other windows", "answer": "View > Float on Top", "decoys": ["Window > Bring All to Front", "Window > Arrange in Front"]}
+{"type": "lookalike", "goal": "play the video over and over without stopping", "answer": "View > Loop", "decoys": ["Edit > Add Clip to End...", "View > Next Chapter"]}
+{"type": "lookalike", "goal": "ilagay ang ibang video sa dulo nito", "answer": "Edit > Add Clip to End...", "decoys": ["View > Next Chapter", "Edit > Paste"]}
+{"type": "lookalike", "goal": "open a video from an internet address", "answer": "File > Open Location…", "decoys": ["File > Open File…", "File > Move To…"]}
+{"type": "lookalike", "goal": "put this video in a different folder", "answer": "File > Move To…", "decoys": ["File > Open Location…", "Window > Arrange in Front"]}
+{"type": "file_vs_view", "goal": "upload this video to facebook but it's too heavy", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "View > Zoom to Fit"]}
+{"type": "file_vs_view", "goal": "make the clip lighter for the group chat", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "Edit > Trim…"]}
+{"type": "lookalike", "goal": "flip the video like a mirror", "answer": "Edit > Flip Horizontal", "decoys": ["Edit > Rotate Left", "View > Spatial Video > Left Eye"]}
+{"type": "file_vs_view", "goal": "my phone is full, save a smaller version of this video for it", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "Window > Zoom"]}
+{"type": "file_vs_view", "goal": "gawing mas magaan ang file ng video", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "View > Actual Size"]}
+{"type": "file_vs_view", "goal": "the school portal won't take my video, it's too big", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "View > Zoom to Fit"]}
+{"type": "view_vs_file", "goal": "I can only see part of the movie, show all of it in the window", "answer": "View > Zoom to Fit", "decoys": ["File > Export As > 720p…", "File > Export As > 480p…"]}
+{"type": "view_vs_file", "goal": "zoom out a little, the video looks too close", "answer": "View > Zoom Out", "decoys": ["File > Export As > 480p…", "Edit > Trim…"]}
+{"type": "lookalike", "goal": "tanggalin ang tunog ng video", "answer": "Edit > Remove Audio", "decoys": ["File > Export As > Audio Only…", "View > Show Audio Track"]}
+{"type": "lookalike", "goal": "i-record ang screen ko para ipakita sa apo ko", "answer": "File > New Screen Recording", "decoys": ["File > New Movie Recording", "View > Enter Full Screen"]}
+{"type": "view_vs_file", "goal": "ipakita ang buong video sa window, naputol yung gilid", "answer": "View > Zoom to Fit", "decoys": ["File > Export As > 480p…", "Edit > Trim…"]}

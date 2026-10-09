@@ -1,0 +1,23 @@
+{"type": "file_vs_view", "goal": "turn this note into a file I can email", "answer": "File > Export as > PDF", "decoys": ["View > Zoom Out", "View > Actual Size", "File > Print…"]}
+{"type": "file_vs_view", "goal": "my doctor wants this list as an attachment", "answer": "File > Export as > PDF", "decoys": ["View > Zoom Out", "Edit > Attach File…"]}
+{"type": "file_vs_view", "goal": "gawing file itong note para ma-attach ko", "answer": "File > Export as > PDF", "decoys": ["View > Zoom Out", "Edit > Attach File…"]}
+{"type": "file_vs_view", "goal": "save this recipe as a file I can keep on a flash drive", "answer": "File > Export as > PDF", "decoys": ["View > Zoom Out", "File > Duplicate Note"]}
+{"type": "view_vs_file", "goal": "everything in the note looks huge, show it smaller on screen", "answer": "View > Zoom Out", "decoys": ["File > Export as > PDF", "File > Export as > Markdown"]}
+{"type": "view_vs_file", "goal": "I squint at this note, zoom it closer", "answer": "View > Zoom In", "decoys": ["File > Export as > PDF", "File > Export as > Markdown"]}
+{"type": "view_vs_file", "goal": "put the note back to its normal size on the screen", "answer": "View > Actual Size", "decoys": ["File > Export as > PDF", "Format > Font > Smaller"]}
+{"type": "lookalike", "goal": "make a folder for my recipes", "answer": "File > New Folder", "decoys": ["View > Hide Folders", "File > New Smart Folder", "File > New Note"]}
+{"type": "lookalike", "goal": "gumawa ng folder para sa mga resibo ko", "answer": "File > New Folder", "decoys": ["View > Hide Folders", "File > New Smart Folder"]}
+{"type": "lookalike", "goal": "keep this note private behind a lock", "answer": "File > Lock Note", "decoys": ["Notes > Close All Locked Notes", "Edit > AutoFill > Passwords…"]}
+{"type": "lookalike", "goal": "put a link to a website in my note", "answer": "Edit > Add Link…", "decoys": ["Edit > Substitutions > Smart Links", "View > Show Attachments Browser"]}
+{"type": "lookalike", "goal": "record my voice into this note", "answer": "Edit > Record Audio…", "decoys": ["Edit > Speech > Start Speaking", "Edit > Attach File…"]}
+{"type": "lookalike", "goal": "make a list I can tick off for groceries", "answer": "Format > Checklist", "decoys": ["Format > Mark as Checked", "Format > Bulleted List"]}
+{"type": "lookalike", "goal": "make a second copy of this whole note", "answer": "File > Duplicate Note", "decoys": ["Edit > Copy", "Edit > Paste"]}
+{"type": "lookalike", "goal": "put a photo from my computer into this note", "answer": "Edit > Attach File…", "decoys": ["View > Show Attachments Browser", "Edit > Paste"]}
+{"type": "lookalike", "goal": "change the name of the picture inside my note", "answer": "Edit > Rename Attachment…", "decoys": ["Edit > Rename", "View > Attachment View > Set All to Large"]}
+{"type": "lookalike", "goal": "have the computer read this note to me", "answer": "Edit > Speech > Start Speaking", "decoys": ["Edit > Record Audio…", "Edit > Start Dictation…"]}
+{"type": "lookalike", "goal": "pa-basa naman ng note nang malakas", "answer": "Edit > Speech > Start Speaking", "decoys": ["Edit > Record Audio…", "Edit > Start Dictation…"]}
+{"type": "lookalike", "goal": "type by talking instead of the keyboard", "answer": "Edit > Start Dictation…", "decoys": ["Edit > Speech > Start Speaking", "Edit > Record Audio…"]}
+{"type": "lookalike", "goal": "move the ticked items to the bottom of my list", "answer": "Format > More > Move Checked to Bottom", "decoys": ["Format > Move Item > Down", "Format > Mark as Checked"]}
+{"type": "file_vs_view", "goal": "the clinic asked me to send this note as a document", "answer": "File > Export as > PDF", "decoys": ["View > Zoom Out", "File > Duplicate Note"]}
+{"type": "view_vs_file", "goal": "the note is too zoomed in, I can't see the whole page", "answer": "View > Zoom Out", "decoys": ["File > Export as > PDF", "View > Collapse All Sections"]}
+{"type": "view_vs_file", "goal": "palapitin ang note sa screen, ang liit tingnan", "answer": "View > Zoom In", "decoys": ["File > Export as > PDF", "File > Export as > Markdown"]}

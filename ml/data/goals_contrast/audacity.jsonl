@@ -1,0 +1,8 @@
+{"type": "file_vs_view", "goal": "save my recording as a file I can email", "answer": "File > Export Audio...", "decoys": ["View > Zoom > Zoom Out", "View > Track Size > Collapse All Tracks"]}
+{"type": "file_vs_view", "goal": "make my voice recording into an mp3 to send", "answer": "File > Export Audio...", "decoys": ["View > Zoom > Zoom Out", "Effect > Volume and Compression > Compressor..."]}
+{"type": "file_vs_view", "goal": "i-save ang recording para ma-send sa messenger", "answer": "File > Export Audio...", "decoys": ["View > Zoom > Zoom Out", "Effect > Volume and Compression > Compressor..."]}
+{"type": "view_vs_file", "goal": "I can't see the whole recording, fit it on the screen", "answer": "View > Track Size > Fit to Width", "decoys": ["File > Export Audio...", "View > Zoom > Zoom In"]}
+{"type": "view_vs_file", "goal": "show the sound wave smaller so I see more of it", "answer": "View > Zoom > Zoom Out", "decoys": ["File > Export Audio...", "Effect > Volume and Compression > Compressor..."]}
+{"type": "lookalike", "goal": "my recording is too quiet, make it louder", "answer": "Effect > Volume and Compression > Amplify...", "decoys": ["View > Zoom > Zoom In", "Effect > Volume and Compression > Compressor..."]}
+{"type": "file_vs_view", "goal": "the recording is too big to email, save it as a smaller file", "answer": "File > Export Audio...", "decoys": ["View > Zoom > Zoom Out", "Effect > Volume and Compression > Compressor..."]}
+{"type": "view_vs_file", "goal": "get closer to the part I selected", "answer": "View > Zoom > Zoom to Selection", "decoys": ["File > Export Audio...", "Select > All"]}

@@ -1,0 +1,51 @@
+{"app": "textedit", "goal": "make this word bigger", "decoys": ["System Settings", "Books"]}
+{"app": "textedit", "goal": "the letters in my letter are too small, make them bigger", "decoys": ["System Settings", "Books"]}
+{"app": "textedit", "goal": "print this letter", "decoys": ["System Settings", "Preview"]}
+{"app": "textedit", "goal": "make just this document dark", "decoys": ["System Settings", "Notes"]}
+{"app": "textedit", "goal": "palakihin itong salita", "decoys": ["System Settings", "Books"]}
+{"app": "notes", "goal": "the writing in this note is small, enlarge it", "decoys": ["System Settings", "TextEdit"]}
+{"app": "notes", "goal": "print my shopping note", "decoys": ["System Settings", "Preview"]}
+{"app": "notes", "goal": "record a voice memo in this note", "decoys": ["System Settings", "QuickTime Player"]}
+{"app": "notes", "goal": "keep my wifi password written in a note", "decoys": ["System Settings", "TextEdit"]}
+{"app": "music", "goal": "turn the music up", "decoys": ["System Settings", "Spotify"]}
+{"app": "music", "goal": "make this song quieter", "decoys": ["System Settings", "Spotify"]}
+{"app": "music", "goal": "download this song so it plays without internet", "decoys": ["System Settings", "App Store"]}
+{"app": "music", "goal": "hinaan mo yung kanta", "decoys": ["System Settings", "Spotify"]}
+{"app": "spotify", "goal": "listen to my songs without wifi", "decoys": ["System Settings", "Music"]}
+{"app": "spotify", "goal": "make the song louder", "decoys": ["System Settings", "Music"]}
+{"app": "vlc", "goal": "check if this video player has an update", "decoys": ["System Settings", "App Store"]}
+{"app": "vlc", "goal": "silence this movie", "decoys": ["System Settings", "Music"]}
+{"app": "vlc", "goal": "make the subtitles bigger", "decoys": ["System Settings", "QuickTime Player"]}
+{"app": "vlc", "goal": "i-update ang VLC", "decoys": ["System Settings", "App Store"]}
+{"app": "quicktimeplayer", "goal": "record a video of myself with the camera", "decoys": ["System Settings", "Photo Booth", "FaceTime"]}
+{"app": "quicktimeplayer", "goal": "record my voice", "decoys": ["System Settings", "Voice Memos"]}
+{"app": "quicktimeplayer", "goal": "record what I'm doing on the screen", "decoys": ["System Settings", "Photo Booth"]}
+{"app": "quicktimeplayer", "goal": "mag-record ng video gamit ang camera", "decoys": ["System Settings", "Photo Booth", "FaceTime"]}
+{"app": "photos", "goal": "make this photo brighter", "decoys": ["System Settings", "Preview"]}
+{"app": "photos", "goal": "print this picture", "decoys": ["System Settings", "Preview"]}
+{"app": "photos", "goal": "find the pictures I took with the camera last week", "decoys": ["System Settings", "Photo Booth"]}
+{"app": "photos", "goal": "liwanagan ang litratong ito", "decoys": ["System Settings", "Preview"]}
+{"app": "maps", "goal": "find a coffee shop with free wifi near me", "decoys": ["System Settings", "Safari"]}
+{"app": "maps", "goal": "show where I am now", "decoys": ["System Settings", "Safari"]}
+{"app": "books", "goal": "read this book out loud", "decoys": ["System Settings", "Music"]}
+{"app": "books", "goal": "make the audiobook louder", "decoys": ["System Settings", "Music"]}
+{"app": "calendar", "goal": "update the time of my appointment", "decoys": ["System Settings", "Reminders"]}
+{"app": "calendar", "goal": "warn me before my appointment starts", "decoys": ["System Settings", "Reminders"]}
+{"app": "contacts", "goal": "update my sister's phone number", "decoys": ["System Settings", "Messages"]}
+{"app": "fontbook", "goal": "install a new font I downloaded", "decoys": ["System Settings", "App Store"]}
+{"app": "fontbook", "goal": "make the font samples bigger", "decoys": ["System Settings", "TextEdit"]}
+{"app": "audacity", "goal": "make my recording louder", "decoys": ["System Settings", "Music"]}
+{"app": "audacity", "goal": "record my voice for the podcast", "decoys": ["System Settings", "QuickTime Player"]}
+{"app": "reminders", "goal": "remind me to call the printer repair shop", "decoys": ["System Settings", "Calendar"]}
+{"app": "stickies", "goal": "make the writing on this sticky bigger", "decoys": ["System Settings", "Notes"]}
+{"app": "textedit", "goal": "give this document a new name", "decoys": ["System Settings", "Finder"]}
+{"app": "photos", "goal": "change the time saved on this photo", "decoys": ["System Settings", "Calendar"]}
+{"app": "dictionary", "goal": "what is this tagalog word in english", "decoys": ["System Settings", "Safari"]}
+{"app": "notes", "goal": "lock this one note", "decoys": ["System Settings", "Finder"]}
+{"app": "zed", "goal": "check for updates to this editor", "decoys": ["System Settings", "App Store"]}
+{"app": "iterm2", "goal": "check for a new version of iterm", "decoys": ["System Settings", "App Store"]}
+{"app": "chess", "goal": "make the computer play easier", "decoys": ["System Settings", "Calculator"]}
+{"app": "calculator", "goal": "change dollars into pesos", "decoys": ["System Settings", "Safari"]}
+{"app": "music", "goal": "lakasan ang kanta", "decoys": ["System Settings", "Spotify"]}
+{"app": "textedit", "goal": "i-print itong sulat", "decoys": ["System Settings", "Preview"]}
+{"app": "quicktimeplayer", "goal": "i-record ang boses ko", "decoys": ["System Settings", "Voice Memos"]}

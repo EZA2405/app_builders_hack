@@ -1,0 +1,5 @@
+{"type": "lookalike", "goal": "undo my last move, I made a mistake", "answer": "Moves > Take Back Move", "decoys": ["Moves > Show Last Move", "Moves > Game Log"]}
+{"type": "lookalike", "goal": "help me pick my next move", "answer": "Moves > Show Hint", "decoys": ["Moves > Show Last Move", "Moves > Take Back Move"]}
+{"type": "lookalike", "goal": "ayoko na, susuko na ako sa larong ito", "answer": "Moves > Resign", "decoys": ["Moves > Offer Draw", "Chess > Quit Chess"]}
+{"type": "lookalike", "goal": "ask the computer to call the game a tie", "answer": "Moves > Offer Draw", "decoys": ["Moves > Resign", "Moves > Show Hint"]}
+{"type": "lookalike", "goal": "see the list of all moves so far", "answer": "Moves > Game Log", "decoys": ["Moves > Show Last Move", "Edit > Select All"]}

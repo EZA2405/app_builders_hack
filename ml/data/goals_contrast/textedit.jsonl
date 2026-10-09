@@ -1,0 +1,23 @@
+{"type": "file_vs_view", "goal": "turn this letter into a file I can email", "answer": "File > Export as PDF…", "decoys": ["View > Zoom Out", "View > Actual Size"]}
+{"type": "file_vs_view", "goal": "the office wants my letter as a pdf attachment", "answer": "File > Export as PDF…", "decoys": ["View > Zoom Out", "Edit > Attach Files…"]}
+{"type": "file_vs_view", "goal": "save this so my lawyer can open it on any computer", "answer": "File > Export as PDF…", "decoys": ["View > Zoom Out", "File > Save"]}
+{"type": "file_vs_view", "goal": "gawing pdf itong sulat para ma-send ko", "answer": "File > Export as PDF…", "decoys": ["View > Zoom Out", "File > Print…"]}
+{"type": "view_vs_file", "goal": "I only see half the page, show me more of it", "answer": "View > Zoom Out", "decoys": ["File > Export as PDF…", "Format > Font > Smaller"]}
+{"type": "view_vs_file", "goal": "the page looks far away, bring it closer on my screen", "answer": "View > Zoom In", "decoys": ["File > Export as PDF…", "Format > Font > Bigger"]}
+{"type": "view_vs_file", "goal": "set the page view back to normal", "answer": "View > Actual Size", "decoys": ["File > Export as PDF…", "File > Show Properties"]}
+{"type": "lookalike", "goal": "start a new page in my letter", "answer": "Edit > Insert > Page Break", "decoys": ["File > New", "File > Page Setup…"]}
+{"type": "lookalike", "goal": "make every letter a capital letter", "answer": "Edit > Transformations > Make Upper Case", "decoys": ["Edit > Transformations > Capitalize", "Format > Font > Bigger"]}
+{"type": "lookalike", "goal": "change every 'Jon' to 'John' in the whole letter", "answer": "Edit > Find > Find and Replace…", "decoys": ["Edit > Substitutions > Text Replacement", "Edit > Find > Find Next"]}
+{"type": "lookalike", "goal": "stop anyone from changing this document by accident", "answer": "Format > Prevent Editing", "decoys": ["Edit > Undo", "File > Show Properties"]}
+{"type": "lookalike", "goal": "put a picture into my letter", "answer": "Edit > Attach Files…", "decoys": ["Format > Font > Show Colors", "File > Open…"]}
+{"type": "lookalike", "goal": "make the page background dark, it hurts my eyes", "answer": "View > Use Dark Background for Windows", "decoys": ["Format > Font > Show Colors", "Format > Font > Highlight > Purple"]}
+{"type": "lookalike", "goal": "check my letter for spelling mistakes", "answer": "Edit > Spelling and Grammar > Check Document Now", "decoys": ["Edit > Find > Find…", "Edit > Writing Tools > Rewrite"]}
+{"type": "lookalike", "goal": "pakicheck kung may mali sa spelling ko", "answer": "Edit > Spelling and Grammar > Check Document Now", "decoys": ["Edit > Find > Find…", "Edit > Writing Tools > Rewrite"]}
+{"type": "lookalike", "goal": "move this document into another folder", "answer": "File > Move To…", "decoys": ["File > Open…", "Window > Arrange in Front"]}
+{"type": "file_vs_view", "goal": "save a copy of this as a pdf for the bank", "answer": "File > Export as PDF…", "decoys": ["View > Zoom Out", "File > Duplicate"]}
+{"type": "view_vs_file", "goal": "pakilapit ang page sa screen, ang layo tingnan", "answer": "View > Zoom In", "decoys": ["File > Export as PDF…", "Format > Font > Bigger"]}
+{"type": "lookalike", "goal": "make a copy of this letter as a new document", "answer": "File > Duplicate", "decoys": ["Edit > Copy", "File > New"]}
+{"type": "lookalike", "goal": "give this document a different name", "answer": "File > Rename…", "decoys": ["Format > Font > Styles...", "File > Save"]}
+{"type": "lookalike", "goal": "gawing malalaking titik lahat", "answer": "Edit > Transformations > Make Upper Case", "decoys": ["Edit > Transformations > Capitalize", "Format > Font > Bigger"]}
+{"type": "lookalike", "goal": "dagdagan ng bagong pahina ang sulat ko", "answer": "Edit > Insert > Page Break", "decoys": ["File > New", "File > Page Setup…"]}
+{"type": "view_vs_file", "goal": "kalahati lang ng page ang nakikita ko, ilayo mo", "answer": "View > Zoom Out", "decoys": ["File > Export as PDF…", "Format > Font > Smaller"]}

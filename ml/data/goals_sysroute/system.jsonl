@@ -1,0 +1,80 @@
+{"topic": "camera", "goal": "the camera stays black when I join a video call", "near": ["quicktimeplayer", "photos", "imagecapture"], "decoys": ["FaceTime", "Photo Booth", "Zoom"]}
+{"topic": "camera", "goal": "my face doesn't show up in the online meeting", "near": ["quicktimeplayer", "photos"], "decoys": ["FaceTime", "Photo Booth", "Zoom"]}
+{"topic": "camera", "goal": "allow the meeting app to use my camera", "near": ["quicktimeplayer", "imagecapture"], "decoys": ["Zoom", "Photo Booth", "FaceTime"]}
+{"topic": "camera", "goal": "the call app says it has no permission for the camera", "near": ["quicktimeplayer", "photos"], "decoys": ["Zoom", "FaceTime", "Photo Booth"]}
+{"topic": "camera", "goal": "my teacher says my video is off in the online class", "near": ["quicktimeplayer", "notes"], "decoys": ["Zoom", "Photo Booth", "FaceTime"]}
+{"topic": "camera", "goal": "give zoom permission to turn on my camera", "near": ["quicktimeplayer", "photos"], "decoys": ["Zoom", "Photo Booth", "FaceTime"]}
+{"topic": "camera", "goal": "hindi lumalabas ang mukha ko sa video call", "near": ["quicktimeplayer", "photos"], "decoys": ["FaceTime", "Photo Booth", "Zoom"]}
+{"topic": "camera", "goal": "itim lang ang camera pag nasa meeting ako", "near": ["quicktimeplayer", "imagecapture"], "decoys": ["Zoom", "Photo Booth", "FaceTime"]}
+{"topic": "microphone", "goal": "nobody can hear me on the call, the microphone seems blocked", "near": ["quicktimeplayer", "audacity", "music"], "decoys": ["Zoom", "FaceTime", "Viber"]}
+{"topic": "microphone", "goal": "let viber use my microphone", "near": ["audacity", "quicktimeplayer"], "decoys": ["Viber", "Messages", "FaceTime"]}
+{"topic": "microphone", "goal": "the meeting app can't use the mic", "near": ["audacity", "notes"], "decoys": ["Zoom", "FaceTime", "Messages"]}
+{"topic": "microphone", "goal": "walang nakakarinig sa akin sa online meeting", "near": ["audacity", "quicktimeplayer"], "decoys": ["Zoom", "FaceTime", "Viber"]}
+{"topic": "wifi", "goal": "the internet stopped working, check the wireless", "near": ["maps", "vlc", "spotify"], "decoys": ["Safari", "Google Chrome"]}
+{"topic": "wifi", "goal": "join the wireless network at my daughter's house", "near": ["maps", "vlc"], "decoys": ["Safari", "Google Chrome", "Messages"]}
+{"topic": "wifi", "goal": "type in the new password for our home internet", "near": ["notes", "vlc"], "decoys": ["Safari", "Google Chrome"]}
+{"topic": "wifi", "goal": "switch the wireless internet off and on again", "near": ["spotify", "maps"], "decoys": ["Safari", "Google Chrome"]}
+{"topic": "wifi", "goal": "which internet network is this mac using", "near": ["vlc", "maps"], "decoys": ["Safari", "Google Chrome"]}
+{"topic": "wifi", "goal": "walang internet, ayusin ang wireless", "near": ["maps", "spotify"], "decoys": ["Safari", "Google Chrome"]}
+{"topic": "wifi", "goal": "lipat sa ibang wifi network", "near": ["vlc", "maps"], "decoys": ["Safari", "Google Chrome"]}
+{"topic": "bluetooth", "goal": "pair my new wireless earbuds", "near": ["music", "spotify"], "decoys": ["Music", "Spotify"]}
+{"topic": "bluetooth", "goal": "my wireless mouse won't connect", "near": ["freeform", "notes"], "decoys": ["Finder", "App Store"]}
+{"topic": "bluetooth", "goal": "hook up the bluetooth speaker", "near": ["music", "vlc"], "decoys": ["Music", "Spotify"]}
+{"topic": "bluetooth", "goal": "forget the old headset paired to this mac", "near": ["music", "audacity"], "decoys": ["Music", "FaceTime"]}
+{"topic": "bluetooth", "goal": "ikabit yung wireless speaker ko sa mac", "near": ["music", "spotify"], "decoys": ["Music", "Spotify"]}
+{"topic": "sound", "goal": "the sound comes from the mac instead of my headphones", "near": ["music", "vlc", "spotify"], "decoys": ["Music", "FaceTime"]}
+{"topic": "sound", "goal": "play every sound through my speaker box", "near": ["music", "quicktimeplayer"], "decoys": ["Music", "Spotify"]}
+{"topic": "sound", "goal": "the alert beeps are way too loud", "near": ["music", "calendar"], "decoys": ["Music", "Messages"]}
+{"topic": "sound", "goal": "change which speakers the computer uses", "near": ["vlc", "audacity"], "decoys": ["Music", "Spotify"]}
+{"topic": "sound", "goal": "nothing on my mac makes any noise at all", "near": ["music", "spotify"], "decoys": ["Music", "Spotify"]}
+{"topic": "sound", "goal": "sa headset dapat lumabas ang tunog", "near": ["music", "vlc"], "decoys": ["Music", "Spotify"]}
+{"topic": "sound", "goal": "my microphone is too soft for the people on the call", "near": ["audacity", "quicktimeplayer"], "decoys": ["Zoom", "FaceTime"]}
+{"topic": "text_size", "goal": "everything on the computer is too small to read, not just this app", "near": ["textedit", "notes", "fontbook"], "decoys": ["TextEdit", "Books"]}
+{"topic": "text_size", "goal": "make the words in every app bigger", "near": ["textedit", "notes", "books"], "decoys": ["TextEdit", "Books"]}
+{"topic": "text_size", "goal": "the menu bar words are too tiny for my eyes", "near": ["textedit", "fontbook"], "decoys": ["TextEdit", "Books"]}
+{"topic": "text_size", "goal": "make the mouse pointer bigger, I keep losing it", "near": ["freeform", "notes"], "decoys": ["Finder", "TextEdit"]}
+{"topic": "text_size", "goal": "let me zoom in on the whole screen with the keyboard", "near": ["photos", "maps", "textedit"], "decoys": ["Preview", "TextEdit"]}
+{"topic": "text_size", "goal": "palakihin lahat ng sulat sa buong computer", "near": ["textedit", "notes"], "decoys": ["TextEdit", "Books"]}
+{"topic": "text_size", "goal": "ang liit ng lahat sa mac, di ko mabasa kahit saan", "near": ["notes", "books"], "decoys": ["TextEdit", "Books"]}
+{"topic": "update", "goal": "install the latest version of macOS", "near": ["vlc", "music", "books"], "decoys": ["App Store"]}
+{"topic": "update", "goal": "my mac keeps saying an update is waiting", "near": ["vlc", "calendar"], "decoys": ["App Store"]}
+{"topic": "update", "goal": "is the computer's system up to date", "near": ["vlc", "music"], "decoys": ["App Store"]}
+{"topic": "update", "goal": "may bagong update daw ang macOS, i-install mo", "near": ["vlc", "music"], "decoys": ["App Store"]}
+{"topic": "printer", "goal": "set up the new printer my son bought", "near": ["textedit", "notes", "photos"], "decoys": ["Preview", "Microsoft Word"]}
+{"topic": "printer", "goal": "my printer isn't showing up anywhere", "near": ["textedit", "photos"], "decoys": ["Preview", "Microsoft Word"]}
+{"topic": "printer", "goal": "remove the old printer from the computer", "near": ["notes", "textedit"], "decoys": ["Preview", "Microsoft Word"]}
+{"topic": "printer", "goal": "ikabit ang bagong printer sa mac", "near": ["textedit", "photos"], "decoys": ["Preview", "Microsoft Word"]}
+{"topic": "storage", "goal": "check how much room the mac has left for files", "near": ["photos", "music"], "decoys": ["Finder", "Photos"]}
+{"topic": "storage", "goal": "the mac says the disk is almost full", "near": ["photos", "music", "quicktimeplayer"], "decoys": ["Finder", "Photos"]}
+{"topic": "storage", "goal": "what is using up all the space on my computer", "near": ["photos", "music"], "decoys": ["Finder", "Photos"]}
+{"topic": "storage", "goal": "puno na daw ang storage ng mac ko", "near": ["photos", "music"], "decoys": ["Finder", "Photos"]}
+{"topic": "notifications", "goal": "too many alerts pop up in the corner, turn them off", "near": ["calendar", "reminders"], "decoys": ["Calendar", "Reminders"]}
+{"topic": "notifications", "goal": "don't let the apps bother me with messages while I sleep", "near": ["calendar", "reminders"], "decoys": ["Calendar", "Messages"]}
+{"topic": "appearance", "goal": "make the whole computer dark, not just this window", "near": ["textedit", "notes"], "decoys": ["TextEdit", "Notes"]}
+{"topic": "appearance", "goal": "gawing dark mode ang buong mac", "near": ["textedit", "notes"], "decoys": ["TextEdit", "Notes"]}
+{"topic": "language", "goal": "change the language of the whole mac to tagalog", "near": ["dictionary", "textedit"], "decoys": ["Dictionary", "TextEdit"]}
+{"topic": "clock", "goal": "the clock at the top shows the wrong time", "near": ["calendar", "reminders"], "decoys": ["Calendar", "Reminders"]}
+{"topic": "mouse", "goal": "the pointer moves too slowly when I use the mouse", "near": ["freeform", "chess"], "decoys": ["Finder", "Freeform"]}
+{"topic": "mouse", "goal": "make the trackpad click when I just tap it", "near": ["freeform", "notes"], "decoys": ["Finder", "Freeform"]}
+{"topic": "lock", "goal": "lock the screen sooner when I walk away", "near": ["notes", "photos"], "decoys": ["Finder", "Notes"]}
+{"topic": "rename_mac", "goal": "give my mac a different name", "near": ["textedit", "quicktimeplayer"], "decoys": ["Finder"]}
+{"topic": "rename_mac", "goal": "palitan ang pangalan ng mac ko", "near": ["textedit", "notes"], "decoys": ["Finder"]}
+{"topic": "battery", "goal": "show how much battery is left at the top of the screen", "near": ["calendar", "music"], "decoys": ["Finder"]}
+{"topic": "battery", "goal": "ipakita ang porsyento ng baterya", "near": ["calendar", "maps"], "decoys": ["Finder"]}
+{"topic": "sleep", "goal": "the screen goes dark too soon when I stop typing", "near": ["textedit", "notes", "books"], "decoys": ["TextEdit", "Notes"]}
+{"topic": "sleep", "goal": "mabilis mamatay ang screen, patagalin mo", "near": ["books", "vlc"], "decoys": ["Books", "VLC"]}
+{"topic": "keyboard", "goal": "my keyboard types the wrong letters, fix the keyboard setting", "near": ["textedit", "notes"], "decoys": ["TextEdit"]}
+{"topic": "keyboard", "goal": "turn on the light under the keys", "near": ["textedit", "notes"], "decoys": ["TextEdit"]}
+{"topic": "accessibility", "goal": "make the screen colors easier for someone who is color blind", "near": ["photos", "freeform"], "decoys": ["Photos", "Freeform"]}
+{"topic": "accessibility", "goal": "flash the screen instead of beeping because I can't hear well", "near": ["music", "calendar"], "decoys": ["Music"]}
+{"topic": "touchid", "goal": "let me unlock the mac with my fingerprint", "near": ["notes", "photos"], "decoys": ["Finder"]}
+{"topic": "camera", "goal": "the video call shows a camera with a line through it", "near": ["quicktimeplayer", "photos"], "decoys": ["FaceTime", "Photo Booth", "Zoom"]}
+{"topic": "microphone", "goal": "the class app is not allowed to use my mic", "near": ["audacity", "quicktimeplayer"], "decoys": ["Zoom", "FaceTime"]}
+{"topic": "sound", "goal": "walang lumalabas na tunog sa speaker kahit saan", "near": ["music", "vlc"], "decoys": ["Music", "Spotify"]}
+{"topic": "wifi", "goal": "the wifi symbol at the top has an exclamation mark", "near": ["maps", "spotify"], "decoys": ["Safari", "Google Chrome"]}
+{"topic": "update", "goal": "get the newest security fixes for the mac", "near": ["vlc", "zed"], "decoys": ["App Store"]}
+{"topic": "camera", "goal": "di ako makita ng anak ko sa messenger video", "near": ["quicktimeplayer", "photos"], "decoys": ["FaceTime", "Photo Booth", "Messages"]}
+{"topic": "bluetooth", "goal": "ayaw kumonekta ng wireless mouse ko", "near": ["freeform", "notes"], "decoys": ["Finder", "App Store"]}
+{"topic": "printer", "goal": "hindi makita ng mac ang printer ko", "near": ["textedit", "photos"], "decoys": ["Preview", "Microsoft Word"]}
+{"topic": "notifications", "goal": "ang daming lumalabas na alerts sa gilid, patayin mo", "near": ["calendar", "reminders"], "decoys": ["Calendar", "Reminders"]}
+{"topic": "storage", "goal": "ano ang kumakain ng space sa computer ko", "near": ["photos", "music"], "decoys": ["Finder", "Photos"]}

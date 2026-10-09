@@ -1,0 +1,8 @@
+{"type": "lookalike", "goal": "don't let my friends see what I'm listening to", "answer": "Spotify > Private Session", "decoys": ["Spotify > Hide Spotify", "Spotify > Hide Others"]}
+{"type": "lookalike", "goal": "sign out of my spotify account", "answer": "Spotify > Log Out", "decoys": ["Spotify > Quit Spotify", "Window > Close"]}
+{"type": "lookalike", "goal": "turn up the music", "answer": "Playback > Volume Up", "decoys": ["View > Zoom In", "Playback > Seek Forward"]}
+{"type": "lookalike", "goal": "lakasan mo yung kanta", "answer": "Playback > Volume Up", "decoys": ["View > Zoom In", "Playback > Next"]}
+{"type": "view_vs_file", "goal": "the words in the spotify window are too small", "answer": "View > Zoom In", "decoys": ["Playback > Volume Up", "Edit > Filter"]}
+{"type": "lookalike", "goal": "play songs in a random order", "answer": "Playback > Shuffle", "decoys": ["Playback > Repeat", "Playback > Next"]}
+{"type": "lookalike", "goal": "play songs without using the internet", "answer": "Spotify > Offline Mode", "decoys": ["Spotify > Private Session", "Playback > Play"]}
+{"type": "lookalike", "goal": "look for a song by its name", "answer": "Edit > Search", "decoys": ["Edit > Filter", "File > New Playlist"]}

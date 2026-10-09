@@ -1,0 +1,5 @@
+{"type": "lookalike", "goal": "change dollars into pesos", "answer": "View > Convert", "decoys": ["Edit > Copy", "View > Programmer"]}
+{"type": "lookalike", "goal": "show the sums I did before", "answer": "View > Show History", "decoys": ["View > Math Notes…", "View > Basic"]}
+{"type": "lookalike", "goal": "ipakita yung mga nauna kong kinompute", "answer": "View > Show History", "decoys": ["View > Math Notes…", "View > Basic"]}
+{"type": "lookalike", "goal": "I need the calculator with sin and cos", "answer": "View > Scientific", "decoys": ["View > Programmer", "View > Math Notes…"]}
+{"type": "lookalike", "goal": "only show two numbers after the dot", "answer": "View > Decimal Places > 2", "decoys": ["View > Hide Thousands Separator", "View > Decimal Places > 0"]}

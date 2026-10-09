@@ -1,0 +1,11 @@
+{"type": "lookalike", "goal": "make a group for my cooking books", "answer": "File > New Collection", "decoys": ["File > Open Book", "File > Add to Collection > No Collection"]}
+{"type": "lookalike", "goal": "save this page so I can come back to it", "answer": "Edit > Bookmark Page", "decoys": ["Edit > Highlight > Add Note", "File > Open Book"]}
+{"type": "lookalike", "goal": "read the book out loud to me", "answer": "Edit > Speech > Start Speaking", "decoys": ["File > Open Book", "Edit > Start Dictation…"]}
+{"type": "lookalike", "goal": "basahin mo nang malakas yung libro", "answer": "Edit > Speech > Start Speaking", "decoys": ["File > Open Book", "Edit > Start Dictation…"]}
+{"type": "lookalike", "goal": "stop the audiobook after half an hour when I fall asleep", "answer": "Controls > Sleep Timer > 30 minutes", "decoys": ["Controls > Stop", "Controls > Pause"]}
+{"type": "lookalike", "goal": "the reader talks too slowly, speed it up", "answer": "Controls > Playback Speed > 1.5x", "decoys": ["Controls > Skip Forward", "Controls > Increase Volume"]}
+{"type": "lookalike", "goal": "go back to the start of this chapter", "answer": "Controls > Beginning of Chapter", "decoys": ["Controls > Previous Chapter", "Controls > Back"]}
+{"type": "lookalike", "goal": "mark this sentence in yellow", "answer": "Edit > Highlight > Yellow", "decoys": ["Edit > Bookmark Page", "Edit > Highlight > Underline"]}
+{"type": "lookalike", "goal": "write my own thought next to this line", "answer": "Edit > Highlight > Add Note", "decoys": ["Edit > Bookmark Page", "Edit > Start Dictation…"]}
+{"type": "lookalike", "goal": "show my books as a list instead of pictures", "answer": "View > List", "decoys": ["View > Grid", "View > Title"]}
+{"type": "lookalike", "goal": "put a book I downloaded into my library", "answer": "File > Import…", "decoys": ["File > Open Book", "File > New Collection"]}

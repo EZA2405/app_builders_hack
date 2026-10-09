@@ -1,0 +1,15 @@
+{"type": "file_vs_view", "goal": "save this map as a file I can send", "answer": "File > Export As…", "decoys": ["View > Zoom Out", "Edit > Copy Link"]}
+{"type": "file_vs_view", "goal": "i-save ang mapa bilang pdf para ma-email", "answer": "File > Export As…", "decoys": ["View > Zoom Out", "File > Print…"]}
+{"type": "view_vs_file", "goal": "show more of the area around here", "answer": "View > Zoom Out", "decoys": ["File > Export As…", "View > Show Scale"]}
+{"type": "view_vs_file", "goal": "make the streets look bigger so I can read the names", "answer": "View > Zoom In", "decoys": ["File > Export As…", "View > Show Labels"]}
+{"type": "lookalike", "goal": "tell me how to drive to the airport", "answer": "View > Show Directions", "decoys": ["View > Driving", "View > Transit"]}
+{"type": "lookalike", "goal": "show where I am right now", "answer": "View > Go to Current Location", "decoys": ["Edit > Mark Location", "Edit > Remove Marked Location"]}
+{"type": "lookalike", "goal": "nasaan ako ngayon sa mapa", "answer": "View > Go to Current Location", "decoys": ["Edit > Mark Location", "View > Explore"]}
+{"type": "lookalike", "goal": "are the roads busy right now", "answer": "View > Show Traffic", "decoys": ["View > Driving", "View > Show Directions"]}
+{"type": "lookalike", "goal": "see the street as if I'm standing there", "answer": "View > Show Look Around", "decoys": ["View > Show 3D Map", "View > Explore"]}
+{"type": "lookalike", "goal": "turn the map so north is at the top", "answer": "View > Snap to North", "decoys": ["View > Show 3D Map", "View > Default Zoom"]}
+{"type": "file_vs_view", "goal": "make this map into a document I can attach", "answer": "File > Export As…", "decoys": ["View > Zoom Out", "View > Default Zoom"]}
+{"type": "view_vs_file", "goal": "I can't see the whole city, show a bigger area", "answer": "View > Zoom Out", "decoys": ["File > Export As…", "View > Satellite"]}
+{"type": "view_vs_file", "goal": "go closer to this street", "answer": "View > Zoom In", "decoys": ["File > Export As…", "View > Show Look Around"]}
+{"type": "lookalike", "goal": "paano magmaneho papunta sa ospital", "answer": "View > Show Directions", "decoys": ["View > Driving", "View > Transit"]}
+{"type": "lookalike", "goal": "traffic ba ngayon sa daan", "answer": "View > Show Traffic", "decoys": ["View > Driving", "View > Show Directions"]}

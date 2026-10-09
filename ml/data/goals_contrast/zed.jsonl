@@ -1,0 +1,4 @@
+{"type": "view_vs_file", "goal": "the code is too small on my screen", "answer": "View > Zoom In", "decoys": ["File > Save As…", "Selection > Expand Selection"]}
+{"type": "view_vs_file", "goal": "put the text size on screen back to normal", "answer": "View > Reset Zoom", "decoys": ["File > Save", "Selection > Shrink Selection"]}
+{"type": "lookalike", "goal": "is there a newer version of this editor", "answer": "Zed > Check for Updates", "decoys": ["Zed > Extensions", "Zed > Install CLI"]}
+{"type": "lookalike", "goal": "change the colors of the editor to a dark look", "answer": "Zed > Settings > Select Theme...", "decoys": ["Zed > Settings > Select Icon Theme...", "View > Toggle Left Dock"]}

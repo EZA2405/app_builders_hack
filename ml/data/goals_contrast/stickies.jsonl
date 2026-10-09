@@ -1,0 +1,7 @@
+{"type": "file_vs_view", "goal": "save this sticky as a file I can send", "answer": "File > Export Text…", "decoys": ["File > Import Text…", "Window > Zoom"]}
+{"type": "lookalike", "goal": "move all my stickies into the Notes app", "answer": "File > Export All to Notes…", "decoys": ["File > New Note", "Window > Arrange By > Content"]}
+{"type": "lookalike", "goal": "ilipat lahat ng sticky ko sa Notes", "answer": "File > Export All to Notes…", "decoys": ["File > New Note", "Window > Arrange By > Content"]}
+{"type": "lookalike", "goal": "make the writing on this sticky bigger", "answer": "Font > Bigger", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"type": "lookalike", "goal": "change this sticky to blue", "answer": "Color > Blue", "decoys": ["Font > Show Colors", "Window > Arrange By > Color"]}
+{"type": "lookalike", "goal": "cross out this line, I'm done with it", "answer": "Font > Strikethrough", "decoys": ["Edit > Delete", "Edit > Cut"]}
+{"type": "file_vs_view", "goal": "gawing file ang sticky para ma-email ko", "answer": "File > Export Text…", "decoys": ["Window > Zoom", "File > Export All to Notes…"]}

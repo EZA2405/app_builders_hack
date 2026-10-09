@@ -1,0 +1,5 @@
+{"type": "lookalike", "goal": "make the letter samples bigger in this window", "answer": "View > Increase Font Size", "decoys": ["Window > Zoom", "File > Add Fonts to Current User…"]}
+{"type": "lookalike", "goal": "put a new font I downloaded on my mac", "answer": "File > Add Fonts to Current User…", "decoys": ["Edit > Download", "File > New Collection"]}
+{"type": "lookalike", "goal": "fix fonts that are installed twice", "answer": "File > Resolve Duplicates…", "decoys": ["Edit > Copy", "File > Validate Selection"]}
+{"type": "lookalike", "goal": "turn this font off without deleting it", "answer": "Edit > Deactivate", "decoys": ["Edit > Remove", "Edit > Delete"]}
+{"type": "lookalike", "goal": "pakitanggal muna itong font pero huwag burahin", "answer": "Edit > Deactivate", "decoys": ["Edit > Remove", "Edit > Delete"]}

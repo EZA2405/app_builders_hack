@@ -1,0 +1,18 @@
+{"type": "file_vs_view", "goal": "turn this board into a file I can email", "answer": "File > Export Board as PDF…", "decoys": ["View > Zoom > Zoom Out", "View > Zoom > Zoom to Fit Content"]}
+{"type": "file_vs_view", "goal": "my teacher wants this board sent as one file", "answer": "File > Export Board as PDF…", "decoys": ["View > Zoom > Zoom Out", "File > Duplicate"]}
+{"type": "file_vs_view", "goal": "gawing pdf yung board para ma-email", "answer": "File > Export Board as PDF…", "decoys": ["View > Zoom > Zoom Out", "File > Print Board…"]}
+{"type": "view_vs_file", "goal": "I can't see the whole board, fit it all on my screen", "answer": "View > Zoom > Zoom to Fit Content", "decoys": ["File > Export Board as PDF…", "File > Export Scenes as PDF…"]}
+{"type": "view_vs_file", "goal": "everything on the board looks too big, zoom out", "answer": "View > Zoom > Zoom Out", "decoys": ["File > Export Board as PDF…", "Format > Font > Smaller"]}
+{"type": "view_vs_file", "goal": "get closer to the sticky note I picked", "answer": "View > Zoom > Zoom to Selection", "decoys": ["File > Export Board as PDF…", "Edit > Select All"]}
+{"type": "lookalike", "goal": "put a square on my board", "answer": "Insert > Shape > Rectangle", "decoys": ["Format > Round Corners", "Insert > Table"]}
+{"type": "lookalike", "goal": "put this picture behind the other things", "answer": "Arrange > Send to Back", "decoys": ["File > Share…", "Insert > Choose Photo or Video"]}
+{"type": "lookalike", "goal": "stop this box from moving when I click it", "answer": "Arrange > Lock", "decoys": ["Edit > Undo", "View > Snap to Grid"]}
+{"type": "lookalike", "goal": "add a photo from my computer to the board", "answer": "Insert > Choose Photo or Video", "decoys": ["Insert > Generate Image", "Format > Image > Generate from Image"]}
+{"type": "lookalike", "goal": "remove the background behind the person in this photo", "answer": "Format > Image > Remove Background", "decoys": ["Arrange > Send to Back", "Edit > Clear All"]}
+{"type": "lookalike", "goal": "make a copy of this whole board", "answer": "File > Duplicate", "decoys": ["Edit > Duplicate Selection", "Edit > Copy"]}
+{"type": "file_vs_view", "goal": "send just my scenes to the class as one file", "answer": "File > Export Scenes as PDF…", "decoys": ["View > Scenes > Show Next Scene", "View > Zoom > Zoom Out"]}
+{"type": "lookalike", "goal": "make the picture look sharper and clearer", "answer": "Format > Image > Super Resolution", "decoys": ["Format > Image > Generate from Image", "View > Zoom > Zoom In"]}
+{"type": "lookalike", "goal": "draw an arrow from one box to the other", "answer": "Insert > Connection Line", "decoys": ["Insert > Shape > Arrow", "Insert > Shape > Double Arrow"]}
+{"type": "file_vs_view", "goal": "my boss wants the whole board as one document", "answer": "File > Export Board as PDF…", "decoys": ["View > Zoom > Zoom to Fit Content", "File > Print Board…"]}
+{"type": "view_vs_file", "goal": "the board is too zoomed in, let me see everything", "answer": "View > Zoom > Zoom to Fit Content", "decoys": ["File > Export Board as PDF…", "View > Zoom > Actual Size"]}
+{"type": "view_vs_file", "goal": "lakihan ang tingin sa board, ang liit ng mga sulat", "answer": "View > Zoom > Zoom In", "decoys": ["File > Export Board as PDF…", "Format > Font > Bigger"]}

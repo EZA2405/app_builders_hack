@@ -112,6 +112,19 @@ Per app, v6en:
 
 Logs: `train-v6en.log` and `results-v6en.txt` on the `gabay-models` Modal volume. Reproduce: `modal run ml/modal_train.py --version v6en --data data/v6/train.jsonl --epochs 5 --head 320` (add `--base multilingual` for v6ml).
 
+## v7 data (2026-10-10): contrast rows for live-test failures (training results pending)
+Data: `data/v7/train.jsonl`, 29,776 rows = v6 (28,250) + 1,526 new rows from `contrast_data.py`. All new goals are Claude-written, on training apps only. About 20% are Taglish.
+- **File vs view** (60 goals): "make this video small enough to send" → `File > Export As > 480p…`, with `View > Zoom Out` as a decoy. Jev agreed with the label on 53/60.
+- **View vs file** (47 goals): the reverse direction, so "smaller" doesn't always mean Export. Jev agreed on 44/47.
+- **Look-alike words** (175 goals): the goal's words appear in a wrong command. Jev agreed on 168/175.
+- **System jobs → System Settings** (80 goals × 3 training apps in front): camera/mic permission, Wi-Fi, Bluetooth, sound output, screen-wide text size, updates, printers, storage and similar. Look-alike apps are decoys. Jev agreed on 208/240 and confidently disagreed (>0.85) on 2, which were dropped.
+- **Stay in the app** (51 goals × 2): in-app goals that use system words, e.g. "make this word bigger" in TextEdit. Jev agreed on 97/102.
+
+Menu rows are repeated ×3 and routing rows ×2, each copy with a fresh option group. Any goal that nearly copies a test, validation or use-case goal (≥50% content-word overlap) is skipped.
+
+- **Caveat:** the routing eval's 8 System Settings goals now share topics with training (Wi-Fi, Bluetooth, text size, update, printer, sound). The wording is different, but that slice is no longer independent.
+- Reproduce: `python3 contrast_data.py data/v7`, then `modal run ml/modal_train.py --version v7en --data data/v7/train.jsonl --epochs 5 --head 320`.
+
 ## Real use cases, first step on this Mac (dev set, 2026-10-10)
 **What it is:** 41 requests taken from `docs/research/USER_TASKS.md` (`ml/usecases/scenarios.py`), with acceptable answers written before any run. It runs Gabay's real decision path (`--plan`: read the screen, stay or route, pick) on the live apps.
 - **Not a benchmark.** The settings routing below was developed while looking at these results.

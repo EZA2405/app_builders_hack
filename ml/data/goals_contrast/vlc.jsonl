@@ -1,0 +1,16 @@
+{"type": "file_vs_view", "goal": "make this movie file smaller so I can send it", "answer": "File > Convert / Stream...", "decoys": ["Video > Half Size", "Window > Zoom"]}
+{"type": "file_vs_view", "goal": "change this video into a file my phone can play", "answer": "File > Convert / Stream...", "decoys": ["Video > Normal Size", "File > Open File..."]}
+{"type": "file_vs_view", "goal": "i-convert yung video para mas maliit yung file", "answer": "File > Convert / Stream...", "decoys": ["Video > Half Size"]}
+{"type": "view_vs_file", "goal": "the movie window is too big, make it half as big on the screen", "answer": "Video > Half Size", "decoys": ["File > Convert / Stream...", "Window > Minimize"]}
+{"type": "view_vs_file", "goal": "make the movie picture twice as big on my screen", "answer": "Video > Double Size", "decoys": ["File > Convert / Stream...", "Subtitles > Text Size > Larger"]}
+{"type": "view_vs_file", "goal": "make the video fit my screen", "answer": "Video > Fit to Screen", "decoys": ["File > Convert / Stream...", "Video > Double Size"]}
+{"type": "lookalike", "goal": "the subtitle words are too small to read", "answer": "Subtitles > Text Size > Large", "decoys": ["Video > Double Size", "Video > Fit to Screen"]}
+{"type": "lookalike", "goal": "take a picture of this moment in the movie", "answer": "Video > Snapshot", "decoys": ["Playback > Record", "Playback > Stop"]}
+{"type": "lookalike", "goal": "check if this video player has a newer version", "answer": "VLC > Check for Update...", "decoys": ["VLC > Addons Manager", "VLC > About VLC media player..."]}
+{"type": "lookalike", "goal": "may bagong version ba ang VLC", "answer": "VLC > Check for Update...", "decoys": ["VLC > About VLC media player...", "VLC > Addons Manager"]}
+{"type": "lookalike", "goal": "play the movie from my DVD", "answer": "File > Open Disc...", "decoys": ["File > Open File...", "Playback > Play"]}
+{"type": "lookalike", "goal": "watch a video from a link on the internet", "answer": "File > Open Network...", "decoys": ["File > Open Disc...", "File > Open Capture Device..."]}
+{"type": "lookalike", "goal": "mute this movie for a moment", "answer": "Audio > Mute", "decoys": ["Playback > Stop", "Audio > Decrease Volume"]}
+{"type": "lookalike", "goal": "put words at the bottom of the movie from a file I downloaded", "answer": "Subtitles > Add Subtitle File...", "decoys": ["File > Open File...", "Subtitles > Text Size > Normal"]}
+{"type": "lookalike", "goal": "keep playing the same video again and again", "answer": "Playback > Repeat One", "decoys": ["Playback > Previous", "Playback > Record"]}
+{"type": "lookalike", "goal": "show me where this video is saved on my mac", "answer": "File > Reveal in Finder", "decoys": ["File > Open File...", "File > Save Playlist..."]}

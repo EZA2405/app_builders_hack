@@ -1,0 +1,4 @@
+{"type": "lookalike", "goal": "look up the meaning of another word", "answer": "Edit > Find > Search For a New Word…", "decoys": ["Edit > Find > Find…", "Edit > Find > Find Next"]}
+{"type": "lookalike", "goal": "hanapin ang ibig sabihin ng ibang salita", "answer": "Edit > Find > Search For a New Word…", "decoys": ["Edit > Find > Find…", "Go > Forward"]}
+{"type": "lookalike", "goal": "find where a word shows up inside this explanation", "answer": "Edit > Find > Find…", "decoys": ["Edit > Find > Search For a New Word…", "Search > All Dictionaries"]}
+{"type": "lookalike", "goal": "go back to the word I looked at before", "answer": "Go > Back", "decoys": ["Search > Select Previous Dictionary", "Edit > Find > Find Previous"]}

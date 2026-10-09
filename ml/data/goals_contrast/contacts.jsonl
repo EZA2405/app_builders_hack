@@ -1,0 +1,13 @@
+{"type": "file_vs_view", "goal": "send my whole address book to my new phone as a file", "answer": "File > Export > Export vCard…", "decoys": ["File > Print…", "Card > Share My Card > Email My Card"]}
+{"type": "lookalike", "goal": "make a group for my church friends", "answer": "File > New Group", "decoys": ["Edit > Rename Group", "View > Hide Groups"]}
+{"type": "lookalike", "goal": "gumawa ng grupo para sa mga kamag-anak ko", "answer": "File > New Group", "decoys": ["Edit > Rename Group", "View > Hide Groups"]}
+{"type": "lookalike", "goal": "my brother changed his number, fix it", "answer": "Edit > Edit Card", "decoys": ["Card > Add Field > Phone", "File > New Card"]}
+{"type": "lookalike", "goal": "email my own contact details to my nephew", "answer": "Card > Share My Card > Email My Card", "decoys": ["Card > Add Field > Email", "Card > Go to My Card"]}
+{"type": "lookalike", "goal": "put a picture on my friend's contact", "answer": "Card > Choose Custom Image…", "decoys": ["Card > Clear Custom Image", "Card > Open in Separate Window"]}
+{"type": "lookalike", "goal": "keep a backup of all my contacts", "answer": "File > Export > Contacts Archive…", "decoys": ["File > Save", "Edit > Copy"]}
+{"type": "lookalike", "goal": "find people I saved twice", "answer": "Card > Look for Duplicates…", "decoys": ["Edit > Copy", "Edit > Find > Find"]}
+{"type": "lookalike", "goal": "add someone new to my contacts", "answer": "File > New Card", "decoys": ["Card > Add Field > Related Name", "File > New Group"]}
+{"type": "lookalike", "goal": "dagdagan ng bagong tao ang contacts ko", "answer": "File > New Card", "decoys": ["Card > Add Field > Related Name", "File > New Group"]}
+{"type": "lookalike", "goal": "this contact is a store, not a person", "answer": "Card > Mark as a Company", "decoys": ["Card > Add Field > Phonetic Company", "Card > Add Field > Job Title"]}
+{"type": "file_vs_view", "goal": "make a pdf of this person's details to send", "answer": "File > Export as PDF…", "decoys": ["Edit > Copy", "Card > Open in Separate Window"]}
+{"type": "lookalike", "goal": "go to my own details", "answer": "Card > Go to My Card", "decoys": ["Card > Make This My Card", "Card > Go to Next Card"]}

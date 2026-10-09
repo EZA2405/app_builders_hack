@@ -1,0 +1,7 @@
+{"type": "file_vs_view", "goal": "turn this page into a file I can send by email", "answer": "File > Export To PDF…", "decoys": ["View > Zoom Out", "View > Actual Size"]}
+{"type": "file_vs_view", "goal": "gawing pdf ang note na ito para maipadala", "answer": "File > Export To PDF…", "decoys": ["View > Zoom Out", "File > Share > Notes"]}
+{"type": "view_vs_file", "goal": "the writing on screen looks tiny, zoom in", "answer": "View > Zoom In", "decoys": ["File > Export To PDF…", "Format > Heading 1"]}
+{"type": "view_vs_file", "goal": "everything looks too big, show it smaller on screen", "answer": "View > Zoom Out", "decoys": ["File > Export To PDF…", "Format > Body"]}
+{"type": "lookalike", "goal": "email this note to my friend", "answer": "File > Share > Mail", "decoys": ["Insert > Link", "File > Share > Messages"]}
+{"type": "lookalike", "goal": "start a to-do list I can check off", "answer": "Insert > Task List", "decoys": ["Insert > Bullet List", "Insert > Table"]}
+{"type": "lookalike", "goal": "put a picture into this page", "answer": "Insert > Insert Attachment…", "decoys": ["Insert > Link", "Format > Highlight"]}

@@ -1,0 +1,31 @@
+{"type": "file_vs_view", "goal": "the website says my picture file is too big to upload", "answer": "File > Export > Export Photos…", "decoys": ["View > Zoom Out", "Edit > Font > Smaller"]}
+{"type": "file_vs_view", "goal": "save these vacation pictures as files I can attach to a form", "answer": "File > Export > Export Photos…", "decoys": ["View > Zoom Out", "Image > Save to Library"]}
+{"type": "file_vs_view", "goal": "put copies of these pictures in a folder on my desktop", "answer": "File > Export > Export Photos…", "decoys": ["File > New Folder", "View > Zoom Out"]}
+{"type": "file_vs_view", "goal": "i need these photos as files to put on a usb stick", "answer": "File > Export > Export Photos…", "decoys": ["View > Zoom Out", "Image > Duplicate"]}
+{"type": "file_vs_view", "goal": "i-save ang mga litrato bilang file para ma-upload sa facebook", "answer": "File > Export > Export Photos…", "decoys": ["View > Zoom Out", "Image > Save to Library"]}
+{"type": "file_vs_view", "goal": "turn this little moving clip into a gif to send", "answer": "File > Export > Export GIF", "decoys": ["View > Zoom Out", "Image > Start/Stop Playback"]}
+{"type": "file_vs_view", "goal": "save the slideshow as a movie I can share", "answer": "File > Export > Export Slideshow…", "decoys": ["File > Play Slideshow", "View > Zoom Out"]}
+{"type": "view_vs_file", "goal": "the picture is too close, I can't see the whole thing", "answer": "View > Zoom Out", "decoys": ["File > Export > Export Photos…", "Edit > Font > Smaller"]}
+{"type": "view_vs_file", "goal": "the thumbnails are tiny, show them bigger on the screen", "answer": "View > Zoom In", "decoys": ["File > Export > Export Photos…", "Edit > Font > Bigger"]}
+{"type": "view_vs_file", "goal": "lakihan mo yung pagtingin ko sa litrato", "answer": "View > Zoom In", "decoys": ["File > Export > Export Photos…", "Edit > Font > Bigger"]}
+{"type": "view_vs_file", "goal": "show more photos on the screen at once", "answer": "View > Zoom Out", "decoys": ["File > Export > Export Photos…", "View > Show Thumbnails"]}
+{"type": "lookalike", "goal": "make an album for my trip pictures", "answer": "File > New Album", "decoys": ["View > Albums > All Albums", "File > New Folder"]}
+{"type": "lookalike", "goal": "put a heart on this photo, it's one of my best", "answer": "Image > Favorite Photo", "decoys": ["View > Pinned > Favorites", "View > Utilities > Favorites"]}
+{"type": "lookalike", "goal": "show me all the photos I put a heart on", "answer": "View > Pinned > Favorites", "decoys": ["Image > Favorite Photo", "View > Metadata > Favorite"]}
+{"type": "lookalike", "goal": "find the pictures I deleted by mistake", "answer": "View > Pinned > Recently Deleted", "decoys": ["Photos > Erase Deleted Items", "Image > Delete Photo"]}
+{"type": "lookalike", "goal": "nasaan na yung mga na-delete kong litrato, ibalik ko", "answer": "View > Pinned > Recently Deleted", "decoys": ["Photos > Erase Deleted Items", "Image > Delete Photo"]}
+{"type": "lookalike", "goal": "hide this one photo so it doesn't show in my library", "answer": "Image > Show/Hide Photo", "decoys": ["Photos > Hide Photos", "Photos > Hide Others"]}
+{"type": "lookalike", "goal": "the date on this picture is wrong, fix it", "answer": "Image > Adjust Date and Time…", "decoys": ["View > Sort > By Date Added", "View > Sort > By Date Modified"]}
+{"type": "lookalike", "goal": "play my pictures one after another like a show", "answer": "File > Play Slideshow", "decoys": ["File > Export > Export Slideshow…", "Image > Start/Stop Playback"]}
+{"type": "lookalike", "goal": "bring the pictures from my camera onto the mac", "answer": "File > Import…", "decoys": ["Image > Save to Library", "File > Export > Export Photos…"]}
+{"type": "lookalike", "goal": "undo all my changes and go back to the original picture", "answer": "Image > Revert to Original", "decoys": ["File > Export > Export Unmodified Original…", "Edit > Undo"]}
+{"type": "lookalike", "goal": "find the same photo saved twice", "answer": "View > Utilities > Duplicates", "decoys": ["Image > Duplicate", "Image > Duplicate from Original"]}
+{"type": "lookalike", "goal": "make the colors in this picture look nicer automatically", "answer": "Image > Auto Enhance", "decoys": ["Edit > Font > Show Colors", "Image > Show/Hide Edit Tools"]}
+{"type": "file_vs_view", "goal": "copy the original untouched file out of Photos", "answer": "File > Export > Export Unmodified Original…", "decoys": ["Image > Revert to Original", "Image > Duplicate from Original"]}
+{"type": "view_vs_file", "goal": "the photo fills the screen too much, step back", "answer": "View > Zoom Out", "decoys": ["File > Export > Export Photos…", "Image > Open/Close Viewer"]}
+{"type": "lookalike", "goal": "make this picture the cover of the album", "answer": "Image > Make Key Photo", "decoys": ["Image > Favorite Photo", "View > as Key Photo"]}
+{"type": "lookalike", "goal": "save a still picture from this video", "answer": "Image > Save Video Frame as Photo", "decoys": ["Image > Make Poster Frame", "Image > Save to Library"]}
+{"type": "lookalike", "goal": "gumawa ng album para sa mga litrato ng binyag", "answer": "File > New Album", "decoys": ["View > Albums > All Albums", "File > New Folder"]}
+{"type": "lookalike", "goal": "itago muna itong isang litrato", "answer": "Image > Show/Hide Photo", "decoys": ["Photos > Hide Photos", "Photos > Hide Others"]}
+{"type": "lookalike", "goal": "ipakita lahat ng favorite kong litrato", "answer": "View > Pinned > Favorites", "decoys": ["Image > Favorite Photo", "View > Metadata > Favorite"]}
+{"type": "view_vs_file", "goal": "lumayo ng konti sa litrato, sobrang lapit", "answer": "View > Zoom Out", "decoys": ["File > Export > Export Photos…", "Edit > Font > Smaller"]}

@@ -1,0 +1,17 @@
+{"type": "file_vs_view", "goal": "make a lighter copy of this song so it fits on my old phone", "answer": "File > Convert > Create AAC Version", "decoys": ["Controls > Decrease Volume", "Edit > Copy"]}
+{"type": "file_vs_view", "goal": "save my playlist as a file so I can back it up", "answer": "File > Library > Export Playlist…", "decoys": ["File > New > Playlist", "File > Print…"]}
+{"type": "lookalike", "goal": "show where this song file is kept on my computer", "answer": "File > Show in Finder", "decoys": ["Account > Authorizations > Authorize This Computer…", "Song > Show Album in Library"]}
+{"type": "lookalike", "goal": "what song is coming up after this one", "answer": "View > Show Playing Next", "decoys": ["Controls > Next Track", "Song > Play Next"]}
+{"type": "lookalike", "goal": "anong kanta ang susunod", "answer": "View > Show Playing Next", "decoys": ["Controls > Next Track", "Song > Play Next"]}
+{"type": "lookalike", "goal": "play this same song again and again", "answer": "Controls > Repeat > One", "decoys": ["Controls > Back", "Controls > Previous Track"]}
+{"type": "lookalike", "goal": "find songs I have two of", "answer": "File > Library > Show Duplicate Items", "decoys": ["Edit > Copy", "File > New > Playlist from Selection"]}
+{"type": "lookalike", "goal": "get the cover pictures for my albums", "answer": "File > Library > Get Album Artwork", "decoys": ["Song > Show Album in Library", "Song > Show in Apple Music"]}
+{"type": "lookalike", "goal": "make a folder to keep my playlists together", "answer": "File > New > Playlist Folder", "decoys": ["File > New > Playlist", "File > Show in Finder"]}
+{"type": "lookalike", "goal": "show the words of the song while it plays", "answer": "View > Show Lyrics", "decoys": ["Edit > Writing Tools > Show Writing Tools", "View > Show Status Bar"]}
+{"type": "lookalike", "goal": "ipakita ang lyrics habang tumutugtog", "answer": "View > Show Lyrics", "decoys": ["Edit > Writing Tools > Show Writing Tools", "View > Show Playing Next"]}
+{"type": "lookalike", "goal": "take this song out of the playlist but keep it in my music", "answer": "Song > Remove from Playlist", "decoys": ["Song > Delete from Library", "Song > Remove Download"]}
+{"type": "lookalike", "goal": "this computer is being sold, stop it playing my purchases", "answer": "Account > Authorizations > Deauthorize This Computer…", "decoys": ["Account > Authorizations > Authorize This Computer…", "Account > Sign Out"]}
+{"type": "lookalike", "goal": "turn the music all the way up", "answer": "Controls > Set Volume to Maximum", "decoys": ["Controls > Increase Volume", "View > Enter Full Screen"]}
+{"type": "lookalike", "goal": "save this song on my mac so it plays without internet", "answer": "Song > Download", "decoys": ["File > Import…", "Song > Remove Download"]}
+{"type": "file_vs_view", "goal": "save a list of my whole music library to a file", "answer": "File > Library > Export Library…", "decoys": ["File > Print…", "View > Show View Options"]}
+{"type": "lookalike", "goal": "ulit-ulitin lang itong kanta", "answer": "Controls > Repeat > One", "decoys": ["Controls > Back", "Controls > Previous Track"]}
