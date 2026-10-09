@@ -2,6 +2,7 @@ import PhotosUI
 import SwiftUI
 
 struct MenuScanView: View {
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @State private var selectedPhoto: PhotosPickerItem?
     @State private var menuImage: UIImage?
     @State private var menuText = ""
@@ -156,10 +157,12 @@ struct MenuScanView: View {
             HStack(spacing: 10) {
                 if isScanning {
                     ProgressView().tint(.white)
-                    Text("Reading your menu…")
+                    Text(dynamicTypeSize.isAccessibilitySize ? "Reading…" : "Reading your menu…")
                 } else {
-                    Image(systemName: "photo.badge.plus")
-                    Text(menuImage == nil ? "Choose a menu photo" : "Scan another menu")
+                    if !dynamicTypeSize.isAccessibilitySize {
+                        Image(systemName: "photo.badge.plus")
+                    }
+                    Text(dynamicTypeSize.isAccessibilitySize ? "Choose photo" : (menuImage == nil ? "Choose a menu photo" : "Scan another menu"))
                 }
             }
             .font(.headline)
