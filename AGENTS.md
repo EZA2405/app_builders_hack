@@ -45,31 +45,10 @@ Instructions for AI coding agents (Claude Code, Codex, Devin, etc.) working in t
 - **Match the surrounding code style.** Comment the *why*, not the *what*.
 - **Commits:** small and descriptive. Don't commit `app/.build`, `app/build`, model weights or `.env`.
 
-## Shared workflow
-
-- Read README.md for project context.
-- Before starting tracked work, assign yourself the GitHub issue.
-  If someone already owns it, coordinate before changing its scope.
-- Use a branch per issue and a separate checkout or worktree when
-  working concurrently. Preserve other contributors’ uncommitted work.
-- Submit changes through a PR linked to the issue. Include what changed
-  and how it was checked; request another contributor’s review before merging.
-- Keep acceptance criteria and progress in the issue, and resolved domain
-  terms and architecture decisions in the glossary and ADRs.
-
-## Agent skills
-
-### Issue tracker
-
-Shared GitHub Issues in EZA2405/app_builders_hack.
-Read `docs/agents/issue-tracker.md` before ticket operations.
-
-### Triage labels
-
-Use the five default triage labels.
-Read `docs/agents/triage-labels.md` before triaging issues.
-
-### Domain docs
-
-Single-context: root GLOSSARY.md and docs/adr/.
-Read `docs/agents/domain.md` before exploring the project.
+## Team workflow (24-hour hackathon: speed over process)
+- **Commit straight to `main`.** No PRs and no review gates. Small, working commits.
+- **Before pushing:** `git pull --rebase origin main`. Resolve conflicts by keeping both sides' intent, and never force-push `main`.
+- **Don't break `main`:** `app/scripts/build_app.sh` must still build. If you can't finish, leave the feature behind a flag or off the default path.
+- **Parallel agents** in the same clone: use a separate worktree, and never touch or discard other people's uncommitted work.
+- **Coordinate by area** to avoid collisions: `app/` (overlay and guide loop), `extension/` (browser), `ml/` (models and benchmarks), `design/` (UI assets). Say in the team chat before editing someone else's area.
+- **GitHub issues are optional,** for tracking only (`gh` usage in `docs/agents/issue-tracker.md`). No triage, labels, glossary or ADR process is required.
