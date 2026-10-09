@@ -24,6 +24,11 @@ final class GuideEngine {
     var waypoints: [String]?
     private var movedOn = false
     private var lastState: ScreenState?
+    /// Multi-step regression data: every step's screen + what the person actually did (local file, never uploaded).
+    private var traceURL: URL?
+    private var stepOutcome = ""
+    private var stepClick: CGPoint?
+    private var stepActual: String?
     /// Troubleshooting: the checklist (made once per request) and where we are in it.
     var fixes: [Fix] = []
     var fixIndex = 0
@@ -68,6 +73,11 @@ final class GuideEngine {
         stop()
         self.goal = goal; self.app = app; done = []; stepNo = 0; rejected = []; notThis = false; planLine = nil; settingsPane = nil; waypoints = nil; keepGoing = false
         log("START goal=\(goal) app=\(app.localizedName ?? "?")")
+        let f = DateFormatter(); f.dateFormat = "yyyyMMdd-HHmmss"
+        let dir = URL(fileURLWithPath: "/tmp/gabay_traces", isDirectory: true)
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        let slug = String(goal.lowercased().map { $0.isLetter || $0.isNumber ? $0 : "-" }.prefix(40))
+        traceURL = dir.appendingPathComponent("\(f.string(from: Date()))-\(slug).jsonl")
         if let w = ScamGuard.check(goal: goal) {
             log("SCAM GUARD goal")
             show(.detour, label: "Wait", text: w.text, hint: w.hint, target: nil)
@@ -201,6 +211,7 @@ final class GuideEngine {
             log("STEP \(stepNo + 1) pick=\(Planner.key(pick.candidate)) conf=\(String(format: "%.2f", pick.confidence))")
             stepNo += 1
             let ok = await guide(pick)
+            recordStep(state: state, pick: pick, outcome: notThis ? "not_this" : (ok ? stepOutcome : "stopped"))
             if notThis {
                 // Recovery is one click: drop this guess and ask the model for its next best.
                 notThis = false
@@ -238,16 +249,16 @@ final class GuideEngine {
     }
 
     /// One decision on the current screen: stay in this app, or (first step only) send the person to another.
-    func decide(_ state: ScreenState, app: NSRunningApplication) async throws -> Planner.Pick? {
+    func decide(_ state: ScreenState, app: NSRunningApplication?) async throws -> Planner.Pick? {
         let g = goal.lowercased()
         let mentionsThis = ["this ", "ito", "ito ", "yung "].contains { g.contains($0) }
-        let current = app.localizedName ?? state.frontApp
+        let current = app?.localizedName ?? state.frontApp
         // Settings jobs (camera for a video call, Wi-Fi, text size…) go to System Settings, then its pane.
         // "yung" is just "the" in Taglish; only "this"/"ito" pins the request to the app in front.
         let words = Set(g.components(separatedBy: CharacterSet.alphanumerics.inverted))
         let pinned = words.contains("this") || words.contains("ito")
         // In a browser the request is about the page ("the words at the bottom" = captions), unless they name Settings.
-        let inBrowser = BrowserGuide.browsers.contains(app.bundleIdentifier ?? "") && !g.contains("setting")
+        let inBrowser = BrowserGuide.browsers.contains(app?.bundleIdentifier ?? state.bundleID ?? "") && !g.contains("setting")
         // Inside a real app its own commands come first: only a weak in-app pick lets a settings job take over.
         // From the desktop (Finder) there's no document to act on, and look-alike menu words fool the picker.
         let desktop = current == "Finder" || current == "System Settings"
@@ -310,9 +321,9 @@ final class GuideEngine {
             here = try await planner.choose(app: state.frontApp, goal: goal, done: done, candidates: f)
             log("HERE \(here.map { "\(Planner.key($0.candidate)) \(String(format: "%.2f", $0.confidence)) runners \($0.runnersUp.map(Planner.key))" } ?? "-")")
         }
-        let namesOther = Self.namedApp(in: g, state: state, current: app.localizedName ?? "")
+        let namesOther = Self.namedApp(in: g, state: state, current: current)
         if done.isEmpty, !mentionsThis, namesOther || (here?.confidence ?? 0) < 0.35,
-           let route = try await routeToApp(state, current: app.localizedName ?? state.frontApp),
+           let route = try await routeToApp(state, current: current),
            namesOther || route.confidence >= 0.6 {
             return route
         }
@@ -365,6 +376,56 @@ final class GuideEngine {
         }
     }
 
+    struct TraceStep: Codable {
+        var goal: String; var app: String; var stepNo: Int; var done: [String]; var rejected: [String]
+        var settingsPane: String?; var state: ScreenState
+        var pick: String; var conf: Double; var outcome: String; var actual: String?
+    }
+
+    /// One line per step: the screen Gabay saw, its pick, and what the person actually did. `--replay` re-runs
+    /// decide() on these screens, so every live rehearsal becomes a multi-step regression test.
+    private func recordStep(state: ScreenState, pick: Planner.Pick, outcome: String) {
+        guard let url = traceURL else { return }
+        var actual: String?
+        switch outcome {
+        case "ring": actual = stepActual ?? Planner.key(pick.candidate)
+        case "moved_on":
+            // What did they click instead? The smallest control under their click on the recorded screen.
+            if let p = stepClick {
+                func area(_ c: Candidate) -> Double { guard let f = c.frame else { return .infinity }; return f[2] * f[3] }
+                let under = state.candidates.filter { c in c.frame.map { rect($0).hit(p) } ?? false }
+                actual = under.min { area($0) < area($1) }.map(Planner.key)
+            }
+        default: break
+        }
+        let step = TraceStep(goal: goal, app: state.frontApp, stepNo: stepNo, done: done, rejected: Array(rejected),
+                             settingsPane: settingsPane, state: state, pick: Planner.key(pick.candidate),
+                             conf: pick.confidence, outcome: outcome, actual: actual)
+        guard let data = try? JSONEncoder().encode(step), var line = String(data: data, encoding: .utf8) else { return }
+        line += "\n"
+        if let h = try? FileHandle(forWritingTo: url) { h.seekToEndOfFile(); h.write(line.data(using: .utf8)!); try? h.close() }
+        else { try? line.write(to: url, atomically: true, encoding: .utf8) }
+    }
+
+    /// DEV: re-run today's decision logic on recorded screens (no overlay, no clicks).
+    func replay(path: String) async -> [[String: String]] {
+        guard let text = try? String(contentsOfFile: path, encoding: .utf8) else { return [] }
+        var out: [[String: String]] = []
+        var lastGoal = ""
+        for line in text.split(separator: "\n") {
+            guard let d = line.data(using: .utf8), let st = try? JSONDecoder().decode(TraceStep.self, from: d) else { continue }
+            if st.goal != lastGoal { settingsPane = nil; waypoints = nil; lastGoal = st.goal }
+            goal = st.goal; done = st.done; rejected = Set(st.rejected); keepGoing = false
+            if !st.done.isEmpty, settingsPane == nil { settingsPane = st.settingsPane }   // decided on step 1
+            let p = try? await decide(st.state, app: nil)
+            let k = p.map { Planner.key($0.candidate) } ?? "-"
+            out.append(["goal": st.goal, "step": "\(st.stepNo)", "outcome": st.outcome, "recorded_pick": st.pick,
+                        "actual": st.actual ?? "", "replay_pick": k, "replay_conf": String(format: "%.2f", p?.confidence ?? 0),
+                        "match": st.actual.map { $0 == k ? "yes" : "no" } ?? "n/a"])
+        }
+        return out
+    }
+
     /// Never finish on a guess: ask the person. Returns true for the first (yes) answer.
     func askYesNo(_ text: String, yes: String, no: String) async -> Bool? {
         answer = nil; asking = true
@@ -398,6 +459,7 @@ final class GuideEngine {
 
     /// Point at one candidate until the user completes it. Menu commands are walked level by level.
     func guide(_ pick: Planner.Pick) async -> Bool {
+        stepOutcome = "ring"; stepClick = nil; stepActual = nil
         var c = pick.candidate
         guard let app else { return false }
         if c.source == "menu" { return await guideMenu(c, app: app) }
@@ -436,6 +498,7 @@ final class GuideEngine {
             // Every app here is already allowed: this isn't the problem. Say so instead of asking for a no-op.
             if siblings.allSatisfy({ $0.on == true }) {
                 log("ALREADY ON \(c.context)")
+                stepOutcome = "already_on"
                 alreadyFine = true
                 return true
             }
@@ -448,6 +511,7 @@ final class GuideEngine {
                 try? await Task.sleep(nanoseconds: 150_000_000)
                 if notThis { return false }
                 for e in ClickWatcher.shared.drain() { if case .click(let p) = e, frames.contains(where: { $0.hit(p) }) {
+                    stepActual = siblings.first(where: { $0.frame.map(rect)?.hit(p) ?? false }).map(Planner.key)
                     try? await Task.sleep(nanoseconds: 400_000_000); await confirm(keepRing: false); return true } }
             }
             return false
@@ -514,7 +578,9 @@ final class GuideEngine {
                     // carry on from the new screen instead of insisting.
                     if c.source == "window", !startSig.isEmpty, !overlay.cardFrame.contains(p) {
                         try? await Task.sleep(nanoseconds: 700_000_000)
-                        if await signature(app) != startSig { log("MOVED ON after click outside ring"); movedOn = true; break waiting }
+                        if await signature(app) != startSig {
+                            log("MOVED ON after click outside ring"); movedOn = true; stepOutcome = "moved_on"; stepClick = p; break waiting
+                        }
                     }
                     if overlay.model.mode == .guiding, let r = ring, !overlay.model.spotlight, !overlay.cardFrame.contains(p) {
                         let (text, _) = phrase(c)
@@ -563,6 +629,7 @@ final class GuideEngine {
                 // The final item counts only if the person clicked inside its ring.
                 if !clicks.isEmpty { log("MENU clicks=\(clicks.map { "(\(Int($0.x)),\(Int($0.y)))" }) level=\(level) target=\(target.map { "\($0)" } ?? "-")") }
                 if last, let t = target, clicks.contains(where: t.hit) {
+                    stepOutcome = "ring"
                     try? await Task.sleep(nanoseconds: 400_000_000)
                     await confirm(keepRing: false); return true
                 }

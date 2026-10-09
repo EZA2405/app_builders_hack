@@ -123,7 +123,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         // DEV: --preview ask|guide|notsure|wait|done|thinking renders one UI state with a fake target (design QA).
         if let i = args.firstIndex(of: "--preview"), args.count > i + 1 { preview(args[i + 1]) }
-        else if !args.contains("--plan"), !axTrusted(prompt: false) || args.contains("--welcome") { showWelcome() }
+        else if !args.contains("--plan"), !args.contains("--replay"), !axTrusted(prompt: false) || args.contains("--welcome") { showWelcome() }
+
+        // DEV: --replay trace.jsonl out.json — re-run decisions on recorded screens (no overlay, no clicks), then quit.
+        if let i = args.firstIndex(of: "--replay"), args.count > i + 2 {
+            let (inp, out) = (args[i + 1], args[i + 2])
+            Task { @MainActor in
+                let r = await self.engine.replay(path: inp)
+                writeJSON(r, to: out)
+                NSApp.terminate(nil)
+            }
+            return
+        }
 
         // DEV: --plan <AppName> goals.json out.json — first-step decisions only (no overlay, no clicks), then quit.
         if let i = args.firstIndex(of: "--plan"), args.count > i + 3, let target = runningApp(args[i + 1]),
