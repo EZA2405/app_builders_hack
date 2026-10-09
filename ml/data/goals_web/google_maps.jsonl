@@ -1,0 +1,10 @@
+{"goal": "Find the nearest SM mall on the map", "page": "google_maps", "done": [], "answer": "combobox \"Search Google Maps\" · form", "alts": []}
+{"goal": "How do I get from my house to the hospital?", "page": "google_maps", "done": [], "answer": "button \"Directions\" · search", "alts": []}
+{"goal": "Where am I right now on the map?", "page": "google_maps", "done": [], "answer": "button \"Show Your Location\"", "alts": []}
+{"goal": "Make the map bigger, I can't see the streets", "page": "google_maps", "done": [], "answer": "button \"Zoom in\"", "alts": []}
+{"goal": "Show me a wider area of the map", "page": "google_maps", "done": [], "answer": "button \"Zoom out\"", "alts": []}
+{"goal": "I want to see the satellite view", "page": "google_maps", "done": [], "answer": "button \"Layers\"", "alts": []}
+{"goal": "Show me my saved places", "page": "google_maps", "done": [], "answer": "button \" Saved\"", "alts": []}
+{"goal": "Ano yung mga hinanap ko kanina sa map?", "page": "google_maps", "done": [], "answer": "button \" Recents\"", "alts": []}
+{"goal": "I want to log in to my Google account on Maps", "page": "google_maps", "done": [], "answer": "link \"Sign in\"", "alts": []}
+{"goal": "I want to see the street as if I'm standing there", "page": "google_maps", "done": [], "answer": "button \"Browse Street View images\"", "alts": []}

@@ -1,0 +1,24 @@
+{"goal": "I want to search for news about the typhoon", "page": "rappler", "done": [], "answer": "link \"SEARCH\" · header", "alts": []}
+{"goal": "How do I log in to my Rappler account?", "page": "rappler", "done": [], "answer": "button \"LOGIN\" · header", "alts": []}
+{"goal": "I want to donate to Rappler", "page": "rappler", "done": [], "answer": "link \"SUPPORT\" · header", "alts": []}
+{"goal": "What is the latest news today?", "page": "rappler", "done": [], "answer": "link \"LATEST NEWS\"", "alts": []}
+{"goal": "Show me the top stories", "page": "rappler", "done": [], "answer": "link \"TOP STORIES\"", "alts": []}
+{"goal": "Gusto ko makatanggap ng news sa email ko araw-araw", "page": "rappler", "done": [], "answer": "link \"SUBSCRIBE TO NEWSLETTERS\" · footer", "alts": []}
+{"goal": "How do I contact Rappler?", "page": "rappler", "done": [], "answer": "link \"CONTACT US\" · footer", "alts": []}
+{"goal": "Open the list of all the news sections", "page": "rappler", "done": [], "answer": "button \"OPEN NAVIGATION\" · header", "alts": []}
+{"goal": "I want to become a Rappler+ member", "page": "rappler", "done": [], "answer": "link \"JOIN RAPPLER+\" · footer", "alts": []}
+{"goal": "I want to see the articles only for paying members", "page": "rappler", "done": [], "answer": "link \"RAPPLER+ EXCLUSIVES\"", "alts": []}
+{"goal": "Totoo ba yung nabasa ko sa Facebook? I want to see the fact checks", "page": "rappler", "done": [], "answer": "link \"FACT CHECK\"", "alts": []}
+{"goal": "Show me all the topics Rappler covers", "page": "rappler", "done": [], "answer": "link \"TOPICS DIRECTORY\" · footer", "alts": []}
+{"goal": "Search Rappler for news about the typhoon", "page": "rappler__1", "done": ["clicked link \"SEARCH\""], "answer": "searchbox \"Search Rappler\" · form", "alts": []}
+{"goal": "Hanapin ang balita tungkol sa presyo ng bigas", "page": "rappler__1", "done": ["clicked link \"SEARCH\""], "answer": "searchbox \"Search Rappler\" · form", "alts": []}
+{"goal": "I tried searching but I'd rather ask Rappler directly", "page": "rappler__1", "done": ["clicked link \"SEARCH\""], "answer": "link \"Contact Us\" · main", "alts": ["link \"CONTACT US\" · footer"]}
+{"goal": "I want to give Rappler a donation every month", "page": "rappler__3", "done": ["clicked link \"SUPPORT\""], "answer": "button \"MONTHLY\" · form", "alts": []}
+{"goal": "I want to support Rappler with 1,000 pesos", "page": "rappler__3", "done": ["clicked link \"SUPPORT\""], "answer": "button \"₱1,000\" · form", "alts": []}
+{"goal": "Gusto ko mag-donate via bank transfer sa Rappler", "page": "rappler__3", "done": ["clicked link \"SUPPORT\""], "answer": "button \"Bank transfer\" · main: Transaction Successful", "alts": []}
+{"goal": "I want to donate to Rappler once a year", "page": "rappler__3", "done": ["clicked link \"SUPPORT\""], "answer": "button \"ANNUAL\" · form", "alts": []}
+{"goal": "I want to donate my own amount to Rappler", "page": "rappler__3", "done": ["clicked link \"SUPPORT\""], "answer": "button \"OTHER AMOUNT\" · form", "alts": []}
+{"goal": "I want to see the members-only exclusives and then sign up to be a member", "page": "rappler__4", "done": ["clicked link \"RAPPLER+ EXCLUSIVES\""], "answer": "link \"joining Rappler+.\"", "alts": ["link \"JOIN RAPPLER+\" · footer"]}
+{"goal": "Show me the Rappler+ exclusive events for members", "page": "rappler__4", "done": ["clicked link \"RAPPLER+ EXCLUSIVES\""], "answer": "link \"EXCLUSIVE EVENTS\"", "alts": []}
+{"goal": "Open the members-only stories, then log in to read them", "page": "rappler__4", "done": ["clicked link \"RAPPLER+ EXCLUSIVES\""], "answer": "button \"LOGIN\" · header", "alts": []}
+{"goal": "Show me more of the Rappler+ exclusive stories", "page": "rappler__4", "done": ["clicked link \"RAPPLER+ EXCLUSIVES\""], "answer": "link \"LOAD MORE\" · main: LATEST FROM EXCLUSIVE CONTENT", "alts": []}

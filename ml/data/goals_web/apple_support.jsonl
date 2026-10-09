@@ -1,0 +1,29 @@
+{"goal": "I forgot my Apple ID password", "page": "apple_support", "done": [], "answer": "link \"Reset Apple Account password\"", "alts": []}
+{"goal": "How do I cancel my Apple Music subscription?", "page": "apple_support", "done": [], "answer": "link \"Change a subscription\"", "alts": []}
+{"goal": "May charge sa card ko galing Apple, hindi ko alam kung ano", "page": "apple_support", "done": [], "answer": "link \"Billing and payments\"", "alts": []}
+{"goal": "I want to type my problem and search for help", "page": "apple_support", "done": [], "answer": "textbox \"Search Support\" · form", "alts": []}
+{"goal": "My iPhone screen is cracked, I want to have it repaired", "page": "apple_support", "done": [], "answer": "link \"Start a repair\"", "alts": []}
+{"goal": "How do I call or chat with Apple support?", "page": "apple_support", "done": [], "answer": "link \"Contact Us\" · Apple Directory", "alts": []}
+{"goal": "Is my iPhone still under warranty?", "page": "apple_support", "done": [], "answer": "link \"Hardware Warranties\" · Apple Directory", "alts": []}
+{"goal": "I need help with my iPhone", "page": "apple_support", "done": [], "answer": "link \"iPhone\"", "alts": []}
+{"goal": "Paano gamitin yung Mac ko, may problema ako", "page": "apple_support", "done": [], "answer": "link \"Mac\"", "alts": []}
+{"goal": "I need help with my AirPods", "page": "apple_support", "done": [], "answer": "link \"AirPods\"", "alts": []}
+{"goal": "I need help with my iPad", "page": "apple_support", "done": [], "answer": "link \"iPad\"", "alts": []}
+{"goal": "Where is a repair shop near me that fixes Apple products?", "page": "apple_support", "done": [], "answer": "link \"Apple Authorized Service Provider\"", "alts": []}
+{"goal": "Change the website to the Philippines", "page": "apple_support", "done": [], "answer": "link \"United States. Choose your country or region\" · Apple Footer", "alts": []}
+{"goal": "My iPhone keeps asking for a password I forgot", "page": "apple_support__1", "done": ["clicked link \"iPhone\""], "answer": "link \"Reset password\"", "alts": []}
+{"goal": "I want to back up the photos on my iPhone", "page": "apple_support__1", "done": ["clicked link \"iPhone\""], "answer": "link \"Back up with iCloud\"", "alts": []}
+{"goal": "How do I update my iPhone?", "page": "apple_support__1", "done": ["clicked link \"iPhone\""], "answer": "link \"Learn how to update\"", "alts": []}
+{"goal": "Ang bilis maubos ng battery ng iPhone ko", "page": "apple_support__1", "done": ["clicked link \"iPhone\""], "answer": "link \"Learn about battery life\"", "alts": []}
+{"goal": "I want a refund for an app I bought by mistake on my iPhone", "page": "apple_support__1", "done": ["clicked link \"iPhone\""], "answer": "link \"Get help with purchases\"", "alts": []}
+{"goal": "I want to read the user manual for my iPhone", "page": "apple_support__1", "done": ["clicked link \"iPhone\""], "answer": "link \"Browse the guide\"", "alts": []}
+{"goal": "I got a new iPhone and want to pair my Apple Watch with it", "page": "apple_support__2", "done": ["clicked link \"Watch\""], "answer": "link \"Pair with a new iPhone\"", "alts": []}
+{"goal": "How do I charge my Apple Watch?", "page": "apple_support__2", "done": ["clicked link \"Watch\""], "answer": "link \"Charge your battery\"", "alts": []}
+{"goal": "How do I set up my Apple Vision Pro?", "page": "apple_support__3", "done": ["clicked link \"Vision\""], "answer": "link \"Learn how to set up\"", "alts": []}
+{"goal": "I forgot the password to log in to my Mac", "page": "apple_support__4", "done": ["clicked link \"Mac\""], "answer": "link \"Reset your password\"", "alts": []}
+{"goal": "How do I back up my Mac with Time Machine?", "page": "apple_support__4", "done": ["clicked link \"Mac\""], "answer": "link \"Learn how to use Time Machine\"", "alts": []}
+{"goal": "Nawala yung AirPods ko, paano hanapin?", "page": "apple_support__5", "done": ["clicked link \"AirPods\""], "answer": "link \"Learn how to use Find My\"", "alts": []}
+{"goal": "How do I connect my AirPods to my phone?", "page": "apple_support__5", "done": ["clicked link \"AirPods\""], "answer": "link \"Pair your AirPods\"", "alts": []}
+{"goal": "I lost one AirPod and need a replacement", "page": "apple_support__5", "done": ["clicked link \"AirPods\""], "answer": "link \"Replace an AirPod or case\"", "alts": []}
+{"goal": "What model is my iPad?", "page": "apple_support__6", "done": ["clicked link \"iPad\""], "answer": "link \"Find the model number\"", "alts": []}
+{"goal": "How do I update my iPad?", "page": "apple_support__6", "done": ["clicked link \"iPad\""], "answer": "link \"Learn how to update\"", "alts": []}

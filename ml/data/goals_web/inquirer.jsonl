@@ -1,0 +1,20 @@
+{"goal": "I want to search the Inquirer for news", "page": "inquirer", "done": [], "answer": "link \"search\"", "alts": []}
+{"goal": "Ano ang lumabas sa lotto kagabi?", "page": "inquirer", "done": [], "answer": "link \"LOTTO RESULTS\"", "alts": []}
+{"goal": "I want to read today's newspaper", "page": "inquirer", "done": [], "answer": "link \"Todays paper\"", "alts": ["link \"TODAY’S PAPER\""]}
+{"goal": "Show me the business news", "page": "inquirer", "done": [], "answer": "link \"BUSINESS\"", "alts": []}
+{"goal": "I want to read the sports news", "page": "inquirer", "done": [], "answer": "link \"SPORTS\"", "alts": []}
+{"goal": "Show me the showbiz news", "page": "inquirer", "done": [], "answer": "link \"ENTERTAINMENT\"", "alts": []}
+{"goal": "I want to read the opinion columns", "page": "inquirer", "done": [], "answer": "link \"OPINION\"", "alts": []}
+{"goal": "Gusto ko ng balita sa Tagalog", "page": "inquirer", "done": [], "answer": "link \"BANDERA\"", "alts": []}
+{"goal": "I want the news from Cebu", "page": "inquirer", "done": [], "answer": "link \"CDN DIGITAL\"", "alts": []}
+{"goal": "I want news about Filipinos working abroad", "page": "inquirer", "done": [], "answer": "link \"GLOBAL NATION\"", "alts": []}
+{"goal": "I want to get the news sent to my email", "page": "inquirer", "done": [], "answer": "textbox \"Subscribe to our newsletter\" · form", "alts": []}
+{"goal": "Open the menu with all the sections", "page": "inquirer", "done": [], "answer": "link \"menu\"", "alts": []}
+{"goal": "I want to watch news videos", "page": "inquirer", "done": [], "answer": "link \"VIDEOS\"", "alts": []}
+{"goal": "Open today's paper and go to the sports section", "page": "inquirer__1", "done": ["clicked link \"Todays paper\""], "answer": "link \"SPORTS\"", "alts": []}
+{"goal": "Open today's paper and read the opinion pages", "page": "inquirer__1", "done": ["clicked link \"Todays paper\""], "answer": "link \"OPINION\"", "alts": []}
+{"goal": "Today's paper, then the business section please", "page": "inquirer__1", "done": ["clicked link \"Todays paper\""], "answer": "link \"BUSINESS\"", "alts": []}
+{"goal": "I want to listen to the Inquirer radio", "page": "inquirer__1", "done": ["clicked link \"Todays paper\""], "answer": "link \"RADIO\"", "alts": ["link \"DZIQ990 AM\" · footer"]}
+{"goal": "Open today's paper, then find older issues in the archive", "page": "inquirer__1", "done": ["clicked link \"Todays paper\""], "answer": "link \"Archive\" · footer", "alts": []}
+{"goal": "Open today's paper; may tanong ako, paano kontakin ang Inquirer?", "page": "inquirer__1", "done": ["clicked link \"Todays paper\""], "answer": "link \"Contact Us\" · footer", "alts": ["link \"Email Us\" · footer"]}
+{"goal": "Open today's paper, then the Tagalog tabloid Bandera", "page": "inquirer__1", "done": ["clicked link \"Todays paper\""], "answer": "link \"BANDERA\"", "alts": []}
