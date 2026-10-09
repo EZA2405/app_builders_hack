@@ -111,9 +111,11 @@ extension GuideEngine {
             // 150 elements, visible ones first (the extension sorts them): 3x fewer model calls than 400, much faster.
             // A page that's still loading (they clicked a link) can't answer yet: try again for a few seconds.
             var snapshot: [String: Any]?
-            for attempt in 0..<5 {
+            for attempt in 0..<9 {
                 snapshot = await bridge.request(["type": "snapshot_request", "max_elements": 150])
-                if snapshot?["elements"] is [[String: Any]] { break }
+                // Still loading (a link was just clicked): an empty or nearly empty page isn't the real page yet.
+                let named = (snapshot?["elements"] as? [[String: Any]])?.filter { !(($0["name"] as? String) ?? "").isEmpty }.count ?? 0
+                if named >= 5 || (attempt >= 4 && snapshot?["elements"] is [[String: Any]]) { break }
                 if Task.isCancelled { return }
                 log("WEB snapshot retry \(attempt + 1)")
                 try? await Task.sleep(nanoseconds: 700_000_000)
@@ -346,6 +348,7 @@ extension GuideEngine {
 
     private func webFail(_ text: String, _ hint: String) {
         Bridge.shared.send(["type": "clear", "id": UUID().uuidString])
+        Bridge.shared.send(["type": "status", "id": UUID().uuidString, "text": "", "seconds": 0])
         show(.done, label: "Hmm", text: text, hint: hint, target: nil)
     }
 }

@@ -135,6 +135,10 @@ final class GuideEngine {
             // "my daughter wants to FaceTime me" asked from a browser is about the FaceTime app, not the web page.
             if let target = Self.namedApp(in: goal), target.lowercased() != (app.localizedName ?? "").lowercased() {
                 self.log("APP named in request: \(target)")
+                if Bridge.shared.connected {
+                    Bridge.shared.send(["type": "status", "id": UUID().uuidString, "text": "", "seconds": 0])
+                    Bridge.shared.send(["type": "clear", "id": UUID().uuidString])
+                }
                 guard let opened = await self.openAppStep(target) else { return }
                 self.app = opened
                 await self.run()
@@ -158,6 +162,11 @@ final class GuideEngine {
     }
 
     func stop() {
+        // The extension's "Working out the next step…" pill and highlight live in the page: clear them too.
+        if Bridge.shared.connected {
+            Bridge.shared.send(["type": "status", "id": UUID().uuidString, "text": "", "seconds": 0])
+            Bridge.shared.send(["type": "clear", "id": UUID().uuidString])
+        }
         task?.cancel(); task = nil
         speech.stopSpeaking(at: .immediate)
         overlay.hide()
@@ -574,6 +583,7 @@ final class GuideEngine {
     }
 
     func finish() {
+        if Bridge.shared.connected { Bridge.shared.send(["type": "status", "id": UUID().uuidString, "text": "", "seconds": 0]) }
         if !fixes.isEmpty || !(settingsPane ?? "").isEmpty {
             log("FIX DONE \(fixIndex + 1) steps=\(done)")
             show(.done, label: "Check", text: "Try it again now. Is it working?", hint: "", target: nil)
