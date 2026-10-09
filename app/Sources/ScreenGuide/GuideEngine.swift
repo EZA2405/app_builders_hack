@@ -26,6 +26,7 @@ final class GuideEngine {
     /// Keys of the steps shown in the current request.
     private var stepKeys: [String] = []
     private var lastState: ScreenState?
+    var originalWebGoal: String?
     /// What the last request was walked to, so "No, I meant…" right after doesn't get the same answer again.
     private var lastSession: (app: String, picks: Set<String>, ended: Date)?
     /// Multi-step regression data: every step's screen + what the person actually did (local file, never uploaded).

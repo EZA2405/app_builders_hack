@@ -57,9 +57,24 @@ extension GuideEngine {
         return true
     }
 
+    /// Does the page title name the subject of the request? ("read about José Rizal" vs "José Rizal - Wikipedia").
+    /// Accent-insensitive; a word counts if one contains the other (dictation spells names oddly: "Oserizal").
+    static func titleMatches(goal: String, title: String) -> Bool {
+        func words(_ s: String) -> [String] {
+            s.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: nil)
+                .split(whereSeparator: { !$0.isLetter }).map(String.init).filter { $0.count >= 4 }
+        }
+        let stop: Set<String> = ["want", "read", "about", "watch", "find", "look", "show", "open", "paano", "gusto", "with", "this",
+                                 "that", "page", "website", "please", "help", "where", "what", "video", "videos", "search", "home",
+                                 "wikipedia", "youtube", "google", "turn", "words", "bottom", "make", "into", "from", "your", "mine"]
+        let g = words(goal).filter { !stop.contains($0) }
+        let t = Set(words(title).filter { !stop.contains($0) })
+        return g.contains { gw in t.contains { tw in gw.contains(tw) || tw.contains(gw) } }
+    }
+
     /// A page change that's a real navigation (new URL), not just a big DOM update on the same page.
     func moved(_ e: [String: Any], from url: String) -> Bool {
-        guard (e["type"] as? String) == "page_changed" else { return false }
+        guard (e["type"] as? String) == "page_changed", (e["reason"] as? String) != "tab_switch" else { return false }
         if (e["reason"] as? String) != "dom_mutation" { return true }
         return (e["url"] as? String).map { $0 != url } ?? false
     }
@@ -75,15 +90,49 @@ extension GuideEngine {
         var clicked = Set<String>()
         var parts: [String]? = nil
         var partIndex = 0
+        var lastHost = ""          // the site this session is on
+        var expectNav = true       // the last step could have moved the page (so a new site is expected)
         overlay.hide()   // the card lives in the page
         while !Task.isCancelled, stepNo < 8 {
             bridge.send(["type": "status", "id": UUID().uuidString, "text": "Working out the next step…", "seconds": 0])
-            guard let snap = await bridge.request(["type": "snapshot_request", "max_elements": 400]),
-                  let elements = snap["elements"] as? [[String: Any]] else {
+            // 150 elements, visible ones first (the extension sorts them): 3x fewer model calls than 400, much faster.
+            // A page that's still loading (they clicked a link) can't answer yet: try again for a few seconds.
+            var snapshot: [String: Any]?
+            for attempt in 0..<5 {
+                snapshot = await bridge.request(["type": "snapshot_request", "max_elements": 150])
+                if snapshot?["elements"] is [[String: Any]] { break }
+                if Task.isCancelled { return }
+                log("WEB snapshot retry \(attempt + 1)")
+                try? await Task.sleep(nanoseconds: 700_000_000)
+            }
+            guard let snap = snapshot, let elements = snap["elements"] as? [[String: Any]] else {
                 log("WEB no snapshot"); webFail("I can't see this page.", "Click on the page once, then ask again."); return
             }
             let title = (snap["title"] as? String) ?? "this page"
             let url = (snap["url"] as? String) ?? ""
+            let host = URL(string: url)?.host ?? ""
+            // A different site without any step that could have taken them there = they switched tabs. That's a new
+            // context: stop instead of applying the old request to an unrelated page.
+            if !lastHost.isEmpty, host != lastHost, !expectNav {
+                log("WEB switched site \(lastHost) -> \(host)")
+                Bridge.shared.send(["type": "clear", "id": UUID().uuidString])
+                show(.done, label: "Stopped", text: "You switched to another page.", hint: "Ask me again there if you need help.", target: nil)
+                return
+            }
+            lastHost = host
+            let navigated = expectNav
+            expectNav = false
+            // Arrived: after their step, a page whose title names what they asked for ("José Rizal - Wikipedia") may be
+            // the end. Only on the last part (a YouTube results page also names the search, but captions are still to do).
+            let onLastPart = (parts ?? []).isEmpty || partIndex + 1 >= (parts ?? []).count
+            if navigated, stepNo >= 1, onLastPart, !keepGoing, Self.titleMatches(goal: originalWebGoal ?? goal, title: title) {
+                log("WEB title matches goal: \(title)")
+                Bridge.shared.send(["type": "clear", "id": UUID().uuidString])
+                guard let yes = await askYesNo("Is this what you wanted?", yes: "Yes, this is it", no: "Not yet") else { return }
+                if yes { webFinish(); return }
+                overlay.hide()
+                keepGoing = true
+            }
             // First step: make sure we're on the right website before guessing at this page.
             let sc0 = stepNo == 0 && done.isEmpty ? await SiteRoute.check(goal: goal, title: title, url: url) : nil
             if stepNo == 0 { log("WEB SITECHECK page=\(URL(string: url)?.host ?? "?") -> \(sc0.map { "\($0.onThisPage) \($0.siteName) \($0.address)" } ?? "nil")") }
@@ -91,11 +140,13 @@ extension GuideEngine {
                !sc.address.isEmpty, !(URL(string: url)?.host ?? "").contains(sc.address.replacingOccurrences(of: "www.", with: "")) {
                 log("WEB SITE \(sc.siteName) \(sc.address) (page: \(URL(string: url)?.host ?? "?"))")
                 Bridge.shared.send(["type": "clear", "id": UUID().uuidString])
-                if await goToSite(sc) { done.append("opened \(sc.siteName)"); try? await Task.sleep(nanoseconds: 1_500_000_000); continue }
+                if await goToSite(sc) { done.append("opened \(sc.siteName)"); expectNav = true; lastHost = ""; try? await Task.sleep(nanoseconds: 1_500_000_000); continue }
                 return
             }
             if parts == nil {
-                parts = await WebPlan.parts(for: goal, site: title)
+                let p = await WebPlan.parts(for: goal, site: title)
+                // One thing ("read about José Rizal") stays one goal; splitting it into clicks confused the picker.
+                parts = p.count >= 2 ? p : []
                 log("WEB PARTS \(parts ?? [])")
             }
             var refs: [String: String] = [:]
@@ -152,8 +203,17 @@ extension GuideEngine {
             if early.contains(where: { ($0["type"] as? String) == "card_button" && ($0["button"] as? String) == "stop" }) {
                 Bridge.shared.send(["type": "clear", "id": UUID().uuidString]); stop(); return
             }
+            if early.contains(where: { ($0["reason"] as? String) == "tab_switch" }) {
+                log("WEB tab switched (while thinking)")
+                Bridge.shared.send(["type": "clear", "id": UUID().uuidString])
+                show(.done, label: "Stopped", text: "You switched to another tab.", hint: "Ask me again there if you need help.", target: nil)
+                return
+            }
             if early.contains(where: { moved($0, from: url) }) {
+                // They finished this part themselves (pressed Enter, a result loaded): move to the next part too.
+                if partIndex + 1 < (parts ?? []).count, stepNo > 0 { partIndex += 1; log("WEB part \(partIndex + 1) (page moved on)") }
                 log("WEB page changed while thinking -> re-read")
+                expectNav = true
                 continue
             }
             for e in early { WebEvents.shared.push(e) }
@@ -168,7 +228,7 @@ extension GuideEngine {
             } else {
                 let (text, hint) = webPhrase(pick.candidate)
                 msg["instruction"] = text
-                msg["hint"] = [hint, "This gets you closer to: \(goal)."].filter { !$0.isEmpty }.joined(separator: " ")
+                msg["hint"] = hint
                 speakText(plain(text) + " " + hint)
             }
             bridge.send(["type": "status", "id": UUID().uuidString, "text": "", "seconds": 0])   // drop "Working out…"
@@ -194,6 +254,11 @@ extension GuideEngine {
                         let kind = e["kind"] as? String ?? ""
                         // A box isn't done when they click into it, only when they send what they typed.
                         if kind == "submit" || (!typing && (e["on_target"] as? Bool) == true) { advanced = true }
+                    case "page_changed" where (e["reason"] as? String) == "tab_switch":
+                        log("WEB tab switched")
+                        Bridge.shared.send(["type": "clear", "id": UUID().uuidString])
+                        show(.done, label: "Stopped", text: "You switched to another tab.", hint: "Ask me again there if you need help.", target: nil)
+                        return
                     case "page_changed":
                         advanced = true
                         // A real navigation usually means this part is done (search submitted, video opened);
@@ -218,6 +283,7 @@ extension GuideEngine {
             }
             if Task.isCancelled { return }
             if notThis { notThis = false; continue }
+            expectNav = true   // this step was theirs: the next page may be on another site
             clicked.insert(key)
             done.append("clicked \(key)")
             bridge.send(["type": "status", "id": UUID().uuidString, "text": "That's right.", "seconds": 1])

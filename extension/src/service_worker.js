@@ -139,6 +139,11 @@ chrome.runtime.onMessage.addListener((message, sender, respond) => {
 
 chrome.tabs.onRemoved.addListener((tabId) => frameTrees.delete(tabId));
 
+// Switching tabs is a new context: tell Gabay so it doesn't apply the old request to an unrelated page.
+chrome.tabs.onActivated.addListener(({ tabId }) => {
+  void chrome.tabs.get(tabId).then((tab) => send({ type: "page_changed", reason: "tab_switch", url: tab.url || "", title: tab.title || "" })).catch(() => {});
+});
+
 // Extension API activity also keeps reconnection alive when the socket is down.
 setInterval(() => {
   void chrome.storage.local.get("keepalive");

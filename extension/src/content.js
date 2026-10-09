@@ -246,7 +246,7 @@
     const width = Math.min(parseFloat(tokens.getPropertyValue("--sg-card-width")), innerWidth - edge * 2);
     card.style.width = `${width}px`;
     card.style.maxHeight = `${innerHeight - edge * 2}px`;
-    const height = card.offsetHeight;
+    const height = card.offsetHeight + 60;   // the action buttons appear later (hover/idle): leave room so they aren't cut off
     const clamp = (value, max) => Math.max(edge, Math.min(value, max));
     const x = clamp(rect.left, innerWidth - width - edge);
     const y = clamp(rect.top, innerHeight - height - edge);
@@ -404,7 +404,7 @@
     if (typeof message.hint === "string") {
       const hint = document.createElement("p");
       hint.className = "hint";
-      hint.textContent = message.hint;
+      instructionText(hint, message.hint);   // "**Enter**" renders bold, not with asterisks
       card.append(hint);
     }
     const buttons = document.createElement("div");

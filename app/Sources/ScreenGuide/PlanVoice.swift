@@ -198,14 +198,19 @@ enum SiteRoute {
 /// on-device model splits it once into ordered parts; the page picker works on one part at a time.
 @Generable
 struct WebParts {
-    @Guide(description: "1 to 4 short parts in order, each one thing to do on the website, in plain English, e.g. \"search for how to cook adobo\", \"open a video\", \"turn on captions\". Keep names and search words from the request.")
+    @Guide(description: "1 to 4 short parts in order, each one thing to do on the website, in plain English. Every part repeats the subject so it makes sense on its own, e.g. \"search for how to cook adobo\", \"open a video about how to cook adobo\", \"turn on captions for the adobo video\". Keep names and search words from the request.")
     var parts: [String]
 }
 
 enum WebPlan {
     static func parts(for goal: String, site: String) async -> [String] {
         guard PlanVoice.available else { return [] }
-        let s = LanguageModelSession(instructions: "You help older people use websites. Requests may be in English, Tagalog or Taglish; write the parts in English.")
+        let s = LanguageModelSession(instructions: """
+        You help older people use websites. Requests may be in English, Tagalog or Taglish; write the parts in English. \
+        A part is a separate thing the person wants, NOT a click or a typing step. Most requests are ONE part: \
+        "I want to read about José Rizal" -> one part. "watch how to cook adobo and turn on subtitles" -> \
+        "find a video about how to cook adobo", "turn on subtitles for the adobo video". Never include going to the site.
+        """)
         let task = Task { try? await s.respond(to: "Website: \(site)\nRequest: \(goal)", generating: WebParts.self,
                                                  options: GenerationOptions(sampling: .greedy)).content.parts }
         let timeout = Task { try? await Task.sleep(nanoseconds: 3_000_000_000); task.cancel() }
