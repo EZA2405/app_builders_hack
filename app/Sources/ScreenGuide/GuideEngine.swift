@@ -808,7 +808,9 @@ final class GuideEngine {
         // App > Services lists add-ons installed on this Mac ("Ask Claude"…), never a beginner's step.
         let menus = s.candidates.filter { $0.source == "menu" && !Self.isPersonal($0.path)
                                           && $0.path.components(separatedBy: " > ").dropFirst().first != "Services" }
-        let ok = { (c: Candidate) in !self.rejected.contains(Planner.key(c)) && !self.done.contains("clicked \(Planner.key(c))") }
+        // Never offer again what this request already walked them to (after "Not yet" it re-offered the same menu item).
+        let ok = { (c: Candidate) in !self.rejected.contains(Planner.key(c)) && !self.done.contains("clicked \(Planner.key(c))")
+                                     && !(c.source == "menu" && self.done.contains("chose \(c.path)")) }
         // First step: menus, plus (when enabled, for a model trained on mixed lists) the window's toolbar buttons,
         // e.g. Preview's "Aa" text style. Off by default: `defaults write dev.alexi.screenguide step1Controls -bool YES`.
         if done.isEmpty {
