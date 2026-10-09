@@ -18,6 +18,10 @@ final class GuideEngine {
     private var doneTyping = false
     /// "Not this one": guesses the person rejected this task; the model never offers them again.
     var rejected = Set<String>()
+    /// Apple's on-device model's one-line plan for this task, shown on the first card.
+    var planLine: String?
+    /// Set when Gabay points at a Dock icon: the app we expect the person to open next.
+    var expectedApp: String?
     var notThis = false
 
     init() {
@@ -31,7 +35,7 @@ final class GuideEngine {
 
     func start(goal: String, app: NSRunningApplication) {
         stop()
-        self.goal = goal; self.app = app; done = []; stepNo = 0; rejected = []; notThis = false
+        self.goal = goal; self.app = app; done = []; stepNo = 0; rejected = []; notThis = false; planLine = nil
         log("START goal=\(goal) app=\(app.localizedName ?? "?")")
         if let w = ScamGuard.check(goal: goal) {
             log("SCAM GUARD goal")
@@ -72,11 +76,18 @@ final class GuideEngine {
         }
         var app = first
         while !Task.isCancelled, stepNo < 8 {
-            // Follow the person: a Dock click (e.g. System Settings) moves the task into another app.
+            // Follow the person only into the app Gabay sent them to (a Dock step). Anywhere else, wait.
             if let front = Self.frontRegularApp(), front != app {
-                log("APP \(front.localizedName ?? "?")")
-                app = front
-                self.app = front
+                if let expected = expectedApp, front.localizedName == expected {
+                    log("APP \(expected)")
+                    app = front; self.app = front; expectedApp = nil
+                } else {
+                    let name = app.localizedName ?? "your app"
+                    show(.detour, label: "Paused", text: "I'll wait. Go back to **\(name)** when you're ready.",
+                         hint: "Nothing has been changed.", target: nil)
+                    while !Task.isCancelled, Self.frontRegularApp() != app { try? await Task.sleep(nanoseconds: 400_000_000) }
+                    continue
+                }
             }
             show(.thinking, label: "Got it", text: "Working out the next step…", hint: "Nothing on your screen leaves this Mac.", target: nil)
             let state = await read(app)
@@ -117,6 +128,10 @@ final class GuideEngine {
                 show(.detour, label: "Wait", text: w.text, hint: w.hint, target: pick.candidate.frame.map(rect))
                 return
             }
+            if stepNo == 0, let line = await PlanVoice.plan(goal: goal, route: pick.candidate.source == "menu" ? pick.candidate.path : pick.candidate.label) {
+                planLine = line
+                log("PLAN \(line)")
+            }
             log("STEP \(stepNo + 1) pick=\(Planner.key(pick.candidate)) conf=\(String(format: "%.2f", pick.confidence))")
             stepNo += 1
             let ok = await guide(pick)
@@ -147,6 +162,7 @@ final class GuideEngine {
         let c = pick.candidate
         guard let app else { return false }
         if c.source == "menu" { return await guideMenu(c, app: app) }
+        if c.source == "dock" { expectedApp = c.label }
 
         if pick.confidence < 0.3, !pick.runnersUp.isEmpty {
             overlay.model.candidates = ([c] + pick.runnersUp.prefix(1)).compactMap { $0.frame.map(rect) }
@@ -352,6 +368,8 @@ final class GuideEngine {
 
     func show(_ mode: OverlayModel.Mode, label: String, text: String, hint: String, target: CGRect?) {
         let m = overlay.model
+        var hint = hint
+        if mode == .guiding, stepNo == 1, let plan = planLine, !hint.contains(plan) { hint = plan + (hint.isEmpty ? "" : " " + hint) }
         m.mode = mode; m.label = label; m.instruction = text; m.hint = hint; m.target = target; m.spotlight = false
         m.showDone = mode == .guiding && hint.contains("Press Done")
         overlay.update()

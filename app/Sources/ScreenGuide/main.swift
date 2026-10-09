@@ -88,6 +88,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         _ = axTrusted(prompt: true)
         // The browser extension connects here (ws://127.0.0.1:47823/ext); it only reads and draws.
         Bridge.shared.start()
+        PlanVoice.prewarm()
         GuideEngine.installBridgeEvents()
         lastApp = NSWorkspace.shared.frontmostApplication
         NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didActivateApplicationNotification,
