@@ -189,6 +189,24 @@ Results with `ml/usecases/run.sh` (added TextEdit, Preview and Music "stay in th
 | Risk check | 7/7 |
 | Mail | 1/8 (an account password dialog is open on this Mac; every pick correctly stays in that dialog, so Mail isn't scored) |
 
+**Update 2 (2026-10-10):** the ≥ 0.6 in-app gate turned out to be noisy. Replaying a recorded live session (`--replay`) showed one screen scoring 0.85 in replay and under 0.6 live: the tournament's confidence moves with how its 16-option groups fall, and the server warns that this checkpoint's calibration is invalid for 11+ options. Two fixes were tried:
+- **Rejected:** asking Apple's model "does this command do what they asked?". It said yes to every command it was asked about in the next run, including "Start Speaking" for "there's no sound" and "Authorize This Computer" for "update my computer".
+- **Kept:** a consistency check. The in-app tournament runs twice, with the options in opposite orders, and the person stays in the app only if both runs pick the same command with confidence ≥ 0.6.
+
+With the consistency check (`ml/usecases/run.sh`):
+
+| Start | Score |
+|---|---|
+| Finder | 12/14 |
+| System Settings | 12/12 |
+| TextEdit | 8/9 |
+| Preview | 5/6 |
+| Music | 3/3 |
+| Risk check | 7/7 |
+| **Total excluding Mail** | **47/51** |
+
+The 3 recorded live steps of the demo journey (Taglish camera request from the Claude app → Apple menu → System Settings → Privacy & Security → Camera) replay 3/3.
+
 ## Experiment: Apple on-device model rewrites the goal first (rejected)
 Apple's Foundation Model (on-device) restated each of the 127 validation goals as a plain action, at about 0.7 s per goal; it produced 122 rewrites. Scored with Laya v4e5 on the Mac:
 - raw goal **102/127**

@@ -176,7 +176,7 @@ final class GuideEngine {
                 show(.done, label: "Something went wrong", text: "I can't think right now.", hint: "Make sure Gabay's helper is running, then try again.", target: nil)
                 return
             }
-            guard let pick else {
+            guard var pick else {
                 log("NO CANDIDATES app=\(app.localizedName ?? "?")")
                 show(.done, label: "Hmm", text: "I can't see that on this screen. Can you say it another way?",
                      hint: "Or open the app you want help with first, then ask again.", target: nil)
@@ -185,6 +185,11 @@ final class GuideEngine {
             // Menus have no "one of these two" view; a near-guess menu step sends people somewhere wrong.
             // Real progress and no confident next step: maybe it's done. Ask instead of deciding.
             let settingsFix = !(settingsPane ?? "").isEmpty || !fixes.isEmpty
+            // A permissions list (several app switches) is on screen: that's the step, however unsure the picker is.
+            if settingsFix, pick.candidate.role != "switch", let sw = Self.switchList(in: state, goal: goal) {
+                log("SWITCH LIST \(sw.context) (picker said \(Planner.key(pick.candidate)) \(String(format: "%.2f", pick.confidence)))")
+                pick = Planner.Pick(candidate: sw, confidence: 0.9, runnersUp: [])
+            }
             // An open pop-up list means the job isn't finished; its weak pick gets the two-ring view instead.
             if !done.isEmpty, pick.confidence < 0.3, !keepGoing, pick.candidate.role != "list choice" {
                 if settingsFix { finish(); return }   // settings fixes end with "Is it working now?"
@@ -269,7 +274,14 @@ final class GuideEngine {
                 log("FOCUS \(f.count) \(Dictionary(grouping: f, by: \.source).mapValues(\.count)) e.g. \(f.prefix(4).map(Planner.key))")
                 let h = try await planner.choose(app: state.frontApp, goal: goal, done: done, candidates: f)
                 here_ = .some(h)
-                if (h?.confidence ?? 0) >= 0.6 { settingsPane = ""; log("SETTINGS skipped: in-app pick \(String(format: "%.2f", h?.confidence ?? 0))") }
+                // Stay only if the app's own pick survives a reshuffle: the tournament's confidence swings with how its
+                // 16-option groups fall, so one confident run can be a fluke ("File > New Session" for a camera problem).
+                if let h, h.confidence >= 0.6 {
+                    let h2 = try await planner.choose(app: state.frontApp, goal: goal, done: done, candidates: f, reversed: true)
+                    let same = h2.map { Planner.key($0.candidate) == Planner.key(h.candidate) && $0.confidence >= 0.6 } ?? false
+                    log("CONSISTENT \(Planner.key(h.candidate)) \(String(format: "%.2f", h.confidence)) vs \(h2.map { "\(Planner.key($0.candidate)) \(String(format: "%.2f", $0.confidence))" } ?? "-") -> \(same)")
+                    if same { settingsPane = ""; log("SETTINGS skipped: in-app pick is consistent") }
+                }
             }
             if settingsPane == nil {
                 var pane = await SettingsRoute.pane(for: goal, app: current) ?? ""
@@ -296,7 +308,9 @@ final class GuideEngine {
             }
         }
         // The journey's memory: the next planned name, if it's on screen exactly (never menus; Laya is better there).
-        if waypoints == nil {
+        // Off: in live traces the Apple-model route memory hijacked steps twice (Dock on step 1; "General" for a
+        // vague request) and never helped. Kept for GABAY_WAYPOINTS=1 experiments only.
+        if waypoints == nil, ProcessInfo.processInfo.environment["GABAY_WAYPOINTS"] == "1" {
             waypoints = await Orchestrator.plan(goal: goal, app: current)
             log("WAYPOINTS \(waypoints ?? [])")
         }
@@ -424,6 +438,16 @@ final class GuideEngine {
                         "match": st.actual.map { $0 == k ? "yes" : "no" } ?? "n/a"])
         }
         return out
+    }
+
+    /// The first switch of a list of 3+ app switches that the request doesn't name (Camera, Microphone… panes).
+    static func switchList(in state: ScreenState, goal: String) -> Candidate? {
+        let g = goal.lowercased()
+        let groups = Dictionary(grouping: state.candidates.filter { $0.role == "switch" && $0.source == "window" }, by: \.context)
+        for (_, sws) in groups where sws.count >= 3 && !sws.contains(where: { g.contains($0.label.lowercased()) }) {
+            return sws.first
+        }
+        return nil
     }
 
     /// Never finish on a guess: ask the person. Returns true for the first (yes) answer.

@@ -43,11 +43,18 @@ final class Listener: ObservableObject {
     }
 
     private func begin() {
-        guard let recognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US")),
-              recognizer.isAvailable, recognizer.supportsOnDeviceRecognition else { unavailable = true; return }
+        // Philippine English understands the accent and common Tagalog words better than US English; both run
+        // on-device here (Filipino itself has no on-device recognizer on macOS).
+        let recognizer = [("en-PH"), ("en-US")].lazy.compactMap { SFSpeechRecognizer(locale: Locale(identifier: $0)) }
+            .first { $0.isAvailable && $0.supportsOnDeviceRecognition }
+        guard let recognizer else { unavailable = true; return }
         let request = SFSpeechAudioBufferRecognitionRequest()
         request.requiresOnDeviceRecognition = true
         request.shouldReportPartialResults = true
+        request.addsPunctuation = true
+        request.taskHint = .dictation
+        // Words people actually say to Gabay; biases recognition toward them.
+        request.contextualStrings = Self.hints
         let input = engine.inputNode
         input.installTap(onBus: 0, bufferSize: 1024, format: input.outputFormat(forBus: 0)) { buffer, _ in request.append(buffer) }
         engine.prepare()
@@ -66,10 +73,16 @@ final class Listener: ObservableObject {
         }
     }
 
-    /// Older users speak slowly; 1.8 s of quiet means they're done.
+    static let hints = ["Gabay", "anak", "apo", "Lola", "Lolo", "Nanay", "Tatay", "nakikita", "naririnig", "marinig",
+                        "hindi daw", "hindi ko", "paano", "palakihin", "paliitin", "pakilakihin", "yung", "sa", "ng", "ko",
+                        "video call", "Zoom", "Messenger", "Facebook", "FaceTime", "Viber", "GCash", "PhilHealth", "SSS",
+                        "Pag-IBIG", "YouTube", "Shopee", "Lazada", "email", "i-email", "picture", "litrato", "Wi-Fi",
+                        "printer", "OTP", "AnyDesk", "subtitles", "captions", "adobo", "sinigang"]
+
+    /// Older users speak slowly and pause mid-sentence; 2.5 s of quiet means they're done.
     private func waitForPause() {
         pause?.invalidate()
-        pause = Timer.scheduledTimer(withTimeInterval: 1.8, repeats: false) { _ in
+        pause = Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { _ in
             DispatchQueue.main.async { self.finish() }
         }
     }

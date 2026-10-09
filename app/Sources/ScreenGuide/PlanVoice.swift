@@ -214,3 +214,25 @@ enum WebPlan {
         return Array(r.prefix(4))
     }
 }
+
+/// Does the in-app command the picker likes actually do what the person asked? (Apple's on-device model, text only.)
+/// The picker's confidence swings with how its 16-option groups fall, so a confident nonsense pick ("File > New Session"
+/// for "they can't see me on the video call") must not keep a settings job inside the app.
+@Generable
+struct CommandFit {
+    @Guide(description: "true only if choosing this command directly does what the person asked")
+    var fits: Bool
+}
+
+enum CommandCheck {
+    static func fits(goal: String, app: String, command: String) async -> Bool? {
+        guard PlanVoice.available else { return nil }
+        let s = LanguageModelSession(instructions: "You know Mac apps well. Requests may be in English, Tagalog or Taglish.")
+        let task = Task { try? await s.respond(to: "App: \(app)\nRequest: \(goal)\nCommand: \(command)\nDoes this command do what the person asked?",
+                                                 generating: CommandFit.self, options: GenerationOptions(sampling: .greedy)).content.fits }
+        let timeout = Task { try? await Task.sleep(nanoseconds: 3_000_000_000); task.cancel() }
+        let r = await task.value
+        timeout.cancel()
+        return r
+    }
+}
