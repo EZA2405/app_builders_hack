@@ -92,10 +92,12 @@
       in_viewport: r.bottom > 0 && r.top < vh && r.right > 0 && r.left < vw,
       enabled: !(el.disabled || el.getAttribute("aria-disabled") === "true" || el.closest("fieldset[disabled]")),
       _top: r.top, _left: r.left,
+      // href only for the crawler to follow links; never part of the model's input.
+      _href: el.tagName === "A" ? el.href : null,
     });
   }
   // In-viewport first (reading order), then by distance from the viewport.
   out.sort((a, b) => (b.in_viewport - a.in_viewport) || (a.in_viewport ? (a._top - b._top || a._left - b._left) : Math.abs(a._top) - Math.abs(b._top)));
-  const elements = out.slice(0, MAX).map((e, i) => ({ ref: "e" + (i + 1), role: e.role, name: e.name, context: e.context, in_viewport: e.in_viewport, enabled: e.enabled }));
+  const elements = out.slice(0, MAX).map((e, i) => ({ ref: "e" + (i + 1), role: e.role, name: e.name, context: e.context, in_viewport: e.in_viewport, enabled: e.enabled, href: e._href }));
   return { url: location.href, title: document.title, elements };
 })()

@@ -36,7 +36,28 @@ async def snapshot(ws_url, url, settle=6.0):
         return res.get("result", {}).get("result", {}).get("value")
 
 
-def main(sites_file, out_dir):
+def follow_links(snap, base, n):
+    """Pick up to n same-site navigation links worth visiting (nav/header/menu first)."""
+    from urllib.parse import urlparse
+    host = urlparse(base).netloc.split(":")[0].removeprefix("www.")
+    seen, picks = set(), []
+    els = sorted(snap["elements"], key=lambda e: (0 if e.get("context", "").startswith(("nav", "header", "navigation")) else 1))
+    for e in els:
+        h = e.get("href") or ""
+        u = urlparse(h)
+        if e["role"] != "link" or not e["name"] or u.scheme not in ("http", "https"):
+            continue
+        if not u.netloc.removeprefix("www.").endswith(host) or h.split("#")[0] in seen or h.rstrip("/") == base.rstrip("/"):
+            continue
+        if any(k in h.lower() for k in ("logout", "signout", "delete", "unsubscribe")):
+            continue
+        seen.add(h.split("#")[0]); picks.append((e["name"], h))
+        if len(picks) >= n:
+            break
+    return picks
+
+
+def main(sites_file, out_dir, depth_links=0):
     os.makedirs(out_dir, exist_ok=True)
     profile = tempfile.mkdtemp(prefix="sg-chrome-")
     proc = subprocess.Popen([CHROME, "--headless=new", f"--remote-debugging-port={PORT}", f"--user-data-dir={profile}",
@@ -55,11 +76,21 @@ def main(sites_file, out_dir):
                 continue
             name, url = line.split(None, 1)
             try:
-                snap = asyncio.run(snapshot(ws_url, url.strip()))
+                snap = asyncio.run(asyncio.wait_for(snapshot(ws_url, url.strip()), 40))
                 if not snap:
                     raise RuntimeError("no result")
                 json.dump(snap, open(os.path.join(out_dir, f"{name}.json"), "w"), indent=1, ensure_ascii=False)
                 print(f"{name}: {len(snap['elements'])} elements | {snap['title'][:60]}", flush=True)
+                if depth_links and not name.startswith("test_") and len(snap["elements"]) >= 15:
+                    for k, (link_name, href) in enumerate(follow_links(snap, url.strip(), depth_links), 1):
+                        try:
+                            sub = asyncio.run(asyncio.wait_for(snapshot(ws_url, href), 40))
+                            if sub and len(sub["elements"]) >= 15:
+                                sub["arrived_by"] = {"from": name, "clicked": link_name}
+                                json.dump(sub, open(os.path.join(out_dir, f"{name}__{k}.json"), "w"), indent=1, ensure_ascii=False)
+                                print(f"  {name}__{k}: via '{link_name[:40]}' -> {len(sub['elements'])} elements", flush=True)
+                        except Exception as e:
+                            print(f"  {name}__{k}: FAILED {e}", flush=True)
             except Exception as e:
                 print(f"{name}: FAILED {e}", flush=True)
     finally:
@@ -67,4 +98,4 @@ def main(sites_file, out_dir):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2])
+    main(sys.argv[1], sys.argv[2], int(sys.argv[3]) if len(sys.argv) > 3 else 0)

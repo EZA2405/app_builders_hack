@@ -22,9 +22,12 @@ VAL_APPS = {"activitymonitor", "diskutility", "numbers", "terminal"}
 GROUP = 16
 VARIANTS = 3
 
-def state_for(app, goal):
-    # Must match bench_localjev.ask() exactly.
-    return f"A non-technical person is using the Mac app {app}. Their goal: \"{goal}\""
+def state_for(app, goal, done=None):
+    # Must match bench_localjev.ask() exactly. `done` = steps already taken (multi-step journeys).
+    s = f"A non-technical person is using the Mac app {app}. Their goal: \"{goal}\""
+    if done:
+        s += " Already done: " + "; ".join(done) + "."
+    return s
 
 def instructions_for(app):
     return f"Which {app} menu command accomplishes the person's goal?"

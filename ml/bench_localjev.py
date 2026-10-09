@@ -29,9 +29,12 @@ def load_dotenv(path=os.path.join(os.path.dirname(os.path.abspath(__file__)), ".
                 k, v = line.split("=", 1)
                 os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
 
-def ask(url, model, app, commands, goal, key=None):
+def ask(url, model, app, commands, goal, key=None, done=None):
+    state = f"A non-technical person is using the Mac app {app}. Their goal: \"{goal}\""
+    if done:  # keep identical to build_trainset.state_for
+        state += " Already done: " + "; ".join(done) + "."
     body = {
-        "state": f"A non-technical person is using the Mac app {app}. Their goal: \"{goal}\"",
+        "state": state,
         "questions": {
             "next_command": {
                 "type": "choice",
