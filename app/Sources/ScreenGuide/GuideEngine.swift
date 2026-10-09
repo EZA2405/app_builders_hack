@@ -219,6 +219,19 @@ final class GuideEngine {
             // Menus have no "one of these two" view; a near-guess menu step sends people somewhere wrong.
             // Real progress and no confident next step: maybe it's done. Ask instead of deciding.
             let settingsFix = !(settingsPane ?? "").isEmpty || !fixes.isEmpty
+            // In the pane, the job is usually its main switch ("Wi‑Fi", "Bluetooth"): ring it if it's off, say so if on.
+            if settingsFix, let pane = settingsPane, !pane.isEmpty, done.contains(where: { $0.contains(pane) }),
+               let main = state.candidates.first(where: { $0.role == "switch" && $0.source == "window" && Orchestrator.same($0.label, pane) }) {
+                if main.on == true {
+                    log("MAIN SWITCH \(pane) already on")
+                    show(.done, label: "All done", text: "**\(pane)** is already on.", hint: "If it still doesn't work, pick your network in the list below it.", target: main.frame.map(rect))
+                    return
+                }
+                if pick.candidate.role != "switch" || !Orchestrator.same(pick.candidate.label, pane) {
+                    log("MAIN SWITCH \(pane) (picker said \(Planner.key(pick.candidate)))")
+                    pick = Planner.Pick(candidate: main, confidence: 0.9, runnersUp: [])
+                }
+            }
             // A permissions list (several app switches) is on screen: that's the step, however unsure the picker is.
             if settingsFix, pick.candidate.role != "switch", let sw = Self.switchList(in: state, goal: goal) {
                 log("SWITCH LIST \(sw.context) (picker said \(Planner.key(pick.candidate)) \(String(format: "%.2f", pick.confidence)))")
@@ -317,7 +330,12 @@ final class GuideEngine {
         // Inside a real app, never send the person to System Settings: Apple's model calls too many app tasks
         // "settings" ("add text to the picture" -> Displays, "draw on the image" -> Control Center). Settings routing
         // only from the desktop (Finder) or inside System Settings itself.
-        if !desktop { settingsPane = "" }
+        // …except jobs that can only be done in System Settings (Wi-Fi, Bluetooth, sound, camera permission…),
+        // asked from any app ("nawalan ako ng Wi-Fi" from the Claude window stayed in Claude's Go menu).
+        let systemOnly: Set<String> = ["Wi‑Fi", "Bluetooth", "Network", "Sound", "Privacy & Security", "Printers & Scanners",
+                                       "Battery", "General"]
+        var insideApp = false
+        if !desktop { insideApp = true }
         if done.isEmpty, settingsPane == nil, !pinned || current == "System Settings" {
             if !desktop {
                 let f = focus(state)
@@ -338,6 +356,7 @@ final class GuideEngine {
             }
             if settingsPane == nil {
                 var pane = await SettingsRoute.pane(for: goal, app: current) ?? ""
+                if insideApp, !systemOnly.contains(pane) { pane = "" }
                 // In a browser, text size / zoom / captions are about the page; camera, Wi-Fi, sound are still settings.
                 if inBrowser, ["Accessibility", "Displays", "Appearance"].contains(pane) { pane = "" }
                 settingsPane = pane
@@ -884,9 +903,12 @@ final class GuideEngine {
         // App > Services lists add-ons installed on this Mac ("Ask Claude"…), never a beginner's step.
         let menus = s.candidates.filter { $0.source == "menu" && !Self.isPersonal($0.path)
                                           && $0.path.components(separatedBy: " > ").dropFirst().first != "Services" }
+        // In System Settings, "View > Wi‑Fi" just reopens the pane they're on: not a step.
+        let paneName = settingsPane ?? ""
         // Never offer again what this request already walked them to (after "Not yet" it re-offered the same menu item).
         let ok = { (c: Candidate) in !self.rejected.contains(Planner.key(c)) && !self.done.contains("clicked \(Planner.key(c))")
-                                     && !(c.source == "menu" && self.done.contains("chose \(c.path)")) }
+                                     && !(c.source == "menu" && self.done.contains("chose \(c.path)"))
+                                     && !(c.source == "menu" && !paneName.isEmpty && Orchestrator.same(c.label, paneName)) }
         // First step: menus, plus (when enabled, for a model trained on mixed lists) the window's toolbar buttons,
         // e.g. Preview's "Aa" text style. Off by default: `defaults write dev.alexi.screenguide step1Controls -bool YES`.
         if done.isEmpty {
