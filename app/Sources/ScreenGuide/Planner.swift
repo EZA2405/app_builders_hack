@@ -16,6 +16,7 @@ struct Planner {
         case "menu": return c.path                                   // "Tools > Adjust Size…"
         case "dock": return "dock icon \"\(c.label)\""
         case "statusbar": return "menu bar icon \"\(c.label)\""
+        case "web": return c.context.isEmpty ? "\(c.role) \"\(c.label)\"" : "\(c.role) \"\(c.label)\" · \(c.context)"
         default: return c.context.isEmpty ? "\(c.role) \"\(c.label)\"" : "\(c.role) \"\(c.label)\" · \(c.context)"
         }
     }
@@ -26,14 +27,14 @@ struct Planner {
         return s
     }
 
-    func choose(app: String, goal: String, done: [String], candidates: [Candidate]) async throws -> Pick? {
+    func choose(app: String, goal: String, done: [String], candidates: [Candidate], instructions: String? = nil) async throws -> Pick? {
         var byKey: [String: Candidate] = [:]
         for c in candidates where c.enabled { if byKey[Self.key(c)] == nil { byKey[Self.key(c)] = c } }
         var keys = Array(byKey.keys).sorted { (byKey[$0]!.id) < (byKey[$1]!.id) }   // screen/menu order
         guard !keys.isEmpty else { return nil }
         let state = Self.stateText(app: app, goal: goal, done: done)
-        let instructions = done.isEmpty ? "Which \(app) menu command accomplishes the person's goal?"
-                                        : "Which element on this page should the person use next?"
+        let instructions = instructions ?? (done.isEmpty ? "Which \(app) menu command accomplishes the person's goal?"
+                                                         : "Which element on this page should the person use next?")
         // Tournament: chunks of `group`, keep the top `keep` of each, repeat until one round.
         while keys.count > group {
             var next: [String] = []

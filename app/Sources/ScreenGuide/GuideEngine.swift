@@ -11,10 +11,10 @@ final class GuideEngine {
     var readAloud = true
     private let speech = AVSpeechSynthesizer()
     private var app: NSRunningApplication?
-    private var goal = ""
-    private var done: [String] = []
-    private var stepNo = 0
-    private var task: Task<Void, Never>?
+    var goal = ""
+    var done: [String] = []
+    var stepNo = 0
+    var task: Task<Void, Never>?
     private var doneTyping = false
 
     init() {
@@ -29,7 +29,11 @@ final class GuideEngine {
         self.goal = goal; self.app = app; done = []; stepNo = 0
         log("START goal=\(goal) app=\(app.localizedName ?? "?")")
         app.activate()
-        task = Task { await self.run() }
+        if BrowserGuide.browsers.contains(app.bundleIdentifier ?? ""), Bridge.shared.connected {
+            task = Task { await self.runWeb() }
+        } else {
+            task = Task { await self.run() }
+        }
     }
 
     func stop() {
@@ -94,7 +98,7 @@ final class GuideEngine {
         if !Task.isCancelled { finish() }
     }
 
-    private func finish() {
+    func finish() {
         log("DONE steps=\(done)")
         show(.done, label: "All done", text: "That's it. You did it.", hint: done.enumerated().map { "\($0.offset + 1). \(plain($0.element))" }.joined(separator: "\n"), target: nil)
         speakText("All done. You did it.")
@@ -271,7 +275,7 @@ final class GuideEngine {
 
     // MARK: - Helpers
 
-    private func show(_ mode: OverlayModel.Mode, label: String, text: String, hint: String, target: CGRect?) {
+    func show(_ mode: OverlayModel.Mode, label: String, text: String, hint: String, target: CGRect?) {
         let m = overlay.model
         m.mode = mode; m.label = label; m.instruction = text; m.hint = hint; m.target = target; m.spotlight = false
         m.showDone = mode == .guiding && hint.contains("Press Done")
@@ -281,7 +285,7 @@ final class GuideEngine {
 
     private func speak() { speakText(plain(overlay.model.instruction) + " " + plain(overlay.model.hint)) }
 
-    private func speakText(_ s: String) {
+    func speakText(_ s: String) {
         guard readAloud else { return }
         speech.stopSpeaking(at: .immediate)
         let u = AVSpeechUtterance(string: s)
@@ -289,7 +293,7 @@ final class GuideEngine {
         speech.speak(u)
     }
 
-    private func plain(_ s: String) -> String { s.replacingOccurrences(of: "**", with: "") }
+    func plain(_ s: String) -> String { s.replacingOccurrences(of: "**", with: "") }
 
     private func rect(_ f: [Double]) -> CGRect { CGRect(x: f[0], y: f[1], width: f[2], height: f[3]) }
 
@@ -306,7 +310,7 @@ final class GuideEngine {
 
     func markDoneTyping() { doneTyping = true }
 
-    private func log(_ s: String) {
+    func log(_ s: String) {
         let line = "\(Date()) \(s)\n"
         if let h = FileHandle(forWritingAtPath: "/tmp/gabay.log") { h.seekToEndOfFile(); h.write(line.data(using: .utf8)!); h.closeFile() }
         else { FileManager.default.createFile(atPath: "/tmp/gabay.log", contents: line.data(using: .utf8)) }

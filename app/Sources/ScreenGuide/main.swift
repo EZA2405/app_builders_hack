@@ -75,6 +75,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ n: Notification) {
         _ = axTrusted(prompt: true)
+        // The browser extension connects here (ws://127.0.0.1:47823/ext); it only reads and draws.
+        Bridge.shared.start()
+        GuideEngine.installBridgeEvents()
         lastApp = NSWorkspace.shared.frontmostApplication
         NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didActivateApplicationNotification,
                                                           object: nil, queue: .main) { [weak self] note in
@@ -108,13 +111,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func begin(_ goal: String) {
         ask.orderOut(nil)
         guard let target = lastApp else { return }
-        // In a browser, the page is guided by the ScreenGuide extension (through its helper); else natively.
-        if BrowserGuide.browsers.contains(target.bundleIdentifier ?? "") {
-            Task {
-                if await BrowserGuide.send(goal) { target.activate() } else { engine.start(goal: goal, app: target) }
-            }
-            return
-        }
+        // One brain: browsers with the extension connected are guided through the bridge, inside start().
         engine.start(goal: goal, app: target)
     }
 }
