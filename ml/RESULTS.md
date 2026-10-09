@@ -14,6 +14,7 @@ Given a non-technical user's goal and the app's real command list (menu tree + t
 | Apple Foundation Model (on-device ~3B) | Local | Hand-typed Preview menu (~60 cmds), full list, guided generation | 4/10 | ~5–8 s | 2026-10-09 |
 | Apple Foundation Model + NLEmbedding shortlist | Local | Same, rewrite → shortlist → constrained pick | 5/10 | ~4 s | 2026-10-09 |
 | TypeSafe **Jev** (`jev-latest`), hosted | **Cloud (comparison only)** | Real menus, 4 held-out apps, 200-wide tournament | **35/35** | 0.35–1.6 s per app | 2026-10-09 |
+| OpenAI **Decisions API** (`gpt-6-luna`), hosted | **Cloud (comparison only)** | Same fixtures and wording, 200-wide tournament | **33/35** | 0.38–1.01 s per app (median per decision) | 2026-10-10 |
 | Laya (base, 421M) | Local-capable (measured on Colab T4 and M4) | Real menus, 16-wide tournament | 8/35 | ~0.66 s (T4), ~1.9 s (M4) | 2026-10-09 |
 | **Laya fine-tuned v1** (teacher data, 3 epochs) | Local-capable (trained + measured on Colab T4) | Same | **25/35** | ~0.65 s (T4) | 2026-10-09 |
 | **Laya fine-tuned v3** (12,284 rows: 39 apps, traps, paraphrases, mined hard negatives, 19 websites; hard labels, 3 epochs) | Local-capable (trained + measured on Colab T4) | Same | **26/35** | 0.55–1.08 s (T4) | 2026-10-09 |
@@ -219,6 +220,26 @@ Hosted Jev (`jev-latest`) on all 774 teacher goals across the 22 training apps: 
 - The 41 disagreements are mostly genuinely ambiguous goals, where both answers are often defensible.
 - They're excluded from training as a consistency filter (`data/disagreements.json`), leaving 2,199 Laya rows.
 - Log: `results/teacher_goals_jev.log`. Reproduce: `./run_teacher_bench.sh https://api.typesafe.ai jev-latest`.
+
+## OpenAI Decisions API (cloud comparison only), 2026-10-10
+OpenAI's Jev-like endpoint (`POST /v1/decisions`, public beta, `gpt-6-luna` only). Same task and wording as the hosted-Jev run: one `choice` question over the real command list. The API takes 2–255 choices, so Safari (256) uses the same 200-wide tournament. Only the sanitized fixtures were sent.
+- **Validation first** (Activity Monitor, 30 goals): **29/30**, median 0.39 s per decision. Laya v6en scores 23/30 on the same app (16-wide tournament). The miss: "show how busy the computer is on the dock icon" → `View > Dock Icon > Show CPU History` (key: `Show CPU Usage`).
+- **Held-out, run once:** Preview 9/10, Finder 8/8, System Settings 8/8, Safari 8/9 = **33/35**. Median per decision: 0.38–0.45 s, and 1.01 s for Safari (3 calls).
+  - Preview "cut out just my face from the picture" → `Tools > Remove Background` (p 0.73).
+  - Safari "make the words on this page bigger" → `View > Make Text Bigger` (p 0.98). This is the same arguable miss noted for Laya. The key is unchanged, so it counts as a miss.
+- **Confidence:** `confidence` equalled the chosen option's probability on 62 of 65 decisions; on the other 3 it was 0.01–0.06 lower. When the chosen probability was ≥ 0.9, 50/51 picks were right.
+- **Vision** (one call): a screenshot of https://www.wikipedia.org/ taken in a fresh headless Chrome profile, with the goal "I want to download the Wikipedia app on my phone". The answers were written before the run. It picked `link "Download Wikipedia for Android or iOS"` (p 1.0) and the grid cell `bottom left` (p 0.98); both are right. 2,062 input tokens, 1.09 s.
+- **Cost:** 111,804 input tokens across everything above plus one smoke-test call = **$0.011** at the $0.10 / 1M input-token list price. Token counts come from `usage.input_tokens`; output isn't billed.
+- **Not training data.** OpenAI's Services Agreement §3.3(e) forbids using Output to develop models that compete with OpenAI. The exceptions cover only classifiers that are not distributed, and fine-tuning OpenAI's own models. Laya ships to users, so these answers are a benchmark only.
+
+Reproduce (needs `OPENAI_API_KEY` in `ml/.env`):
+```bash
+cd ml
+python3 experiments/openai_decision_bench.py --fixture fixtures/val/activitymonitor.json
+for f in preview finder systemsettings safari; do python3 experiments/openai_decision_bench.py --fixture fixtures/${f}_real.json; done
+printf 'wikiportal https://www.wikipedia.org/\n' > /tmp/sites.txt && <venv with websockets>/bin/python web/crawl.py /tmp/sites.txt /tmp/sg/web
+python3 experiments/openai_decision_bench.py --vision /tmp/sg/web/wikiportal.json --goal "I want to download the Wikipedia app on my phone" --expect 'link "Download Wikipedia for Android or iOS"' --expect-region "bottom left"
+```
 
 ## Privacy findings
 - **App menus contain personal data:**
