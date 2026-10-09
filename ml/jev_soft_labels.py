@@ -47,7 +47,7 @@ def main(src, dst):
                 cache[k] = p
             except ValueError:
                 pass
-    todo = [r for r in rows if row_key(r) not in cache]
+    todo = [r for r in rows if "expected" in r and "next_command" in r["expected"] and row_key(r) not in cache]
     print(f"{len(rows)} rows, {len(cache)} cached, {len(todo)} to query", flush=True)
     lock = threading.Lock()
     with open(cache_path, "a") as cf_out, cf.ThreadPoolExecutor(8) as ex:
@@ -63,6 +63,9 @@ def main(src, dst):
     agree = soft = dropped = 0
     with open(dst, "w") as f:
         for row in rows:
+            if "expected" not in row or "next_command" not in row["expected"]:
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")   # already soft-labelled (e.g. risk rows)
+                continue
             p = cache.get(row_key(row))
             ans = row["expected"]["next_command"]
             opts = list(row["questions"]["next_command"]["criteria"])
