@@ -11,6 +11,7 @@ final class OverlayModel: ObservableObject {
     @Published var label = ""                     // "STEP 1"
     @Published var instruction = ""               // may contain **bold** key word
     @Published var hint = ""
+    @Published var askWorked = false              // troubleshooting: "Is it working now?" Yes / Still not
     @Published var plan = ""                      // step 1 only: what we're doing overall (Apple on-device model)
     @Published var spotlight = false
     @Published var showDone = false               // text-entry steps: user says when they've typed
@@ -112,6 +113,7 @@ struct CardView: View {
     var onStop: () -> Void = {}
     var onDone: () -> Void = {}
     var onNotThis: () -> Void = {}
+    var onStillBroken: () -> Void = {}
     @State private var hovering = false
     @State private var idle = false
     @State private var showWhat = false
@@ -148,7 +150,18 @@ struct CardView: View {
                         .foregroundStyle(warning ? Color(hex: 0x3A3A3C) : Color.primary.opacity(0.78))
                         .fixedSize(horizontal: false, vertical: true)
                 }
-                if model.mode == .done {
+                if model.mode == .done, model.askWorked {
+                    HStack(spacing: 8) {
+                        primary("Yes, it works", onStop)
+                        pill("Still not working", onStillBroken)
+                    }.padding(.top, 10)
+                } else if model.mode == .done, model.label != "All done" {
+                    if !model.hint.isEmpty {
+                        Text(styled(model.hint, size: 19)).font(Theme.secondary()).foregroundStyle(Color.primary.opacity(0.78))
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    HStack { Spacer(); pill("Close", onStop) }.padding(.top, 6)
+                } else if model.mode == .done {
                     HStack(alignment: .top) {
                         if !model.hint.isEmpty {
                             DisclosureGroup("What I did", isExpanded: $showWhat) {
@@ -308,6 +321,7 @@ final class OverlayController {
     var onStop: () -> Void = {}
     var onDone: () -> Void = {}
     var onNotThis: () -> Void = {}
+    var onStillBroken: () -> Void = {}
     /// Extra rects the card must not cover (an open menu, the text a step refers to).
     var keepOut: [CGRect] = []
 
@@ -330,7 +344,8 @@ final class OverlayController {
                                                     onStuck: { [weak self] in self?.onStuck() },
                                                     onStop: { [weak self] in self?.onStop() },
                                                     onDone: { [weak self] in self?.onDone() },
-                                                    onNotThis: { [weak self] in self?.onNotThis() }))
+                                                    onNotThis: { [weak self] in self?.onNotThis() },
+                                                    onStillBroken: { [weak self] in self?.onStillBroken() }))
         cardWindow = NSPanel(contentRect: NSRect(x: 0, y: 0, width: 360, height: 200),
                              styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
         cardWindow.isOpaque = false
@@ -365,7 +380,8 @@ final class OverlayController {
         let screen = primary.frame
         let vis = CGRect(x: 0, y: screen.height - primary.visibleFrame.maxY, width: screen.width,
                          height: primary.visibleFrame.height)   // AX coords, below the menu bar
-        var origin = CGPoint(x: (screen.width - size.width) / 2, y: vis.minY + 40)
+        // Nothing to point at: speak from Gabay's corner, above its button, not over the app.
+        var origin = CGPoint(x: vis.maxX - size.width - 4, y: vis.maxY - size.height - 84)
         var edge = ArrowEdge.none
         if let t = model.target {
             let block = [t.insetBy(dx: -20, dy: -20)] + keepOut.map { $0.insetBy(dx: -8, dy: -8) }

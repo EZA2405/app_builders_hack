@@ -24,6 +24,11 @@ final class GuideEngine {
     var waypoints: [String]?
     private var movedOn = false
     private var lastState: ScreenState?
+    /// Troubleshooting: the checklist (made once per request) and where we are in it.
+    var fixes: [Fix] = []
+    var fixIndex = 0
+    var originalGoal = ""
+    private var alreadyFine = false
     /// Apple's on-device model's one-line plan for this task, shown on the first card.
     var planLine: String?
     /// Set when Gabay points at a Dock icon: the app we expect the person to open next.
@@ -36,6 +41,14 @@ final class GuideEngine {
         overlay.onStuck = { [weak self] in self?.stuck() }
         overlay.onDone = { [weak self] in self?.markDoneTyping() }
         overlay.onNotThis = { [weak self] in self?.notThis = true }
+        overlay.onStillBroken = { [weak self] in
+            guard let self else { return }
+            self.overlay.model.askWorked = false
+            if !self.fixes.isEmpty { self.nextFix(); return }
+            // No checklist to fall back on: ask what happens now, so the next request carries what we learned.
+            self.stop()
+            NotificationCenter.default.post(name: .gabayAskAgain, object: nil)
+        }
         ClickWatcher.shared.start()
     }
 
@@ -58,6 +71,14 @@ final class GuideEngine {
                 self.show(.detour, label: "Wait", text: "Wait. Real banks and government offices never ask you to share your screen or install apps like this.",
                           hint: "If someone asked you to do this, stop and call your family first.", target: nil)
                 return
+            }
+            if !web {
+                self.originalGoal = goal
+                // Off by default: measured unreliable (missed camera problems, gave camera fixes for "no sound").
+                self.fixes = ProcessInfo.processInfo.environment["GABAY_TROUBLESHOOT"] == "1" ? await Troubleshooter.fixes(for: goal) : []
+                self.fixIndex = 0
+                self.log("FIXES \(self.fixes.map(\.task))")
+                if let f = self.fixes.first { self.beginFix(f) }
             }
             if web { await self.runWeb() } else { await self.run() }
         }
@@ -126,6 +147,7 @@ final class GuideEngine {
                 return
             }
             // Menus have no "one of these two" view; a near-guess menu step sends people somewhere wrong.
+            if !done.isEmpty, pick.confidence < 0.3 { finish(); return }   // real progress, nothing sensible left: done
             if pick.candidate.source == "menu", pick.confidence < 0.3 {
                 log("UNSURE pick=\(Planner.key(pick.candidate)) conf=\(String(format: "%.2f", pick.confidence))")
                 show(.done, label: "I'm not sure", text: "I can't see that on this screen. Can you say it another way?",
@@ -154,8 +176,14 @@ final class GuideEngine {
                 continue
             }
             if Task.isCancelled || !ok { return }
+            if alreadyFine {
+                alreadyFine = false
+                let what = pick.candidate.context.lowercased()
+                if !fixes.isEmpty { nextFix(note: "Your apps can already use the \(what). So that's not the problem."); return }
+                show(.done, label: "All done", text: "Your apps can already use the \(what).", hint: "That part is fine.", target: nil); return
+            }
             done.append(pick.candidate.source == "menu" ? "chose \(pick.candidate.path)" : "clicked \(Planner.key(pick.candidate))")
-            if isFinal(pick.candidate) { finish(); return }
+            if isFinal(pick.candidate) || pick.candidate.role == "switch" { finish(); return }   // flipping a switch ends a settings fix
         }
         if !Task.isCancelled { finish() }
     }
@@ -236,7 +264,38 @@ final class GuideEngine {
         return out
     }
 
+    /// Work on one fix of the checklist as if it were the request.
+    private func beginFix(_ f: Fix) {
+        goal = f.task; done = []; stepNo = 0; rejected = []; settingsPane = nil; waypoints = nil
+        planLine = f.say
+        log("FIX \(fixIndex + 1)/\(fixes.count) \(f.task)")
+    }
+
+    /// "Still not working" (or the fix was already in place): on to the next likely cause.
+    func nextFix(note: String? = nil) {
+        fixIndex += 1
+        guard fixIndex < fixes.count else {
+            show(.done, label: "Out of ideas", text: "I've tried what I know for this.",
+                 hint: "A family member may need to look. Nothing was changed that you didn't choose.", target: nil)
+            return
+        }
+        beginFix(fixes[fixIndex])
+        task?.cancel()
+        task = Task {
+            if let note { self.show(.detour, label: "Okay", text: note, hint: "", target: nil); try? await Task.sleep(nanoseconds: 2_500_000_000) }
+            if let front = Self.frontRegularApp() { self.app = front }
+            await self.run()
+        }
+    }
+
     func finish() {
+        if !fixes.isEmpty || !(settingsPane ?? "").isEmpty {
+            log("FIX DONE \(fixIndex + 1) steps=\(done)")
+            overlay.model.askWorked = true
+            show(.done, label: "Check", text: "Try it again now. Is it working?", hint: "", target: nil)
+            speakText("Try it again now. Is it working?")
+            return
+        }
         log("DONE steps=\(done)")
         show(.done, label: "All done", text: "Done. You did it.", hint: done.enumerated().map { "\($0.offset + 1). \(plain($0.element))" }.joined(separator: "\n"), target: nil)
         speakText("Done. You did it.")
@@ -279,9 +338,16 @@ final class GuideEngine {
         // which app they call with. Say so, and any switch in that list counts.
         let siblings = lastState?.candidates.filter { $0.role == "switch" && $0.context == c.context } ?? []
         if c.role == "switch", siblings.count >= 3, !siblings.contains(where: { goal.lowercased().contains($0.label.lowercased()) }) {
-            show(.guiding, label: "Step \(stepNo)", text: "Turn on the switch next to the app you use for the call.",
-                 hint: "For example Zoom, FaceTime or Google Chrome.", target: nil)
+            // Every app here is already allowed: this isn't the problem. Say so instead of asking for a no-op.
+            if siblings.allSatisfy({ $0.on == true }) {
+                log("ALREADY ON \(c.context)")
+                alreadyFine = true
+                return true
+            }
             let frames = siblings.compactMap { $0.frame.map(rect) }
+            let column = frames.dropFirst().reduce(frames.first ?? .null) { $0.union($1) }
+            show(.guiding, label: "Step \(stepNo)", text: "Turn on the switch next to the app you use for the call.",
+                 hint: "For example Zoom, FaceTime or Google Chrome.", target: column.isNull ? nil : column)
             _ = ClickWatcher.shared.drain()
             while !Task.isCancelled {
                 try? await Task.sleep(nanoseconds: 150_000_000)
@@ -556,6 +622,7 @@ final class GuideEngine {
         let m = overlay.model
         // The plan sentence sits above the step as a quiet caption on step 1 instead of lengthening the hint.
         m.plan = mode == .guiding && stepNo == 1 ? (planLine ?? "") : ""
+        if mode != .done { m.askWorked = false }
         m.mode = mode; m.label = label; m.instruction = text; m.hint = hint; m.target = target; m.spotlight = false
         m.showDone = mode == .guiding && hint.contains("Press Done")
         overlay.update()
@@ -595,6 +662,8 @@ final class GuideEngine {
         else { FileManager.default.createFile(atPath: "/tmp/gabay.log", contents: line.data(using: .utf8)) }
     }
 }
+
+extension Notification.Name { static let gabayAskAgain = Notification.Name("gabayAskAgain") }
 
 /// Reads menu state directly (fast enough to poll): which menu is open, menu bar item frames.
 enum MenuProbe {

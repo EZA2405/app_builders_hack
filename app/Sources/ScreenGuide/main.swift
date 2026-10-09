@@ -105,6 +105,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         button = GabayButtonPanel(onTap: { [weak self] in self?.toggleAsk() },
                                   onSettings: { [weak self] in self?.showSettings() })
         button.place()
+        NotificationCenter.default.addObserver(forName: .gabayAskAgain, object: nil, queue: .main) { [weak self] _ in
+            MainActor.assumeIsolated { self?.ask.present() }
+        }
         NotificationCenter.default.addObserver(forName: NSApplication.didChangeScreenParametersNotification, object: nil,
                                                queue: .main) { [weak self] _ in MainActor.assumeIsolated { self?.button.place() } }
 

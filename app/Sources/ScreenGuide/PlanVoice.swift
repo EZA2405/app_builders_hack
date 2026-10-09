@@ -126,3 +126,42 @@ enum Orchestrator {
         return n(a) == n(b)
     }
 }
+
+
+/// "Something isn't working" requests are troubleshooting, not navigation: Apple's on-device model lists the
+/// likely fixes once, most likely first, and Gabay walks them one at a time, asking "Is it working now?".
+@Generable
+struct Fix {
+    @Guide(description: "One short, calm sentence saying what we'll check, e.g. \"Let's check that your video call app may use the camera.\"")
+    var say: String
+    @Guide(description: "The task as a short instruction for a Mac guide, e.g. \"allow the video call app to use the camera\"")
+    var task: String
+}
+
+@Generable
+struct Troubleshoot {
+    @Guide(description: "true if the person says something is not working or is wrong (no sound, can't see me, no internet, printer won't print); false if they just want to do something")
+    var isProblem: Bool
+    @Guide(description: "If isProblem: 2 or 3 fixes a person can do on a Mac, most likely first. Otherwise empty.")
+    var fixes: [Fix]
+}
+
+enum Troubleshooter {
+    static func fixes(for goal: String) async -> [Fix] {
+        guard PlanVoice.available else { return [] }
+        let s = LanguageModelSession(instructions: """
+        You help older people fix everyday problems on a Mac. Requests may be in English, Tagalog or Taglish \
+        ("hindi" means "not", "daw" means "they say"). Only a request that says something is broken or not working \
+        is a problem; a request to do or change something is not. Each fix must be about the exact thing that's \
+        broken (sound problems get sound fixes, camera problems get camera fixes), using macOS 26 names \
+        (System Settings, not System Preferences).
+        """)
+        let task = Task { try? await s.respond(to: "Request: \(goal)", generating: Troubleshoot.self,
+                                                 options: GenerationOptions(sampling: .greedy)).content }
+        let timeout = Task { try? await Task.sleep(nanoseconds: 4_000_000_000); task.cancel() }
+        let r = await task.value
+        timeout.cancel()
+        guard let r, r.isProblem else { return [] }
+        return Array(r.fixes.prefix(3))
+    }
+}

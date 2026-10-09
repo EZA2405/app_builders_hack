@@ -16,6 +16,8 @@ struct Candidate: Codable {
     var path: String
     var frame: [Double]?
     var enabled: Bool
+    /// Switches and checkboxes: on or off (not personal; lets Gabay see a fix is already in place).
+    var on: Bool? = nil
 }
 
 struct ScreenState: Codable {
@@ -138,9 +140,11 @@ enum ScreenReader {
             if !label.isEmpty {
                 let sub = AXReader.string(el, kAXSubroleAttribute)
                 let role = sub == "AXSwitch" ? "switch" : friendly(r)
-                emit(Candidate(id: 0, source: "window", role: role, label: label, context: ctx,
-                               path: "\(ctx) > \(label)", frame: frame,
-                               enabled: AXReader.bool(el, kAXEnabledAttribute) ?? true))
+                var cand = Candidate(id: 0, source: "window", role: role, label: label, context: ctx,
+                                     path: "\(ctx) > \(label)", frame: frame,
+                                     enabled: AXReader.bool(el, kAXEnabledAttribute) ?? true)
+                if r == "AXCheckBox", let v: NSNumber = AXReader.attr(el, kAXValueAttribute) { cand.on = v.boolValue }
+                emit(cand)
                 count += 1
             }
             if r == "AXRow" { return } // a row's own text is its label; don't descend
