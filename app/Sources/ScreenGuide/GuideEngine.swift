@@ -32,6 +32,11 @@ final class GuideEngine {
         stop()
         self.goal = goal; self.app = app; done = []; stepNo = 0; rejected = []; notThis = false
         log("START goal=\(goal) app=\(app.localizedName ?? "?")")
+        if let w = ScamGuard.check(goal: goal) {
+            log("SCAM GUARD goal")
+            show(.detour, label: "Wait", text: w.text, hint: w.hint, target: nil)
+            return
+        }
         app.activate()
         if BrowserGuide.browsers.contains(app.bundleIdentifier ?? ""), Bridge.shared.connected {
             task = Task { await self.runWeb() }
@@ -90,6 +95,11 @@ final class GuideEngine {
                 log("UNSURE pick=\(Planner.key(pick.candidate)) conf=\(String(format: "%.2f", pick.confidence))")
                 show(.done, label: "I'm not sure", text: "I'm not sure where to do that in \(app.localizedName ?? "this app").",
                      hint: "Open the app you'd use for it (for a photo, open the photo first), click its window, then ask again.", target: nil)
+                return
+            }
+            if let w = ScamGuard.check(label: pick.candidate.label) {
+                log("SCAM GUARD step \(pick.candidate.label)")
+                show(.detour, label: "Wait", text: w.text, hint: w.hint, target: pick.candidate.frame.map(rect))
                 return
             }
             log("STEP \(stepNo + 1) pick=\(Planner.key(pick.candidate)) conf=\(String(format: "%.2f", pick.confidence))")

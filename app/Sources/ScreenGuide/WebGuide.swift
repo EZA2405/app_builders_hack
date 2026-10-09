@@ -48,6 +48,13 @@ extension GuideEngine {
             }
             guard let pick, let ref = refs[Planner.key(pick.candidate)] else { webFail("I couldn't find anything to click here.", ""); return }
             let key = Planner.key(pick.candidate)
+            if let w = ScamGuard.check(label: pick.candidate.label) {
+                log("WEB SCAM GUARD \(pick.candidate.label)")
+                Bridge.shared.send(["type": "clear", "id": UUID().uuidString])
+                show(.detour, label: "Wait", text: w.text, hint: w.hint, target: nil)
+                speakText(w.text)
+                return
+            }
             log("WEB STEP \(stepNo + 1) pick=\(key) conf=\(String(format: "%.2f", pick.confidence))")
             // After the first steps, a weak best guess usually means the goal is already reached: ask.
             if stepNo >= 1, pick.confidence < 0.2 {
