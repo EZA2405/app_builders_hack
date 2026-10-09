@@ -409,7 +409,7 @@
     }
     const buttons = document.createElement("div");
     buttons.className = "buttons";
-    for (const [action, label] of [["again", "Show me again"], ["stuck", "I'm stuck"], ["stop", "Stop"], ["read_aloud", "🔊"]]) {
+    for (const [action, label] of [["not_this", "Not this one"], ["stuck", "I'm stuck"], ["stop", "Stop"], ["read_aloud", "🔊"]]) {
       const button = document.createElement("button");
       button.type = "button";
       button.textContent = label;

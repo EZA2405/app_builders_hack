@@ -78,6 +78,7 @@ struct CardView: View {
     var onStuck: () -> Void = {}
     var onStop: () -> Void = {}
     var onDone: () -> Void = {}
+    var onNotThis: () -> Void = {}
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -100,8 +101,12 @@ struct CardView: View {
             if model.mode == .guiding || model.mode == .detour || model.mode == .notSure {
                 HStack(spacing: 8) {
                     if model.showDone { primary("Done", onDone) }
-                    pill("Say it again", onAgain)
+                    pill("Not this one", onNotThis)
                     pill("I'm stuck", onStuck)
+                    Button(action: onAgain) {
+                        Image(systemName: "speaker.wave.2.fill").font(.system(size: 15, weight: .semibold)).foregroundStyle(Theme.ink)
+                            .frame(width: 40, height: 40).background(Circle().fill(Color.black.opacity(0.06)))
+                    }.buttonStyle(.plain).help("Say it again")
                     Spacer()
                     pill("Stop", onStop)
                 }.padding(.top, 4)
@@ -169,6 +174,7 @@ final class OverlayController {
     var onStuck: () -> Void = {}
     var onStop: () -> Void = {}
     var onDone: () -> Void = {}
+    var onNotThis: () -> Void = {}
     /// Extra rects the card must not cover (an open menu, the text a step refers to).
     var keepOut: [CGRect] = []
 
@@ -190,7 +196,8 @@ final class OverlayController {
         cardHost = NSHostingView(rootView: CardView(model: model, onAgain: { [weak self] in self?.onAgain() },
                                                     onStuck: { [weak self] in self?.onStuck() },
                                                     onStop: { [weak self] in self?.onStop() },
-                                                    onDone: { [weak self] in self?.onDone() }))
+                                                    onDone: { [weak self] in self?.onDone() },
+                                                    onNotThis: { [weak self] in self?.onNotThis() }))
         cardWindow = NSPanel(contentRect: NSRect(x: 0, y: 0, width: 360, height: 200),
                              styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
         cardWindow.isOpaque = false

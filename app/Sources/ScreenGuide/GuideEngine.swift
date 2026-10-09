@@ -16,17 +16,21 @@ final class GuideEngine {
     var stepNo = 0
     var task: Task<Void, Never>?
     private var doneTyping = false
+    /// "Not this one": guesses the person rejected this task; the model never offers them again.
+    var rejected = Set<String>()
+    var notThis = false
 
     init() {
         overlay.onStop = { [weak self] in self?.stop() }
         overlay.onAgain = { [weak self] in self?.speak() }
         overlay.onStuck = { [weak self] in self?.stuck() }
         overlay.onDone = { [weak self] in self?.markDoneTyping() }
+        overlay.onNotThis = { [weak self] in self?.notThis = true }
     }
 
     func start(goal: String, app: NSRunningApplication) {
         stop()
-        self.goal = goal; self.app = app; done = []; stepNo = 0
+        self.goal = goal; self.app = app; done = []; stepNo = 0; rejected = []; notThis = false
         log("START goal=\(goal) app=\(app.localizedName ?? "?")")
         app.activate()
         if BrowserGuide.browsers.contains(app.bundleIdentifier ?? ""), Bridge.shared.connected {
@@ -91,6 +95,15 @@ final class GuideEngine {
             log("STEP \(stepNo + 1) pick=\(Planner.key(pick.candidate)) conf=\(String(format: "%.2f", pick.confidence))")
             stepNo += 1
             let ok = await guide(pick)
+            if notThis {
+                // Recovery is one click: drop this guess and ask the model for its next best.
+                notThis = false
+                rejected.insert(Planner.key(pick.candidate))
+                stepNo -= 1
+                log("NOT THIS \(Planner.key(pick.candidate))")
+                show(.thinking, label: "Okay", text: "Let me look somewhere else…", hint: "", target: nil)
+                continue
+            }
             if Task.isCancelled || !ok { return }
             done.append(pick.candidate.source == "menu" ? "chose \(pick.candidate.path)" : "clicked \(Planner.key(pick.candidate))")
             if isFinal(pick.candidate) { finish(); return }
@@ -122,6 +135,7 @@ final class GuideEngine {
         // Text entry: wait for the "Done" pill (we never read what the user types).
         while !Task.isCancelled {
             try? await Task.sleep(nanoseconds: 450_000_000)
+            if notThis { return false }
             if c.source == "dock" {
                 // Only the app it pointed at opening counts; a busy window (e.g. Terminal output) is not a click.
                 if Self.frontRegularApp()?.localizedName == c.label { break }
@@ -139,6 +153,7 @@ final class GuideEngine {
         let parts = c.path.components(separatedBy: " > ")
         var level = 0
         while !Task.isCancelled {
+            if notThis { return false }
             let openMenu = MenuProbe.openMenuTitle(app)
             if level == 0 {
                 if openMenu == parts[0] { level = 1; continue }
@@ -215,12 +230,13 @@ final class GuideEngine {
     /// an open dialog wins; the first step is about menus; later steps add window controls.
     private func focus(_ s: ScreenState) -> [Candidate] {
         let dialog = s.candidates.filter { $0.source == "window" && $0.context.hasSuffix("dialog") }
-        if !dialog.isEmpty { return dialog }
+        if !dialog.isEmpty { return dialog.filter { !rejected.contains(Planner.key($0)) } }
         // App > Services lists add-ons installed on this Mac ("Ask Claude"…), never a beginner's step.
         let menus = s.candidates.filter { $0.source == "menu" && !Self.isPersonal($0.path)
                                           && $0.path.components(separatedBy: " > ").dropFirst().first != "Services" }
-        if done.isEmpty { return menus }   // other apps are handled by routeToApp first
-        return s.candidates.filter { $0.source == "window" && $0.role != "menu button" } + menus
+        let ok = { (c: Candidate) in !self.rejected.contains(Planner.key(c)) }
+        if done.isEmpty { return menus.filter(ok) }   // other apps are handled by routeToApp first
+        return (s.candidates.filter { $0.source == "window" && $0.role != "menu button" } + menus).filter(ok)
     }
 
     /// Same rule as ml/make_fixtures.py is_personal(): menu entries that are user data (recent files,

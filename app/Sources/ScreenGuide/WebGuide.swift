@@ -36,7 +36,7 @@ extension GuideEngine {
                 let c = Candidate(id: i, source: "web", role: e["role"] as? String ?? "button", label: name,
                                   context: e["context"] as? String ?? "", path: name, frame: nil, enabled: true)
                 let k = Planner.key(c)
-                if refs[k] == nil, !clicked.contains(k) { refs[k] = ref; cands.append(c) }
+                if refs[k] == nil, !clicked.contains(k), !rejected.contains(k) { refs[k] = ref; cands.append(c) }
             }
             let site = "web browser, on the website \"\(String(title.prefix(60)))\""
             let pick: Planner.Pick?
@@ -74,7 +74,8 @@ extension GuideEngine {
 
             // Wait for the person: a click on the target, a submit, or the page changing.
             var advanced = false
-            while !Task.isCancelled, !advanced {
+            notThis = false
+            while !Task.isCancelled, !advanced, !notThis {
                 try? await Task.sleep(nanoseconds: 200_000_000)
                 for e in WebEvents.shared.drain() {
                     switch e["type"] as? String {
@@ -85,6 +86,10 @@ extension GuideEngine {
                     case "card_button":
                         switch e["button"] as? String {
                         case "stop": stop(); return
+                        case "not_this":
+                            // One-click recovery: drop this guess, ask the model for its next best.
+                            rejected.insert(key); stepNo -= 1; notThis = true
+                            log("WEB NOT THIS \(key)")
                         case "again", "read_aloud": speakText(plain(msg["instruction"] as? String ?? "") + " " + (msg["hint"] as? String ?? ""))
                         case "stuck":
                             var m = msg; m["style"] = "spotlight"
@@ -96,6 +101,7 @@ extension GuideEngine {
                 }
             }
             if Task.isCancelled { return }
+            if notThis { notThis = false; continue }
             clicked.insert(key)
             done.append("clicked \(key)")
             bridge.send(["type": "status", "id": UUID().uuidString, "text": "That's right.", "seconds": 1])
