@@ -1,0 +1,60 @@
+{"goal": "bigyan mo ako ng bagong terminal window"}
+{"goal": "open a second tab for another job"}
+{"goal": "make an exact copy of this tab"}
+{"goal": "pagtabihin mo yung dalawang terminal"}
+{"goal": "stack another terminal underneath this one"}
+{"goal": "save everything on the screen to a text file"}
+{"goal": "save only the part i highlighted into a file"}
+{"goal": "close this window completely"}
+{"goal": "close al the panes in this tab"}
+{"goal": "i closed the wrong window, open it back up"}
+{"goal": "save this session so I can bring it back later"}
+{"goal": "reopen the session I saved before"}
+{"goal": "type the same thing into every pane at once"}
+{"goal": "stop typing into all the panes, just this one"}
+{"goal": "i-disconnect mo ako sa server"}
+{"goal": "download a file from the remote computer"}
+{"goal": "print what's on the screen"}
+{"goal": "copy it with the colers too"}
+{"goal": "paste slowly, it's a long block"}
+{"goal": "warn me before I paste a lot of lines"}
+{"goal": "ayusin mo yung json para mabasa ko"}
+{"goal": "ask the AI helper for help with a command"}
+{"goal": "open the link I highlighted"}
+{"goal": "find every web address on the screen"}
+{"goal": "search all the tabs for a word"}
+{"goal": "filter the lines to show only ones with \"error\""}
+{"goal": "put a bookmark here so I can come back to it"}
+{"goal": "go back to the bookmark"}
+{"goal": "write a note on this line"}
+{"goal": "clear everything, including the scrollback"}
+{"goal": "show the side panel with my command history"}
+{"goal": "show the clipboard history"}
+{"goal": "take away the see-through effect"}
+{"goal": "where is my curser i cant see it"}
+{"goal": "show a line under the cursor so it's easier to see"}
+{"goal": "open a box to write long commands before sending"}
+{"goal": "type the name of a tab or session to jump to it"}
+{"goal": "make the wrods larger"}
+{"goal": "paliitin mo yung text"}
+{"goal": "reset text and window size to normal"}
+{"goal": "replay what was on the screen a minute ago"}
+{"goal": "change this tab's color to red"}
+{"goal": "restart this session, it's stuck"}
+{"goal": "log everything that happens to a file"}
+{"goal": "reset the terminal, the letters are all garbled"}
+{"goal": "move this tab to the left"}
+{"goal": "go to the pane above"}
+{"goal": "make the divider move left so the left pane is smaller"}
+{"goal": "put the window on the bottom of the screen like a drawer"}
+{"goal": "make the window taller"}
+{"goal": "pakita mo naman ng tip"}
+{"goal": "use iterm as my default terminal"}
+{"goal": "protect my password typing from other apps"}
+{"goal": "open the help page"}
+{"goal": "paano mag-split ng screen pataas at pababa"}
+{"goal": "i-clear mo yung buong screen pati scrollback"}
+{"goal": "pakita mo yung history ng mga command ko"}
+{"goal": "i-restart mo yung session, nag-freeze"}
+{"goal": "bigyan mo ng ibang kulay yung tab na to"}
+{"goal": "i-save mo yung output sa file"}

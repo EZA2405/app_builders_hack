@@ -1,0 +1,60 @@
+{"goal": "start a new empty file"}
+{"goal": "open another window of the editor"}
+{"goal": "open a folder on my computer to work on"}
+{"goal": "open a project from a different computer"}
+{"goal": "add another folder to what i'm working on"}
+{"goal": "i-save mo na yung binago ko"}
+{"goal": "save it with a new name"}
+{"goal": "save every file that's open"}
+{"goal": "isara mo yung file na tinitingnan ko"}
+{"goal": "close the folder i'm working on"}
+{"goal": "undo my last chnage"}
+{"goal": "redo that"}
+{"goal": "cut this text"}
+{"goal": "copy the selected code"}
+{"goal": "copy the text without the extra spaces at the ends"}
+{"goal": "paste here"}
+{"goal": "search for a word in this file"}
+{"goal": "search through every file in the project for a word"}
+{"goal": "turn this line into a comment"}
+{"goal": "select everything in the file"}
+{"goal": "select a bit more around what I have highlighted"}
+{"goal": "select less"}
+{"goal": "put a cursor on the line above too"}
+{"goal": "pick the next place this same word shows up"}
+{"goal": "select every spot where this word appears"}
+{"goal": "move this line down one"}
+{"goal": "duplicate what i selected"}
+{"goal": "palakihin mo yung sulat"}
+{"goal": "the text is way too big"}
+{"goal": "put the text size back"}
+{"goal": "reset the size on every file"}
+{"goal": "itago mo yung panel sa kaliwa"}
+{"goal": "show or hide the panel on the bottom"}
+{"goal": "hide all the side panels so i just see my file"}
+{"goal": "split the screen so i see two files side by side"}
+{"goal": "split the screen top and bottom"}
+{"goal": "show the outline of this file"}
+{"goal": "buksan mo yung terminal sa loob ng editor"}
+{"goal": "open the AI assistant"}
+{"goal": "show me what i changed in git"}
+{"goal": "show me all the erors in my code"}
+{"goal": "i-full screen mo yung editor"}
+{"goal": "punta tayo sa line number 120"}
+{"goal": "find a file by typing its name"}
+{"goal": "jump to where this function is defined"}
+{"goal": "find everywhere this is used"}
+{"goal": "go to the next error"}
+{"goal": "go back to where i was before"}
+{"goal": "open the box where I can type any command"}
+{"goal": "run my code in the debugger"}
+{"goal": "add a stop point on this line"}
+{"goal": "tanggalin lahat ng breakpoints"}
+{"goal": "change the color theme"}
+{"goal": "change the little icons for the files"}
+{"goal": "nasaan yung settings"}
+{"goal": "chnage the keybord shortcuts"}
+{"goal": "install extensions"}
+{"goal": "paano mag-open ng folder dito"}
+{"goal": "gawin mong dark mode yung editor"}
+{"goal": "i-search mo sa lahat ng files yung salitang ito"}

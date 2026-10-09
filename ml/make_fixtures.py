@@ -63,9 +63,14 @@ STATIC_WINDOW_PREFIXES = ("Close", "Minimize", "Zoom", "Fill", "Center", "Move &
 
 PERSONAL_PATTERNS = re.compile(r"Apple Account|@|[’']s (iPhone|iPad|Mac|MacBook|Apple Watch|AirPods)|^Account > (?!Sign|View|Manage|Settings|Redeem|Purchased|Wish|Family|Authori)")
 
+# Submenus that list things the user named (albums, playlists, projects): only the built-in entries are commands.
+USER_NAMED = {"Albums": {"All Albums"}, "Shared Albums": set(), "Playlists": set(), "Projects": {"All Projects"}}
+
 def is_personal(c):
     """Menu entries that are user data (recent files, page titles, window names, accounts, devices), not app commands."""
     parts = c["path"].split(" > ")
+    if len(parts) >= 3 and parts[-2] in USER_NAMED and parts[-1] not in USER_NAMED[parts[-2]]:
+        return True
     if PERSONAL_PATTERNS.search(c["path"]) or " — " in parts[-1]:
         return True
     if any(any(k in p.lower() for k in PERSONAL_SUBMENUS) for p in parts[1:-1]):

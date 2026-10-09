@@ -1,0 +1,60 @@
+{"goal": "open a saved log file"}
+{"goal": "show where this log is stored in finder"}
+{"goal": "itapon mo na sa trash yung log na to"}
+{"goal": "close this log window"}
+{"goal": "close all the windows"}
+{"goal": "oops, undo what I just did"}
+{"goal": "actually i wanted that, redo it"}
+{"goal": "take this text out so i can move it"}
+{"goal": "copy this line so I can email it to support"}
+{"goal": "put what I copied in the search box"}
+{"goal": "paste and make it look like the other text"}
+{"goal": "piliin mo lahat ng messages"}
+{"goal": "search for messages about my printer"}
+{"goal": "I want to search the logs for the word bluetooth"}
+{"goal": "next match please"}
+{"goal": "previous match"}
+{"goal": "search for the word I highlighted"}
+{"goal": "check my spelling"}
+{"goal": "read this error to me out loud"}
+{"goal": "stop reading"}
+{"goal": "dictate my search instead of typing"}
+{"goal": "add an emoji"}
+{"goal": "clear all these messages off the screen"}
+{"goal": "the list is old, refresh it"}
+{"goal": "show me what's happening right this second"}
+{"goal": "start watching live messages"}
+{"goal": "I want to see the normal info messages too, not just warnings"}
+{"goal": "show the really detailed technical messages as well"}
+{"goal": "show all the messages"}
+{"goal": "only show errors and crashes"}
+{"goal": "I want tabs along the top like a web browser"}
+{"goal": "show all my tabs as little pictures"}
+{"goal": "ipakita mo yung listahan ng devices sa gilid"}
+{"goal": "I want to see the list of activities instead of messages"}
+{"goal": "show the details for this message"}
+{"goal": "the message is cut off, open the row so I can read all of it"}
+{"goal": "shrink these long rows back to one line"}
+{"goal": "the search box and buttons at the top disappeared"}
+{"goal": "i want different buttons at the top of the window"}
+{"goal": "make console take up the whole screen"}
+{"goal": "go to the previous tab"}
+{"goal": "lipat tayo sa kabilang tab"}
+{"goal": "move this tab to its own window"}
+{"goal": "combine all the windows into tabs"}
+{"goal": "open console help"}
+{"goal": "which version of console is this"}
+{"goal": "hide console"}
+{"goal": "hide the other apps"}
+{"goal": "quit console"}
+{"goal": "isara mo pero itira mo yung mga window para bukas"}
+{"goal": "pa-search naman ng \"wifi\" sa logs"}
+{"goal": "i-clear mo lahat ng messages, ang gulo"}
+{"goal": "errors lang ipakita mo"}
+{"goal": "i-refresh mo yung listahan"}
+{"goal": "isara mo na yung console"}
+{"goal": "ipakita yung details ng message na to"}
+{"goal": "basahin mo ng malakas yung error"}
+{"goal": "my mac kept crashing, show only the erors"}
+{"goal": "the mesages scroll to fast, pause the live stream"}
+{"goal": "put this console window away in the dock"}
