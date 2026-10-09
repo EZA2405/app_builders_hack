@@ -34,7 +34,8 @@ for set in "VAL fixtures/val/*.json" "HELD-OUT fixtures/*_real.json" "WEB fixtur
   done
   echo "===== $VERSION $name: $h/$t =====" | tee -a $R
 done
-echo "baselines: v1 VAL 79/127, HELD-OUT 25/35, WEB 25/45 | v3 VAL 95/127, HELD-OUT 26/35, WEB 29/45" | tee -a $R
+python3 scam_eval.py --url http://127.0.0.1:8766 --model guide | tail -5 | sed "s/^/RISK /" | tee -a $R
+echo "baselines: v1 VAL 79/127, HELD-OUT 25/35, WEB 25/45, RISK 7/14@0.6 | v3 VAL 95/127, HELD-OUT 26/35, WEB 29/45 | Jev RISK 14/14" | tee -a $R
 
 rm -rf $OUT/laya-guide-$VERSION/checkpoint_latest
 cd $OUT && zip -qr $W/laya-guide-$VERSION.zip laya-guide-$VERSION
