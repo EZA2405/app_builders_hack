@@ -170,7 +170,10 @@ extension GuideEngine {
                 log("WEB PARTS \(parts ?? [])")
             }
             var refs: [String: String] = [:]
+            var rects: [String: CGRect] = [:]
             var cands: [Candidate] = []
+            let vp = (snap["viewport"] as? [Double]) ?? []
+            let page = vp.count == 2 ? CGRect(x: 0, y: 0, width: vp[0], height: vp[1]) : .zero
             for (i, e) in elements.enumerated() {
                 guard let name = e["name"] as? String, !name.isEmpty, (e["enabled"] as? Bool) != false,
                       let ref = e["ref"] as? String else { continue }
@@ -180,7 +183,10 @@ extension GuideEngine {
                 // Never point at actions that do something to other people or can't be taken back (Like, Share,
                 // Delete…) unless the request asks for that action.
                 if Self.socialAction(name), !Self.asksFor(name, in: goal) { continue }
-                if refs[k] == nil, !clicked.contains(k), !rejected.contains(k) { refs[k] = ref; cands.append(c) }
+                if refs[k] == nil, !clicked.contains(k), !rejected.contains(k) {
+                    refs[k] = ref; cands.append(c)
+                    if let r = e["rect"] as? [Double], r.count == 4 { rects[k] = CGRect(x: r[0], y: r[1], width: r[2], height: r[3]) }
+                }
             }
             let site = "web browser, on the website \"\(String(title.prefix(60)))\""
             var pick: Planner.Pick?
@@ -249,7 +255,12 @@ extension GuideEngine {
                 msg["hint"] = "Just click the one you think is right."
                 speakText("I think it's one of these two. Just click the one you think is right.")
             } else {
-                let (text, hint) = webPhrase(pick.candidate)
+                // Laya picked the element; Apple's on-device model words it (varied, checked), else a clean template.
+                let label = Phrasing.clean(pick.candidate.label)
+                let pos = rects[key].map { Phrasing.position($0, in: page, noun: "page") } ?? ""
+                let fallback = webPhrase(pick.candidate, label: label, position: pos)
+                let (text, hint) = await StepVoice.line(goal: goal, place: String(title.prefix(60)), step: stepNo, label: label,
+                                                        role: pick.candidate.role, position: pos) ?? fallback
                 msg["instruction"] = text
                 msg["hint"] = hint
                 speakText(plain(text) + " " + hint)
@@ -330,13 +341,14 @@ extension GuideEngine {
         }
     }
 
-    private func webPhrase(_ c: Candidate) -> (String, String) {
+    private func webPhrase(_ c: Candidate, label: String, position: String) -> (String, String) {
+        let where_ = position.isEmpty ? "" : "It's \(position)."
         switch c.role {
         case "textbox", "searchbox", "combobox":
-            return ("Click in the **\(c.label)** box and type what you're looking for.", "Then press **Enter**.")
-        case "checkbox", "switch", "radio": return ("Click **\(c.label)**.", "")
-        case "link": return ("Click **\(c.label)**.", c.context.isEmpty ? "" : "It's in the \(c.context) part of the page.")
-        default: return ("Click **\(c.label)**.", "")
+            return ("Click the **\(label)** box and type what you're looking for.", "Then press **Enter**.")
+        case "tab": return ("Click the **\(label)** tab.", where_)
+        case "checkbox", "switch", "radio": return ("Click **\(label)**.", where_)
+        default: return ("Click **\(label)**.", where_)
         }
     }
 

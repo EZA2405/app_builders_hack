@@ -241,3 +241,81 @@ enum CommandCheck {
         return r
     }
 }
+
+
+/// Step wording: Laya picks the control; Apple's on-device model says it like a person would, varied from step to step.
+/// Guarded: the sentence must name the exact control, stay short and arrive fast — otherwise the template is used.
+@Generable
+struct StepLine {
+    @Guide(description: "One short, warm instruction for an older person (max 12 words) telling them to click the control. Include the control's exact name once, wrapped in ** like **Search**.")
+    var sentence: String
+    @Guide(description: "An optional second short sentence (max 12 words): where it is on the screen, or what will happen. Empty if not needed. No ** in it.")
+    var hint: String
+}
+
+@MainActor
+enum StepVoice {
+    private static var session: LanguageModelSession?
+    private static var sessionGoal = ""
+
+    static func reset() { session = nil; sessionGoal = "" }
+
+    static func line(goal: String, place: String, step: Int, label: String, role: String, position: String) async -> (String, String)? {
+        guard PlanVoice.available, !label.isEmpty else { return nil }
+        if session == nil || sessionGoal != goal {
+            sessionGoal = goal
+            session = LanguageModelSession(instructions: """
+            You are Gabay, a calm, kind helper for an older person using a computer. Each turn you get ONE control to \
+            point at. Write one short, warm sentence telling them to click it, using its exact name in ** **, and \
+            optionally a second short sentence saying where it is. Plain everyday English, no jargon, no "simply", \
+            no exclamation marks. Vary your wording from step to step; don't start every sentence the same way. \
+            Never mention any other control. Never say you will click; the person clicks.
+            """)
+        }
+        guard let session else { return nil }
+        let prompt = "They want: \(goal)\nThey are in: \(place)\nStep \(step). Control: \(role) named \"\(label)\"\(position.isEmpty ? "" : ", \(position)")."
+        let task = Task { try? await session.respond(to: prompt, generating: StepLine.self,
+                                                     options: GenerationOptions(temperature: 0.6)).content }
+        let timeout = Task { try? await Task.sleep(nanoseconds: 1_300_000_000); task.cancel() }
+        let r = await task.value
+        timeout.cancel()
+        guard let r else { return nil }
+        let plainSentence = r.sentence.replacingOccurrences(of: "**", with: "")
+        // Must name the control (exactly, case-insensitive), be short, and bold only that name.
+        guard plainSentence.lowercased().contains(label.lowercased()), plainSentence.count <= 90,
+              r.sentence.components(separatedBy: "**").count <= 3, r.hint.count <= 90 else { return nil }
+        var sentence = r.sentence
+        if !sentence.contains("**") {   // add the bold the model forgot
+            if let range = sentence.range(of: label, options: .caseInsensitive) { sentence.replaceSubrange(range, with: "**\(sentence[range])**") }
+        }
+        return (sentence, r.hint.replacingOccurrences(of: "**", with: ""))
+    }
+}
+
+/// Labels as people would say them, and positions described like a person would.
+enum Phrasing {
+    /// "Subtitles/closed captions keyboard shortcut c" -> "Subtitles (CC)"; "Play (k)" -> "Play"; long titles shortened.
+    static func clean(_ raw: String) -> String {
+        var s = raw
+        let known: [(String, String)] = [("subtitles/closed captions", "Subtitles (CC)"), ("full screen", "Full screen"),
+                                         ("settings", "Settings"), ("mute", "Mute"), ("play", "Play"), ("pause", "Pause")]
+        for (k, v) in known where s.lowercased().hasPrefix(k) && s.count > v.count + 3 && (s.lowercased().contains("keyboard") || s.contains("(")) { return v }
+        s = s.replacingOccurrences(of: #"\s*keyboard shortcut.*$"#, with: "", options: [.regularExpression, .caseInsensitive])
+        s = s.replacingOccurrences(of: #"\s*\([a-z]\)$"#, with: "", options: [.regularExpression, .caseInsensitive])
+        s = s.replacingOccurrences(of: #",?\s*\d+ (hours?|minutes?|seconds?)(,? \d+ (minutes?|seconds?))*"#, with: "", options: [.regularExpression, .caseInsensitive])
+        s = s.replacingOccurrences(of: #"\s+"#, with: " ", options: .regularExpression).trimmingCharacters(in: CharacterSet(charactersIn: " ,·|-"))
+        let words = s.split(separator: " ")
+        if s.count > 44, words.count > 6 { s = words.prefix(6).joined(separator: " ") + "…" }
+        return s.isEmpty ? raw : s
+    }
+
+    /// Rect inside bounds -> "at the top right of the page" (thirds).
+    static func position(_ r: CGRect, in b: CGRect, noun: String) -> String {
+        guard b.width > 0, b.height > 0 else { return "" }
+        let x = (r.midX - b.minX) / b.width, y = (r.midY - b.minY) / b.height
+        let v = y < 0.33 ? "top" : (y > 0.66 ? "bottom" : "middle")
+        let h = x < 0.33 ? "left" : (x > 0.66 ? "right" : "")
+        if v == "middle" && h.isEmpty { return "in the middle of the \(noun)" }
+        return h.isEmpty ? "near the \(v) of the \(noun)" : (v == "middle" ? "on the \(h) side of the \(noun)" : "at the \(v) \(h) of the \(noun)")
+    }
+}

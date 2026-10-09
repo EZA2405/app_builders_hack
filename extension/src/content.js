@@ -197,6 +197,7 @@
     elements.sort((a, b) => Number(b.in_viewport) - Number(a.in_viewport) || distance(a) - distance(b) || a.rect[1] - b.rect[1] || a.rect[0] - b.rect[0]);
     const max = Number.isInteger(message.max_elements) ? Math.max(0, Math.min(400, message.max_elements)) : 400;
     return { type: "snapshot", id: message.id, url: location.href, title: document.title, elements: elements.slice(0, max), ms: performance.now() - start,
+      viewport: [innerWidth, innerHeight],
       ...(message._frameId ? { _path: framePath, _boundaries: boundaries, _docCount: documents.size } : {}) };
   }
 

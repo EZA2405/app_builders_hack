@@ -80,6 +80,7 @@ final class GuideEngine {
         let previous = Set(stepKeys)
         if !previous.isEmpty, let a = self.app?.localizedName { lastSession = (a, previous, Date()) }
         stepKeys = []
+        StepVoice.reset()
         self.goal = goal; self.app = app; done = []; stepNo = 0; rejected = []; notThis = false; planLine = nil; settingsPane = nil; waypoints = nil; keepGoing = false
         // "No / wait / not that / hindi…" within a minute in the same app: never offer what we just showed.
         let first = goal.lowercased().split(whereSeparator: { !$0.isLetter }).prefix(3).map(String.init)
@@ -645,6 +646,15 @@ final class GuideEngine {
             }
         }
 
+        // The words for this step: Apple's on-device model, varied and checked; the template if it's slow or off.
+        var line = phrase(c)
+        if c.source == "window" {
+            let label = Phrasing.clean(c.label)
+            let win = MenuProbe.frontWindowFrame(app) ?? .zero
+            let pos = c.frame.map { Phrasing.position(rect($0), in: win, noun: "window") } ?? ""
+            if let w = await StepVoice.line(goal: goal, place: app.localizedName ?? "this app", step: stepNo, label: label,
+                                            role: c.role, position: pos) { line = w }
+        }
         // A list of app switches (Camera, Microphone…) and the request names none of them: only the person knows
         // which app they call with. Say so, and any switch in that list counts.
         let siblings = lastState?.candidates.filter { $0.role == "switch" && $0.context == c.context } ?? []
@@ -674,8 +684,7 @@ final class GuideEngine {
             overlay.model.candidates = ([c] + pick.runnersUp.prefix(1)).compactMap { $0.frame.map(rect) }
             show(.notSure, label: "Step \(stepNo)", text: "It's one of these. Pick either one.", hint: "", target: nil)
         } else {
-            let (text, hint) = phrase(c)
-            show(.guiding, label: "Step \(stepNo)", text: text, hint: hint, target: c.frame.map(rect))
+            show(.guiding, label: "Step \(stepNo)", text: line.0, hint: line.1, target: c.frame.map(rect))
         }
         doneTyping = false
         _ = ClickWatcher.shared.drain()
@@ -698,8 +707,7 @@ final class GuideEngine {
                     let visible = !i.isNull && i.height >= nf.height * 0.6
                     if visible, offscreen || ring != nf {
                         ring = nf; offscreen = false
-                        let (t, h) = phrase(c)
-                        show(.guiding, label: "Step \(stepNo)", text: t, hint: h, target: nf)
+                        show(.guiding, label: "Step \(stepNo)", text: line.0, hint: line.1, target: nf)
                     } else if !visible, !offscreen {
                         offscreen = true; ring = nil
                         let down = nf.midY > w.midY
@@ -716,8 +724,7 @@ final class GuideEngine {
                 show(.detour, label: "Paused", text: "I'll wait. Go back to **\(name)** when you're ready.", hint: "Nothing has been changed.", target: nil)
                 while !Task.isCancelled, let f = Self.frontRegularApp(), f != app { try? await Task.sleep(nanoseconds: 400_000_000) }
                 _ = ClickWatcher.shared.drain()
-                let (t, h) = phrase(c)
-                show(.guiding, label: "Step \(stepNo)", text: t, hint: h, target: ring)
+                show(.guiding, label: "Step \(stepNo)", text: line.0, hint: line.1, target: ring)
                 continue
             }
             for e in ClickWatcher.shared.drain() {
@@ -738,10 +745,11 @@ final class GuideEngine {
                     }
                     if overlay.model.mode == .guiding, let r = ring, !overlay.model.spotlight, !overlay.cardFrame.contains(p) {
                         let (text, _) = phrase(c)
+                        let shown = line
                         show(.detour, label: "Small detour", text: "That's okay. " + text, hint: "Nothing has changed.", target: r)
                         Task { @MainActor in
                             try? await Task.sleep(nanoseconds: 2_500_000_000)
-                            if self.overlay.model.mode == .detour { let (t, h) = self.phrase(c); self.show(.guiding, label: "Step \(self.stepNo)", text: t, hint: h, target: r) }
+                            if self.overlay.model.mode == .detour { self.show(.guiding, label: "Step \(self.stepNo)", text: shown.0, hint: shown.1, target: r) }
                         }
                     }
                 case .enter:
