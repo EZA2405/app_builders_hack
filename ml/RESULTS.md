@@ -16,6 +16,7 @@ Given a non-technical user's goal and the app's real command list (menu tree + t
 | TypeSafe **Jev** (`jev-latest`), hosted | **Cloud (comparison only)** | Real menus, 4 held-out apps, 200-wide tournament | **35/35** | 0.35–1.6 s per app | 2026-10-09 |
 | Laya (base, 421M) | Local-capable (measured on Colab T4 and M4) | Real menus, 16-wide tournament | 8/35 | ~0.66 s (T4), ~1.9 s (M4) | 2026-10-09 |
 | **Laya fine-tuned v1** (teacher data, 3 epochs) | Local-capable (trained + measured on Colab T4) | Same | **25/35** | ~0.65 s (T4) | 2026-10-09 |
+| **Laya fine-tuned v3** (12,284 rows: 39 apps, traps, paraphrases, mined hard negatives, 19 websites; hard labels, 3 epochs) | Local-capable (trained + measured on Colab T4) | Same | **26/35** | 0.55–1.08 s (T4) | 2026-10-09 |
 | **Laya fine-tuned v1**, same checkpoint on the Mac | **Local (Apple M4, MPS)** | Same | **25/35** (reproduced) | 1.2–2.2 s (≈15 sequential calls per decision) | 2026-10-09 |
 | Qwen3.5-4B via local-jev | Local | Real menus | _pending_ | | |
 
@@ -64,11 +65,26 @@ Sites: YouTube, Wikipedia, Shopee and PhilHealth. PhilHealth includes 8 second-p
 |---|---|---|---|---|---|---|
 | Laya base | 2/10 | 4/10 | 3/10 | 3/15 | **12/45** | 0.4–3.3 s |
 | Laya v1 (menus only, no web training) | 7/10 | 6/10 | 6/10 | 6/15 | **25/45** | 0.4–5.7 s (slowest on 400-element pages) |
+| **Laya v3** (with web journeys) | 8/10 | 8/10 | 6/10 | 7/15 | **29/45** | 0.2–1.4 s (T4) |
 
 Reproduce: `for f in fixtures/web_test/*.json; do python3 bench_localjev.py --url http://127.0.0.1:8766 --model guide-v1 --group 16 --fixture $f; done`
 
 ## Full-tournament validation (model selection)
-127 goals across 4 apps never trained on (`fixtures/val/`). **v1: 79/127 (62.2%).** On its own training goals under the same tournament, v1 gets 708/909 (77.9%). The tournament loses right answers in early rounds.
+127 goals across 4 apps never trained on (`fixtures/val/`). **v1: 79/127 (62.2%). v3: 95/127 (74.8%)**:
+- Activity Monitor 22/30
+- Disk Utility 29/35
+- Numbers 20/31
+- Terminal 24/31
+
+v3 single 16-way validation (492 rows): 0.386 → **0.852**, ECE 0.444 → 0.074; trained in 46.1 min on a T4.
+
+v3 per-app held-out (v1 in parentheses):
+- Preview 7/10 (6)
+- Finder 8/8 (8)
+- System Settings 6/8 (5)
+- Safari 5/9 (6)
+
+This was the only v3 held-out run. On its own training goals under the same tournament, v1 gets 708/909 (77.9%). The tournament loses right answers in early rounds.
 
 ## Teacher-label agreement (training apps)
 Hosted Jev (`jev-latest`) on all 774 teacher goals across the 22 training apps: **733/774 (94.7%)** agree with the teacher label. Per app it ranges from 30/31 (Activity Monitor) to 35/35 (Disk Utility, VLC, Zed); median latency is 0.4–2.0 s.
