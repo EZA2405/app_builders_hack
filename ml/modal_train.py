@@ -4,6 +4,7 @@ Setup once:   pip install modal && modal setup        (browser login)
 Run:          modal run ml/modal_train.py --version v4e5 --data data/v4/train.jsonl --epochs 5
 Download:     modal volume get gabay-models laya-guide-v4e5.zip .   (and results-v4e5.txt)
 """
+import os
 import subprocess
 
 import modal
@@ -15,7 +16,7 @@ image = (modal.Image.debian_slim(python_version="3.12")
 models = modal.Volume.from_name("gabay-models", create_if_missing=True)
 
 
-@app.function(gpu="A100", image=image, volumes={"/out": models}, timeout=3 * 60 * 60)
+@app.function(gpu=os.environ.get("GABAY_GPU", "H100"), image=image, volumes={"/out": models}, timeout=3 * 60 * 60)
 def train(version: str, data: str, epochs: int) -> str:
     script = ("set -e; cd /root && git clone -q https://github.com/EZA2405/app_builders_hack && "
               f"WORKDIR=/out bash app_builders_hack/ml/runpod_train.sh {version} {data} {epochs}")
