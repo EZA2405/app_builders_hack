@@ -1,0 +1,22 @@
+{"goal": "I want to look for an electric fan", "page": "lazada", "done": [], "answer": "searchbox \"Search in Lazada\" · form", "alts": []}
+{"goal": "I want to log in to my Lazada account", "page": "lazada", "done": [], "answer": "link \"LOGIN\"", "alts": []}
+{"goal": "how do I make a new account", "page": "lazada", "done": [], "answer": "link \"SIGNUP\"", "alts": []}
+{"goal": "I want to sell my products on Lazada", "page": "lazada", "done": [], "answer": "link \"SELL ON LAZADA\"", "alts": []}
+{"goal": "how do I return an item I bought", "page": "lazada", "done": [], "answer": "link \"How to Return\"", "alts": []}
+{"goal": "I want to contact customer service", "page": "lazada", "done": [], "answer": "link \"Contact Us\"", "alts": []}
+{"goal": "mag-load ng Globe", "page": "lazada", "done": [], "answer": "link \"LOAD ONLINE\"", "alts": []}
+{"goal": "check my messages from the seller", "page": "lazada", "done": [], "answer": "button \"Messages\"", "alts": []}
+{"goal": "I want to apply for a loan", "page": "lazada", "done": [], "answer": "link \"Lazada Loans\"", "alts": []}
+{"goal": "first time ko, paano bumili dito", "page": "lazada", "done": [], "answer": "link \"How to Buy\"", "alts": []}
+{"goal": "how long does delivery take", "page": "lazada", "done": [], "answer": "link \"Shipping & Delivery\"", "alts": []}
+{"goal": "I want to send a complaint about the website", "page": "lazada", "done": [], "answer": "link \"FEEDBACK\"", "alts": []}
+{"goal": "I want to give feedback about the site, where do I write it", "page": "lazada__1", "done": ["clicked link \"FEEDBACK\""], "answer": "textbox \"Your suggestion matters.\"", "alts": []}
+{"goal": "I want to send feedback with a screenshot", "page": "lazada__1", "done": ["clicked link \"FEEDBACK\""], "answer": "button \"Paste, drag or click to upload multiple images here Supported types: JPG, PNG, a\"", "alts": []}
+{"goal": "I already have a seller account, I want to log in", "page": "lazada__2", "done": ["clicked link \"SELL ON LAZADA\""], "answer": "link \"Log in\"", "alts": ["link \"log in\""]}
+{"goal": "magbenta sa Lazada, ilalagay ko ang phone number ko", "page": "lazada__2", "done": ["clicked link \"SELL ON LAZADA\""], "answer": "textbox \"+63\" · form", "alts": []}
+{"goal": "I want to sell on Lazada but I need help signing up", "page": "lazada__2", "done": ["clicked link \"SELL ON LAZADA\""], "answer": "button \"Need Help\"", "alts": []}
+{"goal": "I looked at the loans but I have questions, I want to contact them", "page": "lazada__5", "done": ["clicked link \"Lazada Loans\""], "answer": "link \"Contact Us\"", "alts": []}
+{"goal": "I pressed search but nothing came out, I want to find a rice cooker", "page": "lazada__4", "done": ["clicked link \"SEARCH\""], "answer": "searchbox \"Search in Lazada\" · form", "alts": []}
+{"goal": "I want to look at beauty brands", "page": "lazada__6", "done": ["clicked link \"Explore Brands on Lazada\""], "answer": "link \"Beauty 1001 brands\" · main: Know the brands you shop.", "alts": []}
+{"goal": "show me the brands for baby things", "page": "lazada__6", "done": ["clicked link \"Explore Brands on Lazada\""], "answer": "link \"Mother & Baby 220 brands\" · main: Know the brands you shop.", "alts": []}
+{"goal": "I want to see the list of all brands", "page": "lazada__6", "done": ["clicked link \"Explore Brands on Lazada\""], "answer": "link \"All brands →\" · main: Know the brands you shop.", "alts": ["link \"All brands\" · footer"]}

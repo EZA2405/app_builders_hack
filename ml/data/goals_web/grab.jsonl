@@ -1,0 +1,23 @@
+{"goal": "I need help with my GrabFood order", "page": "grab", "done": [], "answer": "link \"Help Centre\" · navigation", "alts": ["link \"Help Centre\""]}
+{"goal": "gusto ko magpadeliver ng pagkain", "page": "grab", "done": [], "answer": "link \"Food Have all your cravings delivered to your doorstep.\"", "alts": []}
+{"goal": "I want to buy groceries online", "page": "grab", "done": [], "answer": "link \"Mart Find everything you need—groceries and more.\"", "alts": ["link \"GrabMart\""]}
+{"goal": "I want to send a package to my daughter", "page": "grab", "done": [], "answer": "link \"Express Send packages, documents, and beyond.\"", "alts": ["link \"GrabExpress\""]}
+{"goal": "I need to book a ride to the hospital", "page": "grab", "done": [], "answer": "link \"Rides Choose from a variety of vehicles to take you from A to B safely.\"", "alts": []}
+{"goal": "how do I get the Grab app on my phone", "page": "grab", "done": [], "answer": "link \"Download App\"", "alts": []}
+{"goal": "I want to become a Grab driver", "page": "grab", "done": [], "answer": "link \"Drive with us\"", "alts": []}
+{"goal": "paano mag-apply as delivery rider", "page": "grab", "done": [], "answer": "link \"Deliver with us\"", "alts": []}
+{"goal": "this cookie notice is in the way, only allow what's necessary", "page": "grab", "done": [], "answer": "button \"Accept Only Strictly Necessary Cookies\" · Cookie banner", "alts": []}
+{"goal": "is Grab safe for my teenage grandchild", "page": "grab", "done": [], "answer": "link \"Trust & Safety\"", "alts": []}
+{"goal": "how do I change the country", "page": "grab", "done": [], "answer": "button \"Philippines\"", "alts": []}
+{"goal": "I need help, I want to search for how to get a refund", "page": "grab__2", "done": ["clicked link \"Help Centre\""], "answer": "textbox \"Search for a solution\"", "alts": []}
+{"goal": "go to the help centre and log in so I can report a problem", "page": "grab__2", "done": ["clicked link \"Help Centre\""], "answer": "button \"LOGIN\"", "alts": []}
+{"goal": "change the language of the help centre", "page": "grab__2", "done": ["clicked link \"Help Centre\""], "answer": "button \"Philippines (English)\"", "alts": []}
+{"goal": "how much is the delivery fee for food", "page": "grab__5", "done": ["clicked link \"Food Have all your cravings delivered to your doorstep.\""], "answer": "button \"What are your delivery fees?\"", "alts": []}
+{"goal": "can I pay cash when I order food", "page": "grab__5", "done": ["clicked link \"Food Have all your cravings delivered to your doorstep.\""], "answer": "button \"Can I pay cash on delivery on GrabFood?\"", "alts": []}
+{"goal": "I want to order food now", "page": "grab__5", "done": ["clicked link \"Food Have all your cravings delivered to your doorstep.\""], "answer": "link \"Order Now\"", "alts": []}
+{"goal": "pwede ba umorder ng pagkain para sa iba", "page": "grab__5", "done": ["clicked link \"Food Have all your cravings delivered to your doorstep.\""], "answer": "button \"Can I order GrabFood for someone else?\"", "alts": []}
+{"goal": "what time can I order groceries", "page": "grab__6", "done": ["clicked link \"Mart Find everything you need—groceries and more.\""], "answer": "button \"What are your operational hours?\"", "alts": []}
+{"goal": "is there a minimum order for groceries", "page": "grab__6", "done": ["clicked link \"Mart Find everything you need—groceries and more.\""], "answer": "button \"Is there a minimum order value for GrabMart?\"", "alts": []}
+{"goal": "I want to order groceries now", "page": "grab__6", "done": ["clicked link \"Mart Find everything you need—groceries and more.\""], "answer": "link \"Order Now\"", "alts": []}
+{"goal": "I read the privacy information and I want to change my cookie settings", "page": "grab__4", "done": ["clicked link \"More information about your privacy\""], "answer": "link \"Cookies Settings\"", "alts": ["button \"Cookies Settings\" · Cookie banner"]}
+{"goal": "read about Grab and then look for job openings", "page": "grab__3", "done": ["clicked link \"Read About Us\""], "answer": "link \"See Available Positions\"", "alts": ["link \"Careers\""]}

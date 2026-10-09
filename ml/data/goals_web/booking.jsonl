@@ -1,0 +1,23 @@
+{"goal": "mag-book ng hotel sa Boracay", "page": "booking", "done": [], "answer": "combobox \"Enter destination\" · Search properties", "alts": []}
+{"goal": "I want to sign in to my account", "page": "booking", "done": [], "answer": "link \"Sign in\" · nav", "alts": ["link \"Sign in or register\" · Window offering discounts of 10% or more when you sign in to", "link \"Sign in\" · main: Earn $150 in Travel Credits"]}
+{"goal": "how do I make an account", "page": "booking", "done": [], "answer": "link \"Register an account\" · nav", "alts": ["link \"Register\" · main: Earn $150 in Travel Credits"]}
+{"goal": "I need to contact customer support about my booking", "page": "booking", "done": [], "answer": "link \"Customer support\" · nav", "alts": ["link \"Contact Customer Service\" · footer: Support"]}
+{"goal": "I want to see the prices in pesos", "page": "booking", "done": [], "answer": "button \"Prices in U.S. Dollar USD\" · nav", "alts": ["button \"Prices in U.S. Dollar USD\" · footer: Support"]}
+{"goal": "how do I change the language", "page": "booking", "done": [], "answer": "button \"Language: English (US)\" · nav", "alts": ["button \"Language: English (US)\" · footer: Support"]}
+{"goal": "I want to book a flight to Cebu", "page": "booking", "done": [], "answer": "menuitem \"Flights\" · What are you looking for?", "alts": []}
+{"goal": "I want to rent a car", "page": "booking", "done": [], "answer": "menuitem \"Car rental\" · What are you looking for?", "alts": ["link \"Car rental\" · footer: Support"]}
+{"goal": "I need a taxi from the airport", "page": "booking", "done": [], "answer": "menuitem \"Airport taxis\" · What are you looking for?", "alts": []}
+{"goal": "where do I check the trip I already booked", "page": "booking", "done": [], "answer": "link \"Manage your trips\" · footer: Support", "alts": []}
+{"goal": "I want to choose my check-in date", "page": "booking", "done": [], "answer": "button \"Select dates Check-in date — Check-out date\" · Search properties", "alts": []}
+{"goal": "paano ko ilista yung bahay ko para paupahan", "page": "booking", "done": [], "answer": "link \"List your property\" · nav", "alts": ["link \"List your property\" · footer: Support"]}
+{"goal": "I need help, I want to cancel my hotel reservation", "page": "booking__1", "done": ["clicked link \"Customer support\""], "answer": "link \"Cancellations\"", "alts": []}
+{"goal": "I have a question about paying for my booking", "page": "booking__1", "done": ["clicked link \"Customer support\""], "answer": "link \"Payment\"", "alts": []}
+{"goal": "I need help with my reservation, let me sign in first", "page": "booking__1", "done": ["clicked link \"Customer support\""], "answer": "link \"Sign in\"", "alts": ["link \"Sign in\" · nav"]}
+{"goal": "I need help but I don't have an account", "page": "booking__1", "done": ["clicked link \"Customer support\""], "answer": "link \"Continue without an account\"", "alts": []}
+{"goal": "may problema ako sa car rental booking ko", "page": "booking__1", "done": ["clicked link \"Customer support\""], "answer": "button \"Car rentals\"", "alts": []}
+{"goal": "I want to list my house on Booking, start now", "page": "booking__2", "done": ["clicked link \"List your property\""], "answer": "link \"Get started now\"", "alts": []}
+{"goal": "I started listing my property before, I want to continue", "page": "booking__2", "done": ["clicked link \"List your property\""], "answer": "link \"Continue your registration\"", "alts": []}
+{"goal": "show me the cheapest hotels in Las Vegas", "page": "booking__5", "done": ["clicked link \"Hotels in Las Vegas, Nevada\""], "answer": "button \"Lowest Price First\" · main: Search hotels in Las Vegas, NV", "alts": []}
+{"goal": "I want to see Las Vegas hotels on a map", "page": "booking__5", "done": ["clicked link \"Hotels in Las Vegas, Nevada\""], "answer": "link \"Show hotels on map\" · main: Search hotels in Las Vegas, NV", "alts": []}
+{"goal": "hotels in New York with very good reviews", "page": "booking__6", "done": ["clicked link \"Hotels in New York, New York\""], "answer": "link \"Very Good: 8+\" · main: Search hotels in New York, NY", "alts": []}
+{"goal": "hotels in New York, I want to pick my dates", "page": "booking__6", "done": ["clicked link \"Hotels in New York, New York\""], "answer": "button \"Select dates Check-in date — Check-out date\" · Search properties", "alts": []}

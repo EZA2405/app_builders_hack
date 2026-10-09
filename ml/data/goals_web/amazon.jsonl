@@ -1,0 +1,22 @@
+{"goal": "I want to look for a rice cooker", "page": "amazon", "done": [], "answer": "searchbox \"Search Amazon\" · search", "alts": []}
+{"goal": "where do I check my orders, did my package ship already", "page": "amazon", "done": [], "answer": "link \"Returns & Orders\" · Primary", "alts": ["link \"Your Orders\""]}
+{"goal": "I want to sign in to my Amazon account", "page": "amazon", "done": [], "answer": "link \"Hello, sign in Account & Lists\" · Primary", "alts": ["link \"Sign in\""]}
+{"goal": "paano makita yung laman ng cart ko", "page": "amazon", "done": [], "answer": "link \"0 items in cart\" · Primary", "alts": []}
+{"goal": "I need help, I want to talk to customer service", "page": "amazon", "done": [], "answer": "link \"Customer Service\" · Primary", "alts": []}
+{"goal": "how do I change the language of this website", "page": "amazon", "done": [], "answer": "link \"Choose a language for shopping in Amazon United States. The current selection is\" · Primary", "alts": ["link \"Choose a language for shopping. Current selection is English.\""]}
+{"goal": "are there any sale items today", "page": "amazon", "done": [], "answer": "link \"Today's Deals\" · Primary", "alts": []}
+{"goal": "I want to buy a gift card for my apo", "page": "amazon", "done": [], "answer": "link \"Gift Cards\" · Primary", "alts": []}
+{"goal": "I'm new here, how do I make an account", "page": "amazon", "done": [], "answer": "link \"Start here.\"", "alts": []}
+{"goal": "show the prices in Philippine peso please", "page": "amazon", "done": [], "answer": "link \"₱PHP - Philippine Peso\"", "alts": []}
+{"goal": "I want to change where my orders get delivered", "page": "amazon", "done": [], "answer": "button \"Deliver to Philippines\" · Primary", "alts": []}
+{"goal": "magkano ang shipping papuntang Pilipinas", "page": "amazon", "done": [], "answer": "link \"Shipping Rates & Policies\"", "alts": []}
+{"goal": "check my cart and log in so my saved items show up", "page": "amazon__4", "done": ["clicked link \"0 items in cart\""], "answer": "link \"Sign in to your account\"", "alts": ["link \"Sign in\" · Primary"]}
+{"goal": "my cart is empty, I want to see what's on sale today", "page": "amazon__4", "done": ["clicked link \"0 items in cart\""], "answer": "link \"Shop today's deals\"", "alts": []}
+{"goal": "wala pa akong account, gusto ko gumawa para makabili", "page": "amazon__4", "done": ["clicked link \"0 items in cart\""], "answer": "link \"Sign up now\"", "alts": ["link \"New to Amazon? Start here to create an account\" · Primary"]}
+{"goal": "open my cart and add the eos body lotion", "page": "amazon__4", "done": ["clicked link \"0 items in cart\""], "answer": "button \"Add to cart, eos Shea Better Body Lotion- Vanilla Cashmere, 24-Hour Moisture, 16\" · form", "alts": []}
+{"goal": "I want to pay in pesos instead of dollars", "page": "amazon__5", "done": ["clicked link \"Choose a language for shopping in Amazon United States. The current selection is\""], "answer": "combobox \"Select Currency $ - USD - US Dollar (Default) CLP - Chilean Peso COP - Colombian\" · form: Language Settings", "alts": []}
+{"goal": "I opened the language settings by mistake, I want to go back", "page": "amazon__5", "done": ["clicked link \"Choose a language for shopping in Amazon United States. The current selection is\""], "answer": "link \"Cancel\"", "alts": []}
+{"goal": "change the language settings and keep my changes", "page": "amazon__5", "done": ["clicked link \"Choose a language for shopping in Amazon United States. The current selection is\""], "answer": "button \"Save Changes\"", "alts": []}
+{"goal": "go to the Amazon home page then search for reading glasses", "page": "amazon__1", "done": ["clicked link \"Amazon\""], "answer": "searchbox \"Search Amazon\" · search", "alts": []}
+{"goal": "go back to the main page and sign in", "page": "amazon__1", "done": ["clicked link \"Amazon\""], "answer": "link \"Hello, sign in Account & Lists\" · Primary", "alts": ["link \"Sign in\" · Primary"]}
+{"goal": "I'm in Amazon Bazaar, now I want to find a cheap phone case", "page": "amazon__6", "done": ["clicked link \"Amazon Bazaar\""], "answer": "searchbox \"Search Amazon\" · search", "alts": []}
