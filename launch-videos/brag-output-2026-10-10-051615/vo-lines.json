@@ -1,0 +1,22 @@
+[
+  {"id": "vo01", "t": 0.85, "text": "It sounds official."},
+  {"id": "vo02", "t": 2.25, "text": "They just need one little code."},
+  {"id": "vo03", "t": 4.6, "text": "Before she answers, she asks."},
+  {"id": "vo04", "t": 6.65, "text": "It catches the scam, right there on the laptop."},
+  {"id": "vo05", "t": 10.75, "text": "The usual fix? Share your screen with a stranger."},
+  {"id": "vo06", "t": 14.3, "text": "Here's the difference."},
+  {"id": "vo07", "t": 16.45, "text": "Just ask, in your own words."},
+  {"id": "vo08", "t": 18.75, "text": "It rings the next thing to click."},
+  {"id": "vo09", "t": 21.2, "text": "One step at a time."},
+  {"id": "vo10", "t": 22.9, "text": "Lola does the clicking."},
+  {"id": "vo11", "t": 25.4, "text": "All of it runs on the laptop. Even offline."},
+  {"id": "vo12", "t": 29.9, "text": "It works in apps and on websites."},
+  {"id": "vo13", "t": 32.3, "text": "And when it isn't sure, it asks."},
+  {"id": "vo14", "t": 40.5, "text": "We fine-tuned a small model to do this."},
+  {"id": "vo15", "t": 43.0, "text": "It's not perfect yet."},
+  {"id": "vo16", "t": 44.7, "text": "But it's close to the cloud."},
+  {"id": "vo17", "t": 46.5, "text": "It points."},
+  {"id": "vo18", "t": 47.5, "text": "She clicks."},
+  {"id": "vo19", "t": 48.55, "text": "And nothing leaves the laptop."},
+  {"id": "vo20", "t": 52.7, "text": "Gabay. A patient guide for Lola's Mac."}
+]

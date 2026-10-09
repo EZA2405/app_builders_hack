@@ -232,6 +232,11 @@ python3 bench_localjev.py --url http://127.0.0.1:8766 --model guide --group 16 -
   - Extension: Manifest V3 browser extension in plain JavaScript.
   - Models and data: laya / `laya-serve` (PyTorch), whisper.cpp via Homebrew, Python 3.12 (stdlib scripts), Hugging Face.
   - Testing and video: Playwright (extension tests only), Hyperframes (launch-video drafts).
+- **Launch video:**
+  - The narration is [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) (Apache-2.0), run on the Mac with `kokoro-onnx`, voice "af_heart". It was checked with our local Whisper.
+  - The music is three tracks from the HeyGen audio catalog, fetched with `hyperframes media-use`.
+  - The footage is real screen recordings of Gabay, with personal details blurred.
+  - Generator: `launch-videos/brag-output-2026-10-10-051615/` (`build.mjs`, `make-vo.py`, `CREDITS.md`).
 - **AI development tools:** Claude Code and OpenAI Codex. UI design was explored with Claude Design. Launch-video drafts were made with the /brag skill and Hyperframes.
 - **Existing code and assets:**
   - No pre-existing project code. Everything here was written during the hackathon (Oct 9–10, 2026). The extension was started by a teammate (Edu).
