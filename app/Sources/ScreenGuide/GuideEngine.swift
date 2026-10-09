@@ -29,6 +29,11 @@ final class GuideEngine {
     var fixIndex = 0
     var originalGoal = ""
     private var alreadyFine = false
+    /// A yes/no question is on the card and the loop is waiting for the answer.
+    private var asking = false
+    private var answer: Bool?
+    /// The person said "Not yet": keep pointing at best guesses instead of asking again right away.
+    var keepGoing = false
     /// Apple's on-device model's one-line plan for this task, shown on the first card.
     var planLine: String?
     /// Set when Gabay points at a Dock icon: the app we expect the person to open next.
@@ -41,8 +46,15 @@ final class GuideEngine {
         overlay.onStuck = { [weak self] in self?.stuck() }
         overlay.onDone = { [weak self] in self?.markDoneTyping() }
         overlay.onNotThis = { [weak self] in self?.notThis = true }
+        overlay.onYes = { [weak self] in
+            guard let self else { return }
+            if self.asking { self.answer = true; return }
+            self.overlay.model.askWorked = false
+            self.stop()
+        }
         overlay.onStillBroken = { [weak self] in
             guard let self else { return }
+            if self.asking { self.answer = false; return }
             self.overlay.model.askWorked = false
             if !self.fixes.isEmpty { self.nextFix(); return }
             // No checklist to fall back on: ask what happens now, so the next request carries what we learned.
@@ -54,7 +66,7 @@ final class GuideEngine {
 
     func start(goal: String, app: NSRunningApplication) {
         stop()
-        self.goal = goal; self.app = app; done = []; stepNo = 0; rejected = []; notThis = false; planLine = nil; settingsPane = nil; waypoints = nil
+        self.goal = goal; self.app = app; done = []; stepNo = 0; rejected = []; notThis = false; planLine = nil; settingsPane = nil; waypoints = nil; keepGoing = false
         log("START goal=\(goal) app=\(app.localizedName ?? "?")")
         if let w = ScamGuard.check(goal: goal) {
             log("SCAM GUARD goal")
@@ -62,14 +74,28 @@ final class GuideEngine {
             return
         }
         app.activate()
-        let web = BrowserGuide.browsers.contains(app.bundleIdentifier ?? "") && Bridge.shared.connected
+        let isBrowser = BrowserGuide.browsers.contains(app.bundleIdentifier ?? "")
         task = Task {
+            // The extension reconnects a few seconds after Gabay starts; don't fall back to app mode too early.
+            if isBrowser, !Bridge.shared.connected {
+                self.show(.thinking, label: "Got it", text: "Looking…", hint: "", target: nil)
+                for _ in 0..<20 where !Bridge.shared.connected { try? await Task.sleep(nanoseconds: 200_000_000) }   // extension retries ≤ 2 s
+            }
+            let web = isBrowser && Bridge.shared.connected
+            self.log("MODE \(web ? "web" : "app")")
             // The local model also checks the goal (catches rewordings the keyword rules miss).
             let p = await self.planner.risky(goal: goal)
             self.log("RISK p=\(String(format: "%.2f", p))")
             if p >= 0.6 {
-                self.show(.detour, label: "Wait", text: "Wait. Real banks and government offices never ask you to share your screen or install apps like this.",
+                let g = goal.lowercased()
+                let aboutCode = ["code", "otp", "pin", "password", "numero", "texted", "tinext", "sms"].contains { g.contains($0) }
+                let text = aboutCode
+                    ? "Wait. Never give the code sent to your phone to anyone, even someone who says they're from your bank or the government."
+                    : "Wait. Real banks and government offices never ask you to share your screen or install apps like this."
+                self.log("WAIT (model) kind=\(aboutCode ? "code" : "screen/app")")
+                self.show(.detour, label: "Wait", text: text,
                           hint: "If someone asked you to do this, stop and call your family first.", target: nil)
+                self.speakText(text)
                 return
             }
             if !web {
@@ -147,8 +173,17 @@ final class GuideEngine {
                 return
             }
             // Menus have no "one of these two" view; a near-guess menu step sends people somewhere wrong.
-            if !done.isEmpty, pick.confidence < 0.3 { finish(); return }   // real progress, nothing sensible left: done
-            if pick.candidate.source == "menu", pick.confidence < 0.3 {
+            // Real progress and no confident next step: maybe it's done. Ask instead of deciding.
+            let settingsFix = !(settingsPane ?? "").isEmpty || !fixes.isEmpty
+            // An open pop-up list means the job isn't finished; its weak pick gets the two-ring view instead.
+            if !done.isEmpty, pick.confidence < 0.3, !keepGoing, pick.candidate.role != "list choice" {
+                if settingsFix { finish(); return }   // settings fixes end with "Is it working now?"
+                guard let yes = await askYesNo("Did that do it?", yes: "Yes, all done", no: "Not yet") else { return }
+                if yes { finish(); return }
+                keepGoing = true
+                continue   // re-read the screen: it may have changed while they decided
+            }
+            if pick.candidate.source == "menu", pick.confidence < 0.3, !keepGoing {
                 log("UNSURE pick=\(Planner.key(pick.candidate)) conf=\(String(format: "%.2f", pick.confidence))")
                 show(.done, label: "I'm not sure", text: "I can't see that on this screen. Can you say it another way?",
                      hint: "For a photo, open the photo first, then ask again.", target: nil)
@@ -183,9 +218,23 @@ final class GuideEngine {
                 show(.done, label: "All done", text: "Your apps can already use the \(what).", hint: "That part is fine.", target: nil); return
             }
             done.append(pick.candidate.source == "menu" ? "chose \(pick.candidate.path)" : "clicked \(Planner.key(pick.candidate))")
-            if isFinal(pick.candidate) || pick.candidate.role == "switch" { finish(); return }   // flipping a switch ends a settings fix
+            keepGoing = false
+            // A "finishing" control (Save, OK, a switch…) probably ended it — ask rather than assume.
+            if isFinal(pick.candidate) || pick.candidate.role == "switch" {
+                if settingsFix { finish(); return }   // settings fixes ask "Is it working now?"
+                guard let yes = await askYesNo("Did that do it?", yes: "Yes, all done", no: "Not yet") else { return }
+                if yes { finish(); return }
+                keepGoing = true
+            }
         }
-        if !Task.isCancelled { finish() }
+        // Out of steps is not the same as done: ask, and end honestly if it isn't.
+        if !Task.isCancelled {
+            if !(settingsPane ?? "").isEmpty || !fixes.isEmpty { finish(); return }
+            guard let yes = await askYesNo("Did that do it?", yes: "Yes, all done", no: "Not yet") else { return }
+            if yes { finish() } else {
+                show(.done, label: "Out of steps", text: "I'm not sure what's next.", hint: "Ask me again with a bit more detail. Nothing was changed that you didn't choose.", target: nil)
+            }
+        }
     }
 
     /// One decision on the current screen: stay in this app, or (first step only) send the person to another.
@@ -197,9 +246,27 @@ final class GuideEngine {
         // "yung" is just "the" in Taglish; only "this"/"ito" pins the request to the app in front.
         let words = Set(g.components(separatedBy: CharacterSet.alphanumerics.inverted))
         let pinned = words.contains("this") || words.contains("ito")
+        // In a browser the request is about the page ("the words at the bottom" = captions), unless they name Settings.
+        let inBrowser = BrowserGuide.browsers.contains(app.bundleIdentifier ?? "") && !g.contains("setting")
+        // Inside a real app its own commands come first: only a weak in-app pick lets a settings job take over.
+        // From the desktop (Finder) there's no document to act on, and look-alike menu words fool the picker.
+        let desktop = current == "Finder" || current == "System Settings"
+        var here_: Planner.Pick?? = nil
         if done.isEmpty, settingsPane == nil, !pinned || current == "System Settings" {
-            settingsPane = await SettingsRoute.pane(for: goal) ?? ""
-            log("SETTINGS pane=\(settingsPane ?? "")")
+            if !desktop {
+                let f = focus(state)
+                log("FOCUS \(f.count) \(Dictionary(grouping: f, by: \.source).mapValues(\.count)) e.g. \(f.prefix(4).map(Planner.key))")
+                let h = try await planner.choose(app: state.frontApp, goal: goal, done: done, candidates: f)
+                here_ = .some(h)
+                if (h?.confidence ?? 0) >= 0.6 { settingsPane = ""; log("SETTINGS skipped: in-app pick \(String(format: "%.2f", h?.confidence ?? 0))") }
+            }
+            if settingsPane == nil {
+                var pane = await SettingsRoute.pane(for: goal, app: current) ?? ""
+                // In a browser, text size / zoom / captions are about the page; camera, Wi-Fi, sound are still settings.
+                if inBrowser, ["Accessibility", "Displays", "Appearance"].contains(pane) { pane = "" }
+                settingsPane = pane
+                log("SETTINGS pane=\(pane)")
+            }
         }
         if let pane = settingsPane, !pane.isEmpty {
             if current != "System Settings" {
@@ -226,7 +293,8 @@ final class GuideEngine {
             let clicked = done.joined(separator: "|").lowercased()
             let pending = wps.drop(while: { w in clicked.contains("\"\(w.lowercased())\"") || Orchestrator.same(w, current) })
             if let next = pending.first {
-                let pool = focus(state).filter { $0.source != "menu" } + state.candidates.filter { $0.source == "dock" && done.isEmpty }
+                // Only inside a journey, and never the Dock: routing to another app is the settings/route checks' job.
+                let pool = done.isEmpty ? [] : focus(state).filter { $0.source == "window" }
                 if let hit = pool.first(where: { Orchestrator.same($0.label, next) && !rejected.contains(Planner.key($0)) }) {
                     log("WAYPOINT \(next)")
                     if hit.source == "dock" { expectedApp = hit.label }
@@ -235,7 +303,13 @@ final class GuideEngine {
             }
         }
         // Stay first: the app in front is usually where the person wants help ("this photo").
-        let here = try await planner.choose(app: state.frontApp, goal: goal, done: done, candidates: focus(state))
+        let here: Planner.Pick?
+        if let h = here_ { here = h } else {
+            let f = focus(state)
+            log("FOCUS \(f.count) \(Dictionary(grouping: f, by: \.source).mapValues(\.count)) app=\(state.frontApp) e.g. \(f.prefix(3).map(Planner.key))")
+            here = try await planner.choose(app: state.frontApp, goal: goal, done: done, candidates: f)
+            log("HERE \(here.map { "\(Planner.key($0.candidate)) \(String(format: "%.2f", $0.confidence)) runners \($0.runnersUp.map(Planner.key))" } ?? "-")")
+        }
         let namesOther = Self.namedApp(in: g, state: state, current: app.localizedName ?? "")
         if done.isEmpty, !mentionsThis, namesOther || (here?.confidence ?? 0) < 0.35,
            let route = try await routeToApp(state, current: app.localizedName ?? state.frontApp),
@@ -247,6 +321,9 @@ final class GuideEngine {
 
     /// DEV: first-step decisions for many goals on one screen, no overlay and no clicks (real-use-case tests).
     func planBatch(app: NSRunningApplication, goals: [String]) async -> [[String: String]] {
+        // Background apps report most menu items as disabled; read them the way a real session does, in front.
+        app.activate()
+        try? await Task.sleep(nanoseconds: 900_000_000)
         let state = await read(app)
         var out: [[String: String]] = []
         for g in goals {
@@ -288,11 +365,29 @@ final class GuideEngine {
         }
     }
 
+    /// Never finish on a guess: ask the person. Returns true for the first (yes) answer.
+    func askYesNo(_ text: String, yes: String, no: String) async -> Bool? {
+        answer = nil; asking = true
+        defer { asking = false; overlay.model.askWorked = false }
+        show(.done, label: "Ask", text: text, hint: "", target: nil)
+        let m = overlay.model
+        m.yesLabel = yes; m.noLabel = no; m.askWorked = true
+        overlay.update()
+        speakText(text)
+        while !Task.isCancelled, answer == nil { try? await Task.sleep(nanoseconds: 150_000_000) }
+        log("ASK \"\(text)\" -> \(answer.map { $0 ? "yes" : "no" } ?? "cancelled")")
+        // A new request or Stop cancels the question: that's no answer at all, never "Not yet".
+        if Task.isCancelled { return nil }
+        return answer
+    }
+
     func finish() {
         if !fixes.isEmpty || !(settingsPane ?? "").isEmpty {
             log("FIX DONE \(fixIndex + 1) steps=\(done)")
-            overlay.model.askWorked = true
             show(.done, label: "Check", text: "Try it again now. Is it working?", hint: "", target: nil)
+            overlay.model.yesLabel = "Yes, it works"; overlay.model.noLabel = "Still not working"
+            overlay.model.askWorked = true
+            overlay.update()
             speakText("Try it again now. Is it working?")
             return
         }
@@ -302,7 +397,7 @@ final class GuideEngine {
     }
 
     /// Point at one candidate until the user completes it. Menu commands are walked level by level.
-    private func guide(_ pick: Planner.Pick) async -> Bool {
+    func guide(_ pick: Planner.Pick) async -> Bool {
         var c = pick.candidate
         guard let app else { return false }
         if c.source == "menu" { return await guideMenu(c, app: app) }

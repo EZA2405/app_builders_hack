@@ -57,3 +57,30 @@ SCENARIOS = {
         ("how do I update my computer", "OK"),
     ],
 }
+
+# Added 2026-10-10 after a regression ("make the words bigger" in TextEdit went to System Settings > Displays).
+# Inside a real app its own commands should win; true settings jobs asked from inside an app should still route out.
+SCENARIOS["TextEdit"] = [
+    ("make the words bigger", ["Bigger", "Zoom In"]),
+    ("laki-han ang letters", ["Bigger", "Zoom In"]),
+    ("make this bold", ["Bold"]),
+    ("print this letter", ["Print"]),
+    ("save it as a PDF to send", ["PDF"]),
+    ("check my spelling", ["Spelling"]),
+    ("connect to the wifi", [SS, "Control Center", "Wi"]),
+    ("my grandson says he can't see me on the video call", [SS]),
+    ("there's no sound", [SS, "Sound"]),
+]
+SCENARIOS["Preview"] = [
+    ("rotate this photo", ["Rotate"]),
+    ("crop the picture", ["Crop"]),
+    ("print this photo", ["Print"]),
+    ("make the picture fill the screen", ["Full Screen"]),
+    ("change this photo to a jpeg", ["Export"]),
+    ("connect my bluetooth headphones", [SS, "Bluetooth", "Control Center"]),
+]
+SCENARIOS["Music"] = [
+    ("make the music louder", ["Volume"]),
+    ("play the next song", ["Next"]),
+    ("update my computer", [SS]),
+]

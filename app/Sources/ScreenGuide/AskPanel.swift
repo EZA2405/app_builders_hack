@@ -220,7 +220,8 @@ final class AskPanel: NSPanel {
     /// Grows out of the Gabay button: bottom-right, its right edge lined up with the button.
     /// `listen`: start dictation right away (opened with the hot key).
     func present(listen: Bool = false) {
-        guard let screen = NSScreen.screens.first else { return }
+        let m = NSEvent.mouseLocation
+        guard let screen = NSScreen.screens.first(where: { $0.frame.contains(m) }) ?? NSScreen.screens.first else { return }
         let v = screen.visibleFrame
         let size = NSSize(width: 540 * Theme.scale + 48, height: 340 * Theme.scale)
         setFrame(NSRect(x: v.maxX - size.width - 64 - GabayButtonPanel.margin, y: v.minY + GabayButtonPanel.margin - 14,

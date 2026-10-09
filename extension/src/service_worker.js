@@ -1,5 +1,5 @@
 const ENDPOINT = "ws://127.0.0.1:47823/ext";
-const BACKOFF = [1000, 2000, 5000, 10000];
+const BACKOFF = [500, 1000, 2000];   // localhost: retrying is cheap, and Gabay may restart
 let socket;
 let retries = 0;
 let retryTimer;

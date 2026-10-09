@@ -36,15 +36,23 @@ struct Planner {
         let instructions = instructions ?? (done.isEmpty ? "Which \(app) menu command accomplishes the person's goal?"
                                                          : "Which element on this page should the person use next?")
         // Tournament: chunks of `group`, keep the top `keep` of each, repeat until one round.
+        var trace = "GOAL \(goal) | \(instructions)\n"
         while keys.count > group {
             var next: [String] = []
             for chunk in stride(from: 0, to: keys.count, by: group).map({ Array(keys[$0..<min($0 + group, keys.count)]) }) {
                 let probs = try await ask(state: state, instructions: instructions, options: chunk).probs
-                next += probs.sorted { $0.value > $1.value }.prefix(keep).map(\.key)
+                let top = probs.sorted { $0.value > $1.value }.prefix(keep)
+                trace += "  chunk(\(chunk.count), got \(probs.count)) -> \(top.map { "\($0.key) \(String(format: "%.2f", $0.value))" })\n"
+                next += top.map(\.key)
             }
             keys = next
         }
         let final = try await ask(state: state, instructions: instructions, options: keys)
+        trace += "  FINAL \(final.probs.sorted { $0.value > $1.value }.prefix(4).map { "\($0.key) \(String(format: "%.2f", $0.value))" })\n"
+        if ProcessInfo.processInfo.environment["GABAY_TRACE"] != nil || CommandLine.arguments.contains("--plan") {
+            if let h = FileHandle(forWritingAtPath: "/tmp/gabay_planner.log") { h.seekToEndOfFile(); h.write(trace.data(using: .utf8)!); h.closeFile() }
+            else { FileManager.default.createFile(atPath: "/tmp/gabay_planner.log", contents: trace.data(using: .utf8)) }
+        }
         let ranked = final.probs.sorted { $0.value > $1.value }.compactMap { byKey[$0.key] }
         guard let best = byKey[final.choice] ?? ranked.first else { return nil }
         return Pick(candidate: best, confidence: final.confidence, runnersUp: Array(ranked.dropFirst().prefix(2)))

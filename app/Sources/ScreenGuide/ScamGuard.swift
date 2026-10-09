@@ -4,7 +4,7 @@ import Foundation
 /// share their screen, install a remote-access app, or read out a one-time code. Gabay never needs any
 /// of those, so when a goal or a step leads there, it pauses and says so (it doesn't diagnose scams).
 enum ScamGuard {
-    static let remoteApps = ["anydesk", "teamviewer", "rustdesk", "quick assist", "quickassist", "ultraviewer",
+    static let remoteApps = ["anydesk", "any desk", "any-desk", "teamviewer", "team viewer", "rustdesk", "quick assist", "quickassist", "ultraviewer",
                              "supremo", "remote desktop", "remotepc", "splashtop", "zoho assist", "screenconnect",
                              "logmein", "chrome remote desktop"]
     static let shareScreen = ["share screen", "share my screen", "share your screen", "screen share", "screen sharing",

@@ -60,7 +60,7 @@ enum SettingsRoute {
                         "Printers & Scanners", "Keyboard", "Mouse", "Trackpad"]
 
     /// The pane name if this is a settings job, else nil. Never waits more than ~3 s.
-    static func pane(for goal: String) async -> String? {
+    static func pane(for goal: String, app: String = "Finder") async -> String? {
         guard PlanVoice.available else { return nil }
         let s = LanguageModelSession(instructions: """
         You know macOS System Settings well. Decide where an older person's request should be handled. \
@@ -73,6 +73,8 @@ enum SettingsRoute {
         All panes: \(panes.joined(separator: ", ")).
         """)
         // Greedy: the same request must take the same route every time.
+        // Request text only (measured: telling it the app in front made it miss real settings jobs). Documents are
+        // protected by the caller: a confident in-app pick wins before this is asked.
         let task = Task { try? await s.respond(to: "Request: \(goal)", generating: SettingsGuess.self,
                                                options: GenerationOptions(sampling: .greedy)).content }
         let timeout = Task { try? await Task.sleep(nanoseconds: 3_000_000_000); task.cancel() }
@@ -163,5 +165,52 @@ enum Troubleshooter {
         timeout.cancel()
         guard let r, r.isProblem else { return [] }
         return Array(r.fixes.prefix(3))
+    }
+}
+
+/// Websites: is the request for the page that's open, and if not, which site? Apple's on-device model sees only
+/// the request and the page's title and address (no page content).
+@Generable
+struct SiteCheck {
+    @Guide(description: "true if the request can be done on the page that is open now")
+    var onThisPage: Bool
+    @Guide(description: "If not, the website's everyday name, e.g. YouTube, Gmail, Shopee, PhilHealth. Otherwise empty.")
+    var siteName: String
+    @Guide(description: "If not, the website address to type, e.g. youtube.com. Otherwise empty.")
+    var address: String
+}
+
+enum SiteRoute {
+    static func check(goal: String, title: String, url: String) async -> SiteCheck? {
+        guard PlanVoice.available else { return nil }
+        let host = URL(string: url)?.host ?? url
+        let s = LanguageModelSession(instructions: "You help older people use websites. Requests may be in English, Tagalog or Taglish.")
+        let task = Task { try? await s.respond(to: "Page open now: \"\(title)\" at \(host)\nRequest: \(goal)", generating: SiteCheck.self,
+                                                 options: GenerationOptions(sampling: .greedy)).content }
+        let timeout = Task { try? await Task.sleep(nanoseconds: 3_000_000_000); task.cancel() }
+        let r = await task.value
+        timeout.cancel()
+        return r
+    }
+}
+
+/// Websites: a request often bundles several things ("find an adobo video and turn on the subtitles"). Apple's
+/// on-device model splits it once into ordered parts; the page picker works on one part at a time.
+@Generable
+struct WebParts {
+    @Guide(description: "1 to 4 short parts in order, each one thing to do on the website, in plain English, e.g. \"search for how to cook adobo\", \"open a video\", \"turn on captions\". Keep names and search words from the request.")
+    var parts: [String]
+}
+
+enum WebPlan {
+    static func parts(for goal: String, site: String) async -> [String] {
+        guard PlanVoice.available else { return [] }
+        let s = LanguageModelSession(instructions: "You help older people use websites. Requests may be in English, Tagalog or Taglish; write the parts in English.")
+        let task = Task { try? await s.respond(to: "Website: \(site)\nRequest: \(goal)", generating: WebParts.self,
+                                                 options: GenerationOptions(sampling: .greedy)).content.parts }
+        let timeout = Task { try? await Task.sleep(nanoseconds: 3_000_000_000); task.cancel() }
+        let r = await task.value ?? []
+        timeout.cancel()
+        return Array(r.prefix(4))
     }
 }

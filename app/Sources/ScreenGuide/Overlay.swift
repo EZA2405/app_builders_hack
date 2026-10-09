@@ -11,10 +11,14 @@ final class OverlayModel: ObservableObject {
     @Published var label = ""                     // "STEP 1"
     @Published var instruction = ""               // may contain **bold** key word
     @Published var hint = ""
-    @Published var askWorked = false              // troubleshooting: "Is it working now?" Yes / Still not
+    @Published var askWorked = false              // a yes/no question card ("Did that do it?", "Is it working now?")
+    @Published var yesLabel = "Yes, it works"
+    @Published var noLabel = "Still not working"
     @Published var plan = ""                      // step 1 only: what we're doing overall (Apple on-device model)
     @Published var spotlight = false
     @Published var showDone = false               // text-entry steps: user says when they've typed
+    /// Top-left of the display the overlay is on, in AX coordinates (targets can be on any display).
+    @Published var origin: CGPoint = .zero
     @Published var arrowEdge: ArrowEdge = .none   // which card edge points at the ring
     @Published var arrowOffset: CGFloat = 0
 }
@@ -24,13 +28,18 @@ final class OverlayModel: ObservableObject {
 struct RingLayer: View {
     @ObservedObject var model: OverlayModel
 
+    /// Global AX rect -> this display's window coordinates.
+    func local(_ r: CGRect) -> CGRect { r.offsetBy(dx: -model.origin.x, dy: -model.origin.y) }
+
     var body: some View {
         ZStack(alignment: .topLeading) {
-            if model.spotlight, let t = model.target {
+            if model.spotlight, let g = model.target {
+                let t = local(g)
                 SpotlightShape(hole: t.insetBy(dx: -10, dy: -10)).fill(Color.black.opacity(0.5), style: FillStyle(eoFill: true))
                     .transition(.opacity.animation(.easeInOut(duration: 0.6)))
             }
-            if let t = model.target, [.guiding, .confirmed, .detour].contains(model.mode) {
+            if let g = model.target, [.guiding, .confirmed, .detour].contains(model.mode) {
+                let t = local(g)
                 let ok = model.mode == .confirmed
                 BreathingRing(rect: t, color: ok ? Theme.success : Theme.ring, stroke: model.spotlight ? 6 : 4, breathes: !ok)
                     .id("\(t)\(ok)")
@@ -41,7 +50,7 @@ struct RingLayer: View {
                 }
             }
             if model.mode == .notSure {
-                ForEach(Array(model.candidates.enumerated()), id: \.offset) { i, c in
+                ForEach(Array(model.candidates.map(local).enumerated()), id: \.offset) { i, c in
                     BreathingRing(rect: c, color: Theme.ring, stroke: 4, breathes: false, glow: false)
                     Text("\(i + 1)").font(.system(size: 16, weight: .bold)).foregroundStyle(.white)
                         .frame(width: 30, height: 30).background(Circle().fill(Theme.ring))
@@ -114,6 +123,7 @@ struct CardView: View {
     var onDone: () -> Void = {}
     var onNotThis: () -> Void = {}
     var onStillBroken: () -> Void = {}
+    var onYes: () -> Void = {}
     @State private var hovering = false
     @State private var idle = false
     @State private var showWhat = false
@@ -152,8 +162,8 @@ struct CardView: View {
                 }
                 if model.mode == .done, model.askWorked {
                     HStack(spacing: 8) {
-                        primary("Yes, it works", onStop)
-                        pill("Still not working", onStillBroken)
+                        primary(model.yesLabel, onYes)
+                        pill(model.noLabel, onStillBroken)
                     }.padding(.top, 10)
                 } else if model.mode == .done, model.label != "All done" {
                     if !model.hint.isEmpty {
@@ -216,7 +226,10 @@ struct CardView: View {
         }
         let text = max(w(model.instruction, 26, .heavy), model.mode == .done ? 0 : w(model.hint, 19, .regular))
         let hasActions = [.guiding, .detour, .notSure].contains(model.mode)   // room for Not this one · Stop · speaker
-        return min(maxW, max((hasActions ? 340 : 160) * Theme.scale, ceil(text) + 48))
+        // A yes/no card must fit both buttons on one row (labels + their padding + spacing + card padding).
+        let ask = model.mode == .done && model.askWorked
+            ? w(model.yesLabel, 17, .semibold) + 40 + w(model.noLabel, 17, .semibold) + 36 + 8 + 48 : 0
+        return min(maxW, max((hasActions ? 340 : 160) * Theme.scale, ceil(text) + 48, ceil(ask)))
     }
 
     @ViewBuilder var actions: some View {
@@ -322,6 +335,7 @@ final class OverlayController {
     var onDone: () -> Void = {}
     var onNotThis: () -> Void = {}
     var onStillBroken: () -> Void = {}
+    var onYes: () -> Void = {}
     /// Extra rects the card must not cover (an open menu, the text a step refers to).
     var keepOut: [CGRect] = []
 
@@ -345,7 +359,8 @@ final class OverlayController {
                                                     onStop: { [weak self] in self?.onStop() },
                                                     onDone: { [weak self] in self?.onDone() },
                                                     onNotThis: { [weak self] in self?.onNotThis() },
-                                                    onStillBroken: { [weak self] in self?.onStillBroken() }))
+                                                    onStillBroken: { [weak self] in self?.onStillBroken() },
+                                                    onYes: { [weak self] in self?.onYes() }))
         cardWindow = NSPanel(contentRect: NSRect(x: 0, y: 0, width: 360, height: 200),
                              styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
         cardWindow.isOpaque = false
@@ -357,8 +372,25 @@ final class OverlayController {
         cardWindow.contentView = cardHost
     }
 
+    /// A display's frame in AX coordinates (top-left origin of the primary display, y down).
+    func axFrame(_ s: NSScreen) -> CGRect {
+        CGRect(x: s.frame.minX, y: primary.frame.height - s.frame.maxY, width: s.frame.width, height: s.frame.height)
+    }
+
+    /// The display holding the target; with nothing to point at, the one the mouse is on.
+    var current: NSScreen {
+        if let t = model.target ?? model.candidates.first {
+            let c = CGPoint(x: t.midX, y: t.midY)
+            if let s = NSScreen.screens.first(where: { axFrame($0).contains(c) }) { return s }
+        }
+        let m = NSEvent.mouseLocation
+        return NSScreen.screens.first(where: { $0.frame.contains(m) }) ?? primary
+    }
+
     func show() {
-        ringWindow.setFrame(primary.frame, display: true)
+        let screen = current
+        if model.origin != axFrame(screen).origin { model.origin = axFrame(screen).origin }
+        ringWindow.setFrame(screen.frame, display: true)
         ringWindow.orderFrontRegardless()
         placeCard()
         cardWindow.orderFrontRegardless()
@@ -377,9 +409,9 @@ final class OverlayController {
         cardHost.layoutSubtreeIfNeeded()
         let size = cardHost.fittingSize
         let pad = CardView.pad
-        let screen = primary.frame
-        let vis = CGRect(x: 0, y: screen.height - primary.visibleFrame.maxY, width: screen.width,
-                         height: primary.visibleFrame.height)   // AX coords, below the menu bar
+        let primaryH = primary.frame.height
+        let on = current, vf = on.visibleFrame
+        let vis = CGRect(x: vf.minX, y: primaryH - vf.maxY, width: vf.width, height: vf.height)   // AX coords, that display minus menu bar/Dock
         // Nothing to point at: speak from Gabay's corner, above its button, not over the app.
         var origin = CGPoint(x: vis.maxX - size.width - 4, y: vis.maxY - size.height - 84)
         var edge = ArrowEdge.none
@@ -411,7 +443,7 @@ final class OverlayController {
         }
         if model.arrowEdge != edge { model.arrowEdge = edge }
         // AX (top-left) -> AppKit (bottom-left)
-        let nsY = screen.height - origin.y - size.height
+        let nsY = primaryH - origin.y - size.height
         cardWindow.setFrame(NSRect(x: origin.x, y: nsY, width: size.width, height: size.height), display: true)
     }
 

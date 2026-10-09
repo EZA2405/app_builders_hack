@@ -147,6 +147,31 @@ Menu rows are repeated ×3 and routing rows ×2, each copy with a fresh option g
 
 Reproduce: `open -W -n app/build/ScreenGuide.app --args --plan Finder goals.json out.json` (one file per start app, goals from `scenarios.py`).
 
+**Update (2026-10-10, later):** inside apps the routing misfired: "make the words bigger" in TextEdit went to System Settings > Displays. Two causes:
+- an Apple-model route-memory feature matched the System Settings Dock icon on step 1;
+- the settings check didn't look at the in-app pick.
+
+Fixes:
+- Inside a non-desktop app, a confident in-app pick (≥ 0.6) wins.
+- Route memory never matches the Dock.
+- Telling Apple's model which app is in front was tried and reverted: Finder fell to 6/14.
+
+Two harness bugs were also found:
+- Background apps report most menu items as disabled, so `--plan` now brings the app to the front first.
+- The earlier "after" numbers were measured before that fix.
+
+Results with `ml/usecases/run.sh` (added TextEdit, Preview and Music "stay in the app" sets, answers written before running):
+
+| Start | Score |
+|---|---|
+| Finder | 13/14 |
+| System Settings | 12/12 |
+| TextEdit | 9/9 |
+| Preview | 5/6 |
+| Music | 3/3 |
+| Risk check | 7/7 |
+| Mail | 1/8 (an account password dialog is open on this Mac; every pick correctly stays in that dialog, so Mail isn't scored) |
+
 ## Experiment: Apple on-device model rewrites the goal first (rejected)
 Apple's Foundation Model (on-device) restated each of the 127 validation goals as a plain action, at about 0.7 s per goal; it produced 122 rewrites. Scored with Laya v4e5 on the Mac:
 - raw goal **102/127**
