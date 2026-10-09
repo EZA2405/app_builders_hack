@@ -2,3 +2,18 @@ tools/node_modules/
 **/.hyperframes/
 **/snapshots/
 **/render.log
+
+# raw screen recordings (large; may show personal data)
+**/footage/
+*.mov
+
+# brag-output: derived media. Rebuild compositions with build.mjs. Screen clips are cut from footage/;
+# music is HeyGen catalog audio (not ours to redistribute).
+brag-output-*/clips/
+brag-output-*/clips2/
+brag-output-*/shared-assets/clips/
+brag-output-*/shared-assets/music/
+brag-output-*/composition-*/assets/
+brag-output-*/.media/
+brag-output-*/media/
+brag-output-*/saved/
