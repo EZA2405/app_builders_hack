@@ -142,6 +142,36 @@ Per app, v7en:
 
 Logs: `train-v7en.log` and `results-v7en.txt` on the `gabay-models` Modal volume.
 
+## v8 (2026-10-10): text size vs zoom, and window controls mixed with menus (not chosen)
+Data: `data/v8/train.jsonl`, 29,012 rows = v6 (28,250) + 762 new rows from `toolbar_data.py`. It starts from v6, not v7, because v7 lost on validation. All new goals are Claude-written, on training apps only. 20% are Taglish. Rows are repeated ×3, each copy with a fresh option group. The near-copy guard skipped 15 goals that overlapped a test, validation or use-case goal (e.g. "make the words in this note bigger" ~ "make the words bigger").
+- **Text size vs zoom vs picture size** (196 goals, 12 training apps). This targets the live failure where Preview offered `View > Zoom In` for a text box's font size.
+  - "the words in my letter are too small, make them bigger" → `Format > Font > Bigger`.
+  - "magnify the view, but don't change the size of the words in my letter" → `View > Zoom In`.
+  - "make the pictures in my note smaller" → `View > Attachment View > Set All to Small`.
+  - Every goal's decoys come from the other two families.
+  - Jev agreed with the label on 106/108 font goals, 51/53 zoom goals and 34/35 picture goals. None were dropped.
+- **Window controls mixed with menus** (59 goals, 7 windows): option groups mix menu commands with an open window's checkboxes and buttons. They are keyed like `Planner.key` (`checkbox "Use Large Labels" · Settings`), the way the first step sees them with `step1Controls` on.
+  - A control is the answer in 24 goals. Jev agreed on 21 and confidently disagreed on 1, which was dropped.
+  - A menu command beats look-alike controls in 35 goals. Jev agreed on all 35.
+  - **Caveat:** the main-window dumps (`/tmp/sg/train*`) are menus-only, so there are no document toolbars like Preview's "Aa". These are the Settings and Find windows that `harvest_dialogs.py` read from training apps. Save, Print and Export panels are left out, because at runtime they are dialogs and never mixed with menus.
+- Reproduce: `python3 toolbar_data.py data/v8`, then `modal run ml/modal_train.py --version v8en --data data/v8/train.jsonl --epochs 5 --head 320`.
+
+v8en (English Laya base) trained 5 epochs with head budget 320 on a Modal H100 (35 min). This is v8en's one held-out run:
+
+| | Validation (127) | Held-out apps (35) | Held-out web (45) | Risk check: caught / false alarms | Routing (162) |
+|---|---|---|---|---|---|
+| v6en (current `guide`) | **100** | **29** | 32 | 13/14, 0/16 (any threshold 0.3–0.7) | **97** |
+| v8en | 95 | 28 | 32 | 14/14 at threshold 0.3–0.5, 13/14 at 0.6–0.7; 0/16 at all | 88 |
+
+**Choice: v6en stays (VAL 95 < 100).** v7 (+1,526 rows) and v8 (+762 rows) both scored below v6en on validation.
+
+Per app, v8en:
+- Validation: Activity Monitor 20/30, Disk Utility 27/35, Numbers 22/31, Terminal 26/31.
+- Held-out: Finder 8/8, Preview 8/10, Safari 7/9, System Settings 5/8.
+- Web: PhilHealth 7/15, Shopee 8/10, Wikipedia 9/10, YouTube 8/10.
+
+The local Modal client lost its network connection as training finished. The remote run still completed every benchmark: `results-v8en.txt` ends with the baselines line. The app then stopped before zipping, so the checkpoint is only unzipped at `models/laya-guide-v8en` on the `gabay-models` volume. Logs: `train-v8en.log` and `results-v8en.txt` on the same volume.
+
 ## Real use cases, first step on this Mac (dev set, 2026-10-10)
 **What it is:** 41 requests taken from `docs/research/USER_TASKS.md` (`ml/usecases/scenarios.py`), with acceptable answers written before any run. It runs Gabay's real decision path (`--plan`: read the screen, stay or route, pick) on the live apps.
 - **Not a benchmark.** The settings routing below was developed while looking at these results.
