@@ -71,7 +71,7 @@ extension GuideEngine {
 
     /// Does the page title name the subject of the request? ("read about José Rizal" vs "José Rizal - Wikipedia").
     /// Accent-insensitive; a word counts if one contains the other (dictation spells names oddly: "Oserizal").
-    static func titleMatches(goal: String, title: String) -> Bool {
+    static func titleMatches(goal: String, title: String, host: String = "") -> Bool {
         func words(_ s: String) -> [String] {
             s.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: nil)
                 .split(whereSeparator: { !$0.isLetter }).map(String.init).filter { $0.count >= 4 }
@@ -79,7 +79,9 @@ extension GuideEngine {
         let stop: Set<String> = ["want", "read", "about", "watch", "find", "look", "show", "open", "paano", "gusto", "with", "this",
                                  "that", "page", "website", "please", "help", "where", "what", "video", "videos", "search", "home",
                                  "wikipedia", "youtube", "google", "turn", "words", "bottom", "make", "into", "from", "your", "mine"]
-        let g = words(goal).filter { !stop.contains($0) }
+        // The site's own name ("instagram" on instagram.com) is where they are, not what they want.
+        let site = Set(host.lowercased().split(separator: ".").map(String.init))
+        let g = words(goal).filter { w in !stop.contains(w) && !site.contains(w) && !site.contains(where: { s in s.count >= 4 && w.contains(s) }) }
         let t = Set(words(title).filter { !stop.contains($0) })
         return g.contains { gw in t.contains { tw in gw.contains(tw) || tw.contains(gw) } }
     }
@@ -140,7 +142,7 @@ extension GuideEngine {
             // Arrived: after their step, a page whose title names what they asked for ("José Rizal - Wikipedia") may be
             // the end. Only on the last part (a YouTube results page also names the search, but captions are still to do).
             let onLastPart = (parts ?? []).isEmpty || partIndex + 1 >= (parts ?? []).count
-            if navigated, stepNo >= 1, onLastPart, !keepGoing, Self.titleMatches(goal: originalWebGoal ?? goal, title: title) {
+            if navigated, stepNo >= 1, onLastPart, !keepGoing, Self.titleMatches(goal: originalWebGoal ?? goal, title: title, host: host) {
                 log("WEB title matches goal: \(title)")
                 Bridge.shared.send(["type": "clear", "id": UUID().uuidString])
                 guard let yes = await askYesNo("Is this what you wanted?", yes: "Yes, this is it", no: "Not yet") else { return }
@@ -177,6 +179,9 @@ extension GuideEngine {
             for (i, e) in elements.enumerated() {
                 guard let name = e["name"] as? String, !name.isEmpty, (e["enabled"] as? Bool) != false,
                       let ref = e["ref"] as? String else { continue }
+                // Only things a person can act on ("Loading…" status text was offered as a step).
+                if ["status", "alert", "progressbar", "log", "marquee", "timer", "img", "heading", "presentation", "none"]
+                    .contains((e["role"] as? String ?? "").lowercased()) { continue }
                 let c = Candidate(id: i, source: "web", role: e["role"] as? String ?? "button", label: name,
                                   context: e["context"] as? String ?? "", path: name, frame: nil, enabled: true)
                 let k = Planner.key(c)

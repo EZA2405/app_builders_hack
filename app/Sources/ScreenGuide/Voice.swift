@@ -273,6 +273,26 @@ enum Whisper {
 
     static func stopServer() { process?.terminate(); process = nil }
 
+    /// "I wanna watch Reels. How do I do that? How to? How to?" -> "I wanna watch Reels. How do I do that?"
+    /// Whisper repeats itself on pauses; repeated sentences and repeated 1–3 word fillers confuse the picker.
+    static func tidy(_ text: String) -> String {
+        var sentences: [String] = []
+        var cur = ""
+        for ch in text { cur.append(ch); if ".?!".contains(ch) { sentences.append(cur.trimmingCharacters(in: .whitespaces)); cur = "" } }
+        if !cur.trimmingCharacters(in: .whitespaces).isEmpty { sentences.append(cur.trimmingCharacters(in: .whitespaces)) }
+        func norm(_ s: String) -> String { s.lowercased().filter { $0.isLetter || $0 == " " }.trimmingCharacters(in: .whitespaces) }
+        var counts: [String: Int] = [:]
+        for s in sentences { counts[norm(s), default: 0] += 1 }
+        var seen = Set<String>(), out: [String] = []
+        for s in sentences {
+            let n = norm(s)
+            if n.isEmpty || seen.contains(n) { continue }
+            if n.split(separator: " ").count <= 3, counts[n, default: 0] > 1 { continue }   // "How to? How to?", "This one. This one."
+            seen.insert(n); out.append(s)
+        }
+        return out.isEmpty ? text : out.joined(separator: " ")
+    }
+
     static func transcribe(wav: URL) -> String? {
         defer { try? FileManager.default.removeItem(at: wav) }
         guard let audio = try? Data(contentsOf: wav) else { return nil }
@@ -296,6 +316,7 @@ enum Whisper {
             if (resp as? HTTPURLResponse)?.statusCode == 200, let data, var t = String(data: data, encoding: .utf8) {
                 for junk in ["[BLANK_AUDIO]", "(silence)", "[ Silence ]", "[Music]", "(music)"] { t = t.replacingOccurrences(of: junk, with: "") }
                 t = t.split(separator: "\n").map { $0.trimmingCharacters(in: .whitespaces) }.joined(separator: " ").trimmingCharacters(in: .whitespaces)
+                t = Whisper.tidy(t)
                 result = t.isEmpty ? nil : t
             }
             sem.signal()
