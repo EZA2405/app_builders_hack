@@ -16,9 +16,9 @@ from bench_localjev import ask, answer
 def commands_of(snap):
     return list(dict.fromkeys(redact_names(c["path"]) for c in snap["commands"] if not is_personal(c)))
 
-def goals_of(name, skip):
+def goals_of(name, skip, sources=("goals", "goals_traps")):
     out = []
-    for path in [f"data/goals/{name}.jsonl", f"data/goals_traps/{name}.jsonl"]:
+    for path in [f"data/{src}/{name}.jsonl" for src in sources]:
         if os.path.exists(path):
             for line in open(path):
                 if line.strip():
@@ -55,19 +55,19 @@ def tournament(url, model, app, commands, goal, limit=16, keep=3):
             return a.get("choice"), a.get("confidence") or 0.0, rounds
         cands = nxt
 
-def mine(url, model, dumps):
+def mine(url, model, dumps, sources=("goals", "goals_traps"), only_apps=None, out="data/mined.jsonl", threads=3):
     skip = set(json.load(open("data/disagreements.json")))
     rng = random.Random(11)
     jobs = []
-    for path in sorted(glob.glob("data/goals/*.jsonl")):
-        name = os.path.basename(path)[:-6]
-        if name in HELD_OUT or name in VAL_APPS:
+    names = sorted({os.path.basename(p)[:-6] for src in sources for p in glob.glob(f"data/{src}/*.jsonl")})
+    for name in names:
+        if name in HELD_OUT or name in VAL_APPS or (only_apps is not None and name not in only_apps):
             continue
         snap = load_snapshot(dumps, name)
         if not snap:
             continue
         cmds = commands_of(snap); cs = set(cmds)
-        for g in goals_of(name, skip):
+        for g in goals_of(name, skip, sources):
             if g["answer"] in cs:
                 jobs.append((name, snap["app"], cmds, g, {a for a in [g["answer"], *g.get("alts", [])] if a in cs}))
 
@@ -77,7 +77,7 @@ def mine(url, model, dumps):
         return name, app, cmds, g, ok, choice, conf, rounds
 
     rows, hits, n = [], 0, 0
-    with cf.ThreadPoolExecutor(3) as ex:
+    with cf.ThreadPoolExecutor(threads) as ex:
         for name, app, cmds, g, ok, choice, conf, rounds in ex.map(run, jobs):
             n += 1
             good = choice in ok
@@ -96,10 +96,10 @@ def mine(url, model, dumps):
                              "questions": {"next_command": {"type": "choice", "instructions": instructions_for(app),
                                                             "criteria": {c: c for c in opts}}},
                              "expected": {"next_command": g["answer"]}})
-    with open("data/mined.jsonl", "w") as f:
+    with open(out, "w") as f:
         for r in rows:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
-    print(f"{model} on training goals (full tournament): {hits}/{n} correct; mined {len(rows)} rows -> data/mined.jsonl")
+    print(f"{model} on training goals (full tournament): {hits}/{n} correct; mined {len(rows)} rows -> {out}")
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
@@ -107,5 +107,13 @@ if __name__ == "__main__":
     p.add_argument("dumps", nargs="+")
     p.add_argument("--url", default="http://127.0.0.1:8766")
     p.add_argument("--model", default="guide-v1")
+    p.add_argument("--sources", default="goals,goals_traps")
+    p.add_argument("--only-apps-in", help="dump dir: only mine apps that have a dump there")
+    p.add_argument("--out", default="data/mined.jsonl")
+    p.add_argument("--threads", type=int, default=3)
     a = p.parse_args()
-    val_fixtures(a.dumps) if a.cmd == "val-fixtures" else mine(a.url, a.model, a.dumps)
+    only = {os.path.basename(x)[:-5] for x in glob.glob(os.path.join(a.only_apps_in, "*.json"))} if a.only_apps_in else None
+    if a.cmd == "val-fixtures":
+        val_fixtures(a.dumps)
+    else:
+        mine(a.url, a.model, a.dumps, tuple(a.sources.split(",")), only, a.out, a.threads)
