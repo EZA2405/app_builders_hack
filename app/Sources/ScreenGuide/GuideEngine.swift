@@ -23,7 +23,11 @@ final class GuideEngine {
     /// Apple model's route for this goal (on-screen names, in order); nil = not planned yet.
     var waypoints: [String]?
     private var movedOn = false
+    /// Keys of the steps shown in the current request.
+    private var stepKeys: [String] = []
     private var lastState: ScreenState?
+    /// What the last request was walked to, so "No, I meant…" right after doesn't get the same answer again.
+    private var lastSession: (app: String, picks: Set<String>, ended: Date)?
     /// Multi-step regression data: every step's screen + what the person actually did (local file, never uploaded).
     private var traceURL: URL?
     private var stepOutcome = ""
@@ -71,7 +75,18 @@ final class GuideEngine {
 
     func start(goal: String, app: NSRunningApplication) {
         stop()
+        // Remember the previous request's picks before clearing (for a correction like "No, I meant the font size").
+        let previous = Set(stepKeys)
+        if !previous.isEmpty, let a = self.app?.localizedName { lastSession = (a, previous, Date()) }
+        stepKeys = []
         self.goal = goal; self.app = app; done = []; stepNo = 0; rejected = []; notThis = false; planLine = nil; settingsPane = nil; waypoints = nil; keepGoing = false
+        // "No / wait / not that / hindi…" within a minute in the same app: never offer what we just showed.
+        let first = goal.lowercased().split(whereSeparator: { !$0.isLetter }).prefix(3).map(String.init)
+        if let last = lastSession, last.app == app.localizedName, Date().timeIntervalSince(last.ended) < 90,
+           first.contains(where: { ["no", "not", "wait", "hindi", "mali", "nope", "actually"].contains($0) }) {
+            rejected = last.picks
+            log("CORRECTION: ruling out \(last.picks.sorted())")
+        }
         log("START goal=\(goal) app=\(app.localizedName ?? "?")")
         let f = DateFormatter(); f.dateFormat = "yyyyMMdd-HHmmss"
         let dir = URL(fileURLWithPath: "/tmp/gabay_traces", isDirectory: true)
@@ -225,6 +240,7 @@ final class GuideEngine {
                 log("PLAN \(line)")
             }
             log("STEP \(stepNo + 1) pick=\(Planner.key(pick.candidate)) conf=\(String(format: "%.2f", pick.confidence))")
+            stepKeys.append(Planner.key(pick.candidate))
             stepNo += 1
             let ok = await guide(pick)
             recordStep(state: state, pick: pick, outcome: notThis ? "not_this" : (ok ? stepOutcome : "stopped"))
