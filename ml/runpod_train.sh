@@ -6,17 +6,21 @@
 # and $W/results-$VERSION.txt (val + held-out + web scores).
 set -euo pipefail
 VERSION=${1:-v4e5}; DATA=${2:-data/v4/train.jsonl}; EPOCHS=${3:-5}
+BASE=${BASE:-convaiinnovations/laya}; HEAD=${HEAD_MAX_LEN:-192}
 W=${WORKDIR:-/workspace}; mkdir -p "$W"
 cd "$W"
 [ -d app_builders_hack ] || git clone -q https://github.com/EZA2405/app_builders_hack
 cd app_builders_hack && git pull -q && cd ml
 pip -q install "laya[serve]"
+if [ "$BASE" = "multilingual" ]; then   # the multilingual checkpoint lives in a subfolder of the Laya repo
+  BASE=$(python -c "from huggingface_hub import snapshot_download as s; print(s('convaiinnovations/laya', allow_patterns=['multilingual/*'])+'/multilingual')")
+fi
 python -c "import torch; print('cuda', torch.cuda.is_available(), torch.cuda.get_device_name(0))"
 
 OUT=$W/models; mkdir -p $OUT
 start=$(date +%s)
-laya-train --data "$DATA" --eval data/v4/val.jsonl --base convaiinnovations/laya --out $OUT/laya-guide-$VERSION \
-  --device cuda --epochs "$EPOCHS" --micro-batch 8 --grad-accum 8 --shuffle-options --label-smoothing 0.05 --seed 7 \
+laya-train --data "$DATA" --eval data/v4/val.jsonl --base "$BASE" --out $OUT/laya-guide-$VERSION \
+  --device cuda --epochs "$EPOCHS" --micro-batch 8 --grad-accum 8 --shuffle-options --label-smoothing 0.05 --seed 7 --head-max-len "$HEAD" \
   2>&1 | tee $W/train-$VERSION.log
 echo "training took $(( ($(date +%s) - start) / 60 )) min" | tee -a $W/train-$VERSION.log
 
@@ -35,6 +39,7 @@ for set in "VAL fixtures/val/*.json" "HELD-OUT fixtures/*_real.json" "WEB fixtur
   echo "===== $VERSION $name: $h/$t =====" | tee -a $R
 done
 python3 scam_eval.py --url http://127.0.0.1:8766 --model guide | tail -5 | sed "s/^/RISK /" | tee -a $R
+python3 routing_eval.py --url http://127.0.0.1:8766 --model guide | sed "s/^/ROUTING /" | tee -a $R
 echo "baselines: v1 VAL 79/127, HELD-OUT 25/35, WEB 25/45, RISK 7/14@0.6 | v3 VAL 95/127, HELD-OUT 26/35, WEB 29/45 | Jev RISK 14/14" | tee -a $R
 
 rm -rf $OUT/laya-guide-$VERSION/checkpoint_latest
