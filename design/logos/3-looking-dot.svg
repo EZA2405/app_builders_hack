@@ -1,0 +1,8 @@
+<!-- The "Looking..." dot travelling along a dashed path and landing as the ring. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <rect width="256" height="256" rx="56" fill="#F4F4F8"/>
+  <path d="M56 196 C70 120 120 150 150 112" fill="none" stroke="#F08A24" stroke-width="8" stroke-linecap="round" stroke-dasharray="2 18"/>
+  <circle cx="56" cy="196" r="12" fill="#F08A24"/>
+  <circle cx="172" cy="92" r="40" fill="none" stroke="#F08A24" stroke-width="14"/>
+  <circle cx="172" cy="92" r="14" fill="#1C1C1E"/>
+</svg>

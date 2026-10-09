@@ -1,0 +1,7 @@
+<!-- Lowercase g whose bowl is the highlight ring. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <rect width="256" height="256" rx="56" fill="#F08A24"/>
+  <circle cx="124" cy="108" r="48" fill="none" stroke="#FFFFFF" stroke-width="22"/>
+  <path d="M172 64 V156 C172 200 140 214 116 214 C96 214 80 206 70 194" fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="124" cy="108" r="12" fill="#0B0B14"/>
+</svg>
