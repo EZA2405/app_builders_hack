@@ -20,6 +20,8 @@ final class GuideEngine {
     var rejected = Set<String>()
     /// Apple model's verdict for this goal: nil = not asked yet, "" = not a settings job, else the pane.
     var settingsPane: String?
+    /// Apple model's route for this goal (on-screen names, in order); nil = not planned yet.
+    var waypoints: [String]?
     /// Apple's on-device model's one-line plan for this task, shown on the first card.
     var planLine: String?
     /// Set when Gabay points at a Dock icon: the app we expect the person to open next.
@@ -37,7 +39,7 @@ final class GuideEngine {
 
     func start(goal: String, app: NSRunningApplication) {
         stop()
-        self.goal = goal; self.app = app; done = []; stepNo = 0; rejected = []; notThis = false; planLine = nil; settingsPane = nil
+        self.goal = goal; self.app = app; done = []; stepNo = 0; rejected = []; notThis = false; planLine = nil; settingsPane = nil; waypoints = nil
         log("START goal=\(goal) app=\(app.localizedName ?? "?")")
         if let w = ScamGuard.check(goal: goal) {
             log("SCAM GUARD goal")
@@ -132,7 +134,7 @@ final class GuideEngine {
                 show(.detour, label: "Wait", text: w.text, hint: w.hint, target: pick.candidate.frame.map(rect))
                 return
             }
-            if stepNo == 0, let line = await PlanVoice.plan(goal: goal, route: pick.candidate.source == "menu" ? pick.candidate.path : pick.candidate.label) {
+            if stepNo == 0, PlanVoice.isEnglish(goal), let line = await PlanVoice.plan(goal: goal, route: pick.candidate.source == "menu" ? pick.candidate.path : pick.candidate.label) {
                 planLine = line
                 log("PLAN \(line)")
             }
@@ -169,14 +171,36 @@ final class GuideEngine {
             log("SETTINGS pane=\(settingsPane ?? "")")
         }
         if let pane = settingsPane, !pane.isEmpty {
-            if current != "System Settings",
-               let icon = state.candidates.first(where: { $0.source == "dock" && $0.label == "System Settings" }) {
+            if current != "System Settings" {
                 expectedApp = "System Settings"
-                return Planner.Pick(candidate: icon, confidence: 0.9, runnersUp: [])
+                if let icon = state.candidates.first(where: { $0.source == "dock" && $0.label == "System Settings" }) {
+                    return Planner.Pick(candidate: icon, confidence: 0.9, runnersUp: [])
+                }
+                // Not in the Dock: the Apple menu always has it.
+                let apple = Candidate(id: 0, source: "menu", role: "menu item", label: "System Settings…", context: "Apple",
+                                      path: "Apple > System Settings…", frame: nil, enabled: true)
+                return Planner.Pick(candidate: apple, confidence: 0.9, runnersUp: [])
             }
             if current == "System Settings", !done.contains(where: { $0.contains(pane) }),
                let row = state.candidates.first(where: { $0.source == "window" && $0.role == "row" && $0.label == pane }) {
                 return Planner.Pick(candidate: row, confidence: 0.9, runnersUp: [])
+            }
+        }
+        // The journey's memory: the next planned name, if it's on screen exactly (never menus; Laya is better there).
+        if waypoints == nil {
+            waypoints = await Orchestrator.plan(goal: goal, app: current)
+            log("WAYPOINTS \(waypoints ?? [])")
+        }
+        if let wps = waypoints, !wps.isEmpty {
+            let clicked = done.joined(separator: "|").lowercased()
+            let pending = wps.drop(while: { w in clicked.contains("\"\(w.lowercased())\"") || Orchestrator.same(w, current) })
+            if let next = pending.first {
+                let pool = focus(state).filter { $0.source != "menu" } + state.candidates.filter { $0.source == "dock" && done.isEmpty }
+                if let hit = pool.first(where: { Orchestrator.same($0.label, next) && !rejected.contains(Planner.key($0)) }) {
+                    log("WAYPOINT \(next)")
+                    if hit.source == "dock" { expectedApp = hit.label }
+                    return Planner.Pick(candidate: hit, confidence: 0.9, runnersUp: [])
+                }
             }
         }
         // Stay first: the app in front is usually where the person wants help ("this photo").
@@ -195,7 +219,7 @@ final class GuideEngine {
         let state = await read(app)
         var out: [[String: String]] = []
         for g in goals {
-            goal = g; done = []; rejected = []; settingsPane = nil
+            goal = g; done = []; rejected = []; settingsPane = nil; waypoints = nil
             let risk = await planner.risky(goal: g)
             let pick = try? await decide(state, app: app)
             let route = try? await routeToApp(state, current: app.localizedName ?? state.frontApp)
@@ -217,10 +241,36 @@ final class GuideEngine {
 
     /// Point at one candidate until the user completes it. Menu commands are walked level by level.
     private func guide(_ pick: Planner.Pick) async -> Bool {
-        let c = pick.candidate
+        var c = pick.candidate
         guard let app else { return false }
         if c.source == "menu" { return await guideMenu(c, app: app) }
         if c.source == "dock" { expectedApp = c.label }
+        // Below or above the visible part of a list: ask for a scroll first, then ring it once it's in view.
+        // Mostly visible inside the window (a row half under the edge still counts).
+        func inView(_ f: CGRect, _ w: CGRect) -> Bool { let i = f.intersection(w.insetBy(dx: 0, dy: 8)); return !i.isNull && i.height >= f.height * 0.6 }
+        if c.source == "window", let f = c.frame.map(rect), let win = MenuProbe.frontWindowFrame(app), !inView(f, win) {
+            let key = Planner.key(c)
+            var lastText = ""
+            var frame = f, w = win
+            while !Task.isCancelled {
+                // Re-aim every look: if they scrolled past it, say so and point the other way.
+                let down = frame.midY > w.midY
+                let text = down ? "Scroll down until you see **\(c.label)**." : (lastText.isEmpty ? "Scroll up until you see **\(c.label)**."
+                                                                                              : "Scroll back up a little to **\(c.label)**.")
+                if text != lastText {
+                    log("SCROLL \(down ? "down" : "up") to \(c.label)")
+                    show(.guiding, label: "Step \(stepNo)", text: text, hint: "Use two fingers on the trackpad, or the mouse wheel.", target: nil)
+                    lastText = text
+                }
+                try? await Task.sleep(nanoseconds: 350_000_000)
+                if notThis { return false }
+                let s = await read(app)
+                guard let n = s.candidates.first(where: { Planner.key($0) == key }), let nf = n.frame.map(rect),
+                      let nw = MenuProbe.frontWindowFrame(app) else { continue }
+                frame = nf; w = nw
+                if inView(nf, nw) { c = n; log("SCROLL found \(c.label)"); break }
+            }
+        }
 
         if pick.confidence < 0.3, !pick.runnersUp.isEmpty {
             overlay.model.candidates = ([c] + pick.runnersUp.prefix(1)).compactMap { $0.frame.map(rect) }
@@ -239,6 +289,16 @@ final class GuideEngine {
             if notThis { return false }
             if doneTyping { break }
             if c.source == "dock", Self.frontRegularApp()?.localizedName == c.label { break }
+            // The person went to another app: the ring would float over it. Wait quietly until they're back.
+            if c.source == "window", let front = Self.frontRegularApp(), front != app {
+                let name = app.localizedName ?? "your app"
+                show(.detour, label: "Paused", text: "I'll wait. Go back to **\(name)** when you're ready.", hint: "Nothing has been changed.", target: nil)
+                while !Task.isCancelled, let f = Self.frontRegularApp(), f != app { try? await Task.sleep(nanoseconds: 400_000_000) }
+                _ = ClickWatcher.shared.drain()
+                let (t, h) = phrase(c)
+                show(.guiding, label: "Step \(stepNo)", text: t, hint: h, target: ring)
+                continue
+            }
             for e in ClickWatcher.shared.drain() {
                 switch e {
                 case .click(let p):
@@ -275,15 +335,16 @@ final class GuideEngine {
             let openMenu = MenuProbe.openMenuTitle(app)
             let clicks = ClickWatcher.shared.drain().compactMap { e -> CGPoint? in if case .click(let p) = e { return p }; return nil }
             if level == 0 {
-                if openMenu == parts[0] { level = 1; log("MENU opened \(parts[0])"); continue }
+                if openMenu == parts[0] { level = 1; target = nil; log("MENU opened \(parts[0])"); continue }   // the bar ring no longer counts
                 let bar = MenuProbe.barItem(app, title: parts[0])
                 target = bar?.frame
-                let hint = bar.map { $0.left.isEmpty ? "It's at the very top of your screen." : "It's at the very top of your screen, after \($0.left)." } ?? ""
+                var hint = bar.map { $0.left.isEmpty ? "It's at the very top of your screen." : "It's at the very top of your screen, after \($0.left)." } ?? ""
+                if parts[0] == "Apple" { hint = "It's the Apple logo in the top-left corner of your screen." }
                 if let other = openMenu, other != parts[0] {
                     show(.detour, label: "Small detour", text: "That's okay. Click **\(parts[0])** instead.",
                          hint: hint, target: bar?.frame)
                 } else if overlay.model.mode != .guiding || overlay.model.target != bar?.frame {
-                    show(.guiding, label: "Step \(stepNo)", text: "Click **\(parts[0])**.", hint: hint, target: bar?.frame)
+                    show(.guiding, label: "Step \(stepNo)", text: parts[0] == "Apple" ? "Click the **Apple logo**." : "Click **\(parts[0])**.", hint: hint, target: bar?.frame)
                 }
             } else {
                 let last = level == parts.count - 1
@@ -304,6 +365,9 @@ final class GuideEngine {
                         overlay.keepOut = MenuProbe.openMenuFrames(app)
                         show(.guiding, label: "Step \(stepNo)", text: text, hint: last ? "" : "A second list will slide out.", target: ring)
                     }
+                } else if overlay.model.instruction != "Click **\(parts[level])**." {
+                    // Open, but the item isn't readable: still say what to click rather than keep the old ring.
+                    show(.guiding, label: "Step \(stepNo)", text: "Click **\(parts[level])**.", hint: "It's in the list that just opened.", target: nil)
                 }
             }
             try? await Task.sleep(nanoseconds: 120_000_000)
@@ -483,6 +547,14 @@ final class GuideEngine {
 
 /// Reads menu state directly (fast enough to poll): which menu is open, menu bar item frames.
 enum MenuProbe {
+    /// The app's front window, in AX coordinates.
+    static func frontWindowFrame(_ app: NSRunningApplication) -> CGRect? {
+        let root = AXUIElementCreateApplication(app.processIdentifier)
+        guard let w: AXUIElement = AXReader.attr(root, kAXFocusedWindowAttribute) ?? AXReader.attr(root, kAXMainWindowAttribute),
+              let f = AXReader.visibleFrame(w) else { return nil }
+        return CGRect(x: f[0], y: f[1], width: f[2], height: f[3])
+    }
+
     static func bar(_ app: NSRunningApplication) -> [AXUIElement] {
         let root = AXUIElementCreateApplication(app.processIdentifier)
         guard let bar: AXUIElement = AXReader.attr(root, kAXMenuBarAttribute) else { return [] }
@@ -513,8 +585,14 @@ enum MenuProbe {
     static func itemFrame(_ app: NSRunningApplication, path: [String]) -> CGRect? {
         var level = bar(app)
         var el: AXUIElement?
+        // Titles can carry extras ("System Settings…  2 updates") or "..." instead of "…".
+        func norm(_ t: String) -> String { t.replacingOccurrences(of: "...", with: "").replacingOccurrences(of: "…", with: "")
+            .trimmingCharacters(in: .whitespaces).lowercased() }
         for name in path {
-            guard let hit = level.first(where: { AXReader.string($0, kAXTitleAttribute) == name }) else { return nil }
+            let titles = level.map { AXReader.string($0, kAXTitleAttribute) ?? "" }
+            guard let i = titles.firstIndex(of: name) ?? titles.firstIndex(where: { norm($0) == norm(name) })
+                    ?? titles.firstIndex(where: { !norm(name).isEmpty && norm($0).hasPrefix(norm(name)) }) else { return nil }
+            let hit = level[i]
             el = hit
             level = AXReader.children(hit).filter { AXReader.role($0) == "AXMenu" }.flatMap { AXReader.children($0) }
         }

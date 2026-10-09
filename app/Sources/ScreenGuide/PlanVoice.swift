@@ -13,6 +13,13 @@ struct PlanLine {
 enum PlanVoice {
     static var available: Bool { SystemLanguageModel.default.availability == .available }
 
+    /// The plan sentence misreads Taglish ("Hindi" taken as the language), so it's only written for English.
+    static func isEnglish(_ s: String) -> Bool {
+        let taglishWords = ["daw", "ako", "ko", "yung", "ng", "sa", "paano", "naman", "po", "mo", "ang", "kasi", "hindi"]
+        let words = Set(s.lowercased().components(separatedBy: CharacterSet.letters.inverted))
+        return words.intersection(taglishWords).count < 2   // NaturalLanguage has no Tagalog model
+    }
+
     static func prewarm() {
         guard available else { return }
         LanguageModelSession().prewarm()
@@ -81,5 +88,41 @@ enum SettingsRoute {
         if k.contains("storage") || k.contains("software update") { return "General" }
         if k.contains("camera") || k.contains("microphone") || k.contains("privacy") { return "Privacy & Security" }
         return panes.first { let n = $0.lowercased().replacingOccurrences(of: "‑", with: "-"); return n == k || n.hasPrefix(k) || k.hasPrefix(n) }
+    }
+}
+
+/// The memory for a whole journey: Apple's on-device model writes, once, the names the person will click in
+/// order ("System Settings", "Privacy & Security", "Camera", "zoom.us"). Each step, the next name is used only if
+/// it is on screen exactly; otherwise Laya picks. The model sees only the request text, never the screen.
+@Generable
+struct Waypoints {
+    @Guide(description: "2 to 5 names the person clicks, in order, exactly as macOS shows them (Dock apps, sidebar items, list rows, buttons, switches). No menu bar menus. Start with the app to open if it isn't the app in front.")
+    var names: [String]
+}
+
+enum Orchestrator {
+    static func plan(goal: String, app: String) async -> [String] {
+        guard PlanVoice.available else { return [] }
+        let s = LanguageModelSession(instructions: """
+        You know macOS 26 well and help older people. Requests may be in English, Tagalog or Taglish. \\
+        Write the route as the on-screen names they click. Examples: \\
+        "they can't see me on Zoom" -> System Settings, Privacy & Security, Camera, zoom.us. \\
+        "connect my headphones" -> System Settings, Bluetooth. \\
+        "update my mac" -> System Settings, General, Software Update. \\
+        "make the text on the screen bigger" -> System Settings, Accessibility, Display, Text size. \\
+        "turn on wifi" -> System Settings, Wi‑Fi.
+        """)
+        let task = Task { try? await s.respond(to: "App in front: \(app)\nRequest: \(goal)", generating: Waypoints.self,
+                                                 options: GenerationOptions(sampling: .greedy)).content.names }
+        let timeout = Task { try? await Task.sleep(nanoseconds: 3_500_000_000); task.cancel() }
+        let r = await task.value ?? []
+        timeout.cancel()
+        return Array(r.prefix(5))
+    }
+
+    static func same(_ a: String, _ b: String) -> Bool {
+        func n(_ s: String) -> String { s.lowercased().replacingOccurrences(of: "‑", with: "-").replacingOccurrences(of: "…", with: "")
+            .trimmingCharacters(in: .whitespaces) }
+        return n(a) == n(b)
     }
 }

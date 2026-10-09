@@ -216,7 +216,9 @@ enum ScreenReader {
     }
 
     static func clip(_ s: String) -> String {
-        String(s.replacingOccurrences(of: "\n", with: " ").prefix(60))
+        // "Camera, 10" (a count of apps) reads as part of the name; keep just "Camera".
+        let t = s.replacingOccurrences(of: "\n", with: " ").replacingOccurrences(of: #",\s*\d+$"#, with: "", options: .regularExpression)
+        return String(t.prefix(60))
     }
 
     static func friendly(_ r: String) -> String {
