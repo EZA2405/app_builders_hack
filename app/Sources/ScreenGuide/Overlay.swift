@@ -63,6 +63,7 @@ struct BreathingRing: View {
     var breathes = true
     var glow = true
     @State private var up = false
+    @State private var arrived = false
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
@@ -76,12 +77,15 @@ struct BreathingRing: View {
         }
         .frame(width: r.width, height: r.height)
         .shadow(color: glow ? color.opacity(up ? 0.55 : 0.38) : .clear, radius: 14)
-        .scaleEffect(up && !reduceMotion ? 1.035 : 1.0)
+        .scaleEffect(reduceMotion ? 1 : (!arrived ? 1.35 : up ? 1.035 : 1.0))
+        .opacity(arrived ? 1 : 0)
         .position(x: r.midX, y: r.midY)
         .onAppear {
+            // Lands on the target (shrinks in from a little larger), then breathes.
+            withAnimation(.spring(response: 0.35, dampingFraction: 0.75)) { arrived = true }
             guard breathes else { return }
             // Three in-and-out cycles, then rest at the small size.
-            withAnimation(.easeInOut(duration: 1.2).repeatCount(5, autoreverses: true)) { up = true }
+            withAnimation(.easeInOut(duration: 1.2).repeatCount(5, autoreverses: true).delay(0.35)) { up = true }
             Task { try? await Task.sleep(nanoseconds: 6_000_000_000); withAnimation(.easeInOut(duration: 1.2)) { up = false } }
         }
     }
@@ -110,6 +114,7 @@ struct CardView: View {
     @State private var hovering = false
     @State private var idle = false
     @State private var showWhat = false
+    @State private var appeared = false
 
     var warning: Bool { model.label == "Wait" }
     static let pad: CGFloat = 12   // transparent margin around the card, room for the arrow
@@ -159,10 +164,17 @@ struct CardView: View {
                 .shadow(color: .black.opacity(0.08), radius: 3, y: 2)
         )
         .overlay(alignment: arrowAlignment) { arrow }
+        .opacity(appeared ? 1 : 0)
+        .offset(y: appeared ? 0 : (model.arrowEdge == .bottom ? -6 : 6))
+        .scaleEffect(appeared ? 1 : 0.97)
         .padding(Self.pad)
         .onHover { h in withAnimation(.easeOut(duration: 0.15)) { hovering = h } }
         .task(id: model.instruction + "\(model.mode)") {
             idle = false
+            // Each new sentence slides in from the ring's side (fade + 6pt, spring 0.35/0.85).
+            appeared = false
+            try? await Task.sleep(nanoseconds: 20_000_000)
+            withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) { appeared = true }
             try? await Task.sleep(nanoseconds: 8_000_000_000)
             withAnimation(.easeOut(duration: 0.2)) { idle = true }
             // Still nothing after a while longer: dim the rest of the screen around the ring, once.

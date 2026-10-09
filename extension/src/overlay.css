@@ -1,37 +1,38 @@
-/* Tokens from the Beside design handoff, direction A "Liquid Glass" (design/handoff/design_handoff_beside/README.md). */
+/* Gabay v2 tokens (design/gabay_v2/Gabay System.dc.html); mirror app/Sources/ScreenGuide/Theme.swift. */
 :host {
-  --sg-accent: #F08A24;
-  --sg-accent-ink: #B85A00;
-  --sg-surface: rgba(255, 255, 255, .74);
-  --sg-border: rgba(255, 255, 255, .85);
+  --sg-accent: #AF52DE;
+  --sg-accent-ink: #1C1C1E;
+  --sg-surface: rgba(255, 255, 255, .78);
+  --sg-border: rgba(0, 0, 0, .12);
   --sg-text: #1C1C1E;
-  --sg-muted: #48484D;
-  --sg-button: rgba(0, 0, 0, .06);
-  --sg-dim: rgba(0, 0, 0, .45);
-  --sg-glow: 0 0 0 2px #fff, 0 0 0 5px var(--sg-accent), 0 0 0 6px rgba(0, 0, 0, .25), 0 0 22px 6px rgba(240, 138, 36, .5);
-  --sg-shadow: 0 18px 50px rgba(18, 22, 40, .28), 0 2px 8px rgba(18, 22, 40, .14), inset 0 1px 0 rgba(255, 255, 255, .9);
+  --sg-muted: #3A3A3C;
+  --sg-button: rgba(0, 0, 0, .07);
+  --sg-dim: rgba(0, 0, 0, .5);
+  --sg-glow: inset 0 0 0 2px #fff, 0 0 0 4px var(--sg-accent), 0 0 0 5px rgba(0, 0, 0, .22), 0 0 28px 4px rgba(175, 82, 222, .38);
+  --sg-shadow: 0 0 0 .5px rgba(0, 0, 0, .12), 0 12px 32px rgba(0, 0, 0, .16), 0 2px 6px rgba(0, 0, 0, .08);
   --sg-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
   --sg-body-size: 26px;
-  --sg-hint-size: 17px;
-  --sg-small-size: 13px;
-  --sg-button-size: 16px;
-  --sg-radius: 28px;
-  --sg-ring-radius: 8px;
+  --sg-hint-size: 19px;
+  --sg-small-size: 15px;
+  --sg-button-size: 17px;
+  --sg-radius: 18px;
+  --sg-ring-radius: 10px;
   --sg-ring-padding: 4px;
-  --sg-card-gap: 12px;
+  --sg-card-gap: 20px;
   --sg-edge-gap: 8px;
-  --sg-card-width: 360px;
-  --sg-pulse-time: 1.6s;
+  --sg-card-width: 440px;
+  --sg-pulse-time: 2.4s;
 }
 @media (prefers-color-scheme: dark) {
   :host {
-    --sg-accent-ink: #FFB066;
-    --sg-surface: rgba(36, 36, 40, .74);
+    --sg-accent: #BF5AF2;
+    --sg-accent-ink: #F5F5F7;
+    --sg-surface: rgba(36, 36, 40, .78);
     --sg-border: rgba(255, 255, 255, .16);
     --sg-text: #F5F5F7;
     --sg-muted: #D1D1D6;
     --sg-button: rgba(255, 255, 255, .12);
-    --sg-shadow: 0 18px 50px rgba(0, 0, 0, .45), 0 2px 8px rgba(0, 0, 0, .3);
+    --sg-shadow: 0 0 0 .5px rgba(255, 255, 255, .16), 0 12px 32px rgba(0, 0, 0, .4), 0 2px 6px rgba(0, 0, 0, .3);
   }
 }
 * { box-sizing: border-box; }
@@ -45,15 +46,14 @@
 }
 .ring.candidate {
   box-shadow: none;
-  outline: 3px dashed var(--sg-accent);
-  outline-offset: 4px;
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 4px var(--sg-accent), 0 0 0 5px rgba(0, 0, 0, .22);
 }
 .card {
   position: fixed;
   width: var(--sg-card-width);
   max-width: calc(100vw - 2 * var(--sg-edge-gap));
-  padding: 20px 22px;
-  border: 1px solid var(--sg-border);
+  padding: 18px 22px;
+  border: 0;
   border-radius: var(--sg-radius);
   background: var(--sg-surface);
   -webkit-backdrop-filter: blur(30px) saturate(1.8);
@@ -68,19 +68,22 @@
   animation: arrive .35s cubic-bezier(.2, .9, .3, 1);
 }
 .step {
+  display: none;   /* v2: no step counter, one sentence is enough */
   font-size: var(--sg-small-size);
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--sg-muted);
 }
-p { margin: 8px 0; }
-strong { color: var(--sg-accent-ink); font-weight: 700; }
+p { margin: 0 0 6px; }
+p:last-of-type { margin-bottom: 0; }
+strong { color: var(--sg-accent-ink); font-weight: 800; }   /* bold, not tinted: contrast stays high */
 .hint { font-size: var(--sg-hint-size); line-height: 1.41; font-weight: 400; letter-spacing: 0; color: var(--sg-muted); }
-.buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; max-height: 0; opacity: 0; overflow: hidden; transition: opacity .2s, max-height .2s; }
+.card:hover .buttons, .card.idle .buttons, .card:focus-within .buttons { max-height: 120px; opacity: 1; }
 button {
-  min-height: 40px;
-  padding: 8px 16px;
+  min-height: 44px;
+  padding: 8px 18px;
   border: 0;
   border-radius: 999px;
   background: var(--sg-button);
@@ -88,10 +91,11 @@ button {
   font: 600 var(--sg-button-size)/1.2 var(--sg-font);
   cursor: pointer;
 }
-button:hover { background: rgba(240, 138, 36, .16); }
+button:hover { background: rgba(175, 82, 222, .16); }
+button.icon { width: 44px; padding: 0; display: inline-grid; place-items: center; }
 button:focus-visible { outline: 3px solid var(--sg-accent); outline-offset: 2px; }
-@keyframes pulse { 50% { transform: scale(1.08); } }
-@keyframes arrive { from { opacity: 0; transform: translateY(8px); } }
+@keyframes pulse { 50% { transform: scale(1.035); box-shadow: inset 0 0 0 2px #fff, 0 0 0 4px var(--sg-accent), 0 0 0 5px rgba(0, 0, 0, .22), 0 0 28px 4px rgba(175, 82, 222, .55); } }
+@keyframes arrive { from { opacity: 0; transform: translateY(6px); } }
 @media (prefers-reduced-motion: reduce) {
   .ring { animation: none; }
   .card { animation: fade .2s; }
@@ -105,15 +109,15 @@ button:focus-visible { outline: 3px solid var(--sg-accent); outline-offset: 2px;
 }
 .badge {
   position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 22px;
-  height: 22px;
+  top: -19px;
+  left: -19px;
+  width: 30px;
+  height: 30px;
   border: 2px solid #fff;
   border-radius: 50%;
   background: var(--sg-accent);
   color: #fff;
-  font: 700 13px/18px var(--sg-font);
+  font: 700 16px/26px var(--sg-font);
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
 }

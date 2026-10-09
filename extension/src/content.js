@@ -390,7 +390,7 @@
     card = document.createElement("section");
     card.className = "card";
     card.setAttribute("role", "region");
-    card.setAttribute("aria-label", "ScreenGuide instruction");
+    card.setAttribute("aria-label", "Gabay instruction");
     card.setAttribute("aria-live", "polite");
     if (message.step != null) {
       const step = document.createElement("div");
@@ -399,7 +399,7 @@
       card.append(step);
     }
     const instruction = document.createElement("p");
-    instructionText(instruction, sensitive(el) ? "Type your password yourself — I'll look away" : message.instruction);
+    instructionText(instruction, sensitive(el) ? "Type your password here. I won't look." : message.instruction);
     card.append(instruction);
     if (typeof message.hint === "string") {
       const hint = document.createElement("p");
@@ -409,11 +409,15 @@
     }
     const buttons = document.createElement("div");
     buttons.className = "buttons";
-    for (const [action, label] of [["not_this", "Not this one"], ["stuck", "I'm stuck"], ["stop", "Stop"], ["read_aloud", "🔊"]]) {
+    for (const [action, label] of [["not_this", "Not this one"], ["stop", "Stop"], ["read_aloud", ""]]) {
       const button = document.createElement("button");
       button.type = "button";
       button.textContent = label;
-      if (action === "read_aloud") button.setAttribute("aria-label", "Read aloud");
+      if (action === "read_aloud") {
+        button.className = "icon";
+        button.setAttribute("aria-label", "Say it again");
+        button.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>';
+      }
       button.addEventListener("click", () => {
         emit({ type: "card_button", button: action });
         if (action === "again") el.scrollIntoView({ block: "center", behavior: "smooth" });
@@ -423,6 +427,12 @@
     }
     card.append(buttons);
     shadow.append(card);
+    // Quiet until needed: actions show on hover or after 8 s; after 18 s with no progress, dim the page around the ring.
+    const thisCard = card;
+    setTimeout(() => thisCard.classList.add("idle"), 8000);
+    if (!message.candidates?.length && message.style !== "spotlight") {
+      setTimeout(() => { if (card === thisCard && thisCard.isConnected) emit({ type: "card_button", button: "stuck" }); }, 18000);
+    }
     document.documentElement.append(overlay);
     const styled = await loaded;
     if (token !== generation) return { type: "highlight_error", id: message.id, reason: "ref_not_found" };
