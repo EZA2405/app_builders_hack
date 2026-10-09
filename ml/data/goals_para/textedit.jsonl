@@ -1,0 +1,68 @@
+{"goal": "the writing is too small", "answer": "Format > Font > Bigger", "alts": []}
+{"goal": "can the text be larger", "answer": "Format > Font > Bigger", "alts": []}
+{"goal": "pakilaki ng letters, ang liit", "answer": "Format > Font > Bigger", "alts": []}
+{"goal": "i cant read it, make the words bigger", "answer": "Format > Font > Bigger", "alts": []}
+{"goal": "the letters are huge, make them littler", "answer": "Format > Font > Smaller", "alts": []}
+{"goal": "shrink the text a little", "answer": "Format > Font > Smaller", "alts": []}
+{"goal": "take back what i just typed", "answer": "Edit > Undo Typing", "alts": []}
+{"goal": "go back one step", "answer": "Edit > Undo Typing", "alts": []}
+{"goal": "i messed up what i typed, put it how it was", "answer": "Edit > Undo Typing", "alts": []}
+{"goal": "erase what i just wrote and bring back the old words", "answer": "Edit > Undo Typing", "alts": []}
+{"goal": "i want a clean empty document", "answer": "File > New", "alts": []}
+{"goal": "bigyan mo ako ng bagong blank na page", "answer": "File > New", "alts": []}
+{"goal": "i-save mo to para di mawala", "answer": "File > Save…", "alts": []}
+{"goal": "store my letter on the computer", "answer": "File > Save…", "alts": []}
+{"goal": "i need this on paper", "answer": "File > Print…", "alts": []}
+{"goal": "send this to the printer", "answer": "File > Print…", "alts": []}
+{"goal": "ipa-print mo to", "answer": "File > Print…", "alts": []}
+{"goal": "can i get a paper copy", "answer": "File > Print…", "alts": []}
+{"goal": "i want a second version with a new name and keep the first one too", "answer": "File > Save As…", "alts": ["File > Duplicate"]}
+{"goal": "make a separate copy under another name", "answer": "File > Save As…", "alts": ["File > Duplicate"]}
+{"goal": "i want this as a pdf to email", "answer": "File > Export as PDF…", "alts": []}
+{"goal": "how do i send this letter as a pdf", "answer": "File > Export as PDF…", "alts": []}
+{"goal": "buksan mo yung sulat ko nung isang linggo", "answer": "File > Open…", "alts": []}
+{"goal": "find and open an old letter i wrote", "answer": "File > Open…", "alts": []}
+{"goal": "done with this document, shut it", "answer": "File > Close", "alts": []}
+{"goal": "close this window im finished", "answer": "File > Close", "alts": []}
+{"goal": "make these words heavier and darker", "answer": "Format > Font > Bold", "alts": []}
+{"goal": "i want this text to stand out more", "answer": "Format > Font > Bold", "alts": []}
+{"goal": "how do i make text bold", "answer": "Format > Font > Bold", "alts": []}
+{"goal": "pano gawing makapal yung letters", "answer": "Format > Font > Bold", "alts": []}
+{"goal": "slant the letters like handwriting", "answer": "Format > Font > Italic", "alts": []}
+{"goal": "i want these words tilted", "answer": "Format > Font > Italic", "alts": []}
+{"goal": "put a line beneath this word", "answer": "Format > Font > Underline", "alts": []}
+{"goal": "i want a line below this", "answer": "Format > Font > Underline", "alts": []}
+{"goal": "move the title to the middle", "answer": "Format > Text > Center", "alts": []}
+{"goal": "i want the heading in the middle not on the left", "answer": "Format > Text > Center", "alts": []}
+{"goal": "i want dots in front of each line", "answer": "Format > List…", "alts": []}
+{"goal": "how do i start each line with a dot", "answer": "Format > List…", "alts": []}
+{"goal": "saan ko nasulat yung birthday, di ko makita", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "search for the word birthday", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "swap every Tuesday for Wednesday all at once", "answer": "Edit > Find > Find and Replace…", "alts": []}
+{"goal": "change all the Tuesdays to Wednesdays in one go", "answer": "Edit > Find > Find and Replace…", "alts": []}
+{"goal": "are there any misspelled words", "answer": "Edit > Spelling and Grammar > Check Document Now", "alts": []}
+{"goal": "look over my letter for typos", "answer": "Edit > Spelling and Grammar > Check Document Now", "alts": []}
+{"goal": "read this out loud", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "i'd rather hear this than read it", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "be quiet now", "answer": "Edit > Speech > Stop Speaking", "alts": []}
+{"goal": "ok tama na, stop reading", "answer": "Edit > Speech > Stop Speaking", "alts": []}
+{"goal": "typing hurts my hands, can i talk and it types", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "i want to speak and see the words appear", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "add a smiley", "answer": "Edit > Emoji & Symbols", "alts": []}
+{"goal": "i want to put a little face in my letter", "answer": "Edit > Emoji & Symbols", "alts": []}
+{"goal": "make every letter a capital", "answer": "Edit > Transformations > Make Upper Case", "alts": []}
+{"goal": "change this to all capital letters", "answer": "Edit > Transformations > Make Upper Case", "alts": []}
+{"goal": "i want prettier letters", "answer": "Format > Font > Show Fonts", "alts": []}
+{"goal": "change the look of the writing to something nicer", "answer": "Format > Font > Show Fonts", "alts": []}
+{"goal": "make the words red instead of black", "answer": "Format > Font > Show Colors", "alts": []}
+{"goal": "i want red letters", "answer": "Format > Font > Show Colors", "alts": []}
+{"goal": "start a new page here", "answer": "Edit > Insert > Page Break", "alts": []}
+{"goal": "push the next part onto a fresh page", "answer": "Edit > Insert > Page Break", "alts": []}
+{"goal": "everything is too small, make it bigger on the screen", "answer": "View > Zoom In", "alts": []}
+{"goal": "ang liit ng lahat, palakihin mo sa screen", "answer": "View > Zoom In", "alts": []}
+{"goal": "i want this to take up the whole monitor", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "hide everything else so its just my document", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "highlight this sentence in blue", "answer": "Format > Font > Highlight > Blue", "alts": []}
+{"goal": "put blue behind this sentence like a marker", "answer": "Format > Font > Highlight > Blue", "alts": []}
+{"goal": "pick all the text on this page", "answer": "Edit > Select All", "alts": []}
+{"goal": "take everything in the document at once", "answer": "Edit > Select All", "alts": []}

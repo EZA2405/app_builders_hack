@@ -1,0 +1,64 @@
+{"goal": "mark this line with the yellow marker", "answer": "Edit > Highlight > Yellow", "alts": []}
+{"goal": "color this sentance yellow", "answer": "Edit > Highlight > Yellow", "alts": []}
+{"goal": "put green on this bit so i can spot it again", "answer": "Edit > Highlight > Green", "alts": []}
+{"goal": "use the green color on this part, i want to come back to it", "answer": "Edit > Highlight > Green", "alts": []}
+{"goal": "i want to remember which page im on", "answer": "Edit > Bookmark Page", "alts": []}
+{"goal": "keep my place in the book so i can return later", "answer": "Edit > Bookmark Page", "alts": []}
+{"goal": "let me jot down a thought next to this paragraph", "answer": "Edit > Highlight > Add Note", "alts": []}
+{"goal": "i want to add my own comment on this part", "answer": "Edit > Highlight > Add Note", "alts": []}
+{"goal": "erase the color i put on these words", "answer": "Edit > Highlight > Remove", "alts": []}
+{"goal": "i marked this by mistake, clear the marking", "answer": "Edit > Highlight > Remove", "alts": []}
+{"goal": "put a line beneath these words", "answer": "Edit > Highlight > Underline", "alts": []}
+{"goal": "i want a line running underneath this sentence", "answer": "Edit > Highlight > Underline", "alts": []}
+{"goal": "search the book for one particular word", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "where in this book does it say garden", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "i want the book read to me", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "can the computer say the words aloud so i can just listen", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "quit reading it aloud", "answer": "Edit > Speech > Stop Speaking", "alts": []}
+{"goal": "be quiet now, no more voice", "answer": "Edit > Speech > Stop Speaking", "alts": []}
+{"goal": "wait, hold the audiobook for a sec", "answer": "Controls > Pause", "alts": []}
+{"goal": "someone is at the door, freeze the story where it is", "answer": "Controls > Pause", "alts": []}
+{"goal": "jump forward a little", "answer": "Controls > Skip Forward", "alts": []}
+{"goal": "move ahead a few seconds in the story", "answer": "Controls > Skip Forward", "alts": []}
+{"goal": "the reader is going way too quick for me", "answer": "Controls > Playback Speed > 0.75x", "alts": []}
+{"goal": "i cant keep up with the voice, slower please", "answer": "Controls > Playback Speed > 0.75x", "alts": []}
+{"goal": "make the narrator go a bit quicker", "answer": "Controls > Playback Speed > 1.25x", "alts": []}
+{"goal": "its dragging, hurry the reading up a little", "answer": "Controls > Playback Speed > 1.25x", "alts": []}
+{"goal": "put the pace back to regular", "answer": "Controls > Playback Speed > 1x", "alts": []}
+{"goal": "go back to the usual speed, not fast or slow", "answer": "Controls > Playback Speed > 1x", "alts": []}
+{"goal": "shut the audiobook off in 30 min, im going to bed", "answer": "Controls > Sleep Timer > 30 minutes", "alts": []}
+{"goal": "i fall asleep listening, stop it after half an hour", "answer": "Controls > Sleep Timer > 30 minutes", "alts": []}
+{"goal": "stop once this chapter finishes", "answer": "Controls > Sleep Timer > When current chapter ends", "alts": []}
+{"goal": "let it play to the end of this chapter and then go quiet", "answer": "Controls > Sleep Timer > When current chapter ends", "alts": []}
+{"goal": "move on to the chapter after this one", "answer": "Controls > Next Chapter", "alts": []}
+{"goal": "skip ahead to the following chapter", "answer": "Controls > Next Chapter", "alts": []}
+{"goal": "start this chapter over", "answer": "Controls > Beginning of Chapter", "alts": []}
+{"goal": "take me back to where this chapter began", "answer": "Controls > Beginning of Chapter", "alts": []}
+{"goal": "i cant hear it, turn it up", "answer": "Controls > Increase Volume", "alts": []}
+{"goal": "a bit louder, my ears arent great", "answer": "Controls > Increase Volume", "alts": []}
+{"goal": "turn it down a bit", "answer": "Controls > Decrease Volume", "alts": []}
+{"goal": "the sound is hurting my ears", "answer": "Controls > Decrease Volume", "alts": []}
+{"goal": "i want to start reading the one i selected", "answer": "File > Open Book", "alts": []}
+{"goal": "open this one up so i can read it", "answer": "File > Open Book", "alts": []}
+{"goal": "how do i get a pdf from my computer into books", "answer": "File > Import…", "alts": []}
+{"goal": "add a document i have saved into my library", "answer": "File > Import…", "alts": []}
+{"goal": "i want a separate section for my recipe books", "answer": "File > New Collection", "alts": []}
+{"goal": "make a group to keep all my cookbooks together", "answer": "File > New Collection", "alts": []}
+{"goal": "show just the titles in rows, no covers", "answer": "View > List", "alts": []}
+{"goal": "i dont want the pictures, put them one under another", "answer": "View > List", "alts": []}
+{"goal": "line up the covers like on a bookshelf", "answer": "View > Grid", "alts": []}
+{"goal": "go back to showing the pictures of the books", "answer": "View > Grid", "alts": []}
+{"goal": "make this take up the entire monitor", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "i want it as big as possible, no edges", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "i want to grab these lines to paste somewhere", "answer": "Edit > Copy", "alts": []}
+{"goal": "duplicate this paragraph to my clipboard", "answer": "Edit > Copy", "alts": []}
+{"goal": "lagyan mo ng yellow tong sentence", "answer": "Edit > Highlight > Yellow", "alts": []}
+{"goal": "make these words yellow like a marker", "answer": "Edit > Highlight > Yellow", "alts": []}
+{"goal": "masyadong mabilis magsalita yung narrator", "answer": "Controls > Playback Speed > 0.75x", "alts": []}
+{"goal": "slow down the voice reading to me", "answer": "Controls > Playback Speed > 0.75x", "alts": []}
+{"goal": "turn off the book in fifteen minutes", "answer": "Controls > Sleep Timer > 15 minutes", "alts": []}
+{"goal": "stop it after 15 min, inaantok na ako", "answer": "Controls > Sleep Timer > 15 minutes", "alts": []}
+{"goal": "read this page to me pls", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "i want to listen to this instead of reading it myself", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "im done reading, shut this", "answer": "File > Close", "alts": []}
+{"goal": "put this book away now", "answer": "File > Close", "alts": []}

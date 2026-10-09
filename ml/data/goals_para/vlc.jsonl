@@ -1,0 +1,70 @@
+{"goal": "i want to watch a movie i saved on my computer", "answer": "File > Open File...", "alts": []}
+{"goal": "play a video file thats on my mac", "answer": "File > Open File...", "alts": []}
+{"goal": "i put a dvd in, play it", "answer": "File > Open Disc...", "alts": []}
+{"goal": "watch the disc i just inserted", "answer": "File > Open Disc...", "alts": []}
+{"goal": "play a video from a link", "answer": "File > Open Network...", "alts": []}
+{"goal": "someone sent me a web address of a video, watch it here", "answer": "File > Open Network...", "alts": []}
+{"goal": "pause", "answer": "Playback > Play", "alts": []}
+{"goal": "pa-pause muna", "answer": "Playback > Play", "alts": []}
+{"goal": "stop playing", "answer": "Playback > Stop", "alts": []}
+{"goal": "make the video stop altogether", "answer": "Playback > Stop", "alts": []}
+{"goal": "go to the next video", "answer": "Playback > Next", "alts": []}
+{"goal": "play the next one in the list", "answer": "Playback > Next", "alts": []}
+{"goal": "play the one before", "answer": "Playback > Previous", "alts": []}
+{"goal": "go back to the previous video", "answer": "Playback > Previous", "alts": []}
+{"goal": "i want to go straight to 45 minutes in", "answer": "Playback > Jump to Time", "alts": []}
+{"goal": "skip ahead to minute 45", "answer": "Playback > Jump to Time", "alts": []}
+{"goal": "play my songs jumbled up, not in order", "answer": "Playback > Random", "alts": []}
+{"goal": "shuffle my music", "answer": "Playback > Random", "alts": []}
+{"goal": "play this one song again and again", "answer": "Playback > Repeat One", "alts": []}
+{"goal": "loop just this track", "answer": "Playback > Repeat One", "alts": []}
+{"goal": "turn it up", "answer": "Audio > Increase Volume", "alts": []}
+{"goal": "di ko marinig, lakasan mo", "answer": "Audio > Increase Volume", "alts": []}
+{"goal": "hinaan mo naman, ang lakas", "answer": "Audio > Decrease Volume", "alts": []}
+{"goal": "the sound is too much, lower it", "answer": "Audio > Decrease Volume", "alts": []}
+{"goal": "silence the sound for a moment", "answer": "Audio > Mute", "alts": []}
+{"goal": "no sound for a sec, i'm on the phone", "answer": "Audio > Mute", "alts": []}
+{"goal": "buong screen naman yung movie", "answer": "Video > Fullscreen", "alts": []}
+{"goal": "i want it as big as my monitor", "answer": "Video > Fullscreen", "alts": []}
+{"goal": "save a picture of this moment", "answer": "Video > Snapshot", "alts": []}
+{"goal": "capture this frame as a photo", "answer": "Video > Snapshot", "alts": []}
+{"goal": "keep the video above my other windows", "answer": "Video > Float on Top", "alts": []}
+{"goal": "i want the movie to stay in front while i do other things", "answer": "Video > Float on Top", "alts": []}
+{"goal": "the window is too small, make it twice the size", "answer": "Video > Double Size", "alts": []}
+{"goal": "make the video window two times bigger", "answer": "Video > Double Size", "alts": []}
+{"goal": "i have a separate file with the movie's text, load it", "answer": "Subtitles > Add Subtitle File...", "alts": []}
+{"goal": "i downloaded captions for this film, how do i add them", "answer": "Subtitles > Add Subtitle File...", "alts": []}
+{"goal": "the captions at the bottom are tiny", "answer": "Subtitles > Text Size > Larger", "alts": ["Subtitles > Text Size > Large"]}
+{"goal": "i cant read the text under the movie, bigger pls", "answer": "Subtitles > Text Size > Larger", "alts": ["Subtitles > Text Size > Large"]}
+{"goal": "make the text under the movie yellow", "answer": "Subtitles > Text Color > Yellow", "alts": []}
+{"goal": "i want the captions in yellow", "answer": "Subtitles > Text Color > Yellow", "alts": []}
+{"goal": "the video is too big, make it half", "answer": "Video > Half Size", "alts": []}
+{"goal": "shrink the window to half", "answer": "Video > Half Size", "alts": []}
+{"goal": "reset the video to its regular size", "answer": "Video > Normal Size", "alts": []}
+{"goal": "go back to the usual window size", "answer": "Video > Normal Size", "alts": []}
+{"goal": "when the list finishes start over from the first one", "answer": "Playback > Repeat All", "alts": []}
+{"goal": "loop the whole playlist", "answer": "Playback > Repeat All", "alts": []}
+{"goal": "change this video so my tablet can play it", "answer": "File > Convert / Stream...", "alts": []}
+{"goal": "i need this video in a format that works on my tablet", "answer": "File > Convert / Stream...", "alts": []}
+{"goal": "saan naka-save tong video sa computer ko", "answer": "File > Reveal in Finder", "alts": []}
+{"goal": "show me the folder this video is in", "answer": "File > Reveal in Finder", "alts": []}
+{"goal": "keep this list of videos for another day", "answer": "File > Save Playlist...", "alts": []}
+{"goal": "save my list so i can play these again later", "answer": "File > Save Playlist...", "alts": []}
+{"goal": "record what's playing now", "answer": "Playback > Record", "alts": []}
+{"goal": "capture what's on right now", "answer": "Playback > Record", "alts": []}
+{"goal": "go forward one frame", "answer": "Playback > Step Forward", "alts": []}
+{"goal": "move the video one tiny bit at a time", "answer": "Playback > Step Forward", "alts": []}
+{"goal": "how do i repeat just one part of the video", "answer": "Playback > A→B Loop", "alts": []}
+{"goal": "i want to loop a section of this video", "answer": "Playback > A→B Loop", "alts": []}
+{"goal": "lakasan mo yung sound", "answer": "Audio > Increase Volume", "alts": []}
+{"goal": "pakilakas naman", "answer": "Audio > Increase Volume", "alts": []}
+{"goal": "close vlc automatically when the movie is done", "answer": "Playback > Quit after Playback", "alts": []}
+{"goal": "i want the player to shut itself after this ends", "answer": "Playback > Quit after Playback", "alts": []}
+{"goal": "where's the help for this player", "answer": "Help > VLC media player Help...", "alts": []}
+{"goal": "how do i learn to use vlc", "answer": "Help > VLC media player Help...", "alts": []}
+{"goal": "i want to change the options", "answer": "VLC > Settings…", "alts": []}
+{"goal": "where do i adjust how vlc behaves", "answer": "VLC > Settings…", "alts": []}
+{"goal": "make the video fit my screen exactly", "answer": "Video > Fit to Screen", "alts": []}
+{"goal": "pakisakto sa screen yung video", "answer": "Video > Fit to Screen", "alts": []}
+{"goal": "pa-screenshot ng video na to", "answer": "Video > Snapshot", "alts": []}
+{"goal": "how do i take a picture of this video", "answer": "Video > Snapshot", "alts": []}

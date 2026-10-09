@@ -1,0 +1,68 @@
+{"goal": "put someone new in my contacts", "answer": "File > New Card", "alts": []}
+{"goal": "i need to save my new neighbors details", "answer": "File > New Card", "alts": []}
+{"goal": "a separate list for just my relatives", "answer": "File > New Group", "alts": []}
+{"goal": "keep my kids and grandkids together in their own list", "answer": "File > New Group", "alts": []}
+{"goal": "keep the changes i made", "answer": "File > Save", "alts": []}
+{"goal": "save this pls", "answer": "File > Save", "alts": []}
+{"goal": "load the contacts file from my old phone", "answer": "File > Import…", "alts": []}
+{"goal": "i have an address file from my previous phone, bring it in here", "answer": "File > Import…", "alts": []}
+{"goal": "send someones info as a file", "answer": "File > Export > Export vCard…", "alts": []}
+{"goal": "make a contact file of this one person to send", "answer": "File > Export > Export vCard…", "alts": []}
+{"goal": "back up everyone in case my computer breaks", "answer": "File > Export > Contacts Archive…", "alts": []}
+{"goal": "make a safety copy of all my contacts", "answer": "File > Export > Contacts Archive…", "alts": []}
+{"goal": "i want a paper copy of my phone numbers", "answer": "File > Print…", "alts": []}
+{"goal": "print my address book", "answer": "File > Print…", "alts": []}
+{"goal": "turn this into a pdf", "answer": "File > Export as PDF…", "alts": []}
+{"goal": "make a pdf of this", "answer": "File > Export as PDF…", "alts": []}
+{"goal": "i removed the wrong person, bring them back", "answer": "Edit > Undo", "alts": []}
+{"goal": "oops that was a mistake, take it back", "answer": "Edit > Undo", "alts": []}
+{"goal": "erase this contact for good", "answer": "Edit > Delete", "alts": []}
+{"goal": "get rid of this person entirely", "answer": "Edit > Delete", "alts": []}
+{"goal": "take him out of this group but keep him in my contacts", "answer": "Edit > Remove From List", "alts": []}
+{"goal": "she shouldnt be in this group anymore, but keep her number", "answer": "Edit > Remove From List", "alts": []}
+{"goal": "search for my dentist", "answer": "Edit > Find > Find", "alts": []}
+{"goal": "where is the number for my doctor", "answer": "Edit > Find > Find", "alts": []}
+{"goal": "her number is different now, update it", "answer": "Edit > Edit Card", "alts": []}
+{"goal": "i need to correct someones address", "answer": "Edit > Edit Card", "alts": []}
+{"goal": "call my group something else", "answer": "Edit > Rename Group", "alts": []}
+{"goal": "the family list needs a different title", "answer": "Edit > Rename Group", "alts": []}
+{"goal": "this person shows up two times", "answer": "Card > Look for Duplicates…", "alts": ["Card > Merge Selected Cards "]}
+{"goal": "some people are in my list twice", "answer": "Card > Look for Duplicates…", "alts": ["Card > Merge Selected Cards "]}
+{"goal": "join these two contacts into one", "answer": "Card > Merge Selected Cards ", "alts": []}
+{"goal": "these are the same person, make them a single entry", "answer": "Card > Merge Selected Cards ", "alts": []}
+{"goal": "i want to save her date of birth", "answer": "Card > Add Field > Birthday", "alts": []}
+{"goal": "where do i put when his birthday is", "answer": "Card > Add Field > Birthday", "alts": []}
+{"goal": "she has another number, where does it go", "answer": "Card > Add Field > Phone", "alts": []}
+{"goal": "put an extra phone on this person", "answer": "Card > Add Field > Phone", "alts": []}
+{"goal": "where do i type their email", "answer": "Card > Add Field > Email", "alts": []}
+{"goal": "add an email adress for him", "answer": "Card > Add Field > Email", "alts": []}
+{"goal": "put in where they live", "answer": "Card > Add Field > Address", "alts": []}
+{"goal": "i want to add their street and city", "answer": "Card > Add Field > Address", "alts": []}
+{"goal": "the grandkids call him lolo, how do i put that", "answer": "Card > Add Field > Nickname", "alts": []}
+{"goal": "add the short name we call her by", "answer": "Card > Add Field > Nickname", "alts": []}
+{"goal": "this one is a shop not a person", "answer": "Card > Mark as a Company", "alts": []}
+{"goal": "this is a store, not someone i know", "answer": "Card > Mark as a Company", "alts": []}
+{"goal": "i want her face to show on her contact", "answer": "Card > Choose Custom Image…", "alts": []}
+{"goal": "add a picture to this person", "answer": "Card > Choose Custom Image…", "alts": []}
+{"goal": "remove the photo from this one", "answer": "Card > Clear Custom Image", "alts": []}
+{"goal": "i dont want a picture on this contact", "answer": "Card > Clear Custom Image", "alts": []}
+{"goal": "this contact is me", "answer": "Card > Make This My Card", "alts": []}
+{"goal": "set this one as my own info", "answer": "Card > Make This My Card", "alts": []}
+{"goal": "show my own details", "answer": "Card > Go to My Card", "alts": []}
+{"goal": "where is my contact, the one about me", "answer": "Card > Go to My Card", "alts": []}
+{"goal": "send my contact info by email", "answer": "Card > Share My Card > Email My Card", "alts": []}
+{"goal": "email my info to my new friend", "answer": "Card > Share My Card > Email My Card", "alts": []}
+{"goal": "send my number to my neighbor by text", "answer": "Card > Share My Card > Message My Card", "alts": []}
+{"goal": "i want to text someone my contact details", "answer": "Card > Share My Card > Message My Card", "alts": []}
+{"goal": "go to the one after this", "answer": "Card > Go to Next Card", "alts": []}
+{"goal": "show me the contact below this one", "answer": "Card > Go to Next Card", "alts": []}
+{"goal": "back to the last contact", "answer": "Card > Go to Previous Card", "alts": []}
+{"goal": "the one i was looking at before this", "answer": "Card > Go to Previous Card", "alts": []}
+{"goal": "paano ilagay yung trabaho niya", "answer": "Card > Add Field > Job Title", "alts": []}
+{"goal": "where do i add what their job is", "answer": "Card > Add Field > Job Title", "alts": []}
+{"goal": "open this contact in a window by itself", "answer": "Card > Open in Separate Window", "alts": []}
+{"goal": "pop this person out on its own", "answer": "Card > Open in Separate Window", "alts": []}
+{"goal": "itago yung groups sa side", "answer": "View > Hide Groups", "alts": []}
+{"goal": "the list of groups on the left, make it go away", "answer": "View > Hide Groups", "alts": []}
+{"goal": "make this fill the screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "make it bigger, the entire monitor", "answer": "View > Enter Full Screen", "alts": []}

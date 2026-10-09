@@ -1,0 +1,64 @@
+{"goal": "i want to start a collection of songs i love", "answer": "File > New Playlist", "alts": []}
+{"goal": "make a new mix of my favorite music", "answer": "File > New Playlist", "alts": []}
+{"goal": "group all my song lists into one", "answer": "File > New Playlist Folder", "alts": []}
+{"goal": "i have too many playlists, bundle them together in one place", "answer": "File > New Playlist Folder", "alts": []}
+{"goal": "find a song", "answer": "Edit > Search", "alts": []}
+{"goal": "hanapin mo yung kanta", "answer": "Edit > Search", "alts": []}
+{"goal": "theres an old song from way back i want to hear, how do i find it", "answer": "Edit > Search", "alts": []}
+{"goal": "i remember a sweet love song from years ago, how do i look it up", "answer": "Edit > Search", "alts": []}
+{"goal": "in this playlist show only the songs with the word rain in the title", "answer": "Edit > Filter", "alts": []}
+{"goal": "narrow this list down to the songs called something with rain", "answer": "Edit > Filter", "alts": []}
+{"goal": "the writing is too tiny", "answer": "View > Zoom In", "alts": []}
+{"goal": "i can barely read the text, make it bigger", "answer": "View > Zoom In", "alts": []}
+{"goal": "everything is too big now, shrink it", "answer": "View > Zoom Out", "alts": []}
+{"goal": "it got too large, make it littler", "answer": "View > Zoom Out", "alts": []}
+{"goal": "take me to the previous screen", "answer": "View > Go Back", "alts": []}
+{"goal": "return to where i was a second ago", "answer": "View > Go Back", "alts": []}
+{"goal": "make spotify take up the entire monitor", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "i want it as big as the whole screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "pahinto muna ng kanta saglit", "answer": "Playback > Play", "alts": []}
+{"goal": "hold the music a sec", "answer": "Playback > Play", "alts": []}
+{"goal": "dont like this one, next", "answer": "Playback > Next", "alts": []}
+{"goal": "go to the following song", "answer": "Playback > Next", "alts": []}
+{"goal": "play the song before this one again", "answer": "Playback > Previous", "alts": []}
+{"goal": "go back one song", "answer": "Playback > Previous", "alts": []}
+{"goal": "jump ahead a few seconds", "answer": "Playback > Seek Forward", "alts": []}
+{"goal": "skip forward a bit in this song", "answer": "Playback > Seek Forward", "alts": []}
+{"goal": "go back a little, i didnt catch that", "answer": "Playback > Seek Backward", "alts": []}
+{"goal": "back up the song a few seconds", "answer": "Playback > Seek Backward", "alts": []}
+{"goal": "play the songs in random order", "answer": "Playback > Shuffle", "alts": []}
+{"goal": "jumble up what plays next", "answer": "Playback > Shuffle", "alts": []}
+{"goal": "when the playlist ends start it again", "answer": "Playback > Repeat", "alts": []}
+{"goal": "loop this list", "answer": "Playback > Repeat", "alts": []}
+{"goal": "lakasan mo pa", "answer": "Playback > Volume Up", "alts": []}
+{"goal": "i cant hear it, louder", "answer": "Playback > Volume Up", "alts": []}
+{"goal": "turn it down a bit", "answer": "Playback > Volume Down", "alts": []}
+{"goal": "ang ingay, hinaan mo", "answer": "Playback > Volume Down", "alts": []}
+{"goal": "i dont want anyone seeing what songs im playing", "answer": "Spotify > Private Session", "alts": []}
+{"goal": "hide my listening from my friends", "answer": "Spotify > Private Session", "alts": []}
+{"goal": "i'll be on a flight without wifi, i still want my music", "answer": "Spotify > Offline Mode", "alts": []}
+{"goal": "how do i listen when i have no internet", "answer": "Spotify > Offline Mode", "alts": []}
+{"goal": "i want to get out of my account on this mac", "answer": "Spotify > Log Out", "alts": []}
+{"goal": "disconnect my spotify login from this computer", "answer": "Spotify > Log Out", "alts": []}
+{"goal": "i want to adjust the options", "answer": "Spotify > Settings…", "alts": []}
+{"goal": "where do i change how spotify behaves", "answer": "Spotify > Settings…", "alts": []}
+{"goal": "shut down spotify all the way", "answer": "Spotify > Quit Spotify", "alts": []}
+{"goal": "exit the app completely", "answer": "Spotify > Quit Spotify", "alts": []}
+{"goal": "i deleted that by accident, get it back", "answer": "Edit > Undo", "alts": []}
+{"goal": "take back what i just did", "answer": "Edit > Undo", "alts": []}
+{"goal": "remove this song from my playlist", "answer": "Edit > Delete", "alts": []}
+{"goal": "i dont want this track in my list anymore", "answer": "Edit > Delete", "alts": []}
+{"goal": "i want to share this song with my daughter, get me the link", "answer": "Edit > Copy", "alts": []}
+{"goal": "how do i grab the address of this track to send", "answer": "Edit > Copy", "alts": []}
+{"goal": "how do i use this app", "answer": "Help > Spotify Help", "alts": []}
+{"goal": "where can i get instructions for spotify", "answer": "Help > Spotify Help", "alts": []}
+{"goal": "get spotify off my screen but dont stop the music", "answer": "Spotify > Hide Spotify", "alts": []}
+{"goal": "tuck the window away while the song keeps going", "answer": "Spotify > Hide Spotify", "alts": []}
+{"goal": "pakilakas yung music", "answer": "Playback > Volume Up", "alts": []}
+{"goal": "make the song louder pls", "answer": "Playback > Volume Up", "alts": []}
+{"goal": "how do i make a new list of songs", "answer": "File > New Playlist", "alts": []}
+{"goal": "gawa tayo ng bagong playlist", "answer": "File > New Playlist", "alts": []}
+{"goal": "next song na", "answer": "Playback > Next", "alts": []}
+{"goal": "lipat sa kasunod na kanta", "answer": "Playback > Next", "alts": []}
+{"goal": "random order naman ng mga kanta", "answer": "Playback > Shuffle", "alts": []}
+{"goal": "pa-halo-halo yung pagkakasunod ng songs", "answer": "Playback > Shuffle", "alts": []}

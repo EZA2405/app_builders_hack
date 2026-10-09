@@ -1,0 +1,64 @@
+{"goal": "i need the one with sin cos and square root keys", "answer": "View > Scientific", "alts": []}
+{"goal": "the fancy calculator for math class with all the extra keys", "answer": "View > Scientific", "alts": []}
+{"goal": "switch back to the normal plain calculator", "answer": "View > Basic", "alts": []}
+{"goal": "too many buttons, i want the easy one again", "answer": "View > Basic", "alts": []}
+{"goal": "how many cm is 5 inches", "answer": "View > Convert", "alts": []}
+{"goal": "turn pounds into kilos for me", "answer": "View > Convert", "alts": []}
+{"goal": "what did i add up earlier", "answer": "View > Show History", "alts": []}
+{"goal": "show me the sums i did a while ago", "answer": "View > Show History", "alts": []}
+{"goal": "where are my previous answers", "answer": "View > Show History", "alts": []}
+{"goal": "i want to look back at the math i did before", "answer": "View > Show History", "alts": []}
+{"goal": "grab the result so i can paste it in an email", "answer": "Edit > Copy", "alts": []}
+{"goal": "take the number on the screen so i can put it somewhere else", "answer": "Edit > Copy", "alts": []}
+{"goal": "drop in the number i copied", "answer": "Edit > Paste", "alts": []}
+{"goal": "put the number from earlier in here, the one i saved", "answer": "Edit > Paste", "alts": []}
+{"goal": "oops take that back", "answer": "Edit > Undo", "alts": []}
+{"goal": "reverse what i just did", "answer": "Edit > Undo", "alts": []}
+{"goal": "wrong key, go back one step", "answer": "Edit > Undo", "alts": []}
+{"goal": "i hit the wrong buton, take it back", "answer": "Edit > Undo", "alts": []}
+{"goal": "actually i want that back the way it was", "answer": "Edit > Redo", "alts": []}
+{"goal": "i took it back by mistake, reapply it", "answer": "Edit > Redo", "alts": []}
+{"goal": "show it like dollars and cents", "answer": "View > Decimal Places > 2", "alts": []}
+{"goal": "round it to 2 digits after the point", "answer": "View > Decimal Places > 2", "alts": []}
+{"goal": "round it off, no point at all", "answer": "View > Decimal Places > 0", "alts": []}
+{"goal": "i dont want any digits after the dot", "answer": "View > Decimal Places > 0", "alts": []}
+{"goal": "show four digits after the point", "answer": "View > Decimal Places > 4", "alts": []}
+{"goal": "i need the answer to 4 places", "answer": "View > Decimal Places > 4", "alts": []}
+{"goal": "a single digit after the dot is fine", "answer": "View > Decimal Places > 1", "alts": []}
+{"goal": "round it to one place after the point", "answer": "View > Decimal Places > 1", "alts": []}
+{"goal": "the commas in big numbers confuse me, remove them", "answer": "View > Hide Thousands Separator", "alts": []}
+{"goal": "i want 1000000 without the little commas", "answer": "View > Hide Thousands Separator", "alts": []}
+{"goal": "make the calculator fill my whole monitor", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "i want it as big as the screen can go", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "i want to write out my sums like on paper", "answer": "View > Math Notes…", "alts": []}
+{"goal": "a page where i can type my math like a notebook", "answer": "View > Math Notes…", "alts": []}
+{"goal": "the calculator for computer numbers like binary", "answer": "View > Programmer", "alts": []}
+{"goal": "i need hexadecimal for my grandsons homework", "answer": "View > Programmer", "alts": []}
+{"goal": "the kind where you enter the numbers first then the operation", "answer": "View > RPN Mode", "alts": []}
+{"goal": "the old hp style where the plus comes after", "answer": "View > RPN Mode", "alts": []}
+{"goal": "shut down the calculator", "answer": "Calculator > Quit Calculator", "alts": []}
+{"goal": "exit this app completely", "answer": "Calculator > Quit Calculator", "alts": []}
+{"goal": "finished with this, turn it all the way off", "answer": "Calculator > Quit Calculator", "alts": []}
+{"goal": "im all done, close the whole app", "answer": "Calculator > Quit Calculator", "alts": []}
+{"goal": "make the calculator disappear for now", "answer": "Calculator > Hide Calculator", "alts": []}
+{"goal": "get it out of sight without shutting it down", "answer": "Calculator > Hide Calculator", "alts": []}
+{"goal": "shut this window", "answer": "Window > Close", "alts": []}
+{"goal": "get rid of this window", "answer": "Window > Close", "alts": []}
+{"goal": "i dont understand how this works", "answer": "Help > Calculator Help", "alts": []}
+{"goal": "where are the instructions for this", "answer": "Help > Calculator Help", "alts": []}
+{"goal": "paano gawing celsius yung fahrenheit", "answer": "View > Convert", "alts": []}
+{"goal": "change fahrenheit to celsius for my recipe", "answer": "View > Convert", "alts": []}
+{"goal": "kailangan ko ng calculator na may sin at cos", "answer": "View > Scientific", "alts": []}
+{"goal": "i need the one with the square root button", "answer": "View > Scientific", "alts": []}
+{"goal": "back to the normal calculator", "answer": "View > Basic", "alts": []}
+{"goal": "ibalik sa simple yung calculator", "answer": "View > Basic", "alts": []}
+{"goal": "copy the result", "answer": "Edit > Copy", "alts": []}
+{"goal": "pa-copy ng answer", "answer": "Edit > Copy", "alts": []}
+{"goal": "highlight all the numbers i put in", "answer": "Edit > Select All", "alts": []}
+{"goal": "grab everything i entered", "answer": "Edit > Select All", "alts": []}
+{"goal": "move the calculator over to the left", "answer": "Window > Move & Resize > Left", "alts": []}
+{"goal": "push the window to the left part of my screen", "answer": "Window > Move & Resize > Left", "alts": []}
+{"goal": "put the calculator window in the center", "answer": "Window > Center", "alts": []}
+{"goal": "move this to the centre of my screen", "answer": "Window > Center", "alts": []}
+{"goal": "make the window its old size again", "answer": "Window > Move & Resize > Return to Previous Size", "alts": []}
+{"goal": "it was a different size before, go back to that", "answer": "Window > Move & Resize > Return to Previous Size", "alts": []}

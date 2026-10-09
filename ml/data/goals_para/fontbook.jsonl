@@ -1,0 +1,64 @@
+{"goal": "i downloaded a new font, how do i put it on my computer", "answer": "File > Add Fonts to Current User…", "alts": []}
+{"goal": "install this font file i just got", "answer": "File > Add Fonts to Current User…", "alts": []}
+{"goal": "this font is listed two times", "answer": "File > Resolve Duplicates…", "alts": []}
+{"goal": "theres a copy of the same font, fix it", "answer": "File > Resolve Duplicates…", "alts": []}
+{"goal": "is this font damaged", "answer": "File > Validate Selection", "alts": []}
+{"goal": "test if the one i picked has problems", "answer": "File > Validate Selection", "alts": []}
+{"goal": "make sure a font file is safe before i put it on", "answer": "File > Validate File…", "alts": []}
+{"goal": "check a font file for problems before installing", "answer": "File > Validate File…", "alts": []}
+{"goal": "which folder is this font in", "answer": "File > Show in Finder", "alts": []}
+{"goal": "show me the file for this font", "answer": "File > Show in Finder", "alts": []}
+{"goal": "i want to see the letters on paper", "answer": "File > Print…", "alts": []}
+{"goal": "make a paper copy of what this font looks like", "answer": "File > Print…", "alts": []}
+{"goal": "make a group for the fonts i like most", "answer": "File > New Collection", "alts": []}
+{"goal": "keep all my favorite fonts together in one place", "answer": "File > New Collection", "alts": []}
+{"goal": "search for a font with script in the name", "answer": "File > Find…", "alts": []}
+{"goal": "i cant remember the font name, its something like script", "answer": "File > Find…", "alts": []}
+{"goal": "throw this font away", "answer": "Edit > Remove", "alts": ["Edit > Delete"]}
+{"goal": "i dont want this font anymore, take it out", "answer": "Edit > Remove", "alts": ["Edit > Delete"]}
+{"goal": "switch this font off for now but keep it", "answer": "Edit > Deactivate", "alts": []}
+{"goal": "disable this font for a while, dont erase it", "answer": "Edit > Deactivate", "alts": []}
+{"goal": "switch the font back on", "answer": "Edit > Activate", "alts": []}
+{"goal": "make this font usable again", "answer": "Edit > Activate", "alts": []}
+{"goal": "put the sample words back to normal", "answer": "Edit > Reset Custom Text", "alts": []}
+{"goal": "put the example words back to how they were at first", "answer": "Edit > Reset Custom Text", "alts": []}
+{"goal": "make the example letters larger", "answer": "View > Increase Font Size", "alts": []}
+{"goal": "the preview text is too small, bigger please", "answer": "View > Increase Font Size", "alts": []}
+{"goal": "too big, make it smaller", "answer": "View > Decrease Font Size", "alts": []}
+{"goal": "the letters are huge, shrink them", "answer": "View > Decrease Font Size", "alts": []}
+{"goal": "show all the fonts as little boxes", "answer": "View > View as Grid", "alts": []}
+{"goal": "line them up as tiles not a list", "answer": "View > View as Grid", "alts": []}
+{"goal": "put them in a simple list", "answer": "View > View as List", "alts": []}
+{"goal": "i just want the names one under the other", "answer": "View > View as List", "alts": []}
+{"goal": "show a full sentence written in each font", "answer": "View > View as Samples", "alts": []}
+{"goal": "let me see how real words look in every font", "answer": "View > View as Samples", "alts": []}
+{"goal": "go to the following font", "answer": "View > Next Typeface", "alts": []}
+{"goal": "show me the one after this", "answer": "View > Next Typeface", "alts": []}
+{"goal": "i want to see the bold and italic and other kinds of this font", "answer": "View > Next Style", "alts": []}
+{"goal": "show me the heavier and slanted versions of this one", "answer": "View > Next Style", "alts": []}
+{"goal": "who designed this font, show the details", "answer": "View > Show Info Pane", "alts": []}
+{"goal": "where can i see more about this font", "answer": "View > Show Info Pane", "alts": []}
+{"goal": "back to where i was before", "answer": "View > Back", "alts": []}
+{"goal": "take me back", "answer": "View > Back", "alts": []}
+{"goal": "the list on the left is gone", "answer": "View > Show Sidebar", "alts": []}
+{"goal": "where did the side panel go", "answer": "View > Show Sidebar", "alts": []}
+{"goal": "make it fill the screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "i want it as big as possible", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "i need another window", "answer": "File > New Window", "alts": []}
+{"goal": "open a second window please", "answer": "File > New Window", "alts": []}
+{"goal": "paano i-install yung font na na-download ko", "answer": "File > Add Fonts to Current User…", "alts": []}
+{"goal": "how do i put a new font on", "answer": "File > Add Fonts to Current User…", "alts": []}
+{"goal": "paki-print ng sample nitong font", "answer": "File > Print…", "alts": []}
+{"goal": "print what this font looks like", "answer": "File > Print…", "alts": []}
+{"goal": "finished, close the whole app", "answer": "Font Book > Quit Font Book", "alts": []}
+{"goal": "exit font book completely", "answer": "Font Book > Quit Font Book", "alts": []}
+{"goal": "highlight all the fonts", "answer": "Edit > Select All", "alts": []}
+{"goal": "grab every font in the list", "answer": "Edit > Select All", "alts": []}
+{"goal": "paano i-disable tong font na to", "answer": "Edit > Deactivate", "alts": []}
+{"goal": "turn off this font please", "answer": "Edit > Deactivate", "alts": []}
+{"goal": "move this window to the left side of the screen", "answer": "Window > Move & Resize > Left", "alts": []}
+{"goal": "put this on the left half", "answer": "Window > Move & Resize > Left", "alts": []}
+{"goal": "too many windows, combine them into one", "answer": "Window > Merge All Windows", "alts": []}
+{"goal": "put all the windows together as tabs", "answer": "Window > Merge All Windows", "alts": []}
+{"goal": "shrink this window to the bottom of the screen", "answer": "Window > Minimize", "alts": []}
+{"goal": "put this window down out of the way", "answer": "Window > Minimize", "alts": []}

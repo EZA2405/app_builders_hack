@@ -1,0 +1,68 @@
+{"goal": "another sticky pls", "answer": "File > New Note", "alts": []}
+{"goal": "add a fresh sticky", "answer": "File > New Note", "alts": []}
+{"goal": "i want one more small note to write on", "answer": "File > New Note", "alts": []}
+{"goal": "give me a blank sticky to scribble a reminder", "answer": "File > New Note", "alts": []}
+{"goal": "i want this sticky to be pink", "answer": "Color > Pink", "alts": []}
+{"goal": "can this one be pink instead", "answer": "Color > Pink", "alts": []}
+{"goal": "make this sticky blue", "answer": "Color > Blue", "alts": []}
+{"goal": "i want a blue one instead of this", "answer": "Color > Blue", "alts": []}
+{"goal": "make this note purple", "answer": "Color > Purple", "alts": []}
+{"goal": "purple na lang yung kulay nito", "answer": "Color > Purple", "alts": []}
+{"goal": "how do i make the note yellow again", "answer": "Color > Yellow", "alts": []}
+{"goal": "put it back to the normal yellow", "answer": "Color > Yellow", "alts": []}
+{"goal": "di ko mabasa, ang liit ng letters", "answer": "Font > Bigger", "alts": []}
+{"goal": "make the writing larger", "answer": "Font > Bigger", "alts": []}
+{"goal": "the letters are too large, shrink them", "answer": "Font > Smaller", "alts": []}
+{"goal": "make the text a bit littler", "answer": "Font > Smaller", "alts": []}
+{"goal": "make these words heavy and dark", "answer": "Font > Bold", "alts": []}
+{"goal": "i want this part to pop out more", "answer": "Font > Bold", "alts": []}
+{"goal": "make this bold pls", "answer": "Font > Bold", "alts": []}
+{"goal": "gawin mong makapal yung letters", "answer": "Font > Bold", "alts": []}
+{"goal": "make the letters lean to the side", "answer": "Font > Italic", "alts": []}
+{"goal": "i want this writing tilted like fancy script", "answer": "Font > Italic", "alts": []}
+{"goal": "draw a line under this", "answer": "Font > Underline", "alts": []}
+{"goal": "i want a line below these words", "answer": "Font > Underline", "alts": []}
+{"goal": "put a line through this, its done", "answer": "Font > Strikethrough", "alts": []}
+{"goal": "i finished this task, draw a line across it", "answer": "Font > Strikethrough", "alts": []}
+{"goal": "gawing green yung sticky ko", "answer": "Color > Green", "alts": []}
+{"goal": "i want a green note", "answer": "Color > Green", "alts": []}
+{"goal": "i have a text file with writing, put it in a sticky", "answer": "File > Import Text…", "alts": []}
+{"goal": "load words from a file i kept before", "answer": "File > Import Text…", "alts": []}
+{"goal": "i want this note on paper", "answer": "File > Print…", "alts": []}
+{"goal": "pa-print naman nitong sticky", "answer": "File > Print…", "alts": []}
+{"goal": "keep my note as its own file on my mac", "answer": "File > Export Text…", "alts": []}
+{"goal": "turn this sticky into a document i can store", "answer": "File > Export Text…", "alts": []}
+{"goal": "send every sticky over to the notes app", "answer": "File > Export All to Notes…", "alts": []}
+{"goal": "i want all my stickies copied into notes instead", "answer": "File > Export All to Notes…", "alts": []}
+{"goal": "take back what i just did", "answer": "Edit > Undo", "alts": []}
+{"goal": "go back one step", "answer": "Edit > Undo", "alts": []}
+{"goal": "i erased the wrong part, get it back", "answer": "Edit > Undo", "alts": []}
+{"goal": "oops i wiped out some words, restore them", "answer": "Edit > Undo", "alts": []}
+{"goal": "grab these words so i can use them somewhere else", "answer": "Edit > Copy", "alts": []}
+{"goal": "i want to take this text to paste later", "answer": "Edit > Copy", "alts": []}
+{"goal": "put in what i copied but without the weird different font", "answer": "Edit > Paste and Match Style", "alts": []}
+{"goal": "add the copied text so it blends in with my note", "answer": "Edit > Paste and Match Style", "alts": []}
+{"goal": "search my note for a word", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "is a certain word somewhere in this note", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "are there any typos in my note", "answer": "Edit > Spelling and Grammar > Check Document Now", "alts": []}
+{"goal": "look for words i got wrong", "answer": "Edit > Spelling and Grammar > Check Document Now", "alts": []}
+{"goal": "basahin mo nga ng malakas yung note ko", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "i want to hear this note instead of reading it", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "be quiet now", "answer": "Edit > Speech > Stop Speaking", "alts": []}
+{"goal": "tama na, stop reading", "answer": "Edit > Speech > Stop Speaking", "alts": []}
+{"goal": "i want a prettier kind of lettering", "answer": "Font > Show Fonts", "alts": []}
+{"goal": "switch to a nicer looking writing style", "answer": "Font > Show Fonts", "alts": []}
+{"goal": "i want the letters in red not black", "answer": "Font > Show Colors", "alts": []}
+{"goal": "can my writing be red", "answer": "Font > Show Colors", "alts": []}
+{"goal": "group my notes by colour", "answer": "Window > Arrange By > Color", "alts": []}
+{"goal": "line up my stickies so the same colours are together", "answer": "Window > Arrange By > Color", "alts": []}
+{"goal": "sort my notes by the day i made them", "answer": "Window > Arrange By > Date", "alts": []}
+{"goal": "line up my stickies from oldest to newest", "answer": "Window > Arrange By > Date", "alts": []}
+{"goal": "shut this sticky", "answer": "File > Close", "alts": []}
+{"goal": "isara mo na tong sticky", "answer": "File > Close", "alts": []}
+{"goal": "add a web address in my note", "answer": "Edit > Add Link...", "alts": []}
+{"goal": "i want to put an internet link here", "answer": "Edit > Add Link...", "alts": []}
+{"goal": "gawin mong all caps lahat", "answer": "Edit > Transformations > Make Upper Case", "alts": []}
+{"goal": "i want this all in big caps", "answer": "Edit > Transformations > Make Upper Case", "alts": []}
+{"goal": "can i say it and have it written", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "i want to speak instead of typing", "answer": "Edit > Start Dictation…", "alts": []}

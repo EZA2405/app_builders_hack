@@ -1,0 +1,68 @@
+{"goal": "the roads are too small to read", "answer": "View > Zoom In", "alts": []}
+{"goal": "get closer, i cant make out the street names", "answer": "View > Zoom In", "alts": []}
+{"goal": "move back so i can see the whole city", "answer": "View > Zoom Out", "alts": []}
+{"goal": "show a wider area, the entire town", "answer": "View > Zoom Out", "alts": []}
+{"goal": "show me where i am", "answer": "View > Go to Current Location", "alts": []}
+{"goal": "i dont know where i am, find me on the map", "answer": "View > Go to Current Location", "alts": []}
+{"goal": "how do i get there from here", "answer": "View > Show Directions", "alts": []}
+{"goal": "give me the way to go to this place", "answer": "View > Show Directions", "alts": []}
+{"goal": "i want to see real pictures taken from above", "answer": "View > Satellite", "alts": []}
+{"goal": "show what it actually looks like from an airplane", "answer": "View > Satellite", "alts": []}
+{"goal": "i want to go by public transport, show the lines", "answer": "View > Transit", "alts": []}
+{"goal": "which jeep or train goes here, show the routes", "answer": "View > Transit", "alts": []}
+{"goal": "are the roads busy right now", "answer": "View > Show Traffic", "alts": []}
+{"goal": "is the highway jammed today", "answer": "View > Show Traffic", "alts": []}
+{"goal": "the map is tilted wrong, make it face the normal way", "answer": "View > Snap to North", "alts": []}
+{"goal": "i turned the map by mistake, straighten it", "answer": "View > Snap to North", "alts": []}
+{"goal": "i want to see the street like im walking there", "answer": "View > Show Look Around", "alts": []}
+{"goal": "show me real photos from the road like i was there", "answer": "View > Show Look Around", "alts": []}
+{"goal": "show the buildings standing up tall", "answer": "View > Show 3D Map", "alts": []}
+{"goal": "make the map not flat, i want it to look real", "answer": "View > Show 3D Map", "alts": []}
+{"goal": "the names of the roads are gone", "answer": "View > Show Labels", "alts": []}
+{"goal": "i cant see any names on the map anymore", "answer": "View > Show Labels", "alts": []}
+{"goal": "go back to the regular size of the map", "answer": "View > Default Zoom", "alts": []}
+{"goal": "the map is way too close or far, make it like it was", "answer": "View > Default Zoom", "alts": []}
+{"goal": "i want the map with all the roads for my car", "answer": "View > Driving", "alts": []}
+{"goal": "show the regular road map for when im behind the wheel", "answer": "View > Driving", "alts": []}
+{"goal": "send this location to my daughter", "answer": "File > Share", "alts": []}
+{"goal": "how do i let my son know about this place", "answer": "File > Share", "alts": []}
+{"goal": "i want the map on paper to bring along", "answer": "File > Print…", "alts": []}
+{"goal": "make a paper copy of this map", "answer": "File > Print…", "alts": []}
+{"goal": "i want two maps open at once", "answer": "File > New Window", "alts": []}
+{"goal": "open a second map window", "answer": "File > New Window", "alts": []}
+{"goal": "i want to paste this place into a text to my friend", "answer": "Edit > Copy Link", "alts": []}
+{"goal": "get the web address of this spot so i can send it", "answer": "Edit > Copy Link", "alts": []}
+{"goal": "stick a pin here so i dont forget this place", "answer": "Edit > Mark Location", "alts": []}
+{"goal": "save this spot with a little flag so i can find it later", "answer": "Edit > Mark Location", "alts": []}
+{"goal": "take off the pin i put", "answer": "Edit > Remove Marked Location", "alts": []}
+{"goal": "i dont need that pin anymore, remove it", "answer": "Edit > Remove Marked Location", "alts": []}
+{"goal": "skip this place on my route", "answer": "Edit > Delete Stop", "alts": []}
+{"goal": "we dont have to go there now, remove it from the trip", "answer": "Edit > Delete Stop", "alts": []}
+{"goal": "search for a drugstore nearby", "answer": "Edit > Find", "alts": []}
+{"goal": "where is the closest place to buy medicine", "answer": "Edit > Find", "alts": []}
+{"goal": "oops i clicked something wrong, go back", "answer": "Edit > Undo", "alts": []}
+{"goal": "take back that last click", "answer": "Edit > Undo", "alts": []}
+{"goal": "i want to hear the directions instead of reading them", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "say the turns aloud to me", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "be quiet please", "answer": "Edit > Speech > Stop Speaking", "alts": []}
+{"goal": "no more voice, hush", "answer": "Edit > Speech > Stop Speaking", "alts": []}
+{"goal": "how far is it, show the little measuring bar", "answer": "View > Show Scale", "alts": []}
+{"goal": "i want the distance bar in the corner of the map", "answer": "View > Show Scale", "alts": []}
+{"goal": "make the map fill the whole monitor", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "make this as big as possible", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "the list of my saved places on the side is missing", "answer": "View > Show Sidebar", "alts": []}
+{"goal": "where did my favorites on the left go", "answer": "View > Show Sidebar", "alts": []}
+{"goal": "this shop doesnt exist anymore, how do i tell them", "answer": "Maps > Report an Issue…", "alts": []}
+{"goal": "the map has wrong information about this place", "answer": "Maps > Report an Issue…", "alts": []}
+{"goal": "my road isnt there at all", "answer": "Maps > Report Something Missing…", "alts": []}
+{"goal": "my house doesnt show up, the road is missing", "answer": "Maps > Report Something Missing…", "alts": []}
+{"goal": "traffic ba sa daan ngayon?", "answer": "View > Show Traffic", "alts": []}
+{"goal": "are there lots of cars on the road, show me", "answer": "View > Show Traffic", "alts": []}
+{"goal": "ang liit ng mapa, palakihin mo", "answer": "View > Zoom In", "alts": []}
+{"goal": "i need to look closer at the map, its too small", "answer": "View > Zoom In", "alts": []}
+{"goal": "nasaan ako ngayon", "answer": "View > Go to Current Location", "alts": []}
+{"goal": "show me on the map where i am", "answer": "View > Go to Current Location", "alts": []}
+{"goal": "shut down maps", "answer": "Maps > Quit Maps", "alts": []}
+{"goal": "im done with the map, exit the app", "answer": "Maps > Quit Maps", "alts": []}
+{"goal": "put this window away for now", "answer": "Window > Minimize", "alts": []}
+{"goal": "shrink the window to the bottom of the screen", "answer": "Window > Minimize", "alts": []}

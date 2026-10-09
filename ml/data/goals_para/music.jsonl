@@ -1,0 +1,70 @@
+{"goal": "start the music", "answer": "Controls > Play", "alts": []}
+{"goal": "i want to listen to this tune", "answer": "Controls > Play", "alts": []}
+{"goal": "it's too loud, lower it", "answer": "Controls > Decrease Volume", "alts": []}
+{"goal": "turn the sound down a bit", "answer": "Controls > Decrease Volume", "alts": []}
+{"goal": "the music is too soft, i can barely hear", "answer": "Controls > Increase Volume", "alts": []}
+{"goal": "louder please", "answer": "Controls > Increase Volume", "alts": []}
+{"goal": "i dont like this one, go on", "answer": "Controls > Next Track", "alts": []}
+{"goal": "skip ahead to another song", "answer": "Controls > Next Track", "alts": []}
+{"goal": "play the last song again", "answer": "Controls > Previous Track", "alts": []}
+{"goal": "the one that was on before, go back to it", "answer": "Controls > Previous Track", "alts": []}
+{"goal": "turn the music off", "answer": "Controls > Stop", "alts": []}
+{"goal": "no more music please, end it", "answer": "Controls > Stop", "alts": []}
+{"goal": "play my songs in a random order", "answer": "Controls > Shuffle > On", "alts": []}
+{"goal": "surprise me, dont play them in order", "answer": "Controls > Shuffle > On", "alts": []}
+{"goal": "i want this song on loop", "answer": "Controls > Repeat > One", "alts": []}
+{"goal": "keep playing just this one song again and again", "answer": "Controls > Repeat > One", "alts": []}
+{"goal": "when the list finishes, start everything over", "answer": "Controls > Repeat > All", "alts": []}
+{"goal": "after the last song, play them all again", "answer": "Controls > Repeat > All", "alts": []}
+{"goal": "play songs in order not jumbled up", "answer": "Controls > Shuffle > Off", "alts": []}
+{"goal": "i dont want random anymore, go in the right order", "answer": "Controls > Shuffle > Off", "alts": []}
+{"goal": "make a collection of the songs i love most", "answer": "File > New > Playlist", "alts": []}
+{"goal": "i want to start a new list for my favorites", "answer": "File > New > Playlist", "alts": []}
+{"goal": "make a list out of the songs i selected", "answer": "File > New > Playlist from Selection", "alts": []}
+{"goal": "group these chosen songs together on their own", "answer": "File > New > Playlist from Selection", "alts": []}
+{"goal": "how do i get songs from my computer into here", "answer": "File > Import…", "alts": []}
+{"goal": "add music files i have saved on the computer", "answer": "File > Import…", "alts": []}
+{"goal": "which folder is this song in", "answer": "File > Show in Finder", "alts": []}
+{"goal": "show me where the file for this song is", "answer": "File > Show in Finder", "alts": []}
+{"goal": "i want to make a cd for the car", "answer": "File > Burn Playlist to Disc…", "alts": []}
+{"goal": "copy these songs onto a disc", "answer": "File > Burn Playlist to Disc…", "alts": []}
+{"goal": "i want my songs listed on paper", "answer": "File > Print…", "alts": []}
+{"goal": "make a paper copy of my music list", "answer": "File > Print…", "alts": []}
+{"goal": "some songs are in here twice", "answer": "File > Library > Show Duplicate Items", "alts": []}
+{"goal": "i think a song shows up two times", "answer": "File > Library > Show Duplicate Items", "alts": []}
+{"goal": "the album covers are blank", "answer": "File > Library > Get Album Artwork", "alts": []}
+{"goal": "the pictures for my albums are missing", "answer": "File > Library > Get Album Artwork", "alts": []}
+{"goal": "after this song, play this one", "answer": "Song > Play Next", "alts": []}
+{"goal": "put this song up next", "answer": "Song > Play Next", "alts": []}
+{"goal": "i want to listen to this on the plane with no wifi", "answer": "Song > Download", "alts": []}
+{"goal": "keep this song on my computer for when im offline", "answer": "Song > Download", "alts": []}
+{"goal": "take this song off the list but keep it in my music", "answer": "Song > Remove from Playlist", "alts": []}
+{"goal": "remove from this list only, dont erase it", "answer": "Song > Remove from Playlist", "alts": []}
+{"goal": "erase this song from my computer for good", "answer": "Song > Delete from Library", "alts": []}
+{"goal": "i never want this song again, remove it totally", "answer": "Song > Delete from Library", "alts": []}
+{"goal": "who is the singer", "answer": "Song > Get Info…", "alts": []}
+{"goal": "what album is this song from", "answer": "Song > Get Info…", "alts": []}
+{"goal": "i want to read the words while it plays", "answer": "View > Show Lyrics", "alts": []}
+{"goal": "show me whats being sung", "answer": "View > Show Lyrics", "alts": []}
+{"goal": "what song is coming up", "answer": "View > Show Playing Next", "alts": []}
+{"goal": "show me what will play after this", "answer": "View > Show Playing Next", "alts": []}
+{"goal": "make the music fill the screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "make it as big as my monitor", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "make the player small", "answer": "Window > MiniPlayer", "alts": ["Window > Switch to MiniPlayer"]}
+{"goal": "shrink the music to a little box in the corner", "answer": "Window > MiniPlayer", "alts": ["Window > Switch to MiniPlayer"]}
+{"goal": "too much boom, how do i change the sound", "answer": "Window > Equalizer", "alts": []}
+{"goal": "the sound isnt right, i want to adjust the low and high", "answer": "Window > Equalizer", "alts": []}
+{"goal": "show the moving colors with the music", "answer": "Window > Visualizer", "alts": []}
+{"goal": "i want those dancing shapes on the screen while it plays", "answer": "Window > Visualizer", "alts": []}
+{"goal": "oops, take that back", "answer": "Edit > Undo", "alts": []}
+{"goal": "i did something wrong, go back", "answer": "Edit > Undo", "alts": []}
+{"goal": "exit music completely", "answer": "Music > Quit Music", "alts": []}
+{"goal": "im done listening, shut the app", "answer": "Music > Quit Music", "alts": []}
+{"goal": "play more songs that sound like this one", "answer": "Song > Create Station", "alts": []}
+{"goal": "i want something like a radio with similar music", "answer": "Song > Create Station", "alts": []}
+{"goal": "what song is playing, show me", "answer": "Controls > Go to Current Song", "alts": []}
+{"goal": "take me to the song im hearing right now", "answer": "Controls > Go to Current Song", "alts": []}
+{"goal": "lakasan mo ng todo", "answer": "Controls > Set Volume to Maximum", "alts": []}
+{"goal": "turn it all the way up, as loud as it goes", "answer": "Controls > Set Volume to Maximum", "alts": []}
+{"goal": "where are the songs i paid for", "answer": "Account > Purchased", "alts": []}
+{"goal": "show me the music ive bought before", "answer": "Account > Purchased", "alts": []}

@@ -1,0 +1,70 @@
+{"goal": "dont let me forget my medicine", "answer": "File > New Reminder", "alts": []}
+{"goal": "paalala mo sakin uminom ng gamot", "answer": "File > New Reminder", "alts": []}
+{"goal": "i have one more thing to do, put it on my list", "answer": "File > New Reminder", "alts": []}
+{"goal": "add a task pls", "answer": "File > New Reminder", "alts": []}
+{"goal": "i want a different list just for the market", "answer": "File > New List", "alts": []}
+{"goal": "make me a separate list for things to buy at the store", "answer": "File > New List", "alts": []}
+{"goal": "how do i start another list", "answer": "File > New List", "alts": []}
+{"goal": "gawa ka ng panibagong list", "answer": "File > New List", "alts": []}
+{"goal": "done with that one, mark it", "answer": "Edit > Mark as Completed", "alts": []}
+{"goal": "i finished this, tick it off", "answer": "Edit > Mark as Completed", "alts": []}
+{"goal": "tapos ko na, i-tick mo na", "answer": "Edit > Mark as Completed", "alts": []}
+{"goal": "i already did this one, mark it done", "answer": "Edit > Mark as Completed", "alts": []}
+{"goal": "remove this one", "answer": "Edit > Delete", "alts": []}
+{"goal": "i dont need this reminder anymore, throw it out", "answer": "Edit > Delete", "alts": []}
+{"goal": "take back what i just did", "answer": "Edit > Undo", "alts": []}
+{"goal": "go back a step", "answer": "Edit > Undo", "alts": []}
+{"goal": "i marked the wrong thing as done, unmark it", "answer": "Edit > Undo", "alts": []}
+{"goal": "oops i ticked off the wrong one, reverse that", "answer": "Edit > Undo", "alts": []}
+{"goal": "this has to get done before tonight", "answer": "Edit > Mark Due Date As > Today", "alts": []}
+{"goal": "move this one to today", "answer": "Edit > Mark Due Date As > Today", "alts": []}
+{"goal": "i'll do this tomorrow instead", "answer": "Edit > Mark Due Date As > Tomorrow", "alts": []}
+{"goal": "bukas ko na lang to gagawin", "answer": "Edit > Mark Due Date As > Tomorrow", "alts": []}
+{"goal": "do this one on my days off at the end of the week", "answer": "Edit > Mark Due Date As > This Weekend", "alts": []}
+{"goal": "save this for sat or sun", "answer": "Edit > Mark Due Date As > This Weekend", "alts": []}
+{"goal": "this can wait until the week after", "answer": "Edit > Mark Due Date As > Next Week", "alts": []}
+{"goal": "next week na lang to, wag ngayon", "answer": "Edit > Mark Due Date As > Next Week", "alts": []}
+{"goal": "a lot of my reminders are past due, put them all on today", "answer": "Edit > Mark Due Date As > Mark All Overdue to Today", "alts": []}
+{"goal": "i fell behind, move everything late to today", "answer": "Edit > Mark Due Date As > Mark All Overdue to Today", "alts": []}
+{"goal": "this one matters the most", "answer": "Edit > Priority > High", "alts": []}
+{"goal": "mark this as urgent", "answer": "Edit > Priority > High", "alts": []}
+{"goal": "make this top priority", "answer": "Edit > Priority > High", "alts": []}
+{"goal": "importante to, gawin mong high priority", "answer": "Edit > Priority > High", "alts": []}
+{"goal": "mark this so it stands out", "answer": "Edit > Flag", "alts": []}
+{"goal": "i want a little sign on this one so i dont miss it", "answer": "Edit > Flag", "alts": []}
+{"goal": "i want my son to be able to add to my grocery list from his phone", "answer": "File > Share List", "alts": []}
+{"goal": "let my daughter see this list too", "answer": "File > Share List", "alts": []}
+{"goal": "stick this list at the top", "answer": "File > Pin List", "alts": []}
+{"goal": "i keep losing this list, keep it first in line", "answer": "File > Pin List", "alts": []}
+{"goal": "make this one a sub-task of the one above", "answer": "Edit > Indent Reminder", "alts": []}
+{"goal": "tuck this item under the one before it", "answer": "Edit > Indent Reminder", "alts": []}
+{"goal": "i cant find the reminder about paying the electricity", "answer": "Edit > Find", "alts": []}
+{"goal": "search for my electric bill reminder", "answer": "Edit > Find", "alts": []}
+{"goal": "i need my list on paper for the shop", "answer": "File > Print…", "alts": []}
+{"goal": "can i have this list printed", "answer": "File > Print…", "alts": []}
+{"goal": "ipa-print mo yung list ko", "answer": "File > Print…", "alts": []}
+{"goal": "i want to print this list out", "answer": "File > Print…", "alts": []}
+{"goal": "ano gagawin ko ngayong araw", "answer": "View > Show Smart List > Today", "alts": ["View > Go To > Today"]}
+{"goal": "show me todays things", "answer": "View > Show Smart List > Today", "alts": ["View > Go To > Today"]}
+{"goal": "show every single thing on all my lists", "answer": "View > Show Smart List > All", "alts": ["View > Go To > All"]}
+{"goal": "i want to see all my reminders at once", "answer": "View > Show Smart List > All", "alts": ["View > Go To > All"]}
+{"goal": "show only the ones i put a marker on", "answer": "View > Show Smart List > Flagged", "alts": []}
+{"goal": "just show the ones with the little sign on them", "answer": "View > Show Smart List > Flagged", "alts": []}
+{"goal": "show my upcoming tasks by date", "answer": "View > Go To > Scheduled", "alts": ["View > Show Smart List > Scheduled"]}
+{"goal": "what do i have planned for the next few days", "answer": "View > Go To > Scheduled", "alts": ["View > Show Smart List > Scheduled"]}
+{"goal": "divide my shopping list into groups like produce and meat", "answer": "File > New Section", "alts": []}
+{"goal": "i want headings in my grocery list", "answer": "File > New Section", "alts": []}
+{"goal": "can the computer sort my grocery items into groups by itself", "answer": "File > Auto-Categorize", "alts": []}
+{"goal": "pls arrange my shopping list into kinds of food on its own", "answer": "File > Auto-Categorize", "alts": []}
+{"goal": "the left panel with my lists is gone", "answer": "View > Show Sidebar", "alts": []}
+{"goal": "where did my lists on the side go", "answer": "View > Show Sidebar", "alts": []}
+{"goal": "can the computer say this aloud", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "basahin mo nga to ng malakas", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "i want to speak my reminders instead of typing", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "can i just say it and it writes it", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "i want my husband to do this one on our shared list", "answer": "Edit > Assign", "alts": []}
+{"goal": "hand this task to someone else", "answer": "Edit > Assign", "alts": []}
+{"goal": "i use the same list every week, keep it so i can reuse it", "answer": "File > Save as Template…", "alts": []}
+{"goal": "store this list as a pattern for next time", "answer": "File > Save as Template…", "alts": []}
+{"goal": "buong screen naman please", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "i want this as big as my whole monitor", "answer": "View > Enter Full Screen", "alts": []}

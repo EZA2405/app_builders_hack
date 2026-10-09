@@ -1,0 +1,68 @@
+{"goal": "the movie is tipped over on its side", "answer": "Edit > Rotate Right", "alts": ["Edit > Rotate Left"]}
+{"goal": "everything in this clip is lying sideways, i have to tilt my head to watch", "answer": "Edit > Rotate Right", "alts": ["Edit > Rotate Left"]}
+{"goal": "spin the clip a quarter counterclockwise", "answer": "Edit > Rotate Left", "alts": []}
+{"goal": "tilt the video 90 degrees toward the left", "answer": "Edit > Rotate Left", "alts": []}
+{"goal": "the writing in the video is backwards like in a mirror", "answer": "Edit > Flip Horizontal", "alts": []}
+{"goal": "left and right are swapped in this clip", "answer": "Edit > Flip Horizontal", "alts": []}
+{"goal": "the video is upside down", "answer": "Edit > Flip Vertical", "alts": []}
+{"goal": "turn the picture over so the sky is at the top again", "answer": "Edit > Flip Vertical", "alts": []}
+{"goal": "the start is dull, chop that part off", "answer": "Edit > Trim…", "alts": []}
+{"goal": "remove the first few slow minutes of this clip", "answer": "Edit > Trim…", "alts": []}
+{"goal": "this clip is too long, i want it shorter", "answer": "Edit > Trim…", "alts": []}
+{"goal": "paikliin mo naman tong video", "answer": "Edit > Trim…", "alts": []}
+{"goal": "i want to capture what im doing on my computer so my grandson can watch", "answer": "File > New Screen Recording", "alts": []}
+{"goal": "make a video of my screen to show someone the steps", "answer": "File > New Screen Recording", "alts": []}
+{"goal": "i want to tape my voice using the mic", "answer": "File > New Audio Recording", "alts": []}
+{"goal": "capture just sound from the microphone, no picture", "answer": "File > New Audio Recording", "alts": []}
+{"goal": "film myself using the webcam", "answer": "File > New Movie Recording", "alts": []}
+{"goal": "i want to make a video of me with the little camera on top of the screen", "answer": "File > New Movie Recording", "alts": []}
+{"goal": "play a movie thats already on my computer", "answer": "File > Open File…", "alts": []}
+{"goal": "how do i bring up a video file i kept", "answer": "File > Open File…", "alts": []}
+{"goal": "keep this so i dont lose it", "answer": "File > Save…", "alts": []}
+{"goal": "i want to store what ive got so far", "answer": "File > Save…", "alts": []}
+{"goal": "shrink the file so its small enough to send by email", "answer": "File > Export As > 480p…", "alts": []}
+{"goal": "the video is too big to email, make it lighter", "answer": "File > Export As > 480p…", "alts": []}
+{"goal": "i want just what you hear from this clip, no picture", "answer": "File > Export As > Audio Only…", "alts": []}
+{"goal": "keep only the music from this movie, drop the video part", "answer": "File > Export As > Audio Only…", "alts": []}
+{"goal": "i want a second copy of this clip", "answer": "File > Duplicate", "alts": []}
+{"goal": "make another one of this movie file", "answer": "File > Duplicate", "alts": []}
+{"goal": "i want to call this video something else", "answer": "File > Rename…", "alts": []}
+{"goal": "the video has the wrong title, change it", "answer": "File > Rename…", "alts": []}
+{"goal": "make the movie as big as my whole monitor", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "palakihin mo hanggang buong screen yung video", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "paulit-ulitin mo lang yung video", "answer": "View > Loop", "alts": []}
+{"goal": "i want this to keep repeating nonstop", "answer": "View > Loop", "alts": []}
+{"goal": "my other windows keep covering the video, keep it in front", "answer": "View > Float on Top", "alts": []}
+{"goal": "i want the movie to stay visible above everything else", "answer": "View > Float on Top", "alts": []}
+{"goal": "the video window is too little, enlarge it", "answer": "Window > Increase Size", "alts": ["View > Zoom In"]}
+{"goal": "pakilakihan naman yung window ng video", "answer": "Window > Increase Size", "alts": ["View > Zoom In"]}
+{"goal": "the movie window is taking up too much room, shrink it", "answer": "Window > Decrease Size", "alts": ["View > Zoom Out"]}
+{"goal": "ang laki ng window, paliitin mo", "answer": "Window > Decrease Size", "alts": ["View > Zoom Out"]}
+{"goal": "hide the captions at the bottom", "answer": "View > Subtitles > Off", "alts": []}
+{"goal": "i dont want the text on the screen while it plays", "answer": "View > Subtitles > Off", "alts": []}
+{"goal": "jump ahead to the next section", "answer": "View > Next Chapter", "alts": []}
+{"goal": "go on to the following scene", "answer": "View > Next Chapter", "alts": []}
+{"goal": "go back to the earlier section", "answer": "View > Previous Chapter", "alts": []}
+{"goal": "take me to the scene before this one", "answer": "View > Previous Chapter", "alts": []}
+{"goal": "i want the video silent with no sound at all", "answer": "Edit > Remove Audio", "alts": []}
+{"goal": "get rid of all the noise in this clip, keep the picture", "answer": "Edit > Remove Audio", "alts": []}
+{"goal": "chop the video into 2 parts right here", "answer": "Edit > Split Clip", "alts": []}
+{"goal": "break this clip in half at this spot", "answer": "Edit > Split Clip", "alts": []}
+{"goal": "stick a second movie on after this one finishes", "answer": "Edit > Add Clip to End...", "alts": []}
+{"goal": "join another clip onto the end of this one", "answer": "Edit > Add Clip to End...", "alts": []}
+{"goal": "take back what i just did", "answer": "Edit > Undo", "alts": []}
+{"goal": "nagkamali ako, ibalik mo", "answer": "Edit > Undo", "alts": []}
+{"goal": "show the movie at its true size, not stretched", "answer": "View > Actual Size", "alts": ["Window > Natural Size"]}
+{"goal": "i want the video at its normal dimensions, no blowing it up", "answer": "View > Actual Size", "alts": ["Window > Natural Size"]}
+{"goal": "how many minutes is this clip and how much space does it take", "answer": "Window > Show Movie Inspector", "alts": []}
+{"goal": "show me the length and the file size of this movie", "answer": "Window > Show Movie Inspector", "alts": []}
+{"goal": "put this video in another folder", "answer": "File > Move To…", "alts": []}
+{"goal": "i want to keep this clip somewhere else on my computer", "answer": "File > Move To…", "alts": []}
+{"goal": "i-record mo yung nangyayari sa screen ko", "answer": "File > New Screen Recording", "alts": []}
+{"goal": "capture whats on my screen as a video", "answer": "File > New Screen Recording", "alts": []}
+{"goal": "nakatagilid yung video, paikutin mo pakaliwa", "answer": "Edit > Rotate Left", "alts": ["Edit > Rotate Right"]}
+{"goal": "the clip is on its side, turn it to the left a bit", "answer": "Edit > Rotate Left", "alts": ["Edit > Rotate Right"]}
+{"goal": "save it in really sharp high quality", "answer": "File > Export As > 1080p…", "alts": []}
+{"goal": "export the video looking crisp and clear, full hd", "answer": "File > Export As > 1080p…", "alts": []}
+{"goal": "isara mo na tong video", "answer": "File > Close", "alts": []}
+{"goal": "im done watching, close the window", "answer": "File > Close", "alts": []}

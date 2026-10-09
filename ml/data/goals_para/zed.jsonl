@@ -1,0 +1,70 @@
+{"goal": "give me an empty file", "answer": "File > New", "alts": []}
+{"goal": "start a fresh blank document", "answer": "File > New", "alts": []}
+{"goal": "bring up a file from my documents folder", "answer": "File > Open…", "alts": []}
+{"goal": "how do i load a file thats on my computer", "answer": "File > Open…", "alts": []}
+{"goal": "what files was i working on yesterday", "answer": "File > Open Recent…", "alts": []}
+{"goal": "show the ones i had open last time", "answer": "File > Open Recent…", "alts": []}
+{"goal": "i-save mo na to", "answer": "File > Save", "alts": []}
+{"goal": "dont lose this, store it", "answer": "File > Save", "alts": []}
+{"goal": "make a copy of this under a new name", "answer": "File > Save As…", "alts": []}
+{"goal": "i want another version with a different filename", "answer": "File > Save As…", "alts": []}
+{"goal": "store every file i have open at once", "answer": "File > Save All", "alts": []}
+{"goal": "save all my open tabs", "answer": "File > Save All", "alts": []}
+{"goal": "isara mo tong tab", "answer": "File > Close Editor", "alts": []}
+{"goal": "get rid of this tab im done with it", "answer": "File > Close Editor", "alts": []}
+{"goal": "take back what i just did", "answer": "Edit > Undo", "alts": []}
+{"goal": "go back one step", "answer": "Edit > Undo", "alts": []}
+{"goal": "i went back too far, bring it forward again", "answer": "Edit > Redo", "alts": []}
+{"goal": "i reversed too many things, put one back", "answer": "Edit > Redo", "alts": []}
+{"goal": "grab this so i can put it somewhere else", "answer": "Edit > Copy", "alts": []}
+{"goal": "i want to take this text to paste later", "answer": "Edit > Copy", "alts": []}
+{"goal": "drop in what i copied", "answer": "Edit > Paste", "alts": []}
+{"goal": "insert what i grabbed before right here", "answer": "Edit > Paste", "alts": []}
+{"goal": "search this file for a word", "answer": "Edit > Find", "alts": []}
+{"goal": "where does this word appear on this page", "answer": "Edit > Find", "alts": []}
+{"goal": "search every file in the folder for a word", "answer": "Edit > Find in Project", "alts": []}
+{"goal": "which of my files mention this word", "answer": "Edit > Find in Project", "alts": []}
+{"goal": "grab all the text", "answer": "Selection > Select All", "alts": []}
+{"goal": "mark the whole page at once", "answer": "Selection > Select All", "alts": []}
+{"goal": "shift this line up one", "answer": "Selection > Move Line Up", "alts": []}
+{"goal": "push this line above the one before it", "answer": "Selection > Move Line Up", "alts": []}
+{"goal": "copy this line and put the copy just below", "answer": "Selection > Duplicate Selection", "alts": []}
+{"goal": "i want this line twice, one under the other", "answer": "Selection > Duplicate Selection", "alts": []}
+{"goal": "ang liit ng sulat, di ko mabasa", "answer": "View > Zoom In", "alts": []}
+{"goal": "make everything bigger i cant read it", "answer": "View > Zoom In", "alts": []}
+{"goal": "make the text littler", "answer": "View > Zoom Out", "alts": []}
+{"goal": "the letters are too big, shrink them", "answer": "View > Zoom Out", "alts": []}
+{"goal": "undo all my resizing, go back to regular text size", "answer": "View > Reset Zoom", "alts": []}
+{"goal": "set the letters to the default size again", "answer": "View > Reset Zoom", "alts": []}
+{"goal": "i want to see my files listed on the left", "answer": "View > Project Panel", "alts": []}
+{"goal": "where is the sidebar with my folders", "answer": "View > Project Panel", "alts": []}
+{"goal": "open that black window where you type commands", "answer": "View > Terminal Panel", "alts": []}
+{"goal": "i need the place at the bottom to type computer commands", "answer": "View > Terminal Panel", "alts": []}
+{"goal": "make zed take up the whole monitor", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "i want this as big as the screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "show two files side by side", "answer": "View > Editor Layout > Split Right", "alts": []}
+{"goal": "i want to look at two files next to each other", "answer": "View > Editor Layout > Split Right", "alts": []}
+{"goal": "i want a dark background", "answer": "Zed > Settings > Select Theme...", "alts": []}
+{"goal": "change the colours so its dark", "answer": "Zed > Settings > Select Theme...", "alts": []}
+{"goal": "i want to change some options", "answer": "Zed > Settings > Open Settings", "alts": []}
+{"goal": "where do i adjust the preferences", "answer": "Zed > Settings > Open Settings", "alts": []}
+{"goal": "punta tayo sa line 50", "answer": "Go > Go to Line/Column...", "alts": []}
+{"goal": "skip down to line number 50", "answer": "Go > Go to Line/Column...", "alts": []}
+{"goal": "open a file fast by typing its name", "answer": "Go > Go to File...", "alts": []}
+{"goal": "i want to type a filename and jump to it", "answer": "Go > Go to File...", "alts": []}
+{"goal": "go back to where i just was", "answer": "Go > Back", "alts": []}
+{"goal": "return to my last spot", "answer": "Go > Back", "alts": []}
+{"goal": "wheres the manual for this", "answer": "Help > Documentation", "alts": []}
+{"goal": "how do i learn to use this editor", "answer": "Help > Documentation", "alts": []}
+{"goal": "exit zed", "answer": "Zed > Quit Zed", "alts": []}
+{"goal": "shut this program down", "answer": "Zed > Quit Zed", "alts": []}
+{"goal": "i want to install plugins", "answer": "Zed > Extensions", "alts": []}
+{"goal": "how do i get more add-ons", "answer": "Zed > Extensions", "alts": []}
+{"goal": "ang liit ng letters, palakihin mo", "answer": "View > Zoom In", "alts": []}
+{"goal": "how do i make the font bigger here", "answer": "View > Zoom In", "alts": []}
+{"goal": "save all the open files", "answer": "File > Save All", "alts": []}
+{"goal": "i-save lahat ng nakabukas", "answer": "File > Save All", "alts": []}
+{"goal": "find the word hello here", "answer": "Edit > Find", "alts": []}
+{"goal": "nasaan yung word na hello", "answer": "Edit > Find", "alts": []}
+{"goal": "nagkamali ako, balik mo", "answer": "Edit > Undo", "alts": []}
+{"goal": "i made a mistake, reverse it", "answer": "Edit > Undo", "alts": []}

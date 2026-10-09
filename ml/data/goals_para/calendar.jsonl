@@ -1,0 +1,72 @@
+{"goal": "i see the doctor this friday, put that in", "answer": "File > New Event or Reminder", "alts": []}
+{"goal": "write down my checkup for friday", "answer": "File > New Event or Reminder", "alts": []}
+{"goal": "the church is having a dinner, add it to my schedule", "answer": "File > New Event or Reminder", "alts": []}
+{"goal": "how do i put the parish supper on here", "answer": "File > New Event or Reminder", "alts": []}
+{"goal": "i want a different calendar only for the grandchildrens birthdays", "answer": "File > New Calendar", "alts": []}
+{"goal": "keep the grandkids birthdays in their own separate calendar", "answer": "File > New Calendar", "alts": []}
+{"goal": "show christmas and the other public holidays", "answer": "File > New Holiday Calendar…", "alts": []}
+{"goal": "the holidays arent on here, i want them to appear", "answer": "File > New Holiday Calendar…", "alts": []}
+{"goal": "i want a paper copy of this month for the fridge", "answer": "File > Print…", "alts": []}
+{"goal": "make a hard copy of the month so i can hang it up", "answer": "File > Print…", "alts": []}
+{"goal": "i need my schedule on paper", "answer": "File > Print…", "alts": []}
+{"goal": "paki-print yung schedule ko this month", "answer": "File > Print…", "alts": []}
+{"goal": "oops take that back", "answer": "Edit > Undo", "alts": []}
+{"goal": "reverse what i just did", "answer": "Edit > Undo", "alts": []}
+{"goal": "i moved the wrong meeting by accident, put it back", "answer": "Edit > Undo", "alts": []}
+{"goal": "i dragged something by mistake, return it to where it was", "answer": "Edit > Undo", "alts": []}
+{"goal": "that event isnt happening anymore, remove it", "answer": "Edit > Delete", "alts": []}
+{"goal": "the visit was called off, take it off my calendar", "answer": "Edit > Delete", "alts": []}
+{"goal": "i need to change when this is happening", "answer": "Edit > Edit Event", "alts": []}
+{"goal": "the doctor moved it to 3pm, how do i fix the hour", "answer": "Edit > Edit Event", "alts": []}
+{"goal": "copy this appointment so i have two the same", "answer": "Edit > Duplicate", "alts": []}
+{"goal": "i want an identical one of this event", "answer": "Edit > Duplicate", "alts": []}
+{"goal": "my wife should be able to look at my schedule", "answer": "Edit > Share Calendar…", "alts": []}
+{"goal": "i want my daughter to see my appointments from her computer", "answer": "Edit > Share Calendar…", "alts": []}
+{"goal": "i want my calendar private again", "answer": "Edit > Stop Sharing…", "alts": []}
+{"goal": "nobody else should be able to look at my schedule now", "answer": "Edit > Stop Sharing…", "alts": []}
+{"goal": "i forgot the day of my dentist, help me look", "answer": "Edit > Find", "alts": []}
+{"goal": "search for the dentist thing", "answer": "Edit > Find", "alts": []}
+{"goal": "i only want to look at today by itself", "answer": "View > By Day", "alts": []}
+{"goal": "show a single day at a time", "answer": "View > By Day", "alts": []}
+{"goal": "whats on for the next seven days", "answer": "View > By Week", "alts": []}
+{"goal": "show me my schedule for this week", "answer": "View > By Week", "alts": []}
+{"goal": "i want all thirty days in front of me", "answer": "View > By Month", "alts": []}
+{"goal": "lay out the full month", "answer": "View > By Month", "alts": []}
+{"goal": "pakita yung buong month", "answer": "View > By Month", "alts": []}
+{"goal": "show me all the weeks of this month", "answer": "View > By Month", "alts": []}
+{"goal": "show me all 12 months", "answer": "View > By Year", "alts": []}
+{"goal": "the entire year in one view", "answer": "View > By Year", "alts": []}
+{"goal": "where is today, i got lost", "answer": "View > Go to Today", "alts": []}
+{"goal": "jump back to the current day", "answer": "View > Go to Today", "alts": []}
+{"goal": "bumalik tayo sa today", "answer": "View > Go to Today", "alts": []}
+{"goal": "back to today pls", "answer": "View > Go to Today", "alts": []}
+{"goal": "show me december 25", "answer": "View > Go to Date…", "alts": []}
+{"goal": "i want to jump to a specific day way ahead", "answer": "View > Go to Date…", "alts": []}
+{"goal": "go back one, show me the earlier week", "answer": "View > Previous", "alts": []}
+{"goal": "i want to look at what came before", "answer": "View > Previous", "alts": []}
+{"goal": "the writing in the squares is too small", "answer": "View > Zoom In", "alts": []}
+{"goal": "i cant read whats written in the little boxes", "answer": "View > Zoom In", "alts": []}
+{"goal": "the list of my calendars on the left is gone", "answer": "View > Show Calendar List", "alts": []}
+{"goal": "where did the side panel with my calendars go", "answer": "View > Show Calendar List", "alts": []}
+{"goal": "something i put in on my iphone isnt on the computer", "answer": "View > Refresh Calendars", "alts": []}
+{"goal": "my phone has an appointment that this one is missing", "answer": "View > Refresh Calendars", "alts": []}
+{"goal": "make the calendar fill the entire screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "i want it bigger, no other windows", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "they didnt get my invitation, send it one more time", "answer": "Edit > Resend Invitations…", "alts": []}
+{"goal": "my friend says the invite never arrived, try sending it again", "answer": "Edit > Resend Invitations…", "alts": []}
+{"goal": "i want to attach this appointment to an email", "answer": "File > Export > Export Event…", "alts": []}
+{"goal": "make a file of this event so i can send it", "answer": "File > Export > Export Event…", "alts": []}
+{"goal": "make a safety copy of everything in case my computer breaks", "answer": "File > Export > Calendar Archive…", "alts": []}
+{"goal": "back up all my appointments", "answer": "File > Export > Calendar Archive…", "alts": []}
+{"goal": "how do i get the event file from my email into here", "answer": "File > Import…", "alts": []}
+{"goal": "my friend emailed me a calendar file, load it", "answer": "File > Import…", "alts": []}
+{"goal": "whos coming and where is it, show me", "answer": "Edit > Get Info", "alts": []}
+{"goal": "i want to see all the details of this event", "answer": "Edit > Get Info", "alts": []}
+{"goal": "i finished this one, tick it", "answer": "Edit > Mark as Completed", "alts": []}
+{"goal": "this task is done, mark it off", "answer": "Edit > Mark as Completed", "alts": []}
+{"goal": "show my appointments one under another in a list", "answer": "View > Show List View", "alts": []}
+{"goal": "i want everything listed out, not in boxes", "answer": "View > Show List View", "alts": []}
+{"goal": "how many minutes will it take me to get there by car", "answer": "View > Show Travel Time", "alts": []}
+{"goal": "show the driving time to this place", "answer": "View > Show Travel Time", "alts": []}
+{"goal": "show the invites i said no to", "answer": "View > Show Declined Events", "alts": []}
+{"goal": "nasaan yung mga invite na tinanggihan ko", "answer": "View > Show Declined Events", "alts": []}

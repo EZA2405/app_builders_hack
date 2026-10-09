@@ -1,0 +1,68 @@
+{"goal": "give me a blank canvas to start over", "answer": "File > New Board", "alts": []}
+{"goal": "i want an empty space to begin something different", "answer": "File > New Board", "alts": []}
+{"goal": "open another empty board in its own window", "answer": "File > New Board in New Window", "alts": []}
+{"goal": "i want a second blank page but keep this one open too", "answer": "File > New Board in New Window", "alts": []}
+{"goal": "turn this board into a pdf i can attach to an email", "answer": "File > Export Board as PDF…", "alts": []}
+{"goal": "i need a pdf file of all this to send by mail", "answer": "File > Export Board as PDF…", "alts": []}
+{"goal": "how do i get this to my grandson so he can see it", "answer": "File > Share…", "alts": []}
+{"goal": "let my grandson look at this too, send it to him", "answer": "File > Share…", "alts": []}
+{"goal": "i want this on paper", "answer": "File > Print Board…", "alts": []}
+{"goal": "i-print mo nga tong board", "answer": "File > Print Board…", "alts": []}
+{"goal": "oops i ruined it, go back", "answer": "Edit > Undo", "alts": []}
+{"goal": "take back the last thing i did", "answer": "Edit > Undo", "alts": []}
+{"goal": "i reversed it by mistake, i want that change again", "answer": "Edit > Redo", "alts": []}
+{"goal": "i went back one step too many, return what i had", "answer": "Edit > Redo", "alts": []}
+{"goal": "i want another one exactly like this shape", "answer": "Edit > Duplicate Selection", "alts": []}
+{"goal": "copy this box so i have two of them", "answer": "Edit > Duplicate Selection", "alts": []}
+{"goal": "remove the thing i selected", "answer": "Edit > Delete", "alts": []}
+{"goal": "erase this item i clicked", "answer": "Edit > Delete", "alts": []}
+{"goal": "i wrote grocery somewhere on here, where is it", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "search the board for the word grocery", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "are there any typos in my words", "answer": "Edit > Spelling and Grammar > Check Document Now", "alts": []}
+{"goal": "see if i made mistakes in how i wrote the words", "answer": "Edit > Spelling and Grammar > Check Document Now", "alts": []}
+{"goal": "i want the computer to say my words aloud", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "can it read what i wrote to me", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "can i just speak and it writes it down", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "my fingers hurt, i want to say the words and have them appear", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "put a happy face here", "answer": "Edit > Emoji & Symbols", "alts": []}
+{"goal": "i want one of those little cartoon faces on the board", "answer": "Edit > Emoji & Symbols", "alts": []}
+{"goal": "turn all these letters into capitals", "answer": "Edit > Transformations > Make Upper Case", "alts": []}
+{"goal": "i want every letter here to be like ABC not abc", "answer": "Edit > Transformations > Make Upper Case", "alts": []}
+{"goal": "piliin lahat ng nasa board", "answer": "Edit > Select All", "alts": []}
+{"goal": "grab every single thing on here at once", "answer": "Edit > Select All", "alts": []}
+{"goal": "add one of those little yellow paper squares", "answer": "Insert > Sticky Note", "alts": []}
+{"goal": "i want a small square to jot a reminder on", "answer": "Insert > Sticky Note", "alts": []}
+{"goal": "add a round shape", "answer": "Insert > Shape > Oval", "alts": []}
+{"goal": "i need an egg shape on my board", "answer": "Insert > Shape > Oval", "alts": []}
+{"goal": "i want to type words anywhere i want", "answer": "Insert > Text Box", "alts": []}
+{"goal": "give me a spot to write something on the board", "answer": "Insert > Text Box", "alts": []}
+{"goal": "add one of my pictures from my album", "answer": "Insert > Choose Photo or Video", "alts": []}
+{"goal": "put a photo i took onto the board", "answer": "Insert > Choose Photo or Video", "alts": []}
+{"goal": "i want something pointing at this", "answer": "Insert > Line with Arrowhead", "alts": ["Insert > Shape > Arrow"]}
+{"goal": "add a line with a pointy end", "answer": "Insert > Line with Arrowhead", "alts": ["Insert > Shape > Arrow"]}
+{"goal": "i need a grid to plan out my week", "answer": "Insert > Table", "alts": []}
+{"goal": "make columns for the days so i can fill them in", "answer": "Insert > Table", "alts": []}
+{"goal": "the letters are too thin, make them heavier", "answer": "Format > Font > Bold", "alts": []}
+{"goal": "how do i make my writng stand out more, darker", "answer": "Format > Font > Bold", "alts": []}
+{"goal": "i cant read the words, theyre so small", "answer": "Format > Font > Bigger", "alts": []}
+{"goal": "increase the size of my writing", "answer": "Format > Font > Bigger", "alts": []}
+{"goal": "line up my words in the middle of the box", "answer": "Format > Text > Align Center", "alts": []}
+{"goal": "my writing is off to the side, move it to the middle", "answer": "Format > Text > Align Center", "alts": []}
+{"goal": "this should be a different color", "answer": "Format > Show Colors", "alts": []}
+{"goal": "i want to pick a new shade for this shape", "answer": "Format > Show Colors", "alts": []}
+{"goal": "my table needs one more line underneath", "answer": "Format > Table > Add Row Below", "alts": []}
+{"goal": "i need an extra space at the end of my table for another item", "answer": "Format > Table > Add Row Below", "alts": []}
+{"goal": "cut the person out of the photo, nothing behind them", "answer": "Format > Image > Remove Background", "alts": []}
+{"goal": "erase everything around the person in this picture", "answer": "Format > Image > Remove Background", "alts": []}
+{"goal": "this photo is underneath the other one, move it up", "answer": "Arrange > Bring to Front", "alts": []}
+{"goal": "put this picture over the top of everything", "answer": "Arrange > Bring to Front", "alts": []}
+{"goal": "put this underneath the other things", "answer": "Arrange > Send to Back", "alts": []}
+{"goal": "move this to the very bottom layer", "answer": "Arrange > Send to Back", "alts": []}
+{"goal": "make these stay together when i move them", "answer": "Arrange > Group", "alts": []}
+{"goal": "connect these so i can drag them all at once", "answer": "Arrange > Group", "alts": []}
+{"goal": "i keep bumping this, make it not move", "answer": "Arrange > Lock", "alts": []}
+{"goal": "freeze this in place so i dont drag it by mistake", "answer": "Arrange > Lock", "alts": []}
+{"goal": "everything is so tiny i cant see it", "answer": "View > Zoom > Zoom In", "alts": []}
+{"goal": "make the board look bigger on my screen", "answer": "View > Zoom > Zoom In", "alts": []}
+{"goal": "where did my things go, i cant find anything", "answer": "View > Zoom > Zoom to Fit Content", "alts": []}
+{"goal": "i want to see all my stuff on the board at the same time", "answer": "View > Zoom > Zoom to Fit Content", "alts": []}
