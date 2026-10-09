@@ -346,8 +346,8 @@ final class GuideEngine {
             }
             let frames = siblings.compactMap { $0.frame.map(rect) }
             let column = frames.dropFirst().reduce(frames.first ?? .null) { $0.union($1) }
-            show(.guiding, label: "Step \(stepNo)", text: "Turn on the switch next to the app you use for the call.",
-                 hint: "For example Zoom, FaceTime or Google Chrome.", target: column.isNull ? nil : column)
+            show(.guiding, label: "Step \(stepNo)", text: "Turn on the switch next to the app you're using.",
+                 hint: "Only you know which one. This list is for \(c.context).", target: column.isNull ? nil : column)
             _ = ClickWatcher.shared.drain()
             while !Task.isCancelled {
                 try? await Task.sleep(nanoseconds: 150_000_000)
