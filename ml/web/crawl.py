@@ -75,6 +75,9 @@ def main(sites_file, out_dir, depth_links=0):
             if not line.strip() or line.startswith("#"):
                 continue
             name, url = line.split(None, 1)
+            if os.path.exists(os.path.join(out_dir, f"{name}.json")):
+                print(f"{name}: already have, skipped", flush=True)  # rerunnable: resume where we left off
+                continue
             try:
                 snap = asyncio.run(asyncio.wait_for(snapshot(ws_url, url.strip()), 40))
                 if not snap:
