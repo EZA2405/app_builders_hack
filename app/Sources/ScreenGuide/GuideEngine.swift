@@ -211,7 +211,15 @@ final class GuideEngine {
                 }
             }
             show(.thinking, label: "Got it", text: "Looking…", hint: "", target: nil)
-            let state = await read(app)
+            var state = await read(app)
+            // System Settings just opened: its sidebar loads a moment later. Wait for the pane's row before deciding
+            // (it otherwise picked "View > Network" for a Wi‑Fi job).
+            if let pane = settingsPane, !pane.isEmpty, app.localizedName == "System Settings", !done.contains(where: { $0.contains(pane) }) {
+                for _ in 0..<5 where !state.candidates.contains(where: { $0.role == "row" && Orchestrator.same($0.label, pane) }) {
+                    try? await Task.sleep(nanoseconds: 500_000_000)
+                    state = await read(app)
+                }
+            }
             lastState = state
             let pick: Planner.Pick?
             do {
