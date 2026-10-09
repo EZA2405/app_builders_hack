@@ -41,7 +41,7 @@ final class GuideEngine {
     // MARK: - Loop
 
     private func run() async {
-        guard let app else { return }
+        guard let first = app else { return }
         // Without Accessibility the screen reads as empty and the loop would find nothing, silently.
         guard AXIsProcessTrusted() else {
             log("NO ACCESSIBILITY")
@@ -49,7 +49,14 @@ final class GuideEngine {
                  hint: "Open System Settings › Privacy & Security › Accessibility and turn on Gabay. Then ask again.", target: nil)
             return
         }
+        var app = first
         while !Task.isCancelled, stepNo < 8 {
+            // Follow the person: a Dock click (e.g. System Settings) moves the task into another app.
+            if let front = Self.frontRegularApp(), front != app {
+                log("APP \(front.localizedName ?? "?")")
+                app = front
+                self.app = front
+            }
             show(.thinking, label: "Got it", text: "Working out the next step…", hint: "Nothing on your screen leaves this Mac.", target: nil)
             let state = await read(app)
             let pick: Planner.Pick?
@@ -101,6 +108,7 @@ final class GuideEngine {
         while !Task.isCancelled {
             try? await Task.sleep(nanoseconds: 450_000_000)
             if c.role == "text field" ? doneTyping : (await signature(app)) != before { break }
+            if let front = Self.frontRegularApp(), front != app { break }   // opened another app
         }
         if Task.isCancelled { return false }
         await confirm()
@@ -175,7 +183,11 @@ final class GuideEngine {
         let dialog = s.candidates.filter { $0.source == "window" && $0.context.hasSuffix("dialog") }
         if !dialog.isEmpty { return dialog }
         let menus = s.candidates.filter { $0.source == "menu" && !Self.isPersonal($0.path) }
-        if done.isEmpty { return menus }
+        // Some goals live outside the front app ("make the screen brighter" from Terminal): also offer the Dock's
+        // apps and the menu bar icons. Dock window thumbnails carry titles (user data), so only plain app names.
+        let system = s.candidates.filter { ($0.source == "dock" && !$0.label.contains(" — ") && $0.label != "Trash")
+                                           || $0.source == "statusbar" }
+        if done.isEmpty { return menus + system }
         return s.candidates.filter { $0.source == "window" && $0.role != "menu button" } + menus
     }
 
@@ -184,6 +196,12 @@ final class GuideEngine {
     static let staticWindow = ["Close", "Minimize", "Zoom", "Fill", "Center", "Move & Resize", "Full Screen Tile",
                                "Remove Window", "Bring All to Front", "Arrange in Front", "Merge All Windows", "Move Tab",
                                "Show ", "Hide ", "Pin Tab", "Enter Full Screen", "Move Window", "Tile", "Window"]
+    static func frontRegularApp() -> NSRunningApplication? {
+        guard let front = NSWorkspace.shared.frontmostApplication, front.activationPolicy == .regular,
+              front.bundleIdentifier != Bundle.main.bundleIdentifier else { return nil }
+        return front
+    }
+
     static func isPersonal(_ path: String) -> Bool {
         let parts = path.components(separatedBy: " > ")
         if path.contains("@") || path.contains("Apple Account") || path.contains(" — ") { return true }
