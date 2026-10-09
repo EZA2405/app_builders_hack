@@ -1,0 +1,22 @@
+{"goal": "Log in to Messenger", "page": "messenger", "done": [], "answer": "textbox \"Email or phone number\" · form", "alts": []}
+{"goal": "I forgot my Messenger password", "page": "messenger", "done": [], "answer": "button \"Forgot password?\" · form", "alts": []}
+{"goal": "I need help with Messenger", "page": "messenger", "done": [], "answer": "link \"Help Center\" · Header", "alts": []}
+{"goal": "How do I stay safe on Messenger", "page": "messenger", "done": [], "answer": "link \"Privacy and Safety\" · Header", "alts": []}
+{"goal": "Paano ko i-block yung nanggugulo sa akin sa Messenger", "page": "messenger", "done": [], "answer": "link \"Privacy and Safety\" · Header", "alts": []}
+{"goal": "Change the language of this page", "page": "messenger", "done": [], "answer": "button \"English (US)\" · Footer", "alts": []}
+{"goal": "What can Messenger do", "page": "messenger", "done": [], "answer": "button \"Features\" · Header", "alts": []}
+{"goal": "I want to read the terms", "page": "messenger", "done": [], "answer": "link \"Terms\" · Footer", "alts": []}
+{"goal": "Read Messenger's privacy policy", "page": "messenger", "done": [], "answer": "link \"Privacy Policy\" · Footer", "alts": []}
+{"goal": "Ano yung cookies na sinasabi nila", "page": "messenger", "done": [], "answer": "link \"Cookie Policy\" · Footer", "alts": []}
+{"goal": "How do I block someone on Messenger", "page": "messenger__1", "done": ["clicked link \"Privacy and Safety\""], "answer": "button \"Restrict and block\"", "alts": []}
+{"goal": "Can I lock Messenger so my apo can't open my chats", "page": "messenger__1", "done": ["clicked link \"Privacy and Safety\""], "answer": "button \"App lock\"", "alts": []}
+{"goal": "I want to control who can message me", "page": "messenger__1", "done": ["clicked link \"Privacy and Safety\""], "answer": "button \"Message controls\"", "alts": []}
+{"goal": "Show me Messenger's safety center", "page": "messenger__1", "done": ["clicked link \"Privacy and Safety\""], "answer": "link \"Safety center page redirection\"", "alts": []}
+{"goal": "I need help, how do I reset my Messenger password", "page": "messenger__2", "done": ["clicked link \"Help Center\""], "answer": "button \"How can I reset my password?\"", "alts": []}
+{"goal": "I want to report a message someone sent me", "page": "messenger__2", "done": ["clicked link \"Help Center\""], "answer": "link \"Report a message or conversation on Messenger\"", "alts": ["button \"How can I report a message?\""]}
+{"goal": "How do I block someone on Messenger", "page": "messenger__2", "done": ["clicked link \"Help Center\""], "answer": "link \"Block someone's profile on Messenger\"", "alts": []}
+{"goal": "Search the help pages for my problem", "page": "messenger__2", "done": ["clicked link \"Help Center\""], "answer": "combobox \"Help Center search box\"", "alts": []}
+{"goal": "How do I update my Messenger app", "page": "messenger__2", "done": ["clicked link \"Help Center\""], "answer": "link \"Download or update your Messenger app\"", "alts": []}
+{"goal": "Pwede bang Tagalog itong help center", "page": "messenger__2", "done": ["clicked link \"Help Center\""], "answer": "button \"Change Language: English (US)\"", "alts": []}
+{"goal": "How do I turn off cookies in my browser", "page": "messenger__3", "done": ["clicked link \"Cookie Policy\""], "answer": "link \"Browser cookie controls\"", "alts": []}
+{"goal": "I want to print the cookies policy", "page": "messenger__3", "done": ["clicked link \"Cookie Policy\""], "answer": "link \"View printable version\"", "alts": []}

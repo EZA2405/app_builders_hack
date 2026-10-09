@@ -1,0 +1,24 @@
+{"goal": "Sign in to LinkedIn", "page": "linkedin", "done": [], "answer": "link \"Sign in\" · header", "alts": ["link \"Sign in with email\" · main: Welcome to your professional community"]}
+{"goal": "Create a LinkedIn account", "page": "linkedin", "done": [], "answer": "link \"Join now\" · header", "alts": ["link \"Join now\" · main: Welcome to your professional community"]}
+{"goal": "Find a job for my son", "page": "linkedin", "done": [], "answer": "link \"Jobs\" · nav", "alts": ["link \"Find jobs\" · main: Welcome to your professional community"]}
+{"goal": "Hanap ng trabaho sa customer service", "page": "linkedin", "done": [], "answer": "link \"Customer Service\" · main: Welcome to your professional community", "alts": []}
+{"goal": "I want to take free online courses", "page": "linkedin", "done": [], "answer": "link \"Learning\" · nav", "alts": []}
+{"goal": "Look for an old classmate on LinkedIn", "page": "linkedin", "done": [], "answer": "link \"People\" · nav", "alts": ["link \"Find people\" · main: Welcome to your professional community"]}
+{"goal": "I want to play the sudoku game", "page": "linkedin", "done": [], "answer": "link \"Mini Sudoku\" · main: Welcome to your professional community", "alts": []}
+{"goal": "I need help with LinkedIn", "page": "linkedin", "done": [], "answer": "link \"Help Center\" · main: Welcome to your professional community", "alts": []}
+{"goal": "Change the language", "page": "linkedin", "done": [], "answer": "button \"Language\" · footer", "alts": []}
+{"goal": "Post a job for my small business", "page": "linkedin", "done": [], "answer": "link \"Post a job\" · main: Welcome to your professional community", "alts": []}
+{"goal": "Read popular articles on LinkedIn", "page": "linkedin", "done": [], "answer": "link \"Top Content\" · nav", "alts": []}
+{"goal": "Read articles about career tips", "page": "linkedin__1", "done": ["clicked link \"Top Content\""], "answer": "link \"🚀️ Tips for Strategic Career Planning\" · main: What topics do you want to explore?", "alts": []}
+{"goal": "I was reading articles, now I want to sign in", "page": "linkedin__1", "done": ["clicked link \"Top Content\""], "answer": "link \"Sign in\" · Primary", "alts": []}
+{"goal": "Find an old classmate, they're asking me to join", "page": "linkedin__2", "done": ["clicked link \"People\""], "answer": "textbox \"Email\" · form: Join LinkedIn", "alts": []}
+{"goal": "Find people, I already have an account", "page": "linkedin__2", "done": ["clicked link \"People\""], "answer": "button \"Sign in\" · form: Join LinkedIn", "alts": []}
+{"goal": "Find people, sign up using my Google account", "page": "linkedin__2", "done": ["clicked link \"People\""], "answer": "button \"Continue with google\" · form: Join LinkedIn", "alts": []}
+{"goal": "Find a course on Excel", "page": "linkedin__3", "done": ["clicked link \"Learning\""], "answer": "searchbox \"Search skills, subjects, or software\" · search", "alts": []}
+{"goal": "Courses about customer service", "page": "linkedin__3", "done": ["clicked link \"Learning\""], "answer": "link \"Customer Service\"", "alts": []}
+{"goal": "Gusto kong mag-aral ng photography online", "page": "linkedin__3", "done": ["clicked link \"Learning\""], "answer": "link \"Photography\"", "alts": []}
+{"goal": "Search for cashier jobs", "page": "linkedin__4", "done": ["clicked link \"Jobs\""], "answer": "combobox \"Search job titles or companies\" · search", "alts": []}
+{"goal": "Find jobs near Cebu", "page": "linkedin__4", "done": ["clicked link \"Jobs\""], "answer": "combobox \"Location\" · search", "alts": []}
+{"goal": "Play the sudoku game", "page": "linkedin__5", "done": ["clicked link \"Games\""], "answer": "link \"The classic game, made mini Mini Sudoku\" · main", "alts": []}
+{"goal": "Create a LinkedIn account", "page": "linkedin__6", "done": ["clicked link \"Join now\""], "answer": "textbox \"Email or phone number\" · form:", "alts": []}
+{"goal": "I'm signing up but I need help", "page": "linkedin__6", "done": ["clicked link \"Join now\""], "answer": "link \"Get help\" · main: Join LinkedIn now — it’s free!", "alts": []}

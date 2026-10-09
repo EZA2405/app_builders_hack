@@ -1,0 +1,24 @@
+{"goal": "Log in to my Instagram", "page": "instagram", "done": [], "answer": "textbox \"Mobile number, username or email\" · form", "alts": []}
+{"goal": "I forgot my Instagram password", "page": "instagram", "done": [], "answer": "link \"Forgot password?\" · form", "alts": []}
+{"goal": "Log in using my Facebook account", "page": "instagram", "done": [], "answer": "button \"Log in with Facebook\" · form", "alts": []}
+{"goal": "Gawa ng bagong Instagram account", "page": "instagram", "done": [], "answer": "link \"Create new account\" · form", "alts": []}
+{"goal": "I need help with Instagram", "page": "instagram", "done": [], "answer": "link \"Help\" · contentinfo", "alts": []}
+{"goal": "My phone is old, is there a lighter Instagram app", "page": "instagram", "done": [], "answer": "link \"Instagram Lite\" · contentinfo", "alts": []}
+{"goal": "What is Instagram about", "page": "instagram", "done": [], "answer": "link \"About\" · contentinfo", "alts": []}
+{"goal": "Read Instagram's privacy rules", "page": "instagram", "done": [], "answer": "link \"Privacy\" · contentinfo", "alts": []}
+{"goal": "Show me news and tips from Instagram", "page": "instagram", "done": [], "answer": "link \"Blog\" · contentinfo", "alts": []}
+{"goal": "May trabaho ba sa Instagram para sa anak ko", "page": "instagram", "done": [], "answer": "link \"Jobs\" · contentinfo", "alts": []}
+{"goal": "How do I get the blue verified badge", "page": "instagram", "done": [], "answer": "link \"Meta Verified\" · contentinfo", "alts": []}
+{"goal": "I forgot my Instagram password", "page": "instagram__1", "done": ["clicked link \"Forgot password?\""], "answer": "textbox \"Mobile number, username or email\" · form", "alts": []}
+{"goal": "I forgot my password and the reset is not working", "page": "instagram__1", "done": ["clicked link \"Forgot password?\""], "answer": "button \"Can't reset your password?\" · form", "alts": []}
+{"goal": "Create a new Instagram account", "page": "instagram__2", "done": ["clicked link \"Create new account\""], "answer": "textbox \"Mobile number or email\"", "alts": []}
+{"goal": "Gumawa ako ng account pero meron na pala ako", "page": "instagram__2", "done": ["clicked link \"Create new account\""], "answer": "button \"I already have an account\"", "alts": []}
+{"goal": "Learn about Instagram's safety tools", "page": "instagram__3", "done": ["clicked link \"About\""], "answer": "link \"Safety tools\" · footer: Create, share and connect.", "alts": ["link \"Click to visit the About Instagram safety tools page\" · main: Instagram brings you closer to the people and things y"]}
+{"goal": "Download Instagram on my Android phone", "page": "instagram__3", "done": ["clicked link \"About\""], "answer": "link \"Download Instagram for Android\" · footer: Create, share and connect.", "alts": []}
+{"goal": "Information for parents about Instagram", "page": "instagram__3", "done": ["clicked link \"About\""], "answer": "link \"Parents\" · footer: Create, share and connect.", "alts": []}
+{"goal": "Read the guide on how to make Reels", "page": "instagram__4", "done": ["clicked link \"Blog\""], "answer": "link \"How to Make Instagram Reels: Complete 2026 Guide\" · main: Instagram blog", "alts": []}
+{"goal": "Look at all the job openings at Instagram", "page": "instagram__5", "done": ["clicked link \"Jobs\""], "answer": "button \"View All →\"", "alts": []}
+{"goal": "I need help, how do I reset my Instagram password", "page": "instagram__6", "done": ["clicked link \"Help\""], "answer": "button \"How can I reset my password?\"", "alts": []}
+{"goal": "Search Instagram help for my problem", "page": "instagram__6", "done": ["clicked link \"Help\""], "answer": "combobox \"Help Center search box\"", "alts": []}
+{"goal": "How do I report a post on Instagram", "page": "instagram__6", "done": ["clicked link \"Help\""], "answer": "button \"How can I report a post or reel?\"", "alts": []}
+{"goal": "Na-hack ang Instagram ko, paano ko mababawi", "page": "instagram__6", "done": ["clicked link \"Help\""], "answer": "button \"Login, Recovery and Security\" · nav", "alts": []}

@@ -1,0 +1,15 @@
+{"goal": "I want to search for the weather today", "page": "google", "done": [], "answer": "combobox \"Search\" · search", "alts": []}
+{"goal": "I want to see Google in Tagalog", "page": "google", "done": [], "answer": "link \"Filipino\"", "alts": []}
+{"goal": "Open my email", "page": "google", "done": [], "answer": "link \"Gmail\" · none", "alts": []}
+{"goal": "Search for pictures of flowers", "page": "google", "done": [], "answer": "link \"Search for Images\" · none", "alts": []}
+{"goal": "I don't want to type, I want to talk to search", "page": "google", "done": [], "answer": "button \"Search by voice\" · search", "alts": []}
+{"goal": "Log in to my Google account", "page": "google", "done": [], "answer": "link \"Sign in\" · none", "alts": []}
+{"goal": "I want to search using a photo of a plant", "page": "google", "done": [], "answer": "button \"Search by image\" · search", "alts": []}
+{"goal": "Bisaya ko, gusto ko Cebuano ang Google", "page": "google", "done": [], "answer": "link \"Cebuano\"", "alts": []}
+{"goal": "Naka-Tagalog na, ngayon gusto kong hanapin ang recipe ng adobo", "page": "google__5", "done": ["clicked link \"Filipino\""], "answer": "combobox \"Maghanap\" · search", "alts": []}
+{"goal": "Ibalik sa English ang Google", "page": "google__5", "done": ["clicked link \"Filipino\""], "answer": "link \"English\"", "alts": []}
+{"goal": "Mag-sign in sa Google account ko", "page": "google__5", "done": ["clicked link \"Filipino\""], "answer": "link \"Mag-sign in\" · none", "alts": []}
+{"goal": "Gusto kong maghanap gamit ang boses ko", "page": "google__5", "done": ["clicked link \"Filipino\""], "answer": "button \"Maghanap gamit ang boses\" · search", "alts": []}
+{"goal": "Now search for the news in Cebu", "page": "google__6", "done": ["clicked link \"Cebuano\""], "answer": "combobox \"Maghanap\" · search", "alts": []}
+{"goal": "Switch Google back to English", "page": "google__6", "done": ["clicked link \"Cebuano\""], "answer": "link \"English\"", "alts": []}
+{"goal": "Change it to Filipino instead", "page": "google__6", "done": ["clicked link \"Cebuano\""], "answer": "link \"Filipino\"", "alts": []}

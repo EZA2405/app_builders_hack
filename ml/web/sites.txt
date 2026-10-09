@@ -35,5 +35,3 @@ apple_support https://support.apple.com/
 inquirer https://www.inquirer.net/
 rappler https://www.rappler.com/
 google_maps https://www.google.com/maps
-youtube_home https://www.youtube.com/
-wikipedia_home https://www.wikipedia.org/

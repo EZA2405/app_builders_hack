@@ -49,7 +49,8 @@ def rows(pages_dir, out):
     with open(out, "w") as f:
         for path in sorted(glob.glob("data/goals_web/*.jsonl")):
             site = os.path.basename(path)[:-6]
-            if site.startswith("test_"):
+            # Held-out sites (and other pages on the same domains) never enter training.
+            if site.startswith("test_") or site in {"youtube_home", "wikipedia_home", "sss", "philhealth", "shopee"}:
                 raise SystemExit(f"refusing to train on held-out site {site}")
             for line in open(path):
                 if not line.strip():

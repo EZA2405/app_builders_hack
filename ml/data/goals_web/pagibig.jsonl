@@ -1,0 +1,26 @@
+{"goal": "Where is the nearest Pag-IBIG branch?", "page": "pagibig", "done": [], "answer": "link \"Branches\"", "alts": ["link \"Branch Locator\" · footer"]}
+{"goal": "I want to check my Pag-IBIG contributions online", "page": "pagibig", "done": [], "answer": "link \"Virtual Pag-IBIG\"", "alts": ["link \"Virtual Pag-IBIG\" · footer"]}
+{"goal": "Paano mag-loan ng pera sa Pag-IBIG?", "page": "pagibig", "done": [], "answer": "link \"Cash Loans\"", "alts": []}
+{"goal": "I want to borrow money to buy a house", "page": "pagibig", "done": [], "answer": "link \"Home Loans\"", "alts": []}
+{"goal": "How much will my monthly housing loan payment be?", "page": "pagibig", "done": [], "answer": "link \"Housing Loan Calculator\" · footer", "alts": []}
+{"goal": "I want to save more money with MP2", "page": "pagibig", "done": [], "answer": "link \"MP2 Savings\" · footer", "alts": []}
+{"goal": "Where can I pay my Pag-IBIG loan?", "page": "pagibig", "done": [], "answer": "link \"Payments\"", "alts": ["link \"Payment Channels\" · footer"]}
+{"goal": "I need to download a Pag-IBIG form", "page": "pagibig", "done": [], "answer": "link \"Downloadable Forms\" · footer", "alts": []}
+{"goal": "What is the hotline number of Pag-IBIG?", "page": "pagibig", "done": [], "answer": "link \"8-724-4244 (8-Pag-IBIG)\"", "alts": []}
+{"goal": "Nasalanta kami ng bagyo, may calamity loan ba?", "page": "pagibig", "done": [], "answer": "link \"Calamity Loan\" · footer", "alts": []}
+{"goal": "I work abroad, how do I join Pag-IBIG?", "page": "pagibig", "done": [], "answer": "link \"OFWs\"", "alts": []}
+{"goal": "I want to sign up for Pag-IBIG membership", "page": "pagibig", "done": [], "answer": "link \"Sign up for Membership\" · footer", "alts": ["link \"Membership\""]}
+{"goal": "How do I claim my Pag-IBIG savings when I retire?", "page": "pagibig", "done": [], "answer": "link \"Claims\"", "alts": []}
+{"goal": "I am a member and I want to see my savings options", "page": "pagibig__1", "done": ["clicked link \"Member\""], "answer": "link \"Savings\"", "alts": []}
+{"goal": "As a member, I want to apply for a housing loan", "page": "pagibig__1", "done": ["clicked link \"Member\""], "answer": "link \"Home Loans\"", "alts": []}
+{"goal": "Member ako, gusto ko mag-claim ng benefits ko", "page": "pagibig__1", "done": ["clicked link \"Member\""], "answer": "link \"Claims\"", "alts": []}
+{"goal": "I'm an employer and I need to register my business with Pag-IBIG", "page": "pagibig__2", "done": ["clicked link \"Employer\""], "answer": "link \"Registration\"", "alts": ["button \"Register now\""]}
+{"goal": "I'm an employer, I want to log in to send my workers' contributions", "page": "pagibig__2", "done": ["clicked link \"Employer\""], "answer": "button \"Log In\"", "alts": []}
+{"goal": "As an employer, where do I pay the contributions?", "page": "pagibig__2", "done": ["clicked link \"Employer\""], "answer": "link \"Payments\"", "alts": []}
+{"goal": "I'm a housing developer and I want to get accredited", "page": "pagibig__3", "done": ["clicked link \"Developer\""], "answer": "link \"Accreditation\"", "alts": []}
+{"goal": "I'm a developer, I want to log in to the portal", "page": "pagibig__3", "done": ["clicked link \"Developer\""], "answer": "button \"Log In\"", "alts": []}
+{"goal": "Who runs Pag-IBIG? I want to see the people behind it", "page": "pagibig__4", "done": ["clicked link \"About\""], "answer": "link \"People Behind\"", "alts": []}
+{"goal": "I want to read Pag-IBIG's annual report", "page": "pagibig__4", "done": ["clicked link \"About\""], "answer": "link \"Publication\"", "alts": ["link \"Annual Reports\" · footer"]}
+{"goal": "Are there job openings at Pag-IBIG?", "page": "pagibig__5", "done": ["clicked link \"Opportunities\""], "answer": "link \"Careers\"", "alts": ["link \"Careers\" · footer"]}
+{"goal": "I want to see the list of Pag-IBIG bidding", "page": "pagibig__5", "done": ["clicked link \"Opportunities\""], "answer": "link \"Procurement Bidding\"", "alts": ["link \"Procurement Bidding\" · footer"]}
+{"goal": "I want to apply for Pag-IBIG online", "page": "pagibig__6", "done": ["clicked link \"Apply\""], "answer": "button \"Apply Now\"", "alts": []}

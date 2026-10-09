@@ -1,0 +1,23 @@
+{"goal": "Join my grandson's Zoom meeting", "page": "zoom_join", "done": [], "answer": "textbox \"Meeting ID or Personal Link Name\" · form", "alts": []}
+{"goal": "Sumali sa Zoom meeting, may meeting ID na ako", "page": "zoom_join", "done": [], "answer": "textbox \"Meeting ID or Personal Link Name\" · form", "alts": []}
+{"goal": "I need help with Zoom", "page": "zoom_join", "done": [], "answer": "link \"Support\" · meetings", "alts": []}
+{"goal": "Create a free Zoom account", "page": "zoom_join", "done": [], "answer": "button \"Sign Up Free\" · meetings", "alts": []}
+{"goal": "Join the meeting from our office conference room system", "page": "zoom_join", "done": [], "answer": "link \"Join a meeting from an H.323/SIP room system\" · form", "alts": []}
+{"goal": "Change the language", "page": "zoom_join", "done": [], "answer": "button \"Language English\"", "alts": []}
+{"goal": "Remove the cookie notice covering the page", "page": "zoom_join", "done": [], "answer": "button \"Close\"", "alts": []}
+{"goal": "Read Zoom's terms", "page": "zoom_join", "done": [], "answer": "link \"Terms of Services\" · form", "alts": []}
+{"goal": "Go to the main Zoom website", "page": "zoom_join", "done": [], "answer": "link \"Zoom Home Page\" · banner", "alts": []}
+{"goal": "I have poor eyesight, does Zoom have accessibility features", "page": "zoom_join", "done": [], "answer": "link \"Accessibility overview\"", "alts": []}
+{"goal": "Chat with someone from Zoom", "page": "zoom_join", "done": [], "answer": "button \"Open chat dialog\"", "alts": []}
+{"goal": "Join a Zoom meeting", "page": "zoom_join__1", "done": ["clicked link \"Skip to main content\""], "answer": "textbox \"Meeting ID or Personal Link Name\" · form", "alts": []}
+{"goal": "How do I turn on captions in Zoom, I'm hard of hearing", "page": "zoom_join__2", "done": ["clicked link \"Accessibility overview\""], "answer": "link \"Support article Managing closed captioning and live transcription Learn More\" · main: Zoom is for Everyone", "alts": []}
+{"goal": "Zoom keyboard shortcuts", "page": "zoom_join__2", "done": ["clicked link \"Accessibility overview\""], "answer": "link \"Keyboard Shortcuts\" · main: Zoom is for Everyone", "alts": []}
+{"goal": "Common questions about Zoom accessibility", "page": "zoom_join__2", "done": ["clicked link \"Accessibility overview\""], "answer": "link \"Accessibility FAQ Learn More\" · main: Zoom is for Everyone", "alts": ["link \"Accessibility FAQ\" · main: Zoom is for Everyone"]}
+{"goal": "Download Zoom on my computer", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""], "answer": "link \"Download\" · nav", "alts": []}
+{"goal": "I want to test Zoom before my meeting", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""], "answer": "link \"Test Zoom\" · nav", "alts": []}
+{"goal": "Sign in to my Zoom account", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""], "answer": "link \"Sign In\" · header", "alts": []}
+{"goal": "Magkano ang Zoom, anong plans meron", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""], "answer": "link \"Plans and Pricing\" · nav", "alts": ["link \"Find your plan\" · main: Find out what's possible when work connects"]}
+{"goal": "I need the Zoom help center", "page": "zoom_join__4", "done": ["clicked link \"Terms of Services\""], "answer": "link \"Zoom Help Center\" · main: ZOOM TERMS OF SERVICE", "alts": []}
+{"goal": "How do I contact Zoom about my privacy", "page": "zoom_join__5", "done": ["clicked link \"Privacy Statement\""], "answer": "link \"How to Contact Us\" · main: Zoom Privacy Statement", "alts": []}
+{"goal": "Change my cookie settings", "page": "zoom_join__5", "done": ["clicked link \"Privacy Statement\""], "answer": "link \"Cookies Settings\" · main: Zoom Privacy Statement", "alts": []}
+{"goal": "Join from the conference room, enter the meeting ID", "page": "zoom_join__6", "done": ["clicked link \"Join a meeting from an H.323/SIP room system\""], "answer": "textbox \"Meeting ID\" · form", "alts": []}

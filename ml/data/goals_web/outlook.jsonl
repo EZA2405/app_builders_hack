@@ -1,0 +1,12 @@
+{"goal": "I want to sign in to my email", "page": "outlook", "done": [], "answer": "link \"Sign in to Outlook\" · main:", "alts": ["link \"Sign in\" · header"]}
+{"goal": "I want to make a free email account", "page": "outlook", "done": [], "answer": "link \"Create free account on Outlook\" · main:", "alts": ["link \"Create a free Outlook account\" · main:", "link \"Create account on Outlook\" · main:"]}
+{"goal": "Download Outlook on my Android phone", "page": "outlook", "done": [], "answer": "link \"Download Outlook for Android\" · main:", "alts": []}
+{"goal": "Install Outlook on my iPhone", "page": "outlook", "done": [], "answer": "link \"Download Outlook for iOS\" · main:", "alts": []}
+{"goal": "I want to put Outlook on my Windows computer", "page": "outlook", "done": [], "answer": "link \"Download Outlook for Windows\" · main:", "alts": []}
+{"goal": "How much does Outlook cost?", "page": "outlook", "done": [], "answer": "link \"See Outlook email plans and pricing\" · In Page quick links", "alts": ["link \"Plans and pricing\" · In Page quick links", "button \"Plans and pricing\" · Contextual menu"]}
+{"goal": "I need help with Outlook", "page": "outlook", "done": [], "answer": "link \"Support\" · Contextual menu", "alts": []}
+{"goal": "Bakit may ads sa inbox ko?", "page": "outlook", "done": [], "answer": "button \"05/ Why do I see ads in my Outlook inbox?\" · main:", "alts": []}
+{"goal": "I have an old Hotmail account, is that the same as Outlook?", "page": "outlook", "done": [], "answer": "button \"02/ I have a Hotmail.com, Live.com, or MSN.com email account. Is that the same a\" · main:", "alts": []}
+{"goal": "Can I use the Outlook app without an Outlook.com account?", "page": "outlook", "done": [], "answer": "button \"03/ I don’t have an Outlook.com account. Can I still use Outlook apps?\" · main:", "alts": []}
+{"goal": "How do I cancel my Microsoft 365 subscription?", "page": "outlook", "done": [], "answer": "link \"Learn how to cancel your Microsoft 365 subscription\" · Footnotes", "alts": []}
+{"goal": "I want to change the language of this website", "page": "outlook", "done": [], "answer": "link \"Content Language Selector. Currently set to English (United States)\" · footer: What's new", "alts": []}

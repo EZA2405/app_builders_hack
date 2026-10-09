@@ -1,0 +1,24 @@
+{"goal": "I want to log in to my Facebook", "page": "facebook", "done": [], "answer": "textbox \"Email or mobile number\" · form", "alts": []}
+{"goal": "I forgot my Facebook password", "page": "facebook", "done": [], "answer": "link \"Forgot password?\" · form", "alts": []}
+{"goal": "Gawan mo ako ng bagong Facebook account", "page": "facebook", "done": [], "answer": "link \"Create new account\" · form", "alts": ["link \"Sign Up\""]}
+{"goal": "Change Facebook to Tagalog", "page": "facebook", "done": [], "answer": "link \"Filipino\"", "alts": []}
+{"goal": "I want Facebook in Bisaya", "page": "facebook", "done": [], "answer": "link \"Bisaya\"", "alts": []}
+{"goal": "Open Messenger so I can chat with my grandchildren", "page": "facebook", "done": [], "answer": "link \"Messenger\"", "alts": []}
+{"goal": "I need help with my Facebook", "page": "facebook", "done": [], "answer": "link \"Help\"", "alts": []}
+{"goal": "Where can I read Facebook's privacy policy", "page": "facebook", "done": [], "answer": "link \"Privacy Policy\"", "alts": []}
+{"goal": "My phone is slow, is there a lighter Facebook app", "page": "facebook", "done": [], "answer": "link \"Facebook Lite\"", "alts": []}
+{"goal": "Gusto kong manood ng mga video sa Facebook", "page": "facebook", "done": [], "answer": "link \"Video\"", "alts": []}
+{"goal": "Make a Facebook page for my sari-sari store", "page": "facebook", "done": [], "answer": "link \"Create Page\"", "alts": []}
+{"goal": "I forgot my Facebook password", "page": "facebook__1", "done": ["clicked link \"Forgot password?\""], "answer": "textbox \"Mobile number or email\" · form", "alts": []}
+{"goal": "Nakalimutan ko password ko sa Facebook, paano i-reset", "page": "facebook__1", "done": ["clicked link \"Forgot password?\""], "answer": "textbox \"Mobile number or email\" · form", "alts": []}
+{"goal": "I forgot my password, show the page in Filipino please", "page": "facebook__1", "done": ["clicked link \"Forgot password?\""], "answer": "button \"Filipino\"", "alts": []}
+{"goal": "Create a new Facebook account for my mother", "page": "facebook__2", "done": ["clicked link \"Create new account\""], "answer": "textbox \"First name\"", "alts": []}
+{"goal": "I tried to make a new account but I already have one", "page": "facebook__2", "done": ["clicked link \"Create new account\""], "answer": "button \"I already have an account\"", "alts": []}
+{"goal": "Make a new Facebook account, why do they need my birthday", "page": "facebook__2", "done": ["clicked link \"Create new account\""], "answer": "button \"Click for more information about entering birthday\"", "alts": []}
+{"goal": "I want to sign up for Facebook", "page": "facebook__4", "done": ["clicked link \"Sign Up\""], "answer": "textbox \"First name\"", "alts": []}
+{"goal": "Sign up for Facebook, choose my birth month", "page": "facebook__4", "done": ["clicked link \"Sign Up\""], "answer": "combobox \"Select Month\"", "alts": []}
+{"goal": "Log in to Facebook", "page": "facebook__5", "done": ["clicked link \"Log In\""], "answer": "textbox \"Email or mobile number\" · form", "alts": []}
+{"goal": "I'm trying to log in but I forgot my password", "page": "facebook__5", "done": ["clicked link \"Log In\""], "answer": "link \"Forgot password?\" · form", "alts": []}
+{"goal": "Gawing Filipino ang Facebook tapos mag-log in", "page": "facebook__3", "done": ["clicked link \"Filipino\""], "answer": "textbox \"Email or mobile number\" · form", "alts": []}
+{"goal": "Open Messenger from Facebook and log in", "page": "facebook__6", "done": ["clicked link \"Messenger\""], "answer": "textbox \"Email or phone number\" · form", "alts": []}
+{"goal": "Open Messenger, I forgot my password there", "page": "facebook__6", "done": ["clicked link \"Messenger\""], "answer": "button \"Forgot password?\" · form", "alts": []}

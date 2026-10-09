@@ -1,0 +1,22 @@
+{"goal": "How do I start using GCash?", "page": "gcash", "done": [], "answer": "link \"Get Started\" · navigation", "alts": ["link \"Get Started\""]}
+{"goal": "I have a problem with my GCash, where do I get help?", "page": "gcash", "done": [], "answer": "link \"Help Center\" · navigation", "alts": ["link \"Visit Help Center\"", "link \"GCash Help Center\""]}
+{"goal": "Paano magbayad ng bills gamit ang GCash?", "page": "gcash", "done": [], "answer": "link \"Billers\"", "alts": []}
+{"goal": "I want to send money to a bank account", "page": "gcash", "done": [], "answer": "link \"Bank Transfer\"", "alts": []}
+{"goal": "My child abroad wants to send me money through GCash", "page": "gcash", "done": [], "answer": "link \"Overseas\"", "alts": []}
+{"goal": "Can I buy now and pay later with GGives?", "page": "gcash", "done": [], "answer": "link \"GGives\"", "alts": []}
+{"goal": "What is the GCash hotline number?", "page": "gcash", "done": [], "answer": "link \"2882\"", "alts": ["link \"(02) 7213-9999\""]}
+{"goal": "Are there any GCash promos today?", "page": "gcash", "done": [], "answer": "link \"Promos\" · navigation", "alts": ["link \"Promos\""]}
+{"goal": "How do I pay by scanning a QR code?", "page": "gcash", "done": [], "answer": "link \"Pay QR\"", "alts": []}
+{"goal": "I need to borrow a little money, ano ang options ko?", "page": "gcash", "done": [], "answer": "tab \"Borrow\"", "alts": []}
+{"goal": "Where can I cash in near me?", "page": "gcash", "done": [], "answer": "link \"Pera Outlets\"", "alts": []}
+{"goal": "I want to open a GCash account for my grandchild", "page": "gcash", "done": [], "answer": "link \"GCash Jr.\"", "alts": []}
+{"goal": "I want to download the GCash app on my phone", "page": "gcash__1", "done": ["clicked link \"Get Started\""], "answer": "link \"Download the GCash app\"", "alts": []}
+{"goal": "How do I take a proper selfie for verification?", "page": "gcash__1", "done": ["clicked link \"Get Started\""], "answer": "link \"Take selfies correctly with these easy tips\"", "alts": []}
+{"goal": "My ID photo keeps getting rejected, any tips?", "page": "gcash__1", "done": ["clicked link \"Get Started\""], "answer": "link \"Get tips on submitting clear pics of your ID\"", "alts": []}
+{"goal": "How do I fill up the verification form correctly?", "page": "gcash__1", "done": ["clicked link \"Get Started\""], "answer": "link \"Learn how to answer the form accurately\"", "alts": []}
+{"goal": "I want to see the ways to send money", "page": "gcash__2", "done": ["clicked link \"Services\""], "answer": "link \"Send\"", "alts": ["tab \"Send\""]}
+{"goal": "Show me the savings and investment options in GCash", "page": "gcash__2", "done": ["clicked link \"Services\""], "answer": "link \"Grow\"", "alts": ["tab \"Grow\""]}
+{"goal": "Search for a promo on cellphone load", "page": "gcash__5", "done": ["clicked link \"Promos\""], "answer": "textbox \"Search\" · Promos", "alts": []}
+{"goal": "Show me more promos on the next page", "page": "gcash__5", "done": ["clicked link \"Promos\""], "answer": "link \"Next Page\" · List", "alts": []}
+{"goal": "I want to apply for a job at GCash", "page": "gcash__6", "done": ["clicked link \"Careers\""], "answer": "link \"Apply Now\"", "alts": []}
+{"goal": "May sari-sari store ako, gusto ko malaman ang GCash for small business", "page": "gcash__4", "done": ["clicked link \"About Us\""], "answer": "link \"MSME\"", "alts": []}

@@ -1,0 +1,22 @@
+{"goal": "I need to download a BIR form", "page": "bir", "done": [], "answer": "link \"BIR Forms\" · main", "alts": []}
+{"goal": "Magbabayad ako ng tax online", "page": "bir", "done": [], "answer": "link \"eSERVICES\" · main", "alts": []}
+{"goal": "I want to book an appointment at the BIR office", "page": "bir", "done": [], "answer": "button \"Book via eAPPOINTMENT Now!\" · main", "alts": []}
+{"goal": "How much tax do I need to pay? Is there a calculator?", "page": "bir", "done": [], "answer": "button \"View Tax Calculator\" · main", "alts": []}
+{"goal": "Search the BIR site for how to get a TIN ID", "page": "bir", "done": [], "answer": "textbox \"Search\" · form", "alts": []}
+{"goal": "Which banks can I pay my taxes at?", "page": "bir", "done": [], "answer": "link \"Authorized Agent Banks\" · main", "alts": []}
+{"goal": "How do I contact the BIR?", "page": "bir", "done": [], "answer": "link \"CONTACT US\" · main", "alts": ["link \"Contact Us\" · footer"]}
+{"goal": "What is the zonal value of the lot I'm buying?", "page": "bir", "done": [], "answer": "link \"Zonal Values\" · main", "alts": []}
+{"goal": "What are the penalties if I file my taxes late?", "page": "bir", "done": [], "answer": "link \"Penalties\" · main", "alts": []}
+{"goal": "I want to know about the tax amnesty", "page": "bir", "done": [], "answer": "link \"Tax Amnesty\" · main", "alts": []}
+{"goal": "Show me the latest BIR announcements", "page": "bir", "done": [], "answer": "button \"ANNOUNCEMENTS\" · main", "alts": []}
+{"goal": "Gusto kong makita ang Citizen's Charter ng BIR", "page": "bir", "done": [], "answer": "link \"BIR Citizen's Charter\" · main", "alts": []}
+{"goal": "I want to pay my taxes online", "page": "bir__4", "done": ["clicked link \"eSERVICES\""], "answer": "link \"ePay\" · main", "alts": []}
+{"goal": "I need to fill out a BIR form on the computer", "page": "bir__4", "done": ["clicked link \"eSERVICES\""], "answer": "link \"ebirforms\" · main", "alts": []}
+{"goal": "I want to register and get a TIN online", "page": "bir__4", "done": ["clicked link \"eSERVICES\""], "answer": "link \"https://orus.bir.gov.ph/\" · main", "alts": []}
+{"goal": "I want to use the taxpayer portal", "page": "bir__4", "done": ["clicked link \"eSERVICES\""], "answer": "link \"Taxpayer Portal (TPPortal)\" · main", "alts": []}
+{"goal": "Show me the other online services of BIR", "page": "bir__4", "done": ["clicked link \"eSERVICES\""], "answer": "button \"Other eServices\" · main", "alts": []}
+{"goal": "Find the BIR office in our region", "page": "bir__5", "done": ["clicked link \"CONTACT US\""], "answer": "button \"Regional/District Offices\" · main", "alts": []}
+{"goal": "I want to email the BIR my question", "page": "bir__5", "done": ["clicked link \"CONTACT US\""], "answer": "link \"contact_us@bir.gov.ph.\" · main", "alts": []}
+{"goal": "I want to contact the BIR main office", "page": "bir__5", "done": ["clicked link \"CONTACT US\""], "answer": "button \"National Office\" · main", "alts": []}
+{"goal": "I want to email the BIR about my personal data privacy", "page": "bir__3", "done": ["clicked link \"PrivacyNotice\""], "answer": "link \"bir_dpo@bir.gov.ph\" · main: BUREAU OF INTERNAL REVENUE PRIVACY NOTICE", "alts": []}
+{"goal": "Bumalik ako sa BIR home page, now I need to download a form", "page": "bir__1", "done": ["clicked link \"Main Logo\""], "answer": "link \"BIR Forms\" · main", "alts": []}
