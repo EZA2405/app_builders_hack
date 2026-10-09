@@ -4,6 +4,7 @@ import SwiftUI
 /// Design A "2a Ask": a glass panel under the menu bar icon.
 struct AskView: View {
     @State private var text = ""
+    @ObservedObject var listener: Listener
     var userName = "there"
     var onAsk: (String) -> Void
     let suggestions = ["Make a photo smaller to email it", "Make the screen brighter", "Connect to Wi-Fi"]
@@ -13,11 +14,18 @@ struct AskView: View {
             Text("Hi \(userName).").font(.system(size: 17)).foregroundStyle(Theme.inkSoft)
             Text("What would you like to do?").font(.system(size: 28, weight: .bold)).foregroundStyle(Theme.ink)
             HStack(spacing: 10) {
-                TextField("Type it here", text: $text)
+                TextField(listener.listening ? "I'm listening…" : "Say it or type it here", text: $text)
                     .textFieldStyle(.plain).font(.system(size: 20))
                     .padding(.horizontal, 18).frame(height: 58)
                     .background(RoundedRectangle(cornerRadius: 18).fill(Color.white.opacity(0.85)))
                     .onSubmit { submit(text) }
+                    .onChange(of: listener.text) { _, said in text = said }
+                Button { listener.listening ? listener.finish() : listener.start() } label: {
+                    Image(systemName: listener.listening ? "waveform" : "mic.fill").font(.system(size: 22, weight: .bold))
+                        .foregroundStyle(listener.listening ? .white : Theme.beacon)
+                        .frame(width: 58, height: 58)
+                        .background(Circle().fill(listener.listening ? Theme.beacon : Theme.beacon.opacity(0.15)))
+                }.buttonStyle(.plain).help("Talk instead of typing (Option+Space opens this from anywhere)")
                 Button { submit(text) } label: {
                     Image(systemName: "arrow.up").font(.system(size: 22, weight: .bold)).foregroundStyle(.white)
                         .frame(width: 58, height: 58).background(Circle().fill(Theme.beacon))
@@ -30,6 +38,9 @@ struct AskView: View {
                         .frame(maxWidth: .infinity, alignment: .leading).padding(.horizontal, 16).frame(height: 44)
                         .background(RoundedRectangle(cornerRadius: 14).fill(Color.black.opacity(0.05)))
                 }.buttonStyle(.plain)
+            }
+            if listener.unavailable {
+                Text("Voice isn't set up on this Mac. You can type instead.").font(.system(size: 15)).foregroundStyle(Theme.inkSoft)
             }
             HStack(spacing: 8) {
                 Circle().fill(Theme.done).frame(width: 8, height: 8)
@@ -47,6 +58,7 @@ struct AskView: View {
     }
 
     func submit(_ s: String) {
+        listener.stop()
         let t = s.trimmingCharacters(in: .whitespaces)
         if !t.isEmpty { onAsk(t) }
     }
@@ -56,6 +68,8 @@ struct AskView: View {
 final class AskPanel: NSPanel {
     override var canBecomeKey: Bool { true }
 
+    let listener = Listener()
+
     init(onAsk: @escaping (String) -> Void) {
         super.init(contentRect: NSRect(x: 0, y: 0, width: 440, height: 420),
                    styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
@@ -63,16 +77,27 @@ final class AskPanel: NSPanel {
         backgroundColor = .clear
         level = .statusBar
         hidesOnDeactivate = false
-        contentView = NSHostingView(rootView: AskView(onAsk: onAsk))
+        contentView = NSHostingView(rootView: AskView(listener: listener, onAsk: onAsk))
+        listener.onFinished = { [weak self] said in
+            guard let self, self.isVisible else { return }
+            onAsk(said)
+        }
     }
 
     /// Anchor under the menu bar, near the right edge (design: right 70 / top 36).
-    func present() {
+    override func orderOut(_ sender: Any?) {
+        listener.stop()
+        super.orderOut(sender)
+    }
+
+    /// `listen`: start dictation right away (opened with the hot key).
+    func present(listen: Bool = false) {
         guard let screen = NSScreen.screens.first else { return }
         let size = contentView?.fittingSize ?? NSSize(width: 440, height: 420)
         setFrame(NSRect(x: screen.frame.maxX - size.width - 70, y: screen.visibleFrame.maxY - size.height - 12,
                         width: size.width, height: size.height), display: true)
         NSApp.activate(ignoringOtherApps: true)
         makeKeyAndOrderFront(nil)
+        if listen { listener.start() }
     }
 }

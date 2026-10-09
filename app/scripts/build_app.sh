@@ -26,6 +26,7 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
   <key>LSMinimumSystemVersion</key><string>26.0</string>
   <key>LSUIElement</key><true/>
   <key>NSMicrophoneUsageDescription</key><string>So you can say what you want to do.</string>
+  <key>NSSpeechRecognitionUsageDescription</key><string>To turn what you say into words, on this Mac.</string>
 </dict>
 </plist>
 PLIST

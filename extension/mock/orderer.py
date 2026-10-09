@@ -128,6 +128,48 @@ async def typed_decide(mode, goal, done, page):
     return decision
 
 
+def serve_jev_relay(port=8766):
+    """Stands in for laya-serve so the Mac app's Planner (fixed to 127.0.0.1:8766) can use hosted Jev until the
+    fine-tuned Laya is ready. App menus hold recent files, accounts and devices: personal entries are dropped and
+    names/emails/numbers redacted before anything leaves, then answers are mapped back to the app's own strings."""
+    import threading
+    import urllib.request
+    from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+    key = jev_key()
+
+    class Relay(BaseHTTPRequestHandler):
+        def do_POST(self):
+            body = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))))
+            question = body.get("questions", {}).get("next_command", {})
+            back = {}
+            for option in question.get("criteria", {}):
+                if not is_personal({"path": option}):
+                    back.setdefault(clean(option), option)
+            answer = {}
+            if back:
+                question["criteria"] = {o: o for o in back}
+                sent = {"model": "jev-latest", "state": clean(body.get("state")), "questions": {"next_command": question}}
+                request = urllib.request.Request(JEV_URL, data=json.dumps(sent).encode(),
+                                                 headers={"Content-Type": "application/json", "Authorization": f"Bearer {key}"})
+                with urllib.request.urlopen(request, timeout=30) as response:
+                    answer = json.load(response).get("answers", {}).get("next_command", {})
+                answer["choice"] = back.get(answer.get("choice"), "")
+                answer["probabilities"] = {back[k]: v for k, v in (answer.get("probabilities") or {}).items() if k in back}
+            data = json.dumps({"answers": {"next_command": answer}}).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+
+        def log_message(self, *args):
+            pass
+
+    server = ThreadingHTTPServer(("127.0.0.1", port), Relay)
+    threading.Thread(target=server.serve_forever, daemon=True).start()
+    return server
+
+
 def prompt(goal, done, page, note=""):
     rows = "\n".join(f"{e['ref']} | {e['role']} | {e['name']} | {e['context'] or ''} | {'yes' if e['in_viewport'] else 'no'}"
                      + ("" if e["enabled"] else " | disabled") for e in page["elements"])

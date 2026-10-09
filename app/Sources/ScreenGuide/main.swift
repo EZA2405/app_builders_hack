@@ -69,6 +69,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     var item: NSStatusItem!
     let engine = GuideEngine()
     var ask: AskPanel!
+    var hotKey: HotKey?
     /// The app the user was in before opening Gabay: that's the one we guide.
     var lastApp: NSRunningApplication?
 
@@ -82,6 +83,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             MainActor.assumeIsolated { self?.lastApp = a }
         }
         ask = AskPanel { [weak self] goal in self?.begin(goal) }
+
+        hotKey = HotKey { [weak self] in
+            guard let self else { return }
+            if self.ask.isVisible { self.ask.orderOut(nil) } else { self.ask.present(listen: true) }
+        }
 
         item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         item.button?.image = NSImage(systemSymbolName: "circle.circle", accessibilityDescription: "Gabay")
@@ -101,6 +107,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func begin(_ goal: String) {
         ask.orderOut(nil)
         guard let target = lastApp else { return }
+        // In a browser, the page is guided by the ScreenGuide extension (through its helper); else natively.
+        if BrowserGuide.browsers.contains(target.bundleIdentifier ?? "") {
+            Task {
+                if await BrowserGuide.send(goal) { target.activate() } else { engine.start(goal: goal, app: target) }
+            }
+            return
+        }
         engine.start(goal: goal, app: target)
     }
 }

@@ -10,7 +10,7 @@ import sys
 import time
 from http import HTTPStatus
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs, urlsplit
 
 from websockets.exceptions import ConnectionClosed
 from websockets.legacy.server import serve
@@ -262,10 +262,29 @@ async def main(origin, orderer):
     loop.add_reader(sys.stdin, read_command)
 
     async def check_path(path, headers):
+        if path.startswith("/goal?"):
+            # The Mac app (Gabay) hands over a goal when the person asked from a browser. A custom header can't be
+            # sent cross-origin by a web page, and browsers always add Origin, so pages can't start guidance.
+            if headers.get("X-Gabay") != "1" or headers.get("Origin"):
+                return HTTPStatus.FORBIDDEN, [], b"Forbidden\n"
+            if app.socket is None or not app.orderer:
+                return HTTPStatus.SERVICE_UNAVAILABLE, [], b"No browser extension connected\n"
+            text = (parse_qs(urlsplit(path).query).get("text") or [""])[0].strip()[:300]
+            if not text:
+                return HTTPStatus.BAD_REQUEST, [], b"Missing text\n"
+            asyncio.get_running_loop().create_task(app.start(text))
+            return HTTPStatus.OK, [], b"OK\n"
         if path != "/ext":
             return HTTPStatus.NOT_FOUND, [], b"Use /ext\n"
 
     app.warm()
+    if orderer == "jev":
+        import orderer as planners
+        try:
+            planners.serve_jev_relay()
+            print("Mac app planner relay: 127.0.0.1:8766 -> Jev (sanitized). Gabay can guide Mac apps now.", flush=True)
+        except OSError:
+            print("Port 8766 is busy (laya-serve?); the Mac app will use that instead.", flush=True)
     async with serve(app.handler, "127.0.0.1", 47823, origins=[origin], process_request=check_path):
         print(f"Listening on ws://127.0.0.1:47823/ext for {origin}", flush=True)
         print("Commands: snap, hl <ref>, clear, notsure <ref> <ref> <ref>, goal <text>, or a keyword", flush=True)
