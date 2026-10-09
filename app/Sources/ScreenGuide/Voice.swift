@@ -29,6 +29,10 @@ final class Listener: ObservableObject {
     @Published var unavailable = false
     /// Whisper is turning the recording into text (a second or two after they stop).
     @Published var transcribing = false
+    /// Mic loudness 0…1 for the pulsing mic while listening.
+    @Published var level: Float = 0
+    private var vad: Timer?
+    private var started = Date()
     /// Called with the transcript once the person pauses.
     var onFinished: ((String) -> Void)?
     private let engine = AVAudioEngine()
@@ -71,7 +75,23 @@ final class Listener: ObservableObject {
         committed = ""
         listening = true
         unavailable = false
-        segment()
+        started = Date()
+        if Whisper.available {
+            // Whisper writes the words when they're done. Apple's live guesses at Taglish were so wrong that people
+            // repeated themselves (and Whisper then wrote every repeat), so we don't show them.
+            vad?.invalidate()
+            vad = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true) { [weak self] _ in
+                DispatchQueue.main.async {
+                    guard let self, self.listening, let a = self.recorder?.activity() else { return }
+                    self.level = min(1, a.level * 8)
+                    let elapsed = Date().timeIntervalSince(self.started)
+                    // Done: ~2 s of quiet after they've said something, or 25 s in total; nothing said for 8 s: stop.
+                    if (a.spoke && a.quietFor > 2.0) || elapsed > 25 || (!a.spoke && elapsed > 8) { self.finish() }
+                }
+            }
+        } else {
+            segment()
+        }
     }
 
     /// One recognition segment. When the recognizer closes it at a pause, keep the words and open the next one;
@@ -133,6 +153,8 @@ final class Listener: ObservableObject {
 
     func stop() {
         pause?.invalidate()
+        vad?.invalidate()
+        level = 0
         guard listening else { return }
         listening = false
         engine.stop()
@@ -168,6 +190,10 @@ enum BrowserGuide {
 final class PCMRecorder: @unchecked Sendable {
     private let lock = NSLock()
     private var data = Data()
+    /// Voice activity from the audio itself (Whisper mode has no live recognizer to say when speech stops).
+    private(set) var spoke = false
+    private(set) var lastLoud = Date()
+    private(set) var level: Float = 0
     private let converter: AVAudioConverter?
     static let format = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: 16000, channels: 1, interleaved: true)!
 
@@ -184,10 +210,23 @@ final class PCMRecorder: @unchecked Sendable {
             fed = true; status.pointee = .haveData; return buffer
         }
         guard err == nil, let ch = out.int16ChannelData, out.frameLength > 0 else { return }
-        lock.lock(); data.append(Data(buffer: UnsafeBufferPointer(start: ch[0], count: Int(out.frameLength)))); lock.unlock()
+        let n = Int(out.frameLength)
+        var sum: Float = 0
+        for i in 0..<n { let v = Float(ch[0][i]) / 32768; sum += v * v }
+        let rms = (sum / Float(n)).squareRoot()
+        lock.lock()
+        data.append(Data(buffer: UnsafeBufferPointer(start: ch[0], count: n)))
+        level = rms
+        if rms > 0.02 { spoke = true; lastLoud = Date() }   // speech, not room noise
+        lock.unlock()
     }
 
     /// A WAV file in the temp folder, or nil if there's under half a second of audio (Whisper invents words on silence).
+    func activity() -> (spoke: Bool, quietFor: TimeInterval, level: Float) {
+        lock.lock(); defer { lock.unlock() }
+        return (spoke, Date().timeIntervalSince(lastLoud), level)
+    }
+
     func wav() -> URL? {
         lock.lock(); let pcm = data; lock.unlock()
         guard pcm.count > 16000 else { return nil }

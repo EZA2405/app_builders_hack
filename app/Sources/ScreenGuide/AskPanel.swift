@@ -42,7 +42,7 @@ struct AskView: View {
                     .focused($focused)
                     .onSubmit { submit(text) }
                     .onChange(of: listener.text) { _, said in text = said }
-                MicButton(listening: listener.listening) { listener.listening ? listener.finish() : listener.start() }
+                MicButton(listening: listener.listening, level: listener.level) { listener.listening ? listener.finish() : listener.start() }
             }
             .padding(.leading, 22).padding(.trailing, 10).frame(height: 68)
             HStack(spacing: 6) {
@@ -105,14 +105,17 @@ struct ExampleRow: View {
 
 struct MicButton: View {
     let listening: Bool
+    var level: Float = 0
     let action: () -> Void
     @State private var hovering = false
     var body: some View {
         Button(action: action) {
             ZStack {
                 if listening {
+                    // Grows with their voice: proof it's hearing them, without showing half-wrong words.
                     Circle().fill(Theme.ring.opacity(0.25)).frame(width: 64, height: 64)
-                        .phaseAnimator([0.85, 1.1]) { v, s in v.scaleEffect(s) } animation: { _ in .easeInOut(duration: 0.9) }
+                        .scaleEffect(0.85 + CGFloat(level) * 0.45)
+                        .animation(.easeOut(duration: 0.12), value: level)
                 }
                 Circle().fill(Theme.ring).frame(width: 48, height: 48)
                 Image(systemName: listening ? "waveform" : "mic.fill").font(.system(size: 20, weight: .semibold))
