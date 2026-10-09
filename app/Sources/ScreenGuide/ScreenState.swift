@@ -57,10 +57,21 @@ enum ScreenReader {
         // 2. Every open window of the app, dialogs and sheets included.
         var titles: [String] = []
         for w in AXReader.children(root, kAXWindowsAttribute).prefix(4) {
-            let title = AXReader.string(w, kAXTitleAttribute) ?? (AXReader.string(w, kAXSubroleAttribute) == "AXDialog" ? "dialog" : "window")
-            titles.append(title)
+            let sub = AXReader.string(w, kAXSubroleAttribute) ?? ""
+            let name = AXReader.string(w, kAXTitleAttribute).flatMap { $0.isEmpty ? nil : $0 }
+            // Titled dialogs ("Export") must still read as dialogs, or the guide looks past them at the window.
+            let isDialog = sub == "AXDialog" || sub == "AXSystemDialog"
+            let title = isDialog ? (name.map { "\($0) dialog" } ?? "dialog") : (name ?? "window")
+            titles.append(name ?? title)
             var count = 0
-            walk(w, context: title, depth: 0, count: &count, limit: maxPerWindow) { add($0) }
+            // Sheets first: they're what the person is looking at, and must not be cut off by the per-window limit.
+            let kids = AXReader.children(w)
+            for sheet in kids where AXReader.role(sheet) == "AXSheet" {
+                walk(sheet, context: title, depth: 1, count: &count, limit: maxPerWindow) { add($0) }
+            }
+            for c in kids where AXReader.role(c) != "AXSheet" {
+                walk(c, context: title, depth: 1, count: &count, limit: maxPerWindow) { add($0) }
+            }
         }
 
         // 3. Dock icons (open or switch apps).
@@ -103,13 +114,27 @@ enum ScreenReader {
            let name = AXReader.string(el, kAXTitleAttribute) ?? AXReader.string(el, kAXDescriptionAttribute) {
             ctx = String(name.prefix(40))
         }
-        if r == "AXSheet" && ctx == context { ctx = "\(context) dialog" }
+        if r == "AXSheet" { ctx = ctx == context ? "\(context) dialog" : "\(ctx) dialog" }   // always a dialog, named or not
 
+        // An open pop-up list ("JPEG", "PNG"…): each choice is a step of its own.
+        if r == "AXMenuItem" {
+            if let frame = AXReader.visibleFrame(el), let t = AXReader.string(el, kAXTitleAttribute), !t.isEmpty {
+                emit(Candidate(id: 0, source: "window", role: "list choice", label: clip(t), context: ctx,
+                               path: "\(ctx) > \(t)", frame: frame, enabled: AXReader.bool(el, kAXEnabledAttribute) ?? true))
+                count += 1
+            }
+            return
+        }
+        var childCtx = ctx
         if windowRoles.contains(r), let frame = AXReader.visibleFrame(el) {
             var label = label(of: el, role: r)
             // Fields often have no linked title, just a static text beside them ("Width:").
             if label.isEmpty, textEntryRoles.contains(r) || r == "AXPopUpButton" || r == "AXSlider",
                let near = precedingText(el) { label = near }
+            // A pop-up's title is its current choice ("TIFF"); the text beside it says what it is ("Format:").
+            if r == "AXPopUpButton", let near = precedingText(el), near != label {
+                label = near.trimmingCharacters(in: CharacterSet(charactersIn: ": "))
+            }
             if !label.isEmpty {
                 let sub = AXReader.string(el, kAXSubroleAttribute)
                 let role = sub == "AXSwitch" ? "switch" : friendly(r)
@@ -119,9 +144,10 @@ enum ScreenReader {
                 count += 1
             }
             if r == "AXRow" { return } // a row's own text is its label; don't descend
+            if r == "AXPopUpButton", !label.isEmpty { childCtx = "\(label) list" }
         }
         for c in AXReader.children(el) {
-            walk(c, context: ctx, depth: depth + 1, count: &count, limit: limit, emit: emit)
+            walk(c, context: childCtx, depth: depth + 1, count: &count, limit: limit, emit: emit)
         }
     }
 

@@ -216,7 +216,7 @@ final class GuideEngine {
             }
         }
         if Task.isCancelled { return false }
-        await confirm(keepRing: !isFinal(c))
+        await confirm(keepRing: !isFinal(c) && c.role != "list choice")   // a chosen list item vanishes with its list
         return true
     }
 
@@ -322,12 +322,19 @@ final class GuideEngine {
     /// Which candidates the model should weigh right now, mirroring how it was trained:
     /// an open dialog wins; the first step is about menus; later steps add window controls.
     private func focus(_ s: ScreenState) -> [Candidate] {
-        let dialog = s.candidates.filter { $0.source == "window" && $0.context.hasSuffix("dialog") }
-        if !dialog.isEmpty { return dialog.filter { !rejected.contains(Planner.key($0)) } }
+        // A pop-up list is open: the next step is one of its choices, nothing else.
+        let choices = s.candidates.filter { $0.role == "list choice" && $0.enabled && !rejected.contains(Planner.key($0)) }
+        if !choices.isEmpty { return choices }
+        // Sidebar rows in save/export panels are the person's folders, not steps.
+        let dialog = s.candidates.filter { $0.source == "window" && $0.context.hasSuffix("dialog") && $0.role != "row" }
+        if !dialog.isEmpty {
+            let fresh = dialog.filter { !rejected.contains(Planner.key($0)) && !done.contains("clicked \(Planner.key($0))") }
+            return fresh.isEmpty ? dialog : fresh
+        }
         // App > Services lists add-ons installed on this Mac ("Ask Claude"…), never a beginner's step.
         let menus = s.candidates.filter { $0.source == "menu" && !Self.isPersonal($0.path)
                                           && $0.path.components(separatedBy: " > ").dropFirst().first != "Services" }
-        let ok = { (c: Candidate) in !self.rejected.contains(Planner.key(c)) }
+        let ok = { (c: Candidate) in !self.rejected.contains(Planner.key(c)) && !self.done.contains("clicked \(Planner.key(c))") }
         if done.isEmpty { return menus.filter(ok) }   // other apps are handled by routeToApp first
         return (s.candidates.filter { $0.source == "window" && $0.role != "menu button" } + menus).filter(ok)
     }
@@ -371,6 +378,7 @@ final class GuideEngine {
         case "switch", "checkbox": return ("Click **\(c.label)** to turn it on or off.", "")
         case "slider": return ("Drag the **\(c.label)** slider.", "Left is less, right is more.")
         case "pop-up menu": return ("Click **\(c.label)** and pick from the list.", "")
+        case "list choice": return ("Click **\(c.label)** in the list.", "")
         case "row": return ("Click **\(c.label)** in the list on the left.", "")
         case "link": return ("Click **\(c.label)**.", "")
         default: return ("Click **\(c.label)**.", c.context.isEmpty ? "" : "It's in \(c.context).")
