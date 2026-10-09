@@ -3,7 +3,8 @@
 Research and kickoff material for a consumer product with meaningful on-device AI.
 
 - [Handoff and research context](HANDOFF.md)
+- [Screen guide competitor research](SCREEN_GUIDE_RESEARCH.md)
 - [Kickoff transcript](transcript)
 - [Participant briefing](AppBuildersPH%20Hackathon%202026%20Participant%20Briefing.pdf)
 
-No product idea has been selected or implemented yet.
+Screen-aware computer guidance is the current direction of interest. No implementation has started.
