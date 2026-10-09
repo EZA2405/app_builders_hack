@@ -132,6 +132,14 @@ final class GuideEngine {
                 self.log("FIXES \(self.fixes.map(\.task))")
                 if let f = self.fixes.first { self.beginFix(f) }
             }
+            // "my daughter wants to FaceTime me" asked from a browser is about the FaceTime app, not the web page.
+            if let target = Self.namedApp(in: goal), target.lowercased() != (app.localizedName ?? "").lowercased() {
+                self.log("APP named in request: \(target)")
+                guard let opened = await self.openAppStep(target) else { return }
+                self.app = opened
+                await self.run()
+                return
+            }
             if web { await self.runWeb() } else { await self.run() }
         }
     }
@@ -487,6 +495,56 @@ final class GuideEngine {
             return pid == app.processIdentifier
         }
         return false
+    }
+
+    /// Distinctive app names people say ("FaceTime", "Zoom", "open Notes", "the Photos app") -> the app's name.
+    static func namedApp(in goal: String) -> String? {
+        let g = " " + goal.lowercased().replacingOccurrences(of: "-", with: " ") + " "
+        // "zoom in/out" is about size, not the Zoom app: only "on Zoom", "Zoom call/meeting", "sa Zoom", "open Zoom".
+        if [" on zoom", " sa zoom", " zoom call", " zoom meeting", " open zoom", " zoom app", " in zoom "].contains(where: { g.contains($0) }),
+           installed("zoom.us") { return "zoom.us" }
+        let distinctive: [String: String] = ["facetime": "FaceTime", "face time": "FaceTime",
+                                             "photo booth": "Photo Booth", "calculator": "Calculator", "textedit": "TextEdit",
+                                             "spotify": "Spotify", "telegram": "Telegram", "whatsapp": "WhatsApp",
+                                             "system settings": "System Settings"]
+        for (word, app) in distinctive where g.contains(" \(word) ") || g.contains(" \(word),") || g.contains(" \(word).") || g.contains(" \(word)?") {
+            if installed(app) { return app }
+        }
+        // Common words that are also app names only count with "open …" / "… app" ("open notes", "the photos app").
+        for app in ["Photos", "Notes", "Calendar", "Maps", "Messages", "Mail", "Music", "Contacts", "Reminders", "Weather", "Clock", "Preview", "Finder", "Safari"] {
+            let w = app.lowercased()
+            if (g.contains(" open \(w)") || g.contains(" \(w) app")), installed(app) { return app }
+        }
+        return nil
+    }
+
+    static func installed(_ name: String) -> Bool {
+        ["/Applications", "/System/Applications", "/System/Applications/Utilities", "/System/Library/CoreServices"]
+            .contains { FileManager.default.fileExists(atPath: "\($0)/\(name).app") }
+    }
+
+    /// One step: get the named app in front. Dock icon if it's there; otherwise Spotlight (Command + Space).
+    func openAppStep(_ name: String) async -> NSRunningApplication? {
+        if let front = Self.frontRegularApp(), front.localizedName == name { return front }
+        let anyApp = app ?? NSWorkspace.shared.frontmostApplication!
+        let s = await read(anyApp)
+        stepNo += 1
+        if let icon = s.candidates.first(where: { $0.source == "dock" && $0.label.lowercased() == name.lowercased() }) {
+            expectedApp = icon.label
+            log("STEP \(stepNo) pick=\(Planner.key(icon)) (open app)")
+            guard await guide(Planner.Pick(candidate: icon, confidence: 0.9, runnersUp: [])) else { return nil }
+        } else {
+            let shown = name == "zoom.us" ? "Zoom" : name
+            log("STEP \(stepNo) open \(name) via Spotlight")
+            show(.guiding, label: "Step \(stepNo)", text: "Open **\(shown)**: press **Command + Space**, type **\(shown)**, then press **Return**.",
+                 hint: "That's the Mac's search. I'll wait here.", target: nil)
+        }
+        // Wait until it's in front (they clicked the Dock icon or used Spotlight).
+        for _ in 0..<240 where !Task.isCancelled {
+            if let f = Self.frontRegularApp(), f.localizedName == name { try? await Task.sleep(nanoseconds: 700_000_000); done.append("opened \(name)"); return f }
+            try? await Task.sleep(nanoseconds: 250_000_000)
+        }
+        return nil
     }
 
     /// The first switch of a list of 3+ app switches that the request doesn't name (Camera, Microphone… panes).
