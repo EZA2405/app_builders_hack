@@ -114,7 +114,8 @@ extension GuideEngine {
             // 150 elements, visible ones first (the extension sorts them): 3x fewer model calls than 400, much faster.
             // A page that's still loading (they clicked a link) can't answer yet: try again for a few seconds.
             var snapshot: [String: Any]?
-            for attempt in 0..<9 {
+            let started = Date()
+            for attempt in 0..<9 where Date().timeIntervalSince(started) < 6 {   // never wait more than ~6 s for a page
                 snapshot = await bridge.request(["type": "snapshot_request", "max_elements": 150])
                 // Still loading (a link was just clicked): an empty or nearly empty page isn't the real page yet.
                 let named = (snapshot?["elements"] as? [[String: Any]])?.filter { !(($0["name"] as? String) ?? "").isEmpty }.count ?? 0

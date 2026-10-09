@@ -145,6 +145,17 @@ final class GuideEngine {
                 await self.run()
                 return
             }
+            // Wi‑Fi, Bluetooth, sound… asked from a browser are System Settings jobs, not about the page (and with the
+            // Wi‑Fi off the page can't even load).
+            if web, let pane = await SettingsRoute.pane(for: goal),
+               ["Wi‑Fi", "Bluetooth", "Network", "Sound", "Privacy & Security", "Printers & Scanners", "Battery", "General"].contains(pane) {
+                self.log("SETTINGS from browser: \(pane)")
+                Bridge.shared.send(["type": "status", "id": UUID().uuidString, "text": "", "seconds": 0])
+                Bridge.shared.send(["type": "clear", "id": UUID().uuidString])
+                self.settingsPane = pane
+                await self.run()
+                return
+            }
             if web { await self.runWeb() } else { await self.run() }
         }
     }
