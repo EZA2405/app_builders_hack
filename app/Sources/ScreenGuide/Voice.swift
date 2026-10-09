@@ -31,7 +31,11 @@ final class Listener: ObservableObject {
     var onFinished: ((String) -> Void)?
     private let engine = AVAudioEngine()
     private var task: SFSpeechRecognitionTask?
+    private var request: SFSpeechAudioBufferRecognitionRequest?
+    private var recognizer: SFSpeechRecognizer?
     private var pause: Timer?
+    /// Text from earlier segments: the recognizer ends a segment at every pause, older people pause mid-sentence.
+    private var committed = ""
 
     func start() {
         guard !listening else { return }
@@ -48,27 +52,42 @@ final class Listener: ObservableObject {
         let recognizer = [("en-PH"), ("en-US")].lazy.compactMap { SFSpeechRecognizer(locale: Locale(identifier: $0)) }
             .first { $0.isAvailable && $0.supportsOnDeviceRecognition }
         guard let recognizer else { unavailable = true; return }
-        let request = SFSpeechAudioBufferRecognitionRequest()
-        request.requiresOnDeviceRecognition = true
-        request.shouldReportPartialResults = true
-        request.addsPunctuation = true
-        request.taskHint = .dictation
-        // Words people actually say to Gabay; biases recognition toward them.
-        request.contextualStrings = Self.hints
+        self.recognizer = recognizer
         let input = engine.inputNode
-        input.installTap(onBus: 0, bufferSize: 1024, format: input.outputFormat(forBus: 0)) { buffer, _ in request.append(buffer) }
+        input.installTap(onBus: 0, bufferSize: 1024, format: input.outputFormat(forBus: 0)) { [weak self] buffer, _ in
+            self?.request?.append(buffer)
+        }
         engine.prepare()
         do { try engine.start() } catch { input.removeTap(onBus: 0); unavailable = true; return }
         text = ""
+        committed = ""
         listening = true
         unavailable = false
-        task = recognizer.recognitionTask(with: request) { result, error in
+        segment()
+    }
+
+    /// One recognition segment. When the recognizer closes it at a pause, keep the words and open the next one;
+    /// only our own 2.5 s quiet timer decides the person is done.
+    private func segment() {
+        guard listening, let recognizer else { return }
+        let r = SFSpeechAudioBufferRecognitionRequest()
+        r.requiresOnDeviceRecognition = true
+        r.shouldReportPartialResults = true
+        r.addsPunctuation = true
+        r.taskHint = .dictation
+        r.contextualStrings = Self.hints   // words people actually say to Gabay; biases recognition toward them
+        request = r
+        task = recognizer.recognitionTask(with: r) { [weak self] result, error in
             DispatchQueue.main.async {
+                guard let self, self.listening else { return }
                 if let result {
-                    self.text = result.bestTranscription.formattedString
+                    let seg = result.bestTranscription.formattedString
+                    self.text = [self.committed, seg].filter { !$0.isEmpty }.joined(separator: " ")
                     self.waitForPause()
+                    if result.isFinal { self.committed = self.text; self.segment() }
+                } else if error != nil {
+                    self.segment()   // a quiet segment can end with "no speech"; keep listening until our timer says done
                 }
-                if error != nil || result?.isFinal == true { self.finish() }
             }
         }
     }
@@ -100,8 +119,10 @@ final class Listener: ObservableObject {
         listening = false
         engine.stop()
         engine.inputNode.removeTap(onBus: 0)
+        request?.endAudio()
         task?.cancel()
         task = nil
+        request = nil
     }
 }
 

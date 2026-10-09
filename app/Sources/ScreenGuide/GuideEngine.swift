@@ -276,7 +276,10 @@ final class GuideEngine {
                 here_ = .some(h)
                 // Stay only if the app's own pick survives a reshuffle: the tournament's confidence swings with how its
                 // 16-option groups fall, so one confident run can be a fluke ("File > New Session" for a camera problem).
-                if let h, h.confidence >= 0.6 {
+                // An open dialog proves nothing: with three buttons every pick looks confident (Mail's account box
+                // "answered" a camera request), so dialogs never keep a settings job inside the app.
+                let dialogUp = f.contains { $0.context.hasSuffix("dialog") }
+                if let h, h.confidence >= 0.6, !dialogUp {
                     let h2 = try await planner.choose(app: state.frontApp, goal: goal, done: done, candidates: f, reversed: true)
                     let same = h2.map { Planner.key($0.candidate) == Planner.key(h.candidate) && $0.confidence >= 0.6 } ?? false
                     log("CONSISTENT \(Planner.key(h.candidate)) \(String(format: "%.2f", h.confidence)) vs \(h2.map { "\(Planner.key($0.candidate)) \(String(format: "%.2f", $0.confidence))" } ?? "-") -> \(same)")
@@ -440,6 +443,20 @@ final class GuideEngine {
         return out
     }
 
+    /// Is the topmost on-screen window at this point (AX coordinates) one of this app's windows?
+    static func visibleOnScreen(app: NSRunningApplication, point: CGPoint) -> Bool {
+        guard let list = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] else { return true }
+        let me = ProcessInfo.processInfo.processIdentifier
+        for w in list {   // front to back
+            guard let pid = w[kCGWindowOwnerPID as String] as? pid_t, pid != me,
+                  (w[kCGWindowLayer as String] as? Int ?? 0) == 0,
+                  let b = w[kCGWindowBounds as String] as? [String: Any],
+                  let r = CGRect(dictionaryRepresentation: b as CFDictionary), r.contains(point) else { continue }
+            return pid == app.processIdentifier
+        }
+        return false
+    }
+
     /// The first switch of a list of 3+ app switches that the request doesn't name (Camera, Microphone… panes).
     static func switchList(in state: ScreenState, goal: String) -> Candidate? {
         let g = goal.lowercased()
@@ -489,6 +506,19 @@ final class GuideEngine {
         if c.source == "menu" { return await guideMenu(c, app: app) }
         if c.source == "dock" { expectedApp = c.label }
         // Below or above the visible part of a list: ask for a scroll first, then ring it once it's in view.
+        // The target's window must be on screen and in front; otherwise a ring would float over some other app.
+        if c.source == "window", let f = c.frame.map(rect), !Self.visibleOnScreen(app: app, point: CGPoint(x: f.midX, y: f.midY)) {
+            app.activate()
+            try? await Task.sleep(nanoseconds: 600_000_000)
+            if !Self.visibleOnScreen(app: app, point: CGPoint(x: f.midX, y: f.midY)) {
+                let name = app.localizedName ?? "the app"
+                log("HIDDEN target \(Planner.key(c)) in \(name)")
+                show(.detour, label: "Paused", text: "Open **\(name)** first.", hint: "Click its icon in the Dock, then I'll show you the next step.", target: nil)
+                while !Task.isCancelled, !Self.visibleOnScreen(app: app, point: CGPoint(x: f.midX, y: f.midY)) {
+                    try? await Task.sleep(nanoseconds: 500_000_000)
+                }
+            }
+        }
         // Mostly visible inside the window (a row half under the edge still counts).
         func inView(_ f: CGRect, _ w: CGRect) -> Bool { let i = f.intersection(w.insetBy(dx: 0, dy: 8)); return !i.isNull && i.height >= f.height * 0.6 }
         if c.source == "window", let f = c.frame.map(rect), let win = MenuProbe.frontWindowFrame(app), !inView(f, win) {
