@@ -125,6 +125,8 @@ chrome.runtime.onMessage.addListener((message, sender, respond) => {
     return true;
   }
   if (!sender.tab || !["user_action", "page_changed", "card_button"].includes(message?.type)) return;
+  // Hidden iframes (sign-in, ads) navigate on their own; only the page itself changing matters.
+  if (message.type === "page_changed" && sender.frameId !== 0) return;
   void activeTab().then((tab) => { if (tab?.id === sender.tab.id) send(message); }).catch(console.warn);
 });
 

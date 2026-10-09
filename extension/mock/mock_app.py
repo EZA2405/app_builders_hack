@@ -7,8 +7,10 @@ import hashlib
 import json
 import os
 import sys
+import time
 from http import HTTPStatus
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from websockets.exceptions import ConnectionClosed
 from websockets.legacy.server import serve
@@ -35,6 +37,8 @@ class MockApp:
         self.empty_retries = 0
         self.timer = None
         self.turn = 0
+        self.host = None
+        self.last_target_click = 0.0
 
     async def send(self, kind, **fields):
         if self.socket is None:
@@ -73,6 +77,7 @@ class MockApp:
             print("Start with --orderer claude (or codex) to guide a goal.", flush=True)
             return
         self.goal, self.done, self.current, self.note = goal, [], None, ""
+        self.host, self.last_target_click = None, 0.0
         print(f"Goal: {goal}", flush=True)
         self.schedule(0)
 
@@ -137,12 +142,21 @@ class MockApp:
             return
         elif kind == "snapshot" and self.want_decision:
             self.want_decision = False
+            self.host = urlsplit(message.get("url") or "").hostname
             asyncio.create_task(self.decide(message))
         elif kind == "user_action" and message.get("kind") == "click" and message.get("on_target") and self.current:
             self.done.append(self.current["instruction"].replace("**", ""))
+            self.last_target_click = time.monotonic()
             self.current = None
             self.schedule(1.5)
         elif kind == "page_changed" and message.get("reason") in ("navigation", "spa_route"):
+            host = urlsplit(message.get("url") or "").hostname
+            if self.host and host != self.host and time.monotonic() - self.last_target_click > 10:
+                # The user went to another site on their own; the old goal no longer applies.
+                print(f"Left {self.host} for {host}; goal ended.", flush=True)
+                self.goal = None
+                await self.send("clear")
+                return
             self.schedule(1.5)
         elif kind == "highlight_error":
             self.schedule(0.5, f"Your last choice could not be shown ({message.get('reason')}); pick another.")
