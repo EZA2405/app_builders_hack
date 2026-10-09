@@ -57,6 +57,19 @@ python3 bench_localjev.py --url https://api.typesafe.ai --model jev-latest --fix
 python3 bench_localjev.py --url http://127.0.0.1:8766 --model convaiinnovations/laya --group 16 --fixture fixtures/preview_real.json
 ```
 
+## Held-out web journeys (45 steps, never trained on)
+Sites: YouTube, Wikipedia, Shopee and PhilHealth. PhilHealth includes 8 second-page steps that use "Already done". Fixtures are in `fixtures/web_test/`, written before any model ran. The steps use a 16-wide tournament over page elements, each written as `role "name" · context`.
+
+| Model | YouTube | Wikipedia | Shopee | PhilHealth | **Total** | Latency (M4) |
+|---|---|---|---|---|---|---|
+| Laya base | 2/10 | 4/10 | 3/10 | 3/15 | **12/45** | 0.4–3.3 s |
+| Laya v1 (menus only, no web training) | 7/10 | 6/10 | 6/10 | 6/15 | **25/45** | 0.4–5.7 s (slowest on 400-element pages) |
+
+Reproduce: `for f in fixtures/web_test/*.json; do python3 bench_localjev.py --url http://127.0.0.1:8766 --model guide-v1 --group 16 --fixture $f; done`
+
+## Full-tournament validation (model selection)
+127 goals across 4 apps never trained on (`fixtures/val/`). **v1: 79/127 (62.2%).** On its own training goals under the same tournament, v1 gets 708/909 (77.9%). The tournament loses right answers in early rounds.
+
 ## Teacher-label agreement (training apps)
 Hosted Jev (`jev-latest`) on all 774 teacher goals across the 22 training apps: **733/774 (94.7%)** agree with the teacher label. Per app it ranges from 30/31 (Activity Monitor) to 35/35 (Disk Utility, VLC, Zed); median latency is 0.4–2.0 s.
 - The 41 disagreements are mostly genuinely ambiguous goals, where both answers are often defensible.

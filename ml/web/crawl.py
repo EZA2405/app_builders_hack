@@ -36,6 +36,20 @@ async def snapshot(ws_url, url, settle=6.0):
         return res.get("result", {}).get("result", {}).get("value")
 
 
+def new_tab():
+    """Fresh tab per site: one hung page must not poison the rest of the crawl."""
+    req = urllib.request.Request(f"http://127.0.0.1:{PORT}/json/new?about:blank", method="PUT")
+    t = json.load(urllib.request.urlopen(req, timeout=10))
+    return t["id"], t["webSocketDebuggerUrl"]
+
+
+def close_tab(tid):
+    try:
+        urllib.request.urlopen(f"http://127.0.0.1:{PORT}/json/close/{tid}", timeout=5)
+    except Exception:
+        pass
+
+
 def follow_links(snap, base, n):
     """Pick up to n same-site navigation links worth visiting (nav/header/menu first)."""
     from urllib.parse import urlparse
@@ -78,6 +92,7 @@ def main(sites_file, out_dir, depth_links=0):
             if os.path.exists(os.path.join(out_dir, f"{name}.json")):
                 print(f"{name}: already have, skipped", flush=True)  # rerunnable: resume where we left off
                 continue
+            tid, ws_url = new_tab()
             try:
                 snap = asyncio.run(asyncio.wait_for(snapshot(ws_url, url.strip()), 40))
                 if not snap:
@@ -87,7 +102,11 @@ def main(sites_file, out_dir, depth_links=0):
                 if depth_links and not name.startswith("test_") and len(snap["elements"]) >= 15:
                     for k, (link_name, href) in enumerate(follow_links(snap, url.strip(), depth_links), 1):
                         try:
-                            sub = asyncio.run(asyncio.wait_for(snapshot(ws_url, href), 40))
+                            stid, sws = new_tab()
+                            try:
+                                sub = asyncio.run(asyncio.wait_for(snapshot(sws, href), 40))
+                            finally:
+                                close_tab(stid)
                             if sub and len(sub["elements"]) >= 15:
                                 sub["arrived_by"] = {"from": name, "clicked": link_name}
                                 json.dump(sub, open(os.path.join(out_dir, f"{name}__{k}.json"), "w"), indent=1, ensure_ascii=False)
@@ -95,7 +114,9 @@ def main(sites_file, out_dir, depth_links=0):
                         except Exception as e:
                             print(f"  {name}__{k}: FAILED {e}", flush=True)
             except Exception as e:
-                print(f"{name}: FAILED {e}", flush=True)
+                print(f"{name}: FAILED {type(e).__name__} {e}", flush=True)
+            finally:
+                close_tab(tid)
     finally:
         proc.terminate()
 
