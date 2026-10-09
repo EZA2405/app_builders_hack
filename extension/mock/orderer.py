@@ -30,7 +30,8 @@ def sanitize(snapshot):
     elements = [{"ref": e["ref"], "role": e.get("role"), "name": clean(e.get("name")), "context": clean(e.get("context")),
                  "in_viewport": e.get("in_viewport"), "enabled": e.get("enabled", True)}
                 for e in snapshot.get("elements", []) if not is_personal({"path": e.get("name") or ""})]
-    return {"title": clean(snapshot.get("title")), "url": clean(url.netloc + url.path), "elements": elements}
+    # Snapshots arrive on-screen first; 150 rows keep the prompt small, which is most of the latency.
+    return {"title": clean(snapshot.get("title")), "url": clean(url.netloc + url.path), "elements": elements[:150]}
 
 
 def prompt(goal, done, page, note=""):
@@ -54,12 +55,52 @@ Reply with JSON only, exactly one of:
 {{"done": true, "message": "All done."}}  (when the goal is already reached on this page)
 
 Rules: use only refs from the list. Instruction at most 12 words, calm and plain, with the key word in **bold**.
-For typing, point at the box and say what to type. Prefer elements that are on screen. No jargon."""
+For typing, point at the box and say it all in one step: "Click the **Search** box, type **cats**, then press **Enter**."
+Never repeat a step that is already done. Prefer elements that are on screen. No jargon."""
 
 
-async def ask(model_cmd, text):
+class ClaudeSession:
+    """One long-running `claude -p` per goal: skips the CLI's ~3s start-up on every step and remembers earlier steps."""
+
+    def __init__(self, model):
+        self.model = model
+        self.proc = None
+        self.lock = asyncio.Lock()  # Turns share one stdout; a stale step must finish before the next is read.
+        self.ready = asyncio.get_running_loop().create_task(self._start())
+
+    async def _start(self):
+        # No tools, no user settings or hooks: a plain text completion.
+        self.proc = await asyncio.create_subprocess_exec(
+            "claude", "-p", "--model", self.model, "--setting-sources", "", "--tools", "",
+            "--input-format", "stream-json", "--output-format", "stream-json", "--verbose",
+            stdin=asyncio.subprocess.PIPE, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.DEVNULL, limit=2**24)
+        await self._turn("Reply with OK. Guidance requests follow.")  # Warm up so the first real step is fast.
+
+    async def _turn(self, text):
+        self.proc.stdin.write((json.dumps({"type": "user", "message": {"role": "user", "content": text}}) + "\n").encode())
+        await self.proc.stdin.drain()
+        while line := await self.proc.stdout.readline():
+            event = json.loads(line)
+            if event.get("type") == "result":
+                return event.get("result") or ""
+        raise RuntimeError("claude session ended")
+
+    async def ask(self, text):
+        await self.ready
+        async with self.lock:
+            return await self._turn(text)
+
+    def close(self):
+        self.ready.cancel()
+        if self.proc and self.proc.returncode is None:
+            self.proc.kill()
+
+
+async def ask(model_cmd, text, session=None):
     """Returns (decision dict or None, seconds)."""
     start = time.monotonic()
+    if session:
+        return parse(await session.ask(text)), time.monotonic() - start
     if model_cmd == "codex":
         out = tempfile.NamedTemporaryFile(suffix=".txt", delete=False).name
         cmd = ["codex", "exec", "--skip-git-repo-check", "--ephemeral", "--ignore-user-config", "-s", "read-only", "-o", out, "-"]

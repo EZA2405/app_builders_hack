@@ -117,3 +117,19 @@ button:focus-visible { outline: 3px solid var(--sg-accent); outline-offset: 2px;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
 }
+.status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border: 1px solid var(--sg-border);
+  border-radius: 999px;
+  background: var(--sg-surface);
+  -webkit-backdrop-filter: blur(30px) saturate(1.8);
+  backdrop-filter: blur(30px) saturate(1.8);
+  color: var(--sg-text);
+  box-shadow: var(--sg-shadow);
+  font: 600 18px/1.2 var(--sg-font);
+  animation: arrive .35s cubic-bezier(.2, .9, .3, 1);
+}
+.status::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--sg-accent); animation: pulse 1.2s ease-in-out infinite; }

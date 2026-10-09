@@ -315,8 +315,32 @@
     }
   }
 
+  // A small "working on it" / "all done" pill, separate from the highlight so clear() leaves it alone.
+  let statusHost;
+  let statusTimer;
+  function showStatus(text, seconds) {
+    clearTimeout(statusTimer);
+    statusHost?.remove();
+    statusHost = null;
+    if (!text) return;
+    statusHost = document.createElement("sg-status");
+    for (const [property, value] of Object.entries({ all: "initial", position: "fixed", left: "24px", bottom: "24px", "z-index": "2147483647", "pointer-events": "none" })) statusHost.style.setProperty(property, value, "important");
+    const shadow = statusHost.attachShadow({ mode: "open" });
+    const css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = chrome.runtime.getURL("src/overlay.css");
+    const pill = document.createElement("div");
+    pill.className = "status";
+    pill.setAttribute("role", "status");
+    pill.textContent = text;
+    shadow.append(css, pill);
+    document.documentElement.append(statusHost);
+    if (seconds) statusTimer = setTimeout(() => showStatus(""), seconds * 1000);
+  }
+
   async function highlight(message) {
     clear();
+    showStatus("");
     const token = generation;
     showCard = !message._hideCard;
     const selected = Array.isArray(message.candidates) && message.candidates.length ? message.candidates : [message.ref];
@@ -506,6 +530,7 @@
       return true;
     }
     if (message.type === "clear") clear();
+    if (message.type === "status") showStatus(message.text, message.seconds);
     if (message.type === "highlight") {
       void highlight(message).then(respond).catch(() => respond({ type: "highlight_error", id: message.id, reason: "not_visible" }));
       return true;

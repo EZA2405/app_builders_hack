@@ -69,6 +69,7 @@ Every message has `type`, and requests have `id` (string) echoed in the response
 | `snapshot_request` | `id`, `max_elements?` (default 400) | Return interactive elements on the current page |
 | `highlight` | `id`, `ref`, `instruction`, `step?`, `hint?`, `style?` (`"ring"` \| `"spotlight"`), `candidates?` (refs[] for "not sure" mode) | Scroll the element into view, draw the highlight and instruction card |
 | `clear` | `id` | Remove all overlays |
+| `status` | `id`, `text`, `seconds?` | Show a small pill at the bottom-left ("Working out the next step…", "All done."); empty `text` hides it, `seconds` auto-hides. A new highlight hides it. |
 | `ping` | | Keepalive |
 
 ### Extension → app

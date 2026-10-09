@@ -39,6 +39,13 @@ class MockApp:
         self.turn = 0
         self.host = None
         self.last_target_click = 0.0
+        self.session = None  # Claude session for the current goal
+        self.spare = None    # warmed-up session for the next goal
+
+    def warm(self):
+        if self.orderer and self.orderer.startswith("claude") and not self.spare:
+            import orderer
+            self.spare = orderer.ClaudeSession(self.orderer.split(":", 1)[1] if ":" in self.orderer else "haiku")
 
     async def send(self, kind, **fields):
         if self.socket is None:
@@ -78,6 +85,12 @@ class MockApp:
             return
         self.goal, self.done, self.current, self.note = goal, [], None, ""
         self.host, self.last_target_click = None, 0.0
+        if self.session:
+            self.session.close()
+        self.warm()
+        self.session, self.spare = self.spare, None
+        self.warm()  # Fresh context per goal; the next one boots in the background.
+        await self.send("status", text="Working out the first step…")
         print(f"Goal: {goal}", flush=True)
         self.schedule(0)
 
@@ -105,7 +118,7 @@ class MockApp:
         self.empty_retries = 0
         page = orderer.sanitize(snapshot)
         note, self.note = self.note, ""
-        decision, seconds = await orderer.ask(self.orderer, orderer.prompt(self.goal, self.done, page, note))
+        decision, seconds = await orderer.ask(self.orderer, orderer.prompt(self.goal, self.done, page, note), self.session)
         if not self.goal or turn != self.turn:
             return
         print(f"Orderer ({seconds:.1f}s): {json.dumps(decision, ensure_ascii=False)}", flush=True)
@@ -117,13 +130,14 @@ class MockApp:
             print(f"Done: {decision.get('message', '')}", flush=True)
             self.goal = None
             await self.send("clear")
+            await self.send("status", text=str(decision.get("message") or "All done."), seconds=8)
             return
         refs = [r for r in decision.get("candidates") or [decision.get("ref")] if r in known]
         if not refs:
             print("Orderer picked a ref that isn't on the page; asking again.", flush=True)
             self.schedule(0, "Your last answer used a ref that is not in the list.")
             return
-        self.current = {"refs": refs, "instruction": str(decision.get("instruction") or f"Click **{known[refs[0]]['name']}**.")}
+        self.current = {"refs": refs, "role": known[refs[0]]["role"], "instruction": str(decision.get("instruction") or f"Click **{known[refs[0]]['name']}**.")}
         fields = {"ref": refs[0], "instruction": self.current["instruction"], "step": len(self.done) + 1}
         if decision.get("hint"):
             fields["hint"] = str(decision["hint"])
@@ -144,11 +158,16 @@ class MockApp:
             self.want_decision = False
             self.host = urlsplit(message.get("url") or "").hostname
             asyncio.create_task(self.decide(message))
-        elif kind == "user_action" and message.get("kind") == "click" and message.get("on_target") and self.current:
+        elif kind == "user_action" and message.get("on_target") and self.current and (
+                message.get("kind") in ("submit", "change") or
+                # A text box is finished by typing and Enter (submit/change/navigation), not by clicking into it.
+                (message.get("kind") == "click" and self.current["role"] not in ("textbox", "searchbox", "combobox"))):
             self.done.append(self.current["instruction"].replace("**", ""))
-            self.last_target_click = time.monotonic()
             self.current = None
-            self.schedule(1.5)
+            self.last_target_click = time.monotonic()
+            await self.send("clear")
+            await self.send("status", text="Working out the next step…")
+            self.schedule(0.6)
         elif kind == "page_changed" and message.get("reason") in ("navigation", "spa_route"):
             host = urlsplit(message.get("url") or "").hostname
             if self.host and host != self.host and time.monotonic() - self.last_target_click > 10:
@@ -157,13 +176,19 @@ class MockApp:
                 self.goal = None
                 await self.send("clear")
                 return
-            self.schedule(1.5)
+            if self.current:  # e.g. Enter in a search box navigated before any change event
+                self.done.append(self.current["instruction"].replace("**", ""))
+                self.current = None
+                self.last_target_click = time.monotonic()
+                await self.send("status", text="Working out the next step…")
+            self.schedule(0.8)
         elif kind == "highlight_error":
             self.schedule(0.5, f"Your last choice could not be shown ({message.get('reason')}); pick another.")
         elif kind == "card_button":
             button = message.get("button")
             if button == "stop":
                 self.goal = None
+                await self.send("status", text="")
                 print("Stopped.", flush=True)
             elif button == "stuck":
                 self.schedule(0, "The user is stuck on the last step. Pick again; the hint should say exactly where it is on screen.")
@@ -231,6 +256,7 @@ async def main(origin, orderer):
         if path != "/ext":
             return HTTPStatus.NOT_FOUND, [], b"Use /ext\n"
 
+    app.warm()
     async with serve(app.handler, "127.0.0.1", 47823, origins=[origin], process_request=check_path):
         print(f"Listening on ws://127.0.0.1:47823/ext for {origin}", flush=True)
         print("Commands: snap, hl <ref>, clear, notsure <ref> <ref> <ref>, goal <text>, or a keyword", flush=True)

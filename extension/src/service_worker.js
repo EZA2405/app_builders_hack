@@ -42,7 +42,14 @@ async function frameSnapshots(tabId, message) {
 
 async function route(message) {
   if (message?.type === "ping") return;
-  if (!["snapshot_request", "highlight", "clear"].includes(message?.type) || typeof message.id !== "string") return;
+  if (!["snapshot_request", "highlight", "clear", "status"].includes(message?.type) || typeof message.id !== "string") return;
+  if (message.type === "status") {
+    if (typeof message.text !== "string") return;
+    const tab = await activeTab();
+    if (tab?.id) await chrome.tabs.sendMessage(tab.id, { type: "status", text: message.text.slice(0, 200),
+      seconds: Number.isFinite(message.seconds) ? message.seconds : 0 }, { frameId: 0 }).catch(() => {});
+    return;
+  }
   if (message.type === "highlight" && (typeof message.ref !== "string" || typeof message.instruction !== "string")) return;
   if (message.type === "highlight" && message.candidates != null &&
       (!Array.isArray(message.candidates) || message.candidates.length > 400 || message.candidates.some((ref) => typeof ref !== "string"))) return;
