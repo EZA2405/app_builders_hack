@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<style>
+body{margin:0;background:#E9E8E5;-webkit-font-smoothing:antialiased}
+a{color:#7A3BAE;text-decoration:none}
+a:hover{color:#5A2685;text-decoration:underline}
+</style>
+</helmet>
+<div style="padding:96px;width:max-content;display:flex;flex-direction:column;gap:96px;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue',sans-serif;color:#1C1C1E">
+
+<div style="display:flex;flex-direction:column;gap:12px;max-width:1100px">
+<div style="font:700 56px/1.05 -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-0.02em">Gabay · System</div>
+<div style="font-size:22px;line-height:1.5;color:#3A3A3C">Tokens, ring and card specs, motion, copy, web parity and the projector check. Screens are in <a href="Gabay Screens.dc.html">Gabay Screens</a>. Everything uses system materials and SF Pro so it reads as part of macOS.</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(2,640px);gap:40px">
+
+<div id="s1" data-screen-label="Colors" style="padding:36px;border-radius:24px;background:#F7F6F4;display:flex;flex-direction:column;gap:22px">
+<div style="font-size:13px;font-weight:700;letter-spacing:.08em;color:#6E6E73">COLORS · LIGHT / DARK</div>
+<div style="display:grid;grid-template-columns:150px 1fr 1fr;gap:12px 16px;align-items:center;font-size:15px">
+<span></span><span style="font-weight:600">Light</span><span style="font-weight:600">Dark</span>
+<span>Ring</span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:#AF52DE"></span><code style="font-size:13px">#AF52DE systemPurple</code></span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:#BF5AF2"></span><code style="font-size:13px">#BF5AF2</code></span>
+<span>Glow</span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:rgba(175,82,222,.38)"></span><code style="font-size:13px">ring 38%</code></span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:rgba(191,90,242,.45)"></span><code style="font-size:13px">ring 45%</code></span>
+<span>Inner edge</span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15)"></span><code style="font-size:13px">#FFFFFF 2pt</code></span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15)"></span><code style="font-size:13px">#FFFFFF 2pt</code></span>
+<span>Success</span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:#2FA35A"></span><code style="font-size:13px">#2FA35A</code></span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:#3CC46E"></span><code style="font-size:13px">#3CC46E</code></span>
+<span>Warning</span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:#C27A00"></span><code style="font-size:13px">#C27A00 on #FFF6E4</code></span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:#FFB340"></span><code style="font-size:13px">#FFB340 on #3A2E1A</code></span>
+<span>Card surface</span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:rgba(246,246,248,.88);box-shadow:0 0 0 .5px rgba(0,0,0,.2)"></span><code style="font-size:13px">.regularMaterial</code></span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:#2C2C30"></span><code style="font-size:13px">.regularMaterial</code></span>
+<span>Text</span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:#1C1C1E"></span><code style="font-size:13px">.primary · 15.6:1</code></span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:#F5F5F7;box-shadow:0 0 0 1px rgba(0,0,0,.1)"></span><code style="font-size:13px">.primary · 14:1</code></span>
+<span>Second line</span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:#3A3A3C"></span><code style="font-size:13px">#3A3A3C · 10:1</code></span><span style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:10px;background:#D1D1D6"></span><code style="font-size:13px">#D1D1D6 · 9:1</code></span>
+</div>
+<div style="font-size:15px;line-height:1.5;color:#3A3A3C">The key word is bold in the text color, not tinted, so contrast stays AAA everywhere. Ring options: Purple (default), Pink <code>#E0457B</code>, Orange <code>#F08A24</code>. No blue: it looks like the system selection.</div>
+</div>
+
+<div id="s2" data-screen-label="Type scale" style="padding:36px;border-radius:24px;background:#F7F6F4;display:flex;flex-direction:column;gap:22px">
+<div style="font-size:13px;font-weight:700;letter-spacing:.08em;color:#6E6E73">TYPE · SF PRO · THREE SIZES</div>
+<div style="display:grid;grid-template-columns:150px repeat(3,1fr);gap:14px 16px;align-items:baseline;font-size:14px">
+<span></span><span style="font-weight:600">Large</span><span style="font-weight:600">Larger</span><span style="font-weight:600">Largest</span>
+<span>Sentence · Semibold</span><span style="font-size:26px;font-weight:600">26/32</span><span style="font-size:30px;font-weight:600">30/38</span><span style="font-size:36px;font-weight:600">36/44</span>
+<span>Second line · Regular</span><span style="font-size:19px">19/27</span><span style="font-size:22px">22/30</span><span style="font-size:26px">26/34</span>
+<span>Button · Semibold</span><span style="font-size:17px;font-weight:600">17</span><span style="font-size:19px;font-weight:600">19</span><span style="font-size:22px;font-weight:600">22</span>
+<span>Ask field</span><span style="font-size:26px">26</span><span style="font-size:30px">30</span><span style="font-size:36px">36</span>
+<span>Small · Medium</span><span style="font-size:15px;font-weight:500">15</span><span style="font-size:17px;font-weight:500">17</span><span style="font-size:19px;font-weight:500">19</span>
+</div>
+<div style="padding:22px 24px;border-radius:18px;background:#fff;display:flex;flex-direction:column;gap:6px"><span style="font-size:26px;line-height:32px;font-weight:600;letter-spacing:-0.01em">Click <b>Tools</b>.</span><span style="font-size:19px;line-height:27px;color:#3A3A3C">It's at the very top of your screen.</span></div>
+<div style="font-size:15px;line-height:1.5;color:#3A3A3C">SwiftUI: <code>.font(.system(size: 26 * scale, weight: .semibold))</code>, scale 1.0 / 1.15 / 1.38. Tracking −1% on the sentence. Nothing in the overlay is smaller than 15pt.</div>
+</div>
+
+<div id="s3" data-screen-label="Spacing radii materials" style="padding:36px;border-radius:24px;background:#F7F6F4;display:flex;flex-direction:column;gap:22px">
+<div style="font-size:13px;font-weight:700;letter-spacing:.08em;color:#6E6E73">SPACING · RADII · SHADOWS · MATERIALS</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;font-size:15px;line-height:1.5">
+<span><b>Spacing</b> 4 · 8 · 12 · 18 · 22 · 28</span><span><b>Targets</b> 44pt min, Gabay button 60pt</span>
+<span><b>Card</b> radius 18 continuous (stuck 22)</span><span><b>Ask pill</b> 60pt tall, capsule</span>
+<span><b>Ring</b> target radius + 4, min 8</span><span><b>Buttons</b> capsule, 44pt tall</span>
+<span><b>Shadow</b> 0.5pt hairline + 0 12 32 @16% + 0 2 6 @8%</span><span><b>Dark shadow</b> 0 12 32 @45%</span>
+</div>
+<div style="position:relative;height:200px;border-radius:20px;overflow:hidden;background:radial-gradient(ellipse at 15% 10%,#C7D2E4 0,transparent 55%),radial-gradient(ellipse at 90% 20%,#E9CDBB 0,transparent 50%),#D5D7DD;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:24px;box-sizing:border-box">
+<div style="position:absolute;left:0;right:0;top:80px;height:36px;background:repeating-linear-gradient(90deg,#1C1C1E 0 50px,#fff 50px 100px,#AF52DE 100px 150px);opacity:.8"></div>
+<div style="position:relative;border-radius:18px;padding:18px;background:rgba(246,246,248,.88);backdrop-filter:blur(30px) saturate(1.8);-webkit-backdrop-filter:blur(30px) saturate(1.8);box-shadow:0 0 0 .5px rgba(0,0,0,.14),0 12px 32px rgba(0,0,0,.16);display:flex;flex-direction:column;justify-content:space-between"><b style="font-size:17px">Card</b><code style="font-size:12px;line-height:1.5">.glassEffect(.regular,<br>in: .rect(cornerRadius: 18))</code></div>
+<div style="position:relative;border-radius:18px;padding:18px;background:rgba(250,250,252,.96);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);box-shadow:0 0 0 .5px rgba(0,0,0,.14),0 12px 32px rgba(0,0,0,.16);display:flex;flex-direction:column;justify-content:space-between"><b style="font-size:17px">Card, busy background</b><code style="font-size:12px;line-height:1.5">.glassEffect(.regular<br>.tint(.white.opacity(0.7)))</code></div>
+</div>
+</div>
+
+<div id="s4" data-screen-label="Ring spec" style="padding:36px;border-radius:24px;background:#F7F6F4;display:flex;flex-direction:column;gap:22px">
+<div style="font-size:13px;font-weight:700;letter-spacing:.08em;color:#6E6E73">RING SPEC</div>
+<div style="display:flex;gap:40px;align-items:center;padding:36px;border-radius:18px;background:#fff">
+<span style="position:relative;padding:10px 22px;border-radius:8px;font-size:22px;font-weight:600;background:#F2F2F5">Tools<span style="position:absolute;inset:-4px;border-radius:12px;box-shadow:0 0 0 2px #fff,0 0 0 6px #AF52DE,0 0 0 7px rgba(0,0,0,.22),0 0 28px 8px rgba(175,82,222,.38)"></span></span>
+<div style="display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.45"><span><b>Padding</b> 4pt outside the target frame</span><span><b>Inner edge</b> 2pt white</span><span><b>Stroke</b> 4pt ring color (6pt when stuck)</span><span><b>Hairline</b> 1pt black 22%</span><span><b>Glow</b> blur 28, spread 8, ring 38%</span></div>
+</div>
+<div style="font-size:15px;line-height:1.55;color:#3A3A3C"><b style="color:#1C1C1E">Breathing.</b> Scale 1.0 → 1.035 → 1.0 and glow 38% → 55% → 38%, 2.4 s per cycle, <code>.easeInOut</code>. Three cycles, then holds still. Resumes for three cycles after 8 s idle.<br><b style="color:#1C1C1E">Reduced motion.</b> No scale. Glow steps once from 38% to 55% over 0.3 s and stays. Stroke goes to 5pt for extra presence.<br><b style="color:#1C1C1E">Confirmed.</b> Same geometry in success green, glow 35%, 26pt tick badge top right. 0.5 s.<br><b style="color:#1C1C1E">Not sure.</b> Two normal rings without glow plus 30pt numbered badges top left.</div>
+</div>
+
+<div id="s5" data-screen-label="Card spec" style="padding:36px;border-radius:24px;background:#F7F6F4;display:flex;flex-direction:column;gap:18px">
+<div style="font-size:13px;font-weight:700;letter-spacing:.08em;color:#6E6E73">CARD SPEC</div>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.5">
+<span><b>Size.</b> Width fits the sentence, max 440pt (560 when stuck). Padding 18 / 22. Gap 6 between lines, 10 above actions.</span>
+<span><b>Content.</b> One sentence, key word bold. A second line only when it helps find the target. Actions only on hover or after 8 s without progress.</span>
+<span><b>Placement.</b> Try below, right, left, then above. 20–22pt from the target, with a 12pt popover arrow pointing at the ring (like NSPopover). Keep-out: target + 24pt, any open menu, the box being typed in, the screen edge + 8pt.</span>
+<span><b>Busy backgrounds.</b> If the area behind the card has dense text or strong contrast, raise the tint to 0.7 white (dark: 0.6 black) so the glass reads as solid.</span>
+<span><b>Dark backgrounds.</b> The card follows system appearance, not the content behind it. The 0.5pt hairline keeps its edge visible on black.</span>
+<span><b>Clicks.</b> The ring layer ignores the mouse. The card window takes clicks only on its own buttons; everything else passes through.</span>
+</div>
+</div>
+
+<div id="s6" data-screen-label="Motion" style="padding:36px;border-radius:24px;background:#F7F6F4;display:flex;flex-direction:column;gap:18px">
+<div style="font-size:13px;font-weight:700;letter-spacing:.08em;color:#6E6E73">MOTION NOTES</div>
+<div style="display:grid;grid-template-columns:170px 1fr 1fr;gap:12px 16px;font-size:14px;line-height:1.45">
+<b>Moment</b><b>Default</b><b>Reduced motion</b>
+<span>Field → dot</span><span>Field shrinks to an 18pt dot and moves to the pointer, spring(0.4, 0.9)</span><span>Field fades out, dot fades in</span>
+<span>Dot → ring</span><span>Dot grows into the ring around the target, 0.35 s easeOut</span><span>Ring fades in, 0.2 s</span>
+<span>Card in</span><span>Fades in and slides 6pt toward the ring, spring(0.35, 0.85)</span><span>Fade 0.2 s</span>
+<span>Card out</span><span>Fades out 0.15 s, no movement</span><span>Same</span>
+<span>Confirm tick</span><span>Ring color crossfades to green 0.15 s, tick scales 0.6 → 1.0, hold 0.5 s</span><span>Crossfade, tick appears without scaling</span>
+<span>Not sure</span><span>Both rings fade in together, badges 0.1 s later</span><span>Fade together</span>
+<span>Stuck dim</span><span>Dim 0 → 50% over 0.6 s easeInOut, ring stroke 4 → 6pt</span><span>Dim 0.3 s, no stroke change</span>
+<span>Done fade</span><span>Holds 4 s, fades over 0.6 s. Pointer on the card pauses it</span><span>Same</span>
+</div>
+</div>
+</div>
+
+<div id="s7" data-screen-label="Copy sheet" style="width:1320px;padding:36px;border-radius:24px;background:#F7F6F4;display:flex;flex-direction:column;gap:20px;box-sizing:border-box">
+<div style="font-size:13px;font-weight:700;letter-spacing:.08em;color:#6E6E73">COPY SHEET · EVERY STRING</div>
+<div style="display:grid;grid-template-columns:200px 1fr;gap:10px 24px;font-size:16px;line-height:1.45">
+<span style="color:#6E6E73">Gabay button hint</span><span>Need help? Click here, or press Option + Space</span>
+<span style="color:#6E6E73">Ask</span><span>What do you need help with? · Tap the mic, or just start typing · I'm listening · You could say</span>
+<span style="color:#6E6E73">Examples</span><span>“Make a photo smaller to email it” · “Make the words bigger” · “Paano mag-email ng picture”</span>
+<span style="color:#6E6E73">Thinking</span><span>Looking…</span>
+<span style="color:#6E6E73">Pointing</span><span>Click <b>Tools</b>. · It's at the very top of your screen. · Click <b>Adjust Size</b>. · Click <b>OK</b>. · Click <b>Pay Bills</b>.</span>
+<span style="color:#6E6E73">Actions</span><span>Not this one · Stop · Say it again (speaker)</span>
+<span style="color:#6E6E73">Typing</span><span>Type <b>1200</b> here, then press <b>Enter</b>.</span>
+<span style="color:#6E6E73">Not sure</span><span>It's one of these. Pick either one.</span>
+<span style="color:#6E6E73">Wrong turn</span><span>That's okay. Click <b>Tools</b> instead.</span>
+<span style="color:#6E6E73">Stuck</span><span>Click <b>Tools</b>. It's at the very top of your screen, after Go.</span>
+<span style="color:#6E6E73">Done</span><span>Done. Your photo is ready to email. · What I did</span>
+<span style="color:#6E6E73">Stopped</span><span>Okay, I stopped. Nothing was changed.</span>
+<span style="color:#6E6E73">Scam warning</span><span>Wait. Real banks and government offices never ask you to share your screen or install apps like this. · I understand · Call my family</span>
+<span style="color:#6E6E73">Private box</span><span>Type your password here. I won't look. · Type the code from your phone here. I won't look.</span>
+<span style="color:#6E6E73">First run</span><span>Welcome to Gabay · Gabay shows you where to click. It needs permission to see your screen. · Show me how · Click the switch next to <b>Gabay</b>. · Your Mac may ask for your password.</span>
+<span style="color:#6E6E73">Settings</span><span>Text size: Large, Larger, Largest · Read aloud: Say each step out loud. · Ring color: Purple, Pink, Orange · Everything stays on this Mac. Nothing is sent anywhere.</span>
+<span style="color:#6E6E73">Can't find it</span><span>I can't see that on this screen. Can you say it another way?</span>
+</div>
+<div style="height:1px;background:rgba(0,0,0,.1)"></div>
+<div style="font-size:13px;font-weight:700;letter-spacing:.08em;color:#6E6E73">TAGLISH · FIVE MOST COMMON</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;font-size:16px;line-height:1.45">
+<span>What do you need help with?</span><span>Ano'ng kailangan mo?</span>
+<span>Click <b>Tools</b>.</span><span>I-click ang <b>Tools</b>.</span>
+<span>That's okay. Click <b>Tools</b> instead.</span><span>Okay lang. I-click na lang ang <b>Tools</b>.</span>
+<span>It's one of these. Pick either one.</span><span>Isa sa dalawang ito. Pumili ka lang ng isa.</span>
+<span>Done. Your photo is ready to email.</span><span>Tapos na. Puwede mo nang i-email ang picture.</span>
+</div>
+</div>
+
+<div style="display:flex;gap:40px;align-items:flex-start">
+<div id="s8" data-screen-label="Web parity" style="width:640px;padding:36px;border-radius:24px;background:#F7F6F4;display:flex;flex-direction:column;gap:20px;box-sizing:border-box">
+<div style="font-size:13px;font-weight:700;letter-spacing:.08em;color:#6E6E73">WEB PARITY · CHROME EXTENSION</div>
+<div style="position:relative;height:230px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.1);font-family:'Helvetica Neue',Helvetica,sans-serif">
+<div style="height:64px;display:flex;align-items:center;gap:28px;padding:0 28px;border-bottom:1px solid #E5E5EA;font-size:15px;color:#1F2937"><b style="color:#10305A">Liwanag Electric</b><span style="flex:1"></span><span>Home</span><span style="position:relative">Pay Bills<span style="position:absolute;inset:-8px -10px;border-radius:10px;box-shadow:0 0 0 2px #fff,0 0 0 6px #AF52DE,0 0 0 7px rgba(0,0,0,.22),0 0 28px 8px rgba(175,82,222,.38)"></span><span style="position:absolute;left:-60px;top:calc(100% + 30px);width:max-content;padding:18px 22px;border-radius:18px;background:rgba(246,246,248,.88);backdrop-filter:blur(30px) saturate(1.8);-webkit-backdrop-filter:blur(30px) saturate(1.8);box-shadow:0 0 0 .5px rgba(0,0,0,.14),0 12px 32px rgba(0,0,0,.16);font:600 26px/32px -apple-system,BlinkMacSystemFont,sans-serif;color:#1C1C1E;letter-spacing:-0.01em">Click <b>Pay Bills</b>.</span></span><span>Help</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.5;color:#3A3A3C">
+<span>Drawn in a closed Shadow DOM so page CSS can't reach it. <code>:host {all: initial}</code> then the tokens.</span>
+<span>One shared <code>tokens.json</code> generates both <code>Theme.swift</code> and the extension's CSS variables. Same numbers, same names.</span>
+<span>Font stack <code>-apple-system, BlinkMacSystemFont</code> renders SF Pro in Chrome on Mac.</span>
+<span>Sizes are fixed in px and multiplied by the page zoom inverse, so the card is the same size at 90% or 150% zoom.</span>
+<span>Material: <code>backdrop-filter: blur(30px) saturate(1.8)</code> over the 88% surface matches <code>.regularMaterial</code>.</span>
+<span>Overlay root <code>pointer-events: none</code>; only card buttons set <code>auto</code>.</span>
+</div>
+</div>
+
+<div id="s9" data-screen-label="Projector check" style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:baseline;gap:12px"><span style="font:600 13px ui-monospace,Menlo,monospace;background:#1C1C1E;color:#fff;padding:4px 10px;border-radius:999px">P</span><span style="font-size:18px;font-weight:600">Projector check</span><span style="font-size:15px;color:#6E6E73">1920×1080, washed-out contrast and blur as seen from the back row</span></div>
+<div style="width:1280px;height:720px;border-radius:6px;overflow:hidden;background:#111;box-shadow:0 30px 80px rgba(0,0,0,.35)">
+<div style="width:1920px;height:1080px;transform:scale(.6667);transform-origin:0 0;position:relative;background:radial-gradient(ellipse at 18% 12%,#C7D2E4 0,transparent 55%),radial-gradient(ellipse at 88% 18%,#E9CDBB 0,transparent 50%),#D5D7DD;filter:contrast(.72) brightness(1.1) saturate(.8) blur(1.2px)">
+<div style="position:absolute;left:0;top:0;right:0;height:36px;display:flex;align-items:center;padding:0 14px;background:rgba(246,246,248,.6);font-size:15px;color:#1C1C1E"><span style="width:16px;height:16px;border-radius:50%;background:#1C1C1E;margin:0 14px 0 6px"></span><b style="padding:0 12px">Preview</b><span style="padding:0 12px">File</span><span style="padding:0 12px">Edit</span><span style="padding:0 12px">View</span><span style="padding:0 12px">Go</span><span style="position:relative;padding:0 12px">Tools<span style="position:absolute;inset:-5px -1px;border-radius:9px;box-shadow:0 0 0 2px #fff,0 0 0 6px #AF52DE,0 0 0 7px rgba(0,0,0,.22),0 0 28px 8px rgba(175,82,222,.38)"></span><span style="position:absolute;left:-6px;top:calc(100% + 28px);width:max-content;padding:18px 22px;border-radius:18px;background:rgba(246,246,248,.92);box-shadow:0 0 0 .5px rgba(0,0,0,.14),0 12px 32px rgba(0,0,0,.16);display:flex;flex-direction:column;gap:6px"><span style="font:600 30px/38px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-0.01em">Click <b>Tools</b>.</span><span style="font-size:22px;color:#3A3A3C">It's at the very top of your screen.</span></span></span><span style="padding:0 12px">Window</span><span style="padding:0 12px">Help</span></div>
+<div style="position:absolute;left:260px;top:110px;width:1400px;height:880px;border-radius:20px;background:#F2F2F4;box-shadow:0 0 0 1px rgba(0,0,0,.1),0 30px 80px rgba(0,0,0,.26)"><div style="position:absolute;inset:90px 160px 40px;background:repeating-linear-gradient(135deg,#DCD6CE 0 14px,#E5E0D9 14px 28px)"></div></div>
+</div>
+</div>
+<div style="font-size:15px;line-height:1.5;color:#3A3A3C;max-width:1280px">Shown at the Larger size, which presenters should pick. The 2pt white inner edge and 1pt dark hairline keep the ring readable when the projector flattens color; the sentence stays legible because it relies on weight and size, not tint.</div>
+</div>
+</div>
+
+</div>
+</x-dc>
+</body>
+</html>
