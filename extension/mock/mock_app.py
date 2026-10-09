@@ -5,6 +5,7 @@ import asyncio
 import base64
 import hashlib
 import json
+import os
 import sys
 from http import HTTPStatus
 from pathlib import Path
@@ -86,12 +87,18 @@ async def main(origin):
     commands = asyncio.Queue()
     loop = asyncio.get_running_loop()
 
+    pending = ""
+
     def read_command():
-        line = sys.stdin.readline()
-        if line:
-            commands.put_nowait(line)
-        else:
+        nonlocal pending
+        chunk = os.read(sys.stdin.fileno(), 4096).decode()
+        if not chunk:
             loop.remove_reader(sys.stdin)
+            return
+        pending += chunk
+        while "\n" in pending:
+            line, pending = pending.split("\n", 1)
+            commands.put_nowait(line)
 
     loop.add_reader(sys.stdin, read_command)
 
