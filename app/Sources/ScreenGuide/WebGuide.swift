@@ -36,7 +36,7 @@ extension GuideEngine {
                 let c = Candidate(id: i, source: "web", role: e["role"] as? String ?? "button", label: name,
                                   context: e["context"] as? String ?? "", path: name, frame: nil, enabled: true)
                 let k = Planner.key(c)
-                if refs[k] == nil { refs[k] = ref; cands.append(c) }
+                if refs[k] == nil, !clicked.contains(k) { refs[k] = ref; cands.append(c) }
             }
             let site = "web browser, on the website \"\(String(title.prefix(60)))\""
             let pick: Planner.Pick?
@@ -49,8 +49,11 @@ extension GuideEngine {
             guard let pick, let ref = refs[Planner.key(pick.candidate)] else { webFail("I couldn't find anything to click here.", ""); return }
             let key = Planner.key(pick.candidate)
             log("WEB STEP \(stepNo + 1) pick=\(key) conf=\(String(format: "%.2f", pick.confidence))")
-            // Re-picking something already clicked means the goal is reached.
-            if clicked.contains(key) { webFinish(); return }
+            // After the first steps, a weak best guess usually means the goal is already reached: ask.
+            if stepNo >= 1, pick.confidence < 0.2 {
+                log("WEB weak next step (\(String(format: "%.2f", pick.confidence))) -> finish")
+                webFinish(); return
+            }
             stepNo += 1
 
             var msg: [String: Any] = ["type": "highlight", "ref": ref, "step": stepNo]
@@ -62,10 +65,12 @@ extension GuideEngine {
             } else {
                 let (text, hint) = webPhrase(pick.candidate)
                 msg["instruction"] = text
-                msg["hint"] = hint
+                msg["hint"] = [hint, "This gets you closer to: \(goal)."].filter { !$0.isEmpty }.joined(separator: " ")
                 speakText(plain(text) + " " + hint)
             }
-            _ = await bridge.request(msg)
+            bridge.send(["type": "status", "id": UUID().uuidString, "text": "", "seconds": 0])   // drop "Working out…"
+            let hl = await bridge.request(msg)
+            log("WEB highlight -> \(hl?["type"] as? String ?? "no reply") \(hl?["reason"] as? String ?? "")")
 
             // Wait for the person: a click on the target, a submit, or the page changing.
             var advanced = false
@@ -115,7 +120,8 @@ extension GuideEngine {
     private func webFinish() {
         log("WEB DONE steps=\(done)")
         Bridge.shared.send(["type": "clear", "id": UUID().uuidString])
-        Bridge.shared.send(["type": "status", "id": UUID().uuidString, "text": "All done. You did it.", "seconds": 5])
+        Bridge.shared.send(["type": "status", "id": UUID().uuidString,
+                            "text": "I think that's it. If not, ask me again with a bit more detail.", "seconds": 6])
         finish()
     }
 
