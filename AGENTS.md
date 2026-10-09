@@ -36,8 +36,9 @@ Instructions for AI coding agents (Claude Code, Codex, Devin, etc.) working in t
 3. **Only report measured numbers.** Fake benchmarks are disqualifying.
    - Add results to `ml/RESULTS.md` with the date and the reproduce command.
    - Never edit answer keys after seeing model output unless the key was factually wrong (e.g. the real command name differs), and note it.
-4. **Secrets** live in `ml/.env` (gitignored; e.g. `JEV_API_KEY`). Never print, log or commit them.
-5. **Disclose** every model, API, dataset source and AI tool in `README.md`.
+4. **Don't tune on the test set.** Choose model variants, epochs and data mixes by validation accuracy (`ml/data/val.jsonl`, apps unseen in training). Run the 35-goal held-out test only on the chosen candidate, and report every held-out run you do, not just the best.
+5. **Secrets** live in `ml/.env` (gitignored; e.g. `JEV_API_KEY`). Never print, log or commit them.
+6. **Disclose** every model, API, dataset source and AI tool in `README.md`.
 
 ## Conventions
 - **Swift:** tools 6.2, macOS 26 target, Swift 5 language mode. AppKit + SwiftUI. Keep the overlay a transparent, non-activating, click-through panel.
