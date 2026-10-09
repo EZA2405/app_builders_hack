@@ -9,9 +9,8 @@ function send(message) {
 }
 
 async function activeTab() {
-  const window = await chrome.windows.getLastFocused();
-  if (!window.focused) return null;
-  return (await chrome.tabs.query({ active: true, windowId: window.id }))[0];
+  // Keep the browser selection when the mock's terminal is in the foreground.
+  return (await chrome.tabs.query({ active: true, lastFocusedWindow: true }))[0];
 }
 
 async function route(message) {
