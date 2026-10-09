@@ -18,9 +18,13 @@ async function waitFor(check, timeout = 10000) {
 
 (async () => {
   let output = '';
-  const mock = spawn(process.env.TEST_PYTHON || 'python3', [path.join(extension, 'mock/mock_app.py')]);
-  mock.stdout.on('data', (data) => { output += data; });
-  mock.stderr.on('data', (data) => process.stderr.write(data));
+  const startMock = () => {
+    const app = spawn(process.env.TEST_PYTHON || 'python3', [path.join(extension, 'mock/mock_app.py')]);
+    app.stdout.on('data', (data) => { output += data; });
+    app.stderr.on('data', (data) => process.stderr.write(data));
+    return app;
+  };
+  let mock = startMock();
   const profile = mkdtempSync(path.join(tmpdir(), 'screenguide-test-'));
   let context;
   try {
@@ -108,6 +112,70 @@ async function waitFor(check, timeout = 10000) {
     result = await request({ type: 'highlight', id: 'missing', ref: 'missing', instruction: 'Click' });
     assert.equal(result.reason, 'ref_not_found');
     console.log('PASS mock highlight, safe bold text, card geometry, long-page scroll/resize tracking, password instruction');
+    await request({ type: 'highlight', id: 'click', ref: captions.ref, instruction: 'Click captions' });
+    mark = output.length;
+    await page.locator('#captions span').click();
+    await waitFor(() => output.slice(mark).includes('"on_target": true'));
+    mark = output.length;
+    await page.locator('#wrong').click();
+    await waitFor(() => output.slice(mark).includes('"on_target": false'));
+    mark = output.length;
+    await page.locator('sg-overlay button').filter({ hasText: 'Show me again' }).click();
+    await waitFor(() => output.slice(mark).includes('"button": "again"'));
+    assert(!output.slice(mark).includes('user_action'), 'Overlay button leaked a page action');
+    mark = output.length;
+    await page.locator('#password').fill('DO_NOT_SEND_PASSWORD');
+    await page.keyboard.press('Escape');
+    await pause(500);
+    assert(!output.slice(mark).includes('user_action'), 'Sensitive focus leaked action');
+    await page.locator('#payment').fill('DO_NOT_SEND_CARD');
+    await pause(100);
+    assert(!output.slice(mark).includes('user_action'), 'Payment focus leaked action');
+    await page.evaluate(() => document.activeElement.blur());
+    mark = output.length;
+    await page.locator('input[type=search]').fill('DO_NOT_SEND_TYPED_TEXT');
+    await waitFor(() => output.slice(mark).includes('"kind": "input"'));
+    assert(!output.includes('DO_NOT_SEND_'));
+    mark = output.length;
+    await page.keyboard.press('Enter');
+    await waitFor(() => output.slice(mark).includes('"kind": "submit"'));
+    await waitFor(() => output.slice(mark).includes('"reason": "navigation"'));
+    // Discard old refs after a real document navigation.
+    snapshot = await request({ type: 'snapshot_request', id: 'new-page' });
+    const current = snapshot.elements.find((el) => /Subtitles/.test(el.name));
+    await request({ type: 'highlight', id: 'route-target', ref: current.ref, instruction: 'Click captions' });
+    mark = output.length;
+    await page.evaluate(() => history.pushState({}, '', '/spa-route'));
+    await waitFor(() => output.slice(mark).includes('"reason": "spa_route"'));
+    assert.equal(await page.locator('sg-overlay').count(), 0);
+    mark = output.length;
+    await page.evaluate(() => history.replaceState({}, '', '/replaced-route'));
+    await waitFor(() => output.slice(mark).includes('"reason": "spa_route"'));
+    mark = output.length;
+    await page.evaluate(() => {
+      const block = document.createElement('div');
+      for (let i = 0; i < 25; i++) block.append(document.createElement('span'));
+      document.body.append(block);
+    });
+    await waitFor(() => output.slice(mark).includes('"reason": "dom_mutation"'));
+    await request({ type: 'highlight', id: 'removed', ref: current.ref, instruction: 'Click captions' });
+    mark = output.length;
+    await page.locator('#captions').evaluate((el) => el.remove());
+    await waitFor(() => output.slice(mark).includes('"reason": "dom_mutation"'));
+    assert.equal(await page.locator('sg-overlay').count(), 0);
+    console.log('PASS nested target and wrong clicks, card events, sensitive focus suppression, input without values, submit/navigation, SPA routes, DOM changes and removed target');
+    mock.kill();
+    await new Promise((resolve) => mock.once('exit', resolve));
+    // Longer than MV3's idle timeout, so this checks retries while disconnected too.
+    await pause(35000);
+    mark = output.length;
+    const restart = Date.now();
+    mock = startMock();
+    await waitFor(() => output.slice(mark).includes('ref | role | name'), 11000);
+    assert(Date.now() - restart < 10000, 'Reconnect exceeded 10s');
+    console.log(`PASS mock restart after 35s outage: reconnected in ${Date.now() - restart}ms without reloading page`);
+
+
 
 
     if (process.argv.includes('--live')) {
@@ -132,7 +200,10 @@ async function waitFor(check, timeout = 10000) {
           await waitFor(() => output.slice(mark).includes('highlight_ok'));
           const selector = `[data-sg-ref="${captions.ref}"]`;
           await checkPlacement(selector);
-          console.log('PASS live YouTube captions highlight through mock, ring and card placement');
+          mark = output.length;
+          await page.locator(selector).click();
+          await waitFor(() => output.slice(mark).includes('"on_target": true'));
+          console.log('PASS live YouTube captions: mock highlight → browser click → on_target:true');
         }
         console.log(`PASS ${url}: ${snapshot.elements.length} elements, ${snapshot.ms.toFixed(1)}ms, mock table printed`);
       }

@@ -103,6 +103,11 @@
   let highlightedRef;
   let animation;
   let generation = 0;
+  let changeTimer;
+  let pendingReason;
+  let lastURL = location.href;
+  let changedNodes = 0;
+  let mutationTimer;
 
   function emit(message) {
     void chrome.runtime.sendMessage(message).catch(() => {});
@@ -116,7 +121,12 @@
   }
 
   function pageChanged(reason) {
-    emit({ type: "page_changed", url: location.href, title: document.title, reason });
+    if (!pendingReason || reason !== "dom_mutation") pendingReason = reason;
+    clearTimeout(changeTimer);
+    changeTimer = setTimeout(() => {
+      emit({ type: "page_changed", url: location.href, title: document.title, reason: pendingReason });
+      pendingReason = null;
+    }, 300);
   }
 
   function placeCard(rect) {
@@ -246,6 +256,49 @@
     track();
     return { type: "highlight_ok", id: message.id };
   }
+
+  function focusedSensitive() {
+    let active = document.activeElement;
+    while (active?.shadowRoot?.activeElement) active = active.shadowRoot.activeElement;
+    return active && sensitive(active);
+  }
+
+  for (const kind of ["click", "input", "change", "submit", "keydown"]) {
+    document.addEventListener(kind, (event) => {
+      if (!event.isTrusted || (kind === "keydown" && event.key !== "Escape")) return;
+      const path = event.composedPath();
+      if (path.includes(overlay)) return;
+      if (kind !== "submit" && (focusedSensitive() || path.some((node) => node instanceof Element && sensitive(node)))) return;
+      const el = path.find((node) => node instanceof Element && refs.get(node.getAttribute("data-sg-ref")) === node);
+      const ref = el?.getAttribute("data-sg-ref");
+      emit({ type: "user_action", kind: kind === "keydown" ? "keydown_escape" : kind,
+        ...(ref ? { ref } : {}), on_target: Boolean(ref && ref === highlightedRef) });
+      if (kind === "keydown") clear();
+    }, true);
+  }
+
+  function routeChanged() {
+    if (location.href === lastURL) return;
+    lastURL = location.href;
+    clear();
+    pageChanged("spa_route");
+  }
+  for (const event of ["sg-route", "popstate", "hashchange"]) window.addEventListener(event, routeChanged);
+
+  const observer = new MutationObserver((records) => {
+    for (const record of records) {
+      for (const node of [...record.addedNodes, ...record.removedNodes]) {
+        if (node instanceof Element && node.tagName === "SG-OVERLAY") continue;
+        changedNodes++;
+        if (node instanceof Element) changedNodes += node.querySelectorAll("*").length;
+      }
+    }
+    if (changedNodes > 20) pageChanged("dom_mutation");
+    clearTimeout(mutationTimer);
+    mutationTimer = setTimeout(() => { changedNodes = 0; }, 300);
+  });
+  observer.observe(document.body || document.documentElement, { childList: true, subtree: true });
+  pageChanged("navigation");
 
   chrome.runtime.onMessage.addListener((message, sender, respond) => {
     if (sender.id !== chrome.runtime.id) return;

@@ -27,6 +27,18 @@
       "all_frames": true,
       "run_at": "document_idle",
       "match_about_blank": true
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/navigation.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_start",
+      "match_about_blank": true,
+      "world": "MAIN"
     }
   ],
   "content_security_policy": {
