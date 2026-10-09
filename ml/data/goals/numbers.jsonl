@@ -1,0 +1,35 @@
+{"goal": "start a brand new spreadsheet", "answer": "File > New…", "alts": []}
+{"goal": "i-save mo na to", "answer": "File > Save", "alts": []}
+{"goal": "send this to my son but he only has excel", "answer": "File > Export To > Excel…", "alts": []}
+{"goal": "make it into a pdf", "answer": "File > Export To > PDF…", "alts": []}
+{"goal": "pa-print naman nito", "answer": "File > Print…", "alts": []}
+{"goal": "i want my family to be able to work on this with me", "answer": "File > Share…", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "paano mag-add ng row sa baba", "answer": "Table > Add Row Below", "alts": []}
+{"goal": "i need another line above this one", "answer": "Table > Add Row Above", "alts": []}
+{"goal": "add a column to the right", "answer": "Table > Add Column After", "alts": []}
+{"goal": "get rid of this row", "answer": "Table > Delete Row", "alts": []}
+{"goal": "take out this whole column", "answer": "Table > Delete Column", "alts": []}
+{"goal": "add up all these numbers for me", "answer": "Insert > Formula > Sum", "alts": []}
+{"goal": "whats the average of these", "answer": "Insert > Formula > Average", "alts": []}
+{"goal": "gawin mong pie chart to", "answer": "Insert > Chart > 2D Pie", "alts": []}
+{"goal": "make a bar graph of my monthly bills", "answer": "Insert > Chart > 2D Column", "alts": ["Insert > Chart > 2D Bar"]}
+{"goal": "join these boxes together into one big box", "answer": "Table > Merge Cells", "alts": []}
+{"goal": "the words dont fit in the box, make them go onto the next line", "answer": "Table > Wrap Text", "alts": []}
+{"goal": "make the column wide enough so i can read everything", "answer": "Table > Resize Column to Fit Content", "alts": []}
+{"goal": "put todays date in this box", "answer": "Table > Insert Current Date", "alts": []}
+{"goal": "put these in order from smallest to biggest", "answer": "Organize > Show Sort Options", "alts": []}
+{"goal": "only show me the rows from march", "answer": "Organize > Show Filter Options", "alts": []}
+{"goal": "keep the top row stuck there when i scroll down", "answer": "Table > Freeze Header Rows", "alts": []}
+{"goal": "add another page at the bottom tabs", "answer": "Insert > Sheet", "alts": []}
+{"goal": "its so tiny i cant see, make it bigger", "answer": "View > Zoom > Zoom In", "alts": []}
+{"goal": "make these letters bold", "answer": "Format > Font > Bold", "alts": []}
+{"goal": "put the words in the middle of the box", "answer": "Format > Text > Align Center", "alts": []}
+{"goal": "turn the box red when im over budget", "answer": "Format > Conditional Highlighting…", "alts": []}
+{"goal": "make a list with tick boxes", "answer": "Insert > Table > Checklist", "alts": []}
+{"goal": "leave a little note on this box for my wife to see", "answer": "Insert > Comment", "alts": []}
+{"goal": "hide these rows for now", "answer": "Table > Hide Rows", "alts": []}
+{"goal": "bring back the columns that disappeared", "answer": "Table > Unhide All Columns", "alts": []}
+{"goal": "copy the same thing all the way down the column", "answer": "Table > Autofill Cells > Autofill Down", "alts": []}
+{"goal": "look for a word in my spreadsheet", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "put a password on this so nobody else can open it", "answer": "File > Set Password…", "alts": []}

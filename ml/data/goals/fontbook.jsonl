@@ -1,0 +1,35 @@
+{"goal": "add a new font i downloaded", "answer": "File > Add Fonts to Current User…", "alts": []}
+{"goal": "i have two of the same font", "answer": "File > Resolve Duplicates…", "alts": []}
+{"goal": "check if this font is broken", "answer": "File > Validate Selection", "alts": []}
+{"goal": "make sure a font file is ok before i put it on", "answer": "File > Validate File…", "alts": []}
+{"goal": "where is this font saved on my computer", "answer": "File > Show in Finder", "alts": []}
+{"goal": "print a sample of the letters", "answer": "File > Print…", "alts": []}
+{"goal": "make a folder to keep my favorite fonts together", "answer": "File > New Collection", "alts": []}
+{"goal": "look for a font called something like script", "answer": "File > Find…", "alts": []}
+{"goal": "copy the font out so i can give it to my friend", "answer": "File > Export…", "alts": []}
+{"goal": "get rid of this font", "answer": "Edit > Remove", "alts": ["Edit > Delete"]}
+{"goal": "turn this font off for now but dont delete it", "answer": "Edit > Deactivate", "alts": []}
+{"goal": "turn the font back on", "answer": "Edit > Activate", "alts": []}
+{"goal": "this font is greyed out, i want to get it", "answer": "Edit > Download", "alts": []}
+{"goal": "ibalik sa dati yung sample text", "answer": "Edit > Reset Custom Text", "alts": []}
+{"goal": "make the sample letters bigger", "answer": "View > Increase Font Size", "alts": []}
+{"goal": "too big, smaller pls", "answer": "View > Decrease Font Size", "alts": []}
+{"goal": "show me all the fonts as little squares", "answer": "View > View as Grid", "alts": []}
+{"goal": "show them as a plain list", "answer": "View > View as List", "alts": []}
+{"goal": "show me what a sentence looks like in each font", "answer": "View > View as Samples", "alts": []}
+{"goal": "next font", "answer": "View > Next Typeface", "alts": []}
+{"goal": "show me the bold one and the other versions of this font", "answer": "View > Next Style", "alts": []}
+{"goal": "who made this font, show me the details", "answer": "View > Show Info Pane", "alts": []}
+{"goal": "go back", "answer": "View > Back", "alts": []}
+{"goal": "the list on the left side disappeared", "answer": "View > Show Sidebar", "alts": []}
+{"goal": "full screen pls", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "open another window", "answer": "File > New Window", "alts": []}
+{"goal": "pano magdagdag ng font", "answer": "File > Add Fonts to Current User…", "alts": []}
+{"goal": "pa-print ng font sample", "answer": "File > Print…", "alts": []}
+{"goal": "close this", "answer": "File > Close", "alts": []}
+{"goal": "im done, shut the whole thing down", "answer": "Font Book > Quit Font Book", "alts": []}
+{"goal": "select every font", "answer": "Edit > Select All", "alts": []}
+{"goal": "paano i-off yung font na to", "answer": "Edit > Deactivate", "alts": []}
+{"goal": "put this window on the left half of the screen", "answer": "Window > Move & Resize > Left", "alts": []}
+{"goal": "too many windows, put them all in one", "answer": "Window > Merge All Windows", "alts": []}
+{"goal": "shrink this window down to the dock", "answer": "Window > Minimize", "alts": []}

@@ -1,0 +1,36 @@
+{"goal": "start a fresh empty board", "answer": "File > New Board", "alts": []}
+{"goal": "i want a new page to draw on but in a separate window", "answer": "File > New Board in New Window", "alts": []}
+{"goal": "save this as a pdf so i can email it", "answer": "File > Export Board as PDF…", "alts": []}
+{"goal": "I want to send this board to my grandson", "answer": "File > Share…", "alts": []}
+{"goal": "pa-print naman nito", "answer": "File > Print Board…", "alts": []}
+{"goal": "plese undo that i messed up", "answer": "Edit > Undo", "alts": []}
+{"goal": "I undid it by mistake, bring my change back", "answer": "Edit > Redo", "alts": []}
+{"goal": "make another copy of this box", "answer": "Edit > Duplicate Selection", "alts": []}
+{"goal": "get rid of this thing i clicked on", "answer": "Edit > Delete", "alts": []}
+{"goal": "where did i write the word grocery, help me look for it", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "check if i spelled everything right", "answer": "Edit > Spelling and Grammar > Check Document Now", "alts": []}
+{"goal": "read the words out loud to me", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "i want to talk instead of typing", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "add a smiley face", "answer": "Edit > Emoji & Symbols", "alts": []}
+{"goal": "make all these words capital letters", "answer": "Edit > Transformations > Make Upper Case", "alts": []}
+{"goal": "pa-highlight lahat ng nasa board", "answer": "Edit > Select All", "alts": []}
+{"goal": "put a little yellow note on here", "answer": "Insert > Sticky Note", "alts": []}
+{"goal": "draw a circle", "answer": "Insert > Shape > Oval", "alts": []}
+{"goal": "i want to type some words anywhere on the board", "answer": "Insert > Text Box", "alts": []}
+{"goal": "put a picture from my photos here", "answer": "Insert > Choose Photo or Video", "alts": []}
+{"goal": "draw an arrow pointing to something", "answer": "Insert > Line with Arrowhead", "alts": ["Insert > Shape > Arrow"]}
+{"goal": "i need rows and boxes like a chart for my weekly schedule", "answer": "Insert > Table", "alts": []}
+{"goal": "how do i make writng thicker and darker", "answer": "Format > Font > Bold", "alts": []}
+{"goal": "the letters are too tiny to read", "answer": "Format > Font > Bigger", "alts": []}
+{"goal": "put the writing in the middle", "answer": "Format > Text > Align Center", "alts": []}
+{"goal": "paano lagyan ng guhit sa ilalim yung text", "answer": "Format > Font > Underline", "alts": []}
+{"goal": "I want to change the colour of this", "answer": "Format > Show Colors", "alts": []}
+{"goal": "add another line at the bottom of my table", "answer": "Format > Table > Add Row Below", "alts": []}
+{"goal": "take the background off the photo so only the person shows", "answer": "Format > Image > Remove Background", "alts": []}
+{"goal": "this picture is hiding behind the other one, put it on top", "answer": "Arrange > Bring to Front", "alts": []}
+{"goal": "put this behind everything else", "answer": "Arrange > Send to Back", "alts": []}
+{"goal": "stick these together so they move as one", "answer": "Arrange > Group", "alts": []}
+{"goal": "i keep moving this by accident, make it stay put", "answer": "Arrange > Lock", "alts": []}
+{"goal": "everything is so small on the screen i cant see", "answer": "View > Zoom > Zoom In", "alts": []}
+{"goal": "i lost my stuff, show me the whole board at once", "answer": "View > Zoom > Zoom to Fit Content", "alts": []}
+{"goal": "pano i-close to", "answer": "File > Close", "alts": []}

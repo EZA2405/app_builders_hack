@@ -1,0 +1,35 @@
+{"goal": "play the song", "answer": "Controls > Play", "alts": []}
+{"goal": "make it quieter please", "answer": "Controls > Decrease Volume", "alts": []}
+{"goal": "i cant hear the music turn it up", "answer": "Controls > Increase Volume", "alts": []}
+{"goal": "skip this song i dont like it", "answer": "Controls > Next Track", "alts": []}
+{"goal": "go back to the song before this one", "answer": "Controls > Previous Track", "alts": []}
+{"goal": "stop the music", "answer": "Controls > Stop", "alts": []}
+{"goal": "play my songs mixed up in any order", "answer": "Controls > Shuffle > On", "alts": []}
+{"goal": "I want the same song to keep playing over and over again", "answer": "Controls > Repeat > One", "alts": []}
+{"goal": "ulitin lahat ng kanta pag tapos na", "answer": "Controls > Repeat > All", "alts": []}
+{"goal": "patayin yung shuffle, gusto ko in order", "answer": "Controls > Shuffle > Off", "alts": []}
+{"goal": "make a new list of my favorite songs", "answer": "File > New > Playlist", "alts": []}
+{"goal": "put the songs I picked into their own list", "answer": "File > New > Playlist from Selection", "alts": []}
+{"goal": "I have some songs saved on my computer, how do I put them in here", "answer": "File > Import…", "alts": []}
+{"goal": "where is this song file on my computer", "answer": "File > Show in Finder", "alts": []}
+{"goal": "I want to put these songs on a cd for the car", "answer": "File > Burn Playlist to Disc…", "alts": []}
+{"goal": "print out a list of my songs", "answer": "File > Print…", "alts": []}
+{"goal": "I think I have the same song in here twice", "answer": "File > Library > Show Duplicate Items", "alts": []}
+{"goal": "the album pictures are missing, its just blank squares", "answer": "File > Library > Get Album Artwork", "alts": []}
+{"goal": "play this one right after the song thats on now", "answer": "Song > Play Next", "alts": []}
+{"goal": "save this song so I can listen without internet", "answer": "Song > Download", "alts": []}
+{"goal": "take this song out of the list but dont erase it", "answer": "Song > Remove from Playlist", "alts": []}
+{"goal": "get rid of this song completely", "answer": "Song > Delete from Library", "alts": []}
+{"goal": "who sings this and what album is it from", "answer": "Song > Get Info…", "alts": []}
+{"goal": "I want to see the words to the song", "answer": "View > Show Lyrics", "alts": []}
+{"goal": "whats going to play after this", "answer": "View > Show Playing Next", "alts": []}
+{"goal": "make the music take up the whole screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "make the music player a tiny little window", "answer": "Window > MiniPlayer", "alts": ["Window > Switch to MiniPlayer"]}
+{"goal": "the bass is too strong, how do i adjust the sound", "answer": "Window > Equalizer", "alts": []}
+{"goal": "show me the colorful moving lights with the music", "answer": "Window > Visualizer", "alts": []}
+{"goal": "oops undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "close the music app", "answer": "Music > Quit Music", "alts": []}
+{"goal": "make a radio station of songs like this one", "answer": "Song > Create Station", "alts": []}
+{"goal": "I lost track of the song that's playing, take me back to it", "answer": "Controls > Go to Current Song", "alts": []}
+{"goal": "pakilakasan ng todo yung volume", "answer": "Controls > Set Volume to Maximum", "alts": []}
+{"goal": "where are all the songs I bought before", "answer": "Account > Purchased", "alts": []}

@@ -1,0 +1,38 @@
+{"goal": "make the letters bigger", "answer": "Format > Font > Bigger", "alts": []}
+{"goal": "paki-laki naman ng text, di ko mabasa", "answer": "Format > Font > Bigger", "alts": []}
+{"goal": "the words are way too big, shrink them down a bit", "answer": "Format > Font > Smaller", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo Typing", "alts": []}
+{"goal": "I typed the wrong thing and want it back how it was", "answer": "Edit > Undo Typing", "alts": []}
+{"goal": "start a fresh blank page", "answer": "File > New", "alts": []}
+{"goal": "i want to keep this so i dont lose it", "answer": "File > Save…", "alts": []}
+{"goal": "put this letter on paper", "answer": "File > Print…", "alts": []}
+{"goal": "pa-print naman nito", "answer": "File > Print…", "alts": []}
+{"goal": "keep the old one but make a second version with a different name", "answer": "File > Save As…", "alts": ["File > Duplicate"]}
+{"goal": "turn this into one of those pdf files so I can email it", "answer": "File > Export as PDF…", "alts": []}
+{"goal": "open the letter i wrote last week", "answer": "File > Open…", "alts": []}
+{"goal": "give this file a different name", "answer": "File > Rename…", "alts": []}
+{"goal": "I'm done with this one, close it", "answer": "File > Close", "alts": []}
+{"goal": "make these words thick and dark", "answer": "Format > Font > Bold", "alts": []}
+{"goal": "paano gawing bold yung text", "answer": "Format > Font > Bold", "alts": []}
+{"goal": "make it lean over like fancy writing", "answer": "Format > Font > Italic", "alts": []}
+{"goal": "draw a line under this word", "answer": "Format > Font > Underline", "alts": []}
+{"goal": "put the title in the middle of the page", "answer": "Format > Text > Center", "alts": []}
+{"goal": "how do i make a list with dots", "answer": "Format > List…", "alts": []}
+{"goal": "where did I write the word birthday, I cant find it", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "change every Tuesday to Wednesday all at once", "answer": "Edit > Find > Find and Replace…", "alts": []}
+{"goal": "did i spell everything right", "answer": "Edit > Spelling and Grammar > Check Document Now", "alts": []}
+{"goal": "can the computer read this out loud to me", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "stop talking", "answer": "Edit > Speech > Stop Speaking", "alts": []}
+{"goal": "my hands hurt, can I just say it and it writes it down", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "put a smiley face in", "answer": "Edit > Emoji & Symbols", "alts": []}
+{"goal": "make everything ALL CAPS", "answer": "Edit > Transformations > Make Upper Case", "alts": []}
+{"goal": "i want a different kind of lettering, something prettier", "answer": "Format > Font > Show Fonts", "alts": []}
+{"goal": "change the color of the words to red", "answer": "Format > Font > Show Colors", "alts": []}
+{"goal": "put in a grid with little boxes for my numbers", "answer": "Format > Table…", "alts": []}
+{"goal": "start the next part on a brand new page", "answer": "Edit > Insert > Page Break", "alts": []}
+{"goal": "everything is tiny on the screen, bring it closer", "answer": "View > Zoom In", "alts": []}
+{"goal": "fill up the whole screen with this so i can focus", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "make the window go away for now but dont close it", "answer": "Window > Minimize", "alts": []}
+{"goal": "mark this sentence with a blue highlighter", "answer": "Format > Font > Highlight > Blue", "alts": []}
+{"goal": "grab everything on the page", "answer": "Edit > Select All", "alts": []}
+{"goal": "paki-ayos ng grammar ko dito", "answer": "Edit > Writing Tools > Proofread", "alts": []}

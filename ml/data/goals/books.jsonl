@@ -1,0 +1,35 @@
+{"goal": "highlight this sentence in yellow", "answer": "Edit > Highlight > Yellow", "alts": []}
+{"goal": "mark this part green so I find it later", "answer": "Edit > Highlight > Green", "alts": []}
+{"goal": "save my page so I can come back to it", "answer": "Edit > Bookmark Page", "alts": []}
+{"goal": "I want to write a little note about this paragraph", "answer": "Edit > Highlight > Add Note", "alts": []}
+{"goal": "take off the coloring I put on this", "answer": "Edit > Highlight > Remove", "alts": []}
+{"goal": "draw a line under this sentence", "answer": "Edit > Highlight > Underline", "alts": []}
+{"goal": "look for a word in the book", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "read the book out loud to me", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "stop reading out loud", "answer": "Edit > Speech > Stop Speaking", "alts": []}
+{"goal": "hold on, pause the audiobook", "answer": "Controls > Pause", "alts": []}
+{"goal": "go back a little i missed what he said", "answer": "Controls > Skip Back", "alts": []}
+{"goal": "skip ahead a bit", "answer": "Controls > Skip Forward", "alts": []}
+{"goal": "the narrator talks too fast", "answer": "Controls > Playback Speed > 0.75x", "alts": []}
+{"goal": "speed up the reading a little", "answer": "Controls > Playback Speed > 1.25x", "alts": []}
+{"goal": "back to normal speed", "answer": "Controls > Playback Speed > 1x", "alts": []}
+{"goal": "stop playing after half an hour so I can fall asleep", "answer": "Controls > Sleep Timer > 30 minutes", "alts": []}
+{"goal": "turn it off when this chapter is done", "answer": "Controls > Sleep Timer > When current chapter ends", "alts": []}
+{"goal": "go on to the next chapter", "answer": "Controls > Next Chapter", "alts": []}
+{"goal": "go to the start of this chapter again", "answer": "Controls > Beginning of Chapter", "alts": []}
+{"goal": "louder please", "answer": "Controls > Increase Volume", "alts": []}
+{"goal": "its too loud", "answer": "Controls > Decrease Volume", "alts": []}
+{"goal": "open the book I picked", "answer": "File > Open Book", "alts": []}
+{"goal": "put my pdf from the computer into my books", "answer": "File > Import…", "alts": []}
+{"goal": "make a new shelf for my cooking books", "answer": "File > New Collection", "alts": []}
+{"goal": "show my books as a list instead of pictures", "answer": "View > List", "alts": []}
+{"goal": "show the book covers in rows", "answer": "View > Grid", "alts": []}
+{"goal": "put the books in order by who wrote them", "answer": "View > Author", "alts": []}
+{"goal": "sort by the name of the book", "answer": "View > Title", "alts": []}
+{"goal": "make it fill the whole screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "copy this paragraph", "answer": "Edit > Copy", "alts": []}
+{"goal": "pa-highlight nito ng yellow", "answer": "Edit > Highlight > Yellow", "alts": []}
+{"goal": "pabagalin yung nagbabasa", "answer": "Controls > Playback Speed > 0.75x", "alts": []}
+{"goal": "patayin after 15 minutes, matutulog na ako", "answer": "Controls > Sleep Timer > 15 minutes", "alts": []}
+{"goal": "basahin mo nga ito out loud", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "close the book", "answer": "File > Close", "alts": []}

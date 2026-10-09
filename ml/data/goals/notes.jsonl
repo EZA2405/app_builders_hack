@@ -1,0 +1,38 @@
+{"goal": "i want a blank page to jot something down", "answer": "File > New Note", "alts": []}
+{"goal": "start a new note for my grocery stuff", "answer": "File > New Note", "alts": []}
+{"goal": "make a place to keep all my recipe notes together", "answer": "File > New Folder", "alts": []}
+{"goal": "keep this one at the top so I always see it first", "answer": "File > Pin Note", "alts": []}
+{"goal": "put a password on this so nobody can read it", "answer": "File > Lock Note", "alts": []}
+{"goal": "turn this into a pdf so I can send it", "answer": "File > Export as > PDF", "alts": []}
+{"goal": "pa-print naman ng note na to", "answer": "File > Print…", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "oops i erased my words bring them back", "answer": "Edit > Undo", "alts": []}
+{"goal": "get rid of this", "answer": "Edit > Delete", "alts": []}
+{"goal": "put a picture from my computer into this note", "answer": "Edit > Attach File…", "alts": []}
+{"goal": "I want to save a voice message of me talking in here", "answer": "Edit > Record Audio…", "alts": []}
+{"goal": "wheres the note I wrote about the plumber", "answer": "Edit > Find > Note List Search…", "alts": []}
+{"goal": "look for a word in this note", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "make a list with little boxes i can tick off", "answer": "Format > Checklist", "alts": []}
+{"goal": "how do i make a list with dots", "answer": "Format > Bulleted List", "alts": []}
+{"goal": "number these lines 1 2 3", "answer": "Format > Numbered List", "alts": []}
+{"goal": "make this top line big like a heading on a newspaper", "answer": "Format > Title", "alts": []}
+{"goal": "make the words thick and dark", "answer": "Format > Font > Bold", "alts": []}
+{"goal": "cross out this item but keep it there", "answer": "Format > Font > Strikethrough", "alts": []}
+{"goal": "make the letters bigger", "answer": "Format > Font > Bigger", "alts": []}
+{"goal": "letters too big pls make smaller", "answer": "Format > Font > Smaller", "alts": []}
+{"goal": "put in a chart with rows and columns", "answer": "Format > Table", "alts": []}
+{"goal": "I bought the milk, tick it off", "answer": "Format > Mark as Checked", "alts": []}
+{"goal": "move the done ones to the bottom of the list", "answer": "Format > More > Move Checked to Bottom", "alts": []}
+{"goal": "push this line in a little from the edge", "answer": "Format > Indentation > Increase", "alts": []}
+{"goal": "read my note out loud to me", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "can i just talk and it types for me", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "check my spelling", "answer": "Edit > Spelling and Grammar > Check Document Now", "alts": []}
+{"goal": "paano maglagay ng emoji dito", "answer": "Edit > Emoji & Symbols", "alts": []}
+{"goal": "everything is too small to read on the screen", "answer": "View > Zoom In", "alts": []}
+{"goal": "show my notes as little pictures instead of a list", "answer": "View > as Gallery", "alts": []}
+{"goal": "put the newest notes up top", "answer": "View > Sort By > Newest First", "alts": []}
+{"goal": "show me all the photos and files I put in my notes", "answer": "View > Show Attachments Browser", "alts": []}
+{"goal": "I want a second copy of this same note", "answer": "File > Duplicate Note", "alts": []}
+{"goal": "gawin mong summary ito, ang haba", "answer": "Edit > Writing Tools > Summarize", "alts": []}
+{"goal": "put the words in the middle", "answer": "Format > Text > Center", "alts": []}
+{"goal": "pa-check ng spelling at grammar ko", "answer": "Edit > Writing Tools > Proofread", "alts": []}

@@ -1,0 +1,35 @@
+{"goal": "my computer is frozen, close this stuck program", "answer": "View > Quit Process", "alts": []}
+{"goal": "force this app to stop it wont respond", "answer": "View > Quit Process", "alts": []}
+{"goal": "look for a program in the list", "answer": "View > Filter Processes", "alts": ["Edit > Find > Find…"]}
+{"goal": "what's slowing down my computer, tell me more about this one", "answer": "View > Inspect Process", "alts": []}
+{"goal": "only show my own stuff", "answer": "View > My Processes", "alts": []}
+{"goal": "show everything that's running", "answer": "View > All Processes", "alts": []}
+{"goal": "only show the apps i have open", "answer": "View > Windowed Processes", "alts": []}
+{"goal": "what was i using today", "answer": "View > Applications in last 12 hours", "alts": []}
+{"goal": "update the numbers faster", "answer": "View > Update Frequency > Very often (1 sec)", "alts": []}
+{"goal": "it keeps jumping around, slow it down", "answer": "View > Update Frequency > Normally (5 sec)", "alts": []}
+{"goal": "show how busy the computer is on the dock icon", "answer": "View > Dock Icon > Show CPU Usage", "alts": []}
+{"goal": "put the normal app picture back on the dock", "answer": "View > Dock Icon > Show Application Icon", "alts": []}
+{"goal": "show me a graph of how hard the processor is working", "answer": "Window > CPU History", "alts": []}
+{"goal": "small window that shows the cpu", "answer": "Window > CPU Usage", "alts": []}
+{"goal": "graphics card chart", "answer": "Window > GPU History", "alts": []}
+{"goal": "i closed the main window, bring it back", "answer": "Window > Activity Monitor", "alts": []}
+{"goal": "print this list", "answer": "File > Print…", "alts": []}
+{"goal": "pa-print naman", "answer": "File > Print…", "alts": []}
+{"goal": "set up the paper size before printing", "answer": "File > Page Setup…", "alts": []}
+{"goal": "which app is draining my battery", "answer": "View > Columns > Energy Impact", "alts": []}
+{"goal": "add a column for how much memory", "answer": "View > Columns > Memory", "alts": []}
+{"goal": "what is stopping my mac from going to sleep", "answer": "View > Columns > Preventing Sleep", "alts": []}
+{"goal": "show which user is running it", "answer": "View > Columns > User", "alts": []}
+{"goal": "how much internet data each one sends out", "answer": "View > Columns > Sent Bytes", "alts": []}
+{"goal": "erase the cpu graph and start over", "answer": "View > Clear CPU History", "alts": []}
+{"goal": "apple support asked me to make a report of my mac", "answer": "View > Run System Diagnostics…", "alts": []}
+{"goal": "full screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "close the window", "answer": "File > Close", "alts": []}
+{"goal": "im done, quit this", "answer": "Activity Monitor > Quit Activity Monitor", "alts": []}
+{"goal": "pakita lahat ng tumatakbo", "answer": "View > All Processes", "alts": []}
+{"goal": "hide this app for now", "answer": "Activity Monitor > Hide Activity Monitor", "alts": []}
+{"goal": "just show the ones that are doing something right now", "answer": "View > Active Processes", "alts": []}
+{"goal": "show the ones using the graphics", "answer": "View > GPU Processes", "alts": []}
+{"goal": "paano makita kung gaano kabigat sa memory", "answer": "View > Columns > Memory", "alts": []}
+{"goal": "pa-minimize nga", "answer": "Window > Minimize", "alts": []}

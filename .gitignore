@@ -1,1 +1,12 @@
 .DS_Store
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+
+# local secrets
+.env
+*.env
+
+# model weights / training outputs
+models/
+*.safetensors

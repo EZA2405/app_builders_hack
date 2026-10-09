@@ -1,0 +1,35 @@
+{"goal": "start a brand new recording from scratch", "answer": "File > New", "alts": []}
+{"goal": "bring in a sound file i already have", "answer": "File > Import > Audio...", "alts": ["File > Open..."]}
+{"goal": "save my work so i can keep editing later", "answer": "File > Save Project > Save Project", "alts": []}
+{"goal": "turn this into an mp3 to send to my grandson", "answer": "File > Export Audio...", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "bring back what i just undid", "answer": "Edit > Redo", "alts": []}
+{"goal": "get rid of this part", "answer": "Edit > Delete", "alts": []}
+{"goal": "keep only the bit i highlighted and throw the rest away", "answer": "Edit > Remove Special > Trim Audio", "alts": []}
+{"goal": "make this part totally quiet but keep the length", "answer": "Edit > Remove Special > Silence Audio", "alts": []}
+{"goal": "cut the recording into two pieces right here", "answer": "Edit > Audio Clips > Split", "alts": []}
+{"goal": "pick everything", "answer": "Select > All", "alts": []}
+{"goal": "i cant see the sound waves theyre too tiny", "answer": "View > Zoom > Zoom In", "alts": []}
+{"goal": "show the whole recording on the screen at once", "answer": "View > Track Size > Fit to Width", "alts": []}
+{"goal": "play it back so i can hear how it sounds", "answer": "Transport > Playing > Play/Stop", "alts": []}
+{"goal": "start recording my voice", "answer": "Transport > Recording > Record", "alts": []}
+{"goal": "record the radio show automatically at 8 tonight", "answer": "Transport > Recording > Timer Record...", "alts": []}
+{"goal": "go back to the very beginning", "answer": "Transport > Cursor to > Project Start", "alts": ["Transport > Cursor to > Track Start"]}
+{"goal": "play the same thing over and over", "answer": "Transport > Looping > Enable Looping", "alts": []}
+{"goal": "add another track for a second voice", "answer": "Tracks > Add New > Mono Track", "alts": ["Tracks > Add New > Stereo Track"]}
+{"goal": "make it one channel instead of left and right", "answer": "Tracks > Mix > Mix Stereo Down to Mono", "alts": []}
+{"goal": "the recording is too quiet, make it louder", "answer": "Effect > Volume and Compression > Amplify...", "alts": ["Effect > Volume and Compression > Normalize..."]}
+{"goal": "make the music slowly get quieter at the end", "answer": "Effect > Fading > Fade Out", "alts": []}
+{"goal": "slowly bring the sound up at the start", "answer": "Effect > Fading > Fade In", "alts": []}
+{"goal": "theres a hissing noise in the background", "answer": "Effect > Noise Removal and Repair > Noise Reduction...", "alts": []}
+{"goal": "make my voice sound higher", "answer": "Effect > Pitch and Tempo > Change Pitch...", "alts": []}
+{"goal": "slow it down without making the voice sound weird and deep", "answer": "Effect > Pitch and Tempo > Change Tempo...", "alts": []}
+{"goal": "play it backwards", "answer": "Effect > Special > Reverse", "alts": []}
+{"goal": "add an echo", "answer": "Effect > Delay and Reverb > Echo...", "alts": []}
+{"goal": "too much bass, it sounds muddy", "answer": "Effect > EQ and Filters > Bass and Treble...", "alts": []}
+{"goal": "take out the long quiet pauses between talking", "answer": "Effect > Special > Truncate Silence...", "alts": []}
+{"goal": "put a marker here so i remember this spot", "answer": "Edit > Labels > Add Label at Selection", "alts": []}
+{"goal": "paano tanggalin yung ingay sa likod", "answer": "Effect > Noise Removal and Repair > Noise Reduction...", "alts": []}
+{"goal": "palakasin naman yung boses ko dito", "answer": "Effect > Volume and Compression > Amplify...", "alts": ["Effect > Volume and Compression > Normalize..."]}
+{"goal": "i-save mo na as mp3 para ma-send ko", "answer": "File > Export Audio...", "alts": []}
+{"goal": "burahin mo tong part na to", "answer": "Edit > Delete", "alts": []}

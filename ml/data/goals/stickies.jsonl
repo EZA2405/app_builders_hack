@@ -1,0 +1,35 @@
+{"goal": "new sticky note", "answer": "File > New Note", "alts": []}
+{"goal": "i need another little paper to jot something down", "answer": "File > New Note", "alts": []}
+{"goal": "make this note pink", "answer": "Color > Pink", "alts": []}
+{"goal": "change the note to blue", "answer": "Color > Blue", "alts": []}
+{"goal": "gawing purple yung sticky ko", "answer": "Color > Purple", "alts": []}
+{"goal": "paano ibalik sa yellow yung note", "answer": "Color > Yellow", "alts": []}
+{"goal": "the words are too small to read", "answer": "Font > Bigger", "alts": []}
+{"goal": "writing is huge, make it smaller", "answer": "Font > Smaller", "alts": []}
+{"goal": "make it dark and thick so it stands out", "answer": "Font > Bold", "alts": []}
+{"goal": "pa-bold naman nito", "answer": "Font > Bold", "alts": []}
+{"goal": "slanty letters please", "answer": "Font > Italic", "alts": []}
+{"goal": "put a line under these words", "answer": "Font > Underline", "alts": []}
+{"goal": "cross this off i already did it", "answer": "Font > Strikethrough", "alts": []}
+{"goal": "make this note green like a leaf", "answer": "Color > Green", "alts": []}
+{"goal": "bring in some writing i saved in a text file", "answer": "File > Import Text…", "alts": []}
+{"goal": "tuck all my notes away into the dock", "answer": "Window > Minimize All", "alts": []}
+{"goal": "pa-print naman ng note ko", "answer": "File > Print…", "alts": []}
+{"goal": "save my note as a file on the computer", "answer": "File > Export Text…", "alts": []}
+{"goal": "move all my stickies over into the notes app", "answer": "File > Export All to Notes…", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "i deleted the wrong words, bring them back", "answer": "Edit > Undo", "alts": []}
+{"goal": "copy this", "answer": "Edit > Copy", "alts": []}
+{"goal": "paste it in but make it look like the rest of my note", "answer": "Edit > Paste and Match Style", "alts": []}
+{"goal": "find a word in my note", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "did i spell everything right", "answer": "Edit > Spelling and Grammar > Check Document Now", "alts": []}
+{"goal": "read my note out loud to me", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "ok stop talking", "answer": "Edit > Speech > Stop Speaking", "alts": []}
+{"goal": "change the letter style to something nicer", "answer": "Font > Show Fonts", "alts": []}
+{"goal": "i want the words in red", "answer": "Font > Show Colors", "alts": []}
+{"goal": "sort my notes by their colour", "answer": "Window > Arrange By > Color", "alts": []}
+{"goal": "put my notes in order by when i made them", "answer": "Window > Arrange By > Date", "alts": []}
+{"goal": "close this note", "answer": "File > Close", "alts": []}
+{"goal": "put a website link in my note", "answer": "Edit > Add Link...", "alts": []}
+{"goal": "make it ALL CAPITAL LETTERS", "answer": "Edit > Transformations > Make Upper Case", "alts": []}
+{"goal": "i want to talk instead of typing", "answer": "Edit > Start Dictation…", "alts": []}

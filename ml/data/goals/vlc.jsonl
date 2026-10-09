@@ -1,0 +1,35 @@
+{"goal": "I have a movie saved on my computer and want to watch it", "answer": "File > Open File...", "alts": []}
+{"goal": "play the dvd i just put in", "answer": "File > Open Disc...", "alts": []}
+{"goal": "watch a video from a link someone sent me", "answer": "File > Open Network...", "alts": []}
+{"goal": "pause it", "answer": "Playback > Play", "alts": []}
+{"goal": "stop the video", "answer": "Playback > Stop", "alts": []}
+{"goal": "skip to the next one", "answer": "Playback > Next", "alts": []}
+{"goal": "go back to the video before this", "answer": "Playback > Previous", "alts": []}
+{"goal": "i want to jump straight to the 45 minute mark", "answer": "Playback > Jump to Time", "alts": []}
+{"goal": "play my songs in a mixed up order", "answer": "Playback > Random", "alts": []}
+{"goal": "keep playing this same song over and over", "answer": "Playback > Repeat One", "alts": []}
+{"goal": "make it louder", "answer": "Audio > Increase Volume", "alts": []}
+{"goal": "its too loud turn it down pls", "answer": "Audio > Decrease Volume", "alts": []}
+{"goal": "turn off the sound for a sec, the phone is ringing", "answer": "Audio > Mute", "alts": []}
+{"goal": "make the video take up the whole screen", "answer": "Video > Fullscreen", "alts": []}
+{"goal": "take a picture of this scene", "answer": "Video > Snapshot", "alts": []}
+{"goal": "keep the video on top of my other windows while I work", "answer": "Video > Float on Top", "alts": []}
+{"goal": "the video window is tiny, make it twice as big", "answer": "Video > Double Size", "alts": []}
+{"goal": "I downloaded a separate file with the words for this movie", "answer": "Subtitles > Add Subtitle File...", "alts": []}
+{"goal": "the words at the bottom are too small to read", "answer": "Subtitles > Text Size > Larger", "alts": ["Subtitles > Text Size > Large"]}
+{"goal": "can the words at the bottom be yellow", "answer": "Subtitles > Text Color > Yellow", "alts": []}
+{"goal": "the video is way too big, make it half as big", "answer": "Video > Half Size", "alts": []}
+{"goal": "put the video back to its normal size", "answer": "Video > Normal Size", "alts": []}
+{"goal": "when the list ends start it all again from the top", "answer": "Playback > Repeat All", "alts": []}
+{"goal": "change this video so it plays on my tablet", "answer": "File > Convert / Stream...", "alts": []}
+{"goal": "where is this video saved on my computer", "answer": "File > Reveal in Finder", "alts": []}
+{"goal": "keep my list of videos so i can play them again another day", "answer": "File > Save Playlist...", "alts": []}
+{"goal": "record what's playing right now", "answer": "Playback > Record", "alts": []}
+{"goal": "move ahead just one frame at a time", "answer": "Playback > Step Forward", "alts": []}
+{"goal": "paano i-loop yung isang part lang ng video", "answer": "Playback > A→B Loop", "alts": []}
+{"goal": "lakasan mo naman yung tunog", "answer": "Audio > Increase Volume", "alts": []}
+{"goal": "close the program by itself when this movie ends", "answer": "Playback > Quit after Playback", "alts": []}
+{"goal": "where do i get help using this player", "answer": "Help > VLC media player Help...", "alts": []}
+{"goal": "i want to change how the player works", "answer": "VLC > Settings…", "alts": []}
+{"goal": "ilagay mo sakto sa laki ng screen", "answer": "Video > Fit to Screen", "alts": []}
+{"goal": "paano mag screenshot ng video na to", "answer": "Video > Snapshot", "alts": []}

@@ -1,0 +1,37 @@
+{"goal": "remind me to take my pills", "answer": "File > New Reminder", "alts": []}
+{"goal": "add something to my to do list", "answer": "File > New Reminder", "alts": []}
+{"goal": "start a separate list for groceries", "answer": "File > New List", "alts": []}
+{"goal": "paano gumawa ng bagong listahan", "answer": "File > New List", "alts": []}
+{"goal": "check this off, i did it", "answer": "Edit > Mark as Completed", "alts": []}
+{"goal": "tapos na to, pa-check", "answer": "Edit > Mark as Completed", "alts": []}
+{"goal": "get rid of this one", "answer": "Edit > Delete", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "i ticked the wrong one by accident, put it back", "answer": "Edit > Undo", "alts": []}
+{"goal": "I need to do this one today", "answer": "Edit > Mark Due Date As > Today", "alts": []}
+{"goal": "push this to tomorrow", "answer": "Edit > Mark Due Date As > Tomorrow", "alts": []}
+{"goal": "ill do it saturday or sunday", "answer": "Edit > Mark Due Date As > This Weekend", "alts": []}
+{"goal": "not this week, move it to next week", "answer": "Edit > Mark Due Date As > Next Week", "alts": []}
+{"goal": "i missed a bunch, move all the late ones to today", "answer": "Edit > Mark Due Date As > Mark All Overdue to Today", "alts": []}
+{"goal": "this one is really important", "answer": "Edit > Priority > High", "alts": []}
+{"goal": "lagyan mo ng high priority to", "answer": "Edit > Priority > High", "alts": []}
+{"goal": "put a little marker on this so I notice it", "answer": "Edit > Flag", "alts": []}
+{"goal": "this cant wait, i need an alarm that really gets my attention", "answer": "Edit > Mark as Urgent", "alts": []}
+{"goal": "let my son see and add to my shopping list", "answer": "File > Share List", "alts": []}
+{"goal": "keep this list up top where i can find it", "answer": "File > Pin List", "alts": []}
+{"goal": "make this a smaller step under the one above it", "answer": "Edit > Indent Reminder", "alts": []}
+{"goal": "where is the one about the electric bill", "answer": "Edit > Find", "alts": []}
+{"goal": "put my list on paper to take to the store", "answer": "File > Print…", "alts": []}
+{"goal": "pa-print ng listahan ko", "answer": "File > Print…", "alts": []}
+{"goal": "what do i need to do today", "answer": "View > Show Smart List > Today", "alts": ["View > Go To > Today"]}
+{"goal": "show me everything I have to do, all of it", "answer": "View > Show Smart List > All", "alts": ["View > Go To > All"]}
+{"goal": "show me the ones i already finished", "answer": "View > Go To > Completed", "alts": ["View > Show Smart List > Completed"]}
+{"goal": "show just the ones i marked to notice", "answer": "View > Show Smart List > Flagged", "alts": []}
+{"goal": "whats coming up and on which days", "answer": "View > Go To > Scheduled", "alts": ["View > Show Smart List > Scheduled"]}
+{"goal": "split my grocery list into parts like fruit and dairy", "answer": "File > New Section", "alts": []}
+{"goal": "sort my grocery items into groups for me automatically", "answer": "File > Auto-Categorize", "alts": []}
+{"goal": "the lists on the left side disappeared", "answer": "View > Show Sidebar", "alts": []}
+{"goal": "read this out loud for me", "answer": "Edit > Speech > Start Speaking", "alts": []}
+{"goal": "i'd rather talk than type", "answer": "Edit > Start Dictation…", "alts": []}
+{"goal": "give this chore to someone else on the shared list", "answer": "Edit > Assign", "alts": []}
+{"goal": "save this list so I can use it again every week", "answer": "File > Save as Template…", "alts": []}
+{"goal": "make it fill the whole screen", "answer": "View > Enter Full Screen", "alts": []}

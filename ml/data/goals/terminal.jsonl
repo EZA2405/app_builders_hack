@@ -1,0 +1,35 @@
+{"goal": "make the letters bigger", "answer": "View > Bigger", "alts": []}
+{"goal": "paano gawing mas malaki yung font dito", "answer": "View > Bigger", "alts": []}
+{"goal": "the writing is too big now, shrink it", "answer": "View > Smaller", "alts": []}
+{"goal": "put the text size back to how it was normally", "answer": "View > Default Font Size", "alts": []}
+{"goal": "open another one of these windows", "answer": "Shell > New Window > New Window with Profile - Basic", "alts": ["Shell > New Window > Basic"]}
+{"goal": "i want another tab like in my internet browser", "answer": "Shell > New Tab > New Tab with Profile – Basic", "alts": ["Shell > New Tab > Basic"]}
+{"goal": "clear all this text off the screen", "answer": "Edit > Clear Screen", "alts": []}
+{"goal": "pa-clear naman ng screen ang gulo na", "answer": "Edit > Clear Screen", "alts": []}
+{"goal": "erase everything even the stuff way up above", "answer": "Edit > Clear Scrollback", "alts": []}
+{"goal": "copy this", "answer": "Edit > Copy", "alts": []}
+{"goal": "put in what i copied", "answer": "Edit > Paste", "alts": []}
+{"goal": "highlight everything", "answer": "Edit > Select All", "alts": []}
+{"goal": "look for a word in all this text", "answer": "Edit > Find > Find…", "alts": []}
+{"goal": "print all of this out on paper", "answer": "Shell > Print…", "alts": []}
+{"goal": "only print the part i highlighted", "answer": "Shell > Print Selection…", "alts": []}
+{"goal": "save all this text into a file so i can send it to tech support", "answer": "Shell > Export Text As…", "alts": []}
+{"goal": "close this window", "answer": "Shell > Close Window", "alts": []}
+{"goal": "the black background hurts my eyes can i change the colour", "answer": "Shell > Edit Background Color", "alts": []}
+{"goal": "i want green writing on black like the movies", "answer": "Shell > New Window > Homebrew", "alts": []}
+{"goal": "take me up to the very top", "answer": "View > Scroll to Top", "alts": []}
+{"goal": "jump down to the bottom where i type", "answer": "View > Scroll to Bottom", "alts": []}
+{"goal": "split the window in two so i can see both", "answer": "View > Split Pane", "alts": []}
+{"goal": "get rid of the split, one window is enough", "answer": "View > Close Split Pane", "alts": []}
+{"goal": "fill up the whole screen with this", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "go to the next tab", "answer": "Window > Show Next Tab", "alts": []}
+{"goal": "lipat sa naunang tab", "answer": "Window > Show Previous Tab", "alts": []}
+{"goal": "put all my terminal windows together into one with tabs", "answer": "Window > Merge All Windows", "alts": []}
+{"goal": "pull this tab out into its own window", "answer": "Window > Move Tab to New Window", "alts": []}
+{"goal": "its showing weird garbled letters and wont act right, start it fresh", "answer": "Shell > Reset", "alts": ["Shell > Hard Reset"]}
+{"goal": "change the name on top of the window", "answer": "Shell > Edit Title", "alts": []}
+{"goal": "open the preferences", "answer": "Terminal > Settings…", "alts": []}
+{"goal": "im done close terminal", "answer": "Terminal > Quit Terminal", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "how does this thing work, i need help", "answer": "Help > Terminal Help", "alts": []}
+{"goal": "i dont want other programs seeing what i type in here", "answer": "Terminal > Secure Keyboard Entry", "alts": []}

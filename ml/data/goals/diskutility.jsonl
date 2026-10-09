@@ -1,0 +1,35 @@
+{"goal": "my usb stick wont come out, how do i take it out safely", "answer": "File > Eject", "alts": []}
+{"goal": "paano i-eject yung external drive ko", "answer": "File > Eject", "alts": []}
+{"goal": "wipe this drive totally clean so i can start over", "answer": "Edit > Erase...", "alts": []}
+{"goal": "paano burahin lahat ng laman ng usb bago ko ibigay", "answer": "Edit > Erase...", "alts": []}
+{"goal": "the computer keeps saying my disk has a problem, can you fix it", "answer": "File > Run First Aid...", "alts": []}
+{"goal": "ayusin mo yung disk ko may error daw", "answer": "File > Run First Aid...", "alts": []}
+{"goal": "i want to split my hard drive into two separate parts", "answer": "Edit > Partition...", "alts": []}
+{"goal": "change the name of my flash drive", "answer": "File > Rename", "alts": []}
+{"goal": "how much room is left on this disk", "answer": "File > Get Info", "alts": []}
+{"goal": "where is this drive in my folders", "answer": "File > Show in Finder", "alts": []}
+{"goal": "i want to pack a whole folder into one of those dmg files", "answer": "File > New Image > Image from Folder...", "alts": []}
+{"goal": "open that dmg thing i downloaded", "answer": "File > Open Disk Image…", "alts": []}
+{"goal": "my drive has a lock on it and i want a different code", "answer": "File > Change Password...", "alts": []}
+{"goal": "copy everything from my old disk onto the new one", "answer": "Edit > Restore...", "alts": []}
+{"goal": "i plugged in my usb but i cant see it in the list", "answer": "View > Show All Devices", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "close this window", "answer": "File > Close", "alts": []}
+{"goal": "make this fill up my whole screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "hide the list down the left side", "answer": "View > Hide Sidebar", "alts": []}
+{"goal": "im done, close the whole program", "answer": "Disk Utility > Quit Disk Utility", "alts": []}
+{"goal": "make an empty disk image to keep stuff in", "answer": "File > New Image > Blank Image...", "alts": []}
+{"goal": "gawa ka ng bagong volume sa drive ko", "answer": "Edit > Add APFS Volume…", "alts": []}
+{"goal": "remove that extra volume i made by mistake", "answer": "Edit > Delete APFS Volume…", "alts": []}
+{"goal": "change my old drive to the newer apple format", "answer": "Edit > Convert to APFS…", "alts": []}
+{"goal": "the disk image ran out of room make it bigger", "answer": "Images > Resize...", "alts": []}
+{"goal": "turn this disk image into a different kind of file", "answer": "Images > Convert...", "alts": []}
+{"goal": "i want two drives working together like they were one big one", "answer": "File > RAID Assistant...", "alts": []}
+{"goal": "stop using the drive but leave it plugged in", "answer": "File > Unmount", "alts": []}
+{"goal": "i dont know how this program works, where are the instructions", "answer": "Help > Disk Utility Help", "alts": []}
+{"goal": "show me the saved snapshots of my drive", "answer": "View > Show APFS Snapshots", "alts": []}
+{"goal": "put this window down in the dock for now", "answer": "Window > Minimize", "alts": []}
+{"goal": "hide this app for a bit", "answer": "Disk Utility > Hide Disk Utility", "alts": []}
+{"goal": "put the window in the middle of the screen", "answer": "Window > Center", "alts": []}
+{"goal": "move the window over to the right half", "answer": "Window > Move & Resize > Right", "alts": []}
+{"goal": "only show me the volumes not the whole disks", "answer": "View > Show Only Volumes", "alts": []}

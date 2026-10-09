@@ -1,0 +1,37 @@
+{"goal": "the picture is sideways, turn it to the right", "answer": "Image > Rotate Clockwise", "alts": []}
+{"goal": "turn the photo the other way, to the left", "answer": "Image > Rotate Counterclockwise", "alts": []}
+{"goal": "make this photo look nicer automatically, its too dark", "answer": "Image > Auto Enhance", "alts": []}
+{"goal": "i messed up my changes, give me the original picture back", "answer": "Image > Revert to Original", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "make it like a mirror, flip it left to right", "answer": "Image > Flip Horizontal", "alts": []}
+{"goal": "I want to send this to my daughter", "answer": "File > Share…", "alts": []}
+{"goal": "save these pictures onto my desktop so i can put them on a usb", "answer": "File > Export > Export Photos…", "alts": []}
+{"goal": "bring in the pictures from my camera card", "answer": "File > Import…", "alts": []}
+{"goal": "print this picture", "answer": "File > Print…", "alts": []}
+{"goal": "pa-print naman ng picture na to", "answer": "File > Print…", "alts": []}
+{"goal": "make a new album for our trip", "answer": "File > New Album", "alts": []}
+{"goal": "show the pictures one after another with music", "answer": "File > Play Slideshow", "alts": []}
+{"goal": "get rid of this photo", "answer": "Image > Delete Photo", "alts": []}
+{"goal": "burahin mo na tong picture", "answer": "Image > Delete Photo", "alts": []}
+{"goal": "i threw away a photo by mistake where did it go", "answer": "View > Pinned > Recently Deleted", "alts": ["View > Utilities > Recently Deleted"]}
+{"goal": "put a heart on this one, its my favorite", "answer": "Image > Favorite Photo", "alts": []}
+{"goal": "show me only the ones I hearted", "answer": "View > Pinned > Favorites", "alts": ["View > Utilities > Favorites"]}
+{"goal": "where are all my videos", "answer": "View > Pinned > Videos", "alts": []}
+{"goal": "show where in the world my pictures were taken", "answer": "View > Pinned > Map", "alts": ["View > Utilities > Map"]}
+{"goal": "look for pictures of the beach", "answer": "Edit > Find", "alts": []}
+{"goal": "i think i have the same picture twice, show me the doubles", "answer": "View > Utilities > Duplicates", "alts": []}
+{"goal": "the little pictures are too small to see", "answer": "View > Zoom In", "alts": []}
+{"goal": "show more pictures on the screen at once", "answer": "View > Zoom Out", "alts": []}
+{"goal": "tuck this picture away so visitors dont see it", "answer": "Image > Show/Hide Photo", "alts": []}
+{"goal": "the date on this photo is wrong", "answer": "Image > Adjust Date and Time…", "alts": []}
+{"goal": "play the video", "answer": "Image > Start/Stop Playback", "alts": []}
+{"goal": "i want to crop it and fix the colors myself", "answer": "Image > Show/Hide Edit Tools", "alts": []}
+{"goal": "make a copy of this picture before I change it", "answer": "Image > Duplicate", "alts": []}
+{"goal": "where are the pictures i took of my screen", "answer": "View > Pinned > Screenshots", "alts": ["View > Media Types > Screenshots"]}
+{"goal": "pakita yung mga selfie ko", "answer": "View > Media Types > Selfies", "alts": []}
+{"goal": "show me the pictures sorted by who is in them", "answer": "View > Pinned > People", "alts": []}
+{"goal": "choose all of them", "answer": "Edit > Select All", "alts": []}
+{"goal": "when and where was this taken, show me the details", "answer": "Window > Info", "alts": []}
+{"goal": "grab a still picture out of this video", "answer": "Image > Save Video Frame as Photo", "alts": []}
+{"goal": "paano gawing full screen yung pics", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "i want to edit this picture in a different program", "answer": "Image > Edit With > Last Used Application", "alts": []}

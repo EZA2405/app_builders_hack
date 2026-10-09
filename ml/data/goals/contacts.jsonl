@@ -1,0 +1,35 @@
+{"goal": "add a new person to my address book", "answer": "File > New Card", "alts": []}
+{"goal": "i want to make a list just for my family members", "answer": "File > New Group", "alts": []}
+{"goal": "pa-save naman", "answer": "File > Save", "alts": []}
+{"goal": "bring in the contacts from my old phone file", "answer": "File > Import…", "alts": []}
+{"goal": "send someone's details as a card file", "answer": "File > Export > Export vCard…", "alts": []}
+{"goal": "make a backup of all my people in case something happens", "answer": "File > Export > Contacts Archive…", "alts": []}
+{"goal": "I want my phone list on paper", "answer": "File > Print…", "alts": []}
+{"goal": "save it as pdf", "answer": "File > Export as PDF…", "alts": []}
+{"goal": "undo that i deleted the wrong thing", "answer": "Edit > Undo", "alts": []}
+{"goal": "remove this person completely", "answer": "Edit > Delete", "alts": []}
+{"goal": "take her out of the family group but dont erase her", "answer": "Edit > Remove From List", "alts": []}
+{"goal": "look up my dentist's number", "answer": "Edit > Find > Find", "alts": []}
+{"goal": "their phone number changed, i need to fix it", "answer": "Edit > Edit Card", "alts": []}
+{"goal": "change the name of my group", "answer": "Edit > Rename Group", "alts": []}
+{"goal": "I think I have the same person in here twice", "answer": "Card > Look for Duplicates…", "alts": ["Card > Merge Selected Cards "]}
+{"goal": "combine these two into one", "answer": "Card > Merge Selected Cards ", "alts": []}
+{"goal": "add their birthday so i dont forget", "answer": "Card > Add Field > Birthday", "alts": []}
+{"goal": "i need to put a second phone number", "answer": "Card > Add Field > Phone", "alts": []}
+{"goal": "where do i put their email adress", "answer": "Card > Add Field > Email", "alts": []}
+{"goal": "add a home address", "answer": "Card > Add Field > Address", "alts": []}
+{"goal": "we call him lolo, how do i add that", "answer": "Card > Add Field > Nickname", "alts": []}
+{"goal": "this is a business not a person", "answer": "Card > Mark as a Company", "alts": []}
+{"goal": "put a photo on her contact", "answer": "Card > Choose Custom Image…", "alts": []}
+{"goal": "take off the picture on this one", "answer": "Card > Clear Custom Image", "alts": []}
+{"goal": "this one is me", "answer": "Card > Make This My Card", "alts": []}
+{"goal": "show my own info", "answer": "Card > Go to My Card", "alts": []}
+{"goal": "email my details to someone", "answer": "Card > Share My Card > Email My Card", "alts": []}
+{"goal": "text my number to my neighbor", "answer": "Card > Share My Card > Message My Card", "alts": []}
+{"goal": "next person", "answer": "Card > Go to Next Card", "alts": []}
+{"goal": "go back to the one before", "answer": "Card > Go to Previous Card", "alts": []}
+{"goal": "paano mag-dagdag ng job title", "answer": "Card > Add Field > Job Title", "alts": []}
+{"goal": "open this person in its own window", "answer": "Card > Open in Separate Window", "alts": []}
+{"goal": "pakitago yung groups sa gilid", "answer": "View > Hide Groups", "alts": []}
+{"goal": "make it fill the whole screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "pa-close na nito", "answer": "File > Close", "alts": []}

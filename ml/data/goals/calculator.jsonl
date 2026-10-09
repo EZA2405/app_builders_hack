@@ -1,0 +1,35 @@
+{"goal": "I need the calculator with more buttons like sin and square root", "answer": "View > Scientific", "alts": []}
+{"goal": "go back to the simple calculator", "answer": "View > Basic", "alts": []}
+{"goal": "change inches to centimeters", "answer": "View > Convert", "alts": []}
+{"goal": "show me what I added up before", "answer": "View > Show History", "alts": []}
+{"goal": "I want to see my old calculations", "answer": "View > Show History", "alts": []}
+{"goal": "copy the answer so I can put it in an email", "answer": "Edit > Copy", "alts": []}
+{"goal": "put the number I copied in here", "answer": "Edit > Paste", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "I pressed the wrong button bring it back", "answer": "Edit > Undo", "alts": []}
+{"goal": "never mind, put it back the way it was before i undid it", "answer": "Edit > Redo", "alts": []}
+{"goal": "erase the last number I typed", "answer": "Edit > Delete", "alts": []}
+{"goal": "only show 2 numbers after the dot, like money", "answer": "View > Decimal Places > 2", "alts": []}
+{"goal": "no decimals please just whole numbers", "answer": "View > Decimal Places > 0", "alts": []}
+{"goal": "I want 4 numbers after the decimal point", "answer": "View > Decimal Places > 4", "alts": []}
+{"goal": "just one number after the point is enough", "answer": "View > Decimal Places > 1", "alts": []}
+{"goal": "the commas in the big numbers are confusing, take them out", "answer": "View > Hide Thousands Separator", "alts": []}
+{"goal": "make it big, fill up the whole screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "the calculator is too small to see", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "I want to write my math out like in a notebook", "answer": "View > Math Notes…", "alts": []}
+{"goal": "my grandson says I need the one for binary and hex numbers", "answer": "View > Programmer", "alts": []}
+{"goal": "the old style where you put the numbers first and then the plus", "answer": "View > RPN Mode", "alts": []}
+{"goal": "close the calculator", "answer": "Calculator > Quit Calculator", "alts": []}
+{"goal": "im done, turn off calculator", "answer": "Calculator > Quit Calculator", "alts": []}
+{"goal": "put the calculator away down below for now", "answer": "Window > Minimize", "alts": []}
+{"goal": "hide the calculator", "answer": "Calculator > Hide Calculator", "alts": []}
+{"goal": "close this window", "answer": "Window > Close", "alts": []}
+{"goal": "how do I use this thing", "answer": "Help > Calculator Help", "alts": []}
+{"goal": "paano mag convert ng fahrenheit to celsius dito", "answer": "View > Convert", "alts": []}
+{"goal": "gusto ko yung calculator na may square root", "answer": "View > Scientific", "alts": []}
+{"goal": "balik sa simple na calculator", "answer": "View > Basic", "alts": []}
+{"goal": "copy yung sagot", "answer": "Edit > Copy", "alts": []}
+{"goal": "select everything I typed", "answer": "Edit > Select All", "alts": []}
+{"goal": "put the calculator on the left side of the screen", "answer": "Window > Move & Resize > Left", "alts": []}
+{"goal": "put the calculator in the middle of the screen", "answer": "Window > Center", "alts": []}
+{"goal": "bring the window back to how big it was before", "answer": "Window > Move & Resize > Return to Previous Size", "alts": []}

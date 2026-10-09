@@ -1,0 +1,35 @@
+{"goal": "the video is sideways", "answer": "Edit > Rotate Right", "alts": ["Edit > Rotate Left"]}
+{"goal": "turn the video a quarter turn to the left", "answer": "Edit > Rotate Left", "alts": []}
+{"goal": "the video looks like a mirror, everything is backwards", "answer": "Edit > Flip Horizontal", "alts": []}
+{"goal": "flip the picture so the top is at the bottom", "answer": "Edit > Flip Vertical", "alts": []}
+{"goal": "cut off the boring part at the beginning", "answer": "Edit > Trim…", "alts": []}
+{"goal": "make the video shorter", "answer": "Edit > Trim…", "alts": []}
+{"goal": "record my screen to show my grandson how to do something", "answer": "File > New Screen Recording", "alts": []}
+{"goal": "record a voice message with the microphone", "answer": "File > New Audio Recording", "alts": []}
+{"goal": "take a video of myself with the camera", "answer": "File > New Movie Recording", "alts": []}
+{"goal": "open a video i have saved", "answer": "File > Open File…", "alts": []}
+{"goal": "save this", "answer": "File > Save…", "alts": []}
+{"goal": "make the video file small so I can email it", "answer": "File > Export As > 480p…", "alts": []}
+{"goal": "I only want the sound from this video", "answer": "File > Export As > Audio Only…", "alts": []}
+{"goal": "make a copy of this video", "answer": "File > Duplicate", "alts": []}
+{"goal": "change the name of the video", "answer": "File > Rename…", "alts": []}
+{"goal": "make the video fill the whole screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "play it over and over", "answer": "View > Loop", "alts": []}
+{"goal": "keep the video on top so it doesnt go behind my other windows", "answer": "View > Float on Top", "alts": []}
+{"goal": "make the video window bigger", "answer": "Window > Increase Size", "alts": ["View > Zoom In"]}
+{"goal": "the video window is too big make it smaller", "answer": "Window > Decrease Size", "alts": ["View > Zoom Out"]}
+{"goal": "turn off the words at the bottom", "answer": "View > Subtitles > Off", "alts": []}
+{"goal": "skip to the next part of the movie", "answer": "View > Next Chapter", "alts": []}
+{"goal": "go back to the part before", "answer": "View > Previous Chapter", "alts": []}
+{"goal": "take the sound out of the video", "answer": "Edit > Remove Audio", "alts": []}
+{"goal": "cut the video into two pieces here", "answer": "Edit > Split Clip", "alts": []}
+{"goal": "add another video to the end of this one", "answer": "Edit > Add Clip to End...", "alts": []}
+{"goal": "undo that", "answer": "Edit > Undo", "alts": []}
+{"goal": "show the video at its real size", "answer": "View > Actual Size", "alts": ["Window > Natural Size"]}
+{"goal": "how long is this video and how big is the file", "answer": "Window > Show Movie Inspector", "alts": []}
+{"goal": "move the video to a different folder", "answer": "File > Move To…", "alts": []}
+{"goal": "pa-record naman ng screen ko", "answer": "File > New Screen Recording", "alts": []}
+{"goal": "paano i-ikot yung video, nakatagilid", "answer": "Edit > Rotate Left", "alts": ["Edit > Rotate Right"]}
+{"goal": "i-save mo ng mas maliit para ma-send sa viber", "answer": "File > Export As > 720p…", "alts": []}
+{"goal": "save it in good HD quality", "answer": "File > Export As > 1080p…", "alts": []}
+{"goal": "close the video", "answer": "File > Close", "alts": []}

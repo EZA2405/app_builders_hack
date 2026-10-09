@@ -1,0 +1,35 @@
+{"goal": "make a new list of my favorite songs", "answer": "File > New Playlist", "alts": []}
+{"goal": "put my song lists together in one group", "answer": "File > New Playlist Folder", "alts": []}
+{"goal": "look for a song", "answer": "Edit > Search", "alts": []}
+{"goal": "how do i find an old love song i remember from years ago", "answer": "Edit > Search", "alts": []}
+{"goal": "only show the songs in this list that have rain in the name", "answer": "Edit > Filter", "alts": []}
+{"goal": "the words are too small", "answer": "View > Zoom In", "alts": []}
+{"goal": "everything is huge now, make it smaller", "answer": "View > Zoom Out", "alts": []}
+{"goal": "put the size back to how it was", "answer": "View > Actual Size", "alts": []}
+{"goal": "go back to the page I was just on", "answer": "View > Go Back", "alts": []}
+{"goal": "make this fill the whole screen", "answer": "View > Enter Full Screen", "alts": []}
+{"goal": "pause the music", "answer": "Playback > Play", "alts": []}
+{"goal": "skip this song", "answer": "Playback > Next", "alts": []}
+{"goal": "i want to hear that last song again", "answer": "Playback > Previous", "alts": []}
+{"goal": "fast forward a little bit", "answer": "Playback > Seek Forward", "alts": []}
+{"goal": "rewind a few seconds i missed that part", "answer": "Playback > Seek Backward", "alts": []}
+{"goal": "mix up the order of the songs", "answer": "Playback > Shuffle", "alts": []}
+{"goal": "keep playing this list over and over", "answer": "Playback > Repeat", "alts": []}
+{"goal": "louder please", "answer": "Playback > Volume Up", "alts": []}
+{"goal": "its too loud", "answer": "Playback > Volume Down", "alts": []}
+{"goal": "i dont want my family to see what im listening to", "answer": "Spotify > Private Session", "alts": []}
+{"goal": "I want to listen on the plane where there's no internet", "answer": "Spotify > Offline Mode", "alts": []}
+{"goal": "sign out of my account on this computer", "answer": "Spotify > Log Out", "alts": []}
+{"goal": "change how the app works", "answer": "Spotify > Settings…", "alts": []}
+{"goal": "close spotify completely", "answer": "Spotify > Quit Spotify", "alts": []}
+{"goal": "oops i removed that by mistake, bring it back", "answer": "Edit > Undo", "alts": []}
+{"goal": "take this song out of my list", "answer": "Edit > Delete", "alts": []}
+{"goal": "copy the link to this song so i can send it to my daughter", "answer": "Edit > Copy", "alts": []}
+{"goal": "the app is stuck and showing a blank screen", "answer": "Help > Troubleshooting > Reload", "alts": []}
+{"goal": "i need help using this", "answer": "Help > Spotify Help", "alts": []}
+{"goal": "check how much i pay every month", "answer": "Help > Your Account", "alts": []}
+{"goal": "make spotify go away for now but keep the music playing", "answer": "Spotify > Hide Spotify", "alts": []}
+{"goal": "lakasan mo naman yung kanta", "answer": "Playback > Volume Up", "alts": []}
+{"goal": "paano gumawa ng bagong playlist", "answer": "File > New Playlist", "alts": []}
+{"goal": "ilipat mo sa susunod na kanta", "answer": "Playback > Next", "alts": []}
+{"goal": "pa-shuffle naman ng mga kanta", "answer": "Playback > Shuffle", "alts": []}
