@@ -112,7 +112,7 @@ Per app, v6en:
 
 Logs: `train-v6en.log` and `results-v6en.txt` on the `gabay-models` Modal volume. Reproduce: `modal run ml/modal_train.py --version v6en --data data/v6/train.jsonl --epochs 5 --head 320` (add `--base multilingual` for v6ml).
 
-## v7 data (2026-10-10): contrast rows for live-test failures (training results pending)
+## v7 (2026-10-10): contrast rows for live-test failures (not chosen)
 Data: `data/v7/train.jsonl`, 29,776 rows = v6 (28,250) + 1,526 new rows from `contrast_data.py`. All new goals are Claude-written, on training apps only. About 20% are Taglish.
 - **File vs view** (60 goals): "make this video small enough to send" → `File > Export As > 480p…`, with `View > Zoom Out` as a decoy. Jev agreed with the label on 53/60.
 - **View vs file** (47 goals): the reverse direction, so "smaller" doesn't always mean Export. Jev agreed on 44/47.
@@ -124,6 +124,22 @@ Menu rows are repeated ×3 and routing rows ×2, each copy with a fresh option g
 
 - **Caveat:** the routing eval's 8 System Settings goals now share topics with training (Wi-Fi, Bluetooth, text size, update, printer, sound). The wording is different, but that slice is no longer independent.
 - Reproduce: `python3 contrast_data.py data/v7`, then `modal run ml/modal_train.py --version v7en --data data/v7/train.jsonl --epochs 5 --head 320`.
+
+v7en (English Laya base) trained 5 epochs with head budget 320 on a Modal H100 (37 min). `modal_train.py` scores every set on every run, so this is v7en's one held-out run:
+
+| | Validation (127) | Held-out apps (35) | Held-out web (45) | Risk check: caught / false alarms | Routing (162) |
+|---|---|---|---|---|---|
+| v6en (current `guide`) | **100** | 29 | 32 | 13/14, 0/16 | **97** |
+| v7en | 98 | 28 | 32 | 13/14, 0/16 (any threshold 0.3–0.7) | 84 |
+
+**Choice: v6en stays.** v7en is lower on validation (98 vs 100). Routing also dropped (84 vs 97), even though v7 added routing rows. `routing_eval.py` prints only a total, so the cause isn't measured yet.
+
+Per app, v7en:
+- Validation: Activity Monitor 21/30, Disk Utility 29/35, Numbers 23/31, Terminal 25/31.
+- Held-out: Finder 8/8, Preview 8/10, Safari 5/9, System Settings 7/8.
+- Web: PhilHealth 6/15, Shopee 9/10, Wikipedia 9/10, YouTube 8/10.
+
+Logs: `train-v7en.log` and `results-v7en.txt` on the `gabay-models` Modal volume.
 
 ## Real use cases, first step on this Mac (dev set, 2026-10-10)
 **What it is:** 41 requests taken from `docs/research/USER_TASKS.md` (`ml/usecases/scenarios.py`), with acceptable answers written before any run. It runs Gabay's real decision path (`--plan`: read the screen, stay or route, pick) on the live apps.
