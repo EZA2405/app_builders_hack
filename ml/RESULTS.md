@@ -14,9 +14,30 @@ Given a non-technical user's goal and the app's real command list (menu tree + t
 | Apple Foundation Model (on-device ~3B) | Local | Hand-typed Preview menu (~60 cmds), full list, guided generation | 4/10 | ~5–8 s | 2026-10-09 |
 | Apple Foundation Model + NLEmbedding shortlist | Local | Same, rewrite → shortlist → constrained pick | 5/10 | ~4 s | 2026-10-09 |
 | TypeSafe **Jev** (`jev-latest`), hosted | **Cloud (comparison only)** | Real menus, 4 held-out apps, 200-wide tournament | **35/35** | 0.35–1.6 s per app | 2026-10-09 |
-| Laya (base) | Local | Real menus, 16-wide tournament | _pending_ | | |
-| Laya (fine-tuned on teacher data) | Local | Same | _pending_ | | |
+| Laya (base, 421M) | Local-capable (measured on Colab T4 and M4) | Real menus, 16-wide tournament | 8/35 | ~0.66 s (T4), ~1.9 s (M4) | 2026-10-09 |
+| **Laya fine-tuned v1** (teacher data, 3 epochs) | Local-capable (trained + measured on Colab T4) | Same | **25/35** | ~0.65 s (T4) | 2026-10-09 |
 | Qwen3.5-4B via local-jev | Local | Real menus | _pending_ | | |
+
+**Per-app breakdown for Laya fine-tuned v1** (base in parentheses):
+- Preview 6/10 (1)
+- Finder 8/8 (3)
+- System Settings 5/8 (1)
+- Safari 6/9 (3)
+
+**Arguable misses.** These are not counted, and the official score stays 25/35:
+- Safari "make the words on this page bigger" → `View > Make Text Bigger`
+- "clear my browsing history" → `Safari > Clear History…`
+
+The keys only list Zoom In and History > Clear History….
+
+**Fine-tune v1 validation** (371 rows, 4 unseen apps, single 16-way choice):
+
+| | Before | After |
+|---|---|---|
+| Accuracy | 0.350 | **0.806** |
+| ECE | 0.494 | **0.076** |
+
+Training was on Colab: T4, 3 epochs, micro-batch 8 × grad-accum 8, `--shuffle-options --label-smoothing 0.05 --seed 7`; notebook `ml/finetune_colab.ipynb`. A full fine-tune didn't fit in a 16 GB M4's GPU memory: MPS ran out of memory at an 8.9 GB cap.
 
 **Per-app breakdown for hosted Jev:**
 - Preview 10/10 (0.57 s)
