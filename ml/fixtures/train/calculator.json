@@ -1,0 +1,203 @@
+{
+ "app": "Calculator",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "Calculator > About Calculator",
+  "Calculator > Services > Activity Monitor",
+  "Calculator > Services > Allocations & Leaks",
+  "Calculator > Services > File Activity",
+  "Calculator > Services > System Trace",
+  "Calculator > Services > Services Settings…",
+  "Calculator > Hide Calculator",
+  "Calculator > Hide Others",
+  "Calculator > Show All",
+  "Calculator > Quit Calculator",
+  "Calculator > Quit and Keep Windows",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Delete",
+  "Edit > Select All",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "View > Basic",
+  "View > Scientific",
+  "View > Programmer",
+  "View > Convert",
+  "View > RPN Mode",
+  "View > Math Notes…",
+  "View > Hide Thousands Separator",
+  "View > Decimal Places > 0",
+  "View > Decimal Places > 1",
+  "View > Decimal Places > 2",
+  "View > Decimal Places > 3",
+  "View > Decimal Places > 4",
+  "View > Decimal Places > 5",
+  "View > Decimal Places > 6",
+  "View > Decimal Places > 7",
+  "View > Decimal Places > 8",
+  "View > Decimal Places > 9",
+  "View > Decimal Places > 10",
+  "View > Decimal Places > 11",
+  "View > Decimal Places > 12",
+  "View > Decimal Places > 13",
+  "View > Decimal Places > 14",
+  "View > Decimal Places > 15",
+  "View > Show History",
+  "View > Enter Full Screen",
+  "Window > Close",
+  "Window > Close All",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Help > Calculator Help"
+ ],
+ "goals": {
+  "I need the calculator with more buttons like sin and square root": [
+   "View > Scientific"
+  ],
+  "go back to the simple calculator": [
+   "View > Basic"
+  ],
+  "change inches to centimeters": [
+   "View > Convert"
+  ],
+  "show me what I added up before": [
+   "View > Show History"
+  ],
+  "I want to see my old calculations": [
+   "View > Show History"
+  ],
+  "copy the answer so I can put it in an email": [
+   "Edit > Copy"
+  ],
+  "put the number I copied in here": [
+   "Edit > Paste"
+  ],
+  "undo that": [
+   "Edit > Undo"
+  ],
+  "I pressed the wrong button bring it back": [
+   "Edit > Undo"
+  ],
+  "never mind, put it back the way it was before i undid it": [
+   "Edit > Redo"
+  ],
+  "erase the last number I typed": [
+   "Edit > Delete"
+  ],
+  "only show 2 numbers after the dot, like money": [
+   "View > Decimal Places > 2"
+  ],
+  "no decimals please just whole numbers": [
+   "View > Decimal Places > 0"
+  ],
+  "I want 4 numbers after the decimal point": [
+   "View > Decimal Places > 4"
+  ],
+  "just one number after the point is enough": [
+   "View > Decimal Places > 1"
+  ],
+  "the commas in the big numbers are confusing, take them out": [
+   "View > Hide Thousands Separator"
+  ],
+  "make it big, fill up the whole screen": [
+   "View > Enter Full Screen"
+  ],
+  "the calculator is too small to see": [
+   "View > Enter Full Screen"
+  ],
+  "I want to write my math out like in a notebook": [
+   "View > Math Notes…"
+  ],
+  "my grandson says I need the one for binary and hex numbers": [
+   "View > Programmer"
+  ],
+  "the old style where you put the numbers first and then the plus": [
+   "View > RPN Mode"
+  ],
+  "close the calculator": [
+   "Calculator > Quit Calculator"
+  ],
+  "im done, turn off calculator": [
+   "Calculator > Quit Calculator"
+  ],
+  "put the calculator away down below for now": [
+   "Window > Minimize"
+  ],
+  "hide the calculator": [
+   "Calculator > Hide Calculator"
+  ],
+  "close this window": [
+   "Window > Close"
+  ],
+  "how do I use this thing": [
+   "Help > Calculator Help"
+  ],
+  "paano mag convert ng fahrenheit to celsius dito": [
+   "View > Convert"
+  ],
+  "gusto ko yung calculator na may square root": [
+   "View > Scientific"
+  ],
+  "balik sa simple na calculator": [
+   "View > Basic"
+  ],
+  "copy yung sagot": [
+   "Edit > Copy"
+  ],
+  "select everything I typed": [
+   "Edit > Select All"
+  ],
+  "put the calculator on the left side of the screen": [
+   "Window > Move & Resize > Left"
+  ],
+  "put the calculator in the middle of the screen": [
+   "Window > Center"
+  ],
+  "bring the window back to how big it was before": [
+   "Window > Move & Resize > Return to Previous Size"
+  ]
+ }
+}

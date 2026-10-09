@@ -1,0 +1,246 @@
+{
+ "app": "Music",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "Music > About Music",
+  "Music > Settings…",
+  "Music > Services > Activity Monitor",
+  "Music > Services > Allocations & Leaks",
+  "Music > Services > File Activity",
+  "Music > Services > System Trace",
+  "Music > Services > Services Settings…",
+  "Music > Hide Music",
+  "Music > Hide Others",
+  "Music > Show All",
+  "Music > Quit Music",
+  "Music > Quit and Keep Windows",
+  "File > New > Playlist",
+  "File > New > Playlist from Selection",
+  "File > New > Smart Playlist",
+  "File > New > Playlist Folder",
+  "File > New > Genius Playlist",
+  "File > Open Stream URL…",
+  "File > Close",
+  "File > Close All",
+  "File > Library > Turn On Genius",
+  "File > Library > Organize Library…",
+  "File > Library > Export Library…",
+  "File > Library > Import Playlist…",
+  "File > Library > Export Playlist…",
+  "File > Library > Show Duplicate Items",
+  "File > Library > Show Exact Duplicate Items",
+  "File > Library > Get Album Artwork",
+  "File > Library > Get Track Names",
+  "File > Import…",
+  "File > Burn Playlist to Disc…",
+  "File > Show in Finder",
+  "File > Convert > Convert ID3 Tags…",
+  "File > Convert > Create AAC Version",
+  "File > Convert > Convert to AAC…",
+  "File > Convert > Create iPod or iPhone Version",
+  "File > Convert > Create iPad or Apple TV Version",
+  "File > Page Setup…",
+  "File > Print…",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Select All",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "Song > Play Next",
+  "Song > Add to Queue",
+  "Song > Create Station",
+  "Song > Get Info…",
+  "Song > Show Artist in Library",
+  "Song > Show Album in Library",
+  "Song > Show Movie in Library",
+  "Song > Show TV Show in Library",
+  "Song > Show in Apple Music",
+  "Song > Show in iTunes Store",
+  "Song > Remove from Playlist",
+  "Song > Delete from Library",
+  "Song > Download",
+  "Song > Remove Download",
+  "View > Show View Options",
+  "View > Show Filter Field",
+  "View > Show Playing Next",
+  "View > Show Lyrics",
+  "View > Show Status Bar",
+  "View > Enter Full Screen",
+  "Controls > Play",
+  "Controls > Stop",
+  "Controls > Next Track",
+  "Controls > Previous Track",
+  "Controls > Genius Shuffle",
+  "Controls > Go to Current Song",
+  "Controls > Increase Volume",
+  "Controls > Set Volume to Maximum",
+  "Controls > Decrease Volume",
+  "Controls > Set Volume to Minimum",
+  "Controls > Shuffle > On",
+  "Controls > Shuffle > Off",
+  "Controls > Shuffle > Songs",
+  "Controls > Shuffle > Albums",
+  "Controls > Shuffle > Groupings",
+  "Controls > Repeat > Off",
+  "Controls > Repeat > All",
+  "Controls > Repeat > One",
+  "Controls > Back",
+  "Account > Sign Out",
+  "Account > Authorizations > Authorize This Computer…",
+  "Account > Authorizations > Deauthorize This Computer…",
+  "Account > Redeem…",
+  "Account > Wish List",
+  "Account > Purchased",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Visualizer Settings > Visualizer",
+  "Window > Visualizer Settings > Classic Visualizer",
+  "Window > Visualizer Settings > Options…",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Help > Music Help",
+  "Help > Keyboard Shortcuts",
+  "Help > Apple Service and Support"
+ ],
+ "goals": {
+  "play the song": [
+   "Controls > Play"
+  ],
+  "make it quieter please": [
+   "Controls > Decrease Volume"
+  ],
+  "i cant hear the music turn it up": [
+   "Controls > Increase Volume"
+  ],
+  "skip this song i dont like it": [
+   "Controls > Next Track"
+  ],
+  "go back to the song before this one": [
+   "Controls > Previous Track"
+  ],
+  "stop the music": [
+   "Controls > Stop"
+  ],
+  "play my songs mixed up in any order": [
+   "Controls > Shuffle > On"
+  ],
+  "I want the same song to keep playing over and over again": [
+   "Controls > Repeat > One"
+  ],
+  "ulitin lahat ng kanta pag tapos na": [
+   "Controls > Repeat > All"
+  ],
+  "patayin yung shuffle, gusto ko in order": [
+   "Controls > Shuffle > Off"
+  ],
+  "make a new list of my favorite songs": [
+   "File > New > Playlist"
+  ],
+  "put the songs I picked into their own list": [
+   "File > New > Playlist from Selection"
+  ],
+  "I have some songs saved on my computer, how do I put them in here": [
+   "File > Import…"
+  ],
+  "where is this song file on my computer": [
+   "File > Show in Finder"
+  ],
+  "I want to put these songs on a cd for the car": [
+   "File > Burn Playlist to Disc…"
+  ],
+  "print out a list of my songs": [
+   "File > Print…"
+  ],
+  "I think I have the same song in here twice": [
+   "File > Library > Show Duplicate Items"
+  ],
+  "the album pictures are missing, its just blank squares": [
+   "File > Library > Get Album Artwork"
+  ],
+  "play this one right after the song thats on now": [
+   "Song > Play Next"
+  ],
+  "save this song so I can listen without internet": [
+   "Song > Download"
+  ],
+  "take this song out of the list but dont erase it": [
+   "Song > Remove from Playlist"
+  ],
+  "get rid of this song completely": [
+   "Song > Delete from Library"
+  ],
+  "who sings this and what album is it from": [
+   "Song > Get Info…"
+  ],
+  "I want to see the words to the song": [
+   "View > Show Lyrics"
+  ],
+  "whats going to play after this": [
+   "View > Show Playing Next"
+  ],
+  "make the music take up the whole screen": [
+   "View > Enter Full Screen"
+  ],
+  "oops undo that": [
+   "Edit > Undo"
+  ],
+  "close the music app": [
+   "Music > Quit Music"
+  ],
+  "make a radio station of songs like this one": [
+   "Song > Create Station"
+  ],
+  "I lost track of the song that's playing, take me back to it": [
+   "Controls > Go to Current Song"
+  ],
+  "pakilakasan ng todo yung volume": [
+   "Controls > Set Volume to Maximum"
+  ],
+  "where are all the songs I bought before": [
+   "Account > Purchased"
+  ]
+ }
+}

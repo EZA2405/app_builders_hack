@@ -1,0 +1,211 @@
+{
+ "app": "Spotify",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "Spotify > About Spotify",
+  "Spotify > Settings…",
+  "Spotify > Private Session",
+  "Spotify > Offline Mode",
+  "Spotify > Log Out",
+  "Spotify > Services > Activity Monitor",
+  "Spotify > Services > Allocations & Leaks",
+  "Spotify > Services > File Activity",
+  "Spotify > Services > System Trace",
+  "Spotify > Services > Services Settings…",
+  "Spotify > Hide Spotify",
+  "Spotify > Hide Others",
+  "Spotify > Show All",
+  "Spotify > Quit Spotify",
+  "Spotify > Quit and Keep Windows",
+  "File > New Playlist",
+  "File > New Playlist Folder",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Delete",
+  "Edit > Select All",
+  "Edit > Search",
+  "Edit > Filter",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "View > Actual Size",
+  "View > Zoom In",
+  "View > Zoom Out",
+  "View > Go Back",
+  "View > Go Forward",
+  "View > Enter Full Screen",
+  "Playback > Play",
+  "Playback > Next",
+  "Playback > Previous",
+  "Playback > Seek Forward",
+  "Playback > Seek Backward",
+  "Playback > Shuffle",
+  "Playback > Repeat",
+  "Playback > Volume Up",
+  "Playback > Volume Down",
+  "Window > Close",
+  "Window > Close All",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile > Left of Screen",
+  "Window > Full Screen Tile > Right of Screen",
+  "Window > Remove Window from Set",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Help > Spotify Help",
+  "Help > Spotify Community",
+  "Help > Your Account",
+  "Help > Third-party Software",
+  "Help > Troubleshooting > Report Issue...",
+  "Help > Troubleshooting > Disable Hardware Acceleration and Restart",
+  "Help > Troubleshooting > Reload",
+  "Help > Troubleshooting > Reset App Data and Restart"
+ ],
+ "goals": {
+  "make a new list of my favorite songs": [
+   "File > New Playlist"
+  ],
+  "put my song lists together in one group": [
+   "File > New Playlist Folder"
+  ],
+  "look for a song": [
+   "Edit > Search"
+  ],
+  "how do i find an old love song i remember from years ago": [
+   "Edit > Search"
+  ],
+  "only show the songs in this list that have rain in the name": [
+   "Edit > Filter"
+  ],
+  "the words are too small": [
+   "View > Zoom In"
+  ],
+  "everything is huge now, make it smaller": [
+   "View > Zoom Out"
+  ],
+  "put the size back to how it was": [
+   "View > Actual Size"
+  ],
+  "go back to the page I was just on": [
+   "View > Go Back"
+  ],
+  "make this fill the whole screen": [
+   "View > Enter Full Screen"
+  ],
+  "pause the music": [
+   "Playback > Play"
+  ],
+  "skip this song": [
+   "Playback > Next"
+  ],
+  "i want to hear that last song again": [
+   "Playback > Previous"
+  ],
+  "fast forward a little bit": [
+   "Playback > Seek Forward"
+  ],
+  "rewind a few seconds i missed that part": [
+   "Playback > Seek Backward"
+  ],
+  "mix up the order of the songs": [
+   "Playback > Shuffle"
+  ],
+  "keep playing this list over and over": [
+   "Playback > Repeat"
+  ],
+  "louder please": [
+   "Playback > Volume Up"
+  ],
+  "its too loud": [
+   "Playback > Volume Down"
+  ],
+  "i dont want my family to see what im listening to": [
+   "Spotify > Private Session"
+  ],
+  "I want to listen on the plane where there's no internet": [
+   "Spotify > Offline Mode"
+  ],
+  "sign out of my account on this computer": [
+   "Spotify > Log Out"
+  ],
+  "change how the app works": [
+   "Spotify > Settings…"
+  ],
+  "close spotify completely": [
+   "Spotify > Quit Spotify"
+  ],
+  "oops i removed that by mistake, bring it back": [
+   "Edit > Undo"
+  ],
+  "take this song out of my list": [
+   "Edit > Delete"
+  ],
+  "copy the link to this song so i can send it to my daughter": [
+   "Edit > Copy"
+  ],
+  "the app is stuck and showing a blank screen": [
+   "Help > Troubleshooting > Reload"
+  ],
+  "i need help using this": [
+   "Help > Spotify Help"
+  ],
+  "check how much i pay every month": [
+   "Help > Your Account"
+  ],
+  "make spotify go away for now but keep the music playing": [
+   "Spotify > Hide Spotify"
+  ],
+  "lakasan mo naman yung kanta": [
+   "Playback > Volume Up"
+  ],
+  "paano gumawa ng bagong playlist": [
+   "File > New Playlist"
+  ],
+  "ilipat mo sa susunod na kanta": [
+   "Playback > Next"
+  ],
+  "pa-shuffle naman ng mga kanta": [
+   "Playback > Shuffle"
+  ]
+ }
+}

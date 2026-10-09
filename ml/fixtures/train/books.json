@@ -1,0 +1,249 @@
+{
+ "app": "Books",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "Books > About Books",
+  "Books > Settings…",
+  "Books > Provide Books Feedback",
+  "Books > Services > Activity Monitor",
+  "Books > Services > Allocations & Leaks",
+  "Books > Services > File Activity",
+  "Books > Services > System Trace",
+  "Books > Services > Services Settings…",
+  "Books > Hide Books",
+  "Books > Hide Others",
+  "Books > Show All",
+  "Books > Quit Books",
+  "Books > Quit and Keep Windows",
+  "File > Open Book",
+  "File > Add to Collection > No Collection",
+  "File > New Collection",
+  "File > New Collection From Selection",
+  "File > Import…",
+  "File > Close",
+  "File > Close All",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Delete",
+  "Edit > Select All",
+  "Edit > Bookmark Page",
+  "Edit > Highlight > Yellow",
+  "Edit > Highlight > Green",
+  "Edit > Highlight > Blue",
+  "Edit > Highlight > Pink",
+  "Edit > Highlight > Purple",
+  "Edit > Highlight > Underline",
+  "Edit > Highlight > Add Note",
+  "Edit > Highlight > Remove Note",
+  "Edit > Highlight > Remove",
+  "Edit > Find > Find…",
+  "Edit > Find > Find Next",
+  "Edit > Find > Find Previous",
+  "Edit > Find > Use Selection for Find",
+  "Edit > Find > Jump to Selection",
+  "Edit > Speech > Start Speaking",
+  "Edit > Speech > Stop Speaking",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "View > View As",
+  "View > Grid",
+  "View > List",
+  "View > Sort By",
+  "View > Recent",
+  "View > Title",
+  "View > Author",
+  "View > Manually",
+  "View > Enter Full Screen",
+  "Controls > Pause",
+  "Controls > Stop",
+  "Controls > Skip Forward",
+  "Controls > Skip Back",
+  "Controls > Next Track",
+  "Controls > Previous Track",
+  "Controls > Increase Volume",
+  "Controls > Decrease Volume",
+  "Controls > Playback Speed > 0.75x",
+  "Controls > Playback Speed > 1x",
+  "Controls > Playback Speed > 1.25x",
+  "Controls > Playback Speed > 1.5x",
+  "Controls > Playback Speed > 1.75x",
+  "Controls > Playback Speed > 2x",
+  "Controls > Sleep Timer > Off",
+  "Controls > Sleep Timer > When current chapter ends",
+  "Controls > Sleep Timer > 5 minutes",
+  "Controls > Sleep Timer > 10 minutes",
+  "Controls > Sleep Timer > 15 minutes",
+  "Controls > Sleep Timer > 30 minutes",
+  "Controls > Sleep Timer > 45 minutes",
+  "Controls > Sleep Timer > 1 hour",
+  "Controls > Next Chapter",
+  "Controls > Previous Chapter",
+  "Controls > End of Chapter",
+  "Controls > Beginning of Chapter",
+  "Controls > Back",
+  "Account > View Account…",
+  "Account > Sign In…",
+  "Account > Authorizations > Authorize This Computer…",
+  "Account > Authorizations > Deauthorize This Computer…",
+  "Account > Authorizations > Deauthorize Audible Account",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Help > Books Help",
+  "Help > Report a Narration Issue",
+  "Help > Keyboard Shortcuts",
+  "Help > About Books & Privacy",
+  "Help > Terms & Conditions"
+ ],
+ "goals": {
+  "highlight this sentence in yellow": [
+   "Edit > Highlight > Yellow"
+  ],
+  "mark this part green so I find it later": [
+   "Edit > Highlight > Green"
+  ],
+  "save my page so I can come back to it": [
+   "Edit > Bookmark Page"
+  ],
+  "I want to write a little note about this paragraph": [
+   "Edit > Highlight > Add Note"
+  ],
+  "take off the coloring I put on this": [
+   "Edit > Highlight > Remove"
+  ],
+  "draw a line under this sentence": [
+   "Edit > Highlight > Underline"
+  ],
+  "look for a word in the book": [
+   "Edit > Find > Find…"
+  ],
+  "read the book out loud to me": [
+   "Edit > Speech > Start Speaking"
+  ],
+  "stop reading out loud": [
+   "Edit > Speech > Stop Speaking"
+  ],
+  "hold on, pause the audiobook": [
+   "Controls > Pause"
+  ],
+  "go back a little i missed what he said": [
+   "Controls > Skip Back"
+  ],
+  "skip ahead a bit": [
+   "Controls > Skip Forward"
+  ],
+  "the narrator talks too fast": [
+   "Controls > Playback Speed > 0.75x"
+  ],
+  "speed up the reading a little": [
+   "Controls > Playback Speed > 1.25x"
+  ],
+  "back to normal speed": [
+   "Controls > Playback Speed > 1x"
+  ],
+  "stop playing after half an hour so I can fall asleep": [
+   "Controls > Sleep Timer > 30 minutes"
+  ],
+  "turn it off when this chapter is done": [
+   "Controls > Sleep Timer > When current chapter ends"
+  ],
+  "go on to the next chapter": [
+   "Controls > Next Chapter"
+  ],
+  "go to the start of this chapter again": [
+   "Controls > Beginning of Chapter"
+  ],
+  "louder please": [
+   "Controls > Increase Volume"
+  ],
+  "its too loud": [
+   "Controls > Decrease Volume"
+  ],
+  "open the book I picked": [
+   "File > Open Book"
+  ],
+  "put my pdf from the computer into my books": [
+   "File > Import…"
+  ],
+  "make a new shelf for my cooking books": [
+   "File > New Collection"
+  ],
+  "show my books as a list instead of pictures": [
+   "View > List"
+  ],
+  "show the book covers in rows": [
+   "View > Grid"
+  ],
+  "put the books in order by who wrote them": [
+   "View > Author"
+  ],
+  "sort by the name of the book": [
+   "View > Title"
+  ],
+  "make it fill the whole screen": [
+   "View > Enter Full Screen"
+  ],
+  "copy this paragraph": [
+   "Edit > Copy"
+  ],
+  "pa-highlight nito ng yellow": [
+   "Edit > Highlight > Yellow"
+  ],
+  "pabagalin yung nagbabasa": [
+   "Controls > Playback Speed > 0.75x"
+  ],
+  "patayin after 15 minutes, matutulog na ako": [
+   "Controls > Sleep Timer > 15 minutes"
+  ],
+  "basahin mo nga ito out loud": [
+   "Edit > Speech > Start Speaking"
+  ],
+  "close the book": [
+   "File > Close"
+  ]
+ }
+}

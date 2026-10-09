@@ -1,0 +1,226 @@
+{
+ "app": "Maps",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "Maps > About Maps",
+  "Maps > Settings…",
+  "Maps > Open Profile…",
+  "Maps > Report an Issue…",
+  "Maps > Report Something Missing…",
+  "Maps > Services > Activity Monitor",
+  "Maps > Services > Allocations & Leaks",
+  "Maps > Services > File Activity",
+  "Maps > Services > System Trace",
+  "Maps > Services > Services Settings…",
+  "Maps > Hide Maps",
+  "Maps > Hide Others",
+  "Maps > Show All",
+  "Maps > Quit Maps",
+  "Maps > Quit and Keep Windows",
+  "File > New Window",
+  "File > Close",
+  "File > Close All",
+  "File > Share",
+  "File > Print…",
+  "File > Duplicate",
+  "File > Move",
+  "File > Rename…",
+  "File > Export As…",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy Link",
+  "Edit > Paste",
+  "Edit > Paste and Match Style",
+  "Edit > Delete",
+  "Edit > Select All",
+  "Edit > Mark Location",
+  "Edit > Remove Marked Location",
+  "Edit > Delete Stop",
+  "Edit > Find",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > Spelling and Grammar > Show Spelling and Grammar",
+  "Edit > Spelling and Grammar > Check Document Now",
+  "Edit > Spelling and Grammar > Check Spelling While Typing",
+  "Edit > Spelling and Grammar > Check Grammar With Spelling",
+  "Edit > Spelling and Grammar > Correct Spelling Automatically",
+  "Edit > Speech > Start Speaking",
+  "Edit > Speech > Stop Speaking",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "View > Show Tab Bar",
+  "View > Show All Tabs",
+  "View > Explore",
+  "View > Driving",
+  "View > Transit",
+  "View > Satellite",
+  "View > Show Scale",
+  "View > Show Traffic",
+  "View > Show Labels",
+  "View > Default Zoom",
+  "View > Zoom In",
+  "View > Zoom Out",
+  "View > Snap to North",
+  "View > Show 3D Map",
+  "View > Show Look Around",
+  "View > Go to Current Location",
+  "View > Show Directions",
+  "View > Show Sidebar",
+  "View > Enter Full Screen",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Window > Show Previous Tab",
+  "Window > Show Next Tab",
+  "Window > Move Tab to New Window",
+  "Window > Merge All Windows",
+  "Help > Maps Help"
+ ],
+ "goals": {
+  "make the map bigger I can't see the streets": [
+   "View > Zoom In"
+  ],
+  "zoom out so I can see the whole town": [
+   "View > Zoom Out"
+  ],
+  "where am i right now": [
+   "View > Go to Current Location"
+  ],
+  "show me how to get there": [
+   "View > Show Directions"
+  ],
+  "I want to see the real photos from up in the sky": [
+   "View > Satellite"
+  ],
+  "show me the bus and train routes": [
+   "View > Transit"
+  ],
+  "is there a lot of cars on the highway right now": [
+   "View > Show Traffic"
+  ],
+  "the map is turned sideways, put it back the right way up": [
+   "View > Snap to North"
+  ],
+  "I want to see the street like I'm standing there": [
+   "View > Show Look Around"
+  ],
+  "show the buildings popping up, not flat": [
+   "View > Show 3D Map"
+  ],
+  "the street names disappeared": [
+   "View > Show Labels"
+  ],
+  "put the map back to the normal size": [
+   "View > Default Zoom"
+  ],
+  "show me the map for driving with all the roads": [
+   "View > Driving"
+  ],
+  "send this place to my son": [
+   "File > Share"
+  ],
+  "print the map so I can take it with me": [
+   "File > Print…"
+  ],
+  "save the map as a pdf on my computer": [
+   "File > Export As…"
+  ],
+  "open another map in a second window": [
+   "File > New Window"
+  ],
+  "copy the link to this place so i can paste it in a message": [
+   "Edit > Copy Link"
+  ],
+  "drop a pin here so I remember the spot": [
+   "Edit > Mark Location"
+  ],
+  "take away the pin I put on the map": [
+   "Edit > Remove Marked Location"
+  ],
+  "I don't need to stop there anymore, take it off my trip": [
+   "Edit > Delete Stop"
+  ],
+  "look for a pharmacy near here": [
+   "Edit > Find"
+  ],
+  "undo that i clicked the wrong thing": [
+   "Edit > Undo"
+  ],
+  "read the directions out loud to me": [
+   "Edit > Speech > Start Speaking"
+  ],
+  "stop talking": [
+   "Edit > Speech > Stop Speaking"
+  ],
+  "I want to see the little ruler that shows how far things are": [
+   "View > Show Scale"
+  ],
+  "make it take up the whole screen": [
+   "View > Enter Full Screen"
+  ],
+  "the side list with my saved places is gone": [
+   "View > Show Sidebar"
+  ],
+  "something on the map is wrong, that store closed years ago": [
+   "Maps > Report an Issue…"
+  ],
+  "my street isnt even on the map": [
+   "Maps > Report Something Missing…"
+  ],
+  "paano makita yung traffic sa daan": [
+   "View > Show Traffic"
+  ],
+  "pa-zoom in naman, ang liit ng mapa": [
+   "View > Zoom In"
+  ],
+  "asan na ako ngayon sa mapa": [
+   "View > Go to Current Location"
+  ],
+  "close maps": [
+   "Maps > Quit Maps"
+  ],
+  "put the window down out of the way for now": [
+   "Window > Minimize"
+  ]
+ }
+}

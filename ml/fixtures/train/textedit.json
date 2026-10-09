@@ -1,0 +1,298 @@
+{
+ "app": "TextEdit",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "TextEdit > About TextEdit",
+  "TextEdit > Settings…",
+  "TextEdit > Services > Activity Monitor",
+  "TextEdit > Services > Allocations & Leaks",
+  "TextEdit > Services > File Activity",
+  "TextEdit > Services > System Trace",
+  "TextEdit > Services > Services Settings…",
+  "TextEdit > Hide TextEdit",
+  "TextEdit > Hide Others",
+  "TextEdit > Show All",
+  "TextEdit > Quit TextEdit",
+  "TextEdit > Quit and Keep Windows",
+  "File > New",
+  "File > Open…",
+  "File > Open Recent > Clear Menu",
+  "File > Close",
+  "File > Close All",
+  "File > Save…",
+  "File > Save As…",
+  "File > Duplicate",
+  "File > Rename…",
+  "File > Move To…",
+  "File > Revert To > No Document",
+  "File > Export as PDF…",
+  "File > Share > No Document",
+  "File > Show Properties",
+  "File > Page Setup…",
+  "File > Print…",
+  "Edit > Undo Typing",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Paste and Match Style",
+  "Edit > Delete",
+  "Edit > Complete",
+  "Edit > Select All",
+  "Edit > Insert > Line Break",
+  "Edit > Insert > Paragraph Break",
+  "Edit > Insert > Page Break",
+  "Edit > Attach Files…",
+  "Edit > Link…",
+  "Edit > Find > Find…",
+  "Edit > Find > Find and Replace…",
+  "Edit > Find > Find Next",
+  "Edit > Find > Find Previous",
+  "Edit > Find > Use Selection for Find",
+  "Edit > Find > Jump to Selection",
+  "Edit > Find > Select Line...",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > Spelling and Grammar > Show Spelling and Grammar",
+  "Edit > Spelling and Grammar > Check Document Now",
+  "Edit > Spelling and Grammar > Check Spelling While Typing",
+  "Edit > Spelling and Grammar > Check Grammar With Spelling",
+  "Edit > Spelling and Grammar > Correct Spelling Automatically",
+  "Edit > Substitutions > Show Substitutions",
+  "Edit > Substitutions > Smart Copy/Paste",
+  "Edit > Substitutions > Smart Quotes",
+  "Edit > Substitutions > Smart Dashes",
+  "Edit > Substitutions > Smart Links",
+  "Edit > Substitutions > Data Detectors",
+  "Edit > Substitutions > Text Replacement",
+  "Edit > Transformations > Make Upper Case",
+  "Edit > Transformations > Make Lower Case",
+  "Edit > Transformations > Capitalize",
+  "Edit > Speech > Start Speaking",
+  "Edit > Speech > Stop Speaking",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "Format > Font > Show Fonts",
+  "Format > Font > Bold",
+  "Format > Font > Italic",
+  "Format > Font > Underline",
+  "Format > Font > Outline",
+  "Format > Font > Highlight > Accent",
+  "Format > Font > Highlight > Purple",
+  "Format > Font > Highlight > Pink",
+  "Format > Font > Highlight > Orange",
+  "Format > Font > Highlight > Mint",
+  "Format > Font > Highlight > Blue",
+  "Format > Font > Styles...",
+  "Format > Font > Bigger",
+  "Format > Font > Smaller",
+  "Format > Font > Kern > Use Default",
+  "Format > Font > Kern > Use None",
+  "Format > Font > Kern > Tighten",
+  "Format > Font > Kern > Loosen",
+  "Format > Font > Ligatures > Use Default",
+  "Format > Font > Ligatures > Use None",
+  "Format > Font > Ligatures > Use All",
+  "Format > Font > Baseline > Use Default",
+  "Format > Font > Baseline > Superscript",
+  "Format > Font > Baseline > Subscript",
+  "Format > Font > Baseline > Raise",
+  "Format > Font > Baseline > Lower",
+  "Format > Font > Character Shape > Traditional Form",
+  "Format > Font > Show Colors",
+  "Format > Font > Copy Style",
+  "Format > Font > Paste Style",
+  "Format > Text > Align Left",
+  "Format > Text > Center",
+  "Format > Text > Justify",
+  "Format > Text > Align Right",
+  "Format > Text > Writing Direction > Paragraph",
+  "Format > Text > Writing Direction > Default",
+  "Format > Text > Writing Direction > Left to Right",
+  "Format > Text > Writing Direction > Right to Left",
+  "Format > Text > Writing Direction > Selection",
+  "Format > Text > Show Ruler",
+  "Format > Text > Copy Ruler",
+  "Format > Text > Paste Ruler",
+  "Format > Text > Spacing...",
+  "Format > Make Rich Text",
+  "Format > Prevent Editing",
+  "Format > Wrap to Page",
+  "Format > Allow Hyphenation",
+  "Format > Make Vertical Layout",
+  "Format > List…",
+  "Format > Table…",
+  "View > Show Tab Bar",
+  "View > Show All Tabs",
+  "View > Use Dark Background for Windows",
+  "View > Actual Size",
+  "View > Zoom In",
+  "View > Zoom Out",
+  "View > Enter Full Screen",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile > Left of Screen",
+  "Window > Full Screen Tile > Right of Screen",
+  "Window > Remove Window from Set",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Window > Show Previous Tab",
+  "Window > Show Next Tab",
+  "Window > Move Tab to New Window",
+  "Window > Merge All Windows",
+  "Help > TextEdit Help"
+ ],
+ "goals": {
+  "make the letters bigger": [
+   "Format > Font > Bigger"
+  ],
+  "paki-laki naman ng text, di ko mabasa": [
+   "Format > Font > Bigger"
+  ],
+  "the words are way too big, shrink them down a bit": [
+   "Format > Font > Smaller"
+  ],
+  "undo that": [
+   "Edit > Undo Typing"
+  ],
+  "I typed the wrong thing and want it back how it was": [
+   "Edit > Undo Typing"
+  ],
+  "start a fresh blank page": [
+   "File > New"
+  ],
+  "i want to keep this so i dont lose it": [
+   "File > Save…"
+  ],
+  "put this letter on paper": [
+   "File > Print…"
+  ],
+  "pa-print naman nito": [
+   "File > Print…"
+  ],
+  "keep the old one but make a second version with a different name": [
+   "File > Save As…",
+   "File > Duplicate"
+  ],
+  "turn this into one of those pdf files so I can email it": [
+   "File > Export as PDF…"
+  ],
+  "open the letter i wrote last week": [
+   "File > Open…"
+  ],
+  "give this file a different name": [
+   "File > Rename…"
+  ],
+  "I'm done with this one, close it": [
+   "File > Close"
+  ],
+  "make these words thick and dark": [
+   "Format > Font > Bold"
+  ],
+  "paano gawing bold yung text": [
+   "Format > Font > Bold"
+  ],
+  "make it lean over like fancy writing": [
+   "Format > Font > Italic"
+  ],
+  "draw a line under this word": [
+   "Format > Font > Underline"
+  ],
+  "put the title in the middle of the page": [
+   "Format > Text > Center"
+  ],
+  "how do i make a list with dots": [
+   "Format > List…"
+  ],
+  "where did I write the word birthday, I cant find it": [
+   "Edit > Find > Find…"
+  ],
+  "change every Tuesday to Wednesday all at once": [
+   "Edit > Find > Find and Replace…"
+  ],
+  "did i spell everything right": [
+   "Edit > Spelling and Grammar > Check Document Now"
+  ],
+  "can the computer read this out loud to me": [
+   "Edit > Speech > Start Speaking"
+  ],
+  "stop talking": [
+   "Edit > Speech > Stop Speaking"
+  ],
+  "my hands hurt, can I just say it and it writes it down": [
+   "Edit > Start Dictation…"
+  ],
+  "put a smiley face in": [
+   "Edit > Emoji & Symbols"
+  ],
+  "make everything ALL CAPS": [
+   "Edit > Transformations > Make Upper Case"
+  ],
+  "i want a different kind of lettering, something prettier": [
+   "Format > Font > Show Fonts"
+  ],
+  "change the color of the words to red": [
+   "Format > Font > Show Colors"
+  ],
+  "put in a grid with little boxes for my numbers": [
+   "Format > Table…"
+  ],
+  "start the next part on a brand new page": [
+   "Edit > Insert > Page Break"
+  ],
+  "everything is tiny on the screen, bring it closer": [
+   "View > Zoom In"
+  ],
+  "fill up the whole screen with this so i can focus": [
+   "View > Enter Full Screen"
+  ],
+  "make the window go away for now but dont close it": [
+   "Window > Minimize"
+  ],
+  "mark this sentence with a blue highlighter": [
+   "Format > Font > Highlight > Blue"
+  ],
+  "grab everything on the page": [
+   "Edit > Select All"
+  ],
+  "paki-ayos ng grammar ko dito": [
+   "Edit > Writing Tools > Proofread"
+  ]
+ }
+}

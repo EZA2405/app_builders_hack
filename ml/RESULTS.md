@@ -35,6 +35,12 @@ python3 bench_localjev.py --url https://api.typesafe.ai --model jev-latest --fix
 python3 bench_localjev.py --url http://127.0.0.1:8766 --model convaiinnovations/laya --group 16 --fixture fixtures/preview_real.json
 ```
 
+## Teacher-label agreement (training apps)
+Hosted Jev (`jev-latest`) on all 774 teacher goals across the 22 training apps: **733/774 (94.7%)** agree with the teacher label. Per app it ranges from 30/31 (Activity Monitor) to 35/35 (Disk Utility, VLC, Zed); median latency is 0.4–2.0 s.
+- The 41 disagreements are mostly genuinely ambiguous goals, where both answers are often defensible.
+- They're excluded from training as a consistency filter (`data/disagreements.json`), leaving 2,199 Laya rows.
+- Log: `results/teacher_goals_jev.log`. Reproduce: `./run_teacher_bench.sh https://api.typesafe.ai jev-latest`.
+
 ## Privacy findings
 - **App menus contain personal data:**
   - recent files (with names)

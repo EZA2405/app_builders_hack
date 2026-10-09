@@ -42,6 +42,8 @@ def negatives(answer, ok, commands, rng):
 
 def main(dumps):
     rng = random.Random(7)
+    # Consistency filter: drop goals where hosted Jev disagreed with the teacher label (ambiguous goals).
+    skip = set(json.load(open("data/disagreements.json"))) if os.path.exists("data/disagreements.json") else set()
     rows, stats = [], {}
     for path in sorted(glob.glob("data/goals/*.jsonl")):
         name = os.path.basename(path)[:-6]
@@ -56,6 +58,8 @@ def main(dumps):
             if not line.strip():
                 continue
             g = json.loads(line)
+            if g["goal"] in skip:
+                continue
             ok = [a for a in [g["answer"], *g.get("alts", [])] if a in cmdset]
             if g["answer"] not in cmdset:
                 bad += 1

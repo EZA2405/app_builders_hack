@@ -1,0 +1,270 @@
+{
+ "app": "Zed",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "Zed > About Zed",
+  "Zed > Check for Updates",
+  "Zed > Settings > Open Settings",
+  "Zed > Settings > Open Settings File",
+  "Zed > Settings > Open Project Settings",
+  "Zed > Settings > Open Project Settings File",
+  "Zed > Settings > Open Default Settings",
+  "Zed > Settings > Open Keymap",
+  "Zed > Settings > Open Keymap File",
+  "Zed > Settings > Open Default Key Bindings",
+  "Zed > Settings > Select Theme...",
+  "Zed > Settings > Select Icon Theme...",
+  "Zed > Services > Activity Monitor",
+  "Zed > Services > Allocations & Leaks",
+  "Zed > Services > File Activity",
+  "Zed > Services > System Trace",
+  "Zed > Services > Services Settings…",
+  "Zed > Extensions",
+  "Zed > Install CLI",
+  "Zed > Hide Zed",
+  "Zed > Hide Others",
+  "Zed > Show All",
+  "Zed > Quit Zed",
+  "File > New",
+  "File > New Window",
+  "File > Open…",
+  "File > Open Recent…",
+  "File > Open Remote…",
+  "File > Add Folder to Project…",
+  "File > Save",
+  "File > Save As…",
+  "File > Save All",
+  "File > Close Editor",
+  "File > Close Project",
+  "File > Close Window",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Copy and Trim",
+  "Edit > Paste",
+  "Edit > Find",
+  "Edit > Find in Project",
+  "Edit > Toggle Line Comment",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "Selection > Select All",
+  "Selection > Expand Selection",
+  "Selection > Shrink Selection",
+  "Selection > Select Next Sibling",
+  "Selection > Select Previous Sibling",
+  "Selection > Add Cursor Above",
+  "Selection > Add Cursor Below",
+  "Selection > Select Next Occurrence",
+  "Selection > Select Previous Occurrence",
+  "Selection > Select All Occurrences",
+  "Selection > Move Line Up",
+  "Selection > Move Line Down",
+  "Selection > Duplicate Selection",
+  "View > Zoom In",
+  "View > Zoom Out",
+  "View > Reset Zoom",
+  "View > Reset All Zoom",
+  "View > Toggle Left Dock",
+  "View > Toggle Right Dock",
+  "View > Toggle Bottom Dock",
+  "View > Toggle All Docks",
+  "View > Editor Layout > Split Up",
+  "View > Editor Layout > Split Down",
+  "View > Editor Layout > Split Left",
+  "View > Editor Layout > Split Right",
+  "View > Project Panel",
+  "View > Outline Panel",
+  "View > Collab Panel",
+  "View > Terminal Panel",
+  "View > Debugger Panel",
+  "View > Agent Panel",
+  "View > Git Panel",
+  "View > Diagnostics",
+  "View > Enter Full Screen",
+  "Go > Back",
+  "Go > Forward",
+  "Go > Command Palette...",
+  "Go > Go to File...",
+  "Go > Go to Symbol in Editor...",
+  "Go > Go to Line/Column...",
+  "Go > Go to Definition",
+  "Go > Go to Declaration",
+  "Go > Go to Type Definition",
+  "Go > Find All References",
+  "Go > Show Incoming Calls",
+  "Go > Show Outgoing Calls",
+  "Go > Next Problem",
+  "Go > Previous Problem",
+  "Run > Spawn Task",
+  "Run > Start Debugger",
+  "Run > Edit tasks.json…",
+  "Run > Edit debug.json…",
+  "Run > Continue",
+  "Run > Step Over",
+  "Run > Step Into",
+  "Run > Step Out",
+  "Run > Toggle Breakpoint",
+  "Run > Edit Breakpoint",
+  "Run > Clear All Breakpoints",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile > Left of Screen",
+  "Window > Full Screen Tile > Right of Screen",
+  "Window > Remove Window from Set",
+  "Window > Minimize",
+  "Window > Zoom",
+  "Help > View Release Notes Locally",
+  "Help > View Telemetry",
+  "Help > View Dependency Licenses",
+  "Help > Show Welcome",
+  "Help > File Bug Report...",
+  "Help > Request Feature...",
+  "Help > Email Us...",
+  "Help > Documentation",
+  "Help > Zed Repository",
+  "Help > Zed Twitter",
+  "Help > Join the Team"
+ ],
+ "goals": {
+  "make a new blank page": [
+   "File > New"
+  ],
+  "open a file from my documents": [
+   "File > Open…"
+  ],
+  "show me the files i had open yesterday": [
+   "File > Open Recent…"
+  ],
+  "save this": [
+   "File > Save"
+  ],
+  "keep a copy with a different name": [
+   "File > Save As…"
+  ],
+  "save everything i have open": [
+   "File > Save All"
+  ],
+  "close this tab": [
+   "File > Close Editor"
+  ],
+  "undo that": [
+   "Edit > Undo"
+  ],
+  "i undid too much, put it back": [
+   "Edit > Redo"
+  ],
+  "copy this": [
+   "Edit > Copy"
+  ],
+  "put what i copied here": [
+   "Edit > Paste"
+  ],
+  "find a word on this page": [
+   "Edit > Find"
+  ],
+  "look through all my files for one word": [
+   "Edit > Find in Project"
+  ],
+  "highlight everything": [
+   "Selection > Select All"
+  ],
+  "move this line up one": [
+   "Selection > Move Line Up"
+  ],
+  "make a copy of this line right under it": [
+   "Selection > Duplicate Selection"
+  ],
+  "the text is too small to read": [
+   "View > Zoom In"
+  ],
+  "make the words smaller": [
+   "View > Zoom Out"
+  ],
+  "put the text size back to normal": [
+   "View > Reset Zoom"
+  ],
+  "show the list of my files on the side": [
+   "View > Project Panel"
+  ],
+  "i need the black command window at the bottom": [
+   "View > Terminal Panel"
+  ],
+  "make it fill the whole screen": [
+   "View > Enter Full Screen"
+  ],
+  "put two files next to each other so i can compare": [
+   "View > Editor Layout > Split Right"
+  ],
+  "change the colors to dark mode": [
+   "Zed > Settings > Select Theme..."
+  ],
+  "change some settings": [
+   "Zed > Settings > Open Settings"
+  ],
+  "jump to line 50": [
+   "Go > Go to Line/Column..."
+  ],
+  "quickly open a file by typing its name": [
+   "Go > Go to File..."
+  ],
+  "take me back to where i was": [
+   "Go > Back"
+  ],
+  "where can i read how to use this": [
+   "Help > Documentation"
+  ],
+  "close the app": [
+   "Zed > Quit Zed"
+  ],
+  "i want to add more add-ons to this": [
+   "Zed > Extensions"
+  ],
+  "paano palakihin yung font dito": [
+   "View > Zoom In"
+  ],
+  "i-save mo lahat ng bukas na files": [
+   "File > Save All"
+  ],
+  "hanapin mo yung salitang hello dito": [
+   "Edit > Find"
+  ],
+  "ibalik mo yung dati, nagkamali ako": [
+   "Edit > Undo"
+  ]
+ }
+}

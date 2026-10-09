@@ -1,0 +1,343 @@
+{
+ "app": "Photos",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "Photos > About Photos",
+  "Photos > Settings…",
+  "Photos > Erase Deleted Items",
+  "Photos > Services > Activity Monitor",
+  "Photos > Services > Allocations & Leaks",
+  "Photos > Services > File Activity",
+  "Photos > Services > System Trace",
+  "Photos > Services > Services Settings…",
+  "Photos > Hide Photos",
+  "Photos > Hide Others",
+  "Photos > Show All",
+  "Photos > Quit Photos",
+  "Photos > Quit and Keep Windows",
+  "File > New Album",
+  "File > New Smart Album…",
+  "File > New Folder",
+  "File > Edit Smart Album…",
+  "File > Import…",
+  "File > Import without Review…",
+  "File > Export > Export Photos…",
+  "File > Export > Export Unmodified Original…",
+  "File > Export > Export Slideshow…",
+  "File > Export > Export GIF",
+  "File > Export > Export Frame To Pictures",
+  "File > Export > Export Memory",
+  "File > Share…",
+  "File > Play Slideshow",
+  "File > Show in All Photos",
+  "File > Show in Album",
+  "File > Show Referenced File in Finder",
+  "File > Consolidate…",
+  "File > Close",
+  "File > Print…",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Paste and Match Style",
+  "Edit > Select Moment",
+  "Edit > Select All",
+  "Edit > Deselect All",
+  "Edit > Find",
+  "Edit > Font > Show Fonts",
+  "Edit > Font > Bold",
+  "Edit > Font > Italic",
+  "Edit > Font > Underline",
+  "Edit > Font > Bigger",
+  "Edit > Font > Smaller",
+  "Edit > Font > Kern > Use Default",
+  "Edit > Font > Kern > Use None",
+  "Edit > Font > Kern > Tighten",
+  "Edit > Font > Kern > Loosen",
+  "Edit > Font > Ligatures > Use Default",
+  "Edit > Font > Ligatures > Use None",
+  "Edit > Font > Ligatures > Use All",
+  "Edit > Font > Baseline > Use Default",
+  "Edit > Font > Baseline > Superscript",
+  "Edit > Font > Baseline > Subscript",
+  "Edit > Font > Baseline > Raise",
+  "Edit > Font > Baseline > Lower",
+  "Edit > Font > Show Colors",
+  "Edit > Font > Copy Style",
+  "Edit > Font > Paste Style",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > Spelling and Grammar > Show Spelling and Grammar",
+  "Edit > Spelling and Grammar > Check Document Now",
+  "Edit > Spelling and Grammar > Check Spelling While Typing",
+  "Edit > Spelling and Grammar > Check Grammar With Spelling",
+  "Edit > Spelling and Grammar > Correct Spelling Automatically",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "Image > Adjust Date and Time…",
+  "Image > Location > Copy Location",
+  "Image > Location > Assign Location",
+  "Image > Location > Hide Location",
+  "Image > Location > Revert to Original Location",
+  "Image > Save to Library",
+  "Image > Rotate Counterclockwise",
+  "Image > Rotate Clockwise",
+  "Image > Flip Horizontal",
+  "Image > Flip Vertical",
+  "Image > Auto Enhance",
+  "Image > Show/Hide Edit Tools",
+  "Image > Copy Edits",
+  "Image > Paste Edits",
+  "Image > Revert to Original",
+  "Image > Turn On Live Photo",
+  "Image > Open/Close Viewer",
+  "Image > Start/Stop Playback",
+  "Image > Make Key Photo",
+  "Image > Make Poster Frame",
+  "Image > Save Video Frame as Photo",
+  "Image > Favorite Photo",
+  "Image > Move to Shared Library",
+  "Image > Move to Personal Library",
+  "Image > Add to Recent Album",
+  "Image > Edit With > Last Used Application",
+  "Image > Reprocess RAW",
+  "Image > Use RAW as Original",
+  "Image > Merge Duplicates",
+  "Image > Duplicate",
+  "Image > Duplicate from Original",
+  "Image > Show/Hide Photo",
+  "Image > Delete Photo",
+  "Image > Remove All from Album",
+  "View > Both Libraries",
+  "View > Personal Library",
+  "View > Shared Library",
+  "View > Library",
+  "View > Collections",
+  "View > Pinned > Favorites",
+  "View > Pinned > Recently Saved",
+  "View > Pinned > Map",
+  "View > Pinned > Videos",
+  "View > Pinned > Screenshots",
+  "View > Pinned > People",
+  "View > Pinned > Recently Deleted",
+  "View > Albums > All Albums",
+  "View > Albums > Ateneo ID",
+  "View > Albums > Twitter",
+  "View > Albums > Snapchat",
+  "View > Albums > CamScanner",
+  "View > Albums > 𝕏",
+  "View > Sharing > Activity",
+  "View > Media Types > Selfies",
+  "View > Media Types > Live Photos",
+  "View > Media Types > Screenshots",
+  "View > Utilities > Favorites",
+  "View > Utilities > Recently Deleted",
+  "View > Utilities > Duplicates",
+  "View > Utilities > Receipts",
+  "View > Utilities > Handwriting",
+  "View > Utilities > Illustrations",
+  "View > Utilities > Recently Saved",
+  "View > Utilities > Recently Viewed",
+  "View > Utilities > Recently Shared",
+  "View > Utilities > Documents",
+  "View > Utilities > Imports",
+  "View > Utilities > Map",
+  "View > Projects > All Projects",
+  "View > Show/Hide Explore View",
+  "View > Show Thumbnails",
+  "View > Show Comments",
+  "View > Show Histogram",
+  "View > Metadata > Titles",
+  "View > Metadata > Keywords",
+  "View > Metadata > Edited",
+  "View > Metadata > File Type",
+  "View > Metadata > Favorite",
+  "View > Metadata > Referenced File",
+  "View > Metadata > Location",
+  "View > Metadata > In Shared Library",
+  "View > Show Face Names",
+  "View > Show Hidden Photo Album",
+  "View > Show Recently Viewed & Shared",
+  "View > Sort > By Name",
+  "View > Sort > By Date Added",
+  "View > Sort > By Date Modified",
+  "View > Sort > By Oldest First",
+  "View > Sort > By Newest First",
+  "View > Sort > By Custom Order",
+  "View > Arrange > Default",
+  "View > Arrange > Newest",
+  "View > Arrange > Oldest",
+  "View > Aspect Ratio Grid",
+  "View > Show Screenshots",
+  "View > Show Shared With You",
+  "View > Include Other People",
+  "View > as List",
+  "View > as Key Photo",
+  "View > Zoom",
+  "View > Zoom In",
+  "View > Zoom Out",
+  "View > Show Sidebar",
+  "View > Always Show Toolbar and Sidebar in Full Screen",
+  "View > Enter Full Screen",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Help > Photos Help",
+  "Help > Keyboard Shortcuts",
+  "Help > About Photos & Privacy..."
+ ],
+ "goals": {
+  "the picture is sideways, turn it to the right": [
+   "Image > Rotate Clockwise"
+  ],
+  "turn the photo the other way, to the left": [
+   "Image > Rotate Counterclockwise"
+  ],
+  "make this photo look nicer automatically, its too dark": [
+   "Image > Auto Enhance"
+  ],
+  "i messed up my changes, give me the original picture back": [
+   "Image > Revert to Original"
+  ],
+  "undo that": [
+   "Edit > Undo"
+  ],
+  "make it like a mirror, flip it left to right": [
+   "Image > Flip Horizontal"
+  ],
+  "I want to send this to my daughter": [
+   "File > Share…"
+  ],
+  "save these pictures onto my desktop so i can put them on a usb": [
+   "File > Export > Export Photos…"
+  ],
+  "bring in the pictures from my camera card": [
+   "File > Import…"
+  ],
+  "print this picture": [
+   "File > Print…"
+  ],
+  "pa-print naman ng picture na to": [
+   "File > Print…"
+  ],
+  "make a new album for our trip": [
+   "File > New Album"
+  ],
+  "show the pictures one after another with music": [
+   "File > Play Slideshow"
+  ],
+  "get rid of this photo": [
+   "Image > Delete Photo"
+  ],
+  "burahin mo na tong picture": [
+   "Image > Delete Photo"
+  ],
+  "i threw away a photo by mistake where did it go": [
+   "View > Pinned > Recently Deleted",
+   "View > Utilities > Recently Deleted"
+  ],
+  "put a heart on this one, its my favorite": [
+   "Image > Favorite Photo"
+  ],
+  "show me only the ones I hearted": [
+   "View > Pinned > Favorites",
+   "View > Utilities > Favorites"
+  ],
+  "where are all my videos": [
+   "View > Pinned > Videos"
+  ],
+  "show where in the world my pictures were taken": [
+   "View > Pinned > Map",
+   "View > Utilities > Map"
+  ],
+  "look for pictures of the beach": [
+   "Edit > Find"
+  ],
+  "i think i have the same picture twice, show me the doubles": [
+   "View > Utilities > Duplicates"
+  ],
+  "the little pictures are too small to see": [
+   "View > Zoom In"
+  ],
+  "show more pictures on the screen at once": [
+   "View > Zoom Out"
+  ],
+  "tuck this picture away so visitors dont see it": [
+   "Image > Show/Hide Photo"
+  ],
+  "the date on this photo is wrong": [
+   "Image > Adjust Date and Time…"
+  ],
+  "play the video": [
+   "Image > Start/Stop Playback"
+  ],
+  "i want to crop it and fix the colors myself": [
+   "Image > Show/Hide Edit Tools"
+  ],
+  "make a copy of this picture before I change it": [
+   "Image > Duplicate"
+  ],
+  "where are the pictures i took of my screen": [
+   "View > Pinned > Screenshots",
+   "View > Media Types > Screenshots"
+  ],
+  "pakita yung mga selfie ko": [
+   "View > Media Types > Selfies"
+  ],
+  "show me the pictures sorted by who is in them": [
+   "View > Pinned > People"
+  ],
+  "choose all of them": [
+   "Edit > Select All"
+  ],
+  "grab a still picture out of this video": [
+   "Image > Save Video Frame as Photo"
+  ],
+  "paano gawing full screen yung pics": [
+   "View > Enter Full Screen"
+  ],
+  "i want to edit this picture in a different program": [
+   "Image > Edit With > Last Used Application"
+  ]
+ }
+}

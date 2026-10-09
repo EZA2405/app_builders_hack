@@ -1,0 +1,316 @@
+{
+ "app": "Notes",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "Notes > About Notes",
+  "Notes > Settings…",
+  "Notes > Accounts…",
+  "Notes > Close All Locked Notes",
+  "Notes > Services > Activity Monitor",
+  "Notes > Services > Allocations & Leaks",
+  "Notes > Services > File Activity",
+  "Notes > Services > System Trace",
+  "Notes > Services > Services Settings…",
+  "Notes > Hide Notes",
+  "Notes > Hide Others",
+  "Notes > Show All",
+  "Notes > Quit Notes",
+  "Notes > Quit and Keep Windows",
+  "File > New Note",
+  "File > New Folder",
+  "File > New Smart Folder",
+  "File > More > New Smart Folder with Tag Selection",
+  "File > More > Convert Folder to Smart Folder",
+  "File > Close",
+  "File > Close All",
+  "File > Import to Notes…",
+  "File > Import Markdown...",
+  "File > Export as > PDF",
+  "File > Export as > Markdown",
+  "File > Open in Pages",
+  "File > Pin Note",
+  "File > Lock Note",
+  "File > Duplicate Note",
+  "File > Print…",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Paste and Match Style",
+  "Edit > Paste and Retain Style",
+  "Edit > Delete",
+  "Edit > Rename",
+  "Edit > Select All",
+  "Edit > Attach File…",
+  "Edit > Add Link…",
+  "Edit > Record Audio…",
+  "Edit > Rename Attachment…",
+  "Edit > Find > Note List Search…",
+  "Edit > Find > Find…",
+  "Edit > Find > Find and Replace…",
+  "Edit > Find > Find Next",
+  "Edit > Find > Find Previous",
+  "Edit > Find > Use Selection for Find",
+  "Edit > Find > Jump to Selection",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > Spelling and Grammar > Show Spelling and Grammar",
+  "Edit > Spelling and Grammar > Check Document Now",
+  "Edit > Spelling and Grammar > Check Spelling While Typing",
+  "Edit > Spelling and Grammar > Check Grammar With Spelling",
+  "Edit > Spelling and Grammar > Correct Spelling Automatically",
+  "Edit > Substitutions > Show Substitutions",
+  "Edit > Substitutions > Smart Copy/Paste",
+  "Edit > Substitutions > Smart Quotes",
+  "Edit > Substitutions > Smart Lists",
+  "Edit > Substitutions > Smart Dashes",
+  "Edit > Substitutions > Smart Links",
+  "Edit > Substitutions > Smart Tags",
+  "Edit > Substitutions > Text Replacement",
+  "Edit > Transformations > Make Upper Case",
+  "Edit > Transformations > Make Lower Case",
+  "Edit > Transformations > Capitalize",
+  "Edit > Speech > Start Speaking",
+  "Edit > Speech > Stop Speaking",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "Format > Title",
+  "Format > Heading",
+  "Format > Subheading",
+  "Format > Body",
+  "Format > Monostyled",
+  "Format > Bulleted List",
+  "Format > Dashed List",
+  "Format > Numbered List",
+  "Format > Block Quote",
+  "Format > Checklist",
+  "Format > Mark as Checked",
+  "Format > More > Check All",
+  "Format > More > Uncheck All",
+  "Format > More > Move Checked to Bottom",
+  "Format > More > Delete Checked",
+  "Format > Move Item > Up",
+  "Format > Move Item > Down",
+  "Format > Table",
+  "Format > Convert to Text",
+  "Format > Reverse Table Direction",
+  "Format > Show Note As Light Background",
+  "Format > Font > Show Fonts",
+  "Format > Font > Bold",
+  "Format > Font > Italic",
+  "Format > Font > Underline",
+  "Format > Font > Strikethrough",
+  "Format > Font > Highlight",
+  "Format > Font > Bigger",
+  "Format > Font > Smaller",
+  "Format > Font > Baseline > Use Default",
+  "Format > Font > Baseline > Superscript",
+  "Format > Font > Baseline > Subscript",
+  "Format > Font > Show Colors",
+  "Format > Font > Copy Style",
+  "Format > Font > Paste Style",
+  "Format > Font > Remove Style",
+  "Format > Text > Align Left",
+  "Format > Text > Center",
+  "Format > Text > Justify",
+  "Format > Text > Align Right",
+  "Format > Text > Writing Direction > Paragraph",
+  "Format > Text > Writing Direction > \tDefault",
+  "Format > Text > Writing Direction > \tLeft to Right",
+  "Format > Text > Writing Direction > \tRight to Left",
+  "Format > Text > Writing Direction > Selection",
+  "Format > Indentation > Increase",
+  "Format > Indentation > Decrease",
+  "Format > Math Results > Insert Results",
+  "Format > Math Results > Suggest Results",
+  "Format > Math Results > Off",
+  "View > as List",
+  "View > as Gallery",
+  "View > Sort By > Default",
+  "View > Sort By > Date Edited",
+  "View > Sort By > Date Created",
+  "View > Sort By > Title",
+  "View > Sort By > Newest First",
+  "View > Sort By > Oldest First",
+  "View > Group By Date > Default",
+  "View > Group By Date > On",
+  "View > Group By Date > Off",
+  "View > Hide Folders",
+  "View > Show Note Count",
+  "View > Attachment View > Set All to Small",
+  "View > Attachment View > Set All to Large",
+  "View > Show Attachments Browser",
+  "View > Show in Note",
+  "View > Show Highlights",
+  "View > Show Note Activity",
+  "View > Show Folder Activity",
+  "View > Zoom In",
+  "View > Zoom Out",
+  "View > Actual Size",
+  "View > Hide Toolbar",
+  "View > Customize Toolbar…",
+  "View > Enter Full Screen",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Help > Notes Help",
+  "Help > Using Tags",
+  "Help > Using Smart Folders"
+ ],
+ "goals": {
+  "i want a blank page to jot something down": [
+   "File > New Note"
+  ],
+  "start a new note for my grocery stuff": [
+   "File > New Note"
+  ],
+  "make a place to keep all my recipe notes together": [
+   "File > New Folder"
+  ],
+  "keep this one at the top so I always see it first": [
+   "File > Pin Note"
+  ],
+  "put a password on this so nobody can read it": [
+   "File > Lock Note"
+  ],
+  "turn this into a pdf so I can send it": [
+   "File > Export as > PDF"
+  ],
+  "pa-print naman ng note na to": [
+   "File > Print…"
+  ],
+  "undo that": [
+   "Edit > Undo"
+  ],
+  "oops i erased my words bring them back": [
+   "Edit > Undo"
+  ],
+  "get rid of this": [
+   "Edit > Delete"
+  ],
+  "put a picture from my computer into this note": [
+   "Edit > Attach File…"
+  ],
+  "I want to save a voice message of me talking in here": [
+   "Edit > Record Audio…"
+  ],
+  "wheres the note I wrote about the plumber": [
+   "Edit > Find > Note List Search…"
+  ],
+  "look for a word in this note": [
+   "Edit > Find > Find…"
+  ],
+  "make a list with little boxes i can tick off": [
+   "Format > Checklist"
+  ],
+  "how do i make a list with dots": [
+   "Format > Bulleted List"
+  ],
+  "number these lines 1 2 3": [
+   "Format > Numbered List"
+  ],
+  "make this top line big like a heading on a newspaper": [
+   "Format > Title"
+  ],
+  "make the words thick and dark": [
+   "Format > Font > Bold"
+  ],
+  "cross out this item but keep it there": [
+   "Format > Font > Strikethrough"
+  ],
+  "make the letters bigger": [
+   "Format > Font > Bigger"
+  ],
+  "letters too big pls make smaller": [
+   "Format > Font > Smaller"
+  ],
+  "put in a chart with rows and columns": [
+   "Format > Table"
+  ],
+  "I bought the milk, tick it off": [
+   "Format > Mark as Checked"
+  ],
+  "move the done ones to the bottom of the list": [
+   "Format > More > Move Checked to Bottom"
+  ],
+  "push this line in a little from the edge": [
+   "Format > Indentation > Increase"
+  ],
+  "read my note out loud to me": [
+   "Edit > Speech > Start Speaking"
+  ],
+  "can i just talk and it types for me": [
+   "Edit > Start Dictation…"
+  ],
+  "check my spelling": [
+   "Edit > Spelling and Grammar > Check Document Now"
+  ],
+  "paano maglagay ng emoji dito": [
+   "Edit > Emoji & Symbols"
+  ],
+  "everything is too small to read on the screen": [
+   "View > Zoom In"
+  ],
+  "show my notes as little pictures instead of a list": [
+   "View > as Gallery"
+  ],
+  "put the newest notes up top": [
+   "View > Sort By > Newest First"
+  ],
+  "show me all the photos and files I put in my notes": [
+   "View > Show Attachments Browser"
+  ],
+  "I want a second copy of this same note": [
+   "File > Duplicate Note"
+  ],
+  "gawin mong summary ito, ang haba": [
+   "Edit > Writing Tools > Summarize"
+  ],
+  "put the words in the middle": [
+   "Format > Text > Center"
+  ],
+  "pa-check ng spelling at grammar ko": [
+   "Edit > Writing Tools > Proofread"
+  ]
+ }
+}

@@ -1,0 +1,241 @@
+{
+ "app": "Calendar",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "Calendar > About Calendar",
+  "Calendar > Settings…",
+  "Calendar > Accounts…",
+  "Calendar > Add Account…",
+  "Calendar > Services > Activity Monitor",
+  "Calendar > Services > Allocations & Leaks",
+  "Calendar > Services > File Activity",
+  "Calendar > Services > System Trace",
+  "Calendar > Services > Services Settings…",
+  "Calendar > Hide Calendar",
+  "Calendar > Hide Others",
+  "Calendar > Show All",
+  "Calendar > Quit Calendar",
+  "Calendar > Quit and Keep Windows",
+  "File > New Event or Reminder",
+  "File > New Calendar",
+  "File > New Family Calendar…",
+  "File > New Calendar Subscription…",
+  "File > New Holiday Calendar…",
+  "File > Import…",
+  "File > Export > Export Event…",
+  "File > Export > Calendar Archive…",
+  "File > Close",
+  "File > Close All",
+  "File > Print…",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Delete",
+  "Edit > Select All",
+  "Edit > Duplicate",
+  "Edit > Edit Event",
+  "Edit > Mark as Completed",
+  "Edit > Get Info",
+  "Edit > Show Inspector",
+  "Edit > Merge Calendar > Home",
+  "Edit > Merge Calendar > Work",
+  "Edit > Share Calendar…",
+  "Edit > Stop Sharing…",
+  "Edit > Resend Invitations…",
+  "Edit > Find",
+  "Edit > Show Spelling and Grammar",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "View > Show Tab Bar",
+  "View > Show All Tabs",
+  "View > By Day",
+  "View > By Week",
+  "View > By Month",
+  "View > By Year",
+  "View > Next",
+  "View > Previous",
+  "View > Go to Today",
+  "View > Go to Date…",
+  "View > Go to Next Occurrence",
+  "View > Go to Previous Occurrence",
+  "View > Zoom In",
+  "View > Zoom Out",
+  "View > Show Calendar List",
+  "View > Show Notifications",
+  "View > Show List View",
+  "View > Show All-Day Events",
+  "View > Show Declined Events",
+  "View > Show Completed Reminders",
+  "View > Show Travel Time",
+  "View > Refresh Calendars",
+  "View > Enter Full Screen",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Show Previous Tab",
+  "Window > Show Next Tab",
+  "Window > Move Tab to New Window",
+  "Window > Merge All Windows",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Help > Calendar Help",
+  "Help > Keyboard Shortcuts"
+ ],
+ "goals": {
+  "add my doctor appointment on friday": [
+   "File > New Event or Reminder"
+  ],
+  "I need to put the church dinner on the calendar": [
+   "File > New Event or Reminder"
+  ],
+  "make a separate calendar just for the grandkids birthdays": [
+   "File > New Calendar"
+  ],
+  "i want the holidays to show up": [
+   "File > New Holiday Calendar…"
+  ],
+  "put my month on paper so I can stick it on the fridge": [
+   "File > Print…"
+  ],
+  "pa-print ng calendar ko": [
+   "File > Print…"
+  ],
+  "undo that": [
+   "Edit > Undo"
+  ],
+  "i dragged the wrong appointment, put it back where it was": [
+   "Edit > Undo"
+  ],
+  "that appointment got cancelled, get rid of it": [
+   "Edit > Delete"
+  ],
+  "change the time of this appointment": [
+   "Edit > Edit Event"
+  ],
+  "make another one just like this appointment": [
+   "Edit > Duplicate"
+  ],
+  "let my husband see my calendar too": [
+   "Edit > Share Calendar…"
+  ],
+  "i dont want other people seeing my calendar anymore": [
+   "Edit > Stop Sharing…"
+  ],
+  "when is my dentist visit, i forgot": [
+   "Edit > Find"
+  ],
+  "show me just one day": [
+   "View > By Day"
+  ],
+  "what do I have going on this week": [
+   "View > By Week"
+  ],
+  "i want to see the whole month at once": [
+   "View > By Month"
+  ],
+  "patingin ng buong buwan": [
+   "View > By Month"
+  ],
+  "show me the whole year": [
+   "View > By Year"
+  ],
+  "take me back to today": [
+   "View > Go to Today"
+  ],
+  "balik sa araw ngayon": [
+   "View > Go to Today"
+  ],
+  "jump to christmas day": [
+   "View > Go to Date…"
+  ],
+  "forward to the next one": [
+   "View > Next"
+  ],
+  "go back, show me before this": [
+   "View > Previous"
+  ],
+  "the boxes are too small to read": [
+   "View > Zoom In"
+  ],
+  "my list of calendars on the side disappeared": [
+   "View > Show Calendar List"
+  ],
+  "someone invited me to something, where do i see it": [
+   "View > Show Notifications"
+  ],
+  "the appointment i added on my phone isnt showing up here": [
+   "View > Refresh Calendars"
+  ],
+  "make the calendar take up the whole screen": [
+   "View > Enter Full Screen"
+  ],
+  "they said they never got my invite, send it again": [
+   "Edit > Resend Invitations…"
+  ],
+  "save this appointment as a file I can email": [
+   "File > Export > Export Event…"
+  ],
+  "make a backup of everything in my calendar": [
+   "File > Export > Calendar Archive…"
+  ],
+  "open the calendar file someone emailed me": [
+   "File > Import…"
+  ],
+  "show me more about this appointment, like where and who": [
+   "Edit > Get Info"
+  ],
+  "i already did this one, check it off": [
+   "Edit > Mark as Completed"
+  ],
+  "show all my appointments in a plain list": [
+   "View > Show List View"
+  ],
+  "how long does it take to drive there, show it": [
+   "View > Show Travel Time"
+  ],
+  "pakita yung mga hindi ko tinanggap na invite": [
+   "View > Show Declined Events"
+  ]
+ }
+}

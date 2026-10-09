@@ -1,0 +1,243 @@
+{
+ "app": "Contacts",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "Contacts > About Contacts",
+  "Contacts > Settings…",
+  "Contacts > Accounts...",
+  "Contacts > Add Account...",
+  "Contacts > Services > Activity Monitor",
+  "Contacts > Services > Allocations & Leaks",
+  "Contacts > Services > File Activity",
+  "Contacts > Services > System Trace",
+  "Contacts > Services > Services Settings…",
+  "Contacts > Hide Contacts",
+  "Contacts > Hide Others",
+  "Contacts > Show All",
+  "Contacts > Quit Contacts",
+  "Contacts > Quit and Keep Windows",
+  "File > New Card",
+  "File > New Group",
+  "File > New Group From Selection",
+  "File > New Smart List…",
+  "File > New Smart List from Current Search",
+  "File > Close",
+  "File > Close All",
+  "File > Save",
+  "File > Import…",
+  "File > Export as PDF…",
+  "File > Export > Export vCard…",
+  "File > Export > Contacts Archive…",
+  "File > Print…",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Delete",
+  "Edit > Remove From List",
+  "Edit > Select All",
+  "Edit > Find > Find",
+  "Edit > Find > Use Selection for Find",
+  "Edit > Find > Find in Directories",
+  "Edit > Spotlight:",
+  "Edit > Rename Group",
+  "Edit > Edit Smart List",
+  "Edit > Edit Card",
+  "Edit > Edit Distribution List…",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "View > Hide Groups",
+  "View > Show Last Import Group",
+  "View > Enter Full Screen",
+  "Card > Go to Next Card",
+  "Card > Go to Previous Card",
+  "Card > Merge Selected Cards ",
+  "Card > Look for Duplicates…",
+  "Card > Add Field > Phonetic First/Last Name",
+  "Card > Add Field > Prefix",
+  "Card > Add Field > Middle Name",
+  "Card > Add Field > Suffix",
+  "Card > Add Field > Nickname",
+  "Card > Add Field > Phonetic Company",
+  "Card > Add Field > Job Title",
+  "Card > Add Field > Department",
+  "Card > Add Field > Maiden Name",
+  "Card > Add Field > Phone",
+  "Card > Add Field > Email",
+  "Card > Add Field > Pronouns",
+  "Card > Add Field > URL",
+  "Card > Add Field > Birthday",
+  "Card > Add Field > Lunar Birthday",
+  "Card > Add Field > Date",
+  "Card > Add Field > Verification Code",
+  "Card > Add Field > Related Name",
+  "Card > Add Field > Instant Message",
+  "Card > Add Field > Twitter",
+  "Card > Add Field > Profile",
+  "Card > Add Field > Address",
+  "Card > Add Field > Edit Template…",
+  "Card > Mark as a Company",
+  "Card > Reorder Last Name Before First",
+  "Card > Make This My Card",
+  "Card > Go to My Card",
+  "Card > Share My Card > Email My Card",
+  "Card > Share My Card > Message My Card",
+  "Card > Clear Custom Image",
+  "Card > Choose Custom Image…",
+  "Card > Open in Separate Window",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Help > Contacts Help"
+ ],
+ "goals": {
+  "add a new person to my address book": [
+   "File > New Card"
+  ],
+  "i want to make a list just for my family members": [
+   "File > New Group"
+  ],
+  "pa-save naman": [
+   "File > Save"
+  ],
+  "bring in the contacts from my old phone file": [
+   "File > Import…"
+  ],
+  "send someone's details as a card file": [
+   "File > Export > Export vCard…"
+  ],
+  "make a backup of all my people in case something happens": [
+   "File > Export > Contacts Archive…"
+  ],
+  "I want my phone list on paper": [
+   "File > Print…"
+  ],
+  "save it as pdf": [
+   "File > Export as PDF…"
+  ],
+  "undo that i deleted the wrong thing": [
+   "Edit > Undo"
+  ],
+  "remove this person completely": [
+   "Edit > Delete"
+  ],
+  "take her out of the family group but dont erase her": [
+   "Edit > Remove From List"
+  ],
+  "look up my dentist's number": [
+   "Edit > Find > Find"
+  ],
+  "their phone number changed, i need to fix it": [
+   "Edit > Edit Card"
+  ],
+  "change the name of my group": [
+   "Edit > Rename Group"
+  ],
+  "I think I have the same person in here twice": [
+   "Card > Look for Duplicates…",
+   "Card > Merge Selected Cards "
+  ],
+  "combine these two into one": [
+   "Card > Merge Selected Cards "
+  ],
+  "add their birthday so i dont forget": [
+   "Card > Add Field > Birthday"
+  ],
+  "i need to put a second phone number": [
+   "Card > Add Field > Phone"
+  ],
+  "where do i put their email adress": [
+   "Card > Add Field > Email"
+  ],
+  "add a home address": [
+   "Card > Add Field > Address"
+  ],
+  "we call him lolo, how do i add that": [
+   "Card > Add Field > Nickname"
+  ],
+  "this is a business not a person": [
+   "Card > Mark as a Company"
+  ],
+  "put a photo on her contact": [
+   "Card > Choose Custom Image…"
+  ],
+  "take off the picture on this one": [
+   "Card > Clear Custom Image"
+  ],
+  "this one is me": [
+   "Card > Make This My Card"
+  ],
+  "show my own info": [
+   "Card > Go to My Card"
+  ],
+  "email my details to someone": [
+   "Card > Share My Card > Email My Card"
+  ],
+  "text my number to my neighbor": [
+   "Card > Share My Card > Message My Card"
+  ],
+  "next person": [
+   "Card > Go to Next Card"
+  ],
+  "go back to the one before": [
+   "Card > Go to Previous Card"
+  ],
+  "paano mag-dagdag ng job title": [
+   "Card > Add Field > Job Title"
+  ],
+  "open this person in its own window": [
+   "Card > Open in Separate Window"
+  ],
+  "pakitago yung groups sa gilid": [
+   "View > Hide Groups"
+  ],
+  "make it fill the whole screen": [
+   "View > Enter Full Screen"
+  ],
+  "pa-close na nito": [
+   "File > Close"
+  ]
+ }
+}

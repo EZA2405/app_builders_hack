@@ -1,0 +1,305 @@
+{
+ "app": "VLC",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "VLC > About VLC media player...",
+  "VLC > Check for Update...",
+  "VLC > Settings…",
+  "VLC > Extensions > VLsub 0.11.1",
+  "VLC > Addons Manager",
+  "VLC > Add Interface > Telnet",
+  "VLC > Add Interface > Web",
+  "VLC > Add Interface > Mouse Gestures",
+  "VLC > Services > Activity Monitor",
+  "VLC > Services > Allocations & Leaks",
+  "VLC > Services > File Activity",
+  "VLC > Services > System Trace",
+  "VLC > Services > Services Settings…",
+  "VLC > Hide VLC",
+  "VLC > Hide Others",
+  "VLC > Show All",
+  "VLC > Quit VLC",
+  "VLC > Quit and Keep Windows",
+  "File > Open File...",
+  "File > Advanced Open File...",
+  "File > Open Disc...",
+  "File > Open Network...",
+  "File > Open Capture Device...",
+  "File > Open Recent > Clear Menu",
+  "File > Close Window",
+  "File > Close All",
+  "File > Reveal in Finder",
+  "File > Convert / Stream...",
+  "File > Save Playlist...",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Delete",
+  "Edit > Select All",
+  "Edit > Find",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "View > Show Tab Bar",
+  "View > Show All Tabs",
+  "View > Show Previous & Next Buttons",
+  "View > Show Shuffle & Repeat Buttons",
+  "View > Show Audio Effects Button",
+  "View > Show Sidebar",
+  "View > Playlist Table Columns > Track Number",
+  "View > Playlist Table Columns > Title",
+  "View > Playlist Table Columns > Author",
+  "View > Playlist Table Columns > Duration",
+  "View > Playlist Table Columns > Genre",
+  "View > Playlist Table Columns > Album",
+  "View > Playlist Table Columns > Description",
+  "View > Playlist Table Columns > Date",
+  "View > Playlist Table Columns > Language",
+  "View > Playlist Table Columns > URI",
+  "View > Playlist Table Columns > File Size",
+  "Playback > Play",
+  "Playback > Stop",
+  "Playback > Record",
+  "Playback > Rate (view)",
+  "Playback > Step Forward",
+  "Playback > Step Backward",
+  "Playback > Jump to Time",
+  "Playback > Previous",
+  "Playback > Next",
+  "Playback > Random",
+  "Playback > Repeat One",
+  "Playback > Repeat All",
+  "Playback > A→B Loop",
+  "Playback > Quit after Playback",
+  "Playback > Renderer > No renderer",
+  "Audio > Increase Volume",
+  "Audio > Decrease Volume",
+  "Audio > Mute",
+  "Audio > Audio Device > System Sound Output Device",
+  "Audio > Audio Device > MacBook Air Speakers",
+  "Video > Half Size",
+  "Video > Normal Size",
+  "Video > Double Size",
+  "Video > Fit to Screen",
+  "Video > Fullscreen",
+  "Video > Float on Top",
+  "Video > Snapshot",
+  "Video > Post processing > Disable",
+  "Video > Post processing > Level 1",
+  "Video > Post processing > Level 2",
+  "Video > Post processing > Level 3",
+  "Video > Post processing > Level 4",
+  "Video > Post processing > Level 5",
+  "Video > Post processing > Level 6",
+  "Subtitles > Add Subtitle File...",
+  "Subtitles > Text Size > Smaller",
+  "Subtitles > Text Size > Small",
+  "Subtitles > Text Size > Normal",
+  "Subtitles > Text Size > Large",
+  "Subtitles > Text Size > Larger",
+  "Subtitles > Text Color > Black",
+  "Subtitles > Text Color > Gray",
+  "Subtitles > Text Color > Silver",
+  "Subtitles > Text Color > White",
+  "Subtitles > Text Color > Maroon",
+  "Subtitles > Text Color > Red",
+  "Subtitles > Text Color > Fuchsia",
+  "Subtitles > Text Color > Yellow",
+  "Subtitles > Text Color > Olive",
+  "Subtitles > Text Color > Green",
+  "Subtitles > Text Color > Teal",
+  "Subtitles > Text Color > Lime",
+  "Subtitles > Text Color > Purple",
+  "Subtitles > Text Color > Navy",
+  "Subtitles > Text Color > Blue",
+  "Subtitles > Text Color > Aqua",
+  "Subtitles > Outline Thickness > None",
+  "Subtitles > Outline Thickness > Thin",
+  "Subtitles > Outline Thickness > Normal",
+  "Subtitles > Outline Thickness > Thick",
+  "Subtitles > BG Opacity (view)",
+  "Subtitles > Background Color > Black",
+  "Subtitles > Background Color > Gray",
+  "Subtitles > Background Color > Silver",
+  "Subtitles > Background Color > White",
+  "Subtitles > Background Color > Maroon",
+  "Subtitles > Background Color > Red",
+  "Subtitles > Background Color > Fuchsia",
+  "Subtitles > Background Color > Yellow",
+  "Subtitles > Background Color > Olive",
+  "Subtitles > Background Color > Green",
+  "Subtitles > Background Color > Teal",
+  "Subtitles > Background Color > Lime",
+  "Subtitles > Background Color > Purple",
+  "Subtitles > Background Color > Navy",
+  "Subtitles > Background Color > Blue",
+  "Subtitles > Background Color > Aqua",
+  "Subtitles > Teletext > Transparent",
+  "Subtitles > Teletext > Index",
+  "Subtitles > Teletext > Red",
+  "Subtitles > Teletext > Green",
+  "Subtitles > Teletext > Yellow",
+  "Subtitles > Teletext > Blue",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Show Previous Tab",
+  "Window > Show Next Tab",
+  "Window > Move Tab to New Window",
+  "Window > Merge All Windows",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Help > VLC media player Help...",
+  "Help > License",
+  "Help > Online Documentation...",
+  "Help > Online Forum...",
+  "Help > Make a donation...",
+  "Help > VideoLAN Website..."
+ ],
+ "goals": {
+  "I have a movie saved on my computer and want to watch it": [
+   "File > Open File..."
+  ],
+  "play the dvd i just put in": [
+   "File > Open Disc..."
+  ],
+  "watch a video from a link someone sent me": [
+   "File > Open Network..."
+  ],
+  "pause it": [
+   "Playback > Play"
+  ],
+  "stop the video": [
+   "Playback > Stop"
+  ],
+  "skip to the next one": [
+   "Playback > Next"
+  ],
+  "go back to the video before this": [
+   "Playback > Previous"
+  ],
+  "i want to jump straight to the 45 minute mark": [
+   "Playback > Jump to Time"
+  ],
+  "play my songs in a mixed up order": [
+   "Playback > Random"
+  ],
+  "keep playing this same song over and over": [
+   "Playback > Repeat One"
+  ],
+  "make it louder": [
+   "Audio > Increase Volume"
+  ],
+  "its too loud turn it down pls": [
+   "Audio > Decrease Volume"
+  ],
+  "turn off the sound for a sec, the phone is ringing": [
+   "Audio > Mute"
+  ],
+  "make the video take up the whole screen": [
+   "Video > Fullscreen"
+  ],
+  "take a picture of this scene": [
+   "Video > Snapshot"
+  ],
+  "keep the video on top of my other windows while I work": [
+   "Video > Float on Top"
+  ],
+  "the video window is tiny, make it twice as big": [
+   "Video > Double Size"
+  ],
+  "I downloaded a separate file with the words for this movie": [
+   "Subtitles > Add Subtitle File..."
+  ],
+  "the words at the bottom are too small to read": [
+   "Subtitles > Text Size > Larger",
+   "Subtitles > Text Size > Large"
+  ],
+  "can the words at the bottom be yellow": [
+   "Subtitles > Text Color > Yellow"
+  ],
+  "the video is way too big, make it half as big": [
+   "Video > Half Size"
+  ],
+  "put the video back to its normal size": [
+   "Video > Normal Size"
+  ],
+  "when the list ends start it all again from the top": [
+   "Playback > Repeat All"
+  ],
+  "change this video so it plays on my tablet": [
+   "File > Convert / Stream..."
+  ],
+  "where is this video saved on my computer": [
+   "File > Reveal in Finder"
+  ],
+  "keep my list of videos so i can play them again another day": [
+   "File > Save Playlist..."
+  ],
+  "record what's playing right now": [
+   "Playback > Record"
+  ],
+  "move ahead just one frame at a time": [
+   "Playback > Step Forward"
+  ],
+  "paano i-loop yung isang part lang ng video": [
+   "Playback > A→B Loop"
+  ],
+  "lakasan mo naman yung tunog": [
+   "Audio > Increase Volume"
+  ],
+  "close the program by itself when this movie ends": [
+   "Playback > Quit after Playback"
+  ],
+  "where do i get help using this player": [
+   "Help > VLC media player Help..."
+  ],
+  "i want to change how the player works": [
+   "VLC > Settings…"
+  ],
+  "ilagay mo sakto sa laki ng screen": [
+   "Video > Fit to Screen"
+  ],
+  "paano mag screenshot ng video na to": [
+   "Video > Snapshot"
+  ]
+ }
+}

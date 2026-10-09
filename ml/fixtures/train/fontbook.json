@@ -1,0 +1,220 @@
+{
+ "app": "Font Book",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "Font Book > About Font Book",
+  "Font Book > Settings…",
+  "Font Book > Services > Activity Monitor",
+  "Font Book > Services > Allocations & Leaks",
+  "Font Book > Services > File Activity",
+  "Font Book > Services > System Trace",
+  "Font Book > Services > Services Settings…",
+  "Font Book > Hide Font Book",
+  "Font Book > Hide Others",
+  "Font Book > Show All",
+  "Font Book > Quit Font Book",
+  "Font Book > Quit and Keep Windows",
+  "File > New Window",
+  "File > New Tab",
+  "File > New Collection",
+  "File > New Collection From Selection",
+  "File > New Smart Collection…",
+  "File > New Smart Collection from Search…",
+  "File > New Library",
+  "File > Add Fonts to Current User…",
+  "File > Resolve Duplicates…",
+  "File > Validate Selection",
+  "File > Validate File…",
+  "File > Save Validation Report…",
+  "File > Find…",
+  "File > Export…",
+  "File > Show in Finder",
+  "File > Print…",
+  "File > Close",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Delete",
+  "Edit > Select All",
+  "Edit > Remove",
+  "Edit > Activate",
+  "Edit > Deactivate",
+  "Edit > Download",
+  "Edit > Reset Custom Text",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "View > Show Tab Bar",
+  "View > Show All Tabs",
+  "View > Back",
+  "View > View as Grid",
+  "View > View as Samples",
+  "View > View as List",
+  "View > Increase Font Size",
+  "View > Decrease Font Size",
+  "View > Next Typeface",
+  "View > Previous Typeface",
+  "View > Next Style",
+  "View > Previous Style",
+  "View > Show Filter Bar",
+  "View > Show Info Pane",
+  "View > Show Sidebar",
+  "View > Enter Full Screen",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Window > Show Previous Tab",
+  "Window > Show Next Tab",
+  "Window > Move Tab to New Window",
+  "Window > Merge All Windows",
+  "Help > Font Book Help"
+ ],
+ "goals": {
+  "add a new font i downloaded": [
+   "File > Add Fonts to Current User…"
+  ],
+  "i have two of the same font": [
+   "File > Resolve Duplicates…"
+  ],
+  "check if this font is broken": [
+   "File > Validate Selection"
+  ],
+  "make sure a font file is ok before i put it on": [
+   "File > Validate File…"
+  ],
+  "where is this font saved on my computer": [
+   "File > Show in Finder"
+  ],
+  "print a sample of the letters": [
+   "File > Print…"
+  ],
+  "make a folder to keep my favorite fonts together": [
+   "File > New Collection"
+  ],
+  "look for a font called something like script": [
+   "File > Find…"
+  ],
+  "copy the font out so i can give it to my friend": [
+   "File > Export…"
+  ],
+  "get rid of this font": [
+   "Edit > Remove",
+   "Edit > Delete"
+  ],
+  "turn this font off for now but dont delete it": [
+   "Edit > Deactivate"
+  ],
+  "turn the font back on": [
+   "Edit > Activate"
+  ],
+  "this font is greyed out, i want to get it": [
+   "Edit > Download"
+  ],
+  "ibalik sa dati yung sample text": [
+   "Edit > Reset Custom Text"
+  ],
+  "make the sample letters bigger": [
+   "View > Increase Font Size"
+  ],
+  "too big, smaller pls": [
+   "View > Decrease Font Size"
+  ],
+  "show me all the fonts as little squares": [
+   "View > View as Grid"
+  ],
+  "show them as a plain list": [
+   "View > View as List"
+  ],
+  "show me what a sentence looks like in each font": [
+   "View > View as Samples"
+  ],
+  "next font": [
+   "View > Next Typeface"
+  ],
+  "show me the bold one and the other versions of this font": [
+   "View > Next Style"
+  ],
+  "who made this font, show me the details": [
+   "View > Show Info Pane"
+  ],
+  "go back": [
+   "View > Back"
+  ],
+  "the list on the left side disappeared": [
+   "View > Show Sidebar"
+  ],
+  "full screen pls": [
+   "View > Enter Full Screen"
+  ],
+  "open another window": [
+   "File > New Window"
+  ],
+  "pano magdagdag ng font": [
+   "File > Add Fonts to Current User…"
+  ],
+  "pa-print ng font sample": [
+   "File > Print…"
+  ],
+  "close this": [
+   "File > Close"
+  ],
+  "im done, shut the whole thing down": [
+   "Font Book > Quit Font Book"
+  ],
+  "select every font": [
+   "Edit > Select All"
+  ],
+  "paano i-off yung font na to": [
+   "Edit > Deactivate"
+  ],
+  "put this window on the left half of the screen": [
+   "Window > Move & Resize > Left"
+  ],
+  "too many windows, put them all in one": [
+   "Window > Merge All Windows"
+  ],
+  "shrink this window down to the dock": [
+   "Window > Minimize"
+  ]
+ }
+}

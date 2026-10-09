@@ -1,0 +1,236 @@
+{
+ "app": "QuickTime Player",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "QuickTime Player > About QuickTime Player",
+  "QuickTime Player > Services > Activity Monitor",
+  "QuickTime Player > Services > Allocations & Leaks",
+  "QuickTime Player > Services > File Activity",
+  "QuickTime Player > Services > System Trace",
+  "QuickTime Player > Services > Services Settings…",
+  "QuickTime Player > Hide QuickTime Player",
+  "QuickTime Player > Hide Others",
+  "QuickTime Player > Show All",
+  "QuickTime Player > Quit QuickTime Player",
+  "QuickTime Player > Quit and Keep Windows",
+  "File > New Movie Recording",
+  "File > New Audio Recording",
+  "File > New Screen Recording",
+  "File > Open File…",
+  "File > Open Location…",
+  "File > Open Image Sequence…",
+  "File > Open Recent > Clear Menu",
+  "File > Close",
+  "File > Close All",
+  "File > Save…",
+  "File > Save As…",
+  "File > Duplicate",
+  "File > Rename…",
+  "File > Move To…",
+  "File > Export As > 4K…",
+  "File > Export As > 1080p…",
+  "File > Export As > 720p…",
+  "File > Export As > 480p…",
+  "File > Export As > Audio Only…",
+  "File > Share > No Document",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Delete",
+  "Edit > Select All",
+  "Edit > Rotate Left",
+  "Edit > Rotate Right",
+  "Edit > Flip Horizontal",
+  "Edit > Flip Vertical",
+  "Edit > Clip Alignment > Center",
+  "Edit > Clip Alignment > Top",
+  "Edit > Clip Alignment > Bottom",
+  "Edit > Clip Alignment > Left",
+  "Edit > Clip Alignment > Right",
+  "Edit > Split Clip",
+  "Edit > Add Clip to End...",
+  "Edit > Add Clip to Beginning...",
+  "Edit > Remove Audio",
+  "Edit > Remove Video",
+  "Edit > Trim…",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "View > Enter Full Screen",
+  "View > Float on Top",
+  "View > Actual Size",
+  "View > Zoom to Fit",
+  "View > Zoom In",
+  "View > Zoom Out",
+  "View > Playback Speed > None",
+  "View > Audio > Prefer Passthrough",
+  "View > Languages > None",
+  "View > Subtitles > Off",
+  "View > Time Display > Elapsed Time",
+  "View > Time Display > SMPTE Timecode",
+  "View > Time Display > Frame Count",
+  "View > Time Display > Go to Timecode...",
+  "View > Time Display > Go to Frame...",
+  "View > Next Chapter",
+  "View > Previous Chapter",
+  "View > Show Clips",
+  "View > Show Audio Track",
+  "View > Loop",
+  "View > Spatial Video > Display as Spatial Video",
+  "View > Spatial Video > Both Eyes Side by Side",
+  "View > Spatial Video > Left Eye",
+  "View > Spatial Video > Right Eye",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Fill Screen",
+  "Window > Show Movie Inspector",
+  "Window > Show Export Progress",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Help > QuickTime Player Help"
+ ],
+ "goals": {
+  "the video is sideways": [
+   "Edit > Rotate Right",
+   "Edit > Rotate Left"
+  ],
+  "turn the video a quarter turn to the left": [
+   "Edit > Rotate Left"
+  ],
+  "the video looks like a mirror, everything is backwards": [
+   "Edit > Flip Horizontal"
+  ],
+  "flip the picture so the top is at the bottom": [
+   "Edit > Flip Vertical"
+  ],
+  "cut off the boring part at the beginning": [
+   "Edit > Trim…"
+  ],
+  "make the video shorter": [
+   "Edit > Trim…"
+  ],
+  "record my screen to show my grandson how to do something": [
+   "File > New Screen Recording"
+  ],
+  "record a voice message with the microphone": [
+   "File > New Audio Recording"
+  ],
+  "take a video of myself with the camera": [
+   "File > New Movie Recording"
+  ],
+  "open a video i have saved": [
+   "File > Open File…"
+  ],
+  "save this": [
+   "File > Save…"
+  ],
+  "make the video file small so I can email it": [
+   "File > Export As > 480p…"
+  ],
+  "I only want the sound from this video": [
+   "File > Export As > Audio Only…"
+  ],
+  "make a copy of this video": [
+   "File > Duplicate"
+  ],
+  "change the name of the video": [
+   "File > Rename…"
+  ],
+  "make the video fill the whole screen": [
+   "View > Enter Full Screen"
+  ],
+  "play it over and over": [
+   "View > Loop"
+  ],
+  "keep the video on top so it doesnt go behind my other windows": [
+   "View > Float on Top"
+  ],
+  "turn off the words at the bottom": [
+   "View > Subtitles > Off"
+  ],
+  "skip to the next part of the movie": [
+   "View > Next Chapter"
+  ],
+  "go back to the part before": [
+   "View > Previous Chapter"
+  ],
+  "take the sound out of the video": [
+   "Edit > Remove Audio"
+  ],
+  "cut the video into two pieces here": [
+   "Edit > Split Clip"
+  ],
+  "add another video to the end of this one": [
+   "Edit > Add Clip to End..."
+  ],
+  "undo that": [
+   "Edit > Undo"
+  ],
+  "show the video at its real size": [
+   "View > Actual Size"
+  ],
+  "how long is this video and how big is the file": [
+   "Window > Show Movie Inspector"
+  ],
+  "move the video to a different folder": [
+   "File > Move To…"
+  ],
+  "pa-record naman ng screen ko": [
+   "File > New Screen Recording"
+  ],
+  "paano i-ikot yung video, nakatagilid": [
+   "Edit > Rotate Left",
+   "Edit > Rotate Right"
+  ],
+  "i-save mo ng mas maliit para ma-send sa viber": [
+   "File > Export As > 720p…"
+  ],
+  "save it in good HD quality": [
+   "File > Export As > 1080p…"
+  ],
+  "close the video": [
+   "File > Close"
+  ]
+ }
+}

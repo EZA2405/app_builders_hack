@@ -1,0 +1,234 @@
+{
+ "app": "Activity Monitor",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "Activity Monitor > About Activity Monitor",
+  "Activity Monitor > Services > Activity Monitor",
+  "Activity Monitor > Services > Allocations & Leaks",
+  "Activity Monitor > Services > File Activity",
+  "Activity Monitor > Services > System Trace",
+  "Activity Monitor > Services > Services Settings…",
+  "Activity Monitor > Hide Activity Monitor",
+  "Activity Monitor > Hide Others",
+  "Activity Monitor > Show All",
+  "Activity Monitor > Quit Activity Monitor",
+  "Activity Monitor > Quit and Keep Windows",
+  "File > Close",
+  "File > Close All",
+  "File > Page Setup…",
+  "File > Print…",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Delete",
+  "Edit > Select All",
+  "Edit > Find > Find…",
+  "Edit > Find > Find Next",
+  "Edit > Find > Find Previous",
+  "Edit > Find > Use Selection for Find",
+  "Edit > Find > Jump to Selection",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "View > Columns > Process ID",
+  "View > Columns > User",
+  "View > Columns > % CPU",
+  "View > Columns > CPU Time",
+  "View > Columns > % GPU",
+  "View > Columns > GPU Time",
+  "View > Columns > # Threads",
+  "View > Columns > # Ports",
+  "View > Columns > Real Memory",
+  "View > Columns > Real Private Memory",
+  "View > Columns > Real Shared Memory",
+  "View > Columns > Kind",
+  "View > Columns > Sudden Termination",
+  "View > Columns > Sandbox",
+  "View > Columns > Restricted",
+  "View > Columns > Idle Wake Ups",
+  "View > Columns > Energy Impact",
+  "View > Columns > App Nap",
+  "View > Columns > Sent Bytes",
+  "View > Columns > Sent Packets",
+  "View > Columns > Received Bytes",
+  "View > Columns > Received Packets",
+  "View > Columns > Purgeable Memory",
+  "View > Columns > Memory",
+  "View > Columns > Compressed Memory",
+  "View > Columns > Bytes Written",
+  "View > Columns > Bytes Read",
+  "View > Columns > Preventing Sleep",
+  "View > Dock Icon > Show CPU Usage",
+  "View > Dock Icon > Show CPU History",
+  "View > Dock Icon > Show Network Usage",
+  "View > Dock Icon > Show Disk Activity",
+  "View > Dock Icon > Show Application Icon",
+  "View > Update Frequency > Very often (1 sec)",
+  "View > Update Frequency > Often (2 sec)",
+  "View > Update Frequency > Normally (5 sec)",
+  "View > All Processes",
+  "View > All Processes, Hierarchically",
+  "View > My Processes",
+  "View > System Processes",
+  "View > Other Users’ Processes",
+  "View > Active Processes",
+  "View > Inactive Processes",
+  "View > GPU Processes",
+  "View > Windowed Processes",
+  "View > Selected Processes",
+  "View > Applications in last 12 hours",
+  "View > Processes, by GPU",
+  "View > Filter Processes",
+  "View > Inspect Process",
+  "View > Sample Process",
+  "View > Run Spindump",
+  "View > Run System Diagnostics…",
+  "View > Quit Process",
+  "View > Send Signal to Process…",
+  "View > Show Deltas for Process",
+  "View > Clear CPU History",
+  "View > Enter Full Screen",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Help > Activity Monitor Help"
+ ],
+ "goals": {
+  "my computer is frozen, close this stuck program": [
+   "View > Quit Process"
+  ],
+  "force this app to stop it wont respond": [
+   "View > Quit Process"
+  ],
+  "look for a program in the list": [
+   "View > Filter Processes",
+   "Edit > Find > Find…"
+  ],
+  "what's slowing down my computer, tell me more about this one": [
+   "View > Inspect Process"
+  ],
+  "only show my own stuff": [
+   "View > My Processes"
+  ],
+  "show everything that's running": [
+   "View > All Processes"
+  ],
+  "only show the apps i have open": [
+   "View > Windowed Processes"
+  ],
+  "what was i using today": [
+   "View > Applications in last 12 hours"
+  ],
+  "update the numbers faster": [
+   "View > Update Frequency > Very often (1 sec)"
+  ],
+  "it keeps jumping around, slow it down": [
+   "View > Update Frequency > Normally (5 sec)"
+  ],
+  "show how busy the computer is on the dock icon": [
+   "View > Dock Icon > Show CPU Usage"
+  ],
+  "put the normal app picture back on the dock": [
+   "View > Dock Icon > Show Application Icon"
+  ],
+  "print this list": [
+   "File > Print…"
+  ],
+  "pa-print naman": [
+   "File > Print…"
+  ],
+  "set up the paper size before printing": [
+   "File > Page Setup…"
+  ],
+  "which app is draining my battery": [
+   "View > Columns > Energy Impact"
+  ],
+  "add a column for how much memory": [
+   "View > Columns > Memory"
+  ],
+  "what is stopping my mac from going to sleep": [
+   "View > Columns > Preventing Sleep"
+  ],
+  "show which user is running it": [
+   "View > Columns > User"
+  ],
+  "how much internet data each one sends out": [
+   "View > Columns > Sent Bytes"
+  ],
+  "erase the cpu graph and start over": [
+   "View > Clear CPU History"
+  ],
+  "apple support asked me to make a report of my mac": [
+   "View > Run System Diagnostics…"
+  ],
+  "full screen": [
+   "View > Enter Full Screen"
+  ],
+  "close the window": [
+   "File > Close"
+  ],
+  "im done, quit this": [
+   "Activity Monitor > Quit Activity Monitor"
+  ],
+  "pakita lahat ng tumatakbo": [
+   "View > All Processes"
+  ],
+  "hide this app for now": [
+   "Activity Monitor > Hide Activity Monitor"
+  ],
+  "just show the ones that are doing something right now": [
+   "View > Active Processes"
+  ],
+  "show the ones using the graphics": [
+   "View > GPU Processes"
+  ],
+  "paano makita kung gaano kabigat sa memory": [
+   "View > Columns > Memory"
+  ],
+  "pa-minimize nga": [
+   "Window > Minimize"
+  ]
+ }
+}

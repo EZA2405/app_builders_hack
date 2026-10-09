@@ -1,0 +1,263 @@
+{
+ "app": "Reminders",
+ "source": "teacher goals (Claude Opus) over sanitized real menus; training app",
+ "commands": [
+  "Reminders > About Reminders",
+  "Reminders > Settings…",
+  "Reminders > Services > Activity Monitor",
+  "Reminders > Services > Allocations & Leaks",
+  "Reminders > Services > File Activity",
+  "Reminders > Services > System Trace",
+  "Reminders > Services > Services Settings…",
+  "Reminders > Hide Reminders",
+  "Reminders > Hide Others",
+  "Reminders > Show All",
+  "Reminders > Quit Reminders",
+  "Reminders > Quit and Keep Windows",
+  "File > New Reminder",
+  "File > New List",
+  "File > New Group",
+  "File > New Section",
+  "File > New Section with Selection",
+  "File > Edit Sections…",
+  "File > Auto-Categorize",
+  "File > Pin List",
+  "File > Share List",
+  "File > Manage Shared List",
+  "File > Convert to Smart List",
+  "File > Create Smart List",
+  "File > View Templates",
+  "File > Save as Template…",
+  "File > Show Info",
+  "File > Close",
+  "File > Close All",
+  "File > Print…",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Paste",
+  "Edit > Delete",
+  "Edit > Select All",
+  "Edit > Mark Due Date As > None",
+  "Edit > Mark Due Date As > Today",
+  "Edit > Mark Due Date As > Tomorrow",
+  "Edit > Mark Due Date As > This Weekend",
+  "Edit > Mark Due Date As > Next Week",
+  "Edit > Mark Due Date As > Mark All Overdue to Today",
+  "Edit > Mark as Urgent",
+  "Edit > Mark as Completed",
+  "Edit > Indent Reminder",
+  "Edit > Outdent Reminder",
+  "Edit > Assign",
+  "Edit > Flag",
+  "Edit > Priority > None",
+  "Edit > Priority > Low",
+  "Edit > Priority > Medium",
+  "Edit > Priority > High",
+  "Edit > Tags > Add Tag…",
+  "Edit > Find",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > Spelling and Grammar > Show Spelling and Grammar",
+  "Edit > Spelling and Grammar > Check Document Now",
+  "Edit > Spelling and Grammar > Check Spelling While Typing",
+  "Edit > Spelling and Grammar > Check Grammar With Spelling",
+  "Edit > Spelling and Grammar > Correct Spelling Automatically",
+  "Edit > Substitutions > Show Substitutions",
+  "Edit > Substitutions > Smart Copy/Paste",
+  "Edit > Substitutions > Smart Quotes",
+  "Edit > Substitutions > Smart Dashes",
+  "Edit > Substitutions > Smart Links",
+  "Edit > Substitutions > Data Detectors",
+  "Edit > Substitutions > Text Replacement",
+  "Edit > Transformations > Make Upper Case",
+  "Edit > Transformations > Make Lower Case",
+  "Edit > Transformations > Capitalize",
+  "Edit > Speech > Start Speaking",
+  "Edit > Speech > Stop Speaking",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "View > as List",
+  "View > as Columns",
+  "View > Go To > Today",
+  "View > Go To > Scheduled",
+  "View > Go To > All",
+  "View > Go To > Completed",
+  "View > Show Smart List > Today",
+  "View > Show Smart List > Scheduled",
+  "View > Show Smart List > All",
+  "View > Show Smart List > Flagged",
+  "View > Show Smart List > Assigned",
+  "View > Show Smart List > Completed",
+  "View > Show Smart List > Urgent",
+  "View > Group by Time",
+  "View > Show Completed",
+  "View > Show All Subtasks",
+  "View > Hide All Subtasks",
+  "View > Show Sidebar",
+  "View > Enter Full Screen",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Help > Reminders Help",
+  "Help > Using Tags",
+  "Help > Creating Smart Lists"
+ ],
+ "goals": {
+  "remind me to take my pills": [
+   "File > New Reminder"
+  ],
+  "add something to my to do list": [
+   "File > New Reminder"
+  ],
+  "start a separate list for groceries": [
+   "File > New List"
+  ],
+  "paano gumawa ng bagong listahan": [
+   "File > New List"
+  ],
+  "check this off, i did it": [
+   "Edit > Mark as Completed"
+  ],
+  "tapos na to, pa-check": [
+   "Edit > Mark as Completed"
+  ],
+  "get rid of this one": [
+   "Edit > Delete"
+  ],
+  "undo that": [
+   "Edit > Undo"
+  ],
+  "i ticked the wrong one by accident, put it back": [
+   "Edit > Undo"
+  ],
+  "I need to do this one today": [
+   "Edit > Mark Due Date As > Today"
+  ],
+  "push this to tomorrow": [
+   "Edit > Mark Due Date As > Tomorrow"
+  ],
+  "ill do it saturday or sunday": [
+   "Edit > Mark Due Date As > This Weekend"
+  ],
+  "not this week, move it to next week": [
+   "Edit > Mark Due Date As > Next Week"
+  ],
+  "i missed a bunch, move all the late ones to today": [
+   "Edit > Mark Due Date As > Mark All Overdue to Today"
+  ],
+  "this one is really important": [
+   "Edit > Priority > High"
+  ],
+  "lagyan mo ng high priority to": [
+   "Edit > Priority > High"
+  ],
+  "put a little marker on this so I notice it": [
+   "Edit > Flag"
+  ],
+  "this cant wait, i need an alarm that really gets my attention": [
+   "Edit > Mark as Urgent"
+  ],
+  "let my son see and add to my shopping list": [
+   "File > Share List"
+  ],
+  "keep this list up top where i can find it": [
+   "File > Pin List"
+  ],
+  "make this a smaller step under the one above it": [
+   "Edit > Indent Reminder"
+  ],
+  "where is the one about the electric bill": [
+   "Edit > Find"
+  ],
+  "put my list on paper to take to the store": [
+   "File > Print…"
+  ],
+  "pa-print ng listahan ko": [
+   "File > Print…"
+  ],
+  "what do i need to do today": [
+   "View > Show Smart List > Today",
+   "View > Go To > Today"
+  ],
+  "show me everything I have to do, all of it": [
+   "View > Show Smart List > All",
+   "View > Go To > All"
+  ],
+  "show me the ones i already finished": [
+   "View > Go To > Completed",
+   "View > Show Smart List > Completed"
+  ],
+  "show just the ones i marked to notice": [
+   "View > Show Smart List > Flagged"
+  ],
+  "whats coming up and on which days": [
+   "View > Go To > Scheduled",
+   "View > Show Smart List > Scheduled"
+  ],
+  "split my grocery list into parts like fruit and dairy": [
+   "File > New Section"
+  ],
+  "sort my grocery items into groups for me automatically": [
+   "File > Auto-Categorize"
+  ],
+  "the lists on the left side disappeared": [
+   "View > Show Sidebar"
+  ],
+  "read this out loud for me": [
+   "Edit > Speech > Start Speaking"
+  ],
+  "i'd rather talk than type": [
+   "Edit > Start Dictation…"
+  ],
+  "give this chore to someone else on the shared list": [
+   "Edit > Assign"
+  ],
+  "save this list so I can use it again every week": [
+   "File > Save as Template…"
+  ],
+  "make it fill the whole screen": [
+   "View > Enter Full Screen"
+  ]
+ }
+}
