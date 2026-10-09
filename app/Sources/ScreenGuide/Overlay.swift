@@ -11,6 +11,7 @@ final class OverlayModel: ObservableObject {
     @Published var label = ""                     // "STEP 1"
     @Published var instruction = ""               // may contain **bold** key word
     @Published var hint = ""
+    @Published var plan = ""                      // step 1 only: what we're doing overall (Apple on-device model)
     @Published var spotlight = false
     @Published var showDone = false               // text-entry steps: user says when they've typed
     @Published var arrowEdge: ArrowEdge = .none   // which card edge points at the ring
@@ -132,6 +133,14 @@ struct CardView: View {
                     Image(systemName: "hand.raised.fill").font(.system(size: 22, weight: .semibold)).foregroundStyle(Theme.warning)
                         .padding(.bottom, 2)
                 }
+                if !model.plan.isEmpty {
+                    Text(model.plan).font(Theme.small()).foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true).padding(.bottom, 2)
+                }
+                if model.mode == .confirmed {
+                    Image(systemName: "checkmark.circle.fill").font(.system(size: 26)).foregroundStyle(.white, Theme.success)
+                        .transition(.scale(scale: 0.5).combined(with: .opacity))
+                }
                 Text(styled(model.instruction, size: 26)).font(Theme.sentence()).tracking(-0.26)
                     .foregroundStyle(warning ? Color(hex: 0x1C1C1E) : .primary).fixedSize(horizontal: false, vertical: true)
                 if !model.hint.isEmpty, model.mode != .done {
@@ -193,7 +202,8 @@ struct CardView: View {
                 .map { ($0 as NSString).size(withAttributes: [.font: f]).width }.max() ?? 0
         }
         let text = max(w(model.instruction, 26, .heavy), model.mode == .done ? 0 : w(model.hint, 19, .regular))
-        return min(maxW, max(340 * Theme.scale, ceil(text) + 48))
+        let hasActions = [.guiding, .detour, .notSure].contains(model.mode)   // room for Not this one · Stop · speaker
+        return min(maxW, max((hasActions ? 340 : 160) * Theme.scale, ceil(text) + 48))
     }
 
     @ViewBuilder var actions: some View {

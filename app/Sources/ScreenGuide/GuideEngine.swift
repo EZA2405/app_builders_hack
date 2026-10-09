@@ -216,7 +216,7 @@ final class GuideEngine {
             }
         }
         if Task.isCancelled { return false }
-        await confirm()
+        await confirm(keepRing: !isFinal(c))
         return true
     }
 
@@ -246,17 +246,18 @@ final class GuideEngine {
                 if !clicks.isEmpty { log("MENU clicks=\(clicks.map { "(\(Int($0.x)),\(Int($0.y)))" }) level=\(level) target=\(target.map { "\($0)" } ?? "-")") }
                 if last, let t = target, clicks.contains(where: t.hit) {
                     try? await Task.sleep(nanoseconds: 400_000_000)
-                    await confirm(); return true
+                    await confirm(keepRing: false); return true
                 }
                 if openMenu != parts[0] { level = 0; continue }   // closed without choosing: start over, never "correct"
                 if let f = MenuProbe.itemFrame(app, path: Array(parts[0...level])) {
                     if !last, MenuProbe.itemFrame(app, path: Array(parts[0...level + 1])) != nil { level += 1; continue }
-                    target = f
+                    target = f   // the whole row counts as a hit
+                    let ring = f.insetBy(dx: 5, dy: 0)   // drawn inside the menu, like the system highlight
                     let name = parts[level]
                     let text = last ? "Click **\(name)**." : "Point to **\(name)**, then wait for the list."
-                    if overlay.model.target != f || overlay.model.instruction != text {
+                    if overlay.model.target != ring || overlay.model.instruction != text {
                         overlay.keepOut = MenuProbe.openMenuFrames(app)
-                        show(.guiding, label: "Step \(stepNo)", text: text, hint: last ? "" : "A second list will slide out.", target: f)
+                        show(.guiding, label: "Step \(stepNo)", text: text, hint: last ? "" : "A second list will slide out.", target: ring)
                     }
                 }
             }
@@ -271,9 +272,13 @@ final class GuideEngine {
         return MenuProbe.openMenuTitle(app) == nil
     }
 
-    private func confirm() async {
+    /// `keepRing`: false when the clicked thing just went away (a menu item, a button that closes its dialog);
+    /// a green ring floating over empty space looks like a mistake.
+    private func confirm(keepRing: Bool = true) async {
         overlay.keepOut = []
         let m = overlay.model
+        if !keepRing { m.target = nil }
+        m.plan = ""
         m.mode = .confirmed
         m.label = "Step \(stepNo) · Done"
         m.instruction = "That's right."
@@ -381,15 +386,15 @@ final class GuideEngine {
 
     func show(_ mode: OverlayModel.Mode, label: String, text: String, hint: String, target: CGRect?) {
         let m = overlay.model
-        var hint = hint
-        if mode == .guiding, stepNo == 1, let plan = planLine, !hint.contains(plan) { hint = plan + (hint.isEmpty ? "" : " " + hint) }
+        // The plan sentence sits above the step as a quiet caption on step 1 instead of lengthening the hint.
+        m.plan = mode == .guiding && stepNo == 1 ? (planLine ?? "") : ""
         m.mode = mode; m.label = label; m.instruction = text; m.hint = hint; m.target = target; m.spotlight = false
         m.showDone = mode == .guiding && hint.contains("Press Done")
         overlay.update()
         if mode == .guiding || mode == .detour || mode == .notSure { speak() }
     }
 
-    private func speak() { speakText(plain(overlay.model.instruction) + " " + plain(overlay.model.hint)) }
+    private func speak() { let m = overlay.model; speakText([m.plan, plain(m.instruction), plain(m.hint)].filter { !$0.isEmpty }.joined(separator: " ")) }
 
     func speakText(_ s: String) {
         guard readAloud else { return }
