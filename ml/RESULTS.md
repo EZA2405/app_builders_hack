@@ -17,6 +17,7 @@ Given a non-technical user's goal and the app's real command list (menu tree + t
 | Laya (base, 421M) | Local-capable (measured on Colab T4 and M4) | Real menus, 16-wide tournament | 8/35 | ~0.66 s (T4), ~1.9 s (M4) | 2026-10-09 |
 | **Laya fine-tuned v1** (teacher data, 3 epochs) | Local-capable (trained + measured on Colab T4) | Same | **25/35** | ~0.65 s (T4) | 2026-10-09 |
 | **Laya fine-tuned v3** (12,284 rows: 39 apps, traps, paraphrases, mined hard negatives, 19 websites; hard labels, 3 epochs) | Local-capable (trained + measured on Colab T4) | Same | **26/35** | 0.55–1.08 s (T4) | 2026-10-09 |
+| **Laya fine-tuned v4e5** (v3 data + 422 mined rows from the newer apps; **5 epochs**) | Local-capable (trained + measured on Modal H100) | Same | **29/35** | 16 min training (H100) | 2026-10-09 |
 | **Laya fine-tuned v1**, same checkpoint on the Mac | **Local (Apple M4, MPS)** | Same | **25/35** (reproduced) | 1.2–2.2 s (≈15 sequential calls per decision) | 2026-10-09 |
 | Qwen3.5-4B via local-jev | Local | Real menus | _pending_ | | |
 
@@ -70,7 +71,7 @@ Sites: YouTube, Wikipedia, Shopee and PhilHealth. PhilHealth includes 8 second-p
 Reproduce: `for f in fixtures/web_test/*.json; do python3 bench_localjev.py --url http://127.0.0.1:8766 --model guide-v1 --group 16 --fixture $f; done`
 
 ## Full-tournament validation (model selection)
-127 goals across 4 apps never trained on (`fixtures/val/`). **v1: 79/127 (62.2%). v3: 95/127 (74.8%)**:
+127 goals across 4 apps never trained on (`fixtures/val/`). **v1: 79/127 (62.2%). v3: 95/127 (74.8%). v4e5: 98/127 (77.2%)**; web held-out v4e5 28/45. v3 per app:
 - Activity Monitor 22/30
 - Disk Utility 29/35
 - Numbers 20/31
