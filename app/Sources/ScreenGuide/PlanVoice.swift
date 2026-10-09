@@ -249,7 +249,7 @@ enum CommandCheck {
 struct StepLine {
     @Guide(description: "One short, warm instruction for an older person (max 12 words) telling them to click the control. Include the control's exact name once, wrapped in ** like **Search**.")
     var sentence: String
-    @Guide(description: "An optional second short sentence (max 12 words): where it is on the screen, or what will happen. Empty if not needed. No ** in it.")
+    @Guide(description: "Leave empty.")
     var hint: String
 }
 
@@ -260,8 +260,24 @@ enum StepVoice {
 
     static func reset() { session = nil; sessionGoal = "" }
 
+    /// Plain names for control types: the model copied "combobox" straight into the card.
+    static func plainRole(_ role: String) -> String {
+        switch role.lowercased() {
+        case "combobox", "combo box", "searchbox", "search field", "textbox", "text field", "text area": return "box"
+        case "pop-up menu", "menu button": return "drop-down list"
+        case "option", "list choice", "menuitem", "menu item": return "choice in a list"
+        case "row": return "item in the list"
+        case "switch", "checkbox": return "switch"
+        default: return role
+        }
+    }
+
+    /// Only the main sentence comes from the model; where it is comes from the real position (`position`),
+    /// because the model invented locations ("on the left side") and dropped "then press Enter".
     static func line(goal: String, place: String, step: Int, label: String, role: String, position: String) async -> (String, String)? {
         guard PlanVoice.available, !label.isEmpty else { return nil }
+        // Typing steps keep the exact instruction (click, type, press Enter): a click alone doesn't finish them.
+        if ["combobox", "combo box", "searchbox", "search field", "textbox", "text field", "text area"].contains(role.lowercased()) { return nil }
         if session == nil || sessionGoal != goal {
             sessionGoal = goal
             session = LanguageModelSession(instructions: """
@@ -273,7 +289,7 @@ enum StepVoice {
             """)
         }
         guard let session else { return nil }
-        let prompt = "They want: \(goal)\nThey are in: \(place)\nStep \(step). Control: \(role) named \"\(label)\"\(position.isEmpty ? "" : ", \(position)")."
+        let prompt = "They want: \(goal)\nThey are in: \(place)\nStep \(step). Control: \(plainRole(role)) named \"\(label)\"."
         let task = Task { try? await session.respond(to: prompt, generating: StepLine.self,
                                                      options: GenerationOptions(temperature: 0.6)).content }
         let timeout = Task { try? await Task.sleep(nanoseconds: 1_300_000_000); task.cancel() }
@@ -288,7 +304,12 @@ enum StepVoice {
         if !sentence.contains("**") {   // add the bold the model forgot
             if let range = sentence.range(of: label, options: .caseInsensitive) { sentence.replaceSubrange(range, with: "**\(sentence[range])**") }
         }
-        return (sentence, r.hint.replacingOccurrences(of: "**", with: ""))
+        for (jargon, plain) in [("combobox", "box"), ("combo box", "box"), ("textbox", "box"), ("text field", "box"),
+                                ("searchbox", "search box"), ("menuitem", "menu item"), (" element", "")] {
+            sentence = sentence.replacingOccurrences(of: jargon, with: plain, options: .caseInsensitive)
+        }
+        // Where it is: always the measured position, never the model's guess.
+        return (sentence, position.isEmpty ? "" : "It's \(position).")
     }
 }
 
