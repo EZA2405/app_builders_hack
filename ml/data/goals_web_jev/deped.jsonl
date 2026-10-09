@@ -1,0 +1,38 @@
+{"goal": "Search the DepEd website for the school calendar", "page": "deped", "done": []}
+{"goal": "How do I contact DepEd?", "page": "deped", "done": []}
+{"goal": "Show me the latest DepEd orders", "page": "deped", "done": []}
+{"goal": "san makikita yung mga deped memo", "page": "deped", "done": []}
+{"goal": "I want to know more about the Alternative Learning System for adults", "page": "deped", "done": []}
+{"goal": "Find the DepEd office for my region", "page": "deped", "done": []}
+{"goal": "Where are DepEd's learning resources?", "page": "deped", "done": []}
+{"goal": "I want to read the latest news from DepEd", "page": "deped", "done": []}
+{"goal": "Make the text bigger, I can't read it well", "page": "deped", "done": []}
+{"goal": "Open the Learning Management System", "page": "deped", "done": []}
+{"goal": "Search DepEd for enrollment requirements", "page": "deped__1", "done": ["clicked link \"About\""]}
+{"goal": "Show me the events for today on the calendar", "page": "deped__1", "done": ["clicked link \"About\""]}
+{"goal": "I want to see the calendar by week instead", "page": "deped__1", "done": ["clicked link \"About\""]}
+{"goal": "pano mag contact sa deped central office", "page": "deped__1", "done": ["clicked link \"About\""]}
+{"goal": "Show me information about the K to 12 program", "page": "deped__1", "done": ["clicked link \"About\""]}
+{"goal": "Go to the regional offices list", "page": "deped__1", "done": ["clicked link \"About\""]}
+{"goal": "Go to the next month in the calendar", "page": "deped__1", "done": ["clicked link \"About\""]}
+{"goal": "Go back to the DepEd home page", "page": "deped__1", "done": ["clicked link \"About\""]}
+{"goal": "Show me the list of DepEd officials and their contact details", "page": "deped__2", "done": ["clicked link \"transparency seal logo\""]}
+{"goal": "I want to read DepEd's mandate, vision and mission", "page": "deped__2", "done": ["clicked link \"transparency seal logo\""]}
+{"goal": "Search the site for the budget report", "page": "deped__2", "done": ["clicked link \"transparency seal logo\""]}
+{"goal": "pakita yung procurement ng deped", "page": "deped__2", "done": ["clicked link \"transparency seal logo\""]}
+{"goal": "Go back to the home page", "page": "deped__2", "done": ["clicked link \"transparency seal logo\""]}
+{"goal": "How do I reach DepEd by phone or email?", "page": "deped__2", "done": ["clicked link \"transparency seal logo\""]}
+{"goal": "Show me the older news, page 2", "page": "deped__3", "done": ["clicked link \"IN THE NEWS\""]}
+{"goal": "Filter the news by year", "page": "deped__3", "done": ["clicked link \"IN THE NEWS\""]}
+{"goal": "I want to see the news from last month only", "page": "deped__3", "done": ["clicked link \"IN THE NEWS\""]}
+{"goal": "search ko lang yung balita tungkol sa enrollment", "page": "deped__3", "done": ["clicked link \"IN THE NEWS\""]}
+{"goal": "Go back to the DepEd home page", "page": "deped__3", "done": ["clicked link \"IN THE NEWS\""]}
+{"goal": "Jump to the last page of news", "page": "deped__3", "done": ["clicked link \"IN THE NEWS\""]}
+{"goal": "Open the Contact Us page", "page": "deped__3", "done": ["clicked link \"IN THE NEWS\""]}
+{"goal": "Search the DepEd site for scholarship programs", "page": "deped__4", "done": ["clicked link \"ONE EDUCATION PINALAKAS ANG LEARNER SUPPORT, PINALAWAK ANG PATHWAYS MULA EDUKASY\""]}
+{"goal": "Show me all the press releases", "page": "deped__4", "done": ["clicked link \"ONE EDUCATION PINALAKAS ANG LEARNER SUPPORT, PINALAWAK ANG PATHWAYS MULA EDUKASY\""]}
+{"goal": "Take me to the DepEd home page", "page": "deped__4", "done": ["clicked link \"ONE EDUCATION PINALAKAS ANG LEARNER SUPPORT, PINALAWAK ANG PATHWAYS MULA EDUKASY\""]}
+{"goal": "pano ko makokontak ang deped", "page": "deped__4", "done": ["clicked link \"ONE EDUCATION PINALAKAS ANG LEARNER SUPPORT, PINALAWAK ANG PATHWAYS MULA EDUKASY\""]}
+{"goal": "Find the DepEd office in my region", "page": "deped__4", "done": ["clicked link \"ONE EDUCATION PINALAKAS ANG LEARNER SUPPORT, PINALAWAK ANG PATHWAYS MULA EDUKASY\""]}
+{"goal": "Show me the K to 12 information", "page": "deped__4", "done": ["clicked link \"ONE EDUCATION PINALAKAS ANG LEARNER SUPPORT, PINALAWAK ANG PATHWAYS MULA EDUKASY\""]}
+{"goal": "I want to make the page easier to read", "page": "deped__4", "done": ["clicked link \"ONE EDUCATION PINALAKAS ANG LEARNER SUPPORT, PINALAWAK ANG PATHWAYS MULA EDUKASY\""]}

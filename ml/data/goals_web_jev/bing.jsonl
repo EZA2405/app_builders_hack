@@ -1,0 +1,43 @@
+{"goal": "I want to search for the nearest hospital", "page": "bing", "done": []}
+{"goal": "Change the language to Filipino", "page": "bing", "done": []}
+{"goal": "Sign in to my Microsoft account", "page": "bing", "done": []}
+{"goal": "Show me pictures of adobo", "page": "bing", "done": []}
+{"goal": "I want to look at a map for directions", "page": "bing", "done": []}
+{"goal": "Show me the weather forecast for this week", "page": "bing", "done": []}
+{"goal": "pano mag search ng videos dito", "page": "bing", "done": []}
+{"goal": "Show me the news", "page": "bing", "done": []}
+{"goal": "I need help using Bing", "page": "bing", "done": []}
+{"goal": "Change the settings of the page", "page": "bing", "done": []}
+{"goal": "Switch the language back to English", "page": "bing__1", "done": ["clicked link \"Filipino\""]}
+{"goal": "Type what I want to search", "page": "bing__1", "done": ["clicked link \"Filipino\""]}
+{"goal": "Sign in to my account", "page": "bing__1", "done": ["clicked link \"Filipino\""]}
+{"goal": "maghanap ng larawan ng bulaklak", "page": "bing__1", "done": ["clicked link \"Filipino\""]}
+{"goal": "Open the map", "page": "bing__1", "done": ["clicked link \"Filipino\""]}
+{"goal": "Show the full weather forecast", "page": "bing__1", "done": ["clicked link \"Filipino\""]}
+{"goal": "I want to read the news", "page": "bing__1", "done": ["clicked link \"Filipino\""]}
+{"goal": "Where is the help page?", "page": "bing__1", "done": ["clicked link \"Filipino\""]}
+{"goal": "Type what picture I want to find", "page": "bing__2", "done": ["clicked link \"Images\""]}
+{"goal": "Search using a picture I have", "page": "bing__2", "done": ["clicked link \"Images\""]}
+{"goal": "I want to search by speaking instead of typing", "page": "bing__2", "done": ["clicked link \"Images\""]}
+{"goal": "Show me travel pictures", "page": "bing__2", "done": ["clicked link \"Images\""]}
+{"goal": "patingin ng mga pictures ng sasakyan", "page": "bing__2", "done": ["clicked link \"Images\""]}
+{"goal": "Go to maps instead", "page": "bing__2", "done": ["clicked link \"Images\""]}
+{"goal": "Sign in to my account", "page": "bing__2", "done": ["clicked link \"Images\""]}
+{"goal": "Show me news", "page": "bing__2", "done": ["clicked link \"Images\""]}
+{"goal": "Show me pictures of animals", "page": "bing__2", "done": ["clicked link \"Images\""]}
+{"goal": "Search for cooking videos", "page": "bing__3", "done": ["clicked link \"Videos\""]}
+{"goal": "I want to search by talking", "page": "bing__3", "done": ["clicked link \"Videos\""]}
+{"goal": "Switch the page to English", "page": "bing__3", "done": ["clicked link \"Videos\""]}
+{"goal": "Open Copilot so I can ask a question", "page": "bing__3", "done": ["clicked link \"Videos\""]}
+{"goal": "san ko makikita weather bukas", "page": "bing__3", "done": ["clicked link \"Videos\""]}
+{"goal": "Show me pictures instead", "page": "bing__3", "done": ["clicked link \"Videos\""]}
+{"goal": "Sign in to my account", "page": "bing__3", "done": ["clicked link \"Videos\""]}
+{"goal": "Open the map", "page": "bing__3", "done": ["clicked link \"Videos\""]}
+{"goal": "Search for SM Megamall on the map", "page": "bing__4", "done": ["clicked link \"Maps\""]}
+{"goal": "I need directions from my house to the hospital", "page": "bing__4", "done": ["clicked link \"Maps\""]}
+{"goal": "Show where I am right now", "page": "bing__4", "done": ["clicked link \"Maps\""]}
+{"goal": "Is there heavy traffic right now?", "page": "bing__4", "done": ["clicked link \"Maps\""]}
+{"goal": "Make the map bigger, zoom in", "page": "bing__4", "done": ["clicked link \"Maps\""]}
+{"goal": "zoom out ng konti", "page": "bing__4", "done": ["clicked link \"Maps\""]}
+{"goal": "Change the map style to satellite", "page": "bing__4", "done": ["clicked link \"Maps\""]}
+{"goal": "Sign in to my account", "page": "bing__4", "done": ["clicked link \"Maps\""]}

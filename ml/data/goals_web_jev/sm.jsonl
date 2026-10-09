@@ -1,0 +1,41 @@
+{"goal": "What time does the mall open today?", "page": "sm", "done": []}
+{"goal": "I want to see the list of SM malls", "page": "sm", "done": []}
+{"goal": "anong oras sarado ng SM", "page": "sm", "done": []}
+{"goal": "Where can I watch a movie at SM?", "page": "sm", "done": []}
+{"goal": "Show me the current sales and promos", "page": "sm", "done": []}
+{"goal": "I want to apply for a job at SM", "page": "sm", "done": []}
+{"goal": "How do I contact SM customer service?", "page": "sm", "done": []}
+{"goal": "Search for a mall near me", "page": "sm", "done": []}
+{"goal": "Where can I renew my government IDs at the mall?", "page": "sm", "done": []}
+{"goal": "I want to rent a space for my small business in SM", "page": "sm", "done": []}
+{"goal": "Check the mall hours", "page": "sm__1", "done": ["clicked link \"SM Supermalls\""]}
+{"goal": "Show me the directory of all malls", "page": "sm__1", "done": ["clicked link \"SM Supermalls\""]}
+{"goal": "Find a mall using my location", "page": "sm__1", "done": ["clicked link \"SM Supermalls\""]}
+{"goal": "may sale ba ngayon sa SM", "page": "sm__1", "done": ["clicked link \"SM Supermalls\""]}
+{"goal": "I want to buy cinema tickets", "page": "sm__1", "done": ["clicked link \"SM Supermalls\""]}
+{"goal": "Contact SM by email", "page": "sm__1", "done": ["clicked link \"SM Supermalls\""]}
+{"goal": "What are the hours of SM Megamall?", "page": "sm__2", "done": ["clicked link \"MALL HOURS\""]}
+{"goal": "Show malls in Mindanao", "page": "sm__2", "done": ["clicked link \"MALL HOURS\""]}
+{"goal": "Find the mall closest to me", "page": "sm__2", "done": ["clicked link \"MALL HOURS\""]}
+{"goal": "anong oras bukas SM North Edsa", "page": "sm__2", "done": ["clicked link \"MALL HOURS\""]}
+{"goal": "Show me malls in Visayas", "page": "sm__2", "done": ["clicked link \"MALL HOURS\""]}
+{"goal": "What time does SM Mall of Asia close?", "page": "sm__2", "done": ["clicked link \"MALL HOURS\""]}
+{"goal": "Look for a mall by typing its name", "page": "sm__2", "done": ["clicked link \"MALL HOURS\""]}
+{"goal": "Show the malls in North Luzon", "page": "sm__2", "done": ["clicked link \"MALL HOURS\""]}
+{"goal": "I want to contact SM", "page": "sm__2", "done": ["clicked link \"MALL HOURS\""]}
+{"goal": "Show only the malls in Metro Manila", "page": "sm__3", "done": ["clicked link \"MALL DIRECTORY\""]}
+{"goal": "I want to see the details of SM Aura", "page": "sm__3", "done": ["clicked link \"MALL DIRECTORY\""]}
+{"goal": "Show me the malls in South Luzon", "page": "sm__3", "done": ["clicked link \"MALL DIRECTORY\""]}
+{"goal": "Show the next page of malls", "page": "sm__3", "done": ["clicked link \"MALL DIRECTORY\""]}
+{"goal": "Clear the filters I picked", "page": "sm__3", "done": ["clicked link \"MALL DIRECTORY\""]}
+{"goal": "hanapin ko yung SM sa may visayas", "page": "sm__3", "done": ["clicked link \"MALL DIRECTORY\""]}
+{"goal": "Type the name of the mall I am looking for", "page": "sm__3", "done": ["clicked link \"MALL DIRECTORY\""]}
+{"goal": "Show all malls again", "page": "sm__3", "done": ["clicked link \"MALL DIRECTORY\""]}
+{"goal": "Show me more deals", "page": "sm__4", "done": ["clicked link \"TECH & PLAY\""]}
+{"goal": "Where are the eyeglass promos?", "page": "sm__4", "done": ["clicked link \"TECH & PLAY\""]}
+{"goal": "I want to see the toy guitar deal for my grandson", "page": "sm__4", "done": ["clicked link \"TECH & PLAY\""]}
+{"goal": "show pa ibang deals", "page": "sm__4", "done": ["clicked link \"TECH & PLAY\""]}
+{"goal": "Go back to the SM home page", "page": "sm__4", "done": ["clicked link \"TECH & PLAY\""]}
+{"goal": "I want to contact SM customer care", "page": "sm__4", "done": ["clicked link \"TECH & PLAY\""]}
+{"goal": "Show the list of SM malls", "page": "sm__4", "done": ["clicked link \"TECH & PLAY\""]}
+{"goal": "Where can I buy SM Cinema tickets?", "page": "sm__4", "done": ["clicked link \"TECH & PLAY\""]}

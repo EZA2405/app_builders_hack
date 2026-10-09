@@ -1,0 +1,39 @@
+{"goal": "Log in to my Security Bank online banking", "page": "securitybank", "done": []}
+{"goal": "Find the nearest Security Bank branch or ATM", "page": "securitybank", "done": []}
+{"goal": "I want to open a savings account online", "page": "securitybank", "done": []}
+{"goal": "check ko status ng credit card application ko", "page": "securitybank", "done": []}
+{"goal": "Where can I see the status of my car loan application?", "page": "securitybank", "done": []}
+{"goal": "I want to book an appointment at a branch", "page": "securitybank", "done": []}
+{"goal": "Show me the bank's fees and charges", "page": "securitybank", "done": []}
+{"goal": "I need to update my contact information with the bank", "page": "securitybank", "done": []}
+{"goal": "Where can I pay my Security Bank credit card bill?", "page": "securitybank", "done": []}
+{"goal": "How do I report a suspected scam?", "page": "securitybank", "done": []}
+{"goal": "Apply for a business loan", "page": "securitybank__1", "done": ["clicked link \"Business\""]}
+{"goal": "Send a message to Security Bank", "page": "securitybank__1", "done": ["clicked link \"Business\""]}
+{"goal": "Visit the help center", "page": "securitybank__1", "done": ["clicked link \"Business\""]}
+{"goal": "magkano fees and charges nyo", "page": "securitybank__1", "done": ["clicked link \"Business\""]}
+{"goal": "Log in to DigiBanker for my business", "page": "securitybank__1", "done": ["clicked link \"Business\""]}
+{"goal": "Find a branch", "page": "securitybank__1", "done": ["clicked link \"Business\""]}
+{"goal": "Show me the business promos", "page": "securitybank__1", "done": ["clicked link \"Business\""]}
+{"goal": "I want to talk to someone about investing", "page": "securitybank__2", "done": ["clicked link \"Wealth\""]}
+{"goal": "Show me info about UITF investments", "page": "securitybank__2", "done": ["clicked link \"Wealth\""]}
+{"goal": "Where can I buy Retail Treasury Bonds?", "page": "securitybank__2", "done": ["clicked link \"Wealth\""]}
+{"goal": "pano mag open ng time deposit", "page": "securitybank__2", "done": ["clicked link \"Wealth\""]}
+{"goal": "Visit the help centre", "page": "securitybank__2", "done": ["clicked link \"Wealth\""]}
+{"goal": "Log in to my account", "page": "securitybank__2", "done": ["clicked link \"Wealth\""]}
+{"goal": "Find a branch near me", "page": "securitybank__2", "done": ["clicked link \"Wealth\""]}
+{"goal": "What IDs do I need to open an account?", "page": "securitybank__3", "done": ["clicked link \"Accounts\""]}
+{"goal": "Show me the Easy Savings Account", "page": "securitybank__3", "done": ["clicked link \"Accounts\""]}
+{"goal": "I want to open a dollar savings account", "page": "securitybank__3", "done": ["clicked link \"Accounts\""]}
+{"goal": "pwede ba mag open ng account para sa anak ko", "page": "securitybank__3", "done": ["clicked link \"Accounts\""]}
+{"goal": "Download the Security Bank app", "page": "securitybank__3", "done": ["clicked link \"Accounts\""]}
+{"goal": "Show me the time deposit for pesos", "page": "securitybank__3", "done": ["clicked link \"Accounts\""]}
+{"goal": "Find out about the payroll account", "page": "securitybank__3", "done": ["clicked link \"Accounts\""]}
+{"goal": "Send a message to customer service", "page": "securitybank__3", "done": ["clicked link \"Accounts\""]}
+{"goal": "I want to open a BusinessPlus account", "page": "securitybank__4", "done": ["clicked link \"BusinessPlus Account\""]}
+{"goal": "Apply online for a business account", "page": "securitybank__4", "done": ["clicked link \"BusinessPlus Account\""]}
+{"goal": "Find a branch near me", "page": "securitybank__4", "done": ["clicked link \"BusinessPlus Account\""]}
+{"goal": "pano magbayad ng government dues online", "page": "securitybank__4", "done": ["clicked link \"BusinessPlus Account\""]}
+{"goal": "Show me how to transfer money", "page": "securitybank__4", "done": ["clicked link \"BusinessPlus Account\""]}
+{"goal": "Send the bank a message", "page": "securitybank__4", "done": ["clicked link \"BusinessPlus Account\""]}
+{"goal": "Log in to DigiBanker Pro", "page": "securitybank__4", "done": ["clicked link \"BusinessPlus Account\""]}

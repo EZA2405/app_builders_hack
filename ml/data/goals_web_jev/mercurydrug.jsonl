@@ -1,0 +1,39 @@
+{"goal": "Where is the nearest Mercury Drug store to me?", "page": "mercurydrug", "done": []}
+{"goal": "I want to order my maintenance medicine online", "page": "mercurydrug", "done": []}
+{"goal": "saan ko makikita yung points ko sa suki card", "page": "mercurydrug", "done": []}
+{"goal": "How do I get a Suki Card?", "page": "mercurydrug", "done": []}
+{"goal": "I want to read about the side effects of my medicine", "page": "mercurydrug", "done": []}
+{"goal": "Can I send medicine to my family in the province?", "page": "mercurydrug", "done": []}
+{"goal": "I want to buy a gift certificate for my friend", "page": "mercurydrug", "done": []}
+{"goal": "How do I contact Mercury Drug?", "page": "mercurydrug", "done": []}
+{"goal": "What is your return or exchange policy?", "page": "mercurydrug", "done": []}
+{"goal": "Find a Mercury Drug branch near our house", "page": "mercurydrug__1", "done": ["clicked link \"HOME\""]}
+{"goal": "paano mag order ng gamot online", "page": "mercurydrug__1", "done": ["clicked link \"HOME\""]}
+{"goal": "Check how many Suki points I have", "page": "mercurydrug__1", "done": ["clicked link \"HOME\""]}
+{"goal": "Look up information about a medicine", "page": "mercurydrug__1", "done": ["clicked link \"HOME\""]}
+{"goal": "I am looking for a job at Mercury Drug", "page": "mercurydrug__1", "done": ["clicked link \"HOME\""]}
+{"goal": "What services do your stores offer?", "page": "mercurydrug__1", "done": ["clicked link \"HOME\""]}
+{"goal": "I want to send a complaint by email", "page": "mercurydrug__2", "done": ["clicked link \"CONTACT US\""]}
+{"goal": "Go back to the home page", "page": "mercurydrug__2", "done": ["clicked link \"CONTACT US\""]}
+{"goal": "Find a store near me", "page": "mercurydrug__2", "done": ["clicked link \"CONTACT US\""]}
+{"goal": "I want to order medicine online instead", "page": "mercurydrug__2", "done": ["clicked link \"CONTACT US\""]}
+{"goal": "pano ko ma-check suki points ko", "page": "mercurydrug__2", "done": ["clicked link \"CONTACT US\""]}
+{"goal": "What does Gamot Padala mean?", "page": "mercurydrug__2", "done": ["clicked link \"CONTACT US\""]}
+{"goal": "Read the privacy policy", "page": "mercurydrug__2", "done": ["clicked link \"CONTACT US\""]}
+{"goal": "Which stores are open 24 hours?", "page": "mercurydrug__3", "done": ["clicked link \"STORE LOCATOR\""]}
+{"goal": "Show me the stores in Metro Manila", "page": "mercurydrug__3", "done": ["clicked link \"STORE LOCATOR\""]}
+{"goal": "I live in Cebu, show me Visayas branches", "page": "mercurydrug__3", "done": ["clicked link \"STORE LOCATOR\""]}
+{"goal": "may branch ba kayo sa mindanao", "page": "mercurydrug__3", "done": ["clicked link \"STORE LOCATOR\""]}
+{"goal": "Show me all the stores", "page": "mercurydrug__3", "done": ["clicked link \"STORE LOCATOR\""]}
+{"goal": "Are there any new stores that just opened?", "page": "mercurydrug__3", "done": ["clicked link \"STORE LOCATOR\""]}
+{"goal": "Show me stores in Luzon outside Manila", "page": "mercurydrug__3", "done": ["clicked link \"STORE LOCATOR\""]}
+{"goal": "How do I contact your office?", "page": "mercurydrug__3", "done": ["clicked link \"STORE LOCATOR\""]}
+{"goal": "Where do I type my email address for the order?", "page": "mercurydrug__4", "done": ["clicked link \"ORDER ONLINE\""]}
+{"goal": "Select my birth month", "page": "mercurydrug__4", "done": ["clicked link \"ORDER ONLINE\""]}
+{"goal": "I need to choose which branch will prepare my order", "page": "mercurydrug__4", "done": ["clicked link \"ORDER ONLINE\""]}
+{"goal": "Pick my gender on the form", "page": "mercurydrug__4", "done": ["clicked link \"ORDER ONLINE\""]}
+{"goal": "I already filled in my info, go to the next step", "page": "mercurydrug__4", "done": ["clicked link \"ORDER ONLINE\""]}
+{"goal": "I agree to the terms, where do I tick?", "page": "mercurydrug__4", "done": ["clicked link \"ORDER ONLINE\""]}
+{"goal": "pano pumili ng civil status dito", "page": "mercurydrug__4", "done": ["clicked link \"ORDER ONLINE\""]}
+{"goal": "Where do I put the details of the person receiving the medicine?", "page": "mercurydrug__4", "done": ["clicked link \"ORDER ONLINE\""]}
+{"goal": "Select the year I was born", "page": "mercurydrug__4", "done": ["clicked link \"ORDER ONLINE\""]}

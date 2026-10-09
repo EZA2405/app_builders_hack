@@ -1,0 +1,34 @@
+{"goal": "I want to log in to my Landbank account", "page": "landbank", "done": []}
+{"goal": "Where is the nearest Landbank branch or ATM?", "page": "landbank", "done": []}
+{"goal": "How do I open a savings account?", "page": "landbank", "done": []}
+{"goal": "gusto ko mag apply ng loan sa landbank", "page": "landbank", "done": []}
+{"goal": "Book an appointment at a branch", "page": "landbank", "done": []}
+{"goal": "I want to type my question in the help box", "page": "landbank", "done": []}
+{"goal": "Show me houses that Landbank is selling", "page": "landbank", "done": []}
+{"goal": "Are there cars for sale from Landbank?", "page": "landbank", "done": []}
+{"goal": "Download the Landbank mobile app", "page": "landbank", "done": []}
+{"goal": "Search the Landbank website", "page": "landbank", "done": []}
+{"goal": "Show me only house and lot properties", "page": "landbank__1", "done": ["clicked link \"Properties for Sale\""]}
+{"goal": "Choose my province to see properties near me", "page": "landbank__1", "done": ["clicked link \"Properties for Sale\""]}
+{"goal": "I want to compute my monthly payment for a housing loan", "page": "landbank__1", "done": ["clicked link \"Properties for Sale\""]}
+{"goal": "Search properties with the filters I set", "page": "landbank__1", "done": ["clicked link \"Properties for Sale\""]}
+{"goal": "pakita lang yung below 5 million", "page": "landbank__1", "done": ["clicked link \"Properties for Sale\""]}
+{"goal": "Sort the properties from lowest price", "page": "landbank__1", "done": ["clicked link \"Properties for Sale\""]}
+{"goal": "Where are the downloadable forms?", "page": "landbank__1", "done": ["clicked link \"Properties for Sale\""]}
+{"goal": "Clear all the filters", "page": "landbank__1", "done": ["clicked link \"Properties for Sale\""]}
+{"goal": "I want to contact Landbank about a property", "page": "landbank__1", "done": ["clicked link \"Properties for Sale\""]}
+{"goal": "Show more vehicles", "page": "landbank__2", "done": ["clicked link \"Vehicles for Sale\""]}
+{"goal": "Search for a Toyota in the vehicle list", "page": "landbank__2", "done": ["clicked link \"Vehicles for Sale\""]}
+{"goal": "How much are Landbank's fund transfer fees?", "page": "landbank__2", "done": ["clicked link \"Vehicles for Sale\""]}
+{"goal": "gusto ko mag open ng account", "page": "landbank__2", "done": ["clicked link \"Vehicles for Sale\""]}
+{"goal": "Log in to online banking", "page": "landbank__2", "done": ["clicked link \"Vehicles for Sale\""]}
+{"goal": "Find a branch near me", "page": "landbank__2", "done": ["clicked link \"Vehicles for Sale\""]}
+{"goal": "Contact Landbank", "page": "landbank__2", "done": ["clicked link \"Vehicles for Sale\""]}
+{"goal": "Show branches near my location", "page": "landbank__3", "done": ["clicked link \"Find Us\""]}
+{"goal": "I only want to see ATMs on the map", "page": "landbank__3", "done": ["clicked link \"Find Us\""]}
+{"goal": "Search for a branch in Cebu", "page": "landbank__3", "done": ["clicked link \"Find Us\""]}
+{"goal": "asan yung mga lending center", "page": "landbank__3", "done": ["clicked link \"Find Us\""]}
+{"goal": "Zoom in on the map", "page": "landbank__3", "done": ["clicked link \"Find Us\""]}
+{"goal": "Filter the branch list", "page": "landbank__3", "done": ["clicked link \"Find Us\""]}
+{"goal": "Show only cash deposit machines", "page": "landbank__3", "done": ["clicked link \"Find Us\""]}
+{"goal": "Check the branch schedule for this week", "page": "landbank__3", "done": ["clicked link \"Find Us\""]}

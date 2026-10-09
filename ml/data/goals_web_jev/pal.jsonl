@@ -1,0 +1,41 @@
+{"goal": "I want to check in for my flight online", "page": "pal", "done": []}
+{"goal": "Is my flight delayed? I want to check the flight status", "page": "pal", "done": []}
+{"goal": "I need to change my booking", "page": "pal", "done": []}
+{"goal": "Where do I type where I am flying to?", "page": "pal", "done": []}
+{"goal": "Pick the date I will leave", "page": "pal", "done": []}
+{"goal": "pano mag refund ng ticket", "page": "pal", "done": []}
+{"goal": "What documents do I need to travel abroad?", "page": "pal", "done": []}
+{"goal": "I want to add more baggage to my flight", "page": "pal", "done": []}
+{"goal": "I need wheelchair assistance at the airport", "page": "pal", "done": []}
+{"goal": "Change the website language", "page": "pal", "done": []}
+{"goal": "Are there any promo fares right now?", "page": "pal", "done": []}
+{"goal": "Type my question about baggage allowance", "page": "pal__1", "done": ["clicked link \"Search\""]}
+{"goal": "Search for the answer after typing", "page": "pal__1", "done": ["clicked link \"Search\""]}
+{"goal": "I want a refund, where is the refund page?", "page": "pal__1", "done": ["clicked link \"Search\""]}
+{"goal": "pano kontakin PAL", "page": "pal__1", "done": ["clicked link \"Search\""]}
+{"goal": "Show me the FAQs", "page": "pal__1", "done": ["clicked link \"Search\""]}
+{"goal": "I need special assistance for my elderly mother", "page": "pal__1", "done": ["clicked link \"Search\""]}
+{"goal": "What are the travel requirements?", "page": "pal__1", "done": ["clicked link \"Search\""]}
+{"goal": "How much are the taxes and fees?", "page": "pal__1", "done": ["clicked link \"Search\""]}
+{"goal": "Check the status of my flight", "page": "pal__2", "done": ["clicked link \"Philippine Airlines\""]}
+{"goal": "Search for flights to Cebu", "page": "pal__2", "done": ["clicked link \"Philippine Airlines\""]}
+{"goal": "I want to manage my booking", "page": "pal__2", "done": ["clicked link \"Philippine Airlines\""]}
+{"goal": "online check in po", "page": "pal__2", "done": ["clicked link \"Philippine Airlines\""]}
+{"goal": "I have a promo code, where do I put it?", "page": "pal__2", "done": ["clicked link \"Philippine Airlines\""]}
+{"goal": "How many passengers, where do I set that?", "page": "pal__2", "done": ["clicked link \"Philippine Airlines\""]}
+{"goal": "I want to choose my seat", "page": "pal__2", "done": ["clicked link \"Philippine Airlines\""]}
+{"goal": "I want to get my money back for my cancelled flight", "page": "pal__3", "done": ["clicked link \"Riyadh Flights PR654 and PR655 Suspended October 9–11\""]}
+{"goal": "How do I contact Philippine Airlines?", "page": "pal__3", "done": ["clicked link \"Riyadh Flights PR654 and PR655 Suspended October 9–11\""]}
+{"goal": "Go back to the PAL home page", "page": "pal__3", "done": ["clicked link \"Riyadh Flights PR654 and PR655 Suspended October 9–11\""]}
+{"goal": "Show me all the news and advisories", "page": "pal__3", "done": ["clicked link \"Riyadh Flights PR654 and PR655 Suspended October 9–11\""]}
+{"goal": "ano mga requirements sa travel", "page": "pal__3", "done": ["clicked link \"Riyadh Flights PR654 and PR655 Suspended October 9–11\""]}
+{"goal": "Look at the frequently asked questions", "page": "pal__3", "done": ["clicked link \"Riyadh Flights PR654 and PR655 Suspended October 9–11\""]}
+{"goal": "I want to search the site for my concern", "page": "pal__3", "done": ["clicked link \"Riyadh Flights PR654 and PR655 Suspended October 9–11\""]}
+{"goal": "Show me only the travel advisories", "page": "pal__4", "done": ["clicked link \"See all alerts\""]}
+{"goal": "Show me the press releases", "page": "pal__4", "done": ["clicked link \"See all alerts\""]}
+{"goal": "Show more news", "page": "pal__4", "done": ["clicked link \"See all alerts\""]}
+{"goal": "may iba pa bang advisory, load more", "page": "pal__4", "done": ["clicked link \"See all alerts\""]}
+{"goal": "I need to contact PAL", "page": "pal__4", "done": ["clicked link \"See all alerts\""]}
+{"goal": "How do I request a refund?", "page": "pal__4", "done": ["clicked link \"See all alerts\""]}
+{"goal": "Check in for my flight", "page": "pal__4", "done": ["clicked link \"See all alerts\""]}
+{"goal": "Go back to the home page", "page": "pal__4", "done": ["clicked link \"See all alerts\""]}

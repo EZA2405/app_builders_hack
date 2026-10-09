@@ -1,0 +1,40 @@
+{"goal": "Log in to my Metrobank account", "page": "metrobank", "done": []}
+{"goal": "I want to apply for a credit card", "page": "metrobank", "done": []}
+{"goal": "How do I open an account?", "page": "metrobank", "done": []}
+{"goal": "nawala yung card ko ano gagawin", "page": "metrobank", "done": []}
+{"goal": "I forgot my online banking password", "page": "metrobank", "done": []}
+{"goal": "Search Metrobank's website for loan rates", "page": "metrobank", "done": []}
+{"goal": "Check today's dollar exchange rate", "page": "metrobank", "done": []}
+{"goal": "I want to chat with someone from the bank", "page": "metrobank", "done": []}
+{"goal": "Show me how to get a loan", "page": "metrobank", "done": []}
+{"goal": "Go to the help center", "page": "metrobank", "done": []}
+{"goal": "Where is the nearest Metrobank ATM or branch?", "page": "metrobank__1", "done": ["clicked link \"Learn more\""]}
+{"goal": "I need to download a bank form", "page": "metrobank__1", "done": ["clicked link \"Learn more\""]}
+{"goal": "What's the customer care email?", "page": "metrobank__1", "done": ["clicked link \"Learn more\""]}
+{"goal": "pano mag apply ng car loan", "page": "metrobank__1", "done": ["clicked link \"Learn more\""]}
+{"goal": "Compute my monthly loan payment", "page": "metrobank__1", "done": ["clicked link \"Learn more\""]}
+{"goal": "Contact Metrobank", "page": "metrobank__1", "done": ["clicked link \"Learn more\""]}
+{"goal": "Log in to online banking", "page": "metrobank__1", "done": ["clicked link \"Learn more\""]}
+{"goal": "Go back to the home page", "page": "metrobank__1", "done": ["clicked link \"Learn more\""]}
+{"goal": "Access self-service banking", "page": "metrobank__2", "done": ["clicked link \"Menu Logo\""]}
+{"goal": "I want to get a housing loan", "page": "metrobank__2", "done": ["clicked link \"Menu Logo\""]}
+{"goal": "Am I qualified for a personal loan?", "page": "metrobank__2", "done": ["clicked link \"Menu Logo\""]}
+{"goal": "search ko yung time deposit rates", "page": "metrobank__2", "done": ["clicked link \"Menu Logo\""]}
+{"goal": "Download the Metrobank app", "page": "metrobank__2", "done": ["clicked link \"Menu Logo\""]}
+{"goal": "Find a Metrobank branch", "page": "metrobank__2", "done": ["clicked link \"Menu Logo\""]}
+{"goal": "Chat with MIA the virtual assistant", "page": "metrobank__2", "done": ["clicked link \"Menu Logo\""]}
+{"goal": "I want to learn how to avoid scams and fraud", "page": "metrobank__3", "done": ["clicked link \"Financial Education\""]}
+{"goal": "Show me all the money tips articles", "page": "metrobank__3", "done": ["clicked link \"Financial Education\""]}
+{"goal": "Go to LifeBanking", "page": "metrobank__3", "done": ["clicked link \"Financial Education\""]}
+{"goal": "may tips ba kayo para iwas scam", "page": "metrobank__3", "done": ["clicked link \"Financial Education\""]}
+{"goal": "Log in to my account", "page": "metrobank__3", "done": ["clicked link \"Financial Education\""]}
+{"goal": "Open the help center", "page": "metrobank__3", "done": ["clicked link \"Financial Education\""]}
+{"goal": "Find the nearest branch", "page": "metrobank__3", "done": ["clicked link \"Financial Education\""]}
+{"goal": "Find a branch near me", "page": "metrobank__4", "done": ["clicked link \"About Us\""]}
+{"goal": "Check the rates and fees", "page": "metrobank__4", "done": ["clicked link \"About Us\""]}
+{"goal": "I want to apply for a job at Metrobank", "page": "metrobank__4", "done": ["clicked link \"About Us\""]}
+{"goal": "Show me the latest press releases", "page": "metrobank__4", "done": ["clicked link \"About Us\""]}
+{"goal": "pakita yung annual report", "page": "metrobank__4", "done": ["clicked link \"About Us\""]}
+{"goal": "Go to self service", "page": "metrobank__4", "done": ["clicked link \"About Us\""]}
+{"goal": "Contact customer care", "page": "metrobank__4", "done": ["clicked link \"About Us\""]}
+{"goal": "Download a form from Metrobank", "page": "metrobank__4", "done": ["clicked link \"About Us\""]}
