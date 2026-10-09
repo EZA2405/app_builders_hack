@@ -808,7 +808,13 @@ final class GuideEngine {
         let menus = s.candidates.filter { $0.source == "menu" && !Self.isPersonal($0.path)
                                           && $0.path.components(separatedBy: " > ").dropFirst().first != "Services" }
         let ok = { (c: Candidate) in !self.rejected.contains(Planner.key(c)) && !self.done.contains("clicked \(Planner.key(c))") }
-        if done.isEmpty { return menus.filter(ok) }   // other apps are handled by routeToApp first
+        // First step: menus, plus (when enabled, for a model trained on mixed lists) the window's toolbar buttons,
+        // e.g. Preview's "Aa" text style. Off by default: `defaults write dev.alexi.screenguide step1Controls -bool YES`.
+        if done.isEmpty {
+            guard UserDefaults.standard.bool(forKey: "step1Controls") else { return menus.filter(ok) }
+            let toolbar = s.candidates.filter { $0.source == "window" && ["button", "checkbox", "menu button", "pop-up menu", "segmented control"].contains($0.role) }
+            return (toolbar + menus).filter(ok)
+        }
         return (s.candidates.filter { $0.source == "window" && $0.role != "menu button" } + menus).filter(ok)
     }
 
