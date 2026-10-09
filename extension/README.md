@@ -23,8 +23,12 @@ Stable extension ID: `iokhdpnepbjnngdafdfafcjlpdbnolio`. The Mac app should allo
 While the Mac app is unfinished, a hosted model can stand in for the local one and pick each step:
 
 ```sh
+extension/.venv/bin/python extension/mock/mock_app.py --orderer jev      # hosted TypeSafe Jev (key from JEV_API_KEY, ml/.env or ~/.config/jev/jev.env)
+extension/.venv/bin/python extension/mock/mock_app.py --orderer laya     # local laya-serve on 127.0.0.1:8766, model "guide" (fine-tuned weights)
 extension/.venv/bin/python extension/mock/mock_app.py --orderer claude   # Claude Haiku via Claude Code; or claude:sonnet, or codex
 ```
+
+`jev` and `laya` use the Mac app's planner contract (`app/Sources/ScreenGuide/Planner.swift`, `ml/web_data.py`): elements as `role "name" · context`, the state `…web browser, on the website "<title>". Their goal: "…" Already done: clicked …`, a 16-wide tournament keeping 3, "not sure" below 0.3 confidence, and fixed wording per role. A goal ends when the model re-picks something already clicked, after an OK/Save/Send-style button, or after 8 steps. Measured Oct 9 on live Wikipedia/YouTube snapshots: 0.8–1.6 s per step with Jev.
 
 Click the ScreenGuide toolbar button (pin it from the puzzle-piece menu), type a goal such as "turn on subtitles", and press **Guide me**. A "Working out the next step…" pill shows while it decides; the ring and card follow in about 1–3s per step with Haiku (one warmed-up Claude session per goal), ~10s with Codex. A text-box step finishes when you press Enter, not when you click into the box. When the goal is reached, an "All done" pill appears. Click the highlighted control yourself; the next step follows. **I'm stuck** asks again with a spotlight, the speaker button reads the step aloud with macOS `say`, and **Stop** ends the goal. You can also type `goal <text>` in the terminal.
 

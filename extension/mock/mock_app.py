@@ -118,7 +118,8 @@ class MockApp:
         self.empty_retries = 0
         page = orderer.sanitize(snapshot)
         note, self.note = self.note, ""
-        decision, seconds = await orderer.ask(self.orderer, orderer.prompt(self.goal, self.done, page, note), self.session)
+        decision, seconds = await orderer.ask(self.orderer, orderer.prompt(self.goal, self.done, page, note), self.session,
+                                              (self.goal, self.done, page))
         if not self.goal or turn != self.turn:
             return
         print(f"Orderer ({seconds:.1f}s): {json.dumps(decision, ensure_ascii=False)}", flush=True)
@@ -126,18 +127,17 @@ class MockApp:
         if not decision:
             print("Orderer gave no usable answer; type goal again or press I'm stuck.", flush=True)
             return
-        if decision.get("done"):
-            print(f"Done: {decision.get('message', '')}", flush=True)
-            self.goal = None
-            await self.send("clear")
-            await self.send("status", text=str(decision.get("message") or "All done."), seconds=8)
+        if decision.get("done") or len(self.done) >= 8:  # GuideEngine caps a goal at 8 steps
+            await self.finish(str(decision.get("message") or "All done."))
             return
         refs = [r for r in decision.get("candidates") or [decision.get("ref")] if r in known]
         if not refs:
             print("Orderer picked a ref that isn't on the page; asking again.", flush=True)
             self.schedule(0, "Your last answer used a ref that is not in the list.")
             return
-        self.current = {"refs": refs, "role": known[refs[0]]["role"], "instruction": str(decision.get("instruction") or f"Click **{known[refs[0]]['name']}**.")}
+        self.current = {"refs": refs, "role": known[refs[0]]["role"], "final": decision.get("final"),
+                        "instruction": str(decision.get("instruction") or f"Click **{known[refs[0]]['name']}**.")}
+        self.current["done_text"] = decision.get("done_text") or self.current["instruction"].replace("**", "")
         fields = {"ref": refs[0], "instruction": self.current["instruction"], "step": len(self.done) + 1}
         if decision.get("hint"):
             fields["hint"] = str(decision["hint"])
@@ -146,6 +146,12 @@ class MockApp:
         if note.startswith("The user is stuck"):
             fields["style"] = "spotlight"
         await self.send("highlight", **fields)
+
+    async def finish(self, text):
+        print(f"Done: {text}", flush=True)
+        self.goal = self.current = None
+        await self.send("clear")
+        await self.send("status", text=text, seconds=8)
 
     async def guide(self, message):
         """Advance the goal from extension events. Returns without effect when no goal is active."""
@@ -162,7 +168,10 @@ class MockApp:
                 message.get("kind") in ("submit", "change") or
                 # A text box is finished by typing and Enter (submit/change/navigation), not by clicking into it.
                 (message.get("kind") == "click" and self.current["role"] not in ("textbox", "searchbox", "combobox"))):
-            self.done.append(self.current["instruction"].replace("**", ""))
+            self.done.append(self.current["done_text"])
+            if self.current.get("final"):  # OK / Save / Send…: the last step of a task
+                await self.finish("All done. You did it.")
+                return
             self.current = None
             self.last_target_click = time.monotonic()
             await self.send("clear")
@@ -177,7 +186,7 @@ class MockApp:
                 await self.send("clear")
                 return
             if self.current:  # e.g. Enter in a search box navigated before any change event
-                self.done.append(self.current["instruction"].replace("**", ""))
+                self.done.append(self.current["done_text"])
                 self.current = None
                 self.last_target_click = time.monotonic()
                 await self.send("status", text="Working out the next step…")
@@ -261,7 +270,8 @@ async def main(origin, orderer):
         print(f"Listening on ws://127.0.0.1:47823/ext for {origin}", flush=True)
         print("Commands: snap, hl <ref>, clear, notsure <ref> <ref> <ref>, goal <text>, or a keyword", flush=True)
         if orderer:
-            print(f"Orderer: {orderer}. Sanitized element names go to a hosted model (dev testing only).", flush=True)
+            print(f"Orderer: {orderer}. " + ("Runs on this Mac." if orderer == "laya" else
+                  "Sanitized element names go to a hosted model (dev testing only)."), flush=True)
         while True:
             try:
                 await app.command(await commands.get())
@@ -272,8 +282,9 @@ async def main(origin, orderer):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--extension-id", help="Override the ID derived from manifest.json")
-    parser.add_argument("--orderer", help="Dev only: let a hosted model pick each step. claude (Haiku), claude:sonnet, or codex. "
-                        "Sends a sanitized element list off this Mac.")
+    parser.add_argument("--orderer", help="Pick each step with: jev (hosted TypeSafe Jev, same format as the Mac app's planner), "
+                        "laya (local laya-serve on :8766, model 'guide'), claude (Haiku), claude:sonnet, or codex. "
+                        "Hosted ones get a sanitized element list and are for testing only.")
     args = parser.parse_args()
     try:
         asyncio.run(main(f"chrome-extension://{args.extension_id or extension_id()}", args.orderer))
