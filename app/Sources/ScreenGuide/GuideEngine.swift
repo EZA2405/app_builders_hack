@@ -26,6 +26,7 @@ final class GuideEngine {
         overlay.onStuck = { [weak self] in self?.stuck() }
         overlay.onDone = { [weak self] in self?.markDoneTyping() }
         overlay.onNotThis = { [weak self] in self?.notThis = true }
+        ClickWatcher.shared.start()
     }
 
     func start(goal: String, app: NSRunningApplication) {
@@ -154,19 +155,37 @@ final class GuideEngine {
             let (text, hint) = phrase(c)
             show(.guiding, label: "Step \(stepNo)", text: text, hint: hint, target: c.frame.map(rect))
         }
-        let before = await signature(app)
         doneTyping = false
-        // Text entry: wait for the "Done" pill (we never read what the user types).
-        while !Task.isCancelled {
-            try? await Task.sleep(nanoseconds: 450_000_000)
+        _ = ClickWatcher.shared.drain()
+        let ring = c.frame.map(rect)
+        let typing = ["text field", "text area", "search field", "combo box"].contains(c.role)
+        var clickedIn = false
+        waiting: while !Task.isCancelled {
+            try? await Task.sleep(nanoseconds: 120_000_000)
             if notThis { return false }
-            if c.source == "dock" {
-                // Only the app it pointed at opening counts; a busy window (e.g. Terminal output) is not a click.
-                if Self.frontRegularApp()?.localizedName == c.label { break }
-                continue
+            if doneTyping { break }
+            if c.source == "dock", Self.frontRegularApp()?.localizedName == c.label { break }
+            for e in ClickWatcher.shared.drain() {
+                switch e {
+                case .click(let p):
+                    if let r = ring, r.hit(p) {
+                        if typing { clickedIn = true; continue }   // in the box: now wait for Enter
+                        try? await Task.sleep(nanoseconds: 350_000_000)
+                        break waiting
+                    }
+                    if overlay.model.mode == .guiding, let r = ring, !overlay.model.spotlight {
+                        let (text, _) = phrase(c)
+                        show(.detour, label: "Small detour", text: "That was a different spot. Nothing has changed.",
+                             hint: text.replacingOccurrences(of: "Click", with: "Click") , target: r)
+                        Task { @MainActor in
+                            try? await Task.sleep(nanoseconds: 2_500_000_000)
+                            if self.overlay.model.mode == .detour { let (t, h) = self.phrase(c); self.show(.guiding, label: "Step \(self.stepNo)", text: t, hint: h, target: r) }
+                        }
+                    }
+                case .enter:
+                    if typing && clickedIn || typing { break waiting }
+                }
             }
-            if c.role == "text field" ? doneTyping : (await signature(app)) != before { break }
-            if let front = Self.frontRegularApp(), front != app { break }   // opened another app
         }
         if Task.isCancelled { return false }
         await confirm()
@@ -176,12 +195,16 @@ final class GuideEngine {
     private func guideMenu(_ c: Candidate, app: NSRunningApplication) async -> Bool {
         let parts = c.path.components(separatedBy: " > ")
         var level = 0
+        var target: CGRect?
+        _ = ClickWatcher.shared.drain()
         while !Task.isCancelled {
             if notThis { return false }
             let openMenu = MenuProbe.openMenuTitle(app)
+            let clicks = ClickWatcher.shared.drain().compactMap { e -> CGPoint? in if case .click(let p) = e { return p }; return nil }
             if level == 0 {
                 if openMenu == parts[0] { level = 1; continue }
                 let bar = MenuProbe.barItem(app, title: parts[0])
+                target = bar?.frame
                 let hint = bar.map { "It's between **\($0.left)** and **\($0.right)**." } ?? ""
                 if let other = openMenu, other != parts[0] {
                     show(.detour, label: "Small detour", text: "That opened **\(other)**. Nothing has changed.",
@@ -190,16 +213,17 @@ final class GuideEngine {
                     show(.guiding, label: "Step \(stepNo)", text: "Click **\(parts[0])** at the top of your screen.", hint: hint, target: bar?.frame)
                 }
             } else {
-                if openMenu != parts[0] {
-                    // Menu closed: either the user picked the final item (done) or closed it (start over).
-                    if level == parts.count - 1, await didLeaveMenu(app) { await confirm(); return true }
-                    level = 0; continue
+                let last = level == parts.count - 1
+                // The final item counts only if the person clicked inside its ring.
+                if last, let t = target, clicks.contains(where: t.hit) {
+                    try? await Task.sleep(nanoseconds: 400_000_000)
+                    await confirm(); return true
                 }
-                let sub = Array(parts[0...level])
-                if let f = MenuProbe.itemFrame(app, path: sub) {
-                    let last = level == parts.count - 1
-                    let name = parts[level]
+                if openMenu != parts[0] { level = 0; continue }   // closed without choosing: start over, never "correct"
+                if let f = MenuProbe.itemFrame(app, path: Array(parts[0...level])) {
                     if !last, MenuProbe.itemFrame(app, path: Array(parts[0...level + 1])) != nil { level += 1; continue }
+                    target = f
+                    let name = parts[level]
                     let text = last ? "Click **\(name)**." : "Point to **\(name)**, then wait for the list."
                     if overlay.model.target != f || overlay.model.instruction != text {
                         overlay.keepOut = MenuProbe.openMenuFrames(app)
@@ -207,7 +231,7 @@ final class GuideEngine {
                     }
                 }
             }
-            try? await Task.sleep(nanoseconds: 300_000_000)
+            try? await Task.sleep(nanoseconds: 120_000_000)
         }
         return false
     }
@@ -309,7 +333,7 @@ final class GuideEngine {
         case "text field", "text area", "search field", "combo box":
             let size = goal.lowercased().contains("small") || goal.lowercased().contains("email")
             return ("Click in the **\(c.label)** box and type the new value.",
-                    size ? "For an email, 1200 is a good width. Press Done here when you've typed it." : "Press Done here when you've typed it.")
+                    size ? "For an email, 1200 is a good width. Then press Enter." : "Then press Enter.")
         case "switch", "checkbox": return ("Click **\(c.label)** to turn it on or off.", "")
         case "slider": return ("Drag the **\(c.label)** slider.", "Left is less, right is more.")
         case "pop-up menu": return ("Click **\(c.label)** and pick from the list.", "")
