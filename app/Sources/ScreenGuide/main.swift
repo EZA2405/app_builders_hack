@@ -80,6 +80,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     var item: NSStatusItem!
     let engine = GuideEngine()
     var ask: AskPanel!
+    var button: GabayButtonPanel!
     var hotKey: HotKey?
     /// The app the user was in before opening Gabay: that's the one we guide.
     var lastApp: NSRunningApplication?
@@ -99,6 +100,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             MainActor.assumeIsolated { self?.lastApp = a }
         }
         ask = AskPanel { [weak self] goal in self?.begin(goal) }
+        button = GabayButtonPanel { [weak self] in self?.toggleAsk() }
+        button.place()
+        NotificationCenter.default.addObserver(forName: NSApplication.didChangeScreenParametersNotification, object: nil,
+                                               queue: .main) { [weak self] _ in MainActor.assumeIsolated { self?.button.place() } }
 
         hotKey = HotKey { [weak self] in
             guard let self else { return }
@@ -110,9 +115,28 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         item.button?.target = self
         item.button?.action = #selector(toggleAsk)
 
+        // DEV: --preview ask|guide|notsure|wait|done|thinking renders one UI state with a fake target (design QA).
+        if let i = args.firstIndex(of: "--preview"), args.count > i + 1 { preview(args[i + 1]) }
+
         // DEV: ScreenGuide.app --guide <AppName> "<goal>" starts a session directly.
         if let i = args.firstIndex(of: "--guide"), args.count > i + 2, let target = runningApp(args[i + 1]) {
             engine.start(goal: args[i + 2], app: target)
+        }
+    }
+
+    func preview(_ state: String) {
+        let o = engine.overlay, m = o.model
+        let t = CGRect(x: 420, y: 3, width: 52, height: 24)   // roughly a menu bar title
+        switch state {
+        case "ask": ask.present()
+        case "thinking": engine.show(.thinking, label: "", text: "Looking…", hint: "", target: nil)
+        case "notsure":
+            m.candidates = [CGRect(x: 600, y: 300, width: 90, height: 30), CGRect(x: 720, y: 300, width: 90, height: 30)]
+            engine.show(.notSure, label: "Step 1", text: "It's one of these. Pick either one.", hint: "", target: nil)
+        case "wait": engine.show(.detour, label: "Wait", text: "Wait. Real banks and government offices never ask you to share your screen or install apps like this.",
+                                 hint: "If someone asked you to do this, stop and call your family first.", target: nil)
+        case "done": engine.show(.done, label: "All done", text: "Done. You did it.", hint: "1. chose Tools > Adjust Size…\n2. clicked OK", target: nil)
+        default: engine.show(.guiding, label: "Step 1", text: "Click **Tools**.", hint: "It's at the very top of your screen, after Go.", target: t)
         }
     }
 

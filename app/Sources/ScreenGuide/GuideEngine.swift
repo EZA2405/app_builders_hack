@@ -25,7 +25,7 @@ final class GuideEngine {
     var notThis = false
 
     init() {
-        overlay.onStop = { [weak self] in self?.stop() }
+        overlay.onStop = { [weak self] in self?.userStop() }
         overlay.onAgain = { [weak self] in self?.speak() }
         overlay.onStuck = { [weak self] in self?.stuck() }
         overlay.onDone = { [weak self] in self?.markDoneTyping() }
@@ -49,11 +49,24 @@ final class GuideEngine {
             let p = await self.planner.risky(goal: goal)
             self.log("RISK p=\(String(format: "%.2f", p))")
             if p >= 0.6 {
-                self.show(.detour, label: "Wait", text: "Wait. Real banks, government offices and support teams never need to see your screen, control your computer, or get your codes.",
+                self.show(.detour, label: "Wait", text: "Wait. Real banks and government offices never ask you to share your screen or install apps like this.",
                           hint: "If someone asked you to do this, stop and call your family first.", target: nil)
                 return
             }
             if web { await self.runWeb() } else { await self.run() }
+        }
+    }
+
+    /// Stop pressed on the card: say plainly that nothing changed, then get out of the way.
+    func userStop() {
+        let m = overlay.model
+        if m.mode == .done || m.label == "Wait" || m.mode == .hidden { stop(); return }
+        task?.cancel(); task = nil
+        speech.stopSpeaking(at: .immediate)
+        show(.done, label: "Stopped", text: "Okay, I stopped. Nothing was changed.", hint: "", target: nil)
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 2_500_000_000)
+            if self.overlay.model.label == "Stopped" { self.overlay.hide() }
         }
     }
 
@@ -89,7 +102,7 @@ final class GuideEngine {
                     continue
                 }
             }
-            show(.thinking, label: "Got it", text: "Working out the next step…", hint: "Nothing on your screen leaves this Mac.", target: nil)
+            show(.thinking, label: "Got it", text: "Looking…", hint: "", target: nil)
             let state = await read(app)
             let pick: Planner.Pick?
             do {
@@ -112,15 +125,15 @@ final class GuideEngine {
             }
             guard let pick else {
                 log("NO CANDIDATES app=\(app.localizedName ?? "?")")
-                show(.done, label: "Hmm", text: "I couldn't find anything to click in \(app.localizedName ?? "this app").",
-                     hint: "Open the app you want help with, click on its window, then ask again.", target: nil)
+                show(.done, label: "Hmm", text: "I can't see that on this screen. Can you say it another way?",
+                     hint: "Or open the app you want help with first, then ask again.", target: nil)
                 return
             }
             // Menus have no "one of these two" view; a near-guess menu step sends people somewhere wrong.
             if pick.candidate.source == "menu", pick.confidence < 0.3 {
                 log("UNSURE pick=\(Planner.key(pick.candidate)) conf=\(String(format: "%.2f", pick.confidence))")
-                show(.done, label: "I'm not sure", text: "I'm not sure where to do that in \(app.localizedName ?? "this app").",
-                     hint: "Open the app you'd use for it (for a photo, open the photo first), click its window, then ask again.", target: nil)
+                show(.done, label: "I'm not sure", text: "I can't see that on this screen. Can you say it another way?",
+                     hint: "For a photo, open the photo first, then ask again.", target: nil)
                 return
             }
             if let w = ScamGuard.check(label: pick.candidate.label) {
@@ -141,7 +154,7 @@ final class GuideEngine {
                 rejected.insert(Planner.key(pick.candidate))
                 stepNo -= 1
                 log("NOT THIS \(Planner.key(pick.candidate))")
-                show(.thinking, label: "Okay", text: "Let me look somewhere else…", hint: "", target: nil)
+                show(.thinking, label: "Okay", text: "Looking…", hint: "", target: nil)
                 continue
             }
             if Task.isCancelled || !ok { return }
@@ -153,8 +166,8 @@ final class GuideEngine {
 
     func finish() {
         log("DONE steps=\(done)")
-        show(.done, label: "All done", text: "That's it. You did it.", hint: done.enumerated().map { "\($0.offset + 1). \(plain($0.element))" }.joined(separator: "\n"), target: nil)
-        speakText("All done. You did it.")
+        show(.done, label: "All done", text: "Done. You did it.", hint: done.enumerated().map { "\($0.offset + 1). \(plain($0.element))" }.joined(separator: "\n"), target: nil)
+        speakText("Done. You did it.")
     }
 
     /// Point at one candidate until the user completes it. Menu commands are walked level by level.
@@ -166,7 +179,7 @@ final class GuideEngine {
 
         if pick.confidence < 0.3, !pick.runnersUp.isEmpty {
             overlay.model.candidates = ([c] + pick.runnersUp.prefix(1)).compactMap { $0.frame.map(rect) }
-            show(.notSure, label: "Step \(stepNo)", text: "I think it's one of these two.", hint: "Just click the one you think is right.", target: nil)
+            show(.notSure, label: "Step \(stepNo)", text: "It's one of these. Pick either one.", hint: "", target: nil)
         } else {
             let (text, hint) = phrase(c)
             show(.guiding, label: "Step \(stepNo)", text: text, hint: hint, target: c.frame.map(rect))
@@ -191,8 +204,7 @@ final class GuideEngine {
                     }
                     if overlay.model.mode == .guiding, let r = ring, !overlay.model.spotlight {
                         let (text, _) = phrase(c)
-                        show(.detour, label: "Small detour", text: "That was a different spot. Nothing has changed.",
-                             hint: text.replacingOccurrences(of: "Click", with: "Click") , target: r)
+                        show(.detour, label: "Small detour", text: "That's okay. " + text, hint: "Nothing has changed.", target: r)
                         Task { @MainActor in
                             try? await Task.sleep(nanoseconds: 2_500_000_000)
                             if self.overlay.model.mode == .detour { let (t, h) = self.phrase(c); self.show(.guiding, label: "Step \(self.stepNo)", text: t, hint: h, target: r) }
@@ -221,12 +233,12 @@ final class GuideEngine {
                 if openMenu == parts[0] { level = 1; continue }
                 let bar = MenuProbe.barItem(app, title: parts[0])
                 target = bar?.frame
-                let hint = bar.map { "It's between **\($0.left)** and **\($0.right)**." } ?? ""
+                let hint = bar.map { $0.left.isEmpty ? "It's at the very top of your screen." : "It's at the very top of your screen, after \($0.left)." } ?? ""
                 if let other = openMenu, other != parts[0] {
-                    show(.detour, label: "Small detour", text: "That opened **\(other)**. Nothing has changed.",
-                         hint: "Click **\(parts[0])** instead. " + hint, target: bar?.frame)
+                    show(.detour, label: "Small detour", text: "That's okay. Click **\(parts[0])** instead.",
+                         hint: hint, target: bar?.frame)
                 } else if overlay.model.mode != .guiding || overlay.model.target != bar?.frame {
-                    show(.guiding, label: "Step \(stepNo)", text: "Click **\(parts[0])** at the top of your screen.", hint: hint, target: bar?.frame)
+                    show(.guiding, label: "Step \(stepNo)", text: "Click **\(parts[0])**.", hint: hint, target: bar?.frame)
                 }
             } else {
                 let last = level == parts.count - 1
@@ -271,7 +283,7 @@ final class GuideEngine {
 
     private func stuck() {
         overlay.model.spotlight = true
-        overlay.model.hint = "Look where the orange ring is. Or press Stop. Nothing has been changed."
+        if overlay.model.hint.isEmpty { overlay.model.hint = "It's inside the purple ring." }
         overlay.update()
         speak()
     }
