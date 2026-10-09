@@ -1,0 +1,12 @@
+{"type": "menu", "goal": "make the words in this letter bigger", "answer": "Format > Font > Bigger", "decoys": ["button \"Change...\" · Settings", "checkbox \"Wrap to page\" · Settings"]}
+{"type": "menu", "goal": "zoom in on my letter, I can't see it", "answer": "View > Zoom In", "decoys": ["checkbox \"Wrap to page\" · Settings", "button \"Change...\" · Settings"]}
+{"type": "menu", "goal": "check the spelling in this letter right now", "answer": "Edit > Spelling and Grammar > Check Document Now", "decoys": ["checkbox \"Check spelling as you type \" · Settings", "checkbox \"Correct spelling automatically\" · Settings"]}
+{"type": "menu", "goal": "show the ruler on this document", "answer": "Format > Text > Show Ruler", "decoys": ["checkbox \"Show ruler\" · Settings"]}
+{"type": "menu", "goal": "make the selected words all capital letters", "answer": "Edit > Transformations > Make Upper Case", "decoys": ["checkbox \"Smart quotes\" · Settings", "checkbox \"Text replacement\" · Settings"]}
+{"type": "menu", "goal": "lakihan yung font ng sulat ko dito", "answer": "Format > Font > Bigger", "decoys": ["button \"Change...\" · Settings"]}
+{"type": "control", "goal": "start every new document with the ruler showing", "answer": "checkbox \"Show ruler\" · Settings", "decoys": ["Format > Text > Show Ruler"]}
+{"type": "control", "goal": "put all of TextEdit's settings back the way they came", "answer": "button \"Restore All Defaults\" · Settings", "decoys": ["File > Revert To > No Document"]}
+{"type": "control", "goal": "stop it from changing my straight quotes into curly ones every time", "answer": "checkbox \"Smart quotes\" · Settings", "decoys": ["Edit > Substitutions > Smart Quotes"]}
+{"type": "control", "goal": "choose the font every new document starts with", "answer": "button \"Change...\" · Settings", "decoys": ["Format > Font > Show Fonts"]}
+{"type": "menu", "goal": "make the words in my letter smaller", "answer": "Format > Font > Smaller", "decoys": ["button \"Change...\" · Settings", "checkbox \"Wrap to page\" · Settings"]}
+{"type": "menu", "goal": "show the fonts so I can pick one for this letter", "answer": "Format > Font > Show Fonts", "decoys": ["button \"Change...\" · Settings", "button \"Restore All Defaults\" · Settings"]}

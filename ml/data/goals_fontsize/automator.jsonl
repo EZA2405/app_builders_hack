@@ -1,0 +1,5 @@
+{"type": "font", "goal": "make the text in this box bigger", "answer": "Format > Style > Bigger", "decoys": ["Window > Zoom", "View > Enter Full Screen"]}
+{"type": "font", "goal": "the words I typed are too big, make them smaller", "answer": "Format > Style > Smaller", "decoys": ["Window > Zoom"]}
+{"type": "font", "goal": "choose a font size for the text", "answer": "Format > Show Fonts", "decoys": ["View > Enter Full Screen"], "alts": ["Format > Style > Bigger", "Format > Style > Smaller"]}
+{"type": "font", "goal": "lakihan ang letters na tinype ko", "answer": "Format > Style > Bigger", "decoys": ["Window > Zoom"]}
+{"type": "font", "goal": "make the notes I wrote in the workflow larger", "answer": "Format > Style > Bigger", "decoys": ["Window > Zoom", "View > Enter Full Screen"]}

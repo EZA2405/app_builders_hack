@@ -1,0 +1,4 @@
+{"type": "control", "goal": "change every 'teh' to 'the' in my notes at once", "answer": "button \"Replace All\" · Find", "decoys": ["Edit > Find > Find Next", "Edit > Find > Find…"]}
+{"type": "control", "goal": "make the search not care about capital letters", "answer": "checkbox \"Ignore Case\" · Find", "decoys": ["Edit > Transformations > Make Lower Case"]}
+{"type": "menu", "goal": "make the words on this sticky bigger", "answer": "Font > Bigger", "decoys": ["button \"Replace\" · Find", "checkbox \"Ignore Case\" · Find"]}
+{"type": "menu", "goal": "make the letters of this note all capitals", "answer": "Edit > Transformations > Make Upper Case", "decoys": ["checkbox \"Ignore Case\" · Find"]}

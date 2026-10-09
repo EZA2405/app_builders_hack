@@ -1,0 +1,6 @@
+{"type": "font", "goal": "make the code letters bigger", "answer": "Font > Bigger", "decoys": ["Window > Zoom", "View > Enter Full Screen"]}
+{"type": "font", "goal": "the script text is tiny, increase the font size", "answer": "Font > Bigger", "decoys": ["Window > Zoom"]}
+{"type": "font", "goal": "make the words in my script smaller", "answer": "Font > Smaller", "decoys": ["Window > Zoom", "View > Enter Full Screen"]}
+{"type": "font", "goal": "pick a different size and font for the script", "answer": "Font > Show Fonts", "decoys": ["Window > Zoom"], "alts": ["Font > Bigger", "Font > Smaller"]}
+{"type": "font", "goal": "palakihin yung font ng script", "answer": "Font > Bigger", "decoys": ["View > Enter Full Screen", "Window > Zoom"]}
+{"type": "font", "goal": "the script's letters are too big for the window, make them smaller", "answer": "Font > Smaller", "decoys": ["Window > Zoom"]}

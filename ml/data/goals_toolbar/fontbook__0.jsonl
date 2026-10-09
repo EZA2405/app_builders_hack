@@ -1,0 +1,7 @@
+{"type": "control", "goal": "show each font in many sizes in a row, small to big", "answer": "checkbox \"Show Waterfall Sample\" · General", "decoys": ["View > Increase Font Size", "View > View as Samples"]}
+{"type": "control", "goal": "turn the font warning messages back on", "answer": "button \"Reset Warnings\" · General", "decoys": ["View > Show Info Pane"]}
+{"type": "menu", "goal": "make the sample letters bigger to see the font better", "answer": "View > Increase Font Size", "decoys": ["checkbox \"Show Waterfall Sample\" · General"]}
+{"type": "menu", "goal": "show the fonts as a grid of boxes", "answer": "View > View as Grid", "decoys": ["button \"Sidebar\" · General"]}
+{"type": "menu", "goal": "show the information about this font", "answer": "View > Show Info Pane", "decoys": ["button \"Advanced\" · General", "button \"Installation\" · General"]}
+{"type": "menu", "goal": "make the example letters smaller", "answer": "View > Decrease Font Size", "decoys": ["checkbox \"Show Waterfall Sample\" · General"]}
+{"type": "menu", "goal": "list the fonts instead of showing samples", "answer": "View > View as List", "decoys": ["button \"Sidebar\" · General", "checkbox \"Show Waterfall Sample\" · General"]}

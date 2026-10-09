@@ -1,0 +1,40 @@
+{"type": "font", "goal": "make the words in this note bigger", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "View > Attachment View > Set All to Large"]}
+{"type": "font", "goal": "the shopping list I typed is too small, make the letters larger", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "View > Attachment View > Set All to Large", "Window > Zoom"]}
+{"type": "font", "goal": "make my note's writing smaller, it's too big", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom Out", "View > Attachment View > Set All to Small"]}
+{"type": "font", "goal": "change the font size of what I wrote to 20", "answer": "Format > Font > Show Fonts", "decoys": ["View > Zoom In", "View > Actual Size", "View > Attachment View > Set All to Large"], "alts": ["Format > Font > Bigger", "Format > Font > Smaller"]}
+{"type": "font", "goal": "lakihan yung letra sa note ko para mabasa ni lolo", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "View > Attachment View > Set All to Large"]}
+{"type": "font", "goal": "make just this sentence's text larger", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "Window > Zoom", "View > Attachment View > Set All to Large"]}
+{"type": "font", "goal": "shrink the font of the words I selected", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom Out", "View > Attachment View > Set All to Small"]}
+{"type": "font", "goal": "paliitin mo yung font ng note", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom Out", "View > Attachment View > Set All to Small"]}
+{"type": "font", "goal": "the recipe in my note is written too small, make the words bigger", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "View > Attachment View > Set All to Large"]}
+{"type": "font", "goal": "make the letters in my note bigger, not the pictures", "answer": "Format > Font > Bigger", "decoys": ["View > Attachment View > Set All to Large", "View > Zoom In"]}
+{"type": "font", "goal": "make the words smaller but leave the photos alone", "answer": "Format > Font > Smaller", "decoys": ["View > Attachment View > Set All to Small", "View > Zoom Out"]}
+{"type": "font", "goal": "the text I pasted into the note is tiny, make the font larger", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "View > Actual Size"]}
+{"type": "font", "goal": "I want bigger words in this note when I share it", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "View > Attachment View > Set All to Large"]}
+{"type": "font", "goal": "gawing mas maliit ang sulat sa note na ito", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom Out", "View > Attachment View > Set All to Small"]}
+{"type": "zoom", "goal": "magnify the note while I read it, keep the note itself the same", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "View > Attachment View > Set All to Large"]}
+{"type": "zoom", "goal": "everything in the notes window looks tiny, magnify it", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "Window > Zoom", "View > Attachment View > Set All to Large"]}
+{"type": "zoom", "goal": "the view is zoomed in too much, make it smaller on the screen", "answer": "View > Zoom Out", "decoys": ["Format > Font > Smaller", "View > Attachment View > Set All to Small"]}
+{"type": "zoom", "goal": "put the view back to its normal size", "answer": "View > Actual Size", "decoys": ["Format > Font > Smaller", "View > Attachment View > Set All to Small"], "alts": ["View > Zoom Out"]}
+{"type": "zoom", "goal": "palakihin mo yung view ng note sa screen, para lang makita ko", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "View > Attachment View > Set All to Large"]}
+{"type": "zoom", "goal": "zoom back to normal, it's all so big now", "answer": "View > Actual Size", "decoys": ["Format > Font > Smaller", "View > Attachment View > Set All to Small"], "alts": ["View > Zoom Out"]}
+{"type": "zoom", "goal": "bring the note closer to my eyes, but don't change the text size", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "Format > Font > Show Fonts"]}
+{"type": "zoom", "goal": "show more of the note on the screen by zooming out", "answer": "View > Zoom Out", "decoys": ["Format > Font > Smaller", "View > Attachment View > Set All to Small"]}
+{"type": "zoom", "goal": "ilapit ang tingin sa note, ang liit sa screen", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "View > Attachment View > Set All to Large"]}
+{"type": "picture", "goal": "make the pictures in my note smaller", "answer": "View > Attachment View > Set All to Small", "decoys": ["Format > Font > Smaller", "View > Zoom Out"]}
+{"type": "picture", "goal": "the photos in this note are tiny, show them big", "answer": "View > Attachment View > Set All to Large", "decoys": ["Format > Font > Bigger", "View > Zoom In"]}
+{"type": "picture", "goal": "the images take up the whole note, make them small", "answer": "View > Attachment View > Set All to Small", "decoys": ["Format > Font > Smaller", "View > Zoom Out", "View > Actual Size"]}
+{"type": "picture", "goal": "paliitin yung mga picture sa note ko", "answer": "View > Attachment View > Set All to Small", "decoys": ["Format > Font > Smaller", "View > Zoom Out"]}
+{"type": "picture", "goal": "show the attached photos larger in my notes", "answer": "View > Attachment View > Set All to Large", "decoys": ["Format > Font > Bigger", "View > Zoom In"]}
+{"type": "picture", "goal": "I want the pictures bigger, not the words", "answer": "View > Attachment View > Set All to Large", "decoys": ["Format > Font > Bigger", "View > Zoom In"]}
+{"type": "picture", "goal": "make the scanned documents in my notes show as small thumbnails", "answer": "View > Attachment View > Set All to Small", "decoys": ["Format > Font > Smaller", "View > Zoom Out"]}
+{"type": "picture", "goal": "lakihan ang mga litrato sa note", "answer": "View > Attachment View > Set All to Large", "decoys": ["Format > Font > Bigger", "View > Zoom In"]}
+{"type": "font", "goal": "enlarge the font of the phone numbers I wrote in this note", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "View > Attachment View > Set All to Large"]}
+{"type": "font", "goal": "the list in my note needs bigger writing so mama can read it when I send it", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "View > Attachment View > Set All to Large"]}
+{"type": "font", "goal": "the font of this paragraph in my note is too big, reduce it", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom Out", "View > Attachment View > Set All to Small"]}
+{"type": "font", "goal": "palakihin ang font ng listahan sa note", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "View > Attachment View > Set All to Large"]}
+{"type": "zoom", "goal": "enlarge my view of the notes app, the note itself should stay the same", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "View > Attachment View > Set All to Large"]}
+{"type": "zoom", "goal": "the note looks huge on screen, zoom it out", "answer": "View > Zoom Out", "decoys": ["Format > Font > Smaller", "View > Attachment View > Set All to Small"]}
+{"type": "picture", "goal": "the pictures I pasted in the note are too large, shrink them", "answer": "View > Attachment View > Set All to Small", "decoys": ["Format > Font > Smaller", "View > Zoom Out"]}
+{"type": "picture", "goal": "show the photos in my notes as big pictures, not little ones", "answer": "View > Attachment View > Set All to Large", "decoys": ["Format > Font > Bigger", "View > Zoom In"]}
+{"type": "picture", "goal": "gawing maliit ang mga larawan sa notes", "answer": "View > Attachment View > Set All to Small", "decoys": ["Format > Font > Smaller", "View > Zoom Out"]}

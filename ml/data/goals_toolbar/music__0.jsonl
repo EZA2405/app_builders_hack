@@ -1,0 +1,8 @@
+{"type": "control", "goal": "pop up a little message every time a new song starts", "answer": "checkbox \"When song changes\" · General", "decoys": ["View > Show Playing Next"]}
+{"type": "control", "goal": "hide the iTunes Store from the side list", "answer": "checkbox \"iTunes Store\" · General", "decoys": ["View > Show Filter Field"]}
+{"type": "control", "goal": "put a tick box next to every song", "answer": "checkbox \"Songs list checkboxes\" · General", "decoys": ["View > Show View Options"]}
+{"type": "menu", "goal": "show the song words while it plays", "answer": "View > Show Lyrics", "decoys": ["checkbox \"Songs list checkboxes\" · General", "checkbox \"When song changes\" · General"]}
+{"type": "menu", "goal": "show which songs will play next", "answer": "View > Show Playing Next", "decoys": ["checkbox \"When song changes\" · General"]}
+{"type": "menu", "goal": "ipakita yung lyrics ng kanta", "answer": "View > Show Lyrics", "decoys": ["checkbox \"When song changes\" · General", "button \"Playback\" · General"]}
+{"type": "menu", "goal": "show the bar at the bottom with how many songs I have", "answer": "View > Show Status Bar", "decoys": ["checkbox \"Songs list checkboxes\" · General"]}
+{"type": "menu", "goal": "show the search box to filter my songs", "answer": "View > Show Filter Field", "decoys": ["checkbox \"Songs list checkboxes\" · General", "checkbox \"iTunes Store\" · General"]}

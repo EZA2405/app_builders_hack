@@ -1,0 +1,10 @@
+{"type": "font", "goal": "the letters in this terminal window are too small", "answer": "View > Make Text Bigger", "decoys": ["View > Zoom In on Selection", "Window > Zoom"]}
+{"type": "font", "goal": "make the font in iTerm bigger", "answer": "View > Make Text Bigger", "decoys": ["View > Zoom In on Selection", "View > Toggle Full Screen"]}
+{"type": "font", "goal": "make the words smaller so more fits in the window", "answer": "View > Make Text Smaller", "decoys": ["View > Zoom Out", "Window > Zoom"]}
+{"type": "font", "goal": "put the text size back to normal", "answer": "View > Make Text Normal Size", "decoys": ["View > Zoom Out"], "alts": ["View > Restore Text and Session Size"]}
+{"type": "font", "goal": "lakihan mo yung text sa terminal", "answer": "View > Make Text Bigger", "decoys": ["View > Zoom In on Selection"]}
+{"type": "font", "goal": "the writing is huge, shrink the font", "answer": "View > Make Text Smaller", "decoys": ["View > Zoom Out"]}
+{"type": "font", "goal": "I can't read the commands, make the text larger", "answer": "View > Make Text Bigger", "decoys": ["View > Zoom In on Selection", "Window > Zoom"]}
+{"type": "font", "goal": "paliitin ang letters sa terminal", "answer": "View > Make Text Smaller", "decoys": ["View > Zoom Out", "Window > Zoom"]}
+{"type": "font", "goal": "shrink the letters in iTerm so long lines fit", "answer": "View > Make Text Smaller", "decoys": ["View > Zoom Out", "Window > Zoom"]}
+{"type": "font", "goal": "ibalik sa normal ang laki ng letters sa terminal", "answer": "View > Make Text Normal Size", "decoys": ["View > Zoom Out"], "alts": ["View > Restore Text and Session Size"]}

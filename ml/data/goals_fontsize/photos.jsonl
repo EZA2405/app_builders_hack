@@ -1,0 +1,17 @@
+{"type": "picture", "goal": "save a smaller copy of this picture for my profile page", "answer": "File > Export > Export Photos…", "decoys": ["View > Zoom Out", "Edit > Font > Smaller"]}
+{"type": "picture", "goal": "the picture file is too heavy to upload, I need a lighter version", "answer": "File > Export > Export Photos…", "decoys": ["View > Zoom Out", "Edit > Font > Smaller"]}
+{"type": "picture", "goal": "save this photo in a smaller size as a separate file", "answer": "File > Export > Export Photos…", "decoys": ["View > Zoom Out", "Edit > Font > Smaller"]}
+{"type": "picture", "goal": "gumawa ng mas maliit na kopya ng picture na ito", "answer": "File > Export > Export Photos…", "decoys": ["View > Zoom Out", "Edit > Font > Smaller"]}
+{"type": "picture", "goal": "save a medium size copy of this picture to my desktop", "answer": "File > Export > Export Photos…", "decoys": ["View > Zoom Out", "Edit > Font > Bigger"]}
+{"type": "picture", "goal": "I need this picture in a smaller resolution for a form online", "answer": "File > Export > Export Photos…", "decoys": ["View > Zoom Out", "Edit > Font > Smaller"]}
+{"type": "picture", "goal": "i-save ang litrato na mas maliit ang size", "answer": "File > Export > Export Photos…", "decoys": ["View > Zoom Out", "Edit > Font > Smaller"]}
+{"type": "zoom", "goal": "the little pictures in my library are too tiny, make them bigger to look at", "answer": "View > Zoom In", "decoys": ["File > Export > Export Photos…", "Edit > Font > Bigger"]}
+{"type": "zoom", "goal": "show more photos at once, make the thumbnails smaller", "answer": "View > Zoom Out", "decoys": ["File > Export > Export Photos…", "Edit > Font > Smaller"]}
+{"type": "zoom", "goal": "palakihin ang mga thumbnail ng photos", "answer": "View > Zoom In", "decoys": ["File > Export > Export Photos…", "Edit > Font > Bigger"]}
+{"type": "zoom", "goal": "the photo grid squares are too big, shrink them so I see more", "answer": "View > Zoom Out", "decoys": ["File > Export > Export Photos…", "Edit > Font > Smaller"]}
+{"type": "zoom", "goal": "make the photo previews in the grid larger so I can find the right one", "answer": "View > Zoom In", "decoys": ["File > Export > Export Photos…", "Edit > Font > Bigger"]}
+{"type": "zoom", "goal": "paliitin ang mga thumbnail para makita lahat", "answer": "View > Zoom Out", "decoys": ["File > Export > Export Photos…", "Edit > Font > Smaller"]}
+{"type": "picture", "goal": "save a copy of this photo that is smaller in pixels", "answer": "File > Export > Export Photos…", "decoys": ["View > Zoom Out", "Edit > Font > Smaller"]}
+{"type": "picture", "goal": "export this picture at a smaller size for my phone wallpaper", "answer": "File > Export > Export Photos…", "decoys": ["View > Zoom Out", "Edit > Font > Smaller"]}
+{"type": "zoom", "goal": "make the photo thumbnails bigger in the library so I can see faces", "answer": "View > Zoom In", "decoys": ["File > Export > Export Photos…", "Edit > Font > Bigger"]}
+{"type": "zoom", "goal": "shrink the photo squares in the grid", "answer": "View > Zoom Out", "decoys": ["File > Export > Export Photos…", "Edit > Font > Smaller"]}

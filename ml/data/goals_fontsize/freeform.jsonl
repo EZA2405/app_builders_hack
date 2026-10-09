@@ -1,0 +1,40 @@
+{"type": "font", "goal": "make the words in my text box bigger", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom > Zoom In", "Format > Image > Super Resolution", "Window > Zoom"]}
+{"type": "font", "goal": "the writing on my sticky in the board is tiny, make the font larger", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom > Zoom In", "View > Zoom > Zoom to Selection"]}
+{"type": "font", "goal": "make the title on my board bigger letters", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom > Zoom In", "Format > Image > Super Resolution"]}
+{"type": "font", "goal": "make the text inside this shape smaller", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom > Zoom Out", "Format > Image > Edit Mask"]}
+{"type": "font", "goal": "set the words in this box to size 36", "answer": "Format > Font > Show Fonts", "decoys": ["View > Zoom > Zoom In", "View > Zoom > Actual Size"], "alts": ["Format > Font > Bigger", "Format > Font > Smaller"]}
+{"type": "font", "goal": "lakihan mo yung text sa box", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom > Zoom In", "Format > Image > Super Resolution"]}
+{"type": "font", "goal": "paliitin yung sulat sa loob ng shape", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom > Zoom Out", "View > Zoom > Zoom to Fit Content"]}
+{"type": "font", "goal": "make the font of the caption under the photo bigger", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom > Zoom In", "Format > Image > Super Resolution"]}
+{"type": "font", "goal": "the letters I typed on the board look too large, shrink the font", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom > Zoom Out", "View > Zoom > Actual Size"]}
+{"type": "font", "goal": "I want bigger writing in the sticky so people can read it from far", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom > Zoom In", "Window > Zoom"]}
+{"type": "font", "goal": "make the words in the box bigger, not the picture next to it", "answer": "Format > Font > Bigger", "decoys": ["Format > Image > Super Resolution", "View > Zoom > Zoom In"]}
+{"type": "font", "goal": "choose a different font and size for the text box", "answer": "Format > Font > Show Fonts", "decoys": ["View > Zoom > Zoom In", "Format > Image > Edit Mask"], "alts": ["Format > Font > Bigger", "Format > Font > Smaller"]}
+{"type": "font", "goal": "the label text on my board is hard to read, enlarge the letters", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom > Zoom In", "View > Zoom > Zoom to Fit Content"]}
+{"type": "font", "goal": "make the note's text smaller so it fits nicely", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom > Zoom Out", "View > Zoom > Zoom to Fit Content"], "alts": ["Format > Text > Autosize Text"]}
+{"type": "font", "goal": "gawing mas malaki ang mga salita sa text box", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom > Zoom In", "Format > Image > Super Resolution"]}
+{"type": "font", "goal": "the font in this table is too big, make it smaller", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom > Zoom Out", "View > Zoom > Actual Size"]}
+{"type": "zoom", "goal": "the whole board looks tiny, let me see it bigger", "answer": "View > Zoom > Zoom In", "decoys": ["Format > Font > Bigger", "Format > Image > Super Resolution"]}
+{"type": "zoom", "goal": "get closer to the board, everything is too small to see", "answer": "View > Zoom > Zoom In", "decoys": ["Format > Font > Bigger", "Window > Zoom"]}
+{"type": "zoom", "goal": "show the board at its normal size again", "answer": "View > Zoom > Actual Size", "decoys": ["Format > Font > Smaller", "Format > Image > Edit Mask"], "alts": ["View > Zoom > Zoom Out"]}
+{"type": "zoom", "goal": "make everything on the board look smaller so I can see more of it", "answer": "View > Zoom > Zoom Out", "decoys": ["Format > Font > Smaller", "Format > Image > Edit Mask"], "alts": ["View > Zoom > Zoom to Fit Content"]}
+{"type": "zoom", "goal": "fit everything I made on the board onto the screen", "answer": "View > Zoom > Zoom to Fit Content", "decoys": ["Format > Text > Autosize Text", "Format > Font > Smaller"], "alts": ["View > Zoom > Zoom Out"]}
+{"type": "zoom", "goal": "palakihin ang tingin sa board, ang liit ng lahat", "answer": "View > Zoom > Zoom In", "decoys": ["Format > Font > Bigger", "Format > Image > Super Resolution"]}
+{"type": "zoom", "goal": "zoom in on just the box I picked", "answer": "View > Zoom > Zoom to Selection", "decoys": ["Format > Font > Bigger", "Format > Text > Autosize Text"]}
+{"type": "zoom", "goal": "magnify the board while I look, don't change any text", "answer": "View > Zoom > Zoom In", "decoys": ["Format > Font > Bigger", "Format > Font > Show Fonts"]}
+{"type": "zoom", "goal": "I'm too close to the board, step back so I see more", "answer": "View > Zoom > Zoom Out", "decoys": ["Format > Font > Smaller", "Format > Image > Edit Mask"], "alts": ["View > Zoom > Zoom to Fit Content", "View > Zoom > Actual Size"]}
+{"type": "zoom", "goal": "ibalik sa normal ang laki ng board sa screen", "answer": "View > Zoom > Actual Size", "decoys": ["Format > Font > Smaller", "View > Zoom > Zoom In"], "alts": ["View > Zoom > Zoom Out"]}
+{"type": "zoom", "goal": "show the whole board on my screen at once", "answer": "View > Zoom > Zoom to Fit Content", "decoys": ["Format > Font > Smaller", "Format > Text > Autosize Text"], "alts": ["View > Zoom > Zoom Out"]}
+{"type": "picture", "goal": "make the photo I added sharper and more detailed", "answer": "Format > Image > Super Resolution", "decoys": ["View > Zoom > Zoom In", "Format > Font > Bigger"]}
+{"type": "picture", "goal": "the picture I put on the board looks blurry, improve its resolution", "answer": "Format > Image > Super Resolution", "decoys": ["View > Zoom > Zoom In", "Format > Font > Bigger"]}
+{"type": "picture", "goal": "pagandahin ang linaw ng litrato sa board", "answer": "Format > Image > Super Resolution", "decoys": ["View > Zoom > Zoom In", "Format > Font > Bigger"]}
+{"type": "font", "goal": "the writing inside the circle shape is too small, enlarge the font", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom > Zoom In", "Format > Image > Super Resolution"]}
+{"type": "font", "goal": "make the sticky note's writing larger so the class can read it on the TV", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom > Zoom In", "View > Zoom > Zoom to Fit Content"]}
+{"type": "font", "goal": "the label I typed beside the photo should be smaller letters", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom > Zoom Out", "Format > Image > Super Resolution"]}
+{"type": "font", "goal": "lakihan ang font ng caption sa ilalim ng picture", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom > Zoom In", "Format > Image > Super Resolution"]}
+{"type": "font", "goal": "the font in the text box is too big for the box, reduce it", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom > Zoom Out", "View > Zoom > Zoom to Fit Content"], "alts": ["Format > Text > Autosize Text"]}
+{"type": "zoom", "goal": "everything on my board is too small to see, enlarge the view", "answer": "View > Zoom > Zoom In", "decoys": ["Format > Font > Bigger", "Format > Image > Super Resolution"]}
+{"type": "zoom", "goal": "enlarge my view of the board for a moment, leave the boxes as they are", "answer": "View > Zoom > Zoom In", "decoys": ["Format > Font > Bigger", "Format > Image > Super Resolution"]}
+{"type": "zoom", "goal": "paliitin ang view para makita ang buong board", "answer": "View > Zoom > Zoom Out", "decoys": ["Format > Font > Smaller", "Format > Image > Edit Mask"], "alts": ["View > Zoom > Zoom to Fit Content"]}
+{"type": "zoom", "goal": "I can't see the whole drawing, fit it all on the screen", "answer": "View > Zoom > Zoom to Fit Content", "decoys": ["Format > Font > Smaller", "Format > Text > Autosize Text"], "alts": ["View > Zoom > Zoom Out"]}
+{"type": "picture", "goal": "make the blurry photo on my board clearer", "answer": "Format > Image > Super Resolution", "decoys": ["View > Zoom > Zoom In", "Format > Font > Bigger"]}

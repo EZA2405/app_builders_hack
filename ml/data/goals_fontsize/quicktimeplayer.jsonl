@@ -1,0 +1,6 @@
+{"type": "zoom", "goal": "the movie window is small, zoom it in", "answer": "View > Zoom In", "decoys": ["File > Export As > 1080p…", "File > Export As > 4K…"]}
+{"type": "zoom", "goal": "show the video at its real size", "answer": "View > Actual Size", "decoys": ["File > Export As > 720p…", "File > Export As > 480p…"]}
+{"type": "zoom", "goal": "fit the video to the window", "answer": "View > Zoom to Fit", "decoys": ["File > Export As > 480p…", "File > Export As > 720p…"]}
+{"type": "picture", "goal": "save a smaller version of this movie file", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "View > Actual Size"], "alts": ["File > Export As > 720p…"]}
+{"type": "picture", "goal": "make a lower quality copy of this video so the file is smaller", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "View > Zoom to Fit"], "alts": ["File > Export As > 720p…"]}
+{"type": "picture", "goal": "i-save ang video na mas maliit ang file", "answer": "File > Export As > 480p…", "decoys": ["View > Zoom Out", "View > Actual Size"], "alts": ["File > Export As > 720p…"]}

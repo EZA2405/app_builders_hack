@@ -1,0 +1,20 @@
+{"type": "font", "goal": "the subtitle words are too small for me", "answer": "Subtitles > Text Size > Larger", "decoys": ["Video > Double Size", "Video > Fit to Screen", "Window > Zoom"], "alts": ["Subtitles > Text Size > Large"]}
+{"type": "font", "goal": "make the captions bigger", "answer": "Subtitles > Text Size > Larger", "decoys": ["Video > Double Size", "Video > Fullscreen"], "alts": ["Subtitles > Text Size > Large"]}
+{"type": "font", "goal": "lakihan mo yung subtitles", "answer": "Subtitles > Text Size > Larger", "decoys": ["Video > Double Size", "Video > Fit to Screen"], "alts": ["Subtitles > Text Size > Large"]}
+{"type": "font", "goal": "the subtitles cover half the movie, make them smaller", "answer": "Subtitles > Text Size > Smaller", "decoys": ["Video > Half Size", "Window > Zoom"], "alts": ["Subtitles > Text Size > Small"]}
+{"type": "font", "goal": "put the subtitle text back to the normal size", "answer": "Subtitles > Text Size > Normal", "decoys": ["Video > Normal Size", "Video > Half Size"]}
+{"type": "font", "goal": "the subtitles are hard to read, make the words bigger", "answer": "Subtitles > Text Size > Larger", "decoys": ["Video > Double Size", "Video > Fit to Screen"], "alts": ["Subtitles > Text Size > Large"]}
+{"type": "font", "goal": "paliitin yung subtitle, ang laki", "answer": "Subtitles > Text Size > Smaller", "decoys": ["Video > Half Size", "Video > Normal Size"], "alts": ["Subtitles > Text Size > Small"]}
+{"type": "font", "goal": "make the words at the bottom of the movie larger", "answer": "Subtitles > Text Size > Larger", "decoys": ["Video > Double Size", "Video > Fullscreen"], "alts": ["Subtitles > Text Size > Large"]}
+{"type": "font", "goal": "make the subtitles bigger, not the video", "answer": "Subtitles > Text Size > Larger", "decoys": ["Video > Double Size", "Video > Fit to Screen"], "alts": ["Subtitles > Text Size > Large"]}
+{"type": "picture", "goal": "make the movie picture twice as big", "answer": "Video > Double Size", "decoys": ["Subtitles > Text Size > Larger", "Window > Zoom"]}
+{"type": "picture", "goal": "make the video window half its size", "answer": "Video > Half Size", "decoys": ["Subtitles > Text Size > Smaller", "Subtitles > Text Size > Small"]}
+{"type": "picture", "goal": "the video is too big on my screen, put it back to its normal size", "answer": "Video > Normal Size", "decoys": ["Subtitles > Text Size > Normal", "Subtitles > Text Size > Smaller"]}
+{"type": "picture", "goal": "watch the movie on the whole screen with nothing else showing", "answer": "Video > Fullscreen", "decoys": ["Subtitles > Text Size > Larger", "Window > Zoom"], "alts": ["Video > Fit to Screen"]}
+{"type": "picture", "goal": "palakihin ang video, doble ang laki", "answer": "Video > Double Size", "decoys": ["Subtitles > Text Size > Larger", "Subtitles > Text Size > Large"]}
+{"type": "picture", "goal": "make the video picture bigger, not the subtitles", "answer": "Video > Double Size", "decoys": ["Subtitles > Text Size > Larger", "Subtitles > Text Size > Large"], "alts": ["Video > Fit to Screen", "Video > Fullscreen"]}
+{"type": "picture", "goal": "ibalik sa normal na laki ang video", "answer": "Video > Normal Size", "decoys": ["Subtitles > Text Size > Normal", "Subtitles > Text Size > Smaller"]}
+{"type": "font", "goal": "make the subtitle letters smaller, they block the picture", "answer": "Subtitles > Text Size > Smaller", "decoys": ["Video > Half Size", "Video > Normal Size"], "alts": ["Subtitles > Text Size > Small"]}
+{"type": "font", "goal": "palakihin ang letra ng subtitle", "answer": "Subtitles > Text Size > Larger", "decoys": ["Video > Double Size", "Video > Fit to Screen"], "alts": ["Subtitles > Text Size > Large"]}
+{"type": "picture", "goal": "make the movie picture smaller, half the size", "answer": "Video > Half Size", "decoys": ["Subtitles > Text Size > Smaller", "Subtitles > Text Size > Small"]}
+{"type": "picture", "goal": "double the size of the video on my screen", "answer": "Video > Double Size", "decoys": ["Subtitles > Text Size > Larger", "Subtitles > Text Size > Large"], "alts": ["Video > Fit to Screen"]}

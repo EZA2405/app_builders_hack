@@ -1,0 +1,8 @@
+{"type": "control", "goal": "stop the reading goals thing, I don't want it", "answer": "checkbox \"Enable Reading Goals\" · General", "decoys": ["Edit > Bookmark Page", "View > List"]}
+{"type": "control", "goal": "erase my reading goal numbers and start over", "answer": "button \"Clear Reading Goals Data\" · General", "decoys": ["Edit > Highlight > Remove", "Edit > Delete"]}
+{"type": "control", "goal": "keep my bookmarks and highlights the same on my iPad too", "answer": "checkbox \"Collections, bookmarks, and highlights\" · General", "decoys": ["Edit > Bookmark Page", "Edit > Highlight > Yellow"]}
+{"type": "menu", "goal": "bookmark the page I'm reading", "answer": "Edit > Bookmark Page", "decoys": ["checkbox \"Collections, bookmarks, and highlights\" · General"]}
+{"type": "menu", "goal": "highlight this line in yellow", "answer": "Edit > Highlight > Yellow", "decoys": ["checkbox \"Collections, bookmarks, and highlights\" · General"]}
+{"type": "menu", "goal": "read this book page out loud to me", "answer": "Edit > Speech > Start Speaking", "decoys": ["button \"Playback\" · General", "button \"Reading\" · General"]}
+{"type": "menu", "goal": "show my books in a list instead of covers", "answer": "View > List", "decoys": ["button \"Reading\" · General", "checkbox \"Home\" · General"]}
+{"type": "menu", "goal": "hanapin yung salitang ito sa libro", "answer": "Edit > Find > Find…", "decoys": ["button \"Reading\" · General"]}

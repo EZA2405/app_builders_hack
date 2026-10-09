@@ -1,0 +1,19 @@
+{"type": "control", "goal": "the place names on the map are hard to read, make the labels bigger for good", "answer": "checkbox \"Use Large Labels\" · Settings", "decoys": ["View > Zoom In", "View > Show Labels"]}
+{"type": "control", "goal": "palakihin yung mga label sa mapa, yung pangalan ng lugar", "answer": "checkbox \"Use Large Labels\" · Settings", "decoys": ["View > Zoom In", "View > Show Labels"]}
+{"type": "control", "goal": "keep the map bright even at night", "answer": "checkbox \"Always use light map appearance\" · Settings", "decoys": ["View > Satellite", "View > Show Traffic"]}
+{"type": "control", "goal": "always show the plus and minus zoom buttons on the map", "answer": "checkbox \"Always show Zoom Controls\" · Settings", "decoys": ["View > Zoom In", "View > Default Zoom"]}
+{"type": "control", "goal": "keep the compass on the map all the time", "answer": "checkbox \"Always show Compass\" · Settings", "decoys": ["View > Snap to North"]}
+{"type": "control", "goal": "show the weather on the map", "answer": "checkbox \"Show Weather Conditions\" · Settings", "decoys": ["View > Show Traffic", "View > Satellite"]}
+{"type": "control", "goal": "show how polluted the air is on the map", "answer": "checkbox \"Show Air Quality Index (AQI)\" · Settings", "decoys": ["View > Show Traffic", "View > Show 3D Map"]}
+{"type": "menu", "goal": "zoom in closer to my street on the map", "answer": "View > Zoom In", "decoys": ["checkbox \"Always show Zoom Controls\" · Settings", "checkbox \"Use Large Labels\" · Settings"]}
+{"type": "menu", "goal": "zoom the map out to see the whole city", "answer": "View > Zoom Out", "decoys": ["checkbox \"Always show Zoom Controls\" · Settings"]}
+{"type": "menu", "goal": "point the map north again", "answer": "View > Snap to North", "decoys": ["checkbox \"Always show Compass\" · Settings"]}
+{"type": "menu", "goal": "show the traffic on the roads right now", "answer": "View > Show Traffic", "decoys": ["checkbox \"Show Weather Conditions\" · Settings", "button \"Route Planner\" · Settings"]}
+{"type": "menu", "goal": "show the map like a photo from the sky", "answer": "View > Satellite", "decoys": ["checkbox \"Always use light map appearance\" · Settings", "button \"Ratings & Photos\" · Settings"]}
+{"type": "menu", "goal": "ipakita yung scale para alam ko gaano kalayo", "answer": "View > Show Scale", "decoys": ["checkbox \"Use Large Labels\" · Settings", "button \"Route Planner\" · Settings"]}
+{"type": "menu", "goal": "show where I am right now on the map", "answer": "View > Go to Current Location", "decoys": ["checkbox \"Always show Compass\" · Settings"]}
+{"type": "control", "goal": "make the names on the map show in large letters", "answer": "checkbox \"Use Large Labels\" · Settings", "decoys": ["View > Zoom In", "View > Show Labels"]}
+{"type": "menu", "goal": "zoom back to the normal map view", "answer": "View > Default Zoom", "decoys": ["checkbox \"Always show Zoom Controls\" · Settings", "checkbox \"Use Large Labels\" · Settings"]}
+{"type": "menu", "goal": "show the map in 3D", "answer": "View > Show 3D Map", "decoys": ["checkbox \"Always use light map appearance\" · Settings", "checkbox \"Show Weather Conditions\" · Settings"]}
+{"type": "control", "goal": "stop showing the weather on the map", "answer": "checkbox \"Show Weather Conditions\" · Settings", "decoys": ["View > Show Traffic", "View > Satellite"]}
+{"type": "menu", "goal": "show directions to a place", "answer": "View > Show Directions", "decoys": ["button \"Route Planner\" · Settings"]}

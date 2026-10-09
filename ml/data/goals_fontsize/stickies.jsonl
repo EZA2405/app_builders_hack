@@ -1,0 +1,15 @@
+{"type": "font", "goal": "make the words on my sticky note bigger", "answer": "Font > Bigger", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"type": "font", "goal": "the writing on this yellow note is too small", "answer": "Font > Bigger", "decoys": ["Window > Zoom"]}
+{"type": "font", "goal": "make the letters on this sticky smaller, they're too big", "answer": "Font > Smaller", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"type": "font", "goal": "lakihan mo yung sulat sa sticky note ko", "answer": "Font > Bigger", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"type": "font", "goal": "pick an exact font size for this note", "answer": "Font > Show Fonts", "decoys": ["Window > Zoom", "Window > Fill"], "alts": ["Font > Bigger", "Font > Smaller"]}
+{"type": "font", "goal": "the text on the note is huge, shrink the font", "answer": "Font > Smaller", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"type": "font", "goal": "I can barely read what I wrote on the sticky, make the letters larger", "answer": "Font > Bigger", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"type": "font", "goal": "paliitin ang font sa sticky", "answer": "Font > Smaller", "decoys": ["Window > Zoom"]}
+{"type": "font", "goal": "make the reminder I typed on the note easier to read with bigger text", "answer": "Font > Bigger", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"type": "font", "goal": "make the words bigger, not the note window", "answer": "Font > Bigger", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"type": "font", "goal": "change the font and size of the writing on this sticky", "answer": "Font > Show Fonts", "decoys": ["Window > Zoom"], "alts": ["Font > Bigger", "Font > Smaller"]}
+{"type": "font", "goal": "gawing malaki ang letters sa note na ito", "answer": "Font > Bigger", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"type": "font", "goal": "the phone number on my sticky needs bigger digits", "answer": "Font > Bigger", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"type": "font", "goal": "the writing on this note is too big to fit, reduce the font", "answer": "Font > Smaller", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"type": "font", "goal": "palakihin ang sulat sa dilaw na note", "answer": "Font > Bigger", "decoys": ["Window > Zoom", "Window > Fill"]}

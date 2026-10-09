@@ -1,0 +1,4 @@
+{"type": "font", "goal": "make the text I typed in this shortcut bigger", "answer": "Format > Font > Bigger", "decoys": ["Window > Zoom"]}
+{"type": "font", "goal": "make these words smaller", "answer": "Format > Font > Smaller", "decoys": ["Window > Zoom"]}
+{"type": "font", "goal": "change the font of this text", "answer": "Format > Font > Show Fonts", "decoys": ["Window > Zoom"], "alts": ["Format > Font > Bigger", "Format > Font > Smaller"]}
+{"type": "font", "goal": "palakihin ang text dito", "answer": "Format > Font > Bigger", "decoys": ["Window > Zoom"]}

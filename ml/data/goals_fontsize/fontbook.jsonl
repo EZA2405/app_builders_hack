@@ -1,0 +1,4 @@
+{"type": "font", "goal": "make the sample letters bigger so I can see the font", "answer": "View > Increase Font Size", "decoys": ["Window > Zoom", "View > Enter Full Screen", "View > View as Grid"]}
+{"type": "font", "goal": "the preview text is huge, make it smaller", "answer": "View > Decrease Font Size", "decoys": ["Window > Zoom", "View > View as Grid"]}
+{"type": "font", "goal": "palakihin ang sample ng font", "answer": "View > Increase Font Size", "decoys": ["View > Enter Full Screen", "View > View as Samples"]}
+{"type": "font", "goal": "make the example words of each font smaller", "answer": "View > Decrease Font Size", "decoys": ["Window > Zoom", "View > Enter Full Screen"]}

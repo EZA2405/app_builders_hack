@@ -1,0 +1,5 @@
+{"type": "control", "goal": "put the scripts menu in the menu bar at the top of the screen", "answer": "checkbox \"Show Script menu in menu bar\" · General", "decoys": ["View > Show Result", "View > Hide Toolbar"]}
+{"type": "menu", "goal": "make the letters of my script bigger", "answer": "Font > Bigger", "decoys": ["button \"Formatting\" · General", "button \"Editing\" · General"]}
+{"type": "menu", "goal": "show the result after the script runs", "answer": "View > Show Result", "decoys": ["button \"History\" · General"]}
+{"type": "menu", "goal": "palakihin mo yung font ng code ko", "answer": "Font > Bigger", "decoys": ["button \"Formatting\" · General"]}
+{"type": "menu", "goal": "make the script letters smaller", "answer": "Font > Smaller", "decoys": ["button \"Formatting\" · General"]}

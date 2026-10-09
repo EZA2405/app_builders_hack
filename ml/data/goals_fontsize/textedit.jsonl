@@ -1,0 +1,40 @@
+{"type": "font", "goal": "the words in my letter are too small, make them bigger", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "Window > Zoom", "File > Page Setup…"]}
+{"type": "font", "goal": "make the heading I typed bigger than the rest of the letter", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "Format > Wrap to Page"]}
+{"type": "font", "goal": "I want the letters bigger when I print this for my lola", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "File > Page Setup…"]}
+{"type": "font", "goal": "increase the font size of the words I selected", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "View > Actual Size"]}
+{"type": "font", "goal": "the writing in this paragraph is huge, make the font smaller", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom Out", "Window > Zoom", "File > Page Setup…"]}
+{"type": "font", "goal": "make the selected words a bit smaller, they look too loud", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom Out", "View > Actual Size"]}
+{"type": "font", "goal": "set the words in my letter to size 18 exactly", "answer": "Format > Font > Show Fonts", "decoys": ["View > Zoom In", "View > Actual Size", "File > Page Setup…"], "alts": ["Format > Font > Bigger", "Format > Font > Smaller"]}
+{"type": "font", "goal": "lakihan mo yung font ng sinulat ko", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "Window > Zoom"]}
+{"type": "font", "goal": "paliitin yung letters ng sulat ko, masyadong malaki", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom Out", "View > Actual Size"]}
+{"type": "font", "goal": "I want size 24 for the title of my letter", "answer": "Format > Font > Show Fonts", "decoys": ["View > Zoom In", "Format > Wrap to Page"], "alts": ["Format > Font > Bigger", "Format > Font > Smaller"]}
+{"type": "font", "goal": "the font in my recipe is tiny, make it larger for whoever reads it", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "Window > Zoom"]}
+{"type": "font", "goal": "make the typed words big so my friend can read the file easily", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "View > Actual Size"]}
+{"type": "font", "goal": "make the text inside my document larger, not just the view", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "Window > Zoom"]}
+{"type": "font", "goal": "the words in this box I typed are too small, enlarge the font", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "File > Page Setup…"]}
+{"type": "font", "goal": "my document's text looks tiny when printed, make the font bigger", "answer": "Format > Font > Bigger", "decoys": ["File > Page Setup…", "View > Zoom In"]}
+{"type": "font", "goal": "shrink the letters of the part I highlighted", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom Out", "Window > Zoom"]}
+{"type": "font", "goal": "gawing mas malaki ang font ng title", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "View > Actual Size"]}
+{"type": "font", "goal": "make the font of this whole document a little smaller", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom Out", "File > Page Setup…"]}
+{"type": "zoom", "goal": "I can't see the page well, magnify the view for me", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "File > Page Setup…", "Window > Zoom"]}
+{"type": "zoom", "goal": "magnify the view, but don't change the size of the words in my letter", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "Format > Font > Show Fonts"]}
+{"type": "zoom", "goal": "the page looks huge now, make the view smaller", "answer": "View > Zoom Out", "decoys": ["Format > Font > Smaller", "Window > Zoom"]}
+{"type": "zoom", "goal": "set the view back to 100 percent", "answer": "View > Actual Size", "decoys": ["Format > Font > Smaller", "Format > Font > Bigger", "Window > Zoom"]}
+{"type": "zoom", "goal": "ilapit mo yung view, di ko makita, pero wag mong galawin yung font", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "Window > Zoom"]}
+{"type": "zoom", "goal": "let me read it closer without changing anything in the file", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "File > Page Setup…"]}
+{"type": "zoom", "goal": "ibalik sa normal yung laki ng tingin sa page", "answer": "View > Actual Size", "decoys": ["Format > Font > Smaller", "Window > Zoom"], "alts": ["View > Zoom Out"]}
+{"type": "zoom", "goal": "I zoomed out too far and the page is tiny, bring the view closer", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "Format > Wrap to Page"]}
+{"type": "zoom", "goal": "see more of the page at once by making the view smaller", "answer": "View > Zoom Out", "decoys": ["Format > Font > Smaller", "File > Page Setup…"]}
+{"type": "zoom", "goal": "everything on the page looks small to my eyes, just magnify it for now", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "Format > Font > Show Fonts"]}
+{"type": "zoom", "goal": "the view is too close, go back to the regular size", "answer": "View > Actual Size", "decoys": ["Format > Font > Smaller", "Window > Zoom"], "alts": ["View > Zoom Out"]}
+{"type": "zoom", "goal": "palakihin ang tingin sa page, hindi yung font", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "Window > Zoom"]}
+{"type": "font", "goal": "the address I typed at the top of the letter needs bigger letters", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "File > Page Setup…"]}
+{"type": "font", "goal": "my grandson says the font in the file I sent is too small, enlarge it", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "Window > Zoom"]}
+{"type": "font", "goal": "the sign I'm making needs huge letters, increase the font a lot", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "File > Page Setup…"]}
+{"type": "font", "goal": "palakihin ang font ng address sa taas ng sulat", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "Window > Zoom"]}
+{"type": "font", "goal": "the note I'm printing for the door needs bigger writing", "answer": "Format > Font > Bigger", "decoys": ["File > Page Setup…", "View > Zoom In"]}
+{"type": "font", "goal": "the letter's words look too large on paper, reduce the font size", "answer": "Format > Font > Smaller", "decoys": ["View > Zoom Out", "File > Page Setup…"]}
+{"type": "zoom", "goal": "my eyes are tired, enlarge what I see on the screen without touching the document", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "Window > Zoom"]}
+{"type": "zoom", "goal": "the document view is magnified too much, shrink the view", "answer": "View > Zoom Out", "decoys": ["Format > Font > Smaller", "Window > Zoom"]}
+{"type": "zoom", "goal": "palakihin lang ang view para mabasa ko, hindi babaguhin ang sulat", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger", "Format > Font > Show Fonts"]}
+{"type": "zoom", "goal": "show the page at its true size again", "answer": "View > Actual Size", "decoys": ["Format > Font > Smaller", "Format > Font > Bigger"], "alts": ["View > Zoom Out"]}
