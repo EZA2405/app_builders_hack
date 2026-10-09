@@ -1,0 +1,24 @@
+{"goal": "cut off the boring beginning of my video", "answer": "Edit > Trim…", "alts": [], "trap": "Edit > Cut"}
+{"goal": "i-cut mo yung simula ng video, ayoko yung unang part", "answer": "Edit > Trim…", "alts": [], "trap": "Edit > Cut"}
+{"goal": "make a copy of this video file", "answer": "File > Duplicate", "alts": [], "trap": "Edit > Copy"}
+{"goal": "record what is on my computer screen", "answer": "File > New Screen Recording", "alts": [], "trap": "File > New Movie Recording"}
+{"goal": "record a video of me with the camera", "answer": "File > New Movie Recording", "alts": [], "trap": "File > New Screen Recording"}
+{"goal": "record my voice only, no video", "answer": "File > New Audio Recording", "alts": [], "trap": "File > Export As > Audio Only…"}
+{"goal": "save just the sound from this video as its own file", "answer": "File > Export As > Audio Only…", "alts": [], "trap": "File > Save…"}
+{"goal": "remove the sound from the video but keep the picture", "answer": "Edit > Remove Audio", "alts": [], "trap": "Edit > Remove Video"}
+{"goal": "the video is lying on its side, turn it to the right", "answer": "Edit > Rotate Right", "alts": [], "trap": "Edit > Clip Alignment > Right"}
+{"goal": "the video is sideways, turn it to the left", "answer": "Edit > Rotate Left", "alts": [], "trap": "Edit > Clip Alignment > Left"}
+{"goal": "cut the video into two pieces right here", "answer": "Edit > Split Clip", "alts": [], "trap": "Edit > Cut"}
+{"goal": "hatiin mo yung video sa dalawa, cut mo dito", "answer": "Edit > Split Clip", "alts": [], "trap": "Edit > Cut"}
+{"goal": "keep the video window on top of my other windows", "answer": "View > Float on Top", "alts": [], "trap": "Edit > Clip Alignment > Top"}
+{"goal": "keep the movie in front even when i click other apps", "answer": "View > Float on Top", "alts": [], "trap": "Window > Bring All to Front"}
+{"goal": "make the video window full, cover the whole screen", "answer": "View > Enter Full Screen", "alts": [], "trap": "Window > Zoom"}
+{"goal": "show the video at its real original size, not zoomed to fit", "answer": "View > Actual Size", "alts": [], "trap": "View > Zoom to Fit"}
+{"goal": "save the video smaller so i can email it", "answer": "File > Export As > 480p…", "alts": [], "trap": "File > Save…"}
+{"goal": "save the video in the best quality for my big tv", "answer": "File > Export As > 4K…", "alts": [], "trap": "File > Save As…"}
+{"goal": "move the video file to my documents folder", "answer": "File > Move To…", "alts": [], "trap": "Window > Move & Resize > Arrange"}
+{"goal": "see info about the video like the size and length", "answer": "Window > Show Movie Inspector", "alts": [], "trap": "View > Actual Size"}
+{"goal": "see how far along my export is", "answer": "Window > Show Export Progress", "alts": [], "trap": "File > Export As > 1080p…"}
+{"goal": "open a video from a website link", "answer": "File > Open Location…", "alts": [], "trap": "File > Open File…"}
+{"goal": "delete the list of videos i opened lately", "answer": "File > Open Recent > Clear Menu", "alts": [], "trap": "Edit > Delete"}
+{"goal": "close quicktime completly", "answer": "QuickTime Player > Quit QuickTime Player", "alts": [], "trap": "File > Close"}

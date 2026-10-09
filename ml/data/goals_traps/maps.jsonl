@@ -1,0 +1,22 @@
+{"goal": "find where i am right now on the map", "answer": "View > Go to Current Location", "alts": [], "trap": "Edit > Find"}
+{"goal": "pakita mo kung nasaan ako ngayon, find me", "answer": "View > Go to Current Location", "alts": [], "trap": "Edit > Find"}
+{"goal": "copy the link of this place so i can paste it in messenger", "answer": "Edit > Copy Link", "alts": [], "trap": "Edit > Paste"}
+{"goal": "show me the way to the hospital driving my car", "answer": "View > Show Directions", "alts": [], "trap": "View > Driving"}
+{"goal": "find my way home from here", "answer": "View > Show Directions", "alts": [], "trap": "Edit > Find"}
+{"goal": "show the train and bus map", "answer": "View > Transit", "alts": [], "trap": "View > Show 3D Map"}
+{"goal": "show me where the roads are busy with cars when im driving", "answer": "View > Show Traffic", "alts": [], "trap": "View > Driving"}
+{"goal": "zoom the map back to how it was at the start", "answer": "View > Default Zoom", "alts": [], "trap": "Window > Zoom"}
+{"goal": "zoom closer so i can see the street names", "answer": "View > Zoom In", "alts": [], "trap": "Window > Zoom"}
+{"goal": "make the maps window fill the whole screen", "answer": "View > Enter Full Screen", "alts": [], "trap": "Window > Fill"}
+{"goal": "print the map as a pdf to keep on my computer", "answer": "File > Export As…", "alts": [], "trap": "File > Print…"}
+{"goal": "delete the pin i dropped on the map", "answer": "Edit > Remove Marked Location", "alts": [], "trap": "Edit > Delete"}
+{"goal": "remove one stop from my trip", "answer": "Edit > Delete Stop", "alts": [], "trap": "Edit > Remove Marked Location"}
+{"goal": "report that the new bakery is not on the map", "answer": "Maps > Report Something Missing…", "alts": [], "trap": "Maps > Report an Issue…"}
+{"goal": "the name of the street is wrong on the map, tell apple", "answer": "Maps > Report an Issue…", "alts": [], "trap": "File > Rename…"}
+{"goal": "open the map in another window to look at two places", "answer": "File > New Window", "alts": [], "trap": "Window > Move Tab to New Window"}
+{"goal": "go back to the regular flat map, not the photo one", "answer": "View > Explore", "alts": [], "trap": "View > Show 3D Map"}
+{"goal": "close the maps app completly", "answer": "Maps > Quit Maps", "alts": [], "trap": "File > Close"}
+{"goal": "read the directions out loud to me", "answer": "Edit > Speech > Start Speaking", "alts": [], "trap": "View > Show Directions"}
+{"goal": "show the map like a real picture taken from space", "answer": "View > Satellite", "alts": [], "trap": "View > Show 3D Map"}
+{"goal": "i removed the pin by mistake, bring it back", "answer": "Edit > Undo", "alts": [], "trap": "Edit > Remove Marked Location"}
+{"goal": "i-print mo yung directions sa papel para dalhin ko", "answer": "File > Print…", "alts": [], "trap": "View > Show Directions"}

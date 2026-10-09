@@ -1,0 +1,25 @@
+{"goal": "make a copy of this document so i can change the copy and keep the first one", "answer": "File > Duplicate", "alts": [], "trap": "Edit > Copy"}
+{"goal": "gawa ka ng copy ng buong file na to para may backup ako", "answer": "File > Duplicate", "alts": [], "trap": "Edit > Copy"}
+{"goal": "print it as a pdf so i can keep it on the computer", "answer": "File > Export as PDF…", "alts": [], "trap": "File > Print…"}
+{"goal": "make the window full so i only see my letter, nothing else", "answer": "View > Enter Full Screen", "alts": [], "trap": "Window > Zoom"}
+{"goal": "zoom in on the page, the words are to small to read", "answer": "View > Zoom In", "alts": [], "trap": "Window > Zoom"}
+{"goal": "replace the word dog with cat everywhere in my letter", "answer": "Edit > Find > Find and Replace…", "alts": [], "trap": "Edit > Substitutions > Text Replacement"}
+{"goal": "cut my letter shorter, make it short and to the point", "answer": "Edit > Writing Tools > Make Concise", "alts": [], "trap": "Edit > Cut"}
+{"goal": "paste the text but make it look the same as the rest of my letter", "answer": "Edit > Paste and Match Style", "alts": [], "trap": "Edit > Paste"}
+{"goal": "copy the bold and color of this word so i can put the same look on another word", "answer": "Format > Font > Copy Style", "alts": [], "trap": "Edit > Copy"}
+{"goal": "i want to talk and the computer types it, start", "answer": "Edit > Start Dictation…", "alts": [], "trap": "Edit > Speech > Start Speaking"}
+{"goal": "check my whole letter for wrong spelling right now", "answer": "Edit > Spelling and Grammar > Check Document Now", "alts": [], "trap": "Edit > Spelling and Grammar > Check Spelling While Typing"}
+{"goal": "make all the letters capital like im shouting", "answer": "Edit > Transformations > Make Upper Case", "alts": [], "trap": "Edit > Transformations > Capitalize"}
+{"goal": "only the first letter of every word should be upper", "answer": "Edit > Transformations > Capitalize", "alts": [], "trap": "Edit > Transformations > Make Upper Case"}
+{"goal": "center my title in the middle of the page", "answer": "Format > Text > Center", "alts": [], "trap": "Window > Center"}
+{"goal": "move this window to the center of my screen", "answer": "Window > Center", "alts": [], "trap": "Format > Text > Center"}
+{"goal": "save a new version under another name but keep the first file", "answer": "File > Save As…", "alts": [], "trap": "File > Save"}
+{"goal": "i want to change the file name only, not save another one", "answer": "File > Rename…", "alts": [], "trap": "File > Save"}
+{"goal": "send this window down to the dock at the bottom for now", "answer": "Window > Minimize", "alts": [], "trap": "Window > Move & Resize > Bottom"}
+{"goal": "start the next part on a new page when i print", "answer": "Edit > Insert > Page Break", "alts": [], "trap": "File > Page Setup…"}
+{"goal": "draw a line under this word", "answer": "Format > Font > Underline", "alts": [], "trap": "Edit > Insert > Line Break"}
+{"goal": "put a heart symbol or a smiley character in my letter", "answer": "Edit > Emoji & Symbols", "alts": [], "trap": "Format > Font > Character Shape > Traditional Form"}
+{"goal": "i dont want it rewritten, just tell me in short what my letter says", "answer": "Edit > Writing Tools > Summarize", "alts": [], "trap": "Edit > Writing Tools > Rewrite"}
+{"goal": "highlight all the words in my letter so i can change them all", "answer": "Edit > Select All", "alts": [], "trap": "Format > Font > Highlight > Accent"}
+{"goal": "pakibalik sa normal size yung view, na-zoom ko ng sobra", "answer": "View > Actual Size", "alts": [], "trap": "Window > Move & Resize > Return to Previous Size"}
+{"goal": "put two windows side by side, one left and one right", "answer": "Window > Move & Resize > Left & Right", "alts": [], "trap": "Format > Text > Align Left"}

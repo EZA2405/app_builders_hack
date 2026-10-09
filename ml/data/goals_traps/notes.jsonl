@@ -1,0 +1,25 @@
+{"goal": "make a copy of this note", "answer": "File > Duplicate Note", "alts": [], "trap": "Edit > Copy"}
+{"goal": "pakicopy yung buong note para may kopya ako", "answer": "File > Duplicate Note", "alts": [], "trap": "Edit > Copy"}
+{"goal": "save my note as a pdf file, no need to print", "answer": "File > Export as > PDF", "alts": [], "trap": "File > Print…"}
+{"goal": "save my note as a markdown file to send", "answer": "File > Export as > Markdown", "alts": [], "trap": "File > Import Markdown..."}
+{"goal": "lock this note with a pasword so nobody can read it", "answer": "File > Lock Note", "alts": [], "trap": "Notes > Close All Locked Notes"}
+{"goal": "close all my notes with password again so they are hidden", "answer": "Notes > Close All Locked Notes", "alts": [], "trap": "File > Close All"}
+{"goal": "delete this note i dont need it anymore", "answer": "Edit > Delete Note", "alts": [], "trap": "Format > More > Delete Checked"}
+{"goal": "remove all the items i already checked off from my list", "answer": "Format > More > Delete Checked", "alts": [], "trap": "Format > Mark as Checked"}
+{"goal": "put the done items at the bottom of my list", "answer": "Format > More > Move Checked to Bottom", "alts": [], "trap": "Window > Move & Resize > Bottom"}
+{"goal": "make a to do list with little boxes i can tick", "answer": "Format > Checklist", "alts": [], "trap": "Edit > Writing Tools > Make List"}
+{"goal": "make a list with numbers 1 2 3 in front", "answer": "Format > Numbered List", "alts": [], "trap": "Edit > Writing Tools > Make List"}
+{"goal": "make the first line the title, big and bold", "answer": "Format > Title", "alts": [], "trap": "Format > Font > Bold"}
+{"goal": "find which note has the word doctor, look in all my notes", "answer": "Edit > Find > Note List Search…", "alts": [], "trap": "Edit > Find > Find…"}
+{"goal": "find a word inside this note only", "answer": "Edit > Find > Find…", "alts": [], "trap": "Edit > Find > Note List Search…"}
+{"goal": "new folder to put my recipe notes in", "answer": "File > New Folder", "alts": [], "trap": "File > New Note"}
+{"goal": "push this line in more to the right", "answer": "Format > Indentation > Increase", "alts": [], "trap": "Format > Text > Align Right"}
+{"goal": "see all the files and pictures attached in my notes", "answer": "View > Show Attachments Browser", "alts": [], "trap": "Edit > Attach File…"}
+{"goal": "start recording my voice inside this note", "answer": "Edit > Record Audio…", "alts": [], "trap": "Edit > Start Dictation…"}
+{"goal": "type by talking, i speak and it writes, start", "answer": "Edit > Start Dictation…", "alts": [], "trap": "Edit > Speech > Start Speaking"}
+{"goal": "zoom so i can read the note better", "answer": "View > Zoom In", "alts": [], "trap": "Window > Zoom"}
+{"goal": "show my notes as pictures instead of a list", "answer": "View > as Gallery", "alts": [], "trap": "View > as List"}
+{"goal": "hide the folders on the side", "answer": "View > Hide Folders", "alts": [], "trap": "Notes > Hide Notes"}
+{"goal": "copy how this text looks and put it on the other text", "answer": "Format > Font > Copy Style", "alts": [], "trap": "Edit > Copy"}
+{"goal": "paste but match the look of my note", "answer": "Edit > Paste and Match Style", "alts": [], "trap": "Edit > Paste and Retain Style"}
+{"goal": "gawin mong all capital letters yung napili ko", "answer": "Edit > Transformations > Make Upper Case", "alts": [], "trap": "Edit > Transformations > Capitalize"}

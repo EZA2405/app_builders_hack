@@ -1,0 +1,293 @@
+{
+ "app": "Terminal",
+ "source": "full-tournament validation (val apps, teacher goals)",
+ "commands": [
+  "Terminal > About Terminal",
+  "Terminal > Settings…",
+  "Terminal > Secure Keyboard Entry",
+  "Terminal > Services > Activity Monitor",
+  "Terminal > Services > Allocations & Leaks",
+  "Terminal > Services > File Activity",
+  "Terminal > Services > System Trace",
+  "Terminal > Services > Services Settings…",
+  "Terminal > Hide Terminal",
+  "Terminal > Hide Others",
+  "Terminal > Show All",
+  "Terminal > Quit Terminal",
+  "Terminal > Quit and Keep Windows",
+  "Shell > New Window > New Window with Profile - Basic",
+  "Shell > New Window > New Window with Same Command",
+  "Shell > New Window > Basic",
+  "Shell > New Window > Clear Dark",
+  "Shell > New Window > Clear Light",
+  "Shell > New Window > Grass",
+  "Shell > New Window > Homebrew",
+  "Shell > New Window > Man Page",
+  "Shell > New Window > Novel",
+  "Shell > New Window > Ocean",
+  "Shell > New Window > Pro",
+  "Shell > New Window > Red Sands",
+  "Shell > New Window > Silver Aerogel",
+  "Shell > New Window > Solid Colors",
+  "Shell > New Tab > New Tab with Profile – Basic",
+  "Shell > New Tab > New Tab with Same Command",
+  "Shell > New Tab > Basic",
+  "Shell > New Tab > Clear Dark",
+  "Shell > New Tab > Clear Light",
+  "Shell > New Tab > Grass",
+  "Shell > New Tab > Homebrew",
+  "Shell > New Tab > Man Page",
+  "Shell > New Tab > Novel",
+  "Shell > New Tab > Ocean",
+  "Shell > New Tab > Pro",
+  "Shell > New Tab > Red Sands",
+  "Shell > New Tab > Silver Aerogel",
+  "Shell > New Tab > Solid Colors",
+  "Shell > New Command…",
+  "Shell > New Remote Connection…",
+  "Shell > Open…",
+  "Shell > Close Window",
+  "Shell > Close All",
+  "Shell > Use Settings as Default",
+  "Shell > Export Settings…",
+  "Shell > Export Text As…",
+  "Shell > Export Selected Text As…",
+  "Shell > Show Inspector",
+  "Shell > Edit Title",
+  "Shell > Edit Background Color",
+  "Shell > Reset",
+  "Shell > Hard Reset",
+  "Shell > Print Selection…",
+  "Shell > Print…",
+  "Edit > Undo",
+  "Edit > Redo",
+  "Edit > Cut",
+  "Edit > Copy",
+  "Edit > Copy Special > Copy Without Background Color",
+  "Edit > Copy Special > Copy Plain Text",
+  "Edit > Copy Special > Style for “item” Command",
+  "Edit > Copy Special > Terminal’s Settings (Default)",
+  "Edit > Copy Special > Plain Text",
+  "Edit > Copy Special > Basic",
+  "Edit > Copy Special > Clear Dark",
+  "Edit > Copy Special > Clear Light",
+  "Edit > Copy Special > Grass",
+  "Edit > Copy Special > Homebrew",
+  "Edit > Copy Special > Man Page",
+  "Edit > Copy Special > Novel",
+  "Edit > Copy Special > Ocean",
+  "Edit > Copy Special > Pro",
+  "Edit > Copy Special > Red Sands",
+  "Edit > Copy Special > Silver Aerogel",
+  "Edit > Copy Special > Solid Colors",
+  "Edit > Paste",
+  "Edit > Paste Escaped Text",
+  "Edit > Paste Selection",
+  "Edit > Paste Escaped Selection",
+  "Edit > Select All",
+  "Edit > Select Between Marks",
+  "Edit > Marks > Automatically Mark Prompt Lines",
+  "Edit > Marks > Mark Line and Send Return",
+  "Edit > Marks > Send Return Without Marking",
+  "Edit > Marks > Mark",
+  "Edit > Marks > Mark as Bookmark",
+  "Edit > Marks > Unmark",
+  "Edit > Bookmarks > Insert Bookmark",
+  "Edit > Bookmarks > Insert Bookmark with Name…",
+  "Edit > Bookmarks > No Bookmarks",
+  "Edit > Navigate > Jump to Previous Mark",
+  "Edit > Navigate > Select to Previous Mark",
+  "Edit > Navigate > Jump to Next Mark",
+  "Edit > Navigate > Select to Next Mark",
+  "Edit > Navigate > Jump to Previous Bookmark",
+  "Edit > Navigate > Select to Previous Bookmark",
+  "Edit > Navigate > Jump to Next Bookmark",
+  "Edit > Navigate > Select to Next Bookmark",
+  "Edit > Clear to Previous Mark",
+  "Edit > Clear to Previous Bookmark",
+  "Edit > Clear to Start",
+  "Edit > Clear Scrollback",
+  "Edit > Clear Screen",
+  "Edit > Fill Screen",
+  "Edit > Find > Find…",
+  "Edit > Find > Find Next",
+  "Edit > Find > Find Previous",
+  "Edit > Find > Select All",
+  "Edit > Find > Select All in Selection",
+  "Edit > Find > Hide Find Bar",
+  "Edit > Find > Use Selection for Find",
+  "Edit > Find > Jump to Selection",
+  "Edit > Show Colors",
+  "Edit > Use Option as Meta Key",
+  "Edit > Num Lock",
+  "Edit > Writing Tools > Show Writing Tools",
+  "Edit > Writing Tools > Proofread",
+  "Edit > Writing Tools > Rewrite",
+  "Edit > Writing Tools > Make Friendly",
+  "Edit > Writing Tools > Make Professional",
+  "Edit > Writing Tools > Make Concise",
+  "Edit > Writing Tools > Summarize",
+  "Edit > Writing Tools > Create Key Points",
+  "Edit > Writing Tools > Make List",
+  "Edit > Writing Tools > Make Table",
+  "Edit > Writing Tools > Compose…",
+  "Edit > AutoFill > Contact…",
+  "Edit > AutoFill > Passwords…",
+  "Edit > AutoFill > Credit Card…",
+  "Edit > Start Dictation…",
+  "Edit > Emoji & Symbols",
+  "View > Show All Tabs",
+  "View > Show Tab Bar",
+  "View > Show Marks",
+  "View > Show Alternate Screen",
+  "View > Hide Alternate Screen",
+  "View > Allow Mouse Reporting",
+  "View > Split Pane",
+  "View > Close Split Pane",
+  "View > Default Font Size",
+  "View > Bigger",
+  "View > Smaller",
+  "View > Scroll to Top",
+  "View > Scroll to Bottom",
+  "View > Page Up",
+  "View > Page Down",
+  "View > Line Up",
+  "View > Line Down",
+  "View > Enter Full Screen",
+  "Window > Minimize",
+  "Window > Minimize All",
+  "Window > Zoom",
+  "Window > Zoom All",
+  "Window > Fill",
+  "Window > Center",
+  "Window > Move & Resize > Halves",
+  "Window > Move & Resize > Left",
+  "Window > Move & Resize > Right",
+  "Window > Move & Resize > Top",
+  "Window > Move & Resize > Bottom",
+  "Window > Move & Resize > Quarters",
+  "Window > Move & Resize > Top Left",
+  "Window > Move & Resize > Top Right",
+  "Window > Move & Resize > Bottom Left",
+  "Window > Move & Resize > Bottom Right",
+  "Window > Move & Resize > Arrange",
+  "Window > Move & Resize > Left & Right",
+  "Window > Move & Resize > Left & Quarters",
+  "Window > Move & Resize > Right & Left",
+  "Window > Move & Resize > Right & Quarters",
+  "Window > Move & Resize > Top & Bottom",
+  "Window > Move & Resize > Top & Quarters",
+  "Window > Move & Resize > Bottom & Top",
+  "Window > Move & Resize > Bottom & Quarters",
+  "Window > Move & Resize > Return to Previous Size",
+  "Window > Full Screen Tile",
+  "Window > Remove Window from Set",
+  "Window > Open Window Group > No Window Groups",
+  "Window > Show Previous Tab",
+  "Window > Show Next Tab",
+  "Window > Move Tab to New Window",
+  "Window > Merge All Windows",
+  "Window > Bring All to Front",
+  "Window > Arrange in Front",
+  "Help > Terminal Help",
+  "Help > Open man Page for Selection",
+  "Help > Search man Page Index for Selection"
+ ],
+ "goals": {
+  "make the letters bigger": [
+   "View > Bigger"
+  ],
+  "paano gawing mas malaki yung font dito": [
+   "View > Bigger"
+  ],
+  "the writing is too big now, shrink it": [
+   "View > Smaller"
+  ],
+  "put the text size back to how it was normally": [
+   "View > Default Font Size"
+  ],
+  "open another one of these windows": [
+   "Shell > New Window > New Window with Profile - Basic",
+   "Shell > New Window > Basic"
+  ],
+  "i want another tab like in my internet browser": [
+   "Shell > New Tab > New Tab with Profile – Basic",
+   "Shell > New Tab > Basic"
+  ],
+  "clear all this text off the screen": [
+   "Edit > Clear Screen"
+  ],
+  "pa-clear naman ng screen ang gulo na": [
+   "Edit > Clear Screen"
+  ],
+  "erase everything even the stuff way up above": [
+   "Edit > Clear Scrollback"
+  ],
+  "copy this": [
+   "Edit > Copy"
+  ],
+  "put in what i copied": [
+   "Edit > Paste"
+  ],
+  "highlight everything": [
+   "Edit > Select All"
+  ],
+  "look for a word in all this text": [
+   "Edit > Find > Find…"
+  ],
+  "print all of this out on paper": [
+   "Shell > Print…"
+  ],
+  "only print the part i highlighted": [
+   "Shell > Print Selection…"
+  ],
+  "save all this text into a file so i can send it to tech support": [
+   "Shell > Export Text As…"
+  ],
+  "close this window": [
+   "Shell > Close Window"
+  ],
+  "take me up to the very top": [
+   "View > Scroll to Top"
+  ],
+  "jump down to the bottom where i type": [
+   "View > Scroll to Bottom"
+  ],
+  "split the window in two so i can see both": [
+   "View > Split Pane"
+  ],
+  "get rid of the split, one window is enough": [
+   "View > Close Split Pane"
+  ],
+  "go to the next tab": [
+   "Window > Show Next Tab"
+  ],
+  "lipat sa naunang tab": [
+   "Window > Show Previous Tab"
+  ],
+  "put all my terminal windows together into one with tabs": [
+   "Window > Merge All Windows"
+  ],
+  "pull this tab out into its own window": [
+   "Window > Move Tab to New Window"
+  ],
+  "change the name on top of the window": [
+   "Shell > Edit Title"
+  ],
+  "open the preferences": [
+   "Terminal > Settings…"
+  ],
+  "im done close terminal": [
+   "Terminal > Quit Terminal"
+  ],
+  "undo that": [
+   "Edit > Undo"
+  ],
+  "how does this thing work, i need help": [
+   "Help > Terminal Help"
+  ],
+  "i dont want other programs seeing what i type in here": [
+   "Terminal > Secure Keyboard Entry"
+  ]
+ }
+}

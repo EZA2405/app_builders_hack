@@ -1,0 +1,25 @@
+{"goal": "please start reading this page out loud to me, i dont want to talk", "answer": "Edit > Speech > Start Speaking", "alts": [], "trap": "Edit > Start Dictation…"}
+{"goal": "stop the audiobook for a minute, i will be right back", "answer": "Controls > Pause", "alts": [], "trap": "Controls > Stop"}
+{"goal": "the computer keeps reading the page out loud, make it stop talking", "answer": "Edit > Speech > Stop Speaking", "alts": [], "trap": "Controls > Stop"}
+{"goal": "take away the yellow color i put on this sentence", "answer": "Edit > Highlight > Remove", "alts": [], "trap": "Edit > Highlight > Yellow"}
+{"goal": "delete my little note on this page but keep the highlight", "answer": "Edit > Highlight > Remove Note", "alts": [], "trap": "Edit > Delete"}
+{"goal": "skip this whole chapter and go to the next one", "answer": "Controls > Next Chapter", "alts": [], "trap": "Controls > Skip Forward"}
+{"goal": "go back a few seconds i missed what the reader said", "answer": "Controls > Skip Back", "alts": [], "trap": "Controls > Back"}
+{"goal": "go back to the start of this chapter in the audiobook", "answer": "Controls > Beginning of Chapter", "alts": [], "trap": "Controls > Back"}
+{"goal": "stop playing when the end of this chapter comes, im going to sleep", "answer": "Controls > Sleep Timer > When current chapter ends", "alts": [], "trap": "Controls > End of Chapter"}
+{"goal": "make the narrator talk a littel bit faster", "answer": "Controls > Playback Speed > 1.25x", "alts": [], "trap": "Edit > Speech > Start Speaking"}
+{"goal": "make the narrator speaking much faster, double speed", "answer": "Controls > Playback Speed > 2x", "alts": [], "trap": "Edit > Speech > Start Speaking"}
+{"goal": "sort my books by who wrote them", "answer": "View > Author", "alts": [], "trap": "View > Sort By"}
+{"goal": "arrange my books so the ones i read last are first", "answer": "View > Recent", "alts": [], "trap": "Window > Move & Resize > Arrange"}
+{"goal": "sort the books alphabetical by the name of the book", "answer": "View > Title", "alts": [], "trap": "View > Sort By"}
+{"goal": "put only the books i selected into a new collection", "answer": "File > New Collection From Selection", "alts": [], "trap": "File > New Collection"}
+{"goal": "add a book file that i downloaded on my computer", "answer": "File > Import…", "alts": [], "trap": "File > Add to Collection > No Collection"}
+{"goal": "make the book fill the whole screen, no menu bar at the top", "answer": "View > Enter Full Screen", "alts": [], "trap": "Window > Fill"}
+{"goal": "lagyan mo ng timer, half an hour lang bago ako matulog", "answer": "Controls > Sleep Timer > 30 minutes", "alts": [], "trap": "Window > Move & Resize > Halves"}
+{"goal": "get out of my apple account in books, i dont want to view it anymore", "answer": "Account > Sign Out", "alts": [], "trap": "Account > View Account…"}
+{"goal": "remove this computer from my books account, im selling it", "answer": "Account > Authorizations > Deauthorize This Computer…", "alts": [], "trap": "Window > Remove Window from Set"}
+{"goal": "close the books app completly", "answer": "Books > Quit Books", "alts": [], "trap": "File > Close"}
+{"goal": "send feedback that the reading voice said a word wrong", "answer": "Help > Report a Narration Issue", "alts": [], "trap": "Books > Provide Books Feedback"}
+{"goal": "mark my place in the book so i can find it again later", "answer": "Edit > Bookmark Page", "alts": [], "trap": "Edit > Find > Find…"}
+{"goal": "ibalik mo sa normal yung speed ng pagbasa, back to regular", "answer": "Controls > Playback Speed > 1x", "alts": [], "trap": "Controls > Back"}
+{"goal": "stop the sleep timer, i want to keep listening tonight", "answer": "Controls > Sleep Timer > Off", "alts": [], "trap": "Controls > Stop"}

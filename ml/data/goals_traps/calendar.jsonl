@@ -1,0 +1,25 @@
+{"goal": "make a copy of this event for next week", "answer": "Edit > Duplicate", "alts": [], "trap": "Edit > Copy"}
+{"goal": "make a new appointment for my check up", "answer": "File > New Event or Reminder", "alts": [], "trap": "File > New Calendar"}
+{"goal": "gawa ka ng bagong event sa calendar ko", "answer": "File > New Event or Reminder", "alts": [], "trap": "File > New Calendar"}
+{"goal": "add the philippine holidays to my calendar", "answer": "File > New Holiday Calendar…", "alts": [], "trap": "Calendar > Add Account…"}
+{"goal": "go to today's date", "answer": "View > Go to Today", "alts": [], "trap": "View > Go to Date…"}
+{"goal": "go to june 5, i need to check that day", "answer": "View > Go to Date…", "alts": [], "trap": "View > Go to Today"}
+{"goal": "show all the days of this month", "answer": "View > By Month", "alts": [], "trap": "View > Show All-Day Events"}
+{"goal": "show just one day", "answer": "View > By Day", "alts": [], "trap": "View > Show All-Day Events"}
+{"goal": "move to next week please", "answer": "View > Next", "alts": [], "trap": "View > By Week"}
+{"goal": "let my daughter see my calendar too", "answer": "Edit > Share Calendar…", "alts": [], "trap": "File > New Calendar"}
+{"goal": "delete this event", "answer": "Edit > Delete", "alts": [], "trap": "Edit > Edit Event"}
+{"goal": "change the time of this event", "answer": "Edit > Edit Event", "alts": [], "trap": "View > Show Travel Time"}
+{"goal": "mark the reminder done, i completed it", "answer": "Edit > Mark as Completed", "alts": [], "trap": "View > Show Completed Reminders"}
+{"goal": "show the reminders i already finished", "answer": "View > Show Completed Reminders", "alts": [], "trap": "Edit > Mark as Completed"}
+{"goal": "save my whole calendar as a backup", "answer": "File > Export > Calendar Archive…", "alts": [], "trap": "File > New Calendar"}
+{"goal": "print my week so i can put it on the ref", "answer": "File > Print…", "alts": [], "trap": "View > By Week"}
+{"goal": "show the events i said no to", "answer": "View > Show Declined Events", "alts": [], "trap": "View > Show All-Day Events"}
+{"goal": "reload my calendars, new events not showing", "answer": "View > Refresh Calendars", "alts": [], "trap": "View > Show Calendar List"}
+{"goal": "show the list of my calendars on the side", "answer": "View > Show Calendar List", "alts": [], "trap": "View > Show List View"}
+{"goal": "add my google account to calendar", "answer": "Calendar > Add Account…", "alts": [], "trap": "File > New Calendar"}
+{"goal": "add an event file that was emailed to me", "answer": "File > Import…", "alts": [], "trap": "File > Export > Export Event…"}
+{"goal": "zoom in, the hours are to small", "answer": "View > Zoom In", "alts": [], "trap": "Window > Zoom"}
+{"goal": "go to the next time this same meeting happens", "answer": "View > Go to Next Occurrence", "alts": [], "trap": "View > Next"}
+{"goal": "put the two calendar windows into one window", "answer": "Window > Merge All Windows", "alts": [], "trap": "Edit > Merge Calendar > Home"}
+{"goal": "bagong calendar para sa church activities ko", "answer": "File > New Calendar", "alts": [], "trap": "File > New Event or Reminder"}

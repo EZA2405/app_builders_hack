@@ -1,0 +1,25 @@
+{"goal": "make a new contact for my doctor", "answer": "File > New Card", "alts": [], "trap": "File > New Group"}
+{"goal": "put my family together in one group", "answer": "File > New Group", "alts": [], "trap": "View > Hide Groups"}
+{"goal": "find the same person i entered twice", "answer": "Card > Look for Duplicates…", "alts": [], "trap": "Edit > Find > Find"}
+{"goal": "add my friend's birthday", "answer": "Card > Add Field > Birthday", "alts": [], "trap": "Contacts > Add Account..."}
+{"goal": "pakidagdag ng birthday ni lola sa contact niya", "answer": "Card > Add Field > Birthday", "alts": [], "trap": "Contacts > Add Account..."}
+{"goal": "add another phone number to this person", "answer": "Card > Add Field > Phone", "alts": [], "trap": "Contacts > Add Account..."}
+{"goal": "add an email address to this contact", "answer": "Card > Add Field > Email", "alts": [], "trap": "Card > Share My Card > Email My Card"}
+{"goal": "send my own contact info to someone by email", "answer": "Card > Share My Card > Email My Card", "alts": [], "trap": "Card > Add Field > Email"}
+{"goal": "send my card by text message", "answer": "Card > Share My Card > Message My Card", "alts": [], "trap": "Card > Share My Card > Email My Card"}
+{"goal": "change the phone number of this person", "answer": "Edit > Edit Card", "alts": [], "trap": "Card > Add Field > Phone"}
+{"goal": "save all my contacts as a backup", "answer": "File > Export > Contacts Archive…", "alts": [], "trap": "File > Save"}
+{"goal": "turn this contact into a pdf file, no need to print", "answer": "File > Export as PDF…", "alts": [], "trap": "File > Print…"}
+{"goal": "this is a company not a person", "answer": "Card > Mark as a Company", "alts": [], "trap": "Card > Add Field > Phonetic Company"}
+{"goal": "add what job they do at the company", "answer": "Card > Add Field > Job Title", "alts": [], "trap": "Card > Mark as a Company"}
+{"goal": "add the name we call him at home, yung palayaw", "answer": "Card > Add Field > Nickname", "alts": [], "trap": "Card > Add Field > Middle Name"}
+{"goal": "change the image of this contact to a nicer one", "answer": "Card > Choose Custom Image…", "alts": [], "trap": "Card > Clear Custom Image"}
+{"goal": "remove the picture on this contact", "answer": "Card > Clear Custom Image", "alts": [], "trap": "Edit > Remove From List"}
+{"goal": "this card is me, set it as mine", "answer": "Card > Make This My Card", "alts": [], "trap": "Card > Go to My Card"}
+{"goal": "show my own card", "answer": "Card > Go to My Card", "alts": [], "trap": "Card > Make This My Card"}
+{"goal": "take this person out of the group but dont delete them", "answer": "Edit > Remove From List", "alts": [], "trap": "Edit > Delete"}
+{"goal": "remove this person forever from my contacts", "answer": "Edit > Delete", "alts": [], "trap": "Edit > Remove From List"}
+{"goal": "the group name is wrong, edit it", "answer": "Edit > Rename Group", "alts": [], "trap": "Edit > Edit Card"}
+{"goal": "import the contacts file from my old phone", "answer": "File > Import…", "alts": [], "trap": "View > Show Last Import Group"}
+{"goal": "show last name first", "answer": "Card > Reorder Last Name Before First", "alts": [], "trap": "View > Show Last Import Group"}
+{"goal": "hide the groups on the side", "answer": "View > Hide Groups", "alts": [], "trap": "Contacts > Hide Contacts"}

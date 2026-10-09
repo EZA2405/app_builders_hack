@@ -1,0 +1,25 @@
+{"goal": "find where the font file is saved on my mac", "answer": "File > Show in Finder", "alts": [], "trap": "File > Find…"}
+{"goal": "make a copy of this font so i can give it to my friend", "answer": "File > Export…", "alts": [], "trap": "Edit > Copy"}
+{"goal": "install a new font that i downloaded from the internet", "answer": "File > Add Fonts to Current User…", "alts": [], "trap": "Edit > Download"}
+{"goal": "turn off a font for now without deleting it", "answer": "Edit > Deactivate", "alts": [], "trap": "Edit > Delete"}
+{"goal": "bring back the font i switched off before", "answer": "Edit > Activate", "alts": [], "trap": "View > Back"}
+{"goal": "i have the same font twice, remove the extra one", "answer": "File > Resolve Duplicates…", "alts": [], "trap": "Edit > Remove"}
+{"goal": "check the fonts i selected for any problems", "answer": "File > Validate Selection", "alts": [], "trap": "File > New Collection From Selection"}
+{"goal": "check a font file for damage before i add it", "answer": "File > Validate File…", "alts": [], "trap": "File > Add Fonts to Current User…"}
+{"goal": "save the list of font problems it found", "answer": "File > Save Validation Report…", "alts": [], "trap": "View > View as List"}
+{"goal": "make the sample letters bigger so i can see them", "answer": "View > Increase Font Size", "alts": [], "trap": "View > View as Samples"}
+{"goal": "zoom out the font preview, the letters are too big", "answer": "View > Decrease Font Size", "alts": [], "trap": "Window > Zoom"}
+{"goal": "put only the fonts i picked in there own new collection", "answer": "File > New Collection From Selection", "alts": [], "trap": "File > New Collection"}
+{"goal": "make a collection that fills itself with all my bold fonts automaticaly", "answer": "File > New Smart Collection…", "alts": [], "trap": "File > New Collection"}
+{"goal": "keep what i just searched as a smart collection", "answer": "File > New Smart Collection from Search…", "alts": [], "trap": "File > New Smart Collection…"}
+{"goal": "show the next style like bold or italic of this same font, not a different font", "answer": "View > Next Style", "alts": [], "trap": "View > Next Typeface"}
+{"goal": "go to the next font down the list", "answer": "View > Next Typeface", "alts": [], "trap": "View > View as List"}
+{"goal": "show info about this font, like the version and who made it", "answer": "View > Show Info Pane", "alts": [], "trap": "Font Book > About Font Book"}
+{"goal": "change the sample sentence back to the normal one", "answer": "Edit > Reset Custom Text", "alts": [], "trap": "View > Back"}
+{"goal": "show all my fonts as little boxes side by side", "answer": "View > View as Grid", "alts": [], "trap": "View > Show All Tabs"}
+{"goal": "open another window so i can compare two fonts", "answer": "File > New Window", "alts": [], "trap": "Window > Move Tab to New Window"}
+{"goal": "close font book completely", "answer": "Font Book > Quit Font Book", "alts": [], "trap": "File > Close"}
+{"goal": "make the font book window fill the whole screen", "answer": "View > Enter Full Screen", "alts": [], "trap": "Window > Fill"}
+{"goal": "add the font thats grayed out, its missing on my mac", "answer": "Edit > Download", "alts": [], "trap": "File > Add Fonts to Current User…"}
+{"goal": "pagsamahin mo lahat ng tabs sa isang window lang", "answer": "Window > Merge All Windows", "alts": [], "trap": "View > Show All Tabs"}
+{"goal": "gawa ka ng bagong lalagyan ng fonts, hiwalay sa collection ko", "answer": "File > New Library", "alts": [], "trap": "File > New Collection"}

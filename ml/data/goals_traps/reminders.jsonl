@@ -1,0 +1,25 @@
+{"goal": "change this one to be due tomorrow instead of today", "answer": "Edit > Mark Due Date As > Tomorrow", "alts": [], "trap": "Edit > Mark Due Date As > Today"}
+{"goal": "all the late ones, move them all to today", "answer": "Edit > Mark Due Date As > Mark All Overdue to Today", "alts": [], "trap": "View > Go To > Today"}
+{"goal": "show me what i need to do today", "answer": "View > Go To > Today", "alts": ["View > Show Smart List > Today"], "trap": "Edit > Mark Due Date As > Today"}
+{"goal": "mark this important with a flag", "answer": "Edit > Flag", "alts": [], "trap": "View > Show Smart List > Flagged"}
+{"goal": "show me my flagged ones", "answer": "View > Show Smart List > Flagged", "alts": [], "trap": "Edit > Flag"}
+{"goal": "mark this task completed, i finished it", "answer": "Edit > Mark as Completed", "alts": [], "trap": "View > Go To > Completed"}
+{"goal": "tapos ko na to, i-mark mo na completed", "answer": "Edit > Mark as Completed", "alts": [], "trap": "View > Show Completed"}
+{"goal": "see the ones i already completed", "answer": "View > Go To > Completed", "alts": ["View > Show Smart List > Completed", "View > Show Completed"], "trap": "Edit > Mark as Completed"}
+{"goal": "make a new list for grocery", "answer": "File > New List", "alts": [], "trap": "File > Create Smart List"}
+{"goal": "gawa ka ng bagong list para sa pamalengke", "answer": "File > New List", "alts": [], "trap": "File > Create Smart List"}
+{"goal": "add a new thing to remember", "answer": "File > New Reminder", "alts": [], "trap": "File > New List"}
+{"goal": "make this a sub task under the one above", "answer": "Edit > Indent Reminder", "alts": [], "trap": "View > Show All Subtasks"}
+{"goal": "move this out of the subtasks, back to main", "answer": "Edit > Outdent Reminder", "alts": [], "trap": "View > Hide All Subtasks"}
+{"goal": "put three !!! on this one, top priority", "answer": "Edit > Priority > High", "alts": [], "trap": "Window > Move & Resize > Top"}
+{"goal": "no more priority on this, set it to none", "answer": "Edit > Priority > None", "alts": [], "trap": "Edit > Mark Due Date As > None"}
+{"goal": "set the due date to none, no deadline", "answer": "Edit > Mark Due Date As > None", "alts": [], "trap": "Edit > Priority > None"}
+{"goal": "add a tag like shopping to this reminder", "answer": "Edit > Tags > Add Tag…", "alts": [], "trap": "Help > Using Tags"}
+{"goal": "share my list with my husband", "answer": "File > Share List", "alts": [], "trap": "File > Manage Shared List"}
+{"goal": "sort my reminders into sections automaticaly", "answer": "File > Auto-Categorize", "alts": [], "trap": "File > New Section"}
+{"goal": "make this list a template i can use again", "answer": "File > Save as Template…", "alts": [], "trap": "File > View Templates"}
+{"goal": "keep this list pinned so it's easy to find", "answer": "File > Pin List", "alts": [], "trap": "Edit > Find"}
+{"goal": "show my list as columns instead of a list", "answer": "View > as Columns", "alts": [], "trap": "View > as List"}
+{"goal": "assign this task to my son", "answer": "Edit > Assign", "alts": [], "trap": "View > Show Smart List > Assigned"}
+{"goal": "print my to do list", "answer": "File > Print…", "alts": [], "trap": "File > New List"}
+{"goal": "mark this reminder as urgent so it rings loud", "answer": "Edit > Mark as Urgent", "alts": [], "trap": "View > Show Smart List > Urgent"}

@@ -1,0 +1,25 @@
+{"goal": "make a copy of this whole board", "answer": "File > Duplicate", "alts": [], "trap": "Edit > Copy"}
+{"goal": "copy this shape and put the copy right next to it", "answer": "Edit > Duplicate Selection", "alts": [], "trap": "Edit > Copy"}
+{"goal": "cut out the background behind the person in this picture", "answer": "Format > Image > Remove Background", "alts": [], "trap": "Edit > Cut"}
+{"goal": "cut the photo into a circle shape", "answer": "Format > Image > Mask With Shape > Oval", "alts": [], "trap": "Edit > Cut"}
+{"goal": "move this picture to the back, under the other things", "answer": "Arrange > Send to Back", "alts": [], "trap": "Arrange > Move Items to Board"}
+{"goal": "bring this sticky note on top of everything", "answer": "Arrange > Bring to Front", "alts": [], "trap": "Window > Bring All to Front"}
+{"goal": "save the board as a pdf instead of printing", "answer": "File > Export Board as PDF…", "alts": [], "trap": "File > Print Board…"}
+{"goal": "put a small paper note on the board", "answer": "Insert > Sticky Note", "alts": [], "trap": "File > New Board"}
+{"goal": "pakidagdag ng sticky note dito sa board", "answer": "Insert > Sticky Note", "alts": [], "trap": "File > New Board"}
+{"goal": "connect two boxes with a line that stays attached", "answer": "Insert > Connection Line", "alts": [], "trap": "Format > Shapes and Lines > Toggle Line Type"}
+{"goal": "keep the same shape when i resize the picture, dont stretch", "answer": "Arrange > Constrain Proportions", "alts": [], "trap": "Format > Shapes and Lines > Change Shape"}
+{"goal": "put these together so they move as one", "answer": "Arrange > Group", "alts": [], "trap": "Arrange > Move Items to Board"}
+{"goal": "line up the boxes so they all start at the left", "answer": "Arrange > Align Objects > Left", "alts": [], "trap": "Format > Text > Align Left"}
+{"goal": "center the words inside the box", "answer": "Format > Text > Align Center", "alts": [], "trap": "Window > Center"}
+{"goal": "add a table with rows and columns", "answer": "Insert > Table", "alts": [], "trap": "Format > Table > Add Row Below"}
+{"goal": "add one more row under this one in the table", "answer": "Format > Table > Add Row Below", "alts": [], "trap": "Insert > Table"}
+{"goal": "show grid lines so i can line things up", "answer": "View > Show Grid", "alts": [], "trap": "Insert > Line"}
+{"goal": "zoom out so i can see everything on the board at once", "answer": "View > Zoom > Zoom to Fit Content", "alts": [], "trap": "Window > Zoom"}
+{"goal": "make the picture sharper and clearer, its blurry", "answer": "Format > Image > Super Resolution", "alts": [], "trap": "Format > Shapes and Lines > Make Sharp Point"}
+{"goal": "make the corners round on this box", "answer": "Format > Round Corners", "alts": [], "trap": "Insert > Shape > Rounded Rectangle"}
+{"goal": "choose a photo from my pictures to put here", "answer": "Insert > Choose Photo or Video", "alts": [], "trap": "Insert > Choose File"}
+{"goal": "remove this whole board completely", "answer": "File > Delete", "alts": [], "trap": "Edit > Delete"}
+{"goal": "share this board with my grandson so we can edit together", "answer": "File > Share…", "alts": [], "trap": "File > Manage Shared Board…"}
+{"goal": "join two shapes into one single shape", "answer": "Format > Shapes and Lines > Unite Shapes", "alts": [], "trap": "Format > Shapes and Lines > Change Shape"}
+{"goal": "copy the color and border of this box to that one", "answer": "Format > Copy Style", "alts": [], "trap": "Edit > Copy"}

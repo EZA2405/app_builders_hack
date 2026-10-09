@@ -1,0 +1,14 @@
+{"goal": "convert my number to binary like ones and zeros", "answer": "View > Programmer", "alts": [], "trap": "View > Convert"}
+{"goal": "gawin mong hex yung number, i-convert mo", "answer": "View > Programmer", "alts": [], "trap": "View > Convert"}
+{"goal": "delete the commas in my big numbers", "answer": "View > Hide Thousands Separator", "alts": [], "trap": "Edit > Delete"}
+{"goal": "hide the little commas between the numbers", "answer": "View > Hide Thousands Separator", "alts": [], "trap": "Calculator > Hide Calculator"}
+{"goal": "show money with just 2 numbers after the dot, not all of them", "answer": "View > Decimal Places > 2", "alts": [], "trap": "Calculator > Show All"}
+{"goal": "show all the sums i did earlier today", "answer": "View > Show History", "alts": [], "trap": "Calculator > Show All"}
+{"goal": "i need square root and more buttons, the basic one is not enuf", "answer": "View > Scientific", "alts": [], "trap": "View > Basic"}
+{"goal": "i want to write my math like notes and it solves it for me", "answer": "View > Math Notes…", "alts": [], "trap": "Edit > Writing Tools > Show Writing Tools"}
+{"goal": "make a table of my expenses and add them up as i type", "answer": "View > Math Notes…", "alts": [], "trap": "Edit > Writing Tools > Make Table"}
+{"goal": "copy the answer so i can paste it in my message", "answer": "Edit > Copy", "alts": [], "trap": "Edit > Paste"}
+{"goal": "close the calculator completely", "answer": "Calculator > Quit Calculator", "alts": [], "trap": "Window > Close"}
+{"goal": "make the calculator fill my entire screen with no menus", "answer": "View > Enter Full Screen", "alts": [], "trap": "Window > Fill"}
+{"goal": "delete the decimals, show whole numbers only", "answer": "View > Decimal Places > 0", "alts": [], "trap": "Edit > Delete"}
+{"goal": "put the calculator away for now but dont close it", "answer": "Window > Minimize", "alts": [], "trap": "Window > Close"}

@@ -1,0 +1,25 @@
+{"goal": "show me the song file in its folder on my mac", "answer": "File > Show in Finder", "alts": [], "trap": "Song > Show Album in Library"}
+{"goal": "make a copy of the song that fits my iphone", "answer": "File > Convert > Create iPod or iPhone Version", "alts": [], "trap": "Edit > Copy"}
+{"goal": "play this song right after the one playing now", "answer": "Song > Play Next", "alts": [], "trap": "Controls > Play"}
+{"goal": "add this song to play later after the others", "answer": "Song > Add to Queue", "alts": [], "trap": "Controls > Play"}
+{"goal": "skip to the next song please", "answer": "Controls > Next Track", "alts": [], "trap": "Song > Play Next"}
+{"goal": "remove the song from this playlist but keep it in my music", "answer": "Song > Remove from Playlist", "alts": [], "trap": "Song > Remove Download"}
+{"goal": "remove the song from my whole library forever", "answer": "Song > Delete from Library", "alts": [], "trap": "Song > Remove from Playlist"}
+{"goal": "free up space, take the downloaded song off my mac but keep it in my list", "answer": "Song > Remove Download", "alts": [], "trap": "Song > Download"}
+{"goal": "play the same song over and over", "answer": "Controls > Repeat > One", "alts": [], "trap": "Controls > Play"}
+{"goal": "ulitin mo lang yung isang song, paulit ulit", "answer": "Controls > Repeat > One", "alts": [], "trap": "Controls > Go to Current Song"}
+{"goal": "stop repeating the songs", "answer": "Controls > Repeat > Off", "alts": [], "trap": "Controls > Stop"}
+{"goal": "make a playlist that adds songs by itself, like all my 5 star ones", "answer": "File > New > Smart Playlist", "alts": [], "trap": "File > New > Playlist"}
+{"goal": "make a playlist from the songs i picked", "answer": "File > New > Playlist from Selection", "alts": [], "trap": "File > New > Playlist"}
+{"goal": "copy my playlist onto a cd for the car", "answer": "File > Burn Playlist to Disc…", "alts": [], "trap": "Edit > Copy"}
+{"goal": "send my playlist to another computer as a file", "answer": "File > Library > Export Playlist…", "alts": [], "trap": "File > Library > Import Playlist…"}
+{"goal": "the album cover pictures are missing, get them", "answer": "File > Library > Get Album Artwork", "alts": [], "trap": "Song > Show Album in Library"}
+{"goal": "find the songs that are in my library two times", "answer": "File > Library > Show Duplicate Items", "alts": [], "trap": "Song > Show Artist in Library"}
+{"goal": "listen to a radio station from a web address", "answer": "File > Open Stream URL…", "alts": [], "trap": "Song > Create Station"}
+{"goal": "see what songs will play next", "answer": "View > Show Playing Next", "alts": [], "trap": "Song > Play Next"}
+{"goal": "turn on the moving colors on the screen while the music plays", "answer": "Window > Visualizer Settings > Visualizer", "alts": [], "trap": "Controls > Play"}
+{"goal": "add songs from my computer into music", "answer": "File > Import…", "alts": [], "trap": "Song > Add to Queue"}
+{"goal": "fix the name of the song, it is spelled wrong", "answer": "Song > Get Info…", "alts": [], "trap": "File > Library > Get Track Names"}
+{"goal": "close the music app completly", "answer": "Music > Quit Music", "alts": [], "trap": "File > Close"}
+{"goal": "go back to the last song", "answer": "Controls > Previous Track", "alts": [], "trap": "Controls > Back"}
+{"goal": "shuffle by whole albums not single songs", "answer": "Controls > Shuffle > Albums", "alts": [], "trap": "Song > Show Album in Library"}

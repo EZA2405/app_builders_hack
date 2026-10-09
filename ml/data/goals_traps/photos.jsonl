@@ -1,0 +1,25 @@
+{"goal": "cut out the edges of this photo, trim it smaller", "answer": "Image > Show/Hide Edit Tools", "alts": [], "trap": "Edit > Cut"}
+{"goal": "edit this photo myself, make it brighter", "answer": "Image > Show/Hide Edit Tools", "alts": [], "trap": "Image > Edit With > Last Used Application"}
+{"goal": "make a copy of this photo so i can edit one", "answer": "Image > Duplicate", "alts": [], "trap": "Edit > Copy"}
+{"goal": "gawa ka ng copy ng picture na to", "answer": "Image > Duplicate", "alts": [], "trap": "Edit > Copy"}
+{"goal": "turn the picture, its lying sideways", "answer": "Image > Rotate Clockwise", "alts": [], "trap": "Image > Turn On Live Photo"}
+{"goal": "fix the photo colors automatically for me", "answer": "Image > Auto Enhance", "alts": [], "trap": "Edit > Font > Show Colors"}
+{"goal": "undo all my changes on this photo, back to the original", "answer": "Image > Revert to Original", "alts": [], "trap": "Image > Location > Revert to Original Location"}
+{"goal": "save this photo as a file to my desktop", "answer": "File > Export > Export Photos…", "alts": [], "trap": "Image > Save to Library"}
+{"goal": "delete only this one photo", "answer": "Image > Delete Photo", "alts": [], "trap": "Photos > Erase Deleted Items"}
+{"goal": "find the photos i deleted yesterday, i want them back", "answer": "View > Pinned > Recently Deleted", "alts": ["View > Utilities > Recently Deleted"], "trap": "Image > Delete Photo"}
+{"goal": "empty the deleted photos for good to free space", "answer": "Photos > Erase Deleted Items", "alts": [], "trap": "Image > Delete Photo"}
+{"goal": "show my favorite pictures", "answer": "View > Pinned > Favorites", "alts": ["View > Utilities > Favorites"], "trap": "Image > Favorite Photo"}
+{"goal": "mark this picture as one of my favorites", "answer": "Image > Favorite Photo", "alts": [], "trap": "View > Pinned > Favorites"}
+{"goal": "hide this photo so other people dont see it", "answer": "Image > Show/Hide Photo", "alts": [], "trap": "Photos > Hide Photos"}
+{"goal": "where are my hidden photos, show the hidden album", "answer": "View > Show Hidden Photo Album", "alts": [], "trap": "Image > Show/Hide Photo"}
+{"goal": "show a slideshow of my photos on the screen now", "answer": "File > Play Slideshow", "alts": [], "trap": "File > Export > Export Slideshow…"}
+{"goal": "find the real file of this picture on my mac", "answer": "File > Show Referenced File in Finder", "alts": [], "trap": "Edit > Find"}
+{"goal": "the place is wrong, set the location of this photo", "answer": "Image > Location > Assign Location", "alts": [], "trap": "Image > Location > Hide Location"}
+{"goal": "same photo is there twice, combine them into one", "answer": "Image > Merge Duplicates", "alts": [], "trap": "Image > Duplicate"}
+{"goal": "show me all the repeat photos so i can clean up", "answer": "View > Utilities > Duplicates", "alts": [], "trap": "Image > Duplicate"}
+{"goal": "save a still picture from this video", "answer": "Image > Save Video Frame as Photo", "alts": [], "trap": "Image > Save to Library"}
+{"goal": "copy the brightness edits i did to my other photos", "answer": "Image > Copy Edits", "alts": [], "trap": "Edit > Copy"}
+{"goal": "bring in photos from my camera card", "answer": "File > Import…", "alts": [], "trap": "File > Export > Export Photos…"}
+{"goal": "share this photo with my son by message", "answer": "File > Share…", "alts": [], "trap": "Image > Move to Shared Library"}
+{"goal": "pakigawa ng bagong album para sa mga picture ng trip", "answer": "File > New Album", "alts": [], "trap": "File > New Folder"}
