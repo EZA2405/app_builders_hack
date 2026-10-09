@@ -47,7 +47,8 @@ struct AskView: View {
             .padding(.leading, 22).padding(.trailing, 10).frame(height: 68)
             HStack(spacing: 6) {
                 Text(listener.unavailable ? "Voice isn't set up on this Mac. You can type." :
-                        listener.listening ? "I'm listening. Take your time." : "Tap the microphone, or type.")
+                        listener.transcribing ? "Writing it down…" :
+                        listener.listening ? "I'm listening. Take your time. Tap the mic when you're done." : "Tap the microphone, or type.")
                 Spacer()
                 Image(systemName: "lock.fill").font(.system(size: 11 * Theme.scale))
                 Text("On this Mac")

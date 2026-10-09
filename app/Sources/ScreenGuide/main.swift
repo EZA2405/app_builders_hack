@@ -92,6 +92,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         // The browser extension connects here (ws://127.0.0.1:47823/ext); it only reads and draws.
         Bridge.shared.start()
         PlanVoice.prewarm()
+        Whisper.start()   // local speech-to-text server; dictation falls back to Apple's text if it isn't there
         GuideEngine.installBridgeEvents()
         lastApp = NSWorkspace.shared.frontmostApplication
         NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didActivateApplicationNotification,
@@ -189,6 +190,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             onFinish: { [weak self] in self?.welcome?.dismiss(); self?.ask.present() }))
         welcome?.present()
     }
+
+    func applicationWillTerminate(_ n: Notification) { Whisper.stopServer() }
 
     @objc func toggleAsk() {
         if ask.isVisible { ask.orderOut(nil) } else { ask.present() }
