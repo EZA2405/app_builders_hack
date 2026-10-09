@@ -106,6 +106,7 @@ extension GuideEngine {
         var parts: [String]? = nil
         var partIndex = 0
         var lastHost = ""          // the site this session is on
+        var lastLabel = ""         // what they clicked last (its name often says where they are now)
         var expectNav = true       // the last step could have moved the page (so a new site is expected)
         overlay.hide()   // the card lives in the page
         while !Task.isCancelled, stepNo < 8 {
@@ -142,7 +143,12 @@ extension GuideEngine {
             // Arrived: after their step, a page whose title names what they asked for ("José Rizal - Wikipedia") may be
             // the end. Only on the last part (a YouTube results page also names the search, but captions are still to do).
             let onLastPart = (parts ?? []).isEmpty || partIndex + 1 >= (parts ?? []).count
-            if navigated, stepNo >= 1, onLastPart, !keepGoing, Self.titleMatches(goal: originalWebGoal ?? goal, title: title, host: host) {
+            // Sites that switch pages without reloading (YouTube) update the title late: also read the address
+            // ("/feed/subscriptions") and the name of what they just clicked ("Subscriptions").
+            let path = (URL(string: url)?.path ?? "").replacingOccurrences(of: "/", with: " ").replacingOccurrences(of: "_", with: " ")
+                .replacingOccurrences(of: "-", with: " ")
+            let evidence = "\(title) \(path) \(lastLabel)"
+            if navigated, stepNo >= 1, onLastPart, !keepGoing, Self.titleMatches(goal: originalWebGoal ?? goal, title: evidence, host: host) {
                 log("WEB title matches goal: \(title)")
                 Bridge.shared.send(["type": "clear", "id": UUID().uuidString])
                 guard let yes = await askYesNo("Is this what you wanted?", yes: "Yes, this is it", no: "Not yet") else { return }
@@ -324,6 +330,7 @@ extension GuideEngine {
             if Task.isCancelled { return }
             if notThis { notThis = false; continue }
             expectNav = true   // this step was theirs: the next page may be on another site
+            lastLabel = pick.candidate.label
             clicked.insert(key)
             done.append("clicked \(key)")
             bridge.send(["type": "status", "id": UUID().uuidString, "text": "That's right.", "seconds": 1])
