@@ -35,18 +35,25 @@ def main(src, dst):
     rows = [json.loads(l) for l in open(src) if l.strip()]
     with cf.ThreadPoolExecutor(8) as ex:
         probs = list(ex.map(lambda r: jev_probs(r, key), rows))
-    agree = soft = 0
+    agree = soft = dropped = 0
     with open(dst, "w") as f:
         for row, p in zip(rows, probs):
             ans = row["expected"]["next_command"]
             opts = list(row["questions"]["next_command"]["criteria"])
+            # Consistency filter: Jev confidently picks something else -> the goal is ambiguous
+            # or the teacher label is wrong; drop the row rather than teach noise.
             if p and set(p) >= set(opts):
+                top = max(p, key=p.get)
+                if top != ans and p[top] > 0.85:
+                    dropped += 1
+                    continue
                 gold = {o: (1 - JEV_WEIGHT) * (o == ans) + JEV_WEIGHT * p[o] for o in opts}
                 row = {**{k: v for k, v in row.items() if k != "expected"}, "gold": {"next_command": {"probabilities": gold}}}
                 soft += 1
                 agree += max(p, key=p.get) == ans
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
-    print(f"{soft}/{len(rows)} rows got soft labels; Jev's top pick matched the teacher on {agree}/{soft}")
+    print(f"{soft}/{len(rows)} rows got soft labels; Jev's top pick matched the teacher on {agree}/{soft}; "
+          f"dropped {dropped} rows where Jev confidently disagreed (>0.85)")
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2])
