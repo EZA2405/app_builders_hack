@@ -198,6 +198,17 @@ final class GuideEngine {
                 keepGoing = true
                 continue   // re-read the screen: it may have changed while they decided
             }
+            // They said "Not yet" but nothing on screen fits: don't point at junk ("File > Open…" at 0.17). Ask them.
+            if keepGoing, !done.isEmpty, pick.confidence < 0.3 {
+                log("NOTHING FITS after Not yet: \(Planner.key(pick.candidate)) \(String(format: "%.2f", pick.confidence))")
+                show(.done, label: "Ask", text: "What's still not right?", hint: "Tell me in your own words, and I'll look again.", target: nil)
+                speakText("What's still not right? Tell me in your own words.")
+                try? await Task.sleep(nanoseconds: 1_500_000_000)
+                if Task.isCancelled { return }
+                overlay.hide()
+                NotificationCenter.default.post(name: .gabayAskAgain, object: nil)
+                return
+            }
             if pick.candidate.source == "menu", pick.confidence < 0.3, !keepGoing {
                 log("UNSURE pick=\(Planner.key(pick.candidate)) conf=\(String(format: "%.2f", pick.confidence))")
                 show(.done, label: "I'm not sure", text: "I can't see that on this screen. Can you say it another way?",
@@ -268,6 +279,10 @@ final class GuideEngine {
         // From the desktop (Finder) there's no document to act on, and look-alike menu words fool the picker.
         let desktop = current == "Finder" || current == "System Settings"
         var here_: Planner.Pick?? = nil
+        // Inside a real app, never send the person to System Settings: Apple's model calls too many app tasks
+        // "settings" ("add text to the picture" -> Displays, "draw on the image" -> Control Center). Settings routing
+        // only from the desktop (Finder) or inside System Settings itself.
+        if !desktop { settingsPane = "" }
         if done.isEmpty, settingsPane == nil, !pinned || current == "System Settings" {
             if !desktop {
                 let f = focus(state)

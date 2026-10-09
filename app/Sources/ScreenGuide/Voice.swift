@@ -194,6 +194,8 @@ final class PCMRecorder: @unchecked Sendable {
     private(set) var spoke = false
     private(set) var lastLoud = Date()
     private(set) var level: Float = 0
+    private var samples = 0
+    private var floor: Float = 0
     private let converter: AVAudioConverter?
     static let format = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: 16000, channels: 1, interleaved: true)!
 
@@ -217,7 +219,12 @@ final class PCMRecorder: @unchecked Sendable {
         lock.lock()
         data.append(Data(buffer: UnsafeBufferPointer(start: ch[0], count: n)))
         level = rms
-        if rms > 0.02 { spoke = true; lastLoud = Date() }   // speech, not room noise
+        // Learn the room's noise for the first ~0.6 s, then count only clearly louder sound as speech (a venue,
+        // a fan or a laptop's own hum used to keep it "listening" until people repeated themselves).
+        samples += 1
+        if samples <= 6 { floor = max(floor, rms) }
+        let threshold = max(0.015, floor * 2.5)
+        if samples > 6, rms > threshold { spoke = true; lastLoud = Date() }
         lock.unlock()
     }
 

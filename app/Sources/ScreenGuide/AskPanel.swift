@@ -17,7 +17,8 @@ struct AskView: View {
     @FocusState private var focused: Bool
     let examples = ["Make a photo smaller to email it", "Make the words bigger", "Paano mag-email ng picture"]
 
-    var showExamples: Bool { text.isEmpty && !listener.listening }
+    // One thing at a time: examples only before they start; while listening or writing, just the field.
+    var showExamples: Bool { text.isEmpty && !listener.listening && !listener.transcribing }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -37,7 +38,7 @@ struct AskView: View {
             }
             HStack(spacing: 14) {
                 Circle().stroke(Theme.ring, lineWidth: 3).frame(width: 18, height: 18)
-                TextField(listener.listening ? "I'm listening…" : "What do you need help with?", text: $text)
+                TextField(listener.transcribing ? "Writing it down…" : listener.listening ? "I'm listening…" : "What do you need help with?", text: $text)
                     .textFieldStyle(.plain).font(Theme.askField()).tint(Theme.ring)
                     .focused($focused)
                     .onSubmit { submit(text) }
