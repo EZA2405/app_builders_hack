@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "ScreenGuide",
+  "version": "0.1.0",
+  "description": "Local guidance: ScreenGuide points, you click.",
+  "minimum_chrome_version": "116",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnlQDGfeNZh2P01Y1GXcarsMsDVVxI1KnP7AyQtt2UizTiZbEqqNe1Vd/AG94DxjNjdx4jdYlH7ex6PmGs1yJHWCngYhyYj8S4BYLz1d6G2NgEs5lud91osTplvDwu/7KGEqJRcse4lEpJNa+nSMKKmYJdvquO2Z/RKp/8XMPKhkFeDz1Xq7rHL8Idjp8UmnPWFU53nxmvy2mvE3PEzfCovrI0bQ3KRGN3LvgwofuFuMR9r83o/GVMjE8BhbCCIXT0tpHtFkNTNFkPJr7X3Jo3f4AbGEXNNwMMuJVHfF4fhusWSDAL/5Wbi398D+/Bo4aErtFQifB8GYj1EgP+oQ3NQIDAQAB",
+  "permissions": [
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/service_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/content.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle",
+      "match_about_blank": true
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src ws://127.0.0.1:47823"
+  }
+}
