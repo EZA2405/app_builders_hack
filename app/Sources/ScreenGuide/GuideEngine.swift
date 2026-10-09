@@ -230,7 +230,7 @@ final class GuideEngine {
             let openMenu = MenuProbe.openMenuTitle(app)
             let clicks = ClickWatcher.shared.drain().compactMap { e -> CGPoint? in if case .click(let p) = e { return p }; return nil }
             if level == 0 {
-                if openMenu == parts[0] { level = 1; continue }
+                if openMenu == parts[0] { level = 1; log("MENU opened \(parts[0])"); continue }
                 let bar = MenuProbe.barItem(app, title: parts[0])
                 target = bar?.frame
                 let hint = bar.map { $0.left.isEmpty ? "It's at the very top of your screen." : "It's at the very top of your screen, after \($0.left)." } ?? ""
@@ -243,6 +243,7 @@ final class GuideEngine {
             } else {
                 let last = level == parts.count - 1
                 // The final item counts only if the person clicked inside its ring.
+                if !clicks.isEmpty { log("MENU clicks=\(clicks.map { "(\(Int($0.x)),\(Int($0.y)))" }) level=\(level) target=\(target.map { "\($0)" } ?? "-")") }
                 if last, let t = target, clicks.contains(where: t.hit) {
                     try? await Task.sleep(nanoseconds: 400_000_000)
                     await confirm(); return true
