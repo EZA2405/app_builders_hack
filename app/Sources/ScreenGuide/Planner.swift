@@ -49,6 +49,25 @@ struct Planner {
         return Pick(candidate: best, confidence: final.confidence, runnersUp: Array(ranked.dropFirst().prefix(2)))
     }
 
+    /// Step 0: which app does the goal belong to? Asking this first keeps ~200 menu items from drowning out
+    /// the Dock ("make the screen brighter" from Terminal). Returns `current` when the app in front is right.
+    func pickApp(goal: String, current: String, apps: [String]) async throws -> (app: String, confidence: Double) {
+        let here = "\(current) (the app open now)"
+        var keys = [here] + apps.filter { $0 != current }
+        let state = "A non-technical person is using their Mac. The app in front is \(current). Their goal: \"\(goal)\""
+        let instructions = "Which app should the person use for this goal?"
+        while keys.count > group {
+            var next = [here]
+            for chunk in stride(from: 0, to: keys.count, by: group).map({ Array(keys[$0..<min($0 + group, keys.count)]) }) {
+                let probs = try await ask(state: state, instructions: instructions, options: chunk).probs
+                next += probs.sorted { $0.value > $1.value }.prefix(keep).map(\.key).filter { $0 != here }
+            }
+            keys = next
+        }
+        let r = try await ask(state: state, instructions: instructions, options: keys)
+        return (r.choice == here ? current : r.choice, r.confidence)
+    }
+
     private func ask(state: String, instructions: String, options: [String]) async throws
         -> (choice: String, confidence: Double, probs: [String: Double]) {
         var crit: [String: String] = [:]

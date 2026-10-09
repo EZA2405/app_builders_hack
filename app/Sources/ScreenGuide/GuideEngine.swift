@@ -61,7 +61,11 @@ final class GuideEngine {
             let state = await read(app)
             let pick: Planner.Pick?
             do {
-                pick = try await planner.choose(app: state.frontApp, goal: goal, done: done, candidates: focus(state))
+                if done.isEmpty, let route = try await routeToApp(state, current: app.localizedName ?? state.frontApp) {
+                    pick = route
+                } else {
+                    pick = try await planner.choose(app: state.frontApp, goal: goal, done: done, candidates: focus(state))
+                }
             } catch {
                 log("PLANNER ERROR \(error)")
                 show(.done, label: "Something went wrong", text: "I can't think right now.", hint: "Make sure Gabay's helper is running, then try again.", target: nil)
@@ -71,6 +75,13 @@ final class GuideEngine {
                 log("NO CANDIDATES app=\(app.localizedName ?? "?")")
                 show(.done, label: "Hmm", text: "I couldn't find anything to click in \(app.localizedName ?? "this app").",
                      hint: "Open the app you want help with, click on its window, then ask again.", target: nil)
+                return
+            }
+            // Menus have no "one of these two" view; a near-guess menu step sends people somewhere wrong.
+            if pick.candidate.source == "menu", pick.confidence < 0.3 {
+                log("UNSURE pick=\(Planner.key(pick.candidate)) conf=\(String(format: "%.2f", pick.confidence))")
+                show(.done, label: "I'm not sure", text: "I'm not sure where to do that in \(app.localizedName ?? "this app").",
+                     hint: "Open the app you'd use for it (for a photo, open the photo first), click its window, then ask again.", target: nil)
                 return
             }
             log("STEP \(stepNo + 1) pick=\(Planner.key(pick.candidate)) conf=\(String(format: "%.2f", pick.confidence))")
@@ -107,6 +118,11 @@ final class GuideEngine {
         // Text entry: wait for the "Done" pill (we never read what the user types).
         while !Task.isCancelled {
             try? await Task.sleep(nanoseconds: 450_000_000)
+            if c.source == "dock" {
+                // Only the app it pointed at opening counts; a busy window (e.g. Terminal output) is not a click.
+                if Self.frontRegularApp()?.localizedName == c.label { break }
+                continue
+            }
             if c.role == "text field" ? doneTyping : (await signature(app)) != before { break }
             if let front = Self.frontRegularApp(), front != app { break }   // opened another app
         }
@@ -177,17 +193,29 @@ final class GuideEngine {
         speak()
     }
 
+    /// If the goal belongs to another app in the Dock, point at that Dock icon first.
+    private func routeToApp(_ s: ScreenState, current: String) async throws -> Planner.Pick? {
+        var dock: [String: Candidate] = [:]
+        for c in s.candidates where c.source == "dock" && !c.label.contains(" — ") && !["Trash", "Apps"].contains(c.label) {
+            if dock[c.label] == nil { dock[c.label] = c }
+        }
+        let names = s.candidates.filter { dock[$0.label]?.id == $0.id }.map(\.label)   // Dock order
+        guard !names.isEmpty else { return nil }
+        let (choice, confidence) = try await planner.pickApp(goal: goal, current: current, apps: names)
+        log("ROUTE \(choice) conf=\(String(format: "%.2f", confidence))")
+        guard choice != current, confidence >= 0.5, let icon = dock[choice] else { return nil }
+        return Planner.Pick(candidate: icon, confidence: confidence, runnersUp: [])
+    }
+
     /// Which candidates the model should weigh right now, mirroring how it was trained:
     /// an open dialog wins; the first step is about menus; later steps add window controls.
     private func focus(_ s: ScreenState) -> [Candidate] {
         let dialog = s.candidates.filter { $0.source == "window" && $0.context.hasSuffix("dialog") }
         if !dialog.isEmpty { return dialog }
-        let menus = s.candidates.filter { $0.source == "menu" && !Self.isPersonal($0.path) }
-        // Some goals live outside the front app ("make the screen brighter" from Terminal): also offer the Dock's
-        // apps and the menu bar icons. Dock window thumbnails carry titles (user data), so only plain app names.
-        let system = s.candidates.filter { ($0.source == "dock" && !$0.label.contains(" — ") && $0.label != "Trash")
-                                           || $0.source == "statusbar" }
-        if done.isEmpty { return menus + system }
+        // App > Services lists add-ons installed on this Mac ("Ask Claude"…), never a beginner's step.
+        let menus = s.candidates.filter { $0.source == "menu" && !Self.isPersonal($0.path)
+                                          && $0.path.components(separatedBy: " > ").dropFirst().first != "Services" }
+        if done.isEmpty { return menus }   // other apps are handled by routeToApp first
         return s.candidates.filter { $0.source == "window" && $0.role != "menu button" } + menus
     }
 
