@@ -57,6 +57,18 @@ extension GuideEngine {
         return true
     }
 
+    static let actionWords = ["like", "love", "react", "share", "comment", "follow", "unfollow", "add friend", "confirm",
+                              "accept", "decline", "block", "report", "post", "send", "delete", "remove", "unfriend",
+                              "subscribe", "join", "buy", "pay", "checkout", "place order", "donate"]
+    static func socialAction(_ name: String) -> Bool {
+        let n = name.lowercased()
+        return actionWords.contains { w in n == w || n.hasPrefix(w + " ") || n.hasPrefix(w + ":") }
+    }
+    static func asksFor(_ name: String, in goal: String) -> Bool {
+        let n = name.lowercased(), g = goal.lowercased()
+        return actionWords.contains { n.hasPrefix($0) && g.contains($0) }
+    }
+
     /// Does the page title name the subject of the request? ("read about José Rizal" vs "José Rizal - Wikipedia").
     /// Accent-insensitive; a word counts if one contains the other (dictation spells names oddly: "Oserizal").
     static func titleMatches(goal: String, title: String) -> Bool {
@@ -75,8 +87,9 @@ extension GuideEngine {
     /// A page change that's a real navigation (new URL), not just a big DOM update on the same page.
     func moved(_ e: [String: Any], from url: String) -> Bool {
         guard (e["type"] as? String) == "page_changed", (e["reason"] as? String) != "tab_switch" else { return false }
-        if (e["reason"] as? String) != "dom_mutation" { return true }
-        return (e["url"] as? String).map { $0 != url } ?? false
+        // Same address = same page, whatever the reason (SPA feeds re-render all the time).
+        if let u = e["url"] as? String, !u.isEmpty { return u != url }
+        return (e["reason"] as? String) == "navigation"
     }
 
     static func looksLikeAddressBar(_ label: String) -> Bool {
@@ -143,6 +156,11 @@ extension GuideEngine {
                 if await goToSite(sc) { done.append("opened \(sc.siteName)"); expectNav = true; lastHost = ""; try? await Task.sleep(nanoseconds: 1_500_000_000); continue }
                 return
             }
+            // Split only when they actually asked for two things ("…and turn on subtitles", "tapos…"); otherwise the
+            // request stays whole (splitting "see my friend requests" into fake clicks sent it to "Your profile").
+            let g0 = " " + goal.lowercased() + " "
+            let twoThings = [" and ", " then ", " tapos ", " pagkatapos ", " at saka ", " also "].contains { g0.contains($0) }
+            if parts == nil, !twoThings { parts = []; log("WEB PARTS [] (one thing)") }
             if parts == nil {
                 let p = await WebPlan.parts(for: goal, site: title)
                 // One thing ("read about José Rizal") stays one goal; splitting it into clicks confused the picker.
@@ -157,6 +175,9 @@ extension GuideEngine {
                 let c = Candidate(id: i, source: "web", role: e["role"] as? String ?? "button", label: name,
                                   context: e["context"] as? String ?? "", path: name, frame: nil, enabled: true)
                 let k = Planner.key(c)
+                // Never point at actions that do something to other people or can't be taken back (Like, Share,
+                // Delete…) unless the request asks for that action.
+                if Self.socialAction(name), !Self.asksFor(name, in: goal) { continue }
                 if refs[k] == nil, !clicked.contains(k), !rejected.contains(k) { refs[k] = ref; cands.append(c) }
             }
             let site = "web browser, on the website \"\(String(title.prefix(60)))\""
@@ -260,10 +281,11 @@ extension GuideEngine {
                         show(.done, label: "Stopped", text: "You switched to another tab.", hint: "Ask me again there if you need help.", target: nil)
                         return
                     case "page_changed":
+                        // Only a real navigation (new address) is progress. Feeds (Facebook, YouTube) change the page
+                        // constantly; counting that as "they did the step" raced through 7 steps in 30 s.
+                        guard moved(e, from: url) else { break }
                         advanced = true
-                        // A real navigation usually means this part is done (search submitted, video opened);
-                        // a big DOM update on the same page (menus, players) doesn't.
-                        if moved(e, from: url), !partMoved, partIndex + 1 < (parts ?? []).count { partIndex += 1; partMoved = true }
+                        if !partMoved, partIndex + 1 < (parts ?? []).count { partIndex += 1; partMoved = true }
                     case "card_button":
                         switch e["button"] as? String {
                         case "stop": stop(); return
