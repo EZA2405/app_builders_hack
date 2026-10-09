@@ -1,5 +1,7 @@
 # AI hackathon winners and standalone local AI opportunities
 
+**Updated direction:** the user rejected the phone-oriented shortlist below. See [Laptop app opportunities and Laya/Jev research](LAPTOP_AI_OPPORTUNITIES.md) for the current recommendations. Winner verification and brief/transcript references here remain useful historical research.
+
 Research question: which past AI hackathon winners and repeated consumer problems suggest a compelling app that needs neither cloud services nor documents from other apps?
 
 The participant brief awards 25% each to usefulness and local AI, 20% to execution, and 15% each to innovation and demo quality. The user’s dependency constraints are stricter than the brief, which permits secondary cloud services. Source: [participant briefing](AppBuildersPH%20Hackathon%202026%20Participant%20Briefing.pdf), pages 5–9 and 14; previous context: [handoff](HANDOFF.md).
