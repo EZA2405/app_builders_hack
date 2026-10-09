@@ -1,0 +1,48 @@
+{"goal": "Search Rappler", "page": "rappler", "done": []}
+{"goal": "Log in", "page": "rappler", "done": []}
+{"goal": "Show the latest news", "page": "rappler", "done": []}
+{"goal": "Show the top stories", "page": "rappler", "done": []}
+{"goal": "Donate to Rappler", "page": "rappler", "done": []}
+{"goal": "Subscribe to newsletters", "page": "rappler", "done": []}
+{"goal": "Contact Rappler", "page": "rappler", "done": []}
+{"goal": "Open the menu", "page": "rappler", "done": []}
+{"goal": "Join Rappler+", "page": "rappler", "done": []}
+{"goal": "san yung fact check", "page": "rappler", "done": []}
+{"goal": "Type in the search box", "page": "rappler__1", "done": ["clicked link \"SEARCH\""]}
+{"goal": "Click search", "page": "rappler__1", "done": ["clicked link \"SEARCH\""]}
+{"goal": "Return to the homepage", "page": "rappler__1", "done": ["clicked link \"SEARCH\""]}
+{"goal": "Contact Rappler", "page": "rappler__1", "done": ["clicked link \"SEARCH\""]}
+{"goal": "Log in", "page": "rappler__1", "done": ["clicked link \"SEARCH\""]}
+{"goal": "Subscribe to newsletters", "page": "rappler__1", "done": ["clicked link \"SEARCH\""]}
+{"goal": "balik sa home", "page": "rappler__1", "done": ["clicked link \"SEARCH\""]}
+{"goal": "Log in to Rappler", "page": "rappler__2", "done": ["clicked link \"RAPPLER+\""]}
+{"goal": "Search for news", "page": "rappler__2", "done": ["clicked link \"RAPPLER+\""]}
+{"goal": "Open the menu", "page": "rappler__2", "done": ["clicked link \"RAPPLER+\""]}
+{"goal": "See the latest news", "page": "rappler__2", "done": ["clicked link \"RAPPLER+\""]}
+{"goal": "Contact us", "page": "rappler__2", "done": ["clicked link \"RAPPLER+\""]}
+{"goal": "Subscribe to newsletters", "page": "rappler__2", "done": ["clicked link \"RAPPLER+\""]}
+{"goal": "Pay online", "page": "rappler__3", "done": ["clicked link \"SUPPORT\""]}
+{"goal": "Pay by bank transfer", "page": "rappler__3", "done": ["clicked link \"SUPPORT\""]}
+{"goal": "Give every month", "page": "rappler__3", "done": ["clicked link \"SUPPORT\""]}
+{"goal": "Give one time only", "page": "rappler__3", "done": ["clicked link \"SUPPORT\""]}
+{"goal": "Give 1,000 pesos", "page": "rappler__3", "done": ["clicked link \"SUPPORT\""]}
+{"goal": "Type my own amount", "page": "rappler__3", "done": ["clicked link \"SUPPORT\""]}
+{"goal": "Go back to the top", "page": "rappler__3", "done": ["clicked link \"SUPPORT\""]}
+{"goal": "Join Rappler+", "page": "rappler__4", "done": ["clicked link \"RAPPLER+ EXCLUSIVES\""]}
+{"goal": "See exclusive events", "page": "rappler__4", "done": ["clicked link \"RAPPLER+ EXCLUSIVES\""]}
+{"goal": "Load more stories", "page": "rappler__4", "done": ["clicked link \"RAPPLER+ EXCLUSIVES\""]}
+{"goal": "Log in", "page": "rappler__4", "done": ["clicked link \"RAPPLER+ EXCLUSIVES\""]}
+{"goal": "Search", "page": "rappler__4", "done": ["clicked link \"RAPPLER+ EXCLUSIVES\""]}
+{"goal": "Contact Rappler", "page": "rappler__4", "done": ["clicked link \"RAPPLER+ EXCLUSIVES\""]}
+{"goal": "Load more stories", "page": "rappler__5", "done": ["clicked link \"NOBEL PRIZE\""]}
+{"goal": "Search Rappler", "page": "rappler__5", "done": ["clicked link \"NOBEL PRIZE\""]}
+{"goal": "Log in", "page": "rappler__5", "done": ["clicked link \"NOBEL PRIZE\""]}
+{"goal": "Go back to the Rappler home page", "page": "rappler__5", "done": ["clicked link \"NOBEL PRIZE\""]}
+{"goal": "Subscribe to newsletters", "page": "rappler__5", "done": ["clicked link \"NOBEL PRIZE\""]}
+{"goal": "Contact Rappler", "page": "rappler__5", "done": ["clicked link \"NOBEL PRIZE\""]}
+{"goal": "Listen to this article", "page": "rappler__6", "done": ["clicked link \"Former ICC judge Navi Pillay wins 2026 Nobel Peace Prize\""]}
+{"goal": "Sign in", "page": "rappler__6", "done": ["clicked link \"Former ICC judge Navi Pillay wins 2026 Nobel Peace Prize\""]}
+{"goal": "Add Rappler to my preferred sources", "page": "rappler__6", "done": ["clicked link \"Former ICC judge Navi Pillay wins 2026 Nobel Peace Prize\""]}
+{"goal": "Search", "page": "rappler__6", "done": ["clicked link \"Former ICC judge Navi Pillay wins 2026 Nobel Peace Prize\""]}
+{"goal": "Contact Rappler", "page": "rappler__6", "done": ["clicked link \"Former ICC judge Navi Pillay wins 2026 Nobel Peace Prize\""]}
+{"goal": "Subscribe to newsletters", "page": "rappler__6", "done": ["clicked link \"Former ICC judge Navi Pillay wins 2026 Nobel Peace Prize\""]}

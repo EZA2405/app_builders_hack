@@ -1,0 +1,19 @@
+{"goal": "add a new apointment", "answer": "File > New Event or Reminder", "decoys": ["Edit > Duplicate"]}
+{"goal": "copy this event to next week too", "answer": "Edit > Duplicate", "decoys": ["Edit > Copy"]}
+{"goal": "balik tayo sa araw ngayon", "answer": "View > Go to Today", "decoys": ["View > Go to Date…", "View > Previous"]}
+{"goal": "jump to march 15", "answer": "View > Go to Date…", "decoys": ["View > Next"]}
+{"goal": "find my dentist appointment", "answer": "Edit > Find", "decoys": ["View > Show List View"]}
+{"goal": "palitan ang oras ng appointment ko sa doktor", "answer": "Edit > Edit Event", "decoys": ["Edit > Get Info", "Edit > Show Inspector"]}
+{"goal": "tanggalin mo yung appointment na to", "answer": "Edit > Delete", "decoys": ["Edit > Cut"]}
+{"goal": "share my calendar with my family", "answer": "Edit > Share Calendar…", "decoys": ["File > New Family Calendar…", "File > Export > Export Event…"]}
+{"goal": "add the philippine holidays to my calendar", "answer": "File > New Holiday Calendar…", "decoys": ["File > New Calendar Subscription…"]}
+{"goal": "the hours are too squished, spread them out", "answer": "View > Zoom In", "decoys": ["View > Enter Full Screen"]}
+{"goal": "make the calendar full screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom"]}
+{"goal": "save a backup of my whole calendar", "answer": "File > Export > Calendar Archive…", "decoys": ["File > Export > Export Event…"]}
+{"goal": "gawa ka ng hiwalay na calendar para sa church activities ko", "answer": "File > New Calendar", "decoys": ["File > New Family Calendar…"]}
+{"goal": "mark this reminder as done", "answer": "Edit > Mark as Completed", "decoys": ["Edit > Delete"]}
+{"goal": "show me next week", "answer": "View > Next", "decoys": ["View > Go to Date…"]}
+{"goal": "just show me one day", "answer": "View > By Day", "decoys": ["View > Zoom In"]}
+{"goal": "send the invite again to everyone", "answer": "Edit > Resend Invitations…", "decoys": ["Edit > Edit Event"]}
+{"goal": "close the calendar app", "answer": "Calendar > Quit Calendar", "decoys": ["File > Close"]}
+{"goal": "refresh so i see the new events from my phone", "answer": "View > Refresh Calendars", "decoys": ["Calendar > Quit Calendar"]}

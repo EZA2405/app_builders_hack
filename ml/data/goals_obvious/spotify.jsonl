@@ -1,0 +1,20 @@
+{"goal": "make the words bigger on spotify", "answer": "View > Zoom In", "decoys": ["Window > Zoom", "View > Enter Fullscreen"]}
+{"goal": "the letters are too big, make them smaller", "answer": "View > Zoom Out", "decoys": ["Window > Minimize", "View > Actual Size"]}
+{"goal": "put the text size back to normal", "answer": "View > Actual Size", "decoys": ["View > Zoom Out", "Window > Move & Resize > Return to Previous Size"]}
+{"goal": "make spotify fill the whole screen", "answer": "View > Enter Fullscreen", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"goal": "find a song by the beatles", "answer": "Edit > Search", "decoys": ["Edit > Filter"]}
+{"goal": "find a song inside this playlist", "answer": "Edit > Filter", "decoys": ["Edit > Search"]}
+{"goal": "play the songs in random order", "answer": "Playback > Shuffle", "decoys": ["Playback > Next"]}
+{"goal": "play this song again and again", "answer": "Playback > Repeat", "decoys": ["Playback > Previous"]}
+{"goal": "go back a few seconds i missed what she said", "answer": "Playback > Seek Backward", "decoys": ["Playback > Previous"]}
+{"goal": "skip ahead a little in this podcast", "answer": "Playback > Seek Forward", "decoys": ["Playback > Next"]}
+{"goal": "skip this song i dont like it", "answer": "Playback > Next", "decoys": ["Playback > Seek Forward"]}
+{"goal": "i want to listen with no internet on the plane", "answer": "Spotify > Offline Mode", "decoys": ["Spotify > Settings…"]}
+{"goal": "ayoko makita ng friends ko kung ano pinapakinggan ko", "answer": "Spotify > Private Session", "decoys": ["Spotify > Settings…", "Spotify > Offline Mode"]}
+{"goal": "make a new list of my favrite songs", "answer": "File > New Playlist", "decoys": ["File > New Playlist Folder"]}
+{"goal": "go back to the page i was just on", "answer": "View > Go Back", "decoys": ["Playback > Previous"]}
+{"goal": "spotify looks stuck, refresh it", "answer": "Help > Troubleshooting > Reload", "decoys": ["Help > Troubleshooting > Reset App Data and Restart"]}
+{"goal": "sign out of spotify", "answer": "Spotify > Log Out", "decoys": ["Help > Your Account", "Spotify > Quit Spotify"]}
+{"goal": "close spotify completely", "answer": "Spotify > Quit Spotify", "decoys": ["Window > Close", "Spotify > Hide Spotify"]}
+{"goal": "change my spotify plan", "answer": "Help > Your Account", "decoys": ["Spotify > Settings…"]}
+{"goal": "pakilakihan yung sulat sa spotify", "answer": "View > Zoom In", "decoys": ["Window > Zoom"]}

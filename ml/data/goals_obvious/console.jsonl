@@ -1,0 +1,10 @@
+{"goal": "search the messages for wifi", "answer": "Action > Search", "decoys": ["Edit > Find > Find…"]}
+{"goal": "clear the list of messages", "answer": "Action > Clear", "decoys": ["Edit > Delete"]}
+{"goal": "only show me the errors", "answer": "Action > Errors and Faults", "decoys": ["Action > Search"]}
+{"goal": "ipakita mo lang yung mga error", "answer": "Action > Errors and Faults", "decoys": ["Action > Search"]}
+{"goal": "show all the messages again", "answer": "Action > All Messages", "decoys": ["Action > Reload"]}
+{"goal": "start showing messages live", "answer": "Action > Stream", "decoys": ["Action > Reload"]}
+{"goal": "make console full screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"goal": "see more info about this message", "answer": "View > Show Details", "decoys": ["View > Expand Selected Rows"]}
+{"goal": "open a log file", "answer": "File > Open…", "decoys": ["File > Reveal in Finder"]}
+{"goal": "delete this log file", "answer": "File > Move to Trash", "decoys": ["Action > Clear", "Edit > Delete"]}

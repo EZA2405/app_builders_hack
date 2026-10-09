@@ -1,0 +1,15 @@
+{"goal": "stop this font from showing in my word program but keep it", "answer": "Edit > Deactivate", "decoys": ["Edit > Remove"]}
+{"goal": "print what this font looks like", "answer": "File > Print…", "decoys": ["File > Export…"]}
+{"goal": "hanapin yung font na garamond", "answer": "File > Find…", "decoys": ["View > Show Filter Bar"]}
+{"goal": "where is this font file on my computer", "answer": "File > Show in Finder", "decoys": ["View > Show Info Pane"]}
+{"goal": "copy this font out so i can give it to my friend", "answer": "File > Export…", "decoys": ["File > Show in Finder"]}
+{"goal": "some fonts are listed twice, fix it", "answer": "File > Resolve Duplicates…", "decoys": ["Edit > Remove"]}
+{"goal": "make a group for my favorite fonts", "answer": "File > New Collection", "decoys": ["File > New Smart Collection…", "File > New Collection From Selection"]}
+{"goal": "check if this font is broken", "answer": "File > Validate Selection", "decoys": ["File > Validate File…"]}
+{"goal": "full screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom"]}
+{"goal": "open a second font book window", "answer": "File > New Window", "decoys": ["File > New Tab"]}
+{"goal": "isara na ang font book", "answer": "Font Book > Quit Font Book", "decoys": ["File > Close"]}
+{"goal": "turn this font back on", "answer": "Edit > Activate", "decoys": ["File > Add Fonts to Current User…"]}
+{"goal": "gawa ka ng group gamit yung mga fonts na pinili ko", "answer": "File > New Collection From Selection", "decoys": ["File > New Collection"]}
+{"goal": "install the font i downloaded", "answer": "File > Add Fonts to Current User…", "decoys": ["Edit > Paste"]}
+{"goal": "show me sample sentences for each font", "answer": "View > View as Samples", "decoys": ["View > View as Grid"]}

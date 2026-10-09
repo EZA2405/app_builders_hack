@@ -1,0 +1,17 @@
+{"goal": "make the code text bigger", "answer": "View > Zoom In", "decoys": ["Window > Zoom", "View > Enter Full Screen"]}
+{"goal": "make the letters smaller", "answer": "View > Zoom Out", "decoys": ["Window > Minimize"]}
+{"goal": "put the text size back to normal", "answer": "View > Reset Zoom", "decoys": ["View > Reset All Zoom", "View > Zoom Out"]}
+{"goal": "make zed fill the whole screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"goal": "find a word in this file", "answer": "Edit > Find", "decoys": ["Edit > Find in Project", "Go > Go to Symbol in Editor..."]}
+{"goal": "search all my files for a word", "answer": "Edit > Find in Project", "decoys": ["Edit > Find", "Go > Go to File..."]}
+{"goal": "save this file with a new name", "answer": "File > Save As…", "decoys": ["File > Save", "File > New"]}
+{"goal": "save my work", "answer": "File > Save", "decoys": ["File > Save All", "File > Save As…"]}
+{"goal": "change the colors to dark mode", "answer": "Zed > Settings > Select Theme...", "decoys": ["Zed > Settings > Open Settings", "Zed > Settings > Select Icon Theme..."]}
+{"goal": "open a file", "answer": "File > Open…", "decoys": ["File > Open Recent…", "Go > Go to File..."]}
+{"goal": "go to line 50", "answer": "Go > Go to Line/Column...", "decoys": ["Edit > Find"]}
+{"goal": "close this file only", "answer": "File > Close Editor", "decoys": ["File > Close Window", "File > Close Project"]}
+{"goal": "put two files side by side", "answer": "View > Editor Layout > Split Right", "decoys": ["File > New Window"]}
+{"goal": "open the terminal", "answer": "View > Terminal Panel", "decoys": ["View > Toggle Bottom Dock"]}
+{"goal": "show the list of files", "answer": "View > Project Panel", "decoys": ["View > Toggle Left Dock", "Go > Go to File..."]}
+{"goal": "pakilakihan yung letters sa editor", "answer": "View > Zoom In", "decoys": ["Window > Zoom"]}
+{"goal": "open another window", "answer": "File > New Window", "decoys": ["File > New"]}

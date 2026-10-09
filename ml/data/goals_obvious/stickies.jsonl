@@ -1,0 +1,16 @@
+{"goal": "make the words on my sticky bigger", "answer": "Font > Bigger", "decoys": ["Font > Show Fonts"]}
+{"goal": "make the words smaller so it all fits", "answer": "Font > Smaller", "decoys": ["Font > Show Fonts"]}
+{"goal": "shrink this note down to just the top bar", "answer": "Window > Collapse", "decoys": ["Window > Minimize"]}
+{"goal": "save this note as a text file", "answer": "File > Export Text…", "decoys": ["Edit > Copy"]}
+{"goal": "move all my stickies into the notes app", "answer": "File > Export All to Notes…", "decoys": ["File > Export Text…"]}
+{"goal": "paki-print ng note ko", "answer": "File > Print…", "decoys": ["File > Export Text…"]}
+{"goal": "make this note window bigger", "answer": "Window > Zoom", "decoys": ["Window > Fill"]}
+{"goal": "tapon mo na tong sticky note", "answer": "File > Close", "decoys": ["Edit > Delete"]}
+{"goal": "check spelling on my note", "answer": "Edit > Spelling and Grammar > Check Document Now", "decoys": ["Edit > Writing Tools > Proofread"]}
+{"goal": "make these words dark and thick", "answer": "Font > Bold", "decoys": ["Font > Show Fonts"]}
+{"goal": "hide all my stickies for now", "answer": "Stickies > Hide Stickies", "decoys": ["Window > Minimize All", "Window > Collapse All"]}
+{"goal": "close stickies", "answer": "Stickies > Quit Stickies", "decoys": ["Stickies > Hide Stickies"]}
+{"goal": "paste this without the fancy formatting", "answer": "Edit > Paste and Match Style", "decoys": ["Edit > Paste"]}
+{"goal": "gawin mong maikli yung note ko", "answer": "Edit > Writing Tools > Make Concise", "decoys": ["Edit > Writing Tools > Summarize"]}
+{"goal": "make a list of the main points from my note", "answer": "Edit > Writing Tools > Create Key Points", "decoys": ["Edit > Writing Tools > Summarize"]}
+{"goal": "bring a text file in as a sticky", "answer": "File > Import Text…", "decoys": ["Edit > Paste"]}

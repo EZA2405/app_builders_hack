@@ -1,0 +1,61 @@
+{"goal": "nakalimutan ko password ng apple id ko", "page": "apple_support", "done": []}
+{"goal": "How do I cancel a subscription?", "page": "apple_support", "done": []}
+{"goal": "I have a question about a charge on my bill", "page": "apple_support", "done": []}
+{"goal": "My iPhone is broken, I want to have it repaired", "page": "apple_support", "done": []}
+{"goal": "Search Apple Support", "page": "apple_support", "done": []}
+{"goal": "I need help with my iPhone", "page": "apple_support", "done": []}
+{"goal": "Contact Apple support", "page": "apple_support", "done": []}
+{"goal": "Where can I check my warranty?", "page": "apple_support", "done": []}
+{"goal": "pano iupdate ang mac ko", "page": "apple_support", "done": []}
+{"goal": "Find an Apple Authorized Service Provider", "page": "apple_support", "done": []}
+{"goal": "I forgot my Apple account password", "page": "apple_support__1", "done": ["clicked link \"iPhone\""]}
+{"goal": "Back up my iPhone to iCloud", "page": "apple_support__1", "done": ["clicked link \"iPhone\""]}
+{"goal": "pano iupdate iphone ko", "page": "apple_support__1", "done": ["clicked link \"iPhone\""]}
+{"goal": "My iPhone won't update, what do I do?", "page": "apple_support__1", "done": ["clicked link \"iPhone\""]}
+{"goal": "Why does my battery drain so fast?", "page": "apple_support__1", "done": ["clicked link \"iPhone\""]}
+{"goal": "Get my iPhone repaired", "page": "apple_support__1", "done": ["clicked link \"iPhone\""]}
+{"goal": "I have a problem with an App Store purchase", "page": "apple_support__1", "done": ["clicked link \"iPhone\""]}
+{"goal": "Cancel my subscription", "page": "apple_support__1", "done": ["clicked link \"iPhone\""]}
+{"goal": "pano mag backup ng iphone", "page": "apple_support__1", "done": ["clicked link \"iPhone\""]}
+{"goal": "Read the iPhone user guide", "page": "apple_support__1", "done": ["clicked link \"iPhone\""]}
+{"goal": "Connect my Apple Watch to a new iPhone", "page": "apple_support__2", "done": ["clicked link \"Watch\""]}
+{"goal": "How do I charge my Apple Watch?", "page": "apple_support__2", "done": ["clicked link \"Watch\""]}
+{"goal": "My watch battery runs out quickly", "page": "apple_support__2", "done": ["clicked link \"Watch\""]}
+{"goal": "My watch can't connect to my iPhone", "page": "apple_support__2", "done": ["clicked link \"Watch\""]}
+{"goal": "Update my Apple Watch", "page": "apple_support__2", "done": ["clicked link \"Watch\""]}
+{"goal": "Repair my Apple Watch", "page": "apple_support__2", "done": ["clicked link \"Watch\""]}
+{"goal": "Change my watch notification settings", "page": "apple_support__2", "done": ["clicked link \"Watch\""]}
+{"goal": "pano gamitin ang apple watch", "page": "apple_support__2", "done": ["clicked link \"Watch\""]}
+{"goal": "How do I set up my Vision Pro?", "page": "apple_support__3", "done": ["clicked link \"Vision\""]}
+{"goal": "How do I make it fit better on my head?", "page": "apple_support__3", "done": ["clicked link \"Vision\""]}
+{"goal": "Learn the hand gestures", "page": "apple_support__3", "done": ["clicked link \"Vision\""]}
+{"goal": "How do I clean my Vision Pro?", "page": "apple_support__3", "done": ["clicked link \"Vision\""]}
+{"goal": "Change the head band", "page": "apple_support__3", "done": ["clicked link \"Vision\""]}
+{"goal": "Repair my Vision Pro", "page": "apple_support__3", "done": ["clicked link \"Vision\""]}
+{"goal": "pano iupdate ang vision pro", "page": "apple_support__3", "done": ["clicked link \"Vision\""]}
+{"goal": "Read the user guide", "page": "apple_support__3", "done": ["clicked link \"Vision\""]}
+{"goal": "How do I update my Mac?", "page": "apple_support__4", "done": ["clicked link \"Mac\""]}
+{"goal": "nalimutan ko password ng mac ko", "page": "apple_support__4", "done": ["clicked link \"Mac\""]}
+{"goal": "Back up my Mac with Time Machine", "page": "apple_support__4", "done": ["clicked link \"Mac\""]}
+{"goal": "Move my files to a new Mac", "page": "apple_support__4", "done": ["clicked link \"Mac\""]}
+{"goal": "Show me help for MacBook Air", "page": "apple_support__4", "done": ["clicked link \"Mac\""]}
+{"goal": "My Mac mini won't turn on", "page": "apple_support__4", "done": ["clicked link \"Mac\""]}
+{"goal": "Get my Mac repaired", "page": "apple_support__4", "done": ["clicked link \"Mac\""]}
+{"goal": "pano gamitin ang mail sa mac", "page": "apple_support__4", "done": ["clicked link \"Mac\""]}
+{"goal": "Learn how to use Safari", "page": "apple_support__4", "done": ["clicked link \"Mac\""]}
+{"goal": "nawala airpods ko, pano hanapin", "page": "apple_support__5", "done": ["clicked link \"AirPods\""]}
+{"goal": "I lost one AirPod, how do I replace it?", "page": "apple_support__5", "done": ["clicked link \"AirPods\""]}
+{"goal": "Where is the serial number of my AirPods?", "page": "apple_support__5", "done": ["clicked link \"AirPods\""]}
+{"goal": "How do I clean my AirPods?", "page": "apple_support__5", "done": ["clicked link \"AirPods\""]}
+{"goal": "Connect my AirPods to my phone", "page": "apple_support__5", "done": ["clicked link \"AirPods\""]}
+{"goal": "My AirPods won't charge", "page": "apple_support__5", "done": ["clicked link \"AirPods\""]}
+{"goal": "Use my AirPods Pro as hearing aid", "page": "apple_support__5", "done": ["clicked link \"AirPods\""]}
+{"goal": "pano malaman kung anong model ng airpods ko", "page": "apple_support__5", "done": ["clicked link \"AirPods\""]}
+{"goal": "I forgot my password", "page": "apple_support__6", "done": ["clicked link \"iPad\""]}
+{"goal": "Back up my iPad", "page": "apple_support__6", "done": ["clicked link \"iPad\""]}
+{"goal": "How do I update my iPad?", "page": "apple_support__6", "done": ["clicked link \"iPad\""]}
+{"goal": "Find my iPad's model number", "page": "apple_support__6", "done": ["clicked link \"iPad\""]}
+{"goal": "Get my iPad repaired", "page": "apple_support__6", "done": ["clicked link \"iPad\""]}
+{"goal": "Cancel my subscription", "page": "apple_support__6", "done": ["clicked link \"iPad\""]}
+{"goal": "I need help with an App Store purchase", "page": "apple_support__6", "done": ["clicked link \"iPad\""]}
+{"goal": "pano ireset ang password sa ipad ko", "page": "apple_support__6", "done": ["clicked link \"iPad\""]}

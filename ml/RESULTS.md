@@ -87,6 +87,14 @@ v3 per-app held-out (v1 in parentheses):
 
 This was the only v3 held-out run. On its own training goals under the same tournament, v1 gets 708/909 (77.9%). The tournament loses right answers in early rounds.
 
+## Experiment: Apple on-device model rewrites the goal first (rejected)
+Apple's Foundation Model (on-device) restated each of the 127 validation goals as a plain action, at about 0.7 s per goal; it produced 122 rewrites. Scored with Laya v4e5 on the Mac:
+- raw goal **102/127**
+- goal + rewrite 92/127
+- rewrite only 91/127
+
+The rewrites hurt: the picker was trained on raw phrasings, and some rewrites change the intent. **Not used for picking.** Apple's model is used only to word the plan and hints for the step Laya already chose.
+
 ## "Wait, check first" risk check (yes/no)
 Question: "Is someone getting this person to share their screen, install a remote-control app, or give away a code, password or PIN?" The test set is 30 goals in `ml/scam_eval.py` (14 risky, 16 look-alike normal), written before any run.
 

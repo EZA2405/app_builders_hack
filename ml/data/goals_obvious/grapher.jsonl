@@ -1,0 +1,13 @@
+{"goal": "save my graph as a picture", "answer": "File > Export…", "decoys": ["Edit > Copy As > TIFF", "File > Save As…"]}
+{"goal": "i-save mo bilang picture yung graph", "answer": "File > Export…", "decoys": ["Edit > Copy As > TIFF"]}
+{"goal": "make a pdf of this graph", "answer": "File > Export…", "decoys": ["Edit > Copy As > PDF", "File > Print…"]}
+{"goal": "print the graph", "answer": "File > Print…", "decoys": ["File > Export…"]}
+{"goal": "copy the graph to paste in my document", "answer": "Edit > Copy", "decoys": ["Edit > Copy As > PDF", "File > Export…"]}
+{"goal": "make grapher full screen", "answer": "Window > Enter Full Screen", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"goal": "change the color and thickness of the line", "answer": "Window > Show Line Styles", "decoys": ["Window > Show Inspector"]}
+{"goal": "i need math symbols like pi and square root", "answer": "Window > Show Equation Palette", "decoys": ["Edit > Emoji & Symbols"]}
+{"goal": "save my graph", "answer": "File > Save", "decoys": ["File > Save As…", "File > Export…"]}
+{"goal": "save a copy with a diferent name", "answer": "File > Save As…", "decoys": ["Edit > Duplicate", "File > Export…"]}
+{"goal": "throw away all my changes since i saved", "answer": "File > Revert to Saved", "decoys": ["Edit > Undo"]}
+{"goal": "show me some example graphs", "answer": "Examples > 2D Examples", "decoys": ["Help > Grapher Help"]}
+{"goal": "close this graph", "answer": "File > Close", "decoys": ["Grapher > Quit Grapher"]}

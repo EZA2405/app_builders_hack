@@ -1,0 +1,15 @@
+{"goal": "paliitin yung video para ma-email ko", "answer": "File > Export As > 480p…", "decoys": ["File > Export As > 720p…"]}
+{"goal": "cut off the boring part at the start", "answer": "Edit > Trim…", "decoys": ["Edit > Split Clip"]}
+{"goal": "this video is sideways, turn it", "answer": "Edit > Rotate Right", "decoys": ["Edit > Rotate Left"]}
+{"goal": "i-record lang yung boses ko", "answer": "File > New Audio Recording", "decoys": ["File > New Movie Recording"]}
+{"goal": "save just the sound from this video", "answer": "File > Export As > Audio Only…", "decoys": ["Edit > Remove Video"]}
+{"goal": "make the video fill my whole screen", "answer": "View > Enter Full Screen", "decoys": ["View > Zoom In", "Window > Zoom"]}
+{"goal": "show the video at its real size", "answer": "View > Actual Size", "decoys": ["View > Zoom Out"]}
+{"goal": "make a copy of this video", "answer": "File > Duplicate", "decoys": ["File > Save As…", "File > Export As > 1080p…"]}
+{"goal": "palitan mo yung pangalan ng video", "answer": "File > Rename…", "decoys": ["File > Save As…"]}
+{"goal": "move this video to another folder", "answer": "File > Move To…", "decoys": ["File > Save As…"]}
+{"goal": "close quicktime", "answer": "QuickTime Player > Quit QuickTime Player", "decoys": ["File > Close"]}
+{"goal": "save this video", "answer": "File > Save…", "decoys": ["File > Export As > 1080p…"]}
+{"goal": "cut the video into two parts", "answer": "Edit > Split Clip", "decoys": ["Edit > Trim…"]}
+{"goal": "turn the video to the left", "answer": "Edit > Rotate Left", "decoys": ["Edit > Rotate Right"]}
+{"goal": "take the sound out of this video", "answer": "Edit > Remove Audio", "decoys": ["File > Export As > 1080p…"]}

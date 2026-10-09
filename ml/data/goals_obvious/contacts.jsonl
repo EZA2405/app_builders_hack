@@ -1,0 +1,17 @@
+{"goal": "change the phone number for this person", "answer": "Edit > Edit Card", "decoys": ["Card > Add Field > Phone"]}
+{"goal": "find my doctor's number", "answer": "Edit > Find > Find", "decoys": ["Card > Go to Next Card"]}
+{"goal": "tanggalin mo tong tao sa contacts ko", "answer": "Edit > Delete", "decoys": ["Edit > Cut"]}
+{"goal": "same person is in here twice, combine them", "answer": "Card > Merge Selected Cards ", "decoys": ["Card > Look for Duplicates…"]}
+{"goal": "check for people listed twice", "answer": "Card > Look for Duplicates…", "decoys": ["Edit > Find > Find"]}
+{"goal": "i-print yung address book ko", "answer": "File > Print…", "decoys": ["File > Export as PDF…"]}
+{"goal": "save my contacts as a pdf", "answer": "File > Export as PDF…", "decoys": ["File > Print…"]}
+{"goal": "back up all my contacts", "answer": "File > Export > Contacts Archive…", "decoys": ["File > Export > Export vCard…"]}
+{"goal": "email my own contact info to someone", "answer": "Card > Share My Card > Email My Card", "decoys": ["File > Export > Export vCard…"]}
+{"goal": "lagyan mo ng picture yung contact na to", "answer": "Card > Choose Custom Image…", "decoys": ["Edit > Edit Card"]}
+{"goal": "make a group for family", "answer": "File > New Group", "decoys": ["File > New Smart List…"]}
+{"goal": "put these people i picked into a new group", "answer": "File > New Group From Selection", "decoys": ["File > New Group"]}
+{"goal": "full screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom"]}
+{"goal": "add a nickname to this person", "answer": "Card > Add Field > Nickname", "decoys": ["Edit > Edit Card"]}
+{"goal": "show last name first", "answer": "Card > Reorder Last Name Before First", "decoys": ["Contacts > Settings…"]}
+{"goal": "this one is a business not a person", "answer": "Card > Mark as a Company", "decoys": ["Edit > Edit Card"]}
+{"goal": "close contacts", "answer": "Contacts > Quit Contacts", "decoys": ["File > Close"]}

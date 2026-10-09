@@ -1,0 +1,9 @@
+{"goal": "make the text bigger in cursor", "answer": "View > Zoom In", "decoys": ["Window > Zoom"]}
+{"goal": "pakilakihan yung font dito", "answer": "View > Zoom In", "decoys": ["Window > Zoom"]}
+{"goal": "make the words smaller", "answer": "View > Zoom Out", "decoys": ["Window > Minimize"]}
+{"goal": "put the text size back to normal", "answer": "View > Reset Zoom", "decoys": ["View > Zoom Out"]}
+{"goal": "open my project folder", "answer": "File > Open Folder", "decoys": ["File > Open IDE"]}
+{"goal": "close cursor", "answer": "Cursor > Quit Cursor", "decoys": ["Window > Minimize", "Cursor > Hide Cursor"]}
+{"goal": "make the window fill my screen", "answer": "Window > Fill", "decoys": ["Window > Zoom", "Window > Full Screen Tile"]}
+{"goal": "show me the keyboard shortcuts", "answer": "Help > Keyboard Shortcuts", "decoys": ["Help > Command Palette"]}
+{"goal": "bring the cursor window to the front", "answer": "Window > Bring All to Front", "decoys": ["Window > Arrange in Front"]}

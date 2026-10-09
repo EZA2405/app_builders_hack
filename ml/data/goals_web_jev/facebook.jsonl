@@ -1,0 +1,51 @@
+{"goal": "Log in to my Facebook account", "page": "facebook", "done": []}
+{"goal": "I forgot my Facebook password", "page": "facebook", "done": []}
+{"goal": "Make a new Facebook account for my lola", "page": "facebook", "done": []}
+{"goal": "gawin mong tagalog yung facebook", "page": "facebook", "done": []}
+{"goal": "Change the language to Bisaya", "page": "facebook", "done": []}
+{"goal": "Where do I type my email or phone number to sign in", "page": "facebook", "done": []}
+{"goal": "Open Messenger", "page": "facebook", "done": []}
+{"goal": "I need help with Facebook", "page": "facebook", "done": []}
+{"goal": "di ko maalala password ko sa fb", "page": "facebook", "done": []}
+{"goal": "Show me more languages to choose from", "page": "facebook", "done": []}
+{"goal": "Type my mobile number so Facebook can find my account", "page": "facebook__1", "done": ["clicked link \"Forgot password?\""]}
+{"goal": "Go to the next step after typing my number", "page": "facebook__1", "done": ["clicked link \"Forgot password?\""]}
+{"goal": "Go back to the previous page", "page": "facebook__1", "done": ["clicked link \"Forgot password?\""]}
+{"goal": "Actually I remember my password now, take me to log in", "page": "facebook__1", "done": ["clicked link \"Forgot password?\""]}
+{"goal": "ilipat sa filipino ang wika", "page": "facebook__1", "done": ["clicked link \"Forgot password?\""]}
+{"goal": "Sign up for a new account instead", "page": "facebook__1", "done": ["clicked link \"Forgot password?\""]}
+{"goal": "Open the Facebook help page", "page": "facebook__1", "done": ["clicked link \"Forgot password?\""]}
+{"goal": "Where do I put my first name", "page": "facebook__2", "done": ["clicked link \"Create new account\""]}
+{"goal": "Type my surname", "page": "facebook__2", "done": ["clicked link \"Create new account\""]}
+{"goal": "Pick the month I was born", "page": "facebook__2", "done": ["clicked link \"Create new account\""]}
+{"goal": "Choose the year I was born", "page": "facebook__2", "done": ["clicked link \"Create new account\""]}
+{"goal": "Choose my gender", "page": "facebook__2", "done": ["clicked link \"Create new account\""]}
+{"goal": "Type my mobile number or email for the new account", "page": "facebook__2", "done": ["clicked link \"Create new account\""]}
+{"goal": "Make a password for the new account", "page": "facebook__2", "done": ["clicked link \"Create new account\""]}
+{"goal": "Finish signing up", "page": "facebook__2", "done": ["clicked link \"Create new account\""]}
+{"goal": "may account na pala ako", "page": "facebook__2", "done": ["clicked link \"Create new account\""]}
+{"goal": "Read the terms before I sign up", "page": "facebook__2", "done": ["clicked link \"Create new account\""]}
+{"goal": "Mag-log in na ako sa Facebook", "page": "facebook__3", "done": ["clicked link \"Filipino\""]}
+{"goal": "Nakalimutan ko ang password ko", "page": "facebook__3", "done": ["clicked link \"Filipino\""]}
+{"goal": "Gumawa ng bagong account", "page": "facebook__3", "done": ["clicked link \"Filipino\""]}
+{"goal": "Change the language to Español", "page": "facebook__3", "done": ["clicked link \"Filipino\""]}
+{"goal": "Open Facebook Lite", "page": "facebook__3", "done": ["clicked link \"Filipino\""]}
+{"goal": "Get help from Facebook", "page": "facebook__3", "done": ["clicked link \"Filipino\""]}
+{"goal": "Type my first name for the new account", "page": "facebook__4", "done": ["clicked link \"Sign Up\""]}
+{"goal": "Select my birthday day", "page": "facebook__4", "done": ["clicked link \"Sign Up\""]}
+{"goal": "Put my last name", "page": "facebook__4", "done": ["clicked link \"Sign Up\""]}
+{"goal": "Create a password", "page": "facebook__4", "done": ["clicked link \"Sign Up\""]}
+{"goal": "Submit my sign up", "page": "facebook__4", "done": ["clicked link \"Sign Up\""]}
+{"goal": "I already have an account, take me back", "page": "facebook__4", "done": ["clicked link \"Sign Up\""]}
+{"goal": "Type my password", "page": "facebook__5", "done": ["clicked link \"Log In\""]}
+{"goal": "Press the log in button", "page": "facebook__5", "done": ["clicked link \"Log In\""]}
+{"goal": "Forgot password", "page": "facebook__5", "done": ["clicked link \"Log In\""]}
+{"goal": "Where do I put my phone number to log in", "page": "facebook__5", "done": ["clicked link \"Log In\""]}
+{"goal": "Make a new account instead", "page": "facebook__5", "done": ["clicked link \"Log In\""]}
+{"goal": "change languge to filipino", "page": "facebook__5", "done": ["clicked link \"Log In\""]}
+{"goal": "Log in to Messenger", "page": "facebook__6", "done": ["clicked link \"Messenger\""]}
+{"goal": "Type my phone number to log into Messenger", "page": "facebook__6", "done": ["clicked link \"Messenger\""]}
+{"goal": "I forgot my Messenger password", "page": "facebook__6", "done": ["clicked link \"Messenger\""]}
+{"goal": "Get help with Messenger", "page": "facebook__6", "done": ["clicked link \"Messenger\""]}
+{"goal": "See Messenger privacy and safety settings", "page": "facebook__6", "done": ["clicked link \"Messenger\""]}
+{"goal": "Change the language", "page": "facebook__6", "done": ["clicked link \"Messenger\""]}

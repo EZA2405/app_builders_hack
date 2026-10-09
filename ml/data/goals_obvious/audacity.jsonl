@@ -1,0 +1,23 @@
+{"goal": "make the recording louder", "answer": "Effect > Volume and Compression > Amplify...", "decoys": ["Effect > Volume and Compression > Normalize...", "Effect > Volume and Compression > Loudness Normalization...", "Effect > Volume and Compression > Compressor..."]}
+{"goal": "pakilakasan yung boses ko sa recording", "answer": "Effect > Volume and Compression > Amplify...", "decoys": ["Effect > Volume and Compression > Normalize...", "Effect > Volume and Compression > Compressor..."]}
+{"goal": "remove the background hiss", "answer": "Effect > Noise Removal and Repair > Noise Reduction...", "decoys": ["Effect > Noise Removal and Repair > Noise Gate...", "Effect > EQ and Filters > Low-Pass Filter..."]}
+{"goal": "tanggalin yung ingay sa likod ng boses", "answer": "Effect > Noise Removal and Repair > Noise Reduction...", "decoys": ["Effect > Noise Removal and Repair > Noise Gate..."]}
+{"goal": "save it as an mp3", "answer": "File > Export Audio...", "decoys": ["File > Save Project > Save Project As...", "File > Share Audio..."]}
+{"goal": "save my work so i can continue later", "answer": "File > Save Project > Save Project", "decoys": ["File > Export Audio...", "File > Save Project > Backup Project..."]}
+{"goal": "remove this cough from the recording", "answer": "Edit > Delete", "decoys": ["Edit > Cut", "Edit > Remove Special > Silence Audio"]}
+{"goal": "keep only the part i selected", "answer": "Edit > Remove Special > Trim Audio", "decoys": ["Edit > Delete", "Edit > Cut"]}
+{"goal": "make the song start softly", "answer": "Effect > Fading > Fade In", "decoys": ["Effect > Fading > Adjustable Fade..."]}
+{"goal": "make the ending fade away", "answer": "Effect > Fading > Fade Out", "decoys": ["Effect > Fading > Studio Fade Out", "Effect > Fading > Adjustable Fade..."]}
+{"goal": "make it play faster but keep the same voice", "answer": "Effect > Pitch and Tempo > Change Tempo...", "decoys": ["Effect > Pitch and Tempo > Change Speed and Pitch...", "Edit > Audio Clips > Pitch and Speed..."]}
+{"goal": "make my voice sound lower", "answer": "Effect > Pitch and Tempo > Change Pitch...", "decoys": ["Effect > Pitch and Tempo > Change Speed and Pitch...", "Edit > Audio Clips > Pitch and Speed..."]}
+{"goal": "zoom in so i can see the wave closer", "answer": "View > Zoom > Zoom In", "decoys": ["Window > Zoom", "View > Enter Full Screen"]}
+{"goal": "open a song file", "answer": "File > Open...", "decoys": ["File > Import > Audio..."]}
+{"goal": "add another song into this project", "answer": "File > Import > Audio...", "decoys": ["File > Open..."]}
+{"goal": "start recording my voice", "answer": "Transport > Recording > Record", "decoys": ["Transport > Recording > Record New Track", "Transport > Recording > Timer Record..."]}
+{"goal": "remove the long quiet pauses", "answer": "Effect > Special > Truncate Silence...", "decoys": ["Edit > Delete", "Edit > Audio Clips > Detach at Silences"]}
+{"goal": "add an echo to my voice", "answer": "Effect > Delay and Reverb > Echo...", "decoys": ["Effect > Delay and Reverb > Delay...", "Effect > Delay and Reverb > Reverb..."]}
+{"goal": "more bass please", "answer": "Effect > EQ and Filters > Bass and Treble...", "decoys": ["Effect > EQ and Filters > Graphic EQ...", "Effect > EQ and Filters > Filter Curve EQ..."]}
+{"goal": "play it over and over while i listen", "answer": "Transport > Looping > Enable Looping", "decoys": ["Effect > Special > Repeat..."]}
+{"goal": "make the song mono", "answer": "Tracks > Mix > Mix Stereo Down to Mono", "decoys": ["Tracks > Mix > Mix and Render"]}
+{"goal": "make this part silent but keep the lenght", "answer": "Edit > Remove Special > Silence Audio", "decoys": ["Edit > Delete", "Tracks > Mute/Unmute > Mute Tracks"]}
+{"goal": "stop playing", "answer": "Transport > Playing > Play/Stop", "decoys": ["Transport > Playing > Pause"]}

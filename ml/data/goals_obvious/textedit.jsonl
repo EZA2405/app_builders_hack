@@ -1,0 +1,20 @@
+{"goal": "make the words in my letter bigger so it prints large", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In", "Format > Font > Show Fonts"]}
+{"goal": "i cant see well, make the page look bigger on the screen but dont change my letter", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger"]}
+{"goal": "save this as a pdf so i can email it to the bank", "answer": "File > Export as PDF…", "decoys": ["File > Print…"]}
+{"goal": "paki-print itong sulat ko sa papel", "answer": "File > Print…", "decoys": ["File > Export as PDF…"]}
+{"goal": "make a copy of this documnet so i can change the copy", "answer": "File > Duplicate", "decoys": ["File > Save As…"]}
+{"goal": "gusto ko full screen yung sinusulat ko", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"goal": "change every 'colour' to 'color' in the whole letter", "answer": "Edit > Find > Find and Replace…", "decoys": ["Edit > Find > Find…"]}
+{"goal": "check my speling before i send it", "answer": "Edit > Spelling and Grammar > Check Document Now", "decoys": ["Edit > Writing Tools > Proofread", "Edit > Spelling and Grammar > Show Spelling and Grammar"]}
+{"goal": "palitan ko yung pangalan ng file na to", "answer": "File > Rename…", "decoys": ["File > Save As…"]}
+{"goal": "put this document in a different folder", "answer": "File > Move To…", "decoys": ["File > Save As…"]}
+{"goal": "paste this text from the website without the weird fonts", "answer": "Edit > Paste and Match Style", "decoys": ["Edit > Paste"]}
+{"goal": "pick a different font for my letter", "answer": "Format > Font > Show Fonts", "decoys": ["Format > Font > Styles..."]}
+{"goal": "my letter is too long, make it shorter", "answer": "Edit > Writing Tools > Make Concise", "decoys": ["Edit > Writing Tools > Summarize"]}
+{"goal": "get this window out of the way for now", "answer": "Window > Minimize", "decoys": ["TextEdit > Hide TextEdit"]}
+{"goal": "isara mo na tong document, tapos na ako", "answer": "File > Close", "decoys": ["TextEdit > Quit TextEdit"]}
+{"goal": "make these words thick and dark", "answer": "Format > Font > Bold", "decoys": ["Format > Font > Show Fonts"]}
+{"goal": "change the color of the words to red", "answer": "Format > Font > Show Colors", "decoys": ["Format > Font > Show Fonts"]}
+{"goal": "turn the paper sideways before i print", "answer": "File > Page Setup…", "decoys": ["File > Print…"]}
+{"goal": "put two documents side by side on the screen", "answer": "Window > Move & Resize > Left & Right", "decoys": ["Window > Full Screen Tile"]}
+{"goal": "pakilakihan yung font ng sulat ko", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In"]}

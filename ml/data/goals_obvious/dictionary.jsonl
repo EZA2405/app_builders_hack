@@ -1,0 +1,10 @@
+{"goal": "look up a new word", "answer": "Edit > Find > Search For a New Word…", "decoys": ["Edit > Find > Find…"]}
+{"goal": "hanapin mo yung meaning ng ibang salita", "answer": "Edit > Find > Search For a New Word…", "decoys": ["Edit > Find > Find…"]}
+{"goal": "find a word inside this definition", "answer": "Edit > Find > Find…", "decoys": ["Edit > Find > Search For a New Word…"]}
+{"goal": "make the dictionary full screen", "answer": "Window > Enter Full Screen", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"goal": "go back to the word i looked at before", "answer": "Go > Back", "decoys": ["Edit > Undo"]}
+{"goal": "search every dictionary at once", "answer": "Search > All Dictionaries", "decoys": ["Search > Select Next Dictionary"]}
+{"goal": "make the definitions bigger letters", "answer": "Dictionary > Settings…", "decoys": ["Window > Zoom", "Window > Enter Full Screen"]}
+{"goal": "add wikipedia and more dictionaries", "answer": "Dictionary > Settings…", "decoys": ["File > Open Dictionaries Folder"]}
+{"goal": "look up a word in a new tab", "answer": "File > New Tab", "decoys": ["File > New Window"]}
+{"goal": "switch to the next dictionary", "answer": "Search > Select Next Dictionary", "decoys": ["Search > All Dictionaries"]}

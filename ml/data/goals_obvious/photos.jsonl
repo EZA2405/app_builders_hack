@@ -1,0 +1,19 @@
+{"goal": "nakatagilid yung photo, ayusin mo yung ikot", "answer": "Image > Rotate Clockwise", "decoys": ["Image > Rotate Counterclockwise"]}
+{"goal": "turn the picture to the left", "answer": "Image > Rotate Counterclockwise", "decoys": ["Image > Rotate Clockwise"]}
+{"goal": "make this photo look nicer and brighter", "answer": "Image > Auto Enhance", "decoys": ["Image > Show/Hide Edit Tools"]}
+{"goal": "undo all my changes and get the original photo back", "answer": "Image > Revert to Original", "decoys": ["Edit > Undo"]}
+{"goal": "make a copy of this photo so i can edit the copy", "answer": "Image > Duplicate", "decoys": ["Edit > Copy", "File > Export > Export Photos…"]}
+{"goal": "i-save ko tong picture sa desktop", "answer": "File > Export > Export Photos…", "decoys": ["File > Export > Export Unmodified Original…", "Edit > Copy"]}
+{"goal": "print this photo", "answer": "File > Print…", "decoys": ["File > Export > Export Photos…"]}
+{"goal": "show my photos one after another like a slideshow", "answer": "File > Play Slideshow", "decoys": ["File > Export > Export Slideshow…"]}
+{"goal": "ilagay mo sa bagong album tong mga photos", "answer": "File > New Album", "decoys": ["File > New Folder", "Image > Add to Recent Album"]}
+{"goal": "bring in the pictures from my camera card", "answer": "File > Import…", "decoys": ["File > Import without Review…"]}
+{"goal": "open this one picture big so i can look at it", "answer": "Image > Open/Close Viewer", "decoys": ["View > Zoom In"]}
+{"goal": "full screen please", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom"]}
+{"goal": "show me pictures that are copies of each other", "answer": "View > Utilities > Duplicates", "decoys": ["Edit > Find"]}
+{"goal": "save a still picture from this video", "answer": "Image > Save Video Frame as Photo", "decoys": ["File > Export > Export Frame To Pictures"]}
+{"goal": "ipadala ko tong picture sa apo ko", "answer": "File > Share…", "decoys": ["File > Export > Export Photos…"]}
+{"goal": "hide this photo so other people dont see it", "answer": "Image > Show/Hide Photo", "decoys": ["Image > Delete Photo"]}
+{"goal": "close the photos app", "answer": "Photos > Quit Photos", "decoys": ["File > Close"]}
+{"goal": "select all the photos", "answer": "Edit > Select All", "decoys": ["Edit > Select Moment"]}
+{"goal": "baliktarin mo yung picture, nakatagilid", "answer": "Image > Rotate Clockwise", "decoys": ["Image > Rotate Counterclockwise"]}

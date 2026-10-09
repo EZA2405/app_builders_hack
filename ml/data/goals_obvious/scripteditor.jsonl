@@ -1,0 +1,18 @@
+{"goal": "run my script", "answer": "Script > Run", "decoys": ["Script > Run in Foreground", "Script > Run Application"]}
+{"goal": "make the text bigger", "answer": "Font > Bigger", "decoys": ["Window > Zoom", "Font > Show Fonts"]}
+{"goal": "pakilakihan yung font dito", "answer": "Font > Bigger", "decoys": ["Window > Zoom"]}
+{"goal": "make the letters smaller", "answer": "Font > Smaller", "decoys": ["Font > Show Fonts"]}
+{"goal": "find and replace a word", "answer": "Edit > Find > Find and Replace…", "decoys": ["Edit > Find > Find…"]}
+{"goal": "find a word in my script", "answer": "Edit > Find > Find…", "decoys": ["Edit > Find > Find and Replace…"]}
+{"goal": "save my script with a new name", "answer": "File > Save As…", "decoys": ["File > Duplicate", "File > Export…", "File > Rename…"]}
+{"goal": "make a copy of this script", "answer": "File > Duplicate", "decoys": ["File > Save As…", "Edit > Copy"]}
+{"goal": "check my speling", "answer": "Edit > Spelling and Grammar > Check Document Now", "decoys": ["Edit > Spelling and Grammar > Show Spelling and Grammar"]}
+{"goal": "make all of it CAPITAL letters", "answer": "Edit > Transformations > Make Upper Case", "decoys": ["Edit > Transformations > Capitalize"]}
+{"goal": "stop the script its stuck", "answer": "Script > Stop", "decoys": ["Script Editor > Quit Script Editor"]}
+{"goal": "make script editor full screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"goal": "see what the script answered", "answer": "View > Show Result", "decoys": ["View > Show Log"]}
+{"goal": "rename this script", "answer": "File > Rename…", "decoys": ["File > Save As…", "File > Duplicate"]}
+{"goal": "print my script", "answer": "File > Print…", "decoys": ["File > Export…"]}
+{"goal": "make this text bold", "answer": "Font > Bold", "decoys": ["Font > Styles…", "Font > Show Fonts"]}
+{"goal": "change the font", "answer": "Font > Show Fonts", "decoys": ["Font > Styles…"]}
+{"goal": "palitan yung kulay ng text", "answer": "Font > Show Colors", "decoys": ["Font > Show Fonts"]}

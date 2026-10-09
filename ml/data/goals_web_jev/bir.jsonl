@@ -1,0 +1,47 @@
+{"goal": "Search the BIR website for TIN", "page": "bir", "done": []}
+{"goal": "san ako mag dodownload ng bir form", "page": "bir", "done": []}
+{"goal": "pano magpa schedule ng appointment sa bir", "page": "bir", "done": []}
+{"goal": "I want to compute my tax", "page": "bir", "done": []}
+{"goal": "Show me all the BIR online services", "page": "bir", "done": []}
+{"goal": "How do I contact the BIR?", "page": "bir", "done": []}
+{"goal": "Which banks can I pay my taxes at?", "page": "bir", "done": []}
+{"goal": "san makikita ang zonal value ng lupa namin", "page": "bir", "done": []}
+{"goal": "What are the penalties for late filing?", "page": "bir", "done": []}
+{"goal": "Show me the latest public advisory", "page": "bir", "done": []}
+{"goal": "I want to read about the tax amnesty", "page": "bir", "done": []}
+{"goal": "Search the BIR website", "page": "bir__1", "done": ["clicked link \"Main Logo\""]}
+{"goal": "I need the BIR forms", "page": "bir__1", "done": ["clicked link \"Main Logo\""]}
+{"goal": "Set an appointment with BIR", "page": "bir__1", "done": ["clicked link \"Main Logo\""]}
+{"goal": "Use the tax calculator", "page": "bir__1", "done": ["clicked link \"Main Logo\""]}
+{"goal": "pano mag contact sa BIR", "page": "bir__1", "done": ["clicked link \"Main Logo\""]}
+{"goal": "Show me the authorized agent banks", "page": "bir__1", "done": ["clicked link \"Main Logo\""]}
+{"goal": "What are my rights as a taxpayer?", "page": "bir__1", "done": ["clicked link \"Main Logo\""]}
+{"goal": "I want to see all the eServices", "page": "bir__1", "done": ["clicked link \"Main Logo\""]}
+{"goal": "Go back to the BIR home page", "page": "bir__2", "done": ["clicked link \"Transparency Seal\""]}
+{"goal": "Search the BIR site", "page": "bir__2", "done": ["clicked link \"Transparency Seal\""]}
+{"goal": "Show me the BIR online services", "page": "bir__2", "done": ["clicked link \"Transparency Seal\""]}
+{"goal": "How do I contact the BIR?", "page": "bir__2", "done": ["clicked link \"Transparency Seal\""]}
+{"goal": "Read the privacy notice", "page": "bir__2", "done": ["clicked link \"Transparency Seal\""]}
+{"goal": "I want to file a freedom of information request", "page": "bir__2", "done": ["clicked link \"Transparency Seal\""]}
+{"goal": "pakita yung site map", "page": "bir__2", "done": ["clicked link \"Transparency Seal\""]}
+{"goal": "How do I email the BIR data privacy officer?", "page": "bir__3", "done": ["clicked link \"PrivacyNotice\""]}
+{"goal": "Go back to the BIR home page", "page": "bir__3", "done": ["clicked link \"PrivacyNotice\""]}
+{"goal": "Search the BIR website", "page": "bir__3", "done": ["clicked link \"PrivacyNotice\""]}
+{"goal": "I want to contact BIR", "page": "bir__3", "done": ["clicked link \"PrivacyNotice\""]}
+{"goal": "Show me the BIR online services", "page": "bir__3", "done": ["clicked link \"PrivacyNotice\""]}
+{"goal": "anong accessibility options meron", "page": "bir__3", "done": ["clicked link \"PrivacyNotice\""]}
+{"goal": "pano kumuha ng TIN online", "page": "bir__4", "done": ["clicked link \"eSERVICES\""]}
+{"goal": "Pay my taxes online", "page": "bir__4", "done": ["clicked link \"eSERVICES\""]}
+{"goal": "Fill out BIR forms on my computer (eBIRForms)", "page": "bir__4", "done": ["clicked link \"eSERVICES\""]}
+{"goal": "Log in to the Taxpayer Portal", "page": "bir__4", "done": ["clicked link \"eSERVICES\""]}
+{"goal": "I want to file using eFPS", "page": "bir__4", "done": ["clicked link \"eSERVICES\""]}
+{"goal": "Show me the other online services", "page": "bir__4", "done": ["clicked link \"eSERVICES\""]}
+{"goal": "Process my ONETT tax for selling property", "page": "bir__4", "done": ["clicked link \"eSERVICES\""]}
+{"goal": "pano mag bayad ng tax online", "page": "bir__4", "done": ["clicked link \"eSERVICES\""]}
+{"goal": "I want to email BIR", "page": "bir__5", "done": ["clicked link \"CONTACT US\""]}
+{"goal": "Show me the contact info of the BIR national office", "page": "bir__5", "done": ["clicked link \"CONTACT US\""]}
+{"goal": "saan ang bir office na malapit samin", "page": "bir__5", "done": ["clicked link \"CONTACT US\""]}
+{"goal": "Where are the revenue data centers?", "page": "bir__5", "done": ["clicked link \"CONTACT US\""]}
+{"goal": "hanapin ang RDO namin", "page": "bir__5", "done": ["clicked link \"CONTACT US\""]}
+{"goal": "Search the BIR site", "page": "bir__5", "done": ["clicked link \"CONTACT US\""]}
+{"goal": "Go back to the home page", "page": "bir__5", "done": ["clicked link \"CONTACT US\""]}

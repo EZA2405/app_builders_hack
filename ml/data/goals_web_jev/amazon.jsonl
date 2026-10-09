@@ -1,0 +1,44 @@
+{"goal": "hanap ng salamin pang basa sa amazon", "page": "amazon", "done": []}
+{"goal": "Sign in to my Amazon account", "page": "amazon", "done": []}
+{"goal": "Check my orders and returns", "page": "amazon", "done": []}
+{"goal": "Open my shopping cart", "page": "amazon", "done": []}
+{"goal": "Change the website language", "page": "amazon", "done": []}
+{"goal": "I need help from Amazon customer service", "page": "amazon", "done": []}
+{"goal": "Show me today's deals", "page": "amazon", "done": []}
+{"goal": "palitan ang address kung san idedeliver", "page": "amazon", "done": []}
+{"goal": "I want to buy a gift card", "page": "amazon", "done": []}
+{"goal": "pano mag return ng item", "page": "amazon", "done": []}
+{"goal": "Show me all the categories", "page": "amazon", "done": []}
+{"goal": "wala pa ko account sa amazon, pano gumawa", "page": "amazon__1", "done": ["clicked link \"Amazon\""]}
+{"goal": "Search Amazon for a phone case", "page": "amazon__1", "done": ["clicked link \"Amazon\""]}
+{"goal": "Track my orders", "page": "amazon__1", "done": ["clicked link \"Amazon\""]}
+{"goal": "Open my cart", "page": "amazon__1", "done": ["clicked link \"Amazon\""]}
+{"goal": "Show me coupons", "page": "amazon__1", "done": ["clicked link \"Amazon\""]}
+{"goal": "Contact customer service", "page": "amazon__1", "done": ["clicked link \"Amazon\""]}
+{"goal": "palitan yung currency sa peso", "page": "amazon__1", "done": ["clicked link \"Amazon\""]}
+{"goal": "I want to return something I bought", "page": "amazon__1", "done": ["clicked link \"Amazon\""]}
+{"goal": "Show me the shipping rates", "page": "amazon__1", "done": ["clicked link \"Amazon\""]}
+{"goal": "Sign in to my account to see my cart", "page": "amazon__4", "done": ["clicked link \"0 items in cart\""]}
+{"goal": "I want to create an Amazon account", "page": "amazon__4", "done": ["clicked link \"0 items in cart\""]}
+{"goal": "Show me today's deals", "page": "amazon__4", "done": ["clicked link \"0 items in cart\""]}
+{"goal": "Search Amazon for lotion", "page": "amazon__4", "done": ["clicked link \"0 items in cart\""]}
+{"goal": "Go back to the Amazon home page", "page": "amazon__4", "done": ["clicked link \"0 items in cart\""]}
+{"goal": "Contact customer service", "page": "amazon__4", "done": ["clicked link \"0 items in cart\""]}
+{"goal": "check ko yung orders ko", "page": "amazon__4", "done": ["clicked link \"0 items in cart\""]}
+{"goal": "What are the shipping rates?", "page": "amazon__4", "done": ["clicked link \"0 items in cart\""]}
+{"goal": "Change the currency to Philippine peso", "page": "amazon__5", "done": ["clicked link \"Choose a language for shopping in Amazon United States. The current selection is\""]}
+{"goal": "Save my language settings", "page": "amazon__5", "done": ["clicked link \"Choose a language for shopping in Amazon United States. The current selection is\""]}
+{"goal": "Cancel and don't change anything", "page": "amazon__5", "done": ["clicked link \"Choose a language for shopping in Amazon United States. The current selection is\""]}
+{"goal": "Search Amazon for an umbrella", "page": "amazon__5", "done": ["clicked link \"Choose a language for shopping in Amazon United States. The current selection is\""]}
+{"goal": "Go back to the Amazon home page", "page": "amazon__5", "done": ["clicked link \"Choose a language for shopping in Amazon United States. The current selection is\""]}
+{"goal": "Sign in to my account", "page": "amazon__5", "done": ["clicked link \"Choose a language for shopping in Amazon United States. The current selection is\""]}
+{"goal": "Need help from customer service", "page": "amazon__5", "done": ["clicked link \"Choose a language for shopping in Amazon United States. The current selection is\""]}
+{"goal": "save mo na yung changes", "page": "amazon__5", "done": ["clicked link \"Choose a language for shopping in Amazon United States. The current selection is\""]}
+{"goal": "Search Amazon for kitchen knives", "page": "amazon__6", "done": ["clicked link \"Amazon Bazaar\""]}
+{"goal": "mag sign in sa amazon", "page": "amazon__6", "done": ["clicked link \"Amazon Bazaar\""]}
+{"goal": "Open my cart", "page": "amazon__6", "done": ["clicked link \"Amazon Bazaar\""]}
+{"goal": "Show me today's deals", "page": "amazon__6", "done": ["clicked link \"Amazon Bazaar\""]}
+{"goal": "Check my orders", "page": "amazon__6", "done": ["clicked link \"Amazon Bazaar\""]}
+{"goal": "I want help from customer service", "page": "amazon__6", "done": ["clicked link \"Amazon Bazaar\""]}
+{"goal": "balik sa homepage ng amazon", "page": "amazon__6", "done": ["clicked link \"Amazon Bazaar\""]}
+{"goal": "How do I return an item?", "page": "amazon__6", "done": ["clicked link \"Amazon Bazaar\""]}

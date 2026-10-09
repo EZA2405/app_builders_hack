@@ -1,0 +1,24 @@
+{"goal": "make the movie fill the whole screen", "answer": "Video > Fullscreen", "decoys": ["Window > Zoom", "Video > Fit to Screen", "Window > Fill"]}
+{"goal": "the video picture is tiny, make it twice as big", "answer": "Video > Double Size", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"goal": "the subtitles are too small i cant read them", "answer": "Subtitles > Text Size > Larger", "decoys": ["Video > Double Size", "Video > Fullscreen"]}
+{"goal": "the sound is too soft, make it louder", "answer": "Audio > Increase Volume", "decoys": ["Window > Audio Effects..."]}
+{"goal": "turn off the sound for a sec", "answer": "Audio > Mute", "decoys": ["Audio > Decrease Volume"]}
+{"goal": "pakihinaan yung volume, ang lakas", "answer": "Audio > Decrease Volume", "decoys": ["Audio > Mute"]}
+{"goal": "stop the movie completly", "answer": "Playback > Stop", "decoys": ["VLC > Quit VLC", "File > Close Window"]}
+{"goal": "skip to minute 45 of the movie", "answer": "Playback > Jump to Time", "decoys": ["Playback > Step Forward"]}
+{"goal": "take a picture of this scene", "answer": "Video > Snapshot", "decoys": ["Playback > Record"]}
+{"goal": "open the video file i downloaded", "answer": "File > Open File...", "decoys": ["File > Advanced Open File...", "File > Open Disc..."]}
+{"goal": "i have a subtitle file, put it on the movie", "answer": "Subtitles > Add Subtitle File...", "decoys": ["File > Open File...", "File > Advanced Open File..."]}
+{"goal": "play the dvd i put in", "answer": "File > Open Disc...", "decoys": ["File > Open File...", "File > Open Capture Device..."]}
+{"goal": "watch a video from a link on the internet", "answer": "File > Open Network...", "decoys": ["File > Open File...", "File > Convert / Stream..."]}
+{"goal": "play this one song over and over", "answer": "Playback > Repeat One", "decoys": ["Playback > Repeat All", "Playback > A→B Loop"]}
+{"goal": "ihalo-halo yung order ng mga kanta", "answer": "Playback > Random", "decoys": ["Playback > Next"]}
+{"goal": "the voice and the lips dont match, fix the delay", "answer": "Window > Track Synchronization", "decoys": ["Window > Audio Effects...", "Window > Video Effects..."]}
+{"goal": "keep the video on top of my other windows", "answer": "Video > Float on Top", "decoys": ["Window > Arrange in Front", "Window > Bring All to Front"]}
+{"goal": "go to the next video in the list", "answer": "Playback > Next", "decoys": ["Playback > Step Forward"]}
+{"goal": "put the video back to its normal size", "answer": "Video > Normal Size", "decoys": ["Window > Move & Resize > Return to Previous Size", "Window > Zoom"]}
+{"goal": "show me the list of videos", "answer": "Window > Playlist...", "decoys": ["View > Show Sidebar"]}
+{"goal": "change this video to mp4", "answer": "File > Convert / Stream...", "decoys": ["Playback > Record"]}
+{"goal": "close the video window but keep vlc open", "answer": "File > Close Window", "decoys": ["VLC > Quit VLC", "Window > Minimize"]}
+{"goal": "make the subtitle leters yellow", "answer": "Subtitles > Text Color > Yellow", "decoys": ["Subtitles > Background Color > Yellow"]}
+{"goal": "make the picture brighter its too dark", "answer": "Window > Video Effects...", "decoys": ["Video > Post processing > Level 6"]}

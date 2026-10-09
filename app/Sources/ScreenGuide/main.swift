@@ -55,8 +55,19 @@ if let i = args.firstIndex(of: "--press"), args.count > i + 3 {
     guard axTrusted(prompt: true), let target = runningApp(args[i + 1]) else { exit(3) }
     target.activate()
     let what = args[i + 2]
-    let ok = what.hasPrefix("button:") ? ScreenReader.pressButton(target, label: String(what.dropFirst(7)))
-                                       : ScreenReader.pressMenu(target, path: what)
+    var ok: Bool
+    if what == "key:escape" {
+        // DEV: Escape closes sheets, panels and file pickers without choosing anything.
+        let src = CGEventSource(stateID: .hidSystemState)
+        let down = CGEvent(keyboardEventSource: src, virtualKey: 53, keyDown: true)
+        let up = CGEvent(keyboardEventSource: src, virtualKey: 53, keyDown: false)
+        down?.postToPid(target.processIdentifier); up?.postToPid(target.processIdentifier)
+        ok = true
+    } else if what.hasPrefix("button:") {
+        ok = ScreenReader.pressButton(target, label: String(what.dropFirst(7)))
+    } else {
+        ok = ScreenReader.pressMenu(target, path: what)
+    }
     Thread.sleep(forTimeInterval: 1.5)
     struct Pressed: Encodable { let pressed: Bool; let state: ScreenState }
     writeJSON(Pressed(pressed: ok, state: ScreenReader.state(of: target)), to: args[i + 3])

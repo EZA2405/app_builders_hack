@@ -1,0 +1,19 @@
+{"goal": "make the text bigger", "answer": "View > Make Text Bigger", "decoys": ["View > Zoom In on Selection", "Window > Zoom"]}
+{"goal": "palakihin yung text sa terminal", "answer": "View > Make Text Bigger", "decoys": ["View > Zoom In on Selection"]}
+{"goal": "make the text smaller", "answer": "View > Make Text Smaller", "decoys": ["View > Zoom Out", "Window > Minimize"]}
+{"goal": "put the text back to normal size", "answer": "View > Make Text Normal Size", "decoys": ["View > Restore Text and Session Size"]}
+{"goal": "make iterm full screen", "answer": "View > Toggle Full Screen", "decoys": ["Window > Zoom", "Window > Window Style > Maximized", "Window > Fill"]}
+{"goal": "clear the screen its messy", "answer": "Edit > Clear Buffer", "decoys": ["Edit > Clear Scrollback Buffer", "Session > Reset"]}
+{"goal": "find a word in the output", "answer": "Edit > Find > Find…", "decoys": ["Edit > Find > Find Globally...", "Edit > Find > Filter"]}
+{"goal": "open a new tab", "answer": "Shell > New Tab", "decoys": ["Shell > New Window", "Shell > Duplicate Tab"]}
+{"goal": "open a new window", "answer": "Shell > New Window", "decoys": ["Shell > Duplicate Window"]}
+{"goal": "split the screen side by side", "answer": "Shell > Split Vertically…", "decoys": ["Shell > Split Horizontally…", "Shell > New Window"]}
+{"goal": "save everything on the screen to a file", "answer": "Shell > Save Contents…", "decoys": ["Session > Log > Log to File", "Shell > Print > Buffer"]}
+{"goal": "bring back the tab i closed by mistake", "answer": "Shell > Undo Close", "decoys": ["Edit > Undo Close Session", "Shell > New Tab"]}
+{"goal": "close this tab", "answer": "Shell > Close", "decoys": ["Shell > Close Terminal Window", "iTerm2 > Quit iTerm2"]}
+{"goal": "isara mo yung tab na ito", "answer": "Shell > Close", "decoys": ["Shell > Close Terminal Window"]}
+{"goal": "print whats on the screen", "answer": "Shell > Print > Screen", "decoys": ["Shell > Print > Buffer", "Shell > Save Contents…"]}
+{"goal": "change the background color", "answer": "iTerm2 > Settings…", "decoys": ["Profiles > Open Profiles…", "View > Current Tab Color"]}
+{"goal": "see the commands i typed before", "answer": "Session > Open Command History…", "decoys": ["View > Toolbelt > Command History"]}
+{"goal": "where is my cursor i lost it", "answer": "View > Find Cursor", "decoys": ["View > Show Cursor Guide"]}
+{"goal": "restart this terminal its frozen", "answer": "Session > Restart Session", "decoys": ["Session > Reset", "iTerm2 > Quit iTerm2"]}

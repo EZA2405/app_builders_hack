@@ -82,6 +82,8 @@ def main():
     p.add_argument("--model")
     p.add_argument("--fixture", default="fixtures/preview_real.json")
     p.add_argument("--group", type=int, default=200, help="max options per call (Laya: 16)")
+    p.add_argument("--rewrites", help="JSON {goal: rewrite} from Apple's on-device model (experiment)")
+    p.add_argument("--rewrite-mode", choices=["append", "replace"], default="append")
     a = p.parse_args()
     load_dotenv()
     fx = json.load(open(a.fixture))
@@ -93,8 +95,13 @@ def main():
         goals = {g: set(ok) for g, ok in fx["goals"].items()} if "goals" in fx else GOALS
         cases = [(g, ok, fx["app"], fx["commands"], None) for g, ok in goals.items()]
     goals = cases
+    rw = json.load(open(a.rewrites)) if a.rewrites else {}
     for goal, ok, app, commands, done in cases:
-        choice, conf, dt, res = choose(a.url, a.model, app, commands, goal, key, limit=a.group, done=done)
+        shown = goal
+        if goal in rw:
+            shown = rw[goal] if a.rewrite_mode == "replace" else f"{goal}\" (in other words: {rw[goal]})"
+            shown = shown.rstrip('"') if a.rewrite_mode == "append" else shown
+        choice, conf, dt, res = choose(a.url, a.model, app, commands, shown, key, limit=a.group, done=done)
         good = choice in ok
         hits += good
         times.append(dt)

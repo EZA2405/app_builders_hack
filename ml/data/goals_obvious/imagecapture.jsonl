@@ -1,0 +1,4 @@
+{"goal": "make image capture full screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"goal": "delete these photos from my phone", "answer": "Edit > Delete", "decoys": ["Edit > Cut"]}
+{"goal": "close image capture", "answer": "Image Capture > Quit Image Capture", "decoys": ["Window > Minimize", "Image Capture > Hide Image Capture"]}
+{"goal": "itago muna yung image capture", "answer": "Image Capture > Hide Image Capture", "decoys": ["Window > Minimize"]}

@@ -163,9 +163,13 @@ enum ScreenReader {
     /// DEV ONLY: press a visible button in the app's windows by its label (e.g. "Cancel").
     static func pressButton(_ app: NSRunningApplication, label: String) -> Bool {
         let root = AXUIElementCreateApplication(app.processIdentifier)
+        var visited = 0
         func find(_ el: AXUIElement, _ d: Int) -> AXUIElement? {
-            if d > 30 { return nil }
-            if AXReader.role(el) == "AXButton", AXReader.string(el, kAXTitleAttribute) == label { return el }
+            visited += 1
+            if d > 12 || visited > 3000 { return nil }   // never crawl a whole file browser
+            if AXReader.role(el) == "AXButton",
+               (AXReader.string(el, kAXTitleAttribute) ?? AXReader.string(el, kAXDescriptionAttribute))?.caseInsensitiveCompare(label) == .orderedSame { return el }
+            if AXReader.role(el) == "AXOutline" || AXReader.role(el) == "AXTable" || AXReader.role(el) == "AXBrowser" { return nil }
             for c in AXReader.children(el) { if let f = find(c, d + 1) { return f } }
             return nil
         }

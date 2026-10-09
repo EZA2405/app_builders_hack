@@ -1,0 +1,17 @@
+{"goal": "gawa ng bagong list para sa grocery", "answer": "File > New List", "decoys": ["File > New Group", "File > New Section"]}
+{"goal": "tapos ko na to, i-check mo na", "answer": "Edit > Mark as Completed", "decoys": ["Edit > Delete"]}
+{"goal": "remind me about this tomorow instead", "answer": "Edit > Mark Due Date As > Tomorrow", "decoys": ["File > Show Info"]}
+{"goal": "move all the late ones to today", "answer": "Edit > Mark Due Date As > Mark All Overdue to Today", "decoys": ["Edit > Mark Due Date As > Today"]}
+{"goal": "share this list with my family", "answer": "File > Share List", "decoys": ["File > Manage Shared List", "Edit > Assign"]}
+{"goal": "save this list so i can use it again next month", "answer": "File > Save as Template…", "decoys": ["Edit > Copy"]}
+{"goal": "change the time on this reminder", "answer": "File > Show Info", "decoys": ["Edit > Mark Due Date As > Today"]}
+{"goal": "put this one under the other one as a small step", "answer": "Edit > Indent Reminder", "decoys": ["File > New Section with Selection"]}
+{"goal": "full screen please", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom"]}
+{"goal": "hanapin mo yung reminder tungkol sa gamot ko", "answer": "Edit > Find", "decoys": ["View > Go To > All"]}
+{"goal": "delete this reminder, i dont need it anymore", "answer": "Edit > Delete", "decoys": ["Edit > Mark as Completed"]}
+{"goal": "take the due date off this one", "answer": "Edit > Mark Due Date As > None", "decoys": ["File > Show Info"]}
+{"goal": "sort my shopping list into groups like fruits and meat", "answer": "File > Auto-Categorize", "decoys": ["File > New Section", "File > Edit Sections…"]}
+{"goal": "move this to this weekend", "answer": "Edit > Mark Due Date As > This Weekend", "decoys": ["File > Show Info"]}
+{"goal": "close the reminders app", "answer": "Reminders > Quit Reminders", "decoys": ["File > Close"]}
+{"goal": "make a list that always shows my flagged ones", "answer": "File > Create Smart List", "decoys": ["View > Show Smart List > Flagged"]}
+{"goal": "make this one high priority", "answer": "Edit > Priority > High", "decoys": ["File > Show Info"]}

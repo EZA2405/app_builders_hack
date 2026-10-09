@@ -1,0 +1,13 @@
+{"goal": "find a word in this file", "answer": "Find > Find…", "decoys": ["Find > Find in Workspace…", "Help > Search Documentation for Selected Text"]}
+{"goal": "search all my files for a word", "answer": "Find > Find in Workspace…", "decoys": ["Find > Find…", "File > Open Quickly…"]}
+{"goal": "hanapin mo yung salitang login sa buong project", "answer": "Find > Find in Workspace…", "decoys": ["Find > Find…"]}
+{"goal": "replace a word with another one", "answer": "Find > Find and Replace…", "decoys": ["Find > Find and Replace in Workspace…"]}
+{"goal": "make xcode full screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"goal": "save this file with a new name", "answer": "File > Save As…", "decoys": ["File > Duplicate…", "File > Export…"]}
+{"goal": "print this file", "answer": "File > Print…", "decoys": ["File > Export…"]}
+{"goal": "open a file", "answer": "File > Open…", "decoys": ["File > Open Quickly…", "File > Add Files…"]}
+{"goal": "show this file in finder", "answer": "File > Show in Finder", "decoys": ["File > Open with External Editor"]}
+{"goal": "throw away my unsaved changes", "answer": "File > Revert to Saved…", "decoys": ["Edit > Undo"]}
+{"goal": "check my speling", "answer": "Edit > Format > Spelling and Grammar > Check Document Now", "decoys": ["Edit > Format > Spelling and Grammar > Show Spelling and Grammar"]}
+{"goal": "make this all capital letters", "answer": "Edit > Format > Transformations > Make Upper Case", "decoys": ["Edit > Format > Transformations > Capitalize"]}
+{"goal": "put two files side by side", "answer": "File > New > Editor Pane On Right", "decoys": ["File > New > Window"]}

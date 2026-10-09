@@ -1,0 +1,31 @@
+{"goal": "Log in to Messenger", "page": "messenger", "done": []}
+{"goal": "Where do I type my email to sign in", "page": "messenger", "done": []}
+{"goal": "Type my password", "page": "messenger", "done": []}
+{"goal": "I forgot my password", "page": "messenger", "done": []}
+{"goal": "Get help with Messenger", "page": "messenger", "done": []}
+{"goal": "How do I keep my chats private and safe", "page": "messenger", "done": []}
+{"goal": "palitan ang language", "page": "messenger", "done": []}
+{"goal": "What can Messenger do", "page": "messenger", "done": []}
+{"goal": "How do I block someone on Messenger", "page": "messenger__1", "done": ["clicked link \"Privacy and Safety\""]}
+{"goal": "Control who can message me", "page": "messenger__1", "done": ["clicked link \"Privacy and Safety\""]}
+{"goal": "Lock the app so others can't open my chats", "page": "messenger__1", "done": ["clicked link \"Privacy and Safety\""]}
+{"goal": "Go to the Messenger help center", "page": "messenger__1", "done": ["clicked link \"Privacy and Safety\""]}
+{"goal": "Set up supervision for my grandchild's account", "page": "messenger__1", "done": ["clicked link \"Privacy and Safety\""]}
+{"goal": "Read the community standards", "page": "messenger__1", "done": ["clicked link \"Privacy and Safety\""]}
+{"goal": "paano i-block yung nagme-message sakin", "page": "messenger__1", "done": ["clicked link \"Privacy and Safety\""]}
+{"goal": "Change the language", "page": "messenger__1", "done": ["clicked link \"Privacy and Safety\""]}
+{"goal": "Search the help center for my problem", "page": "messenger__2", "done": ["clicked link \"Help Center\""]}
+{"goal": "How can I reset my password", "page": "messenger__2", "done": ["clicked link \"Help Center\""]}
+{"goal": "Report a message someone sent me", "page": "messenger__2", "done": ["clicked link \"Help Center\""]}
+{"goal": "Block someone on Messenger", "page": "messenger__2", "done": ["clicked link \"Help Center\""]}
+{"goal": "Download or update the Messenger app", "page": "messenger__2", "done": ["clicked link \"Help Center\""]}
+{"goal": "Who can send me messages", "page": "messenger__2", "done": ["clicked link \"Help Center\""]}
+{"goal": "Help with my account", "page": "messenger__2", "done": ["clicked link \"Help Center\""]}
+{"goal": "Log in to Messenger", "page": "messenger__2", "done": ["clicked link \"Help Center\""]}
+{"goal": "paano mag report ng scam na message", "page": "messenger__2", "done": ["clicked link \"Help Center\""]}
+{"goal": "Go to the Privacy Center home", "page": "messenger__3", "done": ["clicked link \"Cookie Policy\""]}
+{"goal": "Print this page", "page": "messenger__3", "done": ["clicked link \"Cookie Policy\""]}
+{"goal": "Search the Privacy Center", "page": "messenger__3", "done": ["clicked link \"Cookie Policy\""]}
+{"goal": "Close this page", "page": "messenger__3", "done": ["clicked link \"Cookie Policy\""]}
+{"goal": "See older versions of this policy", "page": "messenger__3", "done": ["clicked link \"Cookie Policy\""]}
+{"goal": "Read the main privacy policy", "page": "messenger__3", "done": ["clicked link \"Cookie Policy\""]}

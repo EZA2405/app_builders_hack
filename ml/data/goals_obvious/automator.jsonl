@@ -1,0 +1,14 @@
+{"goal": "run my workflow", "answer": "Workflow > Run", "decoys": ["Workflow > Step"]}
+{"goal": "patakbuhin mo na yung workflow", "answer": "Workflow > Run", "decoys": ["Workflow > Step"]}
+{"goal": "save my workflow with another name", "answer": "File > Save As…", "decoys": ["File > Duplicate", "File > Export…", "File > Rename…"]}
+{"goal": "make a copy of this workflow", "answer": "File > Duplicate", "decoys": ["File > Save As…"]}
+{"goal": "find an action to add", "answer": "Edit > Find > Find in Library", "decoys": ["Edit > Find > Find…"]}
+{"goal": "stop the workflow its taking too long", "answer": "Workflow > Stop", "decoys": ["Automator > Quit Automator"]}
+{"goal": "rename this workflow", "answer": "File > Rename…", "decoys": ["File > Save As…", "File > Duplicate"]}
+{"goal": "move this step up", "answer": "Action > Move Up", "decoys": ["Edit > Cut", "Edit > Paste"]}
+{"goal": "turn off this step for now", "answer": "Action > Disable", "decoys": ["Edit > Delete"]}
+{"goal": "make automator full screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"goal": "see what this step gave back", "answer": "Action > Show Results", "decoys": ["View > Log"]}
+{"goal": "show the list of actions", "answer": "View > Show Library", "decoys": ["Action > Show in Library"]}
+{"goal": "put this workflow in another folder", "answer": "File > Move To…", "decoys": ["File > Save As…", "File > Duplicate"]}
+{"goal": "print my workflow", "answer": "File > Print…", "decoys": ["File > Export…"]}

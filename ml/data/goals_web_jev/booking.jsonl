@@ -1,0 +1,55 @@
+{"goal": "hanap ng hotel sa baguio", "page": "booking", "done": []}
+{"goal": "Choose my check-in and check-out dates", "page": "booking", "done": []}
+{"goal": "Change the number of guests", "page": "booking", "done": []}
+{"goal": "Sign in to my Booking account", "page": "booking", "done": []}
+{"goal": "I need help from customer support", "page": "booking", "done": []}
+{"goal": "Change the currency to pesos", "page": "booking", "done": []}
+{"goal": "Change the language", "page": "booking", "done": []}
+{"goal": "I want to book a flight", "page": "booking", "done": []}
+{"goal": "Rent a car", "page": "booking", "done": []}
+{"goal": "Book an airport taxi", "page": "booking", "done": []}
+{"goal": "pano mag register sa booking", "page": "booking", "done": []}
+{"goal": "I need help with my reservation", "page": "booking__1", "done": ["clicked link \"Customer support\""]}
+{"goal": "How do I cancel my booking?", "page": "booking__1", "done": ["clicked link \"Customer support\""]}
+{"goal": "I have a question about payment", "page": "booking__1", "done": ["clicked link \"Customer support\""]}
+{"goal": "Sign in to my account", "page": "booking__1", "done": ["clicked link \"Customer support\""]}
+{"goal": "Contact customer service", "page": "booking__1", "done": ["clicked link \"Customer support\""]}
+{"goal": "Manage my trips", "page": "booking__1", "done": ["clicked link \"Customer support\""]}
+{"goal": "help with my flight booking", "page": "booking__1", "done": ["clicked link \"Customer support\""]}
+{"goal": "Change the language", "page": "booking__1", "done": ["clicked link \"Customer support\""]}
+{"goal": "pano icancel yung booking ko", "page": "booking__1", "done": ["clicked link \"Customer support\""]}
+{"goal": "gusto ko ipaupa ang bahay ko sa booking", "page": "booking__2", "done": ["clicked link \"List your property\""]}
+{"goal": "Continue my registration", "page": "booking__2", "done": ["clicked link \"List your property\""]}
+{"goal": "Sign in to my property account", "page": "booking__2", "done": ["clicked link \"List your property\""]}
+{"goal": "What happens if a guest damages my property?", "page": "booking__2", "done": ["clicked link \"List your property\""]}
+{"goal": "When will my property go online?", "page": "booking__2", "done": ["clicked link \"List your property\""]}
+{"goal": "Read the FAQ", "page": "booking__2", "done": ["clicked link \"List your property\""]}
+{"goal": "pano mag paupa sa booking", "page": "booking__2", "done": ["clicked link \"List your property\""]}
+{"goal": "Get the Pulse app for my Android phone", "page": "booking__2", "done": ["clicked link \"List your property\""]}
+{"goal": "Where do I type the place I'm going?", "page": "booking__4", "done": ["clicked link \"Booking.com\""]}
+{"goal": "pili ng petsa ng biyahe ko", "page": "booking__4", "done": ["clicked link \"Booking.com\""]}
+{"goal": "Set 2 adults and 1 child", "page": "booking__4", "done": ["clicked link \"Booking.com\""]}
+{"goal": "Search hotels", "page": "booking__4", "done": ["clicked link \"Booking.com\""]}
+{"goal": "Sign in to my Booking account", "page": "booking__4", "done": ["clicked link \"Booking.com\""]}
+{"goal": "Look for resorts", "page": "booking__4", "done": ["clicked link \"Booking.com\""]}
+{"goal": "I need customer support", "page": "booking__4", "done": ["clicked link \"Booking.com\""]}
+{"goal": "Change the prices to Philippine peso", "page": "booking__4", "done": ["clicked link \"Booking.com\""]}
+{"goal": "pano mag hanap ng hotel sa tokyo", "page": "booking__4", "done": ["clicked link \"Booking.com\""]}
+{"goal": "unahin yung pinakamurang hotel", "page": "booking__5", "done": ["clicked link \"Hotels in Las Vegas, Nevada\""]}
+{"goal": "Show only 4-star hotels", "page": "booking__5", "done": ["clicked link \"Hotels in Las Vegas, Nevada\""]}
+{"goal": "Show hotels on the map", "page": "booking__5", "done": ["clicked link \"Hotels in Las Vegas, Nevada\""]}
+{"goal": "See all hotels in Las Vegas", "page": "booking__5", "done": ["clicked link \"Hotels in Las Vegas, Nevada\""]}
+{"goal": "Check if rooms are available", "page": "booking__5", "done": ["clicked link \"Hotels in Las Vegas, Nevada\""]}
+{"goal": "Show the top reviewed hotels", "page": "booking__5", "done": ["clicked link \"Hotels in Las Vegas, Nevada\""]}
+{"goal": "Search for a different city", "page": "booking__5", "done": ["clicked link \"Hotels in Las Vegas, Nevada\""]}
+{"goal": "pakita yung mga hotel na 9+ rating", "page": "booking__5", "done": ["clicked link \"Hotels in Las Vegas, Nevada\""]}
+{"goal": "Change the number of guests", "page": "booking__5", "done": ["clicked link \"Hotels in Las Vegas, Nevada\""]}
+{"goal": "Show the cheapest hotels first", "page": "booking__6", "done": ["clicked link \"Hotels in New York, New York\""]}
+{"goal": "Show me hotels on a map", "page": "booking__6", "done": ["clicked link \"Hotels in New York, New York\""]}
+{"goal": "Show only 3-star hotels", "page": "booking__6", "done": ["clicked link \"Hotels in New York, New York\""]}
+{"goal": "See all hotels in New York", "page": "booking__6", "done": ["clicked link \"Hotels in New York, New York\""]}
+{"goal": "Check room availability", "page": "booking__6", "done": ["clicked link \"Hotels in New York, New York\""]}
+{"goal": "Show hotels rated very good", "page": "booking__6", "done": ["clicked link \"Hotels in New York, New York\""]}
+{"goal": "Go to next month in the calendar", "page": "booking__6", "done": ["clicked link \"Hotels in New York, New York\""]}
+{"goal": "sign in muna ako", "page": "booking__6", "done": ["clicked link \"Hotels in New York, New York\""]}
+{"goal": "I need help from customer support", "page": "booking__6", "done": ["clicked link \"Hotels in New York, New York\""]}

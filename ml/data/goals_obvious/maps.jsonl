@@ -1,0 +1,18 @@
+{"goal": "find a pharmacy near me", "answer": "Edit > Find", "decoys": ["View > Explore"]}
+{"goal": "paano pumunta sa airport", "answer": "View > Show Directions", "decoys": ["Edit > Find"]}
+{"goal": "nasaan na ba ako ngayon", "answer": "View > Go to Current Location", "decoys": ["Edit > Find"]}
+{"goal": "show the map as a real picture from the sky", "answer": "View > Satellite", "decoys": ["View > Show 3D Map"]}
+{"goal": "is there traffic on the road", "answer": "View > Show Traffic", "decoys": ["View > Driving"]}
+{"goal": "show me the bus and train routes", "answer": "View > Transit", "decoys": ["View > Show Directions"]}
+{"goal": "print this map", "answer": "File > Print…", "decoys": ["File > Export As…"]}
+{"goal": "save this map as a pdf", "answer": "File > Export As…", "decoys": ["File > Print…"]}
+{"goal": "send this place to my son", "answer": "File > Share", "decoys": ["Edit > Copy Link"]}
+{"goal": "kopyahin yung link ng lugar na to", "answer": "Edit > Copy Link", "decoys": ["File > Share"]}
+{"goal": "take the pin off the map", "answer": "Edit > Remove Marked Location", "decoys": ["Edit > Delete"]}
+{"goal": "see the street like i am standing there", "answer": "View > Show Look Around", "decoys": ["View > Show 3D Map"]}
+{"goal": "full screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom"]}
+{"goal": "remove a stop from my trip", "answer": "Edit > Delete Stop", "decoys": ["Edit > Delete"]}
+{"goal": "open another map window", "answer": "File > New Window", "decoys": ["File > Duplicate"]}
+{"goal": "put the map back to normal size", "answer": "View > Default Zoom", "decoys": ["View > Zoom Out"]}
+{"goal": "the shop is not on the map, tell apple", "answer": "Maps > Report Something Missing…", "decoys": ["Maps > Report an Issue…"]}
+{"goal": "close maps", "answer": "Maps > Quit Maps", "decoys": ["File > Close"]}

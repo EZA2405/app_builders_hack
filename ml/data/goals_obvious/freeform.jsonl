@@ -1,0 +1,22 @@
+{"goal": "make the writing in this box bigger", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom > Zoom In"]}
+{"goal": "get closer to see the board better", "answer": "View > Zoom > Zoom In", "decoys": ["Format > Font > Bigger"]}
+{"goal": "save my board as a pdf", "answer": "File > Export Board as PDF…", "decoys": ["File > Print Board…", "File > Export Scenes as PDF…"]}
+{"goal": "print my board", "answer": "File > Print Board…", "decoys": ["File > Export Board as PDF…"]}
+{"goal": "make a copy of this whole board", "answer": "File > Duplicate", "decoys": ["Edit > Duplicate Selection"]}
+{"goal": "make a copy of this shape", "answer": "Edit > Duplicate Selection", "decoys": ["Edit > Copy"]}
+{"goal": "lagay ka ng sticky note dito", "answer": "Insert > Sticky Note", "decoys": ["Insert > Text Box"]}
+{"goal": "put a photo on my board", "answer": "Insert > Choose Photo or Video", "decoys": ["Insert > Choose File"]}
+{"goal": "show everything on the board so it all fits on screen", "answer": "View > Zoom > Zoom to Fit Content", "decoys": ["View > Zoom > Zoom Out"]}
+{"goal": "put this picture behind everything", "answer": "Arrange > Send to Back", "decoys": ["Arrange > Send Backward"]}
+{"goal": "bring this to the very top", "answer": "Arrange > Bring to Front", "decoys": ["Arrange > Bring Forward"]}
+{"goal": "connect these two boxes with a line", "answer": "Insert > Connection Line", "decoys": ["Insert > Line"]}
+{"goal": "line up these boxes on the left side", "answer": "Arrange > Align Objects > Left", "decoys": ["View > Snap to Grid"]}
+{"goal": "full screen yung board", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom"]}
+{"goal": "burahin mo na tong board", "answer": "File > Delete", "decoys": ["Edit > Clear All"]}
+{"goal": "erase everything on the board but keep the board", "answer": "Edit > Clear All", "decoys": ["Edit > Select All"]}
+{"goal": "take the background off my photo", "answer": "Format > Image > Remove Background", "decoys": ["Format > Image > Edit Mask"]}
+{"goal": "make the picture a circle shape", "answer": "Format > Image > Mask With Shape > Oval", "decoys": ["Format > Round Corners"]}
+{"goal": "send this board to my friend", "answer": "File > Share…", "decoys": ["File > Export Board as PDF…"]}
+{"goal": "add some text on the board", "answer": "Insert > Text Box", "decoys": ["Insert > Sticky Note"]}
+{"goal": "make the words fit inside the box", "answer": "Format > Text > Autosize Text", "decoys": ["Format > Font > Smaller"]}
+{"goal": "pagdikitin mo yung mga shapes para sabay gumalaw", "answer": "Arrange > Group", "decoys": ["Edit > Select All"]}

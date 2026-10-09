@@ -1,0 +1,17 @@
+{"goal": "lakasan mo ng konti", "answer": "Controls > Increase Volume", "decoys": ["Controls > Set Volume to Maximum"]}
+{"goal": "hinaan mo ng konti yung music", "answer": "Controls > Decrease Volume", "decoys": ["Controls > Set Volume to Minimum"]}
+{"goal": "i-shuffle mo yung mga kanta", "answer": "Controls > Shuffle > On", "decoys": ["Controls > Genius Shuffle"]}
+{"goal": "play this one song over and over", "answer": "Controls > Repeat > One", "decoys": ["Controls > Repeat > All"]}
+{"goal": "gawa ng bagong playlist", "answer": "File > New > Playlist", "decoys": ["File > New > Smart Playlist"]}
+{"goal": "make a playlist from the songs i picked", "answer": "File > New > Playlist from Selection", "decoys": ["File > New > Playlist"]}
+{"goal": "play this song right after this one", "answer": "Song > Play Next", "decoys": ["Song > Add to Queue"]}
+{"goal": "delete this song from my computer completly", "answer": "Song > Delete from Library", "decoys": ["Song > Remove Download"]}
+{"goal": "where is this song file on my mac", "answer": "File > Show in Finder", "decoys": ["Song > Get Info…"]}
+{"goal": "show me the words to this song", "answer": "View > Show Lyrics", "decoys": ["Song > Get Info…"]}
+{"goal": "full screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom"]}
+{"goal": "find songs that are in here twice", "answer": "File > Library > Show Duplicate Items", "decoys": ["File > Library > Show Exact Duplicate Items"]}
+{"goal": "back up my music library", "answer": "File > Library > Export Library…", "decoys": ["File > Library > Organize Library…"]}
+{"goal": "go to the song that is playing now", "answer": "Controls > Go to Current Song", "decoys": ["View > Show Playing Next"]}
+{"goal": "save this playlist to a file", "answer": "File > Library > Export Playlist…", "decoys": ["File > Library > Export Library…"]}
+{"goal": "close music", "answer": "Music > Quit Music", "decoys": ["File > Close"]}
+{"goal": "make a radio station from this song", "answer": "Song > Create Station", "decoys": ["File > New > Genius Playlist"]}

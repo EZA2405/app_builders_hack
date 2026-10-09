@@ -1,0 +1,53 @@
+{"goal": "Type the meeting ID", "page": "zoom_join", "done": []}
+{"goal": "Join the meeting", "page": "zoom_join", "done": []}
+{"goal": "Sign up for a free account", "page": "zoom_join", "done": []}
+{"goal": "Get Zoom support", "page": "zoom_join", "done": []}
+{"goal": "Join from a room system", "page": "zoom_join", "done": []}
+{"goal": "Change the language", "page": "zoom_join", "done": []}
+{"goal": "Go to the Zoom home page", "page": "zoom_join", "done": []}
+{"goal": "pano sumali sa zoom meeting", "page": "zoom_join", "done": []}
+{"goal": "Enter the meeting ID my teacher gave me", "page": "zoom_join__1", "done": ["clicked link \"Skip to main content\""]}
+{"goal": "Join now", "page": "zoom_join__1", "done": ["clicked link \"Skip to main content\""]}
+{"goal": "Get help with Zoom", "page": "zoom_join__1", "done": ["clicked link \"Skip to main content\""]}
+{"goal": "Sign up free", "page": "zoom_join__1", "done": ["clicked link \"Skip to main content\""]}
+{"goal": "Change language", "page": "zoom_join__1", "done": ["clicked link \"Skip to main content\""]}
+{"goal": "Chat with someone for help", "page": "zoom_join__1", "done": ["clicked link \"Skip to main content\""]}
+{"goal": "See the keyboard shortcuts", "page": "zoom_join__2", "done": ["clicked link \"Accessibility overview\""]}
+{"goal": "Sign in", "page": "zoom_join__2", "done": ["clicked link \"Accessibility overview\""]}
+{"goal": "Search Zoom", "page": "zoom_join__2", "done": ["clicked link \"Accessibility overview\""]}
+{"goal": "Test my Zoom", "page": "zoom_join__2", "done": ["clicked link \"Accessibility overview\""]}
+{"goal": "Download Zoom", "page": "zoom_join__2", "done": ["clicked link \"Accessibility overview\""]}
+{"goal": "Show prices in pesos", "page": "zoom_join__2", "done": ["clicked link \"Accessibility overview\""]}
+{"goal": "Contact support", "page": "zoom_join__2", "done": ["clicked link \"Accessibility overview\""]}
+{"goal": "Change the language", "page": "zoom_join__2", "done": ["clicked link \"Accessibility overview\""]}
+{"goal": "turn on captions info", "page": "zoom_join__2", "done": ["clicked link \"Accessibility overview\""]}
+{"goal": "Sign in", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""]}
+{"goal": "Sign up free", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""]}
+{"goal": "See the plans and prices", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""]}
+{"goal": "Download Zoom", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""]}
+{"goal": "Test my camera and mic before a meeting", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""]}
+{"goal": "Contact sales", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""]}
+{"goal": "Search", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""]}
+{"goal": "Get Zoom on my iPhone", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""]}
+{"goal": "Get the Android app", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""]}
+{"goal": "panoorin ang how to videos", "page": "zoom_join__3", "done": ["clicked link \"Zoom Home Page\""]}
+{"goal": "Open the Zoom Help Center", "page": "zoom_join__4", "done": ["clicked link \"Terms of Services\""]}
+{"goal": "Sign in", "page": "zoom_join__4", "done": ["clicked link \"Terms of Services\""]}
+{"goal": "Get support", "page": "zoom_join__4", "done": ["clicked link \"Terms of Services\""]}
+{"goal": "Search", "page": "zoom_join__4", "done": ["clicked link \"Terms of Services\""]}
+{"goal": "Download Zoom", "page": "zoom_join__4", "done": ["clicked link \"Terms of Services\""]}
+{"goal": "Read the acceptable use guidelines", "page": "zoom_join__4", "done": ["clicked link \"Terms of Services\""]}
+{"goal": "How do I contact Zoom about privacy", "page": "zoom_join__5", "done": ["clicked link \"Privacy Statement\""]}
+{"goal": "See my privacy rights and choices", "page": "zoom_join__5", "done": ["clicked link \"Privacy Statement\""]}
+{"goal": "Information about children", "page": "zoom_join__5", "done": ["clicked link \"Privacy Statement\""]}
+{"goal": "Sign in", "page": "zoom_join__5", "done": ["clicked link \"Privacy Statement\""]}
+{"goal": "Get support", "page": "zoom_join__5", "done": ["clicked link \"Privacy Statement\""]}
+{"goal": "Download Zoom", "page": "zoom_join__5", "done": ["clicked link \"Privacy Statement\""]}
+{"goal": "Type the meeting ID", "page": "zoom_join__6", "done": ["clicked link \"Join a meeting from an H.323/SIP room system\""]}
+{"goal": "Enter the pairing code", "page": "zoom_join__6", "done": ["clicked link \"Join a meeting from an H.323/SIP room system\""]}
+{"goal": "Connect", "page": "zoom_join__6", "done": ["clicked link \"Join a meeting from an H.323/SIP room system\""]}
+{"goal": "Host a meeting", "page": "zoom_join__6", "done": ["clicked link \"Join a meeting from an H.323/SIP room system\""]}
+{"goal": "Sign in", "page": "zoom_join__6", "done": ["clicked link \"Join a meeting from an H.323/SIP room system\""]}
+{"goal": "See the plans and pricing", "page": "zoom_join__6", "done": ["clicked link \"Join a meeting from an H.323/SIP room system\""]}
+{"goal": "Get support", "page": "zoom_join__6", "done": ["clicked link \"Join a meeting from an H.323/SIP room system\""]}
+{"goal": "Search", "page": "zoom_join__6", "done": ["clicked link \"Join a meeting from an H.323/SIP room system\""]}

@@ -1,0 +1,10 @@
+{"goal": "i need the calculator with sin and cos", "answer": "View > Scientific", "decoys": ["View > Programmer"]}
+{"goal": "convert dollars to pesos", "answer": "View > Convert", "decoys": ["View > Math Notes…"]}
+{"goal": "change inches to centimeters", "answer": "View > Convert", "decoys": ["View > Math Notes…"]}
+{"goal": "make the calculator take up the whole screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"goal": "show my past calculations", "answer": "View > Show History", "decoys": ["Edit > Undo"]}
+{"goal": "copy the answer so i can paste it", "answer": "Edit > Copy", "decoys": ["Edit > Cut"]}
+{"goal": "write my sums like on paper", "answer": "View > Math Notes…", "decoys": ["View > Show History"]}
+{"goal": "ilabas yung history ng mga compute ko", "answer": "View > Show History", "decoys": ["Edit > Undo"]}
+{"goal": "close the calculator", "answer": "Calculator > Quit Calculator", "decoys": ["Window > Close", "Window > Minimize"]}
+{"goal": "calculate in hexadecimal", "answer": "View > Programmer", "decoys": ["View > Convert"]}

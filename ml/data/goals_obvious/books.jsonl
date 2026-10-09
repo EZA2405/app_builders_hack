@@ -1,0 +1,15 @@
+{"goal": "tandaan mo kung saan na ako sa libro", "answer": "Edit > Bookmark Page", "decoys": ["Edit > Highlight > Yellow", "Edit > Highlight > Add Note"]}
+{"goal": "highlight this sentence", "answer": "Edit > Highlight > Yellow", "decoys": ["Edit > Highlight > Underline"]}
+{"goal": "remove the highlight", "answer": "Edit > Highlight > Remove", "decoys": ["Edit > Undo"]}
+{"goal": "i-pause mo muna yung audiobook", "answer": "Controls > Pause", "decoys": ["Controls > Stop"]}
+{"goal": "go back a few seconds, i missed that", "answer": "Controls > Skip Back", "decoys": ["Controls > Previous Chapter", "Controls > Beginning of Chapter"]}
+{"goal": "go to the next chapter", "answer": "Controls > Next Chapter", "decoys": ["Controls > Skip Forward"]}
+{"goal": "start this chapter over from the begining", "answer": "Controls > Beginning of Chapter", "decoys": ["Controls > Previous Chapter", "Controls > Skip Back"]}
+{"goal": "skip ahead a little", "answer": "Controls > Skip Forward", "decoys": ["Controls > Next Chapter"]}
+{"goal": "stop the audiobook when this chapter ends, im sleepy", "answer": "Controls > Sleep Timer > When current chapter ends", "decoys": ["Controls > Pause"]}
+{"goal": "gawa ka ng bagong shelf para sa mga mystery books ko", "answer": "File > New Collection", "decoys": ["File > New Collection From Selection"]}
+{"goal": "full screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom"]}
+{"goal": "find a word in the book", "answer": "Edit > Find > Find…", "decoys": ["Edit > Find > Use Selection for Find"]}
+{"goal": "find the next place that word shows up", "answer": "Edit > Find > Find Next", "decoys": ["Edit > Find > Find…"]}
+{"goal": "close books", "answer": "Books > Quit Books", "decoys": ["File > Close"]}
+{"goal": "add a book file from my computer", "answer": "File > Import…", "decoys": ["File > Open Book"]}

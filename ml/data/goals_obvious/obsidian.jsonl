@@ -1,0 +1,19 @@
+{"goal": "make the text bigger", "answer": "View > Zoom In", "decoys": ["Window > Zoom", "View > Toggle Full Screen"]}
+{"goal": "gawin mong mas malaki yung sulat", "answer": "View > Zoom In", "decoys": ["Window > Zoom"]}
+{"goal": "put the text size back to normal", "answer": "View > Actual Size", "decoys": ["View > Zoom Out"]}
+{"goal": "make a pdf of this note", "answer": "File > Export To PDF…", "decoys": ["File > Share > Mail"]}
+{"goal": "send this note by email", "answer": "File > Share > Mail", "decoys": ["File > Export To PDF…", "Edit > Copy"]}
+{"goal": "find a word in this note", "answer": "Edit > Find", "decoys": ["Edit > Replace"]}
+{"goal": "change every 'teh' to 'the'", "answer": "Edit > Replace", "decoys": ["Edit > Find"]}
+{"goal": "make this word bold", "answer": "Format > Bold", "decoys": ["Format > Highlight"]}
+{"goal": "make a big title", "answer": "Format > Heading 1", "decoys": ["Format > Bold", "View > Zoom In"]}
+{"goal": "make a checklist", "answer": "Insert > Task List", "decoys": ["Insert > Bullet List", "Insert > Numbered List"]}
+{"goal": "add a picture to my note", "answer": "Insert > Insert Attachment…", "decoys": ["Edit > Paste", "Insert > Link"]}
+{"goal": "make obsidian full screen", "answer": "View > Toggle Full Screen", "decoys": ["Window > Zoom", "Window > Fill"]}
+{"goal": "show two notes side by side", "answer": "View > Split Right", "decoys": ["File > New Window"]}
+{"goal": "start a new note", "answer": "File > New Note", "decoys": ["File > New Tab", "File > New Window"]}
+{"goal": "put a table in my note", "answer": "Insert > Table", "decoys": ["Edit > Writing Tools > Make Table"]}
+{"goal": "highlight this sentance", "answer": "Format > Highlight", "decoys": ["Format > Bold"]}
+{"goal": "cross out this line", "answer": "Format > Strikethrough", "decoys": ["Edit > Delete"]}
+{"goal": "bumalik sa note na binasa ko kanina", "answer": "View > Navigate Back", "decoys": ["Edit > Undo"]}
+{"goal": "make a numbered list", "answer": "Insert > Numbered List", "decoys": ["Insert > Bullet List", "Edit > Writing Tools > Make List"]}

@@ -1,0 +1,21 @@
+{"goal": "gawin mong mas malaki yung sulat sa note ko", "answer": "Format > Font > Bigger", "decoys": ["View > Zoom In"]}
+{"goal": "make the note look bigger on screen just for reading, dont change it", "answer": "View > Zoom In", "decoys": ["Format > Font > Bigger"]}
+{"goal": "save this note as a pdf", "answer": "File > Export as > PDF", "decoys": ["File > Print…"]}
+{"goal": "i-print ko yung grocery list ko", "answer": "File > Print…", "decoys": ["File > Export as > PDF"]}
+{"goal": "make a copy of this note", "answer": "File > Duplicate Note", "decoys": ["Edit > Copy"]}
+{"goal": "make a list with little boxes i can tick", "answer": "Format > Checklist", "decoys": ["Format > Bulleted List"]}
+{"goal": "hanapin yung note ko tungkol sa tubero", "answer": "Edit > Find > Note List Search…", "decoys": ["Edit > Find > Find…"]}
+{"goal": "find the word garlic in this note", "answer": "Edit > Find > Find…", "decoys": ["Edit > Find > Note List Search…"]}
+{"goal": "make the notes window fill the hole screen", "answer": "View > Enter Full Screen", "decoys": ["Window > Zoom"]}
+{"goal": "make the first line a big heading at the top", "answer": "Format > Title", "decoys": ["Format > Font > Bigger"]}
+{"goal": "tick all the boxes at once", "answer": "Format > More > Check All", "decoys": ["Format > Mark as Checked"]}
+{"goal": "paste this without the fancy formatting", "answer": "Edit > Paste and Match Style", "decoys": ["Edit > Paste"]}
+{"goal": "change the colour of my words", "answer": "Format > Font > Show Colors", "decoys": ["Format > Font > Highlight"]}
+{"goal": "put a picture from my computer in the note", "answer": "Edit > Attach File…", "decoys": ["Edit > Paste"]}
+{"goal": "check spelling in my note", "answer": "Edit > Spelling and Grammar > Check Document Now", "decoys": ["Edit > Writing Tools > Proofread"]}
+{"goal": "hide the notes window for a while", "answer": "Window > Minimize", "decoys": ["Notes > Hide Notes"]}
+{"goal": "push this line in a little from the left", "answer": "Format > Indentation > Increase", "decoys": ["Format > Block Quote"]}
+{"goal": "add a table to my note", "answer": "Format > Table", "decoys": ["Edit > Writing Tools > Make Table"]}
+{"goal": "paikliin mo nga tong note ko, ang haba", "answer": "Edit > Writing Tools > Make Concise", "decoys": ["Edit > Writing Tools > Summarize"]}
+{"goal": "use a different font in this note", "answer": "Format > Font > Show Fonts", "decoys": ["Format > Monostyled"]}
+{"goal": "move the done items to the bottom of my list", "answer": "Format > More > Move Checked to Bottom", "decoys": ["Format > Move Item > Down"]}
