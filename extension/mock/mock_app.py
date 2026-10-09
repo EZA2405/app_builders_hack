@@ -10,6 +10,7 @@ import sys
 from http import HTTPStatus
 from pathlib import Path
 
+from websockets.exceptions import ConnectionClosed
 from websockets.legacy.server import serve
 
 
@@ -33,7 +34,8 @@ class MockApp:
         await self.socket.send(json.dumps({"type": kind, "id": str(self.serial), **fields}))
 
     async def command(self, line):
-        parts = line.strip().split()
+        line = line.strip()
+        parts = line.split()
         if not parts:
             return
         if parts[0] == "snap":
@@ -76,6 +78,8 @@ class MockApp:
                         print(json.dumps(message, ensure_ascii=False), flush=True)
                 except (ValueError, KeyError, TypeError):
                     print("Ignored malformed message.", flush=True)
+        except ConnectionClosed:
+            pass
         finally:
             if self.socket is socket:
                 self.socket = None

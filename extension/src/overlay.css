@@ -57,3 +57,22 @@ button {
 button:focus-visible { outline: 3px solid var(--sg-accent); outline-offset: 2px; }
 @keyframes pulse { 50% { transform: scale(1.04); } }
 @media (prefers-reduced-motion: reduce) { .ring { animation: none; } }
+.spotlight {
+  position: fixed;
+  border-radius: var(--sg-radius);
+  box-shadow: 0 0 0 100vmax var(--sg-dim);
+  pointer-events: none;
+}
+.badge {
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  min-width: 28px;
+  height: 28px;
+  padding: 2px 7px;
+  border-radius: 50%;
+  background: var(--sg-accent);
+  color: var(--sg-surface);
+  font: bold var(--sg-body-size)/1.2 var(--sg-font);
+  text-align: center;
+}
