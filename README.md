@@ -117,6 +117,7 @@ python3 bench_localjev.py --url http://127.0.0.1:8766 --model guide --group 16 -
   - TypeSafe **Jev** API (`jev-latest`): reference benchmark, plus soft labels, goal labels and risk labels for distillation into Laya. It only ever saw sanitized menu and page text: personal entries are removed by `ml/make_fixtures.py` (`is_personal`, `redact_names`).
   - **Claude** (Anthropic; Opus subagents in Claude Code) wrote the teacher goals, paraphrases, trap goals and web journeys from real menus. Every answer is verified programmatically against the real command list.
   - Claude Haiku via Claude Code CLI, or OpenAI Codex CLI, served as the stand-in step picker in the extension mock (testing only).
+  - OpenAI **Decisions API** (`gpt-6-luna`, public beta): second cloud benchmark reference only, on sanitized fixtures and one logged-out public page; not used for training or in the product.
   - Also tested: Qwen3.5-4B via [local-jev](https://github.com/amithgc/local-jev) (MIT).
 - **Training data sources:**
   - menus and dialogs of the training apps on the dev Mac (sanitized);
