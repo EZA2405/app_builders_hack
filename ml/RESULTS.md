@@ -87,6 +87,31 @@ v3 per-app held-out (v1 in parentheses):
 
 This was the only v3 held-out run. On its own training goals under the same tournament, v1 gets 708/909 (77.9%). The tournament loses right answers in early rounds.
 
+## v6 (2026-10-10): two candidates, chosen by validation
+Data: `data/v6/train.jsonl`, 28,250 rows. It contains:
+- v5 rows soft-labelled (0.7 teacher + 0.3 Jev)
+- Jev-labelled app and web goals
+- routing, obvious-route and dialog-step rows
+- mined hard negatives
+- rows whose goal phrasing matched a test goal, removed
+
+Both candidates trained 5 epochs with head budget 320 on a Modal H100 (~41 min). The script `ml/modal_train.py` evaluates every candidate on all sets; every run is reported here.
+
+| | Validation (127) | Held-out apps (35) | Held-out web (45) | Risk check: caught / false alarms | Routing (162) |
+|---|---|---|---|---|---|
+| v4e5 (previous) | 98 | 29 | 28 | — | 65 |
+| **v6en** (English Laya base) | **100** | 29 | **32** | 13/14, 0/16 (any threshold 0.3–0.7) | **97** |
+| v6ml (multilingual Laya base) | 91 | 23 | 29 | 14/14, 0/16 (threshold ≤ 0.5) | 85 |
+
+**Choice: v6en** (best validation). It is now served as `guide`. The same checkpoint on the Mac (M4, MPS) reproduces Preview 7/10, with a median of 2.1 s per decision.
+
+Per app, v6en:
+- Validation: Activity Monitor 23/30, Disk Utility 27/35, Numbers 23/31, Terminal 27/31.
+- Held-out: Finder 8/8, Preview 7/10, Safari 8/9, System Settings 6/8.
+- Web: PhilHealth 7/15, Shopee 8/10, Wikipedia 9/10, YouTube 8/10.
+
+Logs: `train-v6en.log` and `results-v6en.txt` on the `gabay-models` Modal volume. Reproduce: `modal run ml/modal_train.py --version v6en --data data/v6/train.jsonl --epochs 5 --head 320` (add `--base multilingual` for v6ml).
+
 ## Experiment: Apple on-device model rewrites the goal first (rejected)
 Apple's Foundation Model (on-device) restated each of the 127 validation goals as a plain action, at about 0.7 s per goal; it produced 122 rewrites. Scored with Laya v4e5 on the Mac:
 - raw goal **102/127**
