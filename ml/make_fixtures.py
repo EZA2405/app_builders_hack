@@ -61,7 +61,7 @@ STATIC_WINDOW_PREFIXES = ("Close", "Minimize", "Zoom", "Fill", "Center", "Move &
                           "Bring All to Front", "Arrange in Front", "Merge All Windows", "Move Tab", "Show ", "Hide ", "Pin Tab",
                           "Enter Full Screen", "Move Window", "Tile", "Window")
 
-PERSONAL_PATTERNS = re.compile(r"@|[’']s (iPhone|iPad|Mac|MacBook|Apple Watch|AirPods)|^Account > (?!Sign|View|Manage|Settings|Redeem|Purchased|Wish|Family|Authori)")
+PERSONAL_PATTERNS = re.compile(r"Apple Account|@|[’']s (iPhone|iPad|Mac|MacBook|Apple Watch|AirPods)|^Account > (?!Sign|View|Manage|Settings|Redeem|Purchased|Wish|Family|Authori)")
 
 def is_personal(c):
     """Menu entries that are user data (recent files, page titles, window names, accounts, devices), not app commands."""

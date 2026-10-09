@@ -34,6 +34,35 @@ if let i = args.firstIndex(of: "--dump"), args.count > i + 2 {
     exit(0)
 }
 
+func runningApp(_ name: String) -> NSRunningApplication? {
+    if name == "frontmost" { return NSWorkspace.shared.frontmostApplication }
+    return NSWorkspace.shared.runningApplications.first {
+        $0.localizedName?.caseInsensitiveCompare(name) == .orderedSame || $0.bundleIdentifier == name
+    }
+}
+
+//   ScreenGuide.app --screen <AppName|frontmost> <out.json>   full candidate list: menus, windows, Dock, status icons
+if let i = args.firstIndex(of: "--screen"), args.count > i + 2 {
+    guard axTrusted(prompt: true) else { writeJSON(["error": "accessibility-not-granted"], to: args[i + 2]); exit(2) }
+    guard let target = runningApp(args[i + 1]) else { writeJSON(["error": "app-not-running: \(args[i + 1])"], to: args[i + 2]); exit(3) }
+    writeJSON(ScreenReader.state(of: target), to: args[i + 2])
+    exit(0)
+}
+
+//   ScreenGuide.app --press <AppName> "<Menu > Item>" <out.json>   DEV ONLY: open a dialog for data
+//   collection, wait, then record the resulting screen state (with "pressed": true/false).
+if let i = args.firstIndex(of: "--press"), args.count > i + 3 {
+    guard axTrusted(prompt: true), let target = runningApp(args[i + 1]) else { exit(3) }
+    target.activate()
+    let what = args[i + 2]
+    let ok = what.hasPrefix("button:") ? ScreenReader.pressButton(target, label: String(what.dropFirst(7)))
+                                       : ScreenReader.pressMenu(target, path: what)
+    Thread.sleep(forTimeInterval: 1.5)
+    struct Pressed: Encodable { let pressed: Bool; let state: ScreenState }
+    writeJSON(Pressed(pressed: ok, state: ScreenReader.state(of: target)), to: args[i + 3])
+    exit(ok ? 0 : 4)
+}
+
 // Default: minimal menu bar app so macOS lists us under Accessibility.
 final class AppDelegate: NSObject, NSApplicationDelegate {
     var item: NSStatusItem!
