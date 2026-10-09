@@ -81,12 +81,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     let engine = GuideEngine()
     var ask: AskPanel!
     var button: GabayButtonPanel!
+    var settings: GlassPanel?
+    var welcome: GlassPanel?
     var hotKey: HotKey?
     /// The app the user was in before opening Gabay: that's the one we guide.
     var lastApp: NSRunningApplication?
 
     func applicationDidFinishLaunching(_ n: Notification) {
-        _ = axTrusted(prompt: true)
+        _ = Prefs.shared   // applies text size and ring color before anything draws
         // The browser extension connects here (ws://127.0.0.1:47823/ext); it only reads and draws.
         Bridge.shared.start()
         PlanVoice.prewarm()
@@ -99,8 +101,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                   a.bundleIdentifier != Bundle.main.bundleIdentifier, a.activationPolicy == .regular else { return }
             MainActor.assumeIsolated { self?.lastApp = a }
         }
-        ask = AskPanel { [weak self] goal in self?.begin(goal) }
-        button = GabayButtonPanel { [weak self] in self?.toggleAsk() }
+        ask = AskPanel(onAsk: { [weak self] goal in self?.begin(goal) }, onSettings: { [weak self] in self?.showSettings() })
+        button = GabayButtonPanel(onTap: { [weak self] in self?.toggleAsk() },
+                                  onSettings: { [weak self] in self?.showSettings() })
         button.place()
         NotificationCenter.default.addObserver(forName: NSApplication.didChangeScreenParametersNotification, object: nil,
                                                queue: .main) { [weak self] _ in MainActor.assumeIsolated { self?.button.place() } }
@@ -117,6 +120,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         // DEV: --preview ask|guide|notsure|wait|done|thinking renders one UI state with a fake target (design QA).
         if let i = args.firstIndex(of: "--preview"), args.count > i + 1 { preview(args[i + 1]) }
+        else if !axTrusted(prompt: false) || args.contains("--welcome") { showWelcome() }
 
         // DEV: ScreenGuide.app --guide <AppName> "<goal>" starts a session directly.
         if let i = args.firstIndex(of: "--guide"), args.count > i + 2, let target = runningApp(args[i + 1]) {
@@ -129,6 +133,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let t = CGRect(x: 420, y: 3, width: 52, height: 24)   // roughly a menu bar title
         switch state {
         case "ask": ask.present()
+        case "settings": showSettings()
         case "thinking": engine.show(.thinking, label: "", text: "Looking…", hint: "", target: nil)
         case "notsure":
             m.candidates = [CGRect(x: 600, y: 300, width: 90, height: 30), CGRect(x: 720, y: 300, width: 90, height: 30)]
@@ -138,6 +143,24 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         case "done": engine.show(.done, label: "All done", text: "Done. You did it.", hint: "1. chose Tools > Adjust Size…\n2. clicked OK", target: nil)
         default: engine.show(.guiding, label: "Step 1", text: "Click **Tools**.", hint: "It's at the very top of your screen, after Go.", target: t)
         }
+    }
+
+    func showSettings() {
+        ask.orderOut(nil)
+        settings?.orderOut(nil)
+        settings = GlassPanel(SettingsView(onClose: { [weak self] in self?.settings?.dismiss() }))
+        settings?.present()
+    }
+
+    func showWelcome() {
+        welcome = GlassPanel(WelcomeView(
+            onShowMe: {
+                // Registers Gabay in the Accessibility list, then opens that page for the person.
+                _ = axTrusted(prompt: true)
+                NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!)
+            },
+            onFinish: { [weak self] in self?.welcome?.dismiss(); self?.ask.present() }))
+        welcome?.present()
     }
 
     @objc func toggleAsk() {

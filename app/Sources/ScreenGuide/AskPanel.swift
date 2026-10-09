@@ -8,6 +8,7 @@ final class AskState: ObservableObject {
 /// Gabay v2 "Ask": one glass card that grows out of the Gabay button. Examples on top (they fold away
 /// once you start typing), the field at the bottom next to the button, one mic.
 struct AskView: View {
+    var onSettings: () -> Void = {}
     @State private var text = ""
     @ObservedObject var listener: Listener
     @ObservedObject var state: AskState
@@ -50,6 +51,8 @@ struct AskView: View {
                 Spacer()
                 Image(systemName: "lock.fill").font(.system(size: 11 * Theme.scale))
                 Text("On this Mac")
+                Button(action: onSettings) { Image(systemName: "gearshape").font(.system(size: 15 * Theme.scale, weight: .medium)) }
+                    .buttonStyle(.plain).help("Settings").padding(.leading, 8)
             }
             .font(.system(size: 14 * Theme.scale, weight: .medium)).foregroundStyle(.secondary)
             .padding(.horizontal, 22).padding(.bottom, 14)
@@ -128,6 +131,7 @@ struct MicButton: View {
 /// The always-there way in: a 60pt round button, bottom-right. Click it (or press Option + Space) to ask.
 struct GabayButton: View {
     var onTap: () -> Void
+    var onSettings: () -> Void = {}
     @State private var hovering = false
     var body: some View {
         Button(action: onTap) {
@@ -144,12 +148,17 @@ struct GabayButton: View {
         .buttonStyle(.plain)
         .onHover { h in withAnimation(.spring(response: 0.3)) { hovering = h } }
         .help("Need help? Click here, or press Option + Space")
+        .contextMenu {
+            Button("Settings…", action: onSettings)
+            Divider()
+            Button("Quit Gabay") { NSApp.terminate(nil) }
+        }
         .padding(10)
     }
 }
 
 final class GabayButtonPanel: NSPanel {
-    init(onTap: @escaping () -> Void) {
+    init(onTap: @escaping () -> Void, onSettings: @escaping () -> Void) {
         super.init(contentRect: NSRect(x: 0, y: 0, width: 80, height: 80),
                    styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
         isOpaque = false
@@ -158,7 +167,7 @@ final class GabayButtonPanel: NSPanel {
         level = .statusBar
         hidesOnDeactivate = false
         collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .stationary, .ignoresCycle]
-        contentView = NSHostingView(rootView: GabayButton(onTap: onTap))
+        contentView = NSHostingView(rootView: GabayButton(onTap: onTap, onSettings: onSettings))
     }
 
     static let margin: CGFloat = 14
@@ -178,7 +187,7 @@ final class AskPanel: NSPanel {
     let listener = Listener()
     let state = AskState()
 
-    init(onAsk: @escaping (String) -> Void) {
+    init(onAsk: @escaping (String) -> Void, onSettings: @escaping () -> Void = {}) {
         super.init(contentRect: NSRect(x: 0, y: 0, width: 600, height: 340),
                    styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
         isOpaque = false
@@ -187,7 +196,7 @@ final class AskPanel: NSPanel {
         level = .statusBar
         hidesOnDeactivate = false
         collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
-        contentView = NSHostingView(rootView: AskView(listener: listener, state: state, onAsk: onAsk,
+        contentView = NSHostingView(rootView: AskView(onSettings: { onSettings() }, listener: listener, state: state, onAsk: onAsk,
                                                       onClose: { [weak self] in self?.orderOut(nil) }))
         listener.onFinished = { [weak self] said in
             guard let self, self.isVisible else { return }

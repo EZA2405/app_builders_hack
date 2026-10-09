@@ -8,7 +8,7 @@ import ApplicationServices
 final class GuideEngine {
     let overlay = OverlayController()
     var planner = Planner()
-    var readAloud = true
+    var readAloud: Bool { Prefs.shared.readAloud }
     private let speech = AVSpeechSynthesizer()
     private var app: NSRunningApplication?
     var goal = ""
