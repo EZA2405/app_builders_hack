@@ -81,10 +81,17 @@ final class GuideEngine {
             let state = await read(app)
             let pick: Planner.Pick?
             do {
-                if done.isEmpty, let route = try await routeToApp(state, current: app.localizedName ?? state.frontApp) {
+                // Stay first: the app in front is usually where the person wants help ("this photo").
+                let here = try await planner.choose(app: state.frontApp, goal: goal, done: done, candidates: focus(state))
+                let g = goal.lowercased()
+                let mentionsThis = ["this ", "ito", "ito ", "yung "].contains { g.contains($0) }
+                let namesOther = Self.namedApp(in: g, state: state, current: app.localizedName ?? "")
+                if done.isEmpty, !mentionsThis, namesOther || (here?.confidence ?? 0) < 0.35,
+                   let route = try await routeToApp(state, current: app.localizedName ?? state.frontApp),
+                   namesOther || route.confidence >= 0.6 {
                     pick = route
                 } else {
-                    pick = try await planner.choose(app: state.frontApp, goal: goal, done: done, candidates: focus(state))
+                    pick = here
                 }
             } catch {
                 log("PLANNER ERROR \(error)")
@@ -241,6 +248,17 @@ final class GuideEngine {
         log("ROUTE \(choice) conf=\(String(format: "%.2f", confidence))")
         guard choice != current, confidence >= 0.5, let icon = dock[choice] else { return nil }
         return Planner.Pick(candidate: icon, confidence: confidence, runnersUp: [])
+    }
+
+    /// True when the goal names an app in the Dock other than the current one ("in Safari", "settings").
+    static func namedApp(in g: String, state: ScreenState, current: String) -> Bool {
+        let aliases = ["settings": "System Settings", "safari": "Safari", "chrome": "Google Chrome", "zoom": "zoom.us",
+                       "messenger": "Messenger", "viber": "Viber", "mail": "Mail", "photos": "Photos", "facetime": "FaceTime"]
+        let dock = Set(state.candidates.filter { $0.source == "dock" }.map { $0.label.lowercased() })
+        for (word, app) in aliases where g.contains(word) && app.lowercased() != current.lowercased() && dock.contains(app.lowercased()) {
+            return true
+        }
+        return dock.contains { $0.count > 3 && $0 != current.lowercased() && g.contains($0) }
     }
 
     /// Which candidates the model should weigh right now, mirroring how it was trained:
