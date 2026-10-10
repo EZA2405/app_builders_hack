@@ -18,3 +18,6 @@ brag-output-*/.media/
 brag-output-*/media/
 brag-output-*/saved/
 brag-output-*/shared-assets/vo/
+brag-output-*/composition-*/
+brag-output-*/shared-assets/
+brag-output-*/vo-tests/
