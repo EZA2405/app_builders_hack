@@ -70,12 +70,12 @@ const sfx = (file, t, vol, dur) => { dur = Math.min(dur || DUR[file] || 0.3, END
     ['impactSoft_medium_001.ogg', 44.6, 0.45], ['impactSoft_medium_001.ogg', 45.2, 0.5],
     ['impactSoft_medium_001.ogg', 46.5, 0.45], ['sparkle.mp3', 46.75, 0.25], ['click_003.ogg', 47.65, 0.9], ['drop_001.ogg', 47.67, 0.45],
     ['impact-bass-2.mp3', 48.0, 0.4], ['drop_002.ogg', 49.2, 0.35], ['drop_002.ogg', 49.52, 0.35], ['drop_002.ogg', 49.84, 0.35], ['whoosh-short.mp3', 51.7, 0.3],
-    ['whoosh-cinematic.mp3', 51.85, 0.3, 1.5], ['sparkle.mp3', 52.0, 0.35], ['impactBell_heavy_000.ogg', 52.05, 0.3],
-    ['drop_002.ogg', 53.2, 0.35], ['impactSoft_medium_001.ogg', 54.75, 0.45],
+    ['whoosh-cinematic.mp3', 51.85, 0.25, 1.2], ['drop_002.ogg', 52.0, 0.3], ['drop_002.ogg', 52.15, 0.34], ['drop_002.ogg', 52.3, 0.38], ['drop_002.ogg', 52.45, 0.42],
+    ['sparkle.mp3', 52.6, 0.35], ['whoosh-short.mp3', 53.0, 0.3], ['impact-bass-2.mp3', 53.5, 0.45], ['impactBell_heavy_000.ogg', 53.5, 0.25],
+    ['whoosh-short.mp3', 53.65, 0.22], ['drop_001.ogg', 54.5, 0.35], ['impactSoft_medium_001.ogg', 55.4, 0.3],
   ].map(([f, t, v, d]) => [f, +(t + SHIFT).toFixed(3), v, d]),
 ].forEach(([f, t, v, d]) => sfx(f, t, v, d));
 const URL_TEXT = 'github.com/EZA2405/app_builders_hack';
-for (let i = 0; i < URL_TEXT.length; i += 2) sfx(`keypress-00${1 + (i * 3) % 4}.wav`, +(53.45 + SHIFT + i * 0.03).toFixed(3), 0.22);
 
 const q = o => JSON.stringify(o).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
 // Beds (all 120.19 BPM, cut on bar lines): pop build → drop at 4.0 (the ring grows into the screen) → pop body with a
@@ -183,12 +183,9 @@ const FORMATS = {
 #tg1{top:280px;font-size:180px}#tg2{top:520px;font-size:180px}
 #tg3{top:250px;font-size:170px}
 #chips{top:690px}.chip{font-size:38px}
-#brand{left:1010px;top:250px}
-#logo{width:150px;height:150px}
-#wm{font-size:150px}
-#edesc{left:1014px;top:450px;font-size:44px}
-#ebar{left:1010px;top:580px;width:850px;height:108px;font-size:32px}
-#efoot{left:1014px;top:760px;font-size:30px}
+#lock{top:360px}#icon{width:220px;height:220px}#wm{font-size:200px;margin-left:46px}
+#edesc{top:640px;font-size:48px}
+#efoot{bottom:64px;font-size:28px}
 `,
   },
   feed: {
@@ -238,12 +235,9 @@ const FORMATS = {
 #tg1{top:420px;font-size:140px}#tg2{top:620px;font-size:140px}
 #tg3{top:430px;font-size:120px}
 #chips{top:760px;flex-wrap:wrap;padding:0 60px}.chip{font-size:32px}
-#brand{left:90px;top:760px}
-#logo{width:128px;height:128px}
-#wm{font-size:128px}
-#edesc{left:94px;top:930px;font-size:40px}
-#ebar{left:90px;top:1030px;width:900px;height:104px;font-size:34px}
-#efoot{left:94px;top:1200px;font-size:28px}
+#lock{top:500px}#icon{width:176px;height:176px}#wm{font-size:156px;margin-left:34px}
+#edesc{top:740px;font-size:42px}
+#efoot{bottom:90px;font-size:26px}
 `,
   },
 };
@@ -378,6 +372,15 @@ svg{display:block}
 .chip{display:flex;align-items:center;gap:12px;background:#1C1C1E;border-radius:40px;padding:14px 28px 14px 22px;font-weight:600;letter-spacing:-.02em;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
 #ripple{position:absolute;left:-26px;top:-26px;width:64px;height:64px;border-radius:50%;background:rgba(191,90,242,.55)}
 /* end */
+#lock{left:0;right:0;display:flex;align-items:center;justify-content:center}
+#icon{position:relative;flex:none}
+#itile{position:absolute;inset:0;border-radius:22.5%;background:#7B5CFA;box-shadow:0 40px 90px -24px rgba(123,92,250,.65)}
+#icon svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+#ishine{position:absolute;inset:0;border-radius:22.5%;background:linear-gradient(105deg,rgba(255,255,255,0) 42%,rgba(255,255,255,.38) 50%,rgba(255,255,255,0) 58%);background-size:300% 100%;background-position:150% 0%}
+#bloom{background:radial-gradient(circle at 50% 44%,rgba(123,92,250,.32),rgba(123,92,250,0) 38%)}
+#wm{flex:none}
+#efoot{color:#8E8E93;letter-spacing:-.01em}
+#efoot b{color:#F5F5F7;font-weight:600}
 #brand{display:flex;align-items:center;gap:34px}
 #logo{position:relative;flex:none}
 #logo svg{width:100%;height:100%}
@@ -392,6 +395,7 @@ svg{display:block}
 #ecaret{flex:none;width:3px;height:1em;background:#9F8CFF;margin-left:-18px}
 #ego{margin-left:auto;flex:none;width:76px;height:76px;border-radius:50%;background:#7B5CFA;display:grid;place-items:center}
 #efoot{color:#8E8E93;letter-spacing:-.01em}
+#efoot b{color:#F5F5F7;font-weight:600}
 `;
 
 function page(F) {
@@ -522,13 +526,15 @@ function page(F) {
     <div id="chips" class="abs">${['No screen sharing', 'No cloud', 'Works offline'].map(c => `<span class="chip"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#BF5AF2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>${c}</span>`).join('')}</div>
   </section>
 
-  <!-- 8 · End card -->
+  <!-- 8 · End card: the logo builds itself the way Gabay works, step by step to the ring (design/logos/round2/14-purple-path.svg) -->
   <section id="s-end" class="clip" data-start="${51.9 + SHIFT}" data-duration="${(END - 51.9 - SHIFT).toFixed(2)}" data-track-index="16" style="z-index:70">
-    ${dev('d-hero', '<img src="assets/img/hero_wifi.jpg" alt="Gabay ringing the Wi‑Fi row in System Settings">')}
-    <div id="brand" class="abs"><div id="logo"><svg viewBox="0 0 256 256" aria-hidden="true"><rect width="256" height="256" rx="56" fill="#7B5CFA"/><g fill="#FFFFFF"><circle class="ldot" cx="56" cy="198" r="5" fill-opacity=".4"/><circle class="ldot" cx="72" cy="168" r="6" fill-opacity=".55"/><circle class="ldot" cx="94" cy="144" r="7" fill-opacity=".7"/><circle class="ldot" cx="122" cy="126" r="8" fill-opacity=".85"/></g><circle id="lhalo" cx="172" cy="96" r="44" fill="none" stroke="#FFFFFF" stroke-opacity=".25" stroke-width="6"/><circle id="lring" cx="172" cy="96" r="30" fill="none" stroke="#FFFFFF" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" transform="rotate(-90 172 96)"/></svg></div><div id="wm" class="disp">${Array.from('Gabay').map(c => `<span class="c">${c}</span>`).join('')}</div></div>
-    <div id="edesc" class="abs">${words('A patient guide for Lola’s Mac.')}</div>
-    <div id="ebar" class="abs h"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="ebartxt">${chars(URL_TEXT)}</span><i id="ecaret"></i><span id="ego"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-    <div id="efoot" class="abs h"><div>Built in 24 hours · AppBuildersPH 2026 · Local AI</div><div>Narration: Kokoro-82M, generated on the laptop</div></div>
+    <div id="bloom" class="abs full"></div>
+    <div id="lock" class="abs">
+      <div id="icon"><div id="itile"></div><svg viewBox="0 0 256 256" aria-hidden="true"><g fill="#FFFFFF"><circle class="ldot" cx="56" cy="198" r="5" fill-opacity=".4"/><circle class="ldot" cx="72" cy="168" r="6" fill-opacity=".55"/><circle class="ldot" cx="94" cy="144" r="7" fill-opacity=".7"/><circle class="ldot" cx="122" cy="126" r="8" fill-opacity=".85"/></g><circle id="lhalo" cx="172" cy="96" r="44" fill="none" stroke="#FFFFFF" stroke-opacity=".25" stroke-width="6"/><circle id="lripple" cx="172" cy="96" r="30" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0"/><circle id="lring" cx="172" cy="96" r="30" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" transform="rotate(-90 172 96)"/></svg><div id="ishine"></div></div>
+      <div id="wm" class="disp">${Array.from('Gabay').map(c => `<span class="c">${c}</span>`).join('')}</div>
+    </div>
+    <div id="edesc" class="abs ctr">${words('A patient guide for Lola’s Mac.')}</div>
+    <div id="efoot" class="abs ctr h">Made by <b id="team">qtr.zip</b> · Built in 24 hours · AppBuildersPH 2026 · Local AI</div>
   </section>
 ${MUSIC}
   ${VOICE}
@@ -815,28 +821,32 @@ document.fonts.ready.then(function () {
   ft('#tg3', { scale: 1.12, filter: 'blur(0px)' }, { scale: 1, duration: 3.6, ease: 'power2.out', transformOrigin: '50% 50%' }, 48.0);
   sink('#tg3 .w', 51.5, { st: 0.03 });
 
-  // ================= 8 · End card (51.9–60) =================
-  var DH = D('#d-hero');
-  var hv = fit(B.hero, [0, 0, 1, 1], 1920, 1248);
-  ft('#d-hero', { opacity: 0, x: hv.x - 150, y: hv.y + 30, scale: hv.scale * 0.94 }, { opacity: 1, x: hv.x, y: hv.y, scale: hv.scale, duration: 1.1, ease: 'expo.out' }, 51.95);
-  ft('#d-hero .tilt', { rotationY: 22, rotationX: 4 }, { rotationY: 12, rotationX: 2, duration: 1.1, ease: 'expo.out', transformPerspective: 2600 }, 51.95);
-  at('#d-hero .tilt', { rotationY: 5, rotationX: 0, duration: 7.0, ease: 'none' }, 52.92);
-  // logo builds the way Gabay works: steps lead to the ring
-  ft('#logo', { opacity: 0, scale: 0.5, rotation: -10 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.65, ease: 'back.out(1.7)' }, 52.0);
-  $$('.ldot').forEach(function (d, i) { var r = +d.getAttribute('r'); ft(d, { attr: { r: 0 } }, { attr: { r: r }, duration: 0.3, ease: 'back.out(3)' }, 52.25 + i * 0.08); });
-  ft('#lring', { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.45, ease: 'power2.inOut' }, 52.55);
-  ft('#lhalo', { opacity: 0, attr: { r: 30 } }, { opacity: 1, attr: { r: 44 }, duration: 0.55, ease: 'expo.out' }, 52.95);
-  ftl('#lhalo', { attr: { r: 44 } }, { attr: { r: 48 }, duration: 0.9, ease: 'sine.inOut', yoyo: true, repeat: 5 }, 53.5);
-  ft('#wm .c', { opacity: 0, x: -50, filter: 'blur(10px)' }, { opacity: 1, x: 0, filter: 'blur(0px)', duration: 0.45, ease: 'expo.out', stagger: 0.05 }, 52.3);
-  rise('#edesc .w', 52.6, { st: 0.05, d: 0.5 });
-  ft('#ebar', { opacity: 0, scale: 0.9, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: 'back.out(1.6)' }, 53.2);
-  ft('#ego', { scale: 0 }, { scale: 1, duration: 0.35, ease: 'back.out(2.5)' }, 53.3);
-  at('#ebartxt .ch', { opacity: 1, duration: 0.01, stagger: 0.03, ease: 'none' }, 53.45);
-  var tw = $('#ebartxt').offsetWidth;
-  ft('#ecaret', { x: -tw }, { x: 0, duration: ${(URL_TEXT.length * 0.03).toFixed(2)}, ease: 'steps(${URL_TEXT.length})' }, 53.45);
-  ftl('#ecaret', { opacity: 1 }, { opacity: 0.1, duration: 0.3, repeat: 7, yoyo: true, ease: 'none' }, 54.6);
-  ft('#ego', { scale: 1 }, { scale: 1.12, duration: 0.2, repeat: 5, yoyo: true, ease: 'sine.inOut', immediateRender: false }, 54.75);
-  ft('#efoot', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 54.9);
+  // ================= 8 · End card (51.9–58.5): the logo builds itself, then locks up with the name =================
+  // the icon starts alone in the middle, bigger, then slides into the lockup (offsets measured from the final layout)
+  var pi = pos($('#icon')), IS = 1.45;
+  var sx = W / 2 - (pi.x + pi.w / 2), sy = H * 0.47 - (pi.y + pi.h / 2);
+  set('#icon', { x: sx, y: sy, scale: IS }, 51.9);
+  // steps: four dots, one after another
+  $$('.ldot').forEach(function (d, i) { var r = +d.getAttribute('r'); ft(d, { attr: { r: 0 } }, { attr: { r: r * 1.6 }, duration: 0.18, ease: 'power2.out' }, 52.0 + i * 0.15); ftl(d, { attr: { r: r * 1.6 } }, { attr: { r: r }, duration: 0.25, ease: 'back.out(3)' }, 52.18 + i * 0.15); });
+  // the ring draws itself and lands
+  ft('#lring', { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.42, ease: 'power2.inOut' }, 52.6);
+  ftl('#lripple', { opacity: 0.9, attr: { r: 30 } }, { opacity: 0, attr: { r: 78 }, duration: 0.7, ease: 'power2.out' }, 53.0);
+  // the tile blooms out of the ring
+  ft('#itile', { clipPath: 'circle(0% at 67.2% 37.5%)' }, { clipPath: 'circle(150% at 67.2% 37.5%)', duration: 0.5, ease: 'power3.inOut' }, 53.0);
+  ft('#bloom', { opacity: 0 }, { opacity: 1, duration: 0.6, ease: 'expo.out' }, 53.05);
+  ft('#lhalo', { opacity: 0, attr: { r: 30 } }, { opacity: 1, attr: { r: 44 }, duration: 0.5, ease: 'expo.out' }, 53.3);
+  ftl('#lhalo', { attr: { r: 44 } }, { attr: { r: 48 }, duration: 0.9, ease: 'sine.inOut', yoyo: true, repeat: 3 }, 53.85);
+  // on the beat: a pulse, then into the lockup as the name arrives
+  ftl('#icon', { scale: IS }, { scale: IS * 1.08, duration: 0.12, ease: 'power2.out', yoyo: true, repeat: 1 }, 53.48);
+  at('#icon', { x: 0, y: 0, scale: 1, duration: 0.62, ease: 'power3.inOut' }, 53.65);
+  ft('#wm .c', { opacity: 0, x: -70, filter: 'blur(14px)' }, { opacity: 1, x: 0, filter: 'blur(0px)', duration: 0.5, ease: 'expo.out', stagger: 0.06 }, 53.85);
+  at('#bloom', { opacity: 0.55, duration: 1.5, ease: 'power1.out' }, 54.2);
+  rise('#edesc .w', 54.5, { st: 0.05, d: 0.5 });
+  ftl('#ishine', { backgroundPosition: '150% 0%' }, { backgroundPosition: '-50% 0%', duration: 0.9, ease: 'power2.inOut' }, 55.1);
+  ft('#efoot', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 55.4);
+  at('#team', { color: '#C9A7F5', duration: 0.25, yoyo: true, repeat: 1 }, 56.6);
+  ftl('#lock', { scale: 1 }, { scale: 1.035, duration: 3.2, ease: 'none', transformOrigin: '50% 50%' }, 55.3);
+  ftl('#edesc', { scale: 1 }, { scale: 1.02, duration: 3.2, ease: 'none', transformOrigin: '50% 50%' }, 55.3);
 
   window.__timelines['main'] = tl;
   if (window.__hfForceTimelineRebind) window.__hfForceTimelineRebind();
