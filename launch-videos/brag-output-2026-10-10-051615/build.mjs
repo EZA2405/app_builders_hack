@@ -56,14 +56,13 @@ const sfx = (file, t, vol, dur) => { dur = Math.min(dur || DUR[file] || 0.3, END
   ['whoosh-short.mp3', 24.65, 0.3], ['impactSoft_medium_001.ogg', 25.25, 0.7], ['drop_001.ogg', 25.27, 0.45],
   ['whoosh-cinematic.mp3', 27.5, 0.35, 1.2], ['impact-bass-1.mp3', 28.0, 0.35],
   // 5 · montage
-  ['click_003.ogg', 28.17, 0.6], ['whoosh-short.mp3', 29.65, 0.32], ['click_003.ogg', 30.0, 0.6], ['drop_002.ogg', 31.6, 0.35],
-  ['whoosh-short.mp3', 31.65, 0.32], ['click_003.ogg', 32.21, 0.6], ['drop_001.ogg', 33.27, 0.4],
-  // 6 · under the hood
-  ['whoosh-cinematic.mp3', 33.45, 0.3, 1.4], ['impactSoft_medium_001.ogg', 33.64, 0.4],
-  ['drop_002.ogg', 33.868, 0.35], ['drop_002.ogg', 34.135, 0.35], ['drop_002.ogg', 34.401, 0.35], ['drop_002.ogg', 34.667, 0.35],
-  ['click_003.ogg', 35.086, 0.5], ['click_003.ogg', 35.352, 0.5], ['sparkle.mp3', 35.618, 0.3], ['click_003.ogg', 35.885, 0.5],
-  ['impactSoft_medium_001.ogg', 36.303, 0.4], ['whoosh-short.mp3', 37.292, 0.3], ['impactSoft_medium_001.ogg', 37.559, 0.45],
-  ['drop_001.ogg', 38.51, 0.35], ['drop_001.ogg', 38.738, 0.35], ['drop_001.ogg', 38.966, 0.35], ['whoosh-short.mp3', 40.298, 0.3],
+  ['click_003.ogg', 28.17, 0.6], ['whoosh-short.mp3', 29.65, 0.32], ['click_003.ogg', 30.21, 0.6], ['drop_001.ogg', 31.27, 0.4],
+  // 6 · under the hood (authored 35.45–44.65, played 4 s earlier)
+  ['whoosh-cinematic.mp3', 31.45, 0.3, 1.4], ['impactSoft_medium_001.ogg', 31.7, 0.4],
+  ['drop_002.ogg', 32.0, 0.35], ['drop_002.ogg', 32.35, 0.35], ['drop_002.ogg', 32.7, 0.35], ['drop_002.ogg', 33.05, 0.35],
+  ['click_003.ogg', 33.6, 0.5], ['click_003.ogg', 33.95, 0.5], ['sparkle.mp3', 34.3, 0.3], ['click_003.ogg', 34.65, 0.5],
+  ['impactSoft_medium_001.ogg', 35.2, 0.4], ['whoosh-short.mp3', 36.5, 0.3], ['impactSoft_medium_001.ogg', 36.85, 0.45],
+  ['drop_001.ogg', 38.1, 0.35], ['drop_001.ogg', 38.4, 0.35], ['drop_001.ogg', 38.7, 0.35], ['whoosh-short.mp3', 40.45, 0.3],
   // 7+ · numbers, tagline, end card: authored at their 60 s-cut times, played SHIFT later
   ...[
     ['impactSoft_medium_001.ogg', 40.5, 0.45], ['impactSoft_medium_001.ogg', 41.3, 0.5],
@@ -462,17 +461,15 @@ function page(F) {
   <div class="abs h" id="mframe" style="z-index:44;left:${B.side.x}px;top:${B.side.y}px;width:${B.side.w}px;height:${B.side.h}px"></div>
   <div class="reveal" id="r-mont" style="z-index:45">
     ${dev('d-m1', vid('v-m1', 'yt_search.mp4', 27.65, 2.6, 2.6, 1, 7))}
-    ${dev('d-m2', vid('v-m2', 'yt_cc.mp4', 29.65, 2.6, 1.95, 1.25, 8))}
-    ${dev('d-m4', vid('v-m4', 'rotate.mp4', 31.65, 2.6, 1.3, 1.25, 10), true)}
+    ${dev('d-m4', vid('v-m4', 'rotate.mp4', 29.65, 2.6, 1.3, 1.25, 10), true)}
   </div>
-  <section id="s-mont" class="clip" data-start="27.9" data-duration="5.8" data-track-index="12" style="z-index:50">
+  <section id="s-mont" class="clip" data-start="27.9" data-duration="3.9" data-track-index="12" style="z-index:50">
     <div class="side abs" id="ml0"><div class="big disp">${words('YouTube.')}</div><div class="sub">${words('It finds the search box.')}</div></div>
-    <div class="side abs" id="ml1"><div class="big disp">${words('Subtitles.')}</div><div class="sub">${words('Turned on, one step at a time.')}</div></div>
     <div class="side abs" id="ml3"><div class="big disp">${words('Photos.')}</div><div class="sub">${words('Rotate it in Preview.')}</div></div>
   </section>
 
   <!-- 6 · Under the hood (models as named in README › Models, tools, data and disclosures) -->
-  <section id="s-tech" class="clip" data-start="33.45" data-duration="7.0" data-track-index="13" style="z-index:52">
+  <section id="s-tech" class="clip" data-start="31.45" data-duration="9.2" data-track-index="13" style="z-index:52">
     <div id="tlab" class="abs ctr">${words('Under the hood')}</div>
     <div id="stage" class="abs" style="width:${2 * F.W + 100}px;height:${2 * F.H + 100}px">
       <div class="panel" id="P0" style="left:0;top:0">
@@ -699,8 +696,7 @@ document.fonts.ready.then(function () {
   ft('#mframe', { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'expo.out' }, 27.78);
   var M = [
     { d: D('#d-m1'), r: [0.30, 0.06, 0.46, 0.25], t: 27.8 },
-    { d: D('#d-m2'), r: [0.14, 0.17, 0.66, 0.70], t: 29.65 },
-    { d: D('#d-m4', true), r: [0, 0.02, 1, 0.5], t: 31.65 },
+    { d: D('#d-m4', true), r: [0, 0.02, 1, 0.5], t: 29.65 },
   ];
   M.forEach(function (m, i) {
     var v = fit(MB, m.r, m.d.cw, m.d.ch);
@@ -710,18 +706,18 @@ document.fonts.ready.then(function () {
     cam(m.d, MB, r2, m.t + 0.42, 1.55, 'none');
     var last = i === M.length - 1, next = last ? 0 : M[i + 1].t;
     if (!last) whipOut(m.d, next, -1);
-    var ml = '#ml' + [0, 1, 3][i];
+    var ml = '#ml' + [0, 3][i];
     rise(ml + ' .big .w', m.t + 0.3, { st: 0.06 });
     rise(ml + ' .sub .w', m.t + 0.45, { st: 0.03, d: 0.5 });
     if (!last) sink(ml + ' .w', next - 0.15, { st: 0.012, d: 0.26 });
   });
-  cam(M[2].d, MB, [0, 0, 1, 1], 33.0, 0.5, 'power3.inOut'); // pull back: show the rotated photo
-  sink('#ml3 .w', 33.3, { st: 0.012, d: 0.26 });
-  at('#mframe', { opacity: 0, scale: 0.6, duration: 0.34, ease: 'power3.in' }, 33.5);
-  at('#d-m4', { scale: '*=0.5', opacity: 0, x: '+=' + (B.side.w * 0.25), y: '+=' + (B.side.h * 0.25), duration: 0.34, ease: 'power3.in' }, 33.5);
+  cam(M[1].d, MB, [0, 0, 1, 1], 31.0, 0.5, 'power3.inOut'); // pull back: show the rotated photo
+  sink('#ml3 .w', 31.3, { st: 0.012, d: 0.26 });
+  at('#mframe', { opacity: 0, scale: 0.6, duration: 0.34, ease: 'power3.in' }, 31.5);
+  at('#d-m4', { scale: '*=0.5', opacity: 0, x: '+=' + (B.side.w * 0.25), y: '+=' + (B.side.h * 0.25), duration: 0.34, ease: 'power3.in' }, 31.5);
 
   // ================= 6 · Under the hood (35.45–44.65): one request, followed through four stages =================
-  MAP = function (t) { return 33.45 + (t - 35.45) * (7.0 / 9.2); };
+  MAP = function (t) { return t - 4.0; };
   var SW = 2 * W + 100, SH = 2 * H + 100, PX = W + 100, PY = H + 100;
   var os = Math.min(W / SW, H / SH) * 0.84, ox = (W - SW * os) / 2, oy = (H - SH * os) / 2 - H * 0.03;
   ft('#stage', { opacity: 0, scale: 1.12, x: -0.06 * W, y: -0.06 * H }, { opacity: 1, scale: 1, x: 0, y: 0, duration: 0.7, ease: 'expo.out' }, 35.45);
@@ -772,8 +768,8 @@ document.fonts.ready.then(function () {
   for (var kk = 1; kk <= 24; kk++) set('#tnum', { textContent: Math.round(28250 * kk / 24).toLocaleString('en-US') }, 42.15 + kk * 0.035);
   rise('#tcl .w', 42.55, { st: 0.03, d: 0.5 });
   $$('.tchip').forEach(function (c, i) { ft(c, { opacity: 0, y: 30, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(2)' }, 43.0 + i * 0.22); });
-  at(['#tcount', '#tchips', '#dots'], { opacity: 0, y: -50, filter: 'blur(12px)', duration: 0.3, ease: 'power2.in' }, 44.35);
-  sink('#tcl .w', 44.3, { st: 0.01 });
+  at(['#tcount', '#tchips', '#dots'], { opacity: 0, y: -50, filter: 'blur(12px)', duration: 0.28, ease: 'power2.in' }, 44.02);
+  sink('#tcl .w', 43.98, { st: 0.01 });
 
   MAP = null; OFF = ${SHIFT};
   // ================= 6 · Numbers (40.4–46.5) =================

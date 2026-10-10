@@ -8,11 +8,12 @@
   {"id": "vo07", "t": 19.05, "text": "That's exactly how scammers get in."},
   {"id": "vo08", "t": 21.5, "text": "So when a caller asks for a code,"},
   {"id": "vo09", "t": 25.4, "text": "Gabay tells her to stop."},
-  {"id": "vo10", "t": 29.8, "text": "It works across apps and websites."},
-  {"id": "vo11", "t": 33.45, "text": "Whisper listens, Laya picks the button, and Apple's on-device model explains it."},
-  {"id": "vo12", "t": 38.6, "text": "We fine-tuned Laya on twenty-eight thousand examples."},
+  {"id": "vo10", "t": 28.3, "text": "It works across apps and websites."},
+  {"id": "vo11", "t": 31.9, "text": "Whisper listens, Laya picks the button, and Apple's on-device model explains it."},
+  {"id": "vo12", "t": 38.2, "text": "We fine-tuned Laya on twenty-eight thousand examples."},
   {"id": "vo13", "t": 42.9, "text": "It's not perfect yet. But it's close to the cloud."},
-  {"id": "vo14", "t": 46.5, "text": "It points. She clicks."},
-  {"id": "vo15", "t": 48.6, "text": "And nothing leaves the laptop."},
-  {"id": "vo16", "t": 52.4, "text": "Gabay. A patient guide for Grandma's Mac."}
+  {"id": "vo14", "t": 46.55, "text": "It points."},
+  {"id": "vo15", "t": 47.55, "text": "She clicks."},
+  {"id": "vo16", "t": 48.6, "text": "And nothing leaves the laptop."},
+  {"id": "vo17", "t": 52.4, "text": "Gabay. A patient guide for Grandma's Mac."}
 ]
