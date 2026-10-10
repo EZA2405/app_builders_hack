@@ -5,9 +5,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const HERE = path.dirname(new URL(import.meta.url).pathname);
-const END = 64.5;
+const END = 58.5;
 // numbers → end card were authored for the 60 s cut; they now play 4.5 s later, after "under the hood"
-const SHIFT = 4.5;
+const SHIFT = 0; // v6: "under the hood" is 7 s, so numbers → end card are back at their 60 s-cut times
 const VER = '0.8.143';
 
 // ---------- voice-over (Kokoro-82M on this Mac; make-vo.py writes shared-assets/vo) ----------
@@ -19,7 +19,7 @@ const VOICE = VO.map((v, i) => `<audio id="vo-${i}" src="assets/vo/${v.id}.wav" 
 // music ducks ~7 dB under each line; close lines merge so the bed doesn't pump
 function duck(start, len, V, fin = 0.03, foutAt = len - 0.03) {
   const D = 0.45, m = [];
-  VO.map(v => [v.t - start - 0.15, v.t + v.d - start + 0.2]).filter(([a, b]) => b > fin && a < foutAt).forEach(w => { if (m.length && w[0] < m[m.length - 1][1] + 0.5) m[m.length - 1][1] = Math.max(m[m.length - 1][1], w[1]); else m.push(w.slice()); });
+  VO.map(v => [v.t - start - 0.15, v.t + v.d - start + 0.2]).filter(([a, b]) => b > fin && a < foutAt).forEach(w => { if (m.length && w[0] < m[m.length - 1][1] + 1.0) m[m.length - 1][1] = Math.max(m[m.length - 1][1], w[1]); else m.push(w.slice()); });
   const pts = [[0, 0], [fin, m.length && m[0][0] <= fin ? V * D : V]];
   m.forEach(([a, b]) => { const a1 = Math.max(a, fin + 0.01), b1 = Math.min(b, foutAt - 0.01); if (b1 <= a1) return; pts.push([a1, V], [Math.min(a1 + 0.15, b1), V * D], [b1, V * D], [Math.min(b1 + 0.25, foutAt), V]); });
   pts.push([foutAt, V], [len, 0]);
@@ -57,14 +57,13 @@ const sfx = (file, t, vol, dur) => { dur = Math.min(dur || DUR[file] || 0.3, END
   ['whoosh-cinematic.mp3', 27.5, 0.35, 1.2], ['impact-bass-1.mp3', 28.0, 0.35],
   // 5 · montage
   ['click_003.ogg', 28.17, 0.6], ['whoosh-short.mp3', 29.65, 0.32], ['click_003.ogg', 30.0, 0.6], ['drop_002.ogg', 31.6, 0.35],
-  ['whoosh-short.mp3', 31.65, 0.32], ['impactSoft_medium_001.ogg', 32.4, 0.4],
-  ['whoosh-short.mp3', 33.65, 0.32], ['click_003.ogg', 34.21, 0.6], ['drop_001.ogg', 35.27, 0.4],
+  ['whoosh-short.mp3', 31.65, 0.32], ['click_003.ogg', 32.21, 0.6], ['drop_001.ogg', 33.27, 0.4],
   // 6 · under the hood
-  ['whoosh-cinematic.mp3', 35.45, 0.3, 1.4], ['impactSoft_medium_001.ogg', 35.7, 0.4],
-  ['drop_002.ogg', 36.0, 0.35], ['drop_002.ogg', 36.35, 0.35], ['drop_002.ogg', 36.7, 0.35], ['drop_002.ogg', 37.05, 0.35],
-  ['click_003.ogg', 37.6, 0.5], ['click_003.ogg', 37.95, 0.5], ['sparkle.mp3', 38.3, 0.3], ['click_003.ogg', 38.65, 0.5],
-  ['impactSoft_medium_001.ogg', 39.2, 0.4], ['whoosh-short.mp3', 40.5, 0.3], ['impactSoft_medium_001.ogg', 40.85, 0.45],
-  ['drop_001.ogg', 42.1, 0.35], ['drop_001.ogg', 42.4, 0.35], ['drop_001.ogg', 42.7, 0.35], ['whoosh-short.mp3', 44.45, 0.3],
+  ['whoosh-cinematic.mp3', 33.45, 0.3, 1.4], ['impactSoft_medium_001.ogg', 33.64, 0.4],
+  ['drop_002.ogg', 33.868, 0.35], ['drop_002.ogg', 34.135, 0.35], ['drop_002.ogg', 34.401, 0.35], ['drop_002.ogg', 34.667, 0.35],
+  ['click_003.ogg', 35.086, 0.5], ['click_003.ogg', 35.352, 0.5], ['sparkle.mp3', 35.618, 0.3], ['click_003.ogg', 35.885, 0.5],
+  ['impactSoft_medium_001.ogg', 36.303, 0.4], ['whoosh-short.mp3', 37.292, 0.3], ['impactSoft_medium_001.ogg', 37.559, 0.45],
+  ['drop_001.ogg', 38.51, 0.35], ['drop_001.ogg', 38.738, 0.35], ['drop_001.ogg', 38.966, 0.35], ['whoosh-short.mp3', 40.298, 0.3],
   // 7+ · numbers, tagline, end card: authored at their 60 s-cut times, played SHIFT later
   ...[
     ['impactSoft_medium_001.ogg', 40.5, 0.45], ['impactSoft_medium_001.ogg', 41.3, 0.5],
@@ -89,15 +88,15 @@ const m2Auto = q({ version: 1, lanes: [
   { target: 'volume', points: duck(12, 8, 0.62) },
   { target: 'fx.n1.frequency', points: [{ t: 0, v: 20000 }, { t: 3.5, v: 20000 }, { t: 3.7, v: 1100 }, { t: 7.4, v: 1500, curve: 0.7 }, { t: 7.95, v: 20000 }] },
 ] });
-const m3Auto = q({ version: 1, lanes: [{ target: 'volume', points: duck(20, 17, 0.9) }] });
-const m4Auto = q({ version: 1, lanes: [{ target: 'volume', points: duck(37, 15.5, 0.55) }] });
-const m5Auto = q({ version: 1, lanes: [{ target: 'volume', points: duck(52.5, 12, 0.66, 0.03, 10.6) }] });
+const m3Auto = q({ version: 1, lanes: [{ target: 'volume', points: duck(20, 16, 0.9) }] });
+const m4Auto = q({ version: 1, lanes: [{ target: 'volume', points: duck(36, 12, 0.9) }] });
+const m5Auto = q({ version: 1, lanes: [{ target: 'volume', points: duck(48, 10.5, 0.66, 0.03, 9.2) }] });
 const MUSIC = `
   <audio id="m1" src="assets/music/pop.wav" data-start="0" data-duration="12" data-media-start="12.02" data-volume="1" data-track-index="20" data-automation="${m1Auto}"></audio>
   <audio id="m2" src="assets/music/pop.wav" data-start="12" data-duration="8" data-media-start="16.02" data-volume="1" data-track-index="21" data-fx-chain="${lp}" data-automation="${m2Auto}"></audio>
-  <audio id="m3" src="assets/music/drive.wav" data-start="20" data-duration="17" data-media-start="8.02" data-volume="1" data-track-index="22" data-automation="${m3Auto}"></audio>
-  <audio id="m4" src="assets/music/piano.wav" data-start="37" data-duration="15.5" data-media-start="0.02" data-volume="1" data-track-index="23" data-automation="${m4Auto}"></audio>
-  <audio id="m5" src="assets/music/pop.wav" data-start="52.5" data-duration="12" data-media-start="16.02" data-volume="1" data-track-index="24" data-automation="${m5Auto}"></audio>`;
+  <audio id="m3" src="assets/music/drive.wav" data-start="20" data-duration="16" data-media-start="8.02" data-volume="1" data-track-index="22" data-automation="${m3Auto}"></audio>
+  <audio id="m4" src="assets/music/drive.wav" data-start="36" data-duration="12" data-media-start="8.02" data-volume="1" data-track-index="23" data-automation="${m4Auto}"></audio>
+  <audio id="m5" src="assets/music/pop.wav" data-start="48" data-duration="10.5" data-media-start="16.02" data-volume="1" data-track-index="24" data-automation="${m5Auto}"></audio>`;
 
 // ---------- helpers ----------
 // Words wrapped in masks so they can rise from a baseline. *word* = purple accent, _word_ = amber.
@@ -464,18 +463,16 @@ function page(F) {
   <div class="reveal" id="r-mont" style="z-index:45">
     ${dev('d-m1', vid('v-m1', 'yt_search.mp4', 27.65, 2.6, 2.6, 1, 7))}
     ${dev('d-m2', vid('v-m2', 'yt_cc.mp4', 29.65, 2.6, 1.95, 1.25, 8))}
-    ${dev('d-m3', vid('v-m3', 'yt_ask.mp4', 31.65, 2.6, 2.4, 0.8, 9))}
-    ${dev('d-m4', vid('v-m4', 'rotate.mp4', 33.65, 2.6, 1.3, 1.25, 10), true)}
+    ${dev('d-m4', vid('v-m4', 'rotate.mp4', 31.65, 2.6, 1.3, 1.25, 10), true)}
   </div>
-  <section id="s-mont" class="clip" data-start="27.9" data-duration="7.9" data-track-index="12" style="z-index:50">
+  <section id="s-mont" class="clip" data-start="27.9" data-duration="5.8" data-track-index="12" style="z-index:50">
     <div class="side abs" id="ml0"><div class="big disp">${words('YouTube.')}</div><div class="sub">${words('It finds the search box.')}</div></div>
     <div class="side abs" id="ml1"><div class="big disp">${words('Subtitles.')}</div><div class="sub">${words('Turned on, one step at a time.')}</div></div>
-    <div class="side abs" id="ml2"><div class="big disp">${words('Not sure?')}</div><div class="sub">${words('It asks. You decide.')}</div></div>
     <div class="side abs" id="ml3"><div class="big disp">${words('Photos.')}</div><div class="sub">${words('Rotate it in Preview.')}</div></div>
   </section>
 
   <!-- 6 · Under the hood (models as named in README › Models, tools, data and disclosures) -->
-  <section id="s-tech" class="clip" data-start="35.45" data-duration="9.2" data-track-index="13" style="z-index:52">
+  <section id="s-tech" class="clip" data-start="33.45" data-duration="7.0" data-track-index="13" style="z-index:52">
     <div id="tlab" class="abs ctr">${words('Under the hood')}</div>
     <div id="stage" class="abs" style="width:${2 * F.W + 100}px;height:${2 * F.H + 100}px">
       <div class="panel" id="P0" style="left:0;top:0">
@@ -544,14 +541,15 @@ ${MUSIC}
 <script>
 document.fonts.ready.then(function () {
   var W = ${F.W}, H = ${F.H}, B = ${JSON.stringify(B)}, CROUT = ${F.crumbOut}, VERT = ${F.vert};
-  var OFF = 0; // later scenes are authored at their 60 s-cut times and played OFF seconds later
+  var OFF = 0, MAP = null; // OFF shifts later scenes; MAP squeezes a block authored on another timeline
   var tl = gsap.timeline({ paused: true });
   var $ = function (s) { return document.querySelector(s); };
   var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
-  function at(sel, vars, t) { return tl.to(sel, vars, t + OFF); }
-  function ft(sel, from, to, t) { return tl.fromTo(sel, from, to, t + OFF); }
-  function ftl(sel, from, to, t) { to.immediateRender = false; return tl.fromTo(sel, from, to, t + OFF); }
-  function set(sel, vars, t) { return tl.set(sel, vars, t + OFF); }
+  function TT(t) { return MAP ? MAP(t) : t + OFF; }
+  function at(sel, vars, t) { return tl.to(sel, vars, TT(t)); }
+  function ft(sel, from, to, t) { return tl.fromTo(sel, from, to, TT(t)); }
+  function ftl(sel, from, to, t) { to.immediateRender = false; return tl.fromTo(sel, from, to, TT(t)); }
+  function set(sel, vars, t) { return tl.set(sel, vars, TT(t)); }
   function pos(el) { var x = 0, y = 0, e = el; while (e && e.id !== 'root') { x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent; } return { x: x, y: y, w: el.offsetWidth, h: el.offsetHeight, cx: x + el.offsetWidth / 2, cy: y + el.offsetHeight / 2 }; }
   // camera: place region r=[fx,fy,fw,fh] (fractions of the recording) centered in box
   function fit(box, r, cw, ch) { var s = Math.min(box.w / (r[2] * cw), box.h / (r[3] * ch)); return { x: box.x + box.w / 2 - (r[0] + r[2] / 2) * cw * s, y: box.y + box.h / 2 - (r[1] + r[3] / 2) * ch * s, scale: s }; }
@@ -702,8 +700,7 @@ document.fonts.ready.then(function () {
   var M = [
     { d: D('#d-m1'), r: [0.30, 0.06, 0.46, 0.25], t: 27.8 },
     { d: D('#d-m2'), r: [0.14, 0.17, 0.66, 0.70], t: 29.65 },
-    { d: D('#d-m3'), r: [0.60, 0.57, 0.40, 0.31], t: 31.65 },
-    { d: D('#d-m4', true), r: [0, 0.02, 1, 0.5], t: 33.65 },
+    { d: D('#d-m4', true), r: [0, 0.02, 1, 0.5], t: 31.65 },
   ];
   M.forEach(function (m, i) {
     var v = fit(MB, m.r, m.d.cw, m.d.ch);
@@ -713,17 +710,18 @@ document.fonts.ready.then(function () {
     cam(m.d, MB, r2, m.t + 0.42, 1.55, 'none');
     var last = i === M.length - 1, next = last ? 0 : M[i + 1].t;
     if (!last) whipOut(m.d, next, -1);
-    var ml = '#ml' + i;
+    var ml = '#ml' + [0, 1, 3][i];
     rise(ml + ' .big .w', m.t + 0.3, { st: 0.06 });
     rise(ml + ' .sub .w', m.t + 0.45, { st: 0.03, d: 0.5 });
     if (!last) sink(ml + ' .w', next - 0.15, { st: 0.012, d: 0.26 });
   });
-  cam(M[3].d, MB, [0, 0, 1, 1], 35.0, 0.55, 'expo.inOut'); // pull back: show the rotated photo
-  sink('#ml3 .w', 35.3, { st: 0.012, d: 0.26 });
-  at('#mframe', { opacity: 0, scale: 0.6, duration: 0.34, ease: 'power3.in' }, 35.5);
-  at('#d-m4', { scale: '*=0.5', opacity: 0, x: '+=' + (B.side.w * 0.25), y: '+=' + (B.side.h * 0.25), duration: 0.34, ease: 'power3.in' }, 35.5);
+  cam(M[2].d, MB, [0, 0, 1, 1], 33.0, 0.5, 'power3.inOut'); // pull back: show the rotated photo
+  sink('#ml3 .w', 33.3, { st: 0.012, d: 0.26 });
+  at('#mframe', { opacity: 0, scale: 0.6, duration: 0.34, ease: 'power3.in' }, 33.5);
+  at('#d-m4', { scale: '*=0.5', opacity: 0, x: '+=' + (B.side.w * 0.25), y: '+=' + (B.side.h * 0.25), duration: 0.34, ease: 'power3.in' }, 33.5);
 
   // ================= 6 · Under the hood (35.45–44.65): one request, followed through four stages =================
+  MAP = function (t) { return 33.45 + (t - 35.45) * (7.0 / 9.2); };
   var SW = 2 * W + 100, SH = 2 * H + 100, PX = W + 100, PY = H + 100;
   var os = Math.min(W / SW, H / SH) * 0.84, ox = (W - SW * os) / 2, oy = (H - SH * os) / 2 - H * 0.03;
   ft('#stage', { opacity: 0, scale: 1.12, x: -0.06 * W, y: -0.06 * H }, { opacity: 1, scale: 1, x: 0, y: 0, duration: 0.7, ease: 'expo.out' }, 35.45);
@@ -777,7 +775,7 @@ document.fonts.ready.then(function () {
   at(['#tcount', '#tchips', '#dots'], { opacity: 0, y: -50, filter: 'blur(12px)', duration: 0.3, ease: 'power2.in' }, 44.35);
   sink('#tcl .w', 44.3, { st: 0.01 });
 
-  OFF = ${SHIFT};
+  MAP = null; OFF = ${SHIFT};
   // ================= 6 · Numbers (40.4–46.5) =================
   rise('#nlab .w', 40.5, { st: 0.04, d: 0.5 });
   rise('#nbase .w', 40.62, {});
