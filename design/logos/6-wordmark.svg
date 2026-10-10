@@ -1,7 +1,0 @@
-<!-- Wordmark: the last "a" is the ring with a dot. Uses system font; convert text to outlines before final use. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 150" width="400" height="150">
-  <text x="20" y="104" font-family="-apple-system, 'SF Pro Rounded', 'Helvetica Neue', Arial, sans-serif" font-size="112" font-weight="700" fill="#1C1C1E" letter-spacing="-3">gab</text>
-  <circle cx="236" cy="80" r="27" fill="none" stroke="#F08A24" stroke-width="12"/>
-  <circle cx="236" cy="80" r="8" fill="#F08A24"/>
-  <text x="268" y="104" font-family="-apple-system, 'SF Pro Rounded', 'Helvetica Neue', Arial, sans-serif" font-size="112" font-weight="700" fill="#1C1C1E" letter-spacing="-3">y</text>
-</svg>

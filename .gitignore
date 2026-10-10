@@ -11,3 +11,6 @@
 models/
 *.safetensors
 *.cache
+
+# local session notes
+/STATE.md

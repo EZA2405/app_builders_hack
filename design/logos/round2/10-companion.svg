@@ -1,6 +1,0 @@
-<!-- Companion: a big curve walking beside a small dot. Help beside you, not in front of you. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
-  <rect width="256" height="256" rx="56" fill="#F08A24"/>
-  <path d="M96 62 A72 72 0 1 0 196 168" fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round"/>
-  <circle cx="160" cy="112" r="22" fill="#0B0B14"/>
-</svg>

@@ -1,7 +1,0 @@
-<!-- Lowercase "g" whose tail trails off into the dots from idea 3. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
-  <rect width="256" height="256" rx="56" fill="#0B0B14"/>
-  <circle cx="128" cy="100" r="40" fill="none" stroke="#F08A24" stroke-width="18"/>
-  <path d="M168 64 V150 C168 180 150 194 128 196" fill="none" stroke="#F08A24" stroke-width="18" stroke-linecap="round"/>
-  <g fill="#F4F4F8"><circle cx="100" cy="196" r="7"/><circle cx="78" cy="190" r="6" fill-opacity=".7"/><circle cx="60" cy="178" r="5" fill-opacity=".45"/></g>
-</svg>

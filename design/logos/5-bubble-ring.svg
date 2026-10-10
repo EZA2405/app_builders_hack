@@ -1,7 +1,0 @@
-<!-- Speech bubble holding the ring: you ask in plain words, it points. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
-  <rect width="256" height="256" rx="56" fill="#0B0B14"/>
-  <path d="M128 44 C180 44 214 76 214 118 C214 160 180 192 128 192 C116 192 105 190 95 187 L58 210 L66 172 C50 158 42 140 42 118 C42 76 76 44 128 44 Z" fill="#F4F4F8"/>
-  <circle cx="128" cy="118" r="38" fill="none" stroke="#F08A24" stroke-width="14"/>
-  <circle cx="128" cy="118" r="11" fill="#F08A24"/>
-</svg>

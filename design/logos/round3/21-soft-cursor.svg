@@ -1,6 +1,0 @@
-<!-- Soft cursor: a rounded, friendly pointer with a ring ripple at its tip. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
-  <rect width="256" height="256" rx="56" fill="#F4F4F8"/>
-  <circle cx="84" cy="80" r="34" fill="none" stroke="#F08A24" stroke-opacity=".4" stroke-width="8"/>
-  <path d="M84 80 L184 124 L140 138 L124 184 Z" fill="#F08A24" stroke="#F08A24" stroke-width="22" stroke-linejoin="round"/>
-</svg>

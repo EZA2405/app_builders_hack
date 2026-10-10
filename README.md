@@ -1,3 +1,5 @@
+<img src="design/logos/round2/14-purple-path.svg" width="88" alt="Gabay logo">
+
 # Gabay
 
 **A patient guide that shows people where to click on their Mac, one step at a time, with the AI running on their own computer.**
@@ -10,7 +12,9 @@ Gabay shows older and non-technical people where to click next on their Mac, so 
 
 ## Demo
 
-**Video (about 1 minute):** VIDEO_LINK_HERE (also in the repo: [gabay-launch-landscape.mp4](launch-videos/brag-output-2026-10-10-051615/gabay-launch-landscape.mp4), 4:5: [gabay-launch-feed.mp4](launch-videos/brag-output-2026-10-10-051615/gabay-launch-feed.mp4))
+**Final demo video:** [Landscape (16:9)](launch-videos/brag-output-2026-10-10-051615/gabay-launch-landscape.mp4) · [Feed (4:5)](launch-videos/brag-output-2026-10-10-051615/gabay-launch-feed.mp4). Both use real app footage. [Video credits](launch-videos/brag-output-2026-10-10-051615/CREDITS.md).
+
+**For judges:** [Build and run the app](#quick-start) · [Install the browser extension](extension/README.md#use-with-the-gabay-app) · [Submission answers and remaining fields](docs/submission.md).
 
 Demonstrated live on the dev Mac during the hackathon (Oct 9–10, 2026). These are demonstrations, not benchmarks. The benchmarks are under [Measured results](#measured-results).
 - **Preview:** rotate a photo, print it, add text to it.
@@ -180,7 +184,7 @@ app/scripts/build_app.sh   # build and sign Gabay (app/build/ScreenGuide.app)
 
 On first launch, Gabay walks you through turning on Accessibility. After that, click the round button in the bottom-right corner, or press **Option + Space**. Right-click the button for Settings (text size, read aloud, ring color).
 
-**Websites:** load `extension/` as an unpacked extension in Chrome (or another Chromium browser such as Dia). It connects to the Mac app on `ws://127.0.0.1:47823/ext`, and only that extension ID is accepted.
+**Websites:** open `chrome://extensions`, enable **Developer mode**, choose **Load unpacked**, and select this repo's `extension/` folder (the one containing `manifest.json`). Reload any website tab that was open before installation. Keep Gabay running; the extension connects to the Mac app on `ws://127.0.0.1:47823/ext`, and only that extension ID is accepted. The development mock is not needed. See the [extension guide](extension/README.md#use-with-the-gabay-app).
 
 **Dev modes:**
 ```bash
@@ -205,8 +209,9 @@ python3 bench_localjev.py --url http://127.0.0.1:8766 --model guide --group 16 -
 | `ml/` | Fixtures, data builders, distillation, Laya fine-tuning (Colab / Modal), benchmarks, risk and routing evals |
 | `ml/RESULTS.md` | **Every measured number**, with reproduce commands |
 | `design/gabay_v2/` | UI design system, screens and copy sheet |
+| `design/logos/` | Retained team logo: #14, Purple Path |
 | `docs/` | Hackathon briefing, research (positioning, user tasks), submission answers, launch post, video shot list |
-| `launch-videos/` | Launch-film drafts (Hyperframes projects) |
+| `launch-videos/` | Final landscape/feed demo videos, posters, generator and credits |
 | `run.sh` | One-command launcher |
 
 ## Models, tools, data and disclosures
@@ -231,7 +236,7 @@ python3 bench_localjev.py --url http://127.0.0.1:8766 --model guide --group 16 -
   - Swift: AppKit, SwiftUI, Accessibility, FoundationModels, Speech, AVFoundation, Network.
   - Extension: Manifest V3 browser extension in plain JavaScript.
   - Models and data: laya / `laya-serve` (PyTorch), whisper.cpp via Homebrew, Python 3.12 (stdlib scripts), Hugging Face.
-  - Testing and video: Playwright (extension tests only), Hyperframes (launch-video drafts).
+  - Testing and video: Playwright (extension tests only), Hyperframes (launch-video production).
 - **Launch video:**
   - The narration is [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) (Apache-2.0), run on the Mac with `kokoro-onnx`, voice "af_heart". It was checked with our local Whisper.
   - The music is three tracks from the HeyGen audio catalog, fetched with `hyperframes media-use`.
@@ -241,4 +246,4 @@ python3 bench_localjev.py --url http://127.0.0.1:8766 --model guide --group 16 -
 - **Existing code and assets:**
   - No pre-existing project code. Everything here was written during the hackathon (Oct 9–10, 2026). The extension was started by a teammate (Edu).
   - Third-party pieces are used as-is: Laya weights and `laya-serve`, Whisper weights and whisper.cpp, and Apple's system frameworks.
-  - `launch-videos/.claude/skills/` holds the /brag skill ([latent-spaces/brag](https://github.com/latent-spaces/brag)) and HeyGen Hyperframes skills, copied in with their bundled music and sound effects.
+  - Video production used the /brag skill ([latent-spaces/brag](https://github.com/latent-spaces/brag)) and HeyGen Hyperframes skills, including bundled sound effects. Credits remain with the final videos; older drafts and copied skill bundles have been removed from the repo.

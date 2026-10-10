@@ -7,11 +7,19 @@ These are ready to paste into the submission form on the event page (cerebralval
 
 The answers are plain text so they paste cleanly.
 
+## Repository contents
+
+- [macOS app source](../app/Sources/ScreenGuide/) and [build script](../app/scripts/build_app.sh).
+- [Browser extension](../extension/README.md#use-with-the-gabay-app), including its manifest, popup, content scripts and local bridge contract.
+- [Final landscape video](../launch-videos/brag-output-2026-10-10-051615/gabay-launch-landscape.mp4) and [feed video](../launch-videos/brag-output-2026-10-10-051615/gabay-launch-feed.mp4), with [credits](../launch-videos/brag-output-2026-10-10-051615/CREDITS.md).
+- [Setup instructions](../README.md#quick-start), [training data](../ml/data/v6/) and [measured results](../ml/RESULTS.md).
+
 ## Fill in before submitting
-- **Team name and members:** the official names listed on appbuildersph.com/hackathon.
+- **Team name:** qtr.zip. **Members:** use the official names listed on appbuildersph.com/hackathon.
 - **Public GitHub repository:** https://github.com/EZA2405/app_builders_hack (it must be public at the deadline).
-- **Demo video:** VIDEO_LINK_HERE (about 1 minute; see [video-shotlist.md](video-shotlist.md)).
+- **Demo video:** https://github.com/EZA2405/app_builders_hack/raw/refs/heads/main/launch-videos/brag-output-2026-10-10-051615/gabay-launch-landscape.mp4 (final landscape export; see [video credits](../launch-videos/brag-output-2026-10-10-051615/CREDITS.md)).
 - **X / LinkedIn video URL:** POST_LINK_HERE (text in [post.md](post.md); the post must tag Cognition and include #AppBuildersPH).
+- **Checkpoint access for judges:** provide a download link for Laya v6en and place the downloaded folder in `models/laya-guide-v6en/`. Weights are intentionally excluded from git. The [README](../README.md#quick-start) also includes the training command, but a shared checkpoint avoids requiring judges to train it.
 
 ## Project name
 
@@ -63,7 +71,7 @@ Development only:
 
 ## Existing code and assets
 
-No pre-existing project code: the Mac app, the extension, the data and training scripts, the benchmarks and the design were all made during the hackathon (Oct 9–10, 2026). Used as-is from others: Laya weights and laya-serve (Apache-2.0), Whisper weights and whisper.cpp (MIT), and Apple's system frameworks. launch-videos/ includes the /brag skill (latent-spaces/brag) and HeyGen's Hyperframes skills, copied in with their bundled music and sound effects, plus two reference launch films used for style. docs/hackathon/ holds the organizers' briefing and kickoff transcript.
+No pre-existing project code: the Mac app, the extension, the data and training scripts, the benchmarks and the design were all made during the hackathon (Oct 9–10, 2026). Used as-is from others: Laya weights and laya-serve (Apache-2.0), Whisper weights and whisper.cpp (MIT), and Apple's system frameworks. Video production used /brag (latent-spaces/brag), Hyperframes and its bundled sound effects, HeyGen catalog music, and local Kokoro-82M narration (Apache-2.0, via kokoro-onnx). The final videos, generator and credits are in launch-videos/. Older drafts and third-party reference films are removed. docs/hackathon/ holds the organizers' briefing and kickoff transcript.
 
 ## AI development tools
 

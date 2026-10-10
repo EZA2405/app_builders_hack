@@ -1,7 +1,0 @@
-<!-- Handrail: a rail beside the steps, so you climb them yourself. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
-  <rect width="256" height="256" rx="56" fill="#F4F4F8"/>
-  <path d="M48 208 H92 V172 H136 V136 H180 V100 H212" fill="none" stroke="#1C1C1E" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/>
-  <path d="M52 168 L196 60" stroke="#F08A24" stroke-width="12" stroke-linecap="round"/>
-  <circle cx="196" cy="60" r="14" fill="#F08A24"/>
-</svg>

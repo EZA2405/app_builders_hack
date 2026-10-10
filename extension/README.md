@@ -1,8 +1,19 @@
-# ScreenGuide Chrome extension
+# Gabay browser extension
 
 The guide points; you click. Plain JavaScript, Manifest V3, no build step. Chrome 116+ is required for WebSocket service-worker keepalive. Chromium browsers such as Edge, Arc and Dia can load it unpacked; Safari is outside this build.
 
-## Load and run
+## Use with the Gabay app
+
+1. Follow the [app setup instructions](../README.md#quick-start), including the local Laya checkpoint. From the repo root, build with `app/scripts/build_app.sh`, then start Gabay with `./run.sh`.
+2. In Chrome, open `chrome://extensions`, enable **Developer mode**, choose **Load unpacked**, and select this `extension/` directory (the directory containing `manifest.json`). Chromium browsers such as Dia have the same extension settings.
+3. Reload any website tab that was open before installation. Keep Gabay running and the browser in front, then press **Option + Space** or click Gabay's round button to ask for help.
+4. Click the highlighted control yourself. The extension reads the page and draws highlights; Gabay and its local model choose each step.
+
+The development mock is not required for this flow. Stop any mock before launching Gabay, since both use port 47823. The toolbar entry retains its development name **ScreenGuide**.
+
+## Development mock
+
+Use this stand-in to inspect snapshots or test the extension without the Mac app:
 
 1. In Chrome, open `chrome://extensions`, enable **Developer mode**, choose **Load unpacked**, and select this `extension/` directory (the directory containing `manifest.json`).
 2. Run the mock from the repository root:

@@ -1,7 +1,0 @@
-<!-- Ring + pointer: the guide rings the control, the user's pointer does the click. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
-  <rect width="256" height="256" rx="56" fill="#0B0B14"/>
-  <circle cx="112" cy="112" r="58" fill="none" stroke="#F08A24" stroke-width="16"/>
-  <circle cx="112" cy="112" r="80" fill="none" stroke="#F08A24" stroke-opacity=".28" stroke-width="6"/>
-  <path d="M140 140 L140 214 L158 197 L171 226 L185 220 L172 191 L197 191 Z" fill="#F4F4F8" stroke="#0B0B14" stroke-width="6" stroke-linejoin="round"/>
-</svg>

@@ -1,9 +1,0 @@
-<!-- Step by step: three small steps, the next one ringed. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
-  <rect width="256" height="256" rx="56" fill="#1C1C1E"/>
-  <circle cx="60" cy="190" r="10" fill="#F08A24" fill-opacity=".45"/>
-  <circle cx="98" cy="152" r="13" fill="#F08A24" fill-opacity=".7"/>
-  <circle cx="140" cy="118" r="16" fill="#F08A24"/>
-  <circle cx="186" cy="80" r="18" fill="#F4F4F8"/>
-  <circle cx="186" cy="80" r="34" fill="none" stroke="#F08A24" stroke-width="9"/>
-</svg>
