@@ -5,7 +5,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const HERE = path.dirname(new URL(import.meta.url).pathname);
-const END = 60.0;
+const END = 64.5;
+// numbers → end card were authored for the 60 s cut; they now play 4.5 s later, after "under the hood"
+const SHIFT = 4.5;
 const VER = '0.8.143';
 
 // ---------- voice-over (Kokoro-82M on this Mac; make-vo.py writes shared-assets/vo) ----------
@@ -35,52 +37,67 @@ const DUR = {
 let aid = 0; const audio = [];
 const sfx = (file, t, vol, dur) => { dur = Math.min(dur || DUR[file] || 0.3, END - t); if (underVO(t) && !/click|keypress/.test(file)) vol = +(vol * 0.65).toFixed(2); audio.push(`<audio id="sfx-${++aid}" src="assets/sfx/${file}" data-start="${t}" data-duration="${dur.toFixed(3)}" data-volume="${vol}" data-track-index="${30 + (aid % 12)}"></audio>`); };
 [
-  ['buzz.wav', 0.0, 0.55], ['drop_002.ogg', 0.12, 0.35],
-  ['whoosh-short.mp3', 3.3, 0.3], ['whoosh-cinematic.mp3', 3.85, 0.45, 2.2], ['impact-bass-1.mp3', 4.45, 0.3],
-  ['whoosh-short.mp3', 5.45, 0.3], ['impactSoft_medium_001.ogg', 5.98, 0.7], ['drop_001.ogg', 6.0, 0.45],
-  ['whoosh-short.mp3', 8.3, 0.25], ['impactSoft_medium_001.ogg', 8.5, 0.4],
-  ['whoosh-cinematic.mp3', 10.05, 0.3, 1.5], ['drop_002.ogg', 10.6, 0.4], ['impactSoft_medium_001.ogg', 10.7, 0.45],
-  ['drop_001.ogg', 11.1, 0.4], ['impactSoft_medium_001.ogg', 12.45, 0.45], ['click_003.ogg', 13.45, 0.6],
-  ['whoosh-short.mp3', 14.0, 0.35], ['impactSoft_medium_001.ogg', 14.4, 0.45], ['sparkle.mp3', 15.0, 0.3],
-  ['riser.mp3', 14.2, 0.22, 1.8], ['whoosh-cinematic.mp3', 15.5, 0.35, 1.2], ['impact-bass-2.mp3', 16.0, 0.5],
-  ['whoosh-short.mp3', 17.65, 0.35], ['click_003.ogg', 18.7, 0.7], ['drop_002.ogg', 18.72, 0.35],
-  ['whoosh-short.mp3', 20.75, 0.25], ['click_003.ogg', 21.08, 0.7], ['drop_002.ogg', 21.1, 0.3],
-  ['whoosh-cinematic.mp3', 22.55, 0.25, 1.2], ['drop_001.ogg', 22.8, 0.4],
-  ['whoosh-short.mp3', 24.7, 0.3], ['click_003.ogg', 25.13, 0.7], ['drop_002.ogg', 25.15, 0.3],
-  ['whoosh-short.mp3', 25.9, 0.3], ['impactSoft_medium_001.ogg', 26.25, 0.55],
-  ['whoosh-cinematic.mp3', 27.55, 0.35, 1.2], ['impact-bass-1.mp3', 28.0, 0.35],
+  // 1 · hook: so many buttons → the ring picks one → it grows into the screen (drop at 4.0)
+  ['impactSoft_medium_001.ogg', 0.2, 0.4], ['drop_001.ogg', 0.1, 0.3], ['drop_002.ogg', 0.35, 0.25], ['drop_001.ogg', 0.6, 0.25],
+  ['click_003.ogg', 1.72, 0.8], ['sparkle.mp3', 1.72, 0.3], ['drop_002.ogg', 1.74, 0.4],
+  ['riser.mp3', 2.2, 0.25, 1.8], ['whoosh-short.mp3', 2.9, 0.3], ['whoosh-cinematic.mp3', 3.45, 0.35, 1.2], ['impact-bass-2.mp3', 4.0, 0.5],
+  // 2 · Wi‑Fi rescue
+  ['whoosh-short.mp3', 5.75, 0.35], ['click_003.ogg', 6.57, 0.7], ['drop_002.ogg', 6.59, 0.35],
+  ['whoosh-short.mp3', 8.45, 0.25], ['click_003.ogg', 8.85, 0.7], ['drop_002.ogg', 8.87, 0.3],
+  ['whoosh-cinematic.mp3', 10.1, 0.25, 1.2], ['drop_001.ogg', 10.5, 0.4],
+  ['whoosh-short.mp3', 12.15, 0.3], ['click_003.ogg', 12.74, 0.7], ['drop_002.ogg', 12.76, 0.3],
+  ['whoosh-short.mp3', 13.4, 0.3], ['impactSoft_medium_001.ogg', 13.75, 0.55],
+  // 3 · why local
+  ['whoosh-cinematic.mp3', 15.4, 0.3, 1.5], ['impactSoft_medium_001.ogg', 16.05, 0.45], ['drop_001.ogg', 16.5, 0.4],
+  ['impactSoft_medium_001.ogg', 17.7, 0.45], ['click_003.ogg', 18.85, 0.6], ['whoosh-short.mp3', 19.25, 0.35], ['impactSoft_medium_001.ogg', 19.6, 0.45],
+  // 4 · scam call → Wait card
+  ['buzz.wav', 21.0, 0.5], ['drop_002.ogg', 21.1, 0.35],
+  ['whoosh-short.mp3', 23.4, 0.3], ['whoosh-cinematic.mp3', 23.95, 0.45, 2.2], ['impact-bass-1.mp3', 24.6, 0.3],
+  ['whoosh-short.mp3', 24.65, 0.3], ['impactSoft_medium_001.ogg', 25.25, 0.7], ['drop_001.ogg', 25.27, 0.45],
+  ['whoosh-cinematic.mp3', 27.5, 0.35, 1.2], ['impact-bass-1.mp3', 28.0, 0.35],
+  // 5 · montage
   ['click_003.ogg', 28.17, 0.6], ['whoosh-short.mp3', 29.65, 0.32], ['click_003.ogg', 30.0, 0.6], ['drop_002.ogg', 31.6, 0.35],
   ['whoosh-short.mp3', 31.65, 0.32], ['impactSoft_medium_001.ogg', 32.4, 0.4],
   ['whoosh-short.mp3', 33.65, 0.32], ['click_003.ogg', 34.21, 0.6], ['drop_001.ogg', 35.27, 0.4],
-  ['whoosh-short.mp3', 35.65, 0.32], ['click_003.ogg', 36.85, 0.6], ['click_003.ogg', 37.38, 0.6],
-  ['whoosh-cinematic.mp3', 37.9, 0.35, 1.4], ['drop_002.ogg', 38.1, 0.3], ['drop_001.ogg', 38.3, 0.3],
-  ['impactSoft_medium_001.ogg', 40.5, 0.45], ['impactSoft_medium_001.ogg', 41.3, 0.5],
-  ['whoosh-short.mp3', 42.55, 0.3], ['drop_002.ogg', 42.7, 0.35], ['drop_002.ogg', 42.9, 0.35], ['drop_002.ogg', 43.1, 0.35],
-  ['impactSoft_medium_001.ogg', 44.6, 0.45], ['impactSoft_medium_001.ogg', 45.2, 0.5],
-  ['impactSoft_medium_001.ogg', 46.5, 0.45], ['sparkle.mp3', 46.75, 0.25], ['click_003.ogg', 47.65, 0.9], ['drop_001.ogg', 47.67, 0.45],
-  ['impact-bass-2.mp3', 48.0, 0.4], ['drop_002.ogg', 49.2, 0.35], ['drop_002.ogg', 49.52, 0.35], ['drop_002.ogg', 49.84, 0.35], ['whoosh-short.mp3', 51.7, 0.3],
-  ['whoosh-cinematic.mp3', 51.85, 0.3, 1.5], ['sparkle.mp3', 52.0, 0.35], ['impactBell_heavy_000.ogg', 52.05, 0.3],
-  ['drop_002.ogg', 53.2, 0.35], ['impactSoft_medium_001.ogg', 54.75, 0.45],
+  // 6 · under the hood
+  ['whoosh-cinematic.mp3', 35.45, 0.3, 1.4], ['impactSoft_medium_001.ogg', 35.7, 0.4],
+  ['drop_002.ogg', 36.0, 0.35], ['drop_002.ogg', 36.35, 0.35], ['drop_002.ogg', 36.7, 0.35], ['drop_002.ogg', 37.05, 0.35],
+  ['click_003.ogg', 37.6, 0.5], ['click_003.ogg', 37.95, 0.5], ['sparkle.mp3', 38.3, 0.3], ['click_003.ogg', 38.65, 0.5],
+  ['impactSoft_medium_001.ogg', 39.2, 0.4], ['whoosh-short.mp3', 40.5, 0.3], ['impactSoft_medium_001.ogg', 40.85, 0.45],
+  ['drop_001.ogg', 42.1, 0.35], ['drop_001.ogg', 42.4, 0.35], ['drop_001.ogg', 42.7, 0.35], ['whoosh-short.mp3', 44.45, 0.3],
+  // 7+ · numbers, tagline, end card: authored at their 60 s-cut times, played SHIFT later
+  ...[
+    ['impactSoft_medium_001.ogg', 40.5, 0.45], ['impactSoft_medium_001.ogg', 41.3, 0.5],
+    ['whoosh-short.mp3', 42.55, 0.3], ['drop_002.ogg', 42.7, 0.35], ['drop_002.ogg', 42.9, 0.35], ['drop_002.ogg', 43.1, 0.35],
+    ['impactSoft_medium_001.ogg', 44.6, 0.45], ['impactSoft_medium_001.ogg', 45.2, 0.5],
+    ['impactSoft_medium_001.ogg', 46.5, 0.45], ['sparkle.mp3', 46.75, 0.25], ['click_003.ogg', 47.65, 0.9], ['drop_001.ogg', 47.67, 0.45],
+    ['impact-bass-2.mp3', 48.0, 0.4], ['drop_002.ogg', 49.2, 0.35], ['drop_002.ogg', 49.52, 0.35], ['drop_002.ogg', 49.84, 0.35], ['whoosh-short.mp3', 51.7, 0.3],
+    ['whoosh-cinematic.mp3', 51.85, 0.3, 1.5], ['sparkle.mp3', 52.0, 0.35], ['impactBell_heavy_000.ogg', 52.05, 0.3],
+    ['drop_002.ogg', 53.2, 0.35], ['impactSoft_medium_001.ogg', 54.75, 0.45],
+  ].map(([f, t, v, d]) => [f, +(t + SHIFT).toFixed(3), v, d]),
 ].forEach(([f, t, v, d]) => sfx(f, t, v, d));
 const URL_TEXT = 'github.com/EZA2405/app_builders_hack';
-for (let i = 0; i < URL_TEXT.length; i += 2) sfx(`keypress-00${1 + (i * 3) % 4}.wav`, +(53.45 + i * 0.03).toFixed(3), 0.22);
+for (let i = 0; i < URL_TEXT.length; i += 2) sfx(`keypress-00${1 + (i * 3) % 4}.wav`, +(53.45 + SHIFT + i * 0.03).toFixed(3), 0.22);
 
 const q = o => JSON.stringify(o).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
-const edge = (len, v, fadeIn = 0.03, fadeOut = 0.03) => [{ t: 0, v: 0 }, { t: fadeIn, v }, { t: +(len - fadeOut).toFixed(3), v }, { t: len, v: 0 }];
-// M1: quiet intro under the hook, low-pass "exhale" on the Wait card, then the drop at 16.0 (Wi‑Fi rescue).
+// Beds (all 120.19 BPM, cut on bar lines): pop build → drop at 4.0 (the ring grows into the screen) → pop body with a
+// low-pass "exhale" under "why local" → drive under the scam beat and montage → piano for "under the hood", its drop on the
+// numbers → pop ending under the tagline and end card.
 const lp = q({ version: 1, nodes: [{ type: 'lowpass', id: 'n1', label: 'Exhale', params: { frequency: 20000, q: 0.9, poles: '2' } }] });
-const m1Auto = q({ version: 1, lanes: [
-  { target: 'volume', points: duck(0, 24, 0.7, 0.6) },
-  { target: 'fx.n1.frequency', points: [{ t: 0, v: 20000 }, { t: 5.95, v: 20000 }, { t: 6.05, v: 900 }, { t: 8.2, v: 1300, curve: 0.7 }, { t: 9.6, v: 20000 }] },
+const m1Auto = q({ version: 1, lanes: [{ target: 'volume', points: duck(0, 12, 0.7, 0.3) }] });
+const m2Auto = q({ version: 1, lanes: [
+  { target: 'volume', points: duck(12, 8, 0.62) },
+  { target: 'fx.n1.frequency', points: [{ t: 0, v: 20000 }, { t: 3.5, v: 20000 }, { t: 3.7, v: 1100 }, { t: 7.4, v: 1500, curve: 0.7 }, { t: 7.95, v: 20000 }] },
 ] });
-const m2Auto = q({ version: 1, lanes: [{ target: 'volume', points: duck(24, 8, 0.62) }] });
-const m3Auto = q({ version: 1, lanes: [{ target: 'volume', points: duck(32, 16, 0.95) }] });
-const m4Auto = q({ version: 1, lanes: [{ target: 'volume', points: duck(48, 12, 0.66, 0.03, 10.6) }] });
+const m3Auto = q({ version: 1, lanes: [{ target: 'volume', points: duck(20, 17, 0.9) }] });
+const m4Auto = q({ version: 1, lanes: [{ target: 'volume', points: duck(37, 15.5, 0.55) }] });
+const m5Auto = q({ version: 1, lanes: [{ target: 'volume', points: duck(52.5, 12, 0.66, 0.03, 10.6) }] });
 const MUSIC = `
-  <audio id="m1" src="assets/music/pop.wav" data-start="0" data-duration="24" data-media-start="0.02" data-volume="1" data-track-index="20" data-fx-chain="${lp}" data-automation="${m1Auto}"></audio>
-  <audio id="m2" src="assets/music/pop.wav" data-start="24" data-duration="8" data-media-start="16.02" data-volume="1" data-track-index="21" data-automation="${m2Auto}"></audio>
-  <audio id="m3" src="assets/music/drive.wav" data-start="32" data-duration="16" data-media-start="8.02" data-volume="1" data-track-index="22" data-automation="${m3Auto}"></audio>
-  <audio id="m4" src="assets/music/pop.wav" data-start="48" data-duration="12" data-media-start="16.02" data-volume="1" data-track-index="23" data-automation="${m4Auto}"></audio>`;
+  <audio id="m1" src="assets/music/pop.wav" data-start="0" data-duration="12" data-media-start="12.02" data-volume="1" data-track-index="20" data-automation="${m1Auto}"></audio>
+  <audio id="m2" src="assets/music/pop.wav" data-start="12" data-duration="8" data-media-start="16.02" data-volume="1" data-track-index="21" data-fx-chain="${lp}" data-automation="${m2Auto}"></audio>
+  <audio id="m3" src="assets/music/drive.wav" data-start="20" data-duration="17" data-media-start="8.02" data-volume="1" data-track-index="22" data-automation="${m3Auto}"></audio>
+  <audio id="m4" src="assets/music/piano.wav" data-start="37" data-duration="15.5" data-media-start="0.02" data-volume="1" data-track-index="23" data-automation="${m4Auto}"></audio>
+  <audio id="m5" src="assets/music/pop.wav" data-start="52.5" data-duration="12" data-media-start="16.02" data-volume="1" data-track-index="24" data-automation="${m5Auto}"></audio>`;
 
 // ---------- helpers ----------
 // Words wrapped in masks so they can rise from a baseline. *word* = purple accent, _word_ = amber.
@@ -98,14 +115,45 @@ const chars = s => Array.from(s).map(c => `<span class="ch">${c}</span>`).join('
 const dev = (id, src, pv) => `<div class="dev${pv ? ' pv' : ''} h" id="${id}"><div class="tilt"><div class="scr">${src}</div></div></div>`;
 const vid = (id, file, start, dur, mstart, rate, track) => `<video id="${id}" class="clip" src="assets/clips/${file}" muted playsinline data-start="${start}" data-duration="${dur}" data-media-start="${mstart}"${rate !== 1 ? ` data-playback-rate="${rate}"` : ''} data-track-index="${track}"></video>`;
 
+// knockout bracket for "Picks the right one": 8 Settings rows → Wi‑Fi (a Laya tournament, drawn small)
+function bracket(F) {
+  const { cols, y0, dy, cw, wcw } = F.brk;
+  const r0 = ['Wi‑Fi', 'Bluetooth', 'Network', 'Battery', 'General', 'Displays', 'Sound', 'Focus'];
+  const keep = [[0, 2, 4, 6], [0, 4], [0]]; // winners each round (indices into r0): Wi‑Fi beats Bluetooth, Network, then General
+  const ys = [r0.map((_, i) => y0 + i * dy)];
+  for (let k = 0; k < 3; k++) ys.push(ys[k].filter((_, i) => i % 2 === 0).map((y, i) => (y + ys[k][i * 2 + 1]) / 2));
+  const names = [r0, keep[0].map(i => r0[i]), keep[1].map(i => r0[i]), keep[2].map(i => r0[i])];
+  let chips = '', paths = '';
+  for (let k = 0; k < 4; k++) names[k].forEach((n, i) => {
+    const w = k === 3 ? wcw : cw;
+    chips += `<div class="bc r${k}${k === 3 ? ' win' : ''}" data-i="${i}" style="left:${cols[k] - w / 2}px;width:${w}px;top:${ys[k][i]}px">${n}</div>`;
+  });
+  for (let k = 0; k < 3; k++) ys[k + 1].forEach((y, i) => {
+    const xa = cols[k] + cw / 2 + 6, xb = cols[k + 1] - (k === 2 ? wcw : cw) / 2 - 6, xm = (xa + xb) / 2;
+    [ys[k][i * 2], ys[k][i * 2 + 1]].forEach(ya => { paths += `<path class="p${k}" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M${xa} ${ya}H${xm}V${y}H${xb}"/>`; });
+  });
+  return `<svg class="brk" aria-hidden="true">${paths}</svg>${chips}`;
+}
+
 // ---------- formats ----------
 const FORMATS = {
   landscape: {
-    dir: 'composition-landscape', W: 1920, H: 1080, crumbOut: 27.55,
+    dir: 'composition-landscape', W: 1920, H: 1080, crumbOut: 15.1, vert: false, brk: { cols: [330, 800, 1240, 1620], y0: 410, dy: 74, cw: 260, wcw: 300 }, dots: [13, 44],
+    pills: [[260, 150, 'System Settings…'], [700, 150, 'Bluetooth'], [1060, 150, 'AirDrop'], [1400, 150, 'Share…'], [1720, 150, 'Battery'], [330, 300, 'Export as PDF…'], [1580, 300, 'Software Update'], [200, 540, 'Rotate Right'], [1720, 540, 'Subtitles (CC)'], [300, 760, 'Print…'], [1600, 760, 'Force Quit…'], [260, 910, 'Sign In'], [600, 910, 'Downloads'], [960, 910, 'Wi‑Fi'], [1300, 910, 'Network'], [1680, 910, 'Annotate']],
     quote: ["Ma'am, pakibasa po yung", '_OTP_ na tinext namin.'],
     B: { punch: { x: 110, y: 90, w: 1700, h: 760, clamp: 1 }, side: { x: 900, y: 110, w: 940, h: 860 }, hero: { x: 60, y: 170, w: 880, h: 740 } },
     css: `
 :root{--W:1920px;--H:1080px}
+#hsa{top:440px;font-size:150px}#hsb{top:400px;font-size:124px}.pill{font-size:30px}
+#tlab{top:56px;font-size:30px}
+#tbadge{top:930px}
+#tcount{top:250px;font-size:230px}#tcl{top:530px;font-size:44px}
+#tchips{top:660px}.tchip{font-size:28px}
+.panel .ptitle{top:150px;font-size:104px}.panel .psub{top:286px;font-size:38px}
+.wave{top:420px;height:280px}.ptext{top:760px;font-size:66px}
+.axl{top:395px}.axr{width:980px;font-size:34px}
+.fmcard{top:470px;width:1100px;font-size:56px}
+#tcount{top:250px;font-size:230px}
 #call{left:630px;top:150px}
 #q{left:0;right:0;top:380px;text-align:center;font-size:112px}
 #qen{left:0;right:0;top:665px;text-align:center;font-size:40px}
@@ -146,11 +194,21 @@ const FORMATS = {
 `,
   },
   feed: {
-    dir: 'composition-feed', W: 1080, H: 1350, crumbOut: 25.9,
+    dir: 'composition-feed', W: 1080, H: 1350, crumbOut: 13.45, vert: true, brk: { cols: [150, 430, 680, 910], y0: 440, dy: 88, cw: 210, wcw: 230 }, dots: [20, 26],
+    pills: [[270, 150, 'System Settings…'], [760, 150, 'Bluetooth'], [190, 280, 'AirDrop'], [520, 280, 'Share…'], [860, 280, 'Battery'], [320, 410, 'Export as PDF…'], [790, 410, 'Force Quit…'], [180, 930, 'Print…'], [520, 930, 'Subtitles (CC)'], [880, 930, 'Annotate'], [280, 1060, 'Rotate Right'], [780, 1060, 'Sign In'], [200, 1190, 'Downloads'], [540, 1190, 'Wi‑Fi'], [860, 1190, 'Network']],
     quote: ["Ma'am, pakibasa", 'po yung _OTP_', 'na tinext namin.'],
     B: { punch: { x: 40, y: 250, w: 1000, h: 720, clamp: 1 }, side: { x: 50, y: 470, w: 980, h: 780 }, hero: { x: 90, y: 90, w: 900, h: 600 } },
     css: `
 :root{--W:1080px;--H:1350px}
+#hsa{top:610px;font-size:112px}#hsb{top:570px;font-size:92px}.pill{font-size:26px}
+#tlab{top:80px;font-size:28px}
+#tbadge{top:1200px}
+.panel .ptitle{top:200px;font-size:84px}.panel .psub{top:316px;font-size:32px;padding:0 60px}
+.wave{top:470px;height:300px}.ptext{top:840px;font-size:56px}
+.axl{top:420px}.axr{width:900px;font-size:30px}
+.fmcard{top:520px;width:900px;font-size:50px}
+#tcount{top:380px;font-size:180px}#tcl{top:600px;font-size:38px;padding:0 70px}
+#tchips{top:760px;flex-direction:column;align-items:center}.tchip{font-size:30px}
 #call{left:210px;top:170px}
 #q{left:0;right:0;top:430px;text-align:center;font-size:104px}
 #qen{left:60px;right:60px;top:820px;text-align:center;font-size:38px}
@@ -233,6 +291,7 @@ svg{display:block}
 #o{display:inline-block}
 /* scam / flood / problem */
 #flood{background:#FFF6E4}
+#efoot div+div{margin-top:6px;color:#6E6E73}
 #s-prob{color:#1C1C1E}
 #p1lab{color:#6B5B3E;font-weight:500;letter-spacing:-.01em}
 #rframe{left:0;top:0;width:var(--W);height:var(--H)}
@@ -246,6 +305,49 @@ svg{display:block}
 #ringsvg{left:0;top:0;width:var(--W);height:var(--H);overflow:visible}
 #ringfill{background:#BF5AF2}
 #mframe{border-radius:34px;background:#000;box-shadow:0 0 0 2px rgba(255,255,255,.12),0 60px 160px -40px rgba(0,0,0,.9)}
+/* hook: so many buttons */
+.pill{position:absolute;white-space:nowrap;padding:.42em .85em;border-radius:.6em;background:#1C1C1E;color:#E5E5EA;font-weight:500;letter-spacing:-.01em;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 24px 48px -24px rgba(0,0,0,.9)}
+#pring{position:absolute;left:-12px;top:-12px;right:-12px;bottom:-12px;border-radius:.95em;border:6px solid #BF5AF2;box-shadow:0 0 30px rgba(191,90,242,.75),inset 0 0 0 2px rgba(255,255,255,.55)}
+/* under the hood: one request, followed through four stages */
+#stage{left:0;top:0;transform-origin:0 0}
+.panel{position:absolute;width:var(--W);height:var(--H);border-radius:44px;background:#101015;box-shadow:0 0 0 2px rgba(255,255,255,.06);overflow:hidden}
+.panel .ptitle{position:absolute;left:0;right:0;text-align:center;font-weight:600;letter-spacing:-.045em;line-height:1.04}
+.panel .psub{position:absolute;left:0;right:0;text-align:center;color:#A1A1A6;font-weight:500;letter-spacing:-.01em}
+.panel .psub b{color:#E3C8FA;font-weight:600}
+.wave{position:absolute;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:10px}
+.bar{display:block;width:14px;height:100%;border-radius:7px;background:linear-gradient(#E3C8FA,#7B5CFA)}
+.ptext{position:absolute;left:0;right:0;text-align:center;font-weight:600;letter-spacing:-.03em;color:#F5F5F7}
+.axl{position:absolute;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:12px}
+.axr{position:relative;display:flex;align-items:center;gap:20px;padding:12px 26px;border-radius:18px;background:#17171C;box-shadow:0 0 0 1px rgba(255,255,255,.07);font-weight:500;letter-spacing:-.01em;color:#E5E5EA}
+.axr i{font-style:normal;font-size:.7em;color:#E3C8FA;background:rgba(191,90,242,.16);padding:5px 14px;border-radius:12px}
+#scan{position:absolute;left:-6px;right:-6px;height:100%;top:0;border-radius:20px;background:rgba(191,90,242,.18);box-shadow:0 0 0 2px rgba(191,90,242,.6)}
+.brk{position:absolute;left:0;top:0;width:var(--W);height:var(--H);overflow:visible}
+.brk path{fill:none;stroke:#BF5AF2;stroke-width:3;stroke-linecap:round;opacity:.75}
+.bc{position:absolute;height:54px;margin-top:-27px;border-radius:14px;background:#1C1C1E;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:600;letter-spacing:-.01em;color:#E5E5EA;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+.bc.win{height:70px;margin-top:-35px;font-size:34px;color:#fff;background:#2A1838;box-shadow:0 0 0 4px #BF5AF2,0 0 40px rgba(191,90,242,.75)}
+.fmcard{position:absolute;left:0;right:0;margin:0 auto;padding:40px 48px;border-radius:34px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+.fmcard .ch b{color:#E3C8FA}
+#dots{left:0;top:0;width:var(--W);height:var(--H);display:grid;align-content:center;justify-content:center}
+.dot{width:10px;height:10px;border-radius:50%;background:#BF5AF2;opacity:.12}
+/* (legacy pipeline styles below are unused) */
+#tlab{color:#A1A1A6;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+#pipe{position:absolute;display:flex;justify-content:center;align-items:center;gap:22px}
+.node{position:relative;flex:none;display:flex;flex-direction:column;gap:14px;border-radius:30px;background:#141418;box-shadow:0 0 0 1px rgba(255,255,255,.09),0 30px 80px -30px rgba(0,0,0,.9)}
+.node.star{background:#1A1424}
+.nic{color:#BF5AF2;flex:none}
+.nic svg{width:60px;height:60px}
+.nt{font-size:40px;font-weight:600;letter-spacing:-.03em;line-height:1.05}
+.ns{font-size:25px;color:#A1A1A6;font-weight:500;letter-spacing:-.01em;line-height:1.3;margin-top:8px}
+.ns b{color:#F5F5F7;font-weight:600}
+.conn{flex:none;display:block;border-radius:4px;background:#3A3A3C}
+#tbadge{left:0;right:0;display:flex;justify-content:center}
+#tbadge span{display:flex;align-items:center;gap:14px;padding:18px 32px;font-size:30px;font-weight:600;letter-spacing:-.02em}
+#tcount{color:#BF5AF2}
+#tcl{color:#A1A1A6;font-weight:500;letter-spacing:-.01em}
+#tchips{left:0;right:0;display:flex;justify-content:center;gap:16px}
+.tchip{display:flex;align-items:center;gap:12px;background:#1C1C1E;border-radius:40px;padding:14px 28px;font-weight:600;letter-spacing:-.02em;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+.tchip i{display:block;width:12px;height:12px;border-radius:50%;background:#BF5AF2}
+.tchip b{color:#C9A7F5;font-weight:600}
 /* captions */
 .pcap{padding:22px 38px;text-align:center}
 .pcap .lab{font-size:28px;color:#A1A1A6;margin-bottom:6px;letter-spacing:-.01em}
@@ -309,11 +411,39 @@ function page(F) {
 <div id="root" data-composition-id="main" data-start="0" data-width="${F.W}" data-height="${F.H}" data-duration="${END}">
 
   <!-- devices (untimed wrappers; the videos inside carry the timing) -->
-  <div class="reveal h" id="r-scam" style="z-index:10">${dev('d-scam', vid('v-scam', 'scam.mp4', 3.9, 6.9, 0, 1, 2))}</div>
-  <div class="abs full h" id="flood" style="z-index:12"></div>
+  <div class="reveal h" id="r-scam" style="z-index:10">${dev('d-scam', vid('v-scam', 'scam.mp4', 24.0, 4.0, 0.75, 1, 2))}</div>
 
-  <!-- 1 · Hook: the call -->
-  <section id="s-hook" class="clip" data-start="0" data-duration="4.6" data-track-index="1" style="z-index:30">
+  <!-- 1 · Hook: so many buttons → Gabay rings the right one, and that ring becomes the real screen -->
+  <section id="s-btn" class="clip" data-start="0" data-duration="4.1" data-track-index="1" style="z-index:33">
+    ${F.pills.map(([x, y, t], i) => `<div class="pill" id="pl${i}" style="left:${x}px;top:${y}px">${t}${t === 'Wi‑Fi' ? '<i id="pring"></i>' : ''}</div>`).join('\n    ')}
+    <div id="hsa" class="abs ctr disp">${words('So many buttons.')}</div>
+    <div id="hsb" class="abs ctr disp">${lines(['*Gabay* points to', 'the right one.'])}</div>
+  </section>
+  <div class="abs full h" id="ringfill" style="z-index:34"></div>
+
+  <!-- 2 · Wi‑Fi rescue (real recording) -->
+  <div class="reveal h" id="r-wifi" style="z-index:35">${dev('d-wifi', '<img src="assets/img/wifi_last.jpg" alt="">' + vid('v-wifi', 'wifi.mp4', 3.5, 12.0, 0, 0.869, 5))}</div>
+  <div class="abs full h" id="flood" style="z-index:38"></div>
+  <section id="s-wcap" class="clip" data-start="4.0" data-duration="11.75" data-track-index="6" style="z-index:40">
+    <div class="bot abs"><div id="cap-ask" class="glass pcap h"><div class="lab">Asked in Taglish</div><div class="big disp">How do I get my Wi‑Fi back?</div></div></div>
+    <div class="topc abs"><div id="crumbs" class="glass h"><b id="cr0"><i class="cdot"></i>Apple menu</b><span class="sep">›</span><b id="cr1"><i class="cdot"></i>System Settings</b><span class="sep">›</span><b id="cr2"><i class="cdot"></i>Wi‑Fi</b></div></div>
+    <div class="bot abs"><div id="cap-off" class="glass pcap h"><div class="big disp">${words('Offline. *Still* *guiding.*')}</div></div></div>
+  </section>
+
+  <!-- 3 · Why local -->
+  <section id="s-prob" class="clip" data-start="15.45" data-duration="5.6" data-track-index="4" style="z-index:39">
+    <div id="p1lab" class="abs ctr">${words('The usual help for Lola:')}</div>
+    <div id="p1" class="abs ctr disp" data-layout-allow-overlap>${words('“Share your screen.”')}</div>
+    <div id="p2" class="abs ctr disp" data-layout-allow-overlap>${lines(['That’s how', '~scammers~ get in.'])}</div>
+    <svg id="rframe" class="abs" viewBox="0 0 ${F.W} ${F.H}" aria-hidden="true"><rect id="rrect" x="22" y="22" width="${F.W - 44}" height="${F.H - 44}" rx="34" fill="none" stroke="#D70015" stroke-width="10" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
+    <div id="spill" class="abs h"><span><i></i>You’re sharing your screen</span></div>
+    <div id="gcur" class="abs h">${POINTER}<span class="tag">Remote control</span></div>
+    <div id="darkp" class="abs full h"></div>
+    <div id="p3" class="abs ctr disp">${lines(['*Gabay* never sees', 'your screen.'])}</div>
+  </section>
+
+  <!-- 4 · Bonus: the scam call -->
+  <section id="s-call" class="clip" data-start="21.0" data-duration="3.7" data-track-index="2" style="z-index:30">
     <div id="call" class="abs h">
       <div id="cav"><i class="pr"></i><i class="pr"></i><span>PH</span></div>
       <div id="cmid"><div id="cname">“PhilHealth”</div><div id="csub">Unknown number · calling…</div></div>
@@ -325,32 +455,8 @@ function page(F) {
       : `<span class="m"><span class="w">${w}</span></span>`).join(' ')}</div>`).join('')}</div>
     <div id="qen" class="abs h">“Ma’am, please read us the OTP we texted you.”</div>
   </section>
-
-  <!-- 2 · Scam caught (caption) -->
-  <section id="s-scamcap" class="clip" data-start="8.3" data-duration="2.2" data-track-index="3" style="z-index:20">
-    <div class="side abs"><div class="big disp">${lines(['Scam caught.', '*On* *the* *laptop.*'])}</div></div>
-  </section>
-
-  <!-- 3 · The problem -->
-  <section id="s-prob" class="clip" data-start="10.5" data-duration="5.6" data-track-index="4" style="z-index:31">
-    <div id="p1lab" class="abs ctr">${words('The usual help for Lola:')}</div>
-    <div id="p1" class="abs ctr disp" data-layout-allow-overlap>${words('“Share your screen.”')}</div>
-    <div id="p2" class="abs ctr disp" data-layout-allow-overlap>${lines(['That’s how', '~scammers~ get in.'])}</div>
-    <svg id="rframe" class="abs" viewBox="0 0 ${F.W} ${F.H}" aria-hidden="true"><rect id="rrect" x="22" y="22" width="${F.W - 44}" height="${F.H - 44}" rx="34" fill="none" stroke="#D70015" stroke-width="10" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
-    <div id="spill" class="abs h"><span><i></i>You’re sharing your screen</span></div>
-    <div id="gcur" class="abs h">${POINTER}<span class="tag">Remote control</span></div>
-    <div id="darkp" class="abs full h"></div>
-    <div id="p3" class="abs ctr disp">${lines(['Gabay never sees', 'your screen.'])}</div>
-    <svg id="ringsvg" class="abs" aria-hidden="true"><rect id="gring" x="0" y="0" width="10" height="10" rx="26" fill="none" stroke="#BF5AF2" stroke-width="7" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="filter:drop-shadow(0 0 18px rgba(191,90,242,.8))"/></svg>
-  </section>
-
-  <!-- 4 · Wi‑Fi rescue: the ring grows into the real screen -->
-  <div class="abs full h" id="ringfill" style="z-index:34"></div>
-  <div class="reveal h" id="r-wifi" style="z-index:35">${dev('d-wifi', vid('v-wifi', 'wifi.mp4', 15.5, 12.5, 0, 0.834, 5))}</div>
-  <section id="s-wcap" class="clip" data-start="15.9" data-duration="12.1" data-track-index="6" style="z-index:40">
-    <div class="bot abs"><div id="cap-ask" class="glass pcap h"><div class="lab">Asked in Taglish</div><div class="big disp">How do I get my Wi‑Fi back?</div></div></div>
-    <div class="topc abs"><div id="crumbs" class="glass h"><b id="cr0"><i class="cdot"></i>Apple menu</b><span class="sep">›</span><b id="cr1"><i class="cdot"></i>System Settings</b><span class="sep">›</span><b id="cr2"><i class="cdot"></i>Wi‑Fi</b></div></div>
-    <div class="bot abs"><div id="cap-off" class="glass pcap h"><div class="big disp">${words('Offline. *Still* *guiding.*')}</div></div></div>
+  <section id="s-scap" class="clip" data-start="25.4" data-duration="2.3" data-track-index="3" style="z-index:41">
+    <div class="bot abs"><div id="cap-scam" class="glass pcap h"><div class="big disp">${words('Scam caught. *On* *the* *laptop.*')}</div></div></div>
   </section>
 
   <!-- 5 · Range montage -->
@@ -360,42 +466,60 @@ function page(F) {
     ${dev('d-m2', vid('v-m2', 'yt_cc.mp4', 29.65, 2.6, 1.95, 1.25, 8))}
     ${dev('d-m3', vid('v-m3', 'yt_ask.mp4', 31.65, 2.6, 2.4, 0.8, 9))}
     ${dev('d-m4', vid('v-m4', 'rotate.mp4', 33.65, 2.6, 1.3, 1.25, 10), true)}
-    ${dev('d-m5', vid('v-m5', 'addtext.mp4', 35.65, 2.75, 2.0, 1.35, 11), true)}
   </div>
-  <section id="s-mont" class="clip" data-start="27.9" data-duration="10.3" data-track-index="12" style="z-index:50">
+  <section id="s-mont" class="clip" data-start="27.9" data-duration="7.9" data-track-index="12" style="z-index:50">
     <div class="side abs" id="ml0"><div class="big disp">${words('YouTube.')}</div><div class="sub">${words('It finds the search box.')}</div></div>
     <div class="side abs" id="ml1"><div class="big disp">${words('Subtitles.')}</div><div class="sub">${words('Turned on, one step at a time.')}</div></div>
     <div class="side abs" id="ml2"><div class="big disp">${words('Not sure?')}</div><div class="sub">${words('It asks. You decide.')}</div></div>
     <div class="side abs" id="ml3"><div class="big disp">${words('Photos.')}</div><div class="sub">${words('Rotate it in Preview.')}</div></div>
-    <div class="side abs" id="ml4"><div class="big disp">${words('Add text.')}</div><div class="sub">${words('Tools, Annotate, Text.')}</div></div>
   </section>
 
-  <!-- grid -->
-  <section id="s-grid" class="clip" data-start="37.85" data-duration="2.85" data-track-index="13" style="z-index:55">
-    <div id="grid" class="abs">
-      ${['t_scam', 't_wifi', 't_search', 't_cc', 't_ask', 't_rotate'].map((n, i) => `<div class="tile" id="t${i}"><img src="assets/img/${n}.jpg" alt=""></div>`).join('\n      ')}
+  <!-- 6 · Under the hood (models as named in README › Models, tools, data and disclosures) -->
+  <section id="s-tech" class="clip" data-start="35.45" data-duration="9.2" data-track-index="13" style="z-index:52">
+    <div id="tlab" class="abs ctr">${words('Under the hood')}</div>
+    <div id="stage" class="abs" style="width:${2 * F.W + 100}px;height:${2 * F.H + 100}px">
+      <div class="panel" id="P0" style="left:0;top:0">
+        <div class="ptitle">Hears you.</div><div class="psub"><b>Whisper</b> large-v3-turbo, on the Mac</div>
+        <div class="wave">${Array.from({ length: 30 }, (_, i) => `<i class="bar" style="height:${Math.round(40 + 60 * Math.abs(Math.sin(i * 0.9)))}%"></i>`).join('')}</div>
+        <div class="ptext">${chars('“paano ibalik yung wifi”')}</div>
+      </div>
+      <div class="panel" id="P1" style="left:${F.W + 100}px;top:0">
+        <div class="ptitle">Reads the real buttons.</div><div class="psub"><b>macOS Accessibility</b>. Never pixels.</div>
+        <div class="axl">${[['menu item', 'Apple menu'], ['menu item', 'System Settings…'], ['row', 'Bluetooth'], ['row', 'Wi‑Fi'], ['row', 'Network'], ['button', 'Details…'], ['switch', 'Wi‑Fi']].map(([r, n], i) => `<div class="axr" id="ax${i}"><i>${r}</i>${n}${i === 3 ? '<span id="scan"></span>' : ''}</div>`).join('')}</div>
+      </div>
+      <div class="panel" id="P2" style="left:0;top:${F.H + 100}px">
+        <div class="ptitle">Picks the right one.</div><div class="psub"><b>Laya 421M</b>, fine-tuned by us</div>
+        ${bracket(F)}
+      </div>
+      <div class="panel" id="P3" style="left:${F.W + 100}px;top:${F.H + 100}px">
+        <div class="ptitle">Says it simply.</div><div class="psub"><b>Apple Foundation Models</b>, on-device</div>
+        <div class="fmcard glass">${chars('Click Wi‑Fi. It’s on the left side of the window.')}</div>
+      </div>
     </div>
-    <div id="gh" class="abs ctr disp">${words('Apps. Websites. *Settings.*')}</div>
-    <div id="gsub" class="abs ctr">${words('One calm next step at a time.')}</div>
+    <div id="tbadge" class="abs"><span class="glass"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#BF5AF2" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>All on this Mac. Nothing goes to the cloud.</span></div>
+    <div id="dots" class="abs" style="grid-template-columns:repeat(${F.dots[1]}, 10px);gap:${F.vert ? 26 : 22}px">${'<i class="dot"></i>'.repeat(F.dots[0] * F.dots[1])}</div>
+    <div id="tcount" class="abs ctr disp"><span id="tnum">0</span></div>
+    <div id="tcl" class="abs ctr">${words('training examples, from real Mac apps and public websites')}</div>
+    <div id="tchips" class="abs"><span class="tchip"><i></i>Labels distilled from <b>TypeSafe Jev</b></span><span class="tchip"><i></i>Trained on cloud GPUs, runs on the Mac</span><span class="tchip"><i></i>Tested on apps it never saw</span></div>
   </section>
 
   <!-- 6 · Numbers (measured: ml/RESULTS.md, README) -->
-  <section id="s-num" class="clip" data-start="40.4" data-duration="6.2" data-track-index="14" style="z-index:60">
+  <section id="s-num" class="clip" data-start="${40.4 + SHIFT}" data-duration="6.2" data-track-index="14" style="z-index:60">
     <div id="nlab" class="abs ctr">${words('On apps it never trained on')}</div>
     <div id="nbase" class="abs ctr disp"><span class="m"><span class="w">8<span class="slash">/35</span></span></span></div>
     <div id="nours" class="abs ctr disp h"><span class="acc" id="nval">8</span><span class="slash">/35</span></div>
-    <div id="nourlab" class="abs ctr h">Base model 8/35 → after our fine-tune 29/35</div>
+    <div id="nourlab" class="abs ctr h">Base Laya 8/35 → our fine-tune 29/35</div>
     <div id="bars" class="abs">
-      <div class="brow" id="b0"><div class="bhead"><div class="blab">Gabay <span>· on the laptop</span></div><div class="bval">29</div></div><div class="btrack"><i class="bfill"></i></div></div>
-      <div class="brow" id="b1"><div class="bhead"><div class="blab">OpenAI <span>· cloud</span></div><div class="bval">33</div></div><div class="btrack"><i class="bfill"></i></div></div>
-      <div class="brow" id="b2"><div class="bhead"><div class="blab">Jev <span>· cloud</span></div><div class="bval">35</div></div><div class="btrack"><i class="bfill"></i></div></div>
+      <div class="brow" id="b0"><div class="bhead"><div class="blab">Laya, fine-tuned <span>· on the laptop</span></div><div class="bval">29</div></div><div class="btrack"><i class="bfill"></i></div></div>
+      <div class="brow" id="b1"><div class="bhead"><div class="blab">OpenAI Decisions API <span>· cloud</span></div><div class="bval">33</div></div><div class="btrack"><i class="bfill"></i></div></div>
+      <div class="brow" id="b2"><div class="bhead"><div class="blab">TypeSafe Jev <span>· cloud</span></div><div class="bval">35</div></div><div class="btrack"><i class="bfill"></i></div></div>
     </div>
     <div id="c1" class="abs ctr disp">${words('Close to the cloud.')}</div>
     <div id="c2" class="abs ctr disp">${words('*Without* *the* *cloud.*')}</div>
   </section>
 
   <!-- 7 · Tagline -->
-  <section id="s-tag" class="clip" data-start="46.4" data-duration="5.7" data-track-index="15" style="z-index:65">
+  <section id="s-tag" class="clip" data-start="${46.4 + SHIFT}" data-duration="5.7" data-track-index="15" style="z-index:65">
     <div id="tg1" class="abs ctr disp">${words('It points.', 'tg1w')}</div>
     <div id="tg2" class="abs ctr disp">${words('She clicks.', 'tg2w')}</div>
     <svg id="tgring" class="abs" aria-hidden="true"><rect id="tring" x="0" y="0" width="10" height="10" rx="28" fill="none" stroke="#BF5AF2" stroke-width="7" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="filter:drop-shadow(0 0 16px rgba(191,90,242,.75))"/></svg>
@@ -405,12 +529,12 @@ function page(F) {
   </section>
 
   <!-- 8 · End card -->
-  <section id="s-end" class="clip" data-start="51.9" data-duration="${(END - 51.9).toFixed(2)}" data-track-index="16" style="z-index:70">
+  <section id="s-end" class="clip" data-start="${51.9 + SHIFT}" data-duration="${(END - 51.9 - SHIFT).toFixed(2)}" data-track-index="16" style="z-index:70">
     ${dev('d-hero', '<img src="assets/img/hero_wifi.jpg" alt="Gabay ringing the Wi‑Fi row in System Settings">')}
     <div id="brand" class="abs"><div id="logo"><svg viewBox="0 0 256 256" aria-hidden="true"><rect width="256" height="256" rx="56" fill="#7B5CFA"/><g fill="#FFFFFF"><circle class="ldot" cx="56" cy="198" r="5" fill-opacity=".4"/><circle class="ldot" cx="72" cy="168" r="6" fill-opacity=".55"/><circle class="ldot" cx="94" cy="144" r="7" fill-opacity=".7"/><circle class="ldot" cx="122" cy="126" r="8" fill-opacity=".85"/></g><circle id="lhalo" cx="172" cy="96" r="44" fill="none" stroke="#FFFFFF" stroke-opacity=".25" stroke-width="6"/><circle id="lring" cx="172" cy="96" r="30" fill="none" stroke="#FFFFFF" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" transform="rotate(-90 172 96)"/></svg></div><div id="wm" class="disp">${Array.from('Gabay').map(c => `<span class="c">${c}</span>`).join('')}</div></div>
     <div id="edesc" class="abs">${words('A patient guide for Lola’s Mac.')}</div>
     <div id="ebar" class="abs h"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="ebartxt">${chars(URL_TEXT)}</span><i id="ecaret"></i><span id="ego"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
-    <div id="efoot" class="abs h">Built in 24 hours · AppBuildersPH 2026 · Local AI</div>
+    <div id="efoot" class="abs h"><div>Built in 24 hours · AppBuildersPH 2026 · Local AI</div><div>Narration: Kokoro-82M, generated on the laptop</div></div>
   </section>
 ${MUSIC}
   ${VOICE}
@@ -419,14 +543,15 @@ ${MUSIC}
 
 <script>
 document.fonts.ready.then(function () {
-  var W = ${F.W}, H = ${F.H}, B = ${JSON.stringify(B)}, CROUT = ${F.crumbOut};
+  var W = ${F.W}, H = ${F.H}, B = ${JSON.stringify(B)}, CROUT = ${F.crumbOut}, VERT = ${F.vert};
+  var OFF = 0; // later scenes are authored at their 60 s-cut times and played OFF seconds later
   var tl = gsap.timeline({ paused: true });
   var $ = function (s) { return document.querySelector(s); };
   var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
-  function at(sel, vars, t) { return tl.to(sel, vars, t); }
-  function ft(sel, from, to, t) { return tl.fromTo(sel, from, to, t); }
-  function ftl(sel, from, to, t) { to.immediateRender = false; return tl.fromTo(sel, from, to, t); }
-  function set(sel, vars, t) { return tl.set(sel, vars, t); }
+  function at(sel, vars, t) { return tl.to(sel, vars, t + OFF); }
+  function ft(sel, from, to, t) { return tl.fromTo(sel, from, to, t + OFF); }
+  function ftl(sel, from, to, t) { to.immediateRender = false; return tl.fromTo(sel, from, to, t + OFF); }
+  function set(sel, vars, t) { return tl.set(sel, vars, t + OFF); }
   function pos(el) { var x = 0, y = 0, e = el; while (e && e.id !== 'root') { x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent; } return { x: x, y: y, w: el.offsetWidth, h: el.offsetHeight, cx: x + el.offsetWidth / 2, cy: y + el.offsetHeight / 2 }; }
   // camera: place region r=[fx,fy,fw,fh] (fractions of the recording) centered in box
   function fit(box, r, cw, ch) { var s = Math.min(box.w / (r[2] * cw), box.h / (r[3] * ch)); return { x: box.x + box.w / 2 - (r[0] + r[2] / 2) * cw * s, y: box.y + box.h / 2 - (r[1] + r[3] / 2) * ch * s, scale: s }; }
@@ -442,122 +567,133 @@ document.fonts.ready.then(function () {
   function whipIn(d, v, t, dir) { ftl(d.sel, { opacity: 0, x: v.x + dir * W * 1.1, y: v.y, scale: v.scale, filter: 'blur(18px)' }, { opacity: 1, x: v.x, filter: 'blur(0px)', duration: 0.42, ease: 'expo.out' }, t); }
   function whipOut(d, t, dir) { at(d.sel, { x: '+=' + (dir * W * 1.1), opacity: 0, filter: 'blur(18px)', duration: 0.34, ease: 'power3.in' }, t); }
 
-  // ================= 1 · Hook (0–4.5) =================
-  ft('#call', { opacity: 0, y: 240, rotationX: -70, scale: 0.7, filter: 'blur(18px)', transformPerspective: 1400 }, { opacity: 1, y: 0, rotationX: 0, scale: 1, filter: 'blur(0px)', duration: 0.85, ease: 'expo.out' }, 0.05);
-  [0.12, 1.07].forEach(function (b) { for (var i = 0; i < 6; i++) at('#call', { rotation: i % 2 ? -1.8 : 1.8, duration: 0.05, ease: 'none' }, b + i * 0.05); at('#call', { rotation: 0, duration: 0.08 }, b + 0.3); });
-  ft('.pr', { scale: 1, opacity: 0.6 }, { scale: 2.1, opacity: 0, duration: 0.95, ease: 'power2.out', stagger: 0.45, repeat: 2 }, 0.3);
-  var qw = $$('#q .w');
-  qw.forEach(function (w, i) { ft(w, { yPercent: 118, opacity: 0, rotation: 5 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.6, ease: 'expo.out' }, 0.8 + i * 0.14); });
-  ft('#otpu', { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: 'expo.out' }, 1.75);
-  ft('#qen', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 1.95);
-  at('#q', { scale: 1.04, duration: 3.0, ease: 'none', transformOrigin: '50% 50%' }, 0.8);
-  // clear everything but OTP, then OTP takes the center and we fall through its O into the real screen
-  at('#call', { opacity: 0, y: -70, scale: 0.9, filter: 'blur(14px)', duration: 0.35, ease: 'power2.in' }, 3.0);
-  at('#qen', { opacity: 0, y: -24, duration: 0.3, ease: 'power2.in' }, 3.0);
-  sink(qw.filter(function (w) { return w.id !== 'w-otp'; }), 3.05, { st: 0.022 });
-  at('#otpu', { scaleX: 0, duration: 0.2, ease: 'power2.in' }, 3.05);
-  var qs = 1.04, F = parseFloat(getComputedStyle($('#q')).fontSize) * qs;
-  var pO = pos($('#o')), pW = pos($('#w-otp')), pQ = pos($('#q'));
-  // #q is scaled about its own center at this point; map layout coords to screen coords
-  function qmap(x, y) { return { x: pQ.cx + (x - pQ.cx) * qs, y: pQ.cy + (y - pQ.cy) * qs }; }
-  var oc = qmap(pO.cx, pO.y + pO.h * 0.52), wc = qmap(pW.x, pW.y);
-  var ox = (oc.x - wc.x) / qs, oy = (oc.y - wc.y) / qs;
-  set('#m-otp', { overflow: 'visible' }, 3.3);
-  set('#w-otp', { transformOrigin: ox + 'px ' + oy + 'px' }, 3.3);
-  at('#w-otp', { x: (W / 2 - oc.x) / qs, y: (H / 2 - oc.y) / qs, scale: 2.2, duration: 0.55, ease: 'expo.inOut' }, 3.3);
-  for (var j = 0; j < 4; j++) at('#w-otp', { rotation: j % 2 ? -1.5 : 1.5, duration: 0.04, ease: 'none' }, 3.72 + j * 0.04);
-  at('#w-otp', { rotation: 0, duration: 0.04 }, 3.88);
-  var ZS = 30, r0 = 0.2 * F * 2.2;
-  at('#w-otp', { scale: 2.2 * ZS, duration: 0.62, ease: 'power2.in' }, 3.9);
-  ftl('#w-otp', { filter: 'blur(0px)' }, { filter: 'blur(5px)', duration: 0.22, ease: 'power1.in' }, 4.3);
-  set('#r-scam', { opacity: 1 }, 3.9);
-  ft('#r-scam', { clipPath: 'circle(' + r0.toFixed(1) + 'px at ' + W / 2 + 'px ' + H / 2 + 'px)' }, { clipPath: 'circle(' + (r0 * ZS).toFixed(1) + 'px at ' + W / 2 + 'px ' + H / 2 + 'px)', duration: 0.62, ease: 'power2.in' }, 3.9);
-  set('#r-scam', { clipPath: 'none' }, 4.54);
+  // ================= 1 · Hook: so many buttons (0–4.0) =================
+  var pills = $$('.pill'), pw = $('#pring').parentNode;
+  pills.forEach(function (p, i) {
+    var k = (i * 7) % pills.length;
+    ft(p, { xPercent: -50, yPercent: -50, opacity: 0, scale: 0.5, filter: 'blur(10px)' }, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.5, ease: 'back.out(1.8)' }, 0.05 + k * 0.04);
+    ftl(p, { x: 0, y: 0 }, { x: ((i * 37) % 7 - 3) * 7, y: ((i * 53) % 5 - 2) * 8, duration: 2.6, ease: 'sine.inOut' }, 0.35);
+  });
+  rise('#hsa .w', 0.15, { st: 0.08 });
+  sink('#hsa .w', 1.5, { st: 0.03 });
+  ft('#pring', { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(2.2)' }, 1.7);
+  pills.forEach(function (p) { if (p !== pw) at(p, { opacity: 0.28, filter: 'blur(2px)', duration: 0.4, ease: 'power2.out' }, 1.75); });
+  rise('#hsb .w', 1.85, { st: 0.06 });
+  sink('#hsb .w', 2.85, { st: 0.02 });
+  pills.forEach(function (p, i) { if (p !== pw) at(p, { opacity: 0, scale: 0.7, filter: 'blur(8px)', duration: 0.35, ease: 'power2.in' }, 2.8 + (i % 5) * 0.03); });
+  // the chosen button comes to the middle, then its ring grows into the real screen (drop at 4.0)
+  var pl = pos(pw), PS = 1.6;
+  at(pw, { x: W / 2 - pl.x, y: H / 2 - pl.y, scale: PS, duration: 0.5, ease: 'power3.inOut' }, 3.0);
+  var rw = (pl.w + 24) * PS, rh = (pl.h + 24) * PS;
+  var gr = { x: W / 2 - rw / 2, y: H / 2 - rh / 2, w: rw, h: rh }, gr6 = { x: gr.x - 7, y: gr.y - 7, w: gr.w + 14, h: gr.h + 14 };
+  set('#ringfill', { opacity: 1 }, 3.5);
+  set('#r-wifi', { opacity: 1 }, 3.5);
+  set(pw, { opacity: 0 }, 3.5);
+  ft('#ringfill', { clipPath: inset(gr6, 30) }, { clipPath: 'inset(-8px -8px -8px -8px round 0px)', duration: 0.5, ease: 'power3.inOut' }, 3.5);
+  ft('#r-wifi', { clipPath: inset(gr, 24) }, { clipPath: 'inset(0px 0px 0px 0px round 0px)', duration: 0.5, ease: 'power3.inOut' }, 3.5);
+  set('#r-wifi', { clipPath: 'none' }, 4.02);
+  set('#ringfill', { opacity: 0 }, 4.02);
 
-  // ================= 2 · Scam caught (3.9–10.6) =================
-  var DS = D('#d-scam');
-  set('#d-scam', { opacity: 1 }, 3.9);
-  cam(DS, B.punch, [0.545, 0.76, 0.40, 0.145], 3.9, 0);
-  at('#d-scam', { x: '-=50', duration: 1.5, ease: 'none' }, 3.95);
-  cam(DS, B.punch, [0.665, 0.53, 0.335, 0.30], 5.4, 0.62, 'power3.inOut');
-  smear('#d-scam', 5.4, 0.62, 6);
-  cam(DS, B.punch, [0.68, 0.545, 0.305, 0.27], 6.02, 1.98, 'none');
-  var vSide = cam(DS, B.side, [0, 0, 1, 1], 8.0, 0.95, 'power3.inOut');
-  smear('#d-scam', 8.0, 0.95, 5);
-  ftl('#d-scam .tilt', { rotationY: 0 }, { rotationY: -11, duration: 0.95, ease: 'power3.inOut', transformPerspective: 2200 }, 8.0);
-  at('#d-scam .tilt', { rotationY: 0, duration: 0.45, ease: 'power2.inOut' }, 9.65);
-  rise('#s-scamcap .w', 8.6, { st: 0.06 });
-  sink('#s-scamcap .w', 9.95, { st: 0.02 });
-  // the Wait card grows into the next scene (cream flood)
-  var card = rect(vSide, [0.69, 0.552, 0.302, 0.248], DS);
-  ftl('#flood', { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'none' }, 10.12);
-  ft('#flood', { clipPath: inset(card, 16 * vSide.scale) }, { clipPath: 'inset(0px 0px 0px 0px round 0px)', duration: 0.5, ease: 'power3.inOut' }, 10.12);
-  set('#r-scam', { opacity: 0 }, 10.6);
-
-  // ================= 3 · The problem (10.5–16.0) =================
-  rise('#p1lab .w', 10.6, { st: 0.04, d: 0.5 });
-  rise('#p1 .w', 10.72, { st: 0.08 });
-  ft('#p1', { scale: 1.08 }, { scale: 1, duration: 1.7, ease: 'power2.out', transformOrigin: '50% 50%' }, 10.6);
-  ft('#rrect', { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.6, ease: 'power2.inOut' }, 10.95);
-  ft('#spill', { opacity: 0, y: -90 }, { opacity: 1, y: 0, duration: 0.5, ease: 'back.out(1.8)' }, 11.1);
-  sink('#p1lab .w, #p1 .w', 12.02, { st: 0.02 });
-  rise('#p2 .w', 12.45, { st: 0.07 });
-  ft('#p2', { scale: 1.06 }, { scale: 1, duration: 1.6, ease: 'power2.out', transformOrigin: '50% 50%' }, 12.45);
-  at('#rrect', { opacity: 0.3, duration: 0.16, repeat: 3, yoyo: true, ease: 'none' }, 12.55);
-  ft('#gcur', { opacity: 0, x: W * 0.08, y: H * 1.05 }, { opacity: 1, x: W * 0.62, y: H * 0.74, duration: 0.85, ease: 'power2.inOut' }, 12.6);
-  at('#gcur', { x: W * 0.55, y: H * 0.70, duration: 0.3, ease: 'power1.inOut' }, 13.45);
-  at('#gcur', { x: W * 0.66, y: H * 0.76, duration: 0.3, ease: 'power1.inOut' }, 13.75);
-  sink('#p2 .w', 13.9, { st: 0.02 });
-  ft('#darkp', { opacity: 1, yPercent: 100 }, { yPercent: 0, duration: 0.34, ease: 'power3.inOut' }, 14.0);
-  set('#flood', { opacity: 0 }, 14.4);
-  rise('#p3 .w', 14.38, { st: 0.07 });
-  var gw = $$('#p3 .w')[0], pG = pos(gw), pad = 16;
-  var gr = { x: pG.x - pad, y: pG.y - pad * 0.6, w: pG.w + pad * 2, h: pG.h + pad * 1.2 };
-  $('#gring').setAttribute('x', gr.x); $('#gring').setAttribute('y', gr.y); $('#gring').setAttribute('width', gr.w); $('#gring').setAttribute('height', gr.h);
-  ft('#gring', { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.45, ease: 'power2.inOut' }, 15.0);
-  sink($$('#p3 .w').slice(1), 15.25, { st: 0.02 });
-  // the ring becomes the frame of the real screen and grows to full (drop at 16.0)
-  set('#ringfill', { opacity: 1 }, 15.5);
-  set('#r-wifi', { opacity: 1 }, 15.5);
-  set('#gring', { opacity: 0 }, 15.5);
-  var gr6 = { x: gr.x - 7, y: gr.y - 7, w: gr.w + 14, h: gr.h + 14 };
-  ft('#ringfill', { clipPath: inset(gr6, 32) }, { clipPath: 'inset(-8px -8px -8px -8px round 0px)', duration: 0.5, ease: 'power3.inOut' }, 15.5);
-  ft('#r-wifi', { clipPath: inset(gr, 26) }, { clipPath: 'inset(0px 0px 0px 0px round 0px)', duration: 0.5, ease: 'power3.inOut' }, 15.5);
-  set('#r-wifi', { clipPath: 'none' }, 16.02);
-  set('#ringfill', { opacity: 0 }, 16.02);
-
-  // ================= 4 · Wi‑Fi rescue (15.5–28.0); trimmed clip time c ↔ video 15.5 + c/0.834 =================
+  // ================= 2 · Wi‑Fi rescue (3.5–15.5); trimmed clip time c ↔ video 3.5 + c/0.869 =================
   var DW = D('#d-wifi');
-  set('#d-wifi', { opacity: 1 }, 15.5);
-  cam(DW, B.punch, [0.545, 0.76, 0.40, 0.145], 15.5, 0);
-  at('#d-wifi', { x: '-=60', duration: 2.1, ease: 'none' }, 15.55);
-  ft('#cap-ask', { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'back.out(1.6)' }, 16.1);
-  at('#cap-ask', { opacity: 0, y: 30, duration: 0.25, ease: 'power2.in' }, 17.5);
-  cam(DW, B.punch, [0.0, 0.0, 0.33, 0.2], 17.6, 0.85, 'power3.inOut');
-  smear('#d-wifi', 17.6, 0.85, 9);
-  cam(DW, B.punch, [0.0, 0.0, 0.30, 0.18], 18.45, 2.0, 'none');
-  ft('#crumbs', { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.45, ease: 'back.out(1.6)' }, 18.3);
+  set('#d-wifi', { opacity: 1 }, 3.5);
+  cam(DW, B.punch, [0.545, 0.76, 0.40, 0.145], 3.5, 0);
+  at('#d-wifi', { x: '-=60', duration: 2.1, ease: 'none' }, 3.55);
+  ft('#cap-ask', { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'back.out(1.6)' }, 4.15);
+  at('#cap-ask', { opacity: 0, y: 30, duration: 0.25, ease: 'power2.in' }, 5.5);
+  cam(DW, B.punch, [0.0, 0.0, 0.33, 0.2], 5.75, 0.8, 'power3.inOut');
+  smear('#d-wifi', 5.75, 0.8, 9);
+  cam(DW, B.punch, [0.0, 0.0, 0.30, 0.18], 6.55, 1.9, 'none');
+  ft('#crumbs', { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.45, ease: 'back.out(1.6)' }, 6.35);
   function crumb(i, t) { at('#cr' + i, { color: '#F5F5F7', duration: 0.2 }, t); ft('#cr' + i + ' .cdot', { scale: 0.4, backgroundColor: 'rgba(191,90,242,0)' }, { scale: 1, backgroundColor: 'rgba(191,90,242,1)', duration: 0.35, ease: 'back.out(3)' }, t); }
-  crumb(0, 18.7);
-  cam(DW, B.punch, [0.0, 0.0, 0.47, 0.37], 20.7, 0.65, 'power3.inOut');
-  cam(DW, B.punch, [0.0, 0.0, 0.45, 0.35], 21.3, 1.2, 'none');
-  crumb(1, 21.08);
-  cam(DW, B.punch, [0.28, 0.0, 0.74, 0.86], 22.5, 0.85, 'power3.inOut');
-  smear('#d-wifi', 22.5, 0.85, 4);
-  ftl('#d-wifi .tilt', { rotationX: 0 }, { rotationX: 9, duration: 0.38, ease: 'sine.inOut', yoyo: true, repeat: 1, transformPerspective: 2400 }, 22.55);
-  cam(DW, B.punch, [0.30, 0.0, 0.70, 0.82], 23.3, 1.35, 'none');
-  cam(DW, B.punch, [0.30, 0.21, 0.37, 0.24], 24.6, 0.62, 'power3.inOut');
-  smear('#d-wifi', 24.6, 0.62, 5);
-  crumb(2, 25.13);
-  cam(DW, B.punch, [0.46, 0.025, 0.37, 0.19], 25.85, 0.62, 'power3.inOut');
-  smear('#d-wifi', 25.85, 0.62, 5);
-  cam(DW, B.punch, [0.47, 0.035, 0.34, 0.17], 26.45, 1.2, 'none');
-  at('#crumbs', { boxShadow: '0 0 0 3px rgba(191,90,242,1), 0 30px 80px -30px rgba(0,0,0,.8)', duration: 0.25, yoyo: true, repeat: 1 }, 25.95);
-  ft('#cap-off', { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(1.6)' }, 26.2);
-  rise('#cap-off .w', 26.25, { st: 0.09 });
+  crumb(0, 6.57);
+  cam(DW, B.punch, [0.0, 0.0, 0.47, 0.37], 8.45, 0.6, 'power3.inOut');
+  cam(DW, B.punch, [0.0, 0.0, 0.45, 0.35], 9.05, 1.0, 'none');
+  crumb(1, 8.85);
+  cam(DW, B.punch, [0.28, 0.0, 0.74, 0.86], 10.1, 0.8, 'power3.inOut');
+  smear('#d-wifi', 10.1, 0.8, 4);
+  ftl('#d-wifi .tilt', { rotationX: 0 }, { rotationX: 9, duration: 0.38, ease: 'sine.inOut', yoyo: true, repeat: 1, transformPerspective: 2400 }, 10.15);
+  cam(DW, B.punch, [0.30, 0.0, 0.70, 0.82], 10.9, 1.2, 'none');
+  cam(DW, B.punch, [0.30, 0.21, 0.37, 0.24], 12.15, 0.6, 'power3.inOut');
+  smear('#d-wifi', 12.15, 0.6, 5);
+  crumb(2, 12.74);
+  cam(DW, B.punch, [0.46, 0.025, 0.37, 0.19], 13.4, 0.6, 'power3.inOut');
+  smear('#d-wifi', 13.4, 0.6, 5);
+  cam(DW, B.punch, [0.47, 0.035, 0.34, 0.17], 14.0, 1.4, 'none');
+  at('#crumbs', { boxShadow: '0 0 0 3px rgba(191,90,242,1), 0 30px 80px -30px rgba(0,0,0,.8)', duration: 0.25, yoyo: true, repeat: 1 }, 13.5);
+  ft('#cap-off', { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(1.6)' }, 13.75);
+  rise('#cap-off .w', 13.8, { st: 0.09 });
   at('#crumbs', { opacity: 0, y: -30, duration: 0.25, ease: 'power2.in' }, CROUT);
-  at('#cap-off', { opacity: 0, y: 30, duration: 0.25, ease: 'power2.in' }, 27.6);
-  whipOut(DW, 27.58, -1);
+  // the "Offline" caption grows into the next scene (cream)
+  var cp = pos($('#cap-off'));
+  ftl('#flood', { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'none' }, 15.45);
+  ft('#flood', { clipPath: inset(cp, 32) }, { clipPath: 'inset(0px 0px 0px 0px round 0px)', duration: 0.5, ease: 'power3.inOut' }, 15.45);
+  at('#cap-off', { opacity: 0, duration: 0.2 }, 15.5);
+  set('#r-wifi', { opacity: 0 }, 16.0);
+
+  // ================= 3 · Why local (15.45–21.0) =================
+  rise('#p1lab .w', 16.0, { st: 0.04, d: 0.5 });
+  rise('#p1 .w', 16.1, { st: 0.08 });
+  ft('#p1', { scale: 1.08 }, { scale: 1, duration: 1.5, ease: 'power2.out', transformOrigin: '50% 50%' }, 16.0);
+  ft('#rrect', { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.6, ease: 'power2.inOut' }, 16.35);
+  ft('#spill', { opacity: 0, y: -90 }, { opacity: 1, y: 0, duration: 0.5, ease: 'back.out(1.8)' }, 16.5);
+  sink('#p1lab .w, #p1 .w', 17.4, { st: 0.02 });
+  rise('#p2 .w', 17.75, { st: 0.07 });
+  ft('#p2', { scale: 1.06 }, { scale: 1, duration: 1.4, ease: 'power2.out', transformOrigin: '50% 50%' }, 17.75);
+  at('#rrect', { opacity: 0.3, duration: 0.16, repeat: 3, yoyo: true, ease: 'none' }, 17.85);
+  ft('#gcur', { opacity: 0, x: W * 0.08, y: H * 1.05 }, { opacity: 1, x: W * 0.62, y: H * 0.74, duration: 0.8, ease: 'power2.inOut' }, 17.9);
+  at('#gcur', { x: W * 0.55, y: H * 0.70, duration: 0.28, ease: 'power1.inOut' }, 18.7);
+  at('#gcur', { x: W * 0.66, y: H * 0.76, duration: 0.28, ease: 'power1.inOut' }, 18.98);
+  sink('#p2 .w', 19.15, { st: 0.02 });
+  ft('#darkp', { opacity: 1, yPercent: 100 }, { yPercent: 0, duration: 0.34, ease: 'power3.inOut' }, 19.25);
+  set('#flood', { opacity: 0 }, 19.65);
+  rise('#p3 .w', 19.55, { st: 0.07 });
+  sink('#p3 .w', 20.75, { st: 0.02 });
+
+  // ================= 4 · Bonus: the scam call (21.0–27.6) =================
+  var C0 = 21.0;
+  ft('#call', { opacity: 0, y: 240, rotationX: -70, scale: 0.7, filter: 'blur(18px)', transformPerspective: 1400 }, { opacity: 1, y: 0, rotationX: 0, scale: 1, filter: 'blur(0px)', duration: 0.75, ease: 'expo.out' }, C0 + 0.05);
+  [C0 + 0.12, C0 + 1.0].forEach(function (b) { for (var i = 0; i < 6; i++) at('#call', { rotation: i % 2 ? -1.8 : 1.8, duration: 0.05, ease: 'none' }, b + i * 0.05); at('#call', { rotation: 0, duration: 0.08 }, b + 0.3); });
+  ft('.pr', { scale: 1, opacity: 0.6 }, { scale: 2.1, opacity: 0, duration: 0.85, ease: 'power2.out', stagger: 0.4, repeat: 1 }, C0 + 0.25);
+  var qw = $$('#q .w');
+  qw.forEach(function (w, i) { ft(w, { yPercent: 118, opacity: 0, rotation: 5 }, { yPercent: 0, opacity: 1, rotation: 0, duration: 0.55, ease: 'expo.out' }, C0 + 0.45 + i * 0.11); });
+  ft('#otpu', { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: 'expo.out' }, C0 + 1.3);
+  ft('#qen', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }, C0 + 1.4);
+  at('#q', { scale: 1.04, duration: 2.2, ease: 'none', transformOrigin: '50% 50%' }, C0 + 0.45);
+  // clear everything but OTP, then OTP takes the center and we fall through its O into the real screen
+  at('#call', { opacity: 0, y: -70, scale: 0.9, filter: 'blur(14px)', duration: 0.32, ease: 'power2.in' }, C0 + 2.1);
+  at('#qen', { opacity: 0, y: -24, duration: 0.28, ease: 'power2.in' }, C0 + 2.1);
+  sink(qw.filter(function (w) { return w.id !== 'w-otp'; }), C0 + 2.15, { st: 0.02 });
+  at('#otpu', { scaleX: 0, duration: 0.2, ease: 'power2.in' }, C0 + 2.15);
+  var qs = 1.04, F = parseFloat(getComputedStyle($('#q')).fontSize) * qs;
+  var pO = pos($('#o')), pWo = pos($('#w-otp')), pQ = pos($('#q'));
+  function qmap(x, y) { return { x: pQ.cx + (x - pQ.cx) * qs, y: pQ.cy + (y - pQ.cy) * qs }; }
+  var oc = qmap(pO.cx, pO.y + pO.h * 0.52), wc = qmap(pWo.x, pWo.y);
+  var ox = (oc.x - wc.x) / qs, oy = (oc.y - wc.y) / qs;
+  set('#m-otp', { overflow: 'visible' }, C0 + 2.35);
+  set('#w-otp', { transformOrigin: ox + 'px ' + oy + 'px' }, C0 + 2.35);
+  at('#w-otp', { x: (W / 2 - oc.x) / qs, y: (H / 2 - oc.y) / qs, scale: 2.2, duration: 0.5, ease: 'expo.inOut' }, C0 + 2.4);
+  for (var j = 0; j < 4; j++) at('#w-otp', { rotation: j % 2 ? -1.5 : 1.5, duration: 0.04, ease: 'none' }, C0 + 2.82 + j * 0.04);
+  at('#w-otp', { rotation: 0, duration: 0.04 }, C0 + 2.98);
+  var ZS = 30, r0 = 0.2 * F * 2.2, Z0 = 24.0;
+  at('#w-otp', { scale: 2.2 * ZS, duration: 0.62, ease: 'power2.in' }, Z0);
+  ftl('#w-otp', { filter: 'blur(0px)' }, { filter: 'blur(5px)', duration: 0.22, ease: 'power1.in' }, Z0 + 0.4);
+  set('#r-scam', { opacity: 1 }, Z0);
+  ft('#r-scam', { clipPath: 'circle(' + r0.toFixed(1) + 'px at ' + W / 2 + 'px ' + H / 2 + 'px)' }, { clipPath: 'circle(' + (r0 * ZS).toFixed(1) + 'px at ' + W / 2 + 'px ' + H / 2 + 'px)', duration: 0.62, ease: 'power2.in' }, Z0);
+  set('#r-scam', { clipPath: 'none' }, Z0 + 0.64);
+  // real recording: clip time c ↔ video 24.0 + (c − 0.75); the Wait card lands at c = 2.0 (25.25)
+  var DS = D('#d-scam');
+  set('#d-scam', { opacity: 1 }, Z0);
+  cam(DS, B.punch, [0.545, 0.76, 0.40, 0.145], Z0, 0);
+  at('#d-scam', { x: '-=40', duration: 0.6, ease: 'none' }, Z0 + 0.05);
+  cam(DS, B.punch, [0.665, 0.53, 0.335, 0.30], 24.65, 0.6, 'power3.inOut');
+  smear('#d-scam', 24.65, 0.6, 6);
+  cam(DS, B.punch, [0.68, 0.545, 0.305, 0.27], 25.25, 2.3, 'none');
+  ft('#cap-scam', { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(1.6)' }, 25.6);
+  rise('#cap-scam .w', 25.65, { st: 0.07 });
+  at('#cap-scam', { opacity: 0, y: 30, duration: 0.25, ease: 'power2.in' }, 27.4);
+  whipOut(DS, 27.55, -1);
+  set('#r-scam', { opacity: 0 }, 27.95);
 
   // ================= 5 · Montage (27.65–38.0) =================
   var MB = B.side;
@@ -568,7 +704,6 @@ document.fonts.ready.then(function () {
     { d: D('#d-m2'), r: [0.14, 0.17, 0.66, 0.70], t: 29.65 },
     { d: D('#d-m3'), r: [0.60, 0.57, 0.40, 0.31], t: 31.65 },
     { d: D('#d-m4', true), r: [0, 0.02, 1, 0.5], t: 33.65 },
-    { d: D('#d-m5', true), r: [0, 0.02, 1, 0.5], t: 35.65 },
   ];
   M.forEach(function (m, i) {
     var v = fit(MB, m.r, m.d.cw, m.d.ch);
@@ -576,30 +711,73 @@ document.fonts.ready.then(function () {
     // a slow push while it plays
     var r2 = [m.r[0] + m.r[2] * 0.03, m.r[1] + m.r[3] * 0.03, m.r[2] * 0.94, m.r[3] * 0.94];
     cam(m.d, MB, r2, m.t + 0.42, 1.55, 'none');
-    var next = i < 4 ? M[i + 1].t : 0;
-    if (i < 4) whipOut(m.d, next, -1);
+    var last = i === M.length - 1, next = last ? 0 : M[i + 1].t;
+    if (!last) whipOut(m.d, next, -1);
     var ml = '#ml' + i;
     rise(ml + ' .big .w', m.t + 0.3, { st: 0.06 });
     rise(ml + ' .sub .w', m.t + 0.45, { st: 0.03, d: 0.5 });
-    if (i < 4) sink(ml + ' .w', next - 0.15, { st: 0.012, d: 0.26 });
+    if (!last) sink(ml + ' .w', next - 0.15, { st: 0.012, d: 0.26 });
   });
   cam(M[3].d, MB, [0, 0, 1, 1], 35.0, 0.55, 'expo.inOut'); // pull back: show the rotated photo
-  sink('#ml4 .w', 37.7, { st: 0.012, d: 0.26 });
-  at('#mframe', { opacity: 0, scale: 0.6, duration: 0.34, ease: 'power3.in' }, 37.78);
-  at('#d-m5', { scale: '*=0.5', opacity: 0, x: '+=' + (B.side.w * 0.25), y: '+=' + (B.side.h * 0.25), duration: 0.34, ease: 'power3.in' }, 37.78);
+  sink('#ml3 .w', 35.3, { st: 0.012, d: 0.26 });
+  at('#mframe', { opacity: 0, scale: 0.6, duration: 0.34, ease: 'power3.in' }, 35.5);
+  at('#d-m4', { scale: '*=0.5', opacity: 0, x: '+=' + (B.side.w * 0.25), y: '+=' + (B.side.h * 0.25), duration: 0.34, ease: 'power3.in' }, 35.5);
 
-  // grid: pull back into all the jobs we just saw
-  ft('#grid', { scale: 1.6, rotation: -2 }, { scale: 1, rotation: 0, duration: 1.1, ease: 'expo.out', transformOrigin: '50% 55%' }, 37.86);
-  at('#grid', { scale: 1.03, duration: 1.9, ease: 'none', transformOrigin: '50% 55%' }, 39.0);
-  $$('.tile').forEach(function (el, i) {
-    var o = [2, 0, 4, 1, 3, 5][i];
-    ft(el, { opacity: 0, scale: 0.55, y: 60 }, { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: 'back.out(1.5)' }, 37.88 + o * 0.06);
+  // ================= 6 · Under the hood (35.45–44.65): one request, followed through four stages =================
+  var SW = 2 * W + 100, SH = 2 * H + 100, PX = W + 100, PY = H + 100;
+  var os = Math.min(W / SW, H / SH) * 0.84, ox = (W - SW * os) / 2, oy = (H - SH * os) / 2 - H * 0.03;
+  ft('#stage', { opacity: 0, scale: 1.12, x: -0.06 * W, y: -0.06 * H }, { opacity: 1, scale: 1, x: 0, y: 0, duration: 0.7, ease: 'expo.out' }, 35.45);
+  rise('#tlab .w', 35.6, { st: 0.06, d: 0.5 });
+  function ptitle(id, t) { ft(id + ' .ptitle', { opacity: 0, y: 46 }, { opacity: 1, y: 0, duration: 0.5, ease: 'expo.out' }, t); ft(id + ' .psub', { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.45, ease: 'expo.out' }, t + 0.12); }
+  // 1 · Whisper: a live waveform becomes text
+  ptitle('#P0', 35.6);
+  $$('#P0 .bar').forEach(function (b, i) { ft(b, { scaleY: 0.18 }, { scaleY: 1, duration: 0.15 + (i % 5) * 0.035, ease: 'sine.inOut', yoyo: true, repeat: 11 }, 35.55 + (i % 7) * 0.03); });
+  at('#P0 .ptext .ch', { opacity: 1, duration: 0.01, stagger: 0.034, ease: 'none' }, 36.3);
+  // → 2 · Accessibility
+  at('#stage', { x: -PX, y: 0, duration: 0.45, ease: 'power3.inOut' }, 37.3);
+  smear('#stage', 37.3, 0.45, 10);
+  ptitle('#P1', 37.55);
+  ft('.axr', { opacity: 0, y: 46 }, { opacity: 1, y: 0, duration: 0.4, ease: 'expo.out', stagger: 0.06 }, 37.6);
+  ftl('.axl', { y: 0 }, { y: -24, duration: 1.0, ease: 'none' }, 37.6);
+  ft('#scan', { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.35, ease: 'back.out(2.2)' }, 38.15);
+  // → 3 · Laya: a knockout round, 8 → 4 → 2 → 1
+  at('#stage', { x: 0, y: -PY, duration: 0.5, ease: 'power3.inOut' }, 38.45);
+  smear('#stage', 38.45, 0.5, 10);
+  ptitle('#P2', 38.75);
+  ft('#P2 .bc.r0', { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.35, ease: 'expo.out', stagger: 0.035 }, 38.8);
+  var losers = [[1, 3, 5, 7], [1, 3], [1]];
+  [0, 1, 2].forEach(function (k) {
+    var t = 39.15 + k * 0.3;
+    ft('#P2 .p' + k, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.22, ease: 'power2.out' }, t);
+    losers[k].forEach(function (i) { at('#P2 .bc.r' + k + '[data-i="' + i + '"]', { opacity: 0.28, duration: 0.15 }, t + 0.12); });
+    if (k < 2) ft('#P2 .bc.r' + (k + 1), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: 'back.out(2)' }, t + 0.18);
   });
-  rise('#gh .w', 38.2, { st: 0.09 });
-  rise('#gsub .w', 38.5, { st: 0.03, d: 0.5 });
-  at('#grid', { opacity: 0, scale: 0.9, filter: 'blur(14px)', duration: 0.3, ease: 'power2.in' }, 40.3);
-  sink('#gh .w, #gsub .w', 40.25, { st: 0.01 });
+  ft('#P2 .bc.win', { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(2.2)' }, 39.9);
+  // → 4 · Apple Foundation Models writes the sentence
+  at('#stage', { x: -PX, y: -PY, duration: 0.45, ease: 'power3.inOut' }, 40.0);
+  smear('#stage', 40.0, 0.45, 10);
+  ptitle('#P3', 40.2);
+  ft('.fmcard', { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'back.out(1.6)' }, 40.2);
+  at('.fmcard .ch', { opacity: 1, duration: 0.01, stagger: 0.011, ease: 'none' }, 40.35);
+  // pull back: the whole path on one screen, all on the Mac
+  at('#stage', { x: ox, y: oy, scale: os, duration: 0.55, ease: 'power3.inOut' }, 40.8);
+  ft('#tbadge', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: 'back.out(1.6)' }, 41.15);
+  sink('#tlab .w', 41.85, { st: 0.02 });
+  var os2 = os * 0.8;
+  at('#stage', { opacity: 0, scale: os2, x: (W - SW * os2) / 2, y: (H - SH * os2) / 2, filter: 'blur(10px)', duration: 0.35, ease: 'power2.in' }, 41.95);
+  at('#tbadge', { opacity: 0, y: 20, duration: 0.25, ease: 'power2.in' }, 41.95);
+  // how it learned: a field of examples lights up behind the count (README: v6 set, 28,250 rows)
+  var DG = ${JSON.stringify(F.dots)};
+  ft('.dot', { opacity: 0 }, { opacity: 0.9, duration: 0.22, ease: 'power1.out', stagger: { grid: DG, from: 'start', axis: 'x', amount: 1.0 } }, 42.05);
+  ftl('.dot', { opacity: 0.9 }, { opacity: 0.16, duration: 0.45, ease: 'power1.in', stagger: { grid: DG, from: 'start', axis: 'x', amount: 1.0 } }, 42.3);
+  ft('#tcount', { opacity: 0, scale: 0.7, filter: 'blur(16px)' }, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.55, ease: 'expo.out', transformOrigin: '50% 50%' }, 42.1);
+  for (var kk = 1; kk <= 24; kk++) set('#tnum', { textContent: Math.round(28250 * kk / 24).toLocaleString('en-US') }, 42.15 + kk * 0.035);
+  rise('#tcl .w', 42.55, { st: 0.03, d: 0.5 });
+  $$('.tchip').forEach(function (c, i) { ft(c, { opacity: 0, y: 30, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(2)' }, 43.0 + i * 0.22); });
+  at(['#tcount', '#tchips', '#dots'], { opacity: 0, y: -50, filter: 'blur(12px)', duration: 0.3, ease: 'power2.in' }, 44.35);
+  sink('#tcl .w', 44.3, { st: 0.01 });
 
+  OFF = ${SHIFT};
   // ================= 6 · Numbers (40.4–46.5) =================
   rise('#nlab .w', 40.5, { st: 0.04, d: 0.5 });
   rise('#nbase .w', 40.62, {});

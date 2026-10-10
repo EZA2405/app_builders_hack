@@ -16,7 +16,7 @@ os.makedirs(OUT, exist_ok=True)
 k = kokoro_onnx.Kokoro(os.path.join(CACHE, 'models/kokoro-v1.0.onnx'), os.path.join(CACHE, 'voices/voices-v1.0.bin'))
 lines = json.load(open(os.path.join(HERE, 'vo-lines.json')))
 for i, ln in enumerate(lines):
-    ph = k.tokenizer.phonemize(ln['text'], 'en-us').replace('ɡˈæbeɪ', GABAY)
+    ph = k.tokenizer.phonemize(ln['text'], 'en-us').replace('ɡˈæbeɪ', GABAY).replace('lˈeɪə', 'lˈɑːjə')  # Laya: LAH-yah
     samples, rate = k.create(ph, voice=VOICE, speed=SPEED, is_phonemes=True)
     raw = os.path.join(OUT, ln['id'] + '.raw.wav')
     sf.write(raw, samples, rate)
