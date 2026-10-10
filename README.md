@@ -10,7 +10,7 @@ Gabay shows older and non-technical people where to click next on their Mac, so 
 
 ## Demo
 
-**Video (about 1 minute):** VIDEO_LINK_HERE
+**Video (about 1 minute):** VIDEO_LINK_HERE (also in the repo: [gabay-launch-landscape.mp4](launch-videos/brag-output-2026-10-10-051615/gabay-launch-landscape.mp4), 4:5: [gabay-launch-feed.mp4](launch-videos/brag-output-2026-10-10-051615/gabay-launch-feed.mp4))
 
 Demonstrated live on the dev Mac during the hackathon (Oct 9–10, 2026). These are demonstrations, not benchmarks. The benchmarks are under [Measured results](#measured-results).
 - **Preview:** rotate a photo, print it, add text to it.
@@ -242,4 +242,3 @@ python3 bench_localjev.py --url http://127.0.0.1:8766 --model guide --group 16 -
   - No pre-existing project code. Everything here was written during the hackathon (Oct 9–10, 2026). The extension was started by a teammate (Edu).
   - Third-party pieces are used as-is: Laya weights and `laya-serve`, Whisper weights and whisper.cpp, and Apple's system frameworks.
   - `launch-videos/.claude/skills/` holds the /brag skill ([latent-spaces/brag](https://github.com/latent-spaces/brag)) and HeyGen Hyperframes skills, copied in with their bundled music and sound effects.
-  - `launch-videos/product app video*.mp4` are reference launch films used for style.
