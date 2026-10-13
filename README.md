@@ -141,7 +141,7 @@ Every number below is in [ml/RESULTS.md](ml/RESULTS.md), with its date and repro
 | Read aloud | Local | `AVSpeechSynthesizer` |
 | Overlay, click checking | Local | |
 | The websites themselves | Internet | The page has to load. What Gabay reads from it goes only to the local model |
-| Setup downloads | Internet, once | Laya (Hugging Face), whisper.cpp (Homebrew), Whisper weights (Hugging Face). macOS downloads Apple's on-device model when Apple Intelligence is turned on |
+| Setup downloads | Internet, once | Laya base (Hugging Face), our fine-tuned v6en (GitHub Releases), whisper.cpp (Homebrew), Whisper weights (Hugging Face). macOS downloads Apple's on-device model when Apple Intelligence is turned on |
 | Hosted Jev | Internet | **Development only:** benchmark reference and training-data labeler, on sanitized menu and page text. Never in the product path |
 | OpenAI Decisions API | Internet | **Development only:** second benchmark reference, on sanitized fixtures and one logged-out public page. Not used for training |
 | Extension mock orderer | Internet | **Extension testing only** (`extension/mock/`), from before the Mac app was the brain. Not used by Gabay |
@@ -168,7 +168,12 @@ With Wi-Fi off, Gabay still guides Mac apps and System Settings.
 - Xcode command-line tools
 - An Apple Development signing identity (keeps the Accessibility permission across rebuilds)
 - Python 3.12 with `pip install "laya[serve]"`
-- A fine-tuned checkpoint in `models/`: `models/laya-guide` → `laya-guide-v6en`. Weights aren't in git; train it with the command below.
+- The fine-tuned checkpoint `laya-guide-v6en` (777 MB zip, Apache-2.0) from [Releases](https://github.com/EZA2405/app_builders_hack/releases/tag/laya-guide-v6en). `run.sh` finds it in `models/`:
+  ```bash
+  curl -L -o /tmp/laya-guide-v6en.zip https://github.com/EZA2405/app_builders_hack/releases/download/laya-guide-v6en/laya-guide-v6en.zip
+  unzip /tmp/laya-guide-v6en.zip -d models
+  ```
+  Weights aren't in git. To train your own instead, use the command below.
 - Optional, for voice: whisper.cpp and the Whisper model (without them, dictation uses Apple's on-device recognizer):
   ```bash
   brew install whisper.cpp
@@ -216,7 +221,7 @@ python3 bench_localjev.py --url http://127.0.0.1:8766 --model guide --group 16 -
 
 ## Models, tools, data and disclosures
 - **Models in the product (all run on the Mac):**
-  - [Laya](https://huggingface.co/convaiinnovations/laya) (Apache-2.0, Convai Innovations), 421M parameters, fine-tuned by us. We trained English and multilingual variants. The shipped checkpoint is **v6en**, chosen by validation. It picks every control and runs the scam check, served locally with `laya-serve`.
+  - [Laya](https://huggingface.co/convaiinnovations/laya) (Apache-2.0, Convai Innovations), 421M parameters, fine-tuned by us. We trained English and multilingual variants. The shipped checkpoint is **v6en**, chosen by validation and [downloadable from Releases](https://github.com/EZA2405/app_builders_hack/releases/tag/laya-guide-v6en). It picks every control and runs the scam check, served locally with `laya-serve`.
   - [Whisper](https://github.com/openai/whisper) large-v3-turbo (OpenAI, MIT), 5-bit quantized, run with [whisper.cpp](https://github.com/ggml-org/whisper.cpp) (MIT) for voice input.
   - Apple Foundation Models (the on-device system model). It writes the step sentence (checked, with a fixed template as fallback) and the plan sentence. It also routes System Settings jobs, names the website to open and splits two-part web requests. It never picks the control.
   - Apple on-device speech recognition (dictation fallback) and speech synthesis (read aloud).
